@@ -1,10 +1,4 @@
-<div class="container" style="display: table;
-margin: 0 auto;
-position: relative;
-top: 350px;">
+<label *ngIf="label?.length">
+  {{label}}</label>
 
-  <label *ngIf="label?.length">{{label}}</label>
-
-  <input [id]="id" class="form-control {{styleClass}}" [placeholder]="placeholder?.length ? placeholder : ''" />
-
-</div>
+<input [id]="id" #input class="form-control cap-inputText {{styleClass}}" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''" />

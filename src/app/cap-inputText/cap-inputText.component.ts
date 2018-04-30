@@ -1,22 +1,23 @@
-import { Component, Input, OnInit, ElementRef } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
 declare var $: any;
 
 @Component({
-  selector: 'cap-inputText',
+  selector: "cap-inputText",
   host: {
-    "class": "cap-inputText",
+    class: "cap-inputText"
   },
-  templateUrl: './cap-inputText.component.html',
-  styleUrls: ['./cap-inputText.component.css']
+  templateUrl: "./cap-inputText.component.html",
+  styleUrls: ["./cap-inputText.component.css"]
 })
-export class CapInputTextComponent implements OnInit {
-
-
+export class CapInputTextComponent implements AfterViewInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("placeholder") placeholder: string;
   @Input("mask") mask: string;
   @Input("styleClass") styleClass: string;
+  @Input("maxlength") maxlength: string;
+
+  @ViewChild("input") input;
 
   private $el: any;
 
@@ -24,10 +25,9 @@ export class CapInputTextComponent implements OnInit {
     this.$el = $(el.nativeElement);
   }
 
-
-  public ngOnInit() {
+  public ngAfterViewInit() {
     if (this.mask) {
-     // this.$el.mask(this.mask);
+      $(this.input.nativeElement).mask(this.mask);
     }
   }
 }
