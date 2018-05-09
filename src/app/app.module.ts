@@ -1,13 +1,13 @@
-import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
-
+import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
+
+import { BRCAPModule } from "../app/modules/brcap.module";
 import { CapInputTextComponent } from "./cap-inputText/cap-inputText.component";
+
 @NgModule({
-  declarations: [AppComponent, CapInputTextComponent],
-  imports: [BrowserModule, FormsModule],
-  providers: [],
+  declarations: [AppComponent],
+  imports: [BrowserModule, BRCAPModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
