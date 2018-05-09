@@ -3,6 +3,14 @@ margin: 0 auto;
 position: relative;
 top: 350px;">
 
-  <cap-inputText id="nome" styleClass="teste" label="Nome" placeholder="Insira um nome" mask="000.000.000-00">
-  </cap-inputText>
+  <form>
+
+    <cap-inputText name="someValue" [(ngModel)]="dataModel">
+      Enter data:
+    </cap-inputText>
+
+    {{dataModel}}
+
+  </form>
+
 </div>
