@@ -1,0 +1,6 @@
+.select-wrapper span.caret {
+  font-size: 0px !important;
+  margin-top: 35px !important;
+  transform: scale(1.6) !important;
+  margin-right: 0px !important;
+}

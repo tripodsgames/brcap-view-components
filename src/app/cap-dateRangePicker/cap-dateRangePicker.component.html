@@ -1,0 +1,17 @@
+<label *ngIf="label?.length">
+  {{label}}</label>
+
+<div dateRange>
+  <div class="{{colsStart}} form-group">
+    <label>{{labelStart}}</label>
+    <input type="text" id="date1" [placeholder]="placeholderStart" #date1 [(ngModel)]="value" class="form-control input-type-text left date" name="date1">
+    <i class="fa fa-calendar-o icon-calendar" (click)="date1.focus()"></i>
+
+  </div>
+  <div class="{{colsEnd}} form-group">
+    <label>{{labelEnd}}</label>
+    <input type="text" id="date2" [placeholder]="placeholderEnd" #date2 [(ngModel)]="value" class="form-control input-type-text left date" name="date2">
+    <i class="fa fa-calendar-o icon-calendar" (click)="date2.focus()"></i>
+
+  </div>
+</div>
