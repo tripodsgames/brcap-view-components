@@ -21,12 +21,16 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
+        "../src/assets/css/roboto.css",
+        "../src/assets/css/font-awesome.min.css",
         "../node_modules/materialize-css/dist/css/materialize.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/jquery-mask-plugin/dist/jquery.mask.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../src/assets/js/bootstrap-datepicker.js",
         "../node_modules/materialize-css/dist/js/materialize.min.js"
       ],
       "environmentSource": "environments/environment.ts",

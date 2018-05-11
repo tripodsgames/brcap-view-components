@@ -1,5 +1,6 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, Output, ElementRef, EventEmitter, ViewChild } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+import { DateRangeDTO } from "../model/date-ragen.model";
 
 const noop = () => {};
 
@@ -29,12 +30,16 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   @Input("colsStart") colsStart: string;
   @Input("colsEnd") colsEnd: string;
 
-  @ViewChild("inputInicial") inputInicial;
-  @ViewChild("inputFinal") inputFinal;
+  @Input("clearBtn") clearBtn: boolean;
+
+  @ViewChild("date1") date1;
+  @ViewChild("date2") date2;
   @ViewChild("divRange") divRange;
 
   private $el: any;
   private innerValue: any = "";
+  private innerValueEnd: any = "";
+  private dates: DateRangeDTO;
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
@@ -45,14 +50,38 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
+  setDates(dateStart, dateEnd) {
+    this.innerValue = dateStart;
+    this.innerValueEnd = dateEnd;
+    this.setValues();
+  }
+
+  setValues() {
+    this.dates = new DateRangeDTO(this.innerValue, this.innerValueEnd);
+    this.onChangeCallback(this.dates);
+  }
+
   get value(): any {
-    return this.innerValue;
+    return this.dates;
   }
 
   set value(v: any) {
     if (v !== this.innerValue) {
       this.innerValue = v;
-      this.onChangeCallback(v);
+      this.dates = new DateRangeDTO(this.innerValue, this.innerValueEnd);
+      this.onChangeCallback(this.dates);
+    }
+  }
+
+  get valueEnd(): any {
+    return this.innerValueEnd;
+  }
+
+  set valueEnd(v: any) {
+    if (v !== this.innerValueEnd) {
+      this.innerValueEnd = v;
+      this.dates = new DateRangeDTO(this.innerValue, this.innerValueEnd);
+      this.onChangeCallback(this.dates);
     }
   }
 

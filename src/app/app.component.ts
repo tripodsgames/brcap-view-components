@@ -1,15 +1,17 @@
 import { Component, OnInit } from "@angular/core";
+import { DateRangeDTO } from "./model/date-ragen.model";
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  templateUrl: "./app.component.html"
 })
 export class AppComponent implements OnInit {
   title = "app";
 
   lista = [];
   listaExibicao: any;
+
+  datas = new DateRangeDTO("", "");
 
   exibir() {
     alert(this.listaExibicao);

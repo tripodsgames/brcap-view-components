@@ -1,4 +1,4 @@
-import { Directive } from "@angular/core";
+import { Directive, Input } from "@angular/core";
 declare var $: any;
 @Directive({
   selector: "[dateRange]",
@@ -7,8 +7,11 @@ declare var $: any;
     "data-date-format": "dd/mm/yyyy"
   }
 })
-export class DoubleDataDirective {
+export class DateRangeDirective {
   constructor() {}
+
+  @Input("clearButton") clearButton: boolean;
+
   ngAfterViewInit() {
     $(document).ready(function() {
       $.fn.datepicker.dates["pt-BR"] = {
@@ -25,7 +28,7 @@ export class DoubleDataDirective {
       $(".input-daterange").datepicker({
         format: "dd/mm/yyyy",
         language: "pt-BR",
-        clearBtn: true
+        clearBtn: this.clearButton
       });
     });
   }

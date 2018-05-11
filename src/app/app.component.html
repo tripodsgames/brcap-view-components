@@ -1,9 +1,14 @@
 <div style="position: relative;
-top: 300px;
+top: 150px;
 display: table;
-margin: 0 auto; ">
+margin: 0 auto;
+width: 100%;
+padding: 20px; ">
 
-  <cap-dateRangePicker></cap-dateRangePicker>
+<div class="row">
 
-
+  <cap-dateRangePicker colsStart="col-md-3" colsEnd="col-md-3" [(ngModel)]="datas" ></cap-dateRangePicker>
+</div>
+  Data Inicio: {{datas.start}}
+  <br/> Data Fim: {{datas.end}}
 </div>
