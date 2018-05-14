@@ -1,6 +1,6 @@
-import { Component, forwardRef, Input, OnInit, Output, ElementRef, EventEmitter, ViewChild } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, Output, ElementRef, EventEmitter, ViewChild, AfterContentInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
-import { DateRangeDTO } from "../model/date-ragen.model";
+import { DateRangeDTO } from "../model/date-range.model";
 
 const noop = () => {};
 
@@ -30,6 +30,11 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   @Input("colsStart") colsStart: string;
   @Input("colsEnd") colsEnd: string;
 
+  @Input("maskStart") maskStart: string;
+  @Input("maskEnd") maskEnd: string;
+
+  @Input("format") format: string;
+
   @Input("clearBtn") clearBtn: boolean;
 
   @ViewChild("date1") date1;
@@ -45,7 +50,14 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
     this.$el = $(el.nativeElement);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.maskStart) {
+      $(this.date1.nativeElement).mask(this.maskStart);
+    }
+    if (this.maskEnd) {
+      $(this.date2.nativeElement).mask(this.maskEnd);
+    }
+  }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;

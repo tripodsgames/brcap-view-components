@@ -1,0 +1,5 @@
+<label *ngIf="label?.length">
+  {{label}}</label>
+
+<input datepicker #input type="text" [id]="id" class="form-control  input-type-text date {{styleClass}}" [disabled]="disabled" placeholder="{{placeholder}}" name="{{name}}" [(ngModel)]="value">
+<i class="fa fa-calendar-o icon-calendar" (click)="input.focus()"></i>

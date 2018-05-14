@@ -4,11 +4,11 @@ display: table;
 margin: 0 auto;
 width: 100%;
 padding: 20px; ">
+  Data: {{data}}
 
-<div class="row">
-
-  <cap-dateRangePicker colsStart="col-md-3" colsEnd="col-md-3" [(ngModel)]="datas" ></cap-dateRangePicker>
-</div>
-  Data Inicio: {{datas.start}}
-  <br/> Data Fim: {{datas.end}}
+  <div class="row">
+    <div class="col-md-4">
+      <cap-datepicker id="dataSelecionar" mask="99/99/9999" [(ngModel)]="data"></cap-datepicker>
+    </div>
+  </div>
 </div>

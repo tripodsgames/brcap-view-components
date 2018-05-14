@@ -1,13 +1,15 @@
-import { Directive, Input, ElementRef, Renderer } from "@angular/core";
+import { Directive, OnInit, Renderer, ElementRef } from "@angular/core";
 declare var $: any;
+
 @Directive({
-  selector: "[dateRange]",
+  selector: "[datepicker]",
   host: {
-    class: "input-daterange",
+    "data-provide": "datepicker",
+    class: "datepicker",
     "data-date-format": "dd/mm/yyyy"
   }
 })
-export class DateRangeDirective {
+export class DatepickerDirective {
   $el: any;
   constructor(private el: ElementRef, private renderer: Renderer) {
     this.$el = $(el.nativeElement);
@@ -16,9 +18,8 @@ export class DateRangeDirective {
   ngAfterViewInit() {
     $(document)
       .ready(function() {
-        $(".input-daterange").datepicker({
-          format: "dd/mm/yyyy",
-          clearBtn: true
+        $(".datepicker").datepicker({
+          format: "dd/mm/yyyy"
         });
       })
       .on("changeDate", event => {
