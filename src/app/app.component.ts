@@ -12,4 +12,13 @@ export class AppComponent {
   listaExibicao: any;
 
   data;
+  loading = false;
+
+  teste() {
+    this.loading = true;
+    setTimeout(() => {
+      alert("funcionou");
+      this.loading = false;
+    }, 3000);
+  }
 }

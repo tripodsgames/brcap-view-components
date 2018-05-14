@@ -8,10 +8,11 @@ import { CapDateRangePickerComponent } from "../cap-dateRangePicker/cap-dateRang
 import { DateRangeDirective } from "../directives/date-range.directive";
 import { CapDatepickerComponent } from "../cap-datepicker/cap-datepicker.component";
 import { DatepickerDirective } from "../directives/datepicker.directive";
+import { CapButtonComponent } from "../cap-button/cap-button.component";
 
 @NgModule({
   imports: [CommonModule, FormsModule],
-  declarations: [CapInputTextComponent, CapDatepickerComponent, CapSelectComponent, CapDateRangePickerComponent, MaterializeDirective, DateRangeDirective, DatepickerDirective],
-  exports: [CapInputTextComponent, CapSelectComponent, CapDatepickerComponent, CapDateRangePickerComponent, MaterializeDirective, DateRangeDirective, DatepickerDirective]
+  declarations: [CapInputTextComponent, CapDatepickerComponent, CapSelectComponent, CapDateRangePickerComponent, MaterializeDirective, DateRangeDirective, DatepickerDirective, CapButtonComponent],
+  exports: [CapInputTextComponent, CapSelectComponent, CapDatepickerComponent, CapDateRangePickerComponent, MaterializeDirective, DateRangeDirective, DatepickerDirective, CapButtonComponent]
 })
 export class BRCAPModule {}

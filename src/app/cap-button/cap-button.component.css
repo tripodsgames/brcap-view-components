@@ -1,0 +1,14 @@
+.btn {
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  display: inline-block !important;
+  padding: 0px 12px !important;
+  margin-bottom: 0 !important;
+  border-radius: 4px;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none;
+}
