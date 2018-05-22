@@ -1,0 +1,39 @@
+.menu-item {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #888;
+}
+
+.menu-item.active {
+  background: rgb(80, 30, 5);
+}
+
+.menu-item:hover {
+  background: rgb(120, 70, 60);
+}
+
+.menu-item:hover {
+  opacity: 0.9;
+}
+
+ul.list .menu-item {
+  padding-left: 30px;
+}
+
+.hide {
+  display: none;
+}
+
+.label-menu {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  font-family: Roboto;
+  letter-spacing: 1.5px;
+}
+
+.link:hover,
+link:active,
+link:focus {
+  text-decoration: none !important;
+}

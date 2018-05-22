@@ -1,5 +1,6 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild, Output, EventEmitter } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
+import { Subject } from "rxjs/Subject";
 
 const noop = () => {};
 
@@ -13,9 +14,6 @@ declare var $: any;
 
 @Component({
   selector: "cap-inputText",
-  host: {
-    class: "cap-inputText"
-  },
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-inputText.component.html",
   styleUrls: ["./cap-inputText.component.css"]
@@ -27,11 +25,16 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   @Input("mask") mask: string;
   @Input("styleClass") styleClass: string;
   @Input("maxlength") maxlength: string;
+  @Input("styleInline") styleInline: string;
 
   @ViewChild("input") input;
 
   private $el: any;
   private innerValue: any = "";
+
+  constructor(private el: ElementRef) {
+    this.$el = $(el.nativeElement);
+  }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
@@ -63,10 +66,6 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
 
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
-  }
-
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
   }
 
   public ngAfterViewInit() {

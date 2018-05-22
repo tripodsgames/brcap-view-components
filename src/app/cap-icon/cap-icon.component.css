@@ -1,0 +1,17 @@
+.icon-menu {
+  color: #fff;
+  font-size: 18px;
+  min-width: 35px;
+  max-width: 35px;
+}
+
+ul.list .icon-menu {
+  padding-left: 15px;
+}
+
+.icon-arrow {
+  color: #fff;
+  float: right;
+  padding-right: 5px;
+  font-size: 12px;
+}

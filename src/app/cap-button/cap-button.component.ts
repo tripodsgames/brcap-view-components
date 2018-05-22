@@ -16,6 +16,7 @@ export class CapButtonComponent {
   @Input("disabled") disabled: string;
   @Input("icon") icon: string;
   @Input("loader") loader: boolean;
+  @Input("styleClass") styleClass: string;
 
 
   constructor() {}

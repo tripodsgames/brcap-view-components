@@ -1,6 +1,6 @@
 {
   "name": "brcap-view-components",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json"
+    "package": "ng-packagr -p ng-package.json"
   },
   "private": false,
   "dependencies": {
@@ -17,11 +17,14 @@
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/animations": "^4.0.0",
     "angular2-materialize": "^15.1.10",
     "bootstrap-datepicker": "^1.7.1",
     "core-js": "^2.4.1",
+    "moment": "^2.22.1",
     "bootstrap": "3.3.7",
     "jquery": "3.3.1",
     "jquery-mask-plugin": "1.14.15",

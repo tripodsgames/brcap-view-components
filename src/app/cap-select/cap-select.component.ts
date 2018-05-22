@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, Output, EventEmitter, AfterViewInit, AfterViewChecked, AfterContentChecked } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 
 const noop = () => {};
@@ -29,6 +29,7 @@ export class CapSelectComponent implements ControlValueAccessor, AfterViewInit {
   @Input("itemValue") itemValue: string;
   @Input("labelOptionAll") labelOptionAll: string;
   @Input("multiple") multiple: string;
+  @Input("valueOptionAll") valueOptionAll: any;
   @Input("optionAll") optionAll: boolean;
 
   @ViewChild("select") select;

@@ -2,7 +2,7 @@
   {{label}}</label>
 
 <select [id]="id" materialize="material_select" class="{{styleClass}} cap-select" [attr.multiple]="multiple" [materializeSelectOptions]="options?.length > 0 ? options : []" #select class="cap-select {{styleClass}}" [(ngModel)]="value">
-  <option [disabled]="multiple" *ngIf="optionAll">{{labelOptionAll ? labelOptionAll : 'Selecione' }}</option>
+  <option [disabled]="multiple" [value]="valueOptionAll" *ngIf="optionAll">{{labelOptionAll ? labelOptionAll : 'Selecione' }}</option>
   <ng-content></ng-content>
   <ng-container *ngIf="options?.length && itemLabel?.length && itemValue?.length">
     <option *ngFor="let opt of options" [value]="opt[itemValue]">{{opt[itemLabel]}}</option>
@@ -11,4 +11,3 @@
     <option *ngFor="let opt of options" value="{{opt.value}}">{{opt.label}}</option>
   </ng-container>
 </select>
-

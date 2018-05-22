@@ -9,10 +9,41 @@ import { DateRangeDirective } from "../directives/date-range.directive";
 import { CapDatepickerComponent } from "../cap-datepicker/cap-datepicker.component";
 import { DatepickerDirective } from "../directives/datepicker.directive";
 import { CapButtonComponent } from "../cap-button/cap-button.component";
+import { CapPaginationComponent } from "../cap-pagination/cap-pagination.component";
+import { CapMenuItemComponent } from "../cap-menuItem/cap-menuItem.component";
+import { CapMenuComponent } from "../cap-menu/cap-menu.component";
+import { CapIconComponent } from "../cap-icon/cap-icon.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
-  imports: [CommonModule, FormsModule],
-  declarations: [CapInputTextComponent, CapDatepickerComponent, CapSelectComponent, CapDateRangePickerComponent, MaterializeDirective, DateRangeDirective, DatepickerDirective, CapButtonComponent],
-  exports: [CapInputTextComponent, CapSelectComponent, CapDatepickerComponent, CapDateRangePickerComponent, MaterializeDirective, DateRangeDirective, DatepickerDirective, CapButtonComponent]
+  imports: [CommonModule, FormsModule, BrowserAnimationsModule],
+  declarations: [
+    CapInputTextComponent,
+    CapDatepickerComponent,
+    CapSelectComponent,
+    CapDateRangePickerComponent,
+    MaterializeDirective,
+    DateRangeDirective,
+    DatepickerDirective,
+    CapButtonComponent,
+    CapPaginationComponent,
+    CapMenuItemComponent,
+    CapMenuComponent,
+    CapIconComponent
+  ],
+  exports: [
+    CapInputTextComponent,
+    CapSelectComponent,
+    CapDatepickerComponent,
+    CapDateRangePickerComponent,
+    MaterializeDirective,
+    DateRangeDirective,
+    DatepickerDirective,
+    CapButtonComponent,
+    CapPaginationComponent,
+    CapMenuItemComponent,
+    CapMenuComponent,
+    CapIconComponent
+  ]
 })
-export class BRCAPModule {}
+export class BRCapModule {}

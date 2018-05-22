@@ -4,11 +4,10 @@ display: table;
 margin: 0 auto;
 width: 100%;
 padding: 20px; ">
-  Data: {{data}}
 
   <div class="row">
-    <div class="col-md-4">
-      <cap-button label="Confirmar" (click)="teste()" [loader]="loading" icon="fa-download"></cap-button>
+    <div class="col-md-10">
+      <cap-menu [value]="items" width="250" backgroundColor="#643204"></cap-menu>
     </div>
   </div>
 </div>

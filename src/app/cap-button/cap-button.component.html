@@ -1,4 +1,4 @@
-<button class="btn waves-effect waves-light" [disabled]="disabled">{{label}}
+<button class="btn waves-effect waves-light {{styleClass}}" [disabled]="disabled">{{label}}
   <ng-content></ng-content>
   <i *ngIf="icon" class="fa {{icon}}"></i>
   <i *ngIf="loader" class="loader fa fa-spinner fa-spin"></i>
