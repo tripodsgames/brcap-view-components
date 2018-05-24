@@ -16,6 +16,10 @@
   opacity: 0.9;
 }
 
+ul.list {
+  margin-bottom: 0px;
+}
+
 ul.list .menu-item {
   padding-left: 30px;
 }

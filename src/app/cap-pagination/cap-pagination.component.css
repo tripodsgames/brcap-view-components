@@ -19,9 +19,9 @@ button.prev {
   margin-right: -4px;
 }
 button.next {
-  margin-left: -4px;
+  margin-left: -2px;
 }
 button.last {
   border-radius: 0px 5px 5px 0px;
-  margin-left: -4px;
+  margin-left: -2px;
 }
