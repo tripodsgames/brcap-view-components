@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CapInputTextComponent } from "../cap-inputText/cap-inputText.component";
 import { FormsModule } from "@angular/forms";
-import { MaterializeDirective } from "angular2-materialize";
 import { CapSelectComponent } from "../cap-select/cap-select.component";
 import { CapDateRangePickerComponent } from "../cap-dateRangePicker/cap-dateRangePicker.component";
 import { DateRangeDirective } from "../directives/date-range.directive";
@@ -13,7 +12,10 @@ import { CapPaginationComponent } from "../cap-pagination/cap-pagination.compone
 import { CapMenuItemComponent } from "../cap-menuItem/cap-menuItem.component";
 import { CapMenuComponent } from "../cap-menu/cap-menu.component";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
+import { CapRadioComponent } from "../cap-radio/cap-radio.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CapHeaderComponent } from "../cap-header/cap-header.component";
+import { CapInputTextAreaComponent } from "../cap-inputTextArea/cap-inputTextArea.component";
 
 @NgModule({
   imports: [CommonModule, FormsModule, BrowserAnimationsModule],
@@ -22,28 +24,32 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     CapDatepickerComponent,
     CapSelectComponent,
     CapDateRangePickerComponent,
-    MaterializeDirective,
     DateRangeDirective,
     DatepickerDirective,
     CapButtonComponent,
     CapPaginationComponent,
     CapMenuItemComponent,
     CapMenuComponent,
-    CapIconComponent
+    CapIconComponent,
+    CapRadioComponent,
+    CapHeaderComponent,
+    CapInputTextAreaComponent
   ],
   exports: [
     CapInputTextComponent,
     CapSelectComponent,
     CapDatepickerComponent,
     CapDateRangePickerComponent,
-    MaterializeDirective,
     DateRangeDirective,
     DatepickerDirective,
     CapButtonComponent,
     CapPaginationComponent,
     CapMenuItemComponent,
     CapMenuComponent,
-    CapIconComponent
+    CapIconComponent,
+    CapRadioComponent,
+    CapHeaderComponent,
+    CapInputTextAreaComponent
   ]
 })
 export class BRCapModule {}

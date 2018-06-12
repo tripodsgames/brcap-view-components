@@ -1,24 +1,25 @@
-.cap-inputText {
+.cap-inputTextArea {
   box-shadow: none;
   border-radius: 4px;
   border: 1px solid #757575;
-  height: 50px;
   font-family: Ubuntu;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
+  resize: none;
+  padding: 10px 12px;
 }
 
-.cap-inputText:disabled {
-  border: 1px solid #c9c9c9;
-  background-color: #ffffff;
-}
-
-.cap-inputText.error {
+.cap-inputTextArea.error {
   border: 1.5px solid #b00020;
 }
 
-.cap-inputText:focus {
+.cap-inputTextArea:disabled {
+  border: 1px solid #C9C9C9;
+  background-color: #ffffff;
+}
+
+.cap-inputTextArea:focus {
   box-shadow: none;
   border-color: none;
 }
@@ -36,16 +37,16 @@ label {
   padding: 0px 3px;
 }
 
-label.error {
-  color: #b00020;
-}
-
 label.disabled {
   color: rgba(0, 0, 0, 0.5);
 }
 
 .helper-text.disabled {
   color: rgba(0, 0, 0, 0.5);
+}
+
+label.error {
+  color: #b00020;
 }
 
 .helper-text {
@@ -78,15 +79,15 @@ label.disabled {
   color: rgba(0, 0, 0, 0.5);
 }
 
-input:disabled::-webkit-input-placeholder {
+textarea:disabled::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
-input:disabled:-moz-placeholder {
+textarea:disabled:-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
-input:disabled::-moz-placeholder {
+textarea:disabled::-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
-input:disabled:-ms-input-placeholder {
+textarea:disabled:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }

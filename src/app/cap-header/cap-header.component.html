@@ -1,0 +1,43 @@
+<header class="main-header">
+
+  <a href="#" class="logo" #logoHeader>
+    <span class="logo-mini">
+      <img src="../../assets//img//logo-brasilcap.svg">
+    </span>
+  </a>
+
+  <nav class="navbar navbar-static-top">
+    <div class="label-projeto">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="icomoon icon-arrow-left2"></span>
+      </a>
+      <img src="../../assets/img/produtos.svg">
+    </div>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle box-user" data-toggle="dropdown">
+            <span class="hidden-xs text-user">Olá, {{username}}</span>
+            <i class="icon-name-user fa fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <a [href]="rotaPerfil">
+              <li class="user-body">
+                <span>Perfil</span>
+                <i class="fa fa-user"></i>
+              </li>
+            </a>
+            <span class="divisor"></span>
+            <a href="#">
+              <li class="user-body">
+                <span>Logout</span>
+                <i class="fa fa-sign-out"></i>
+              </li>
+            </a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>

@@ -1,0 +1,67 @@
+* {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.h1-brcap {
+  font-family: "Ubuntu";
+  font-size: 35px;
+  letter-spacing: 0.2px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.h2-brcap {
+  font-family: Ubuntu;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.h3-brcap {
+  font-family: Ubuntu;
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.subtitle-1-brcap {
+  font-family: Ubuntu;
+  font-size: 17px;
+  line-height: 1.48;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.subtitle-2-brcap {
+  font-family: Ubuntu;
+  font-size: 17px;
+  line-height: 1.48;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.caption-brcap {
+  font-family: Ubuntu;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.sm-btn-caption-brcap {
+  font-family: Ubuntu;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.chips-caption-brcap {
+  font-family: Ubuntu;
+  font-size: 9px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}

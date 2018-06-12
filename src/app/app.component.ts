@@ -9,8 +9,15 @@ import BRCapUtil from "../brcap-util";
 export class AppComponent implements OnInit {
   private brcapUtil;
   items = [];
+  colors = {};
+
+  item = false;
 
   ngOnInit() {
+    this.colors = {
+      backgroundColor: "#A5761B",
+      hoverColor: "#B8841F"
+    };
     this.items = [
       {
         label: "Comissão",
@@ -18,8 +25,8 @@ export class AppComponent implements OnInit {
         items: [
           {
             label: "Consulta Comissão",
-            icon: "fa fa-bookmark",
-            link: "/#/teste"
+            link: "/#/teste",
+            sub: true
           }
         ]
       },
@@ -29,15 +36,15 @@ export class AppComponent implements OnInit {
         items: [
           {
             label: "Consulta Cobrança",
-            icon: "fa fa-bookmark"
+            sub: true
           },
           {
             label: "Consulta Rateio",
-            icon: "fa fa-bookmark"
+            sub: true
           },
           {
             label: "Consulta Liquidação",
-            icon: "fa fa-bookmark"
+            sub: true
           }
         ]
       },
@@ -47,7 +54,7 @@ export class AppComponent implements OnInit {
         items: [
           {
             label: "Controle de Acesso",
-            icon: "fa fa-bookmark"
+            sub: true
           }
         ]
       }

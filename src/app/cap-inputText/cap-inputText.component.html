@@ -1,4 +1,7 @@
-<label *ngIf="label?.length">
+<label [for]="id" class="{{textError}} {{disabled ? 'disabled' : ''}} " *ngIf="label?.length">
   {{label}}</label>
 
-<input [id]="id" #input class="form-control input-type-text cap-inputText {{styleClass}}" style="{{styleInline}}" [(ngModel)]="value" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''" />
+
+<input [id]="id" #input class="form-control input-type-text cap-inputText {{styleClass}}" [(ngModel)]="value" [disabled]="disabled" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''" />
+<i class="fa fa-exclamation-circle ico-error {{disabled ? 'disabled' : ''}}" *ngIf="textError"></i>
+<p class="helper-text {{textError}} {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>

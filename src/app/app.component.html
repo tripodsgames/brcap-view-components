@@ -1,13 +1,30 @@
-<div style="position: relative;
-top: 150px;
-display: table;
-margin: 0 auto;
-width: 100%;
-padding: 20px; ">
-
+<br/>
+<br/>
+<br/>
+<div class="container">
   <div class="row">
-    <div class="col-md-10">
-      <cap-menu [value]="items" width="250" backgroundColor="#005400"></cap-menu>
+    <div class="col-md-4">
+      <cap-inputText label="Nome" placeholder="Informe o nome"></cap-inputText>
+    </div>
+    <div class="col-md-4">
+      <cap-inputText label="CPF" placeholder="Informe o CPF" mask="999.999.999-99"> </cap-inputText>
+    </div>
+    <div class="col-md-4">
+      <cap-inputText label="E-mail" placeholder="Informe o e-mail"></cap-inputText>
+    </div>
+    <div class="col-md-4">
+      <cap-inputText label="Nome" placeholder="Informe o Nome" styleClass="error" textHelper="Campo obrigatório"></cap-inputText>
+    </div>
+    <div class="col-md-4">
+      <cap-inputText label="Nome" placeholder="Informe o Nome" disabled="true" textHelper="Campo desabilitado"></cap-inputText>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <cap-inputTextArea label="Descrição" cols="6" placeholder="Informe o Nome" rows="3"></cap-inputTextArea>
+    </div>
+    <div class="col-md-6">
+      <cap-inputTextArea label="Descrição" disabled="true" placeholder="Informe o Nome" rows="3"></cap-inputTextArea>
     </div>
   </div>
 </div>

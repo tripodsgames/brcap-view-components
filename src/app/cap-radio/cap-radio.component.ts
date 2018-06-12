@@ -6,32 +6,29 @@ const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => CapInputTextComponent),
+  useExisting: forwardRef(() => CapRadioComponent),
   multi: true
 };
 
 declare var $: any;
 
 @Component({
-  selector: "cap-inputText",
+  selector: "cap-radio",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  templateUrl: "./cap-inputText.component.html",
-  styleUrls: ["./cap-inputText.component.css"]
+  templateUrl: "./cap-radio.component.html",
+  styleUrls: ["./cap-radio.component.css"]
 })
-export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
+export class CapRadioComponent implements ControlValueAccessor {
   @Input("id") id: string;
+  @Input("name") name: string;
   @Input("label") label: string;
   @Input("placeholder") placeholder: string;
   @Input("mask") mask: string;
   @Input("styleClass") styleClass: string;
   @Input("maxlength") maxlength: string;
   @Input("styleInline") styleInline: string;
-  @Input("textHelper") textHelper: string;
-  @Input("disabled") disabled: boolean;
 
-  @ViewChild("input") input;
-
-  textError;
+  @ViewChild("radio") radio;
 
   private $el: any;
   private innerValue: any = "";
@@ -42,15 +39,6 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
-
-  ngOnInit() {
-    if (!this.id) {
-      this.id = "cap-" + new Date().getTime();
-    }
-    if (this.styleClass && this.styleClass.indexOf("error") != -1) {
-      this.textError = "error";
-    }
-  }
 
   get value(): any {
     return this.innerValue;
@@ -79,11 +67,5 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
 
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
-  }
-
-  public ngAfterViewInit() {
-    if (this.mask) {
-      $(this.input.nativeElement).mask(this.mask);
-    }
   }
 }

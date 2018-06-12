@@ -6,19 +6,19 @@ const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => CapInputTextComponent),
+  useExisting: forwardRef(() => CapInputTextAreaComponent),
   multi: true
 };
 
 declare var $: any;
 
 @Component({
-  selector: "cap-inputText",
+  selector: "cap-inputTextArea",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  templateUrl: "./cap-inputText.component.html",
-  styleUrls: ["./cap-inputText.component.css"]
+  templateUrl: "./cap-inputTextArea.component.html",
+  styleUrls: ["./cap-inputTextArea.component.css"]
 })
-export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
+export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("placeholder") placeholder: string;
@@ -28,6 +28,9 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   @Input("styleInline") styleInline: string;
   @Input("textHelper") textHelper: string;
   @Input("disabled") disabled: boolean;
+
+  @Input("cols") cols: string;
+  @Input("rows") rows: string;
 
   @ViewChild("input") input;
 
