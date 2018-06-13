@@ -2,29 +2,26 @@
 <br/>
 <br/>
 <div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <cap-inputText label="Nome" placeholder="Informe o nome"></cap-inputText>
-    </div>
-    <div class="col-md-4">
-      <cap-inputText label="CPF" placeholder="Informe o CPF" mask="999.999.999-99"> </cap-inputText>
-    </div>
-    <div class="col-md-4">
-      <cap-inputText label="E-mail" placeholder="Informe o e-mail"></cap-inputText>
-    </div>
-    <div class="col-md-4">
-      <cap-inputText label="Nome" placeholder="Informe o Nome" styleClass="error" textHelper="Campo obrigatório"></cap-inputText>
-    </div>
-    <div class="col-md-4">
-      <cap-inputText label="Nome" placeholder="Informe o Nome" disabled="true" textHelper="Campo desabilitado"></cap-inputText>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <cap-inputTextArea label="Descrição" cols="6" placeholder="Informe o Nome" rows="3"></cap-inputTextArea>
-    </div>
-    <div class="col-md-6">
-      <cap-inputTextArea label="Descrição" disabled="true" placeholder="Informe o Nome" rows="3"></cap-inputTextArea>
-    </div>
-  </div>
+  <cap-tabPanel>
+    <cap-tab title="Aba 1">
+      Conteúdo 1
+    </cap-tab>
+    <cap-tab title="Aba 2">
+      Conteúdo 2
+      <p>Teste</p>
+    </cap-tab>
+    <cap-tab title="Aba 3">
+      <div class="container">
+        Conteúdo 3
+      </div>
+    </cap-tab>
+  </cap-tabPanel>
+
+  <cap-divisor></cap-divisor>
+
+  <cap-divisor styleClass="light"></cap-divisor>
+
+  <cap-card content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut finibus mauris. Duis consequat maximus urna nec malesuada. Cras mollis congue ligula at posuere. Aenean ac mauris eget ligula pulvinar consectetur. Praesent dictum nulla sit amet condimentum bibendum. Aliquam nulla tellus, faucibus ac maximus ut, lacinia at tortor. Sed tempus convallis neque id viverra. Aenean mauris velit, scelerisque non hendrerit pharetra, volutpat a turpis. Cras et varius elit, ultrices luctus metus.">
+
+  </cap-card>
 </div>

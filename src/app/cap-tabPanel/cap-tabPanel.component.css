@@ -1,0 +1,26 @@
+.cap-tabPanel {
+  border-bottom: 1px solid #979797;
+}
+
+.cap-tabPanel > li {
+  margin-right: -2px;
+}
+
+.cap-tabPanel > li > a {
+  border-radius: 0px;
+  border: none;
+  background-color: #fafafa;
+  border-bottom: 1px solid #979797;
+  letter-spacing: 1.2px;
+  padding: 13px 35px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.cap-tabPanel > li.active > a {
+  background-color: #efd0a7;
+}
+
+.cap-tabPanel > li:hover > a {
+  background-color: #e5e5e5;
+}

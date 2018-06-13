@@ -12,12 +12,31 @@ export class AppComponent implements OnInit {
   colors = {};
 
   item = false;
+  radios = [];
+  radioSelecionado = [];
+  checkSelecionado1;
+  checkSelecionado2;
+  checkSelecionado3;
 
   ngOnInit() {
     this.colors = {
       backgroundColor: "#A5761B",
       hoverColor: "#B8841F"
     };
+    this.radios = [
+      {
+        label: "Opção 1",
+        value: 1
+      },
+      {
+        label: "Opção 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
     this.items = [
       {
         label: "Comissão",

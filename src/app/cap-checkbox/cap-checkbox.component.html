@@ -1,0 +1,7 @@
+<div class="cap-checkbox">
+
+  <input [attr.id]="id" class="{{styleClass}} checkbox" [attr.name]="name" [disabled]="disabled" [(ngModel)]="value" type="checkbox" />
+
+  <label [attr.for]="id" class="cap-checkbox" *ngIf="itemLabel?.length">{{itemLabel}}</label>
+
+</div>

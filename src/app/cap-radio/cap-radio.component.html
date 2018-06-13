@@ -1,3 +1,7 @@
-<input [id]="id" #radio class="with-gap  {{styleClass}}" [name]="name" [style]="styleInline" [(ngModel)]="value" type="radio" />
-<label *ngIf="label?.length">
-  {{label}}</label>
+<div class="cap-radiobutton">
+
+  <input [attr.id]="id" class="{{styleClass}} radio" [attr.name]="name" [(ngModel)]="value" [disabled]="disabled" [value]="itemValue" type="radio" />
+
+  <label [attr.for]="id" class="cap-radiobutton" *ngIf="itemLabel?.length">{{itemLabel}}</label>
+
+</div>

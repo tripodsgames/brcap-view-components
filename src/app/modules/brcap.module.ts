@@ -16,6 +16,13 @@ import { CapRadioComponent } from "../cap-radio/cap-radio.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CapHeaderComponent } from "../cap-header/cap-header.component";
 import { CapInputTextAreaComponent } from "../cap-inputTextArea/cap-inputTextArea.component";
+import { CapCheckBoxComponent } from "../cap-checkbox/cap-checkbox.component";
+import { CapToggleComponent } from "../cap-toggle/cap-toggle.component";
+import { CapChipsComponent } from "../cap-chips/cap-chips.component";
+import { CapTabPanelComponent } from "../cap-tabPanel/cap-tabPanel.component";
+import { CapTabComponent } from "../cap-tab/cap-tab.component";
+import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
+import { CapCardComponent } from "../cap-card/cap-card.component";
 
 @NgModule({
   imports: [CommonModule, FormsModule, BrowserAnimationsModule],
@@ -33,7 +40,14 @@ import { CapInputTextAreaComponent } from "../cap-inputTextArea/cap-inputTextAre
     CapIconComponent,
     CapRadioComponent,
     CapHeaderComponent,
-    CapInputTextAreaComponent
+    CapInputTextAreaComponent,
+    CapCheckBoxComponent,
+    CapToggleComponent,
+    CapChipsComponent,
+    CapTabPanelComponent,
+    CapTabComponent,
+    CapDivisorComponent,
+    CapCardComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -49,7 +63,14 @@ import { CapInputTextAreaComponent } from "../cap-inputTextArea/cap-inputTextAre
     CapIconComponent,
     CapRadioComponent,
     CapHeaderComponent,
-    CapInputTextAreaComponent
+    CapInputTextAreaComponent,
+    CapCheckBoxComponent,
+    CapToggleComponent,
+    CapChipsComponent,
+    CapTabPanelComponent,
+    CapTabComponent,
+    CapDivisorComponent,
+    CapCardComponent
   ]
 })
 export class BRCapModule {}

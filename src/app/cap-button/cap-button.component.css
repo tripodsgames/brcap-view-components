@@ -3,9 +3,43 @@
   text-transform: uppercase;
   transition: all 0.5s;
   display: inline-block !important;
-  padding: 0px 12px !important;
+  padding: 0px 25px !important;
   margin-bottom: 0 !important;
-  border-radius: 4px;
+  border-radius: 5px;
+  height: 48px;
+  font-size: 14px;
+  font-family: Ubuntu;
+  color: #fff;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+}
+
+.btn-outline {
+  border-radius: 2.5px;
+  background-color: rgba(98, 2, 238, 0);
+  border: solid 0.5px rgba(0, 0, 0, 0.12);
+  
+}
+
+.btn > i {
+  position: relative;
+  left: -5px;
+  font-weight: 500;
+}
+
+.btn-white {
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0 0.5px 2.5px 0 rgba(0, 0, 0, 0.2), 0 1.5px 0.5px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+}
+
+.btn-white:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.btn-white > i:hover {
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .btn:focus,

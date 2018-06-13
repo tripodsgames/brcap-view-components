@@ -7,23 +7,22 @@ const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => CapRadioComponent),
+  useExisting: forwardRef(() => CapChipsComponent),
   multi: true
 };
 
 declare var $: any;
 
 @Component({
-  selector: "cap-radio",
+  selector: "cap-chips",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  templateUrl: "./cap-radio.component.html",
-  styleUrls: ["./cap-radio.component.css"]
+  templateUrl: "./cap-chips.component.html",
+  styleUrls: ["./cap-chips.component.css"]
 })
-export class CapRadioComponent implements ControlValueAccessor, OnInit {
+export class CapChipsComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("name") name: string;
   @Input("itemLabel") itemLabel: string;
-  @Input("itemValue") itemValue: any;
   @Input("disabled") disabled: boolean;
   @Input("styleClass") styleClass: string;
   @Input("items") items: Array<any>;
@@ -37,8 +36,6 @@ export class CapRadioComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     if (null == this.name) throw new Error("Attribute 'name' is required");
-    if (null == this.itemLabel) throw new Error("Attribute 'itemLabel' is required");
-    if (null == this.itemValue) throw new Error("Attribute 'itemValue' is required");
     if (!this.id) {
       this.id = uuid();
     }

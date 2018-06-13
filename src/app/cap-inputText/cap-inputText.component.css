@@ -9,6 +9,10 @@
   color: rgba(0, 0, 0, 0.87);
 }
 
+.cap-inputText.sm {
+  height: 40px;
+}
+
 .cap-inputText:disabled {
   border: 1px solid #c9c9c9;
   background-color: #ffffff;

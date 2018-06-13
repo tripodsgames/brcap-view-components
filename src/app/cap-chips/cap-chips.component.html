@@ -1,0 +1,6 @@
+<div class="cap-chips-container">
+  <input [attr.id]="id" [attr.name]="name" [disabled]="disabled" [(ngModel)]="value" type="checkbox" />
+
+  <label [attr.for]="id" class="{{styleClass}} {{disabled ? 'disabled' : ''}}" *ngIf="itemLabel?.length">{{itemLabel}}</label>
+
+</div>

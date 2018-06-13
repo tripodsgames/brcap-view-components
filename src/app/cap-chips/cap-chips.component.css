@@ -1,0 +1,59 @@
+input {
+  position: absolute;
+  left: -9999px;
+}
+
+label  {
+  display: block;
+  position: relative;
+  padding: 8px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+label.sm {
+  padding: 6px 40px;
+}
+
+label.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+
+label:first-of-type {
+  transform: translateX(-40px);
+}
+
+label:last-of-type {
+  transform: translateX(40px);
+}
+
+label:hover,
+input:focus + label {
+}
+
+input:checked + label {
+  background-color: #faefe0;
+  border-color: #dc963d;
+}
+
+input:checked + label::before {
+  background-color: #fff;
+}
+
+.cap-chips-container {
+  width: fit-content;
+}
