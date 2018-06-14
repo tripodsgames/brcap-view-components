@@ -1,6 +1,7 @@
 import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
 import { Subject } from "rxjs/Subject";
+import BRCapUtil from "../../brcap-util";
 
 const noop = () => {};
 
@@ -48,7 +49,9 @@ export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAcc
 
   ngOnInit() {
     if (!this.id) {
-      this.id = "cap-" + new Date().getTime();
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_textarea";
     }
     if (this.styleClass && this.styleClass.indexOf("error") != -1) {
       this.textError = "error";

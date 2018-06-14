@@ -2,6 +2,8 @@
 <br/>
 <br/>
 <div class="container">
+  <cap-checkbox id="checkBox1" name="teste" ([ngModel])="checkSelecionado1" itemLabel="Opção 1"></cap-checkbox>
+  {{checkSelecionado1}}
   <cap-tabPanel>
     <cap-tab title="Aba 1">
       Conteúdo 1
@@ -18,6 +20,8 @@
   </cap-tabPanel>
 
   <cap-divisor></cap-divisor>
+
+  <cap-button id="botao" label="Confirma" styleClass="btn-primary" icon="fa-user" disabled="false"></cap-button>
 
   <cap-divisor styleClass="light"></cap-divisor>
 

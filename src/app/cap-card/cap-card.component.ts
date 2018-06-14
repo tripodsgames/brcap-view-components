@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { v4 as uuid } from "uuid";
+import BRCapUtil from "../../brcap-util";
 
 @Component({
   selector: "cap-card",
@@ -17,10 +17,12 @@ export class CapCardComponent implements OnInit {
 
   ngOnInit() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_card";
     }
     if (this.name) {
-      this.name = uuid();
+      this.name = BRCapUtil.guid();
     }
   }
 }

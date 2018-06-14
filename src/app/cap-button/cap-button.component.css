@@ -1,4 +1,4 @@
-.btn {
+.cap-button {
   border: none;
   text-transform: uppercase;
   transition: all 0.5s;
@@ -14,35 +14,37 @@
   font-weight: 500;
 }
 
-.btn-outline {
+.cap-button-outline {
   border-radius: 2.5px;
   background-color: rgba(98, 2, 238, 0);
   border: solid 0.5px rgba(0, 0, 0, 0.12);
-  
 }
 
-.btn > i {
+.cap-button > i {
   position: relative;
   left: -5px;
   font-weight: 500;
+  float: left;
+  top: 3px;
+  padding-right: 7px;
 }
 
-.btn-white {
+.cap-button-white {
   background-color: #fafafa;
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 0 0.5px 2.5px 0 rgba(0, 0, 0, 0.2), 0 1.5px 0.5px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
 }
 
-.btn-white:hover {
+.cap-button-white:hover {
   background-color: rgba(255, 255, 255, 0.15);
   color: rgba(0, 0, 0, 0.54);
 }
 
-.btn-white > i:hover {
+.cap-button-white > i:hover {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.btn:focus,
-.btn:active {
+.cap-button:focus,
+.cap-button:active {
   outline: none;
 }

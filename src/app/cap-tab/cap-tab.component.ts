@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
-import { v4 as uuid } from "uuid";
+import BRCapUtil from "../../brcap-util";
 
 @Component({
   selector: "cap-tab",
@@ -17,7 +17,9 @@ export class CapTabComponent implements OnInit {
 
   ngOnInit() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_tab";
     }
   }
 }

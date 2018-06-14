@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { v4 as uuid } from "uuid";
+import BRCapUtil from "../../brcap-util";
 
 @Component({
   selector: "cap-divisor",
@@ -16,10 +16,12 @@ export class CapDivisorComponent implements OnInit {
 
   ngOnInit() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_divisor";
     }
     if (this.name) {
-      this.name = uuid();
+      this.name = BRCapUtil.guid();
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
 import { Subject } from "rxjs/Subject";
-import { v4 as uuid } from "uuid";
+import BRCapUtil from "../../brcap-util";
 
 const noop = () => {};
 
@@ -37,7 +37,9 @@ export class CapChipsComponent implements ControlValueAccessor, OnInit {
   ngOnInit() {
     if (null == this.name) throw new Error("Attribute 'name' is required");
     if (!this.id) {
-      this.id = uuid();
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_chips";
     }
   }
 

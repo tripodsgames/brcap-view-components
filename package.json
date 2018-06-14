@@ -1,6 +1,6 @@
 {
   "name": "brcap-view-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -35,8 +35,7 @@
     "tsickle": "^0.28.0",
     "toastr": "^2.1.2",
     "zone.js": "^0.8.4",
-    "icheck": "^1.0.2",
-    "uuid": "^3.2.1"
+    "icheck": "^1.0.2"
   },
   "devDependencies": {
     "@angular/cli": "1.0.4",

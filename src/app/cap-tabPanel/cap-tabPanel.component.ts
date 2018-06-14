@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ContentChild, QueryList, ContentChildren, AfterContentInit } from "@angular/core";
-import { v4 as uuid } from "uuid";
 import { CapTabComponent } from "../cap-tab/cap-tab.component";
+import BRCapUtil from "../../brcap-util";
 
 @Component({
   selector: "cap-tabPanel",
@@ -26,10 +26,12 @@ export class CapTabPanelComponent implements OnInit, AfterContentInit {
 
   ngOnInit() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_tabPanel";
     }
     if (this.name) {
-      this.name = uuid();
+      this.name = BRCapUtil.guid();
     }
   }
 
