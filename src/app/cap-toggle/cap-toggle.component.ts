@@ -25,7 +25,6 @@ export class CapToggleComponent implements ControlValueAccessor, OnInit {
   @Input("itemLabel") itemLabel: string;
   @Input("disabled") disabled: boolean;
   @Input("styleClass") styleClass: string;
-  @Input("items") items: Array<any>;
 
   private $el: any;
   private innerValue: any = "";
@@ -36,6 +35,7 @@ export class CapToggleComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     if (null == this.name) throw new Error("Attribute 'name' is required");
+    if (null == this.itemLabel) throw new Error("Attribute 'itemLabel' is required");
     if (!this.id) {
       this.id = BRCapUtil.guid();
     } else {

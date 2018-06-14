@@ -25,7 +25,6 @@ export class CapChipsComponent implements ControlValueAccessor, OnInit {
   @Input("itemLabel") itemLabel: string;
   @Input("disabled") disabled: boolean;
   @Input("styleClass") styleClass: string;
-  @Input("items") items: Array<any>;
 
   private $el: any;
   private innerValue: any = "";

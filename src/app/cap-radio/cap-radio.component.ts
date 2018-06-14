@@ -26,7 +26,6 @@ export class CapRadioComponent implements ControlValueAccessor, OnInit {
   @Input("itemValue") itemValue: any;
   @Input("disabled") disabled: boolean;
   @Input("styleClass") styleClass: string;
-  @Input("items") items: Array<any>;
 
   private $el: any;
   private innerValue: any = "";
