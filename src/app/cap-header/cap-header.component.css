@@ -102,6 +102,7 @@ header {
   position: relative;
   top: 30px;
   left: 25px;
+  display: table-cell;
 }
 
 .divisor {

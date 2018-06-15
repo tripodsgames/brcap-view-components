@@ -1,4 +1,4 @@
-<button class="cap-button {{styleClass}}" [disabled]="disabled">{{label}}
+<button class="cap-button {{styleClass}}" [disabled]="disabled == true">{{label}}
   <i *ngIf="icon" class="fa {{icon}}"></i>
   <i *ngIf="loader" class="loader fa fa-spinner fa-spin"></i>
   <ng-content></ng-content>

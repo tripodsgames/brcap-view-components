@@ -13,7 +13,7 @@ declare var $: any;
 export class CapButtonComponent {
   @Input("id") id: string;
   @Input("label") label: string;
-  @Input("disabled") disabled: string;
+  @Input("disabled") disabled: boolean;
   @Input("icon") icon: string;
   @Input("loader") loader: boolean;
   @Input("styleClass") styleClass: string;
