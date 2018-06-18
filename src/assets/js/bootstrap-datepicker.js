@@ -1673,7 +1673,7 @@ var defaults = $.fn.datepicker.defaults = {
   beforeShowDecade: $.noop,
   beforeShowCentury: $.noop,
   calendarWeeks: false,
-  clearBtn: false,
+  clearBtn: true,
   toggleActive: false,
   daysOfWeekDisabled: [],
   daysOfWeekHighlighted: [],
@@ -1724,7 +1724,7 @@ var dates = $.fn.datepicker.dates = {
 		monthsShort: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
 		today: "Hoje",
 		monthsTitle: "Meses",
-		clear: "Limpar",
+		clear: "Limpar Seleção",
     titleFormat: "MM yyyy"
   }
 };
@@ -1928,7 +1928,8 @@ var DPGlobal = {
     }
     return date.join('');
   },
-  headTemplate: '<thead>'+
+  headTemplate: '<span class="line-up"></span><span class="line-down"></span>'+
+  '<thead>'+
                   '<tr>'+
                     '<th colspan="7" class="datepicker-title"></th>'+
                   '</tr>'+
@@ -1984,7 +1985,7 @@ DPGlobal.template = '<div class="datepicker">'+
                 DPGlobal.footTemplate+
               '</table>'+
             '</div>'+
-          '</div>';
+          '</div> ';
 
 $.fn.datepicker.DPGlobal = DPGlobal;
 

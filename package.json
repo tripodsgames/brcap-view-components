@@ -26,7 +26,7 @@
     "core-js": "^2.4.1",
     "moment": "^2.22.1",
     "bootstrap": "3.3.7",
-    "jquery": "3.3.1",
+    "jquery": "2.2.4",
     "jquery-mask-plugin": "1.14.15",
     "materialize-css": "^0.100.2",
     "font-awesome": "^4.7.0",

@@ -23,6 +23,7 @@ import { CapTabPanelComponent } from "../cap-tabPanel/cap-tabPanel.component";
 import { CapTabComponent } from "../cap-tab/cap-tab.component";
 import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
 import { CapCardComponent } from "../cap-card/cap-card.component";
+import { CapTableComponent } from "../cap-table/cap-table.component";
 
 @NgModule({
   imports: [CommonModule, FormsModule, BrowserAnimationsModule],
@@ -47,7 +48,8 @@ import { CapCardComponent } from "../cap-card/cap-card.component";
     CapTabPanelComponent,
     CapTabComponent,
     CapDivisorComponent,
-    CapCardComponent
+    CapCardComponent,
+    CapTableComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -70,7 +72,8 @@ import { CapCardComponent } from "../cap-card/cap-card.component";
     CapTabPanelComponent,
     CapTabComponent,
     CapDivisorComponent,
-    CapCardComponent
+    CapCardComponent,
+    CapTableComponent
   ]
 })
 export class BRCapModule {}

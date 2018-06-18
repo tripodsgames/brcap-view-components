@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, Output, ElementRef, EventEmitter, ViewChild, AfterContentInit } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ViewEncapsulation, Output, ElementRef, EventEmitter, ViewChild, AfterContentInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 
 const noop = () => {};
@@ -15,7 +15,8 @@ declare var $: any;
   selector: "cap-datepicker",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-datepicker.component.html",
-  styleUrls: ["./cap-datepicker.component.css"]
+  styleUrls: ["./cap-datepicker.component.css"],
+  encapsulation: ViewEncapsulation.None
 })
 export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;

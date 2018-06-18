@@ -17,6 +17,26 @@ export class AppComponent implements OnInit {
   checkSelecionado1;
   checkSelecionado2;
   checkSelecionado3;
+  data;
+
+  table = [
+    {
+      "Nome": "Teste 1",
+      "E-mail": "Abc@gmail.com"
+    },
+    {
+      "Nome": "Teste 4",
+      "E-mail": "Ab345345c@gmail.com"
+    },
+    {
+      "Nome": "Teste 3",
+      "E-mail": "Ab21214c@gmail.com"
+    },
+    {
+      "Nome": "Teste 2",
+      "E-mail": "Abc@gmail.com"
+    }
+  ];
 
   ngOnInit() {
     this.colors = {

@@ -1,0 +1,34 @@
+.cap-table.table {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 500;
+}
+
+.cap-table.table-striped > tbody > tr {
+  background-color: #fff;
+}
+
+.cap-table.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.cap-table.table-striped > thead > tr > th {
+  background-color: rgba(117, 117, 117, 0.2);
+  color: #4a4a4a;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+}
+
+.cap-table.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: rgba(117, 117, 117, 0.1);
+}
+
+.cap-table.table > tbody > tr > td {
+  color: #000;
+}
+
+.cap-table.table > tbody > tr > td,
+.cap-table.table > thead > tr > th {
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,15 @@
+<table [id]="id" #table class="table cap-table table-hover table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let c of colunas">{{c}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of value">
+      <td *ngFor="let c of colunas">
+        {{v[c]}}
+      </td>
+    </tr>
+  </tbody>
+
+</table>
