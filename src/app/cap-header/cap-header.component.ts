@@ -16,7 +16,7 @@ export class CapHeaderComponent implements OnInit {
   @Input("rotaPerfil") rotaPerfil: string;
   @ViewChild("logoHeader") logoHeader: ElementRef;
   @ViewChild("elementIcon") elementIcon: CapIconComponent;
-  @Output() doLogin = new EventEmitter()
+  @Output() login = new EventEmitter()
 
   constructor() {}
 
@@ -55,12 +55,13 @@ export class CapHeaderComponent implements OnInit {
   }
  
   logar() {
-    this.doLogin.emit(this.username);
+    this.login.emit(this.username);
   }
 
   toggleMenu() {
     $(".cap-menu").toggle();
     $(".logo").toggle();
+    $("body").toggleClass("minimizado");
     $(".label-projeto").toggleClass("fechado");
     $("#menu-toggle").toggleClass("is-active");
     if ( $("#menu-toggle").hasClass("is-active") && window.screen.width < 480) {

@@ -1,7 +1,17 @@
-<br/>
-<br/>
-<br/>
+<div id="wrapper">
+    <cap-header username="Felipe" (login)="login($event)">
+    </cap-header>
+    <cap-menu [value]="items"  [colors]="colors" ></cap-menu>
+    <div class="content-wrapper">
 
-<cap-header username="Felipe">
-</cap-header>
-<cap-menu [value]="items" (login)="teste($event)" [colors]="colors" ></cap-menu>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        Teste
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

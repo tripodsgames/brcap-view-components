@@ -1,16 +1,10 @@
 .main-header {
-  position: absolute;
-  max-height: 100px;
-  z-index: 1030;
-  top: 0px;
-  width: 100%;
+    position: relative;
+    max-height: 100px;
+    z-index: 1030;
+      box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
-
-header {
-  display: block;
-
-  box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.5);
-}
+ 
 
 .main-header .logo {
   -webkit-transition: width 0.3s ease-in-out;
@@ -30,9 +24,11 @@ header {
 }
 
 .main-header .logo {
-  color: #fff;
-  background-color: #ffb72a;
-  border-bottom: 0 solid transparent;
+    color: #fff;
+    background-color: #ffb72a;
+    border-bottom: 0 solid transparent;
+    z-index: 3;
+    position: relative;
 }
 
 .main-header .sidebar-toggle {

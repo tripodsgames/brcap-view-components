@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
     console.log(this.items);
   }
 
-  teste(event) {
+  login(event) {
     alert("LOGOU!");
     console.log("CHEGOUE AQUI")
   }
