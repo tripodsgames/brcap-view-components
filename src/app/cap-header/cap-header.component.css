@@ -1,7 +1,9 @@
 .main-header {
-  position: relative;
-  max-height: 112px;
+  position: absolute;
+  max-height: 100px;
   z-index: 1030;
+  top: 0px;
+  width: 100%;
 }
 
 header {
@@ -29,16 +31,12 @@ header {
 
 .main-header .logo {
   color: #fff;
+  background-color: #ffb72a;
   border-bottom: 0 solid transparent;
 }
 
 .main-header .sidebar-toggle {
-  float: left;
-  background-color: transparent;
-  background-image: none;
-  font-size: 30px;
-  padding-right: 15px;
-  color: rgba(0, 0, 0, 0.54);
+  transform: scale(0.6);
 }
 
 .main-header .sidebar-toggle:hover,
@@ -79,8 +77,8 @@ header {
 
 .user-menu {
   position: relative;
-  top: -10px;
-  right: 30px;
+  top: -17px;
+  right: 65%;
 }
 
 .user-body {
@@ -101,8 +99,7 @@ header {
 .label-projeto {
   position: relative;
   top: 30px;
-  left: 25px;
-  display: table-cell;
+  vertical-align: middle;
 }
 
 .divisor {
@@ -134,13 +131,40 @@ header {
 }
 
 .dropdown-menu > a > li:hover {
-  background-color: #fefe !important;
+  border-left: 5px solid #ffb72a;
+}
+
+.dropdown-menu > a > li:hover span {
+  position: relative;
+  left: -5px;
 }
 
 .dropdown-menu {
   padding: 0px 0 !important;
+  left: -65px;
 }
 
 .navbar {
   border: none !important;
+}
+
+.navbar-nav {
+  margin: 0px;
+}
+ 
+
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu {
+    background-color: #FFF;
+  }
+
+  .navbar-custom-menu > ul > li.open > a > i {
+    position: relative;
+    left: 158px;
+  }
+  
+  .user-menu.open {
+    right:25%;
+  }
+  
 }

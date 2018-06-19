@@ -21,7 +21,9 @@
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
         "../src/assets/css/iconmoon.css",
+        "../src/assets/css/brcap-ico.css",
         "../src/assets/css/brcap.css",
+        "../src/assets/css/hamburgers.css",
         "../src/assets/css/font-awesome.min.css",
         "../src/assets/css/dragtable.css"
       ],

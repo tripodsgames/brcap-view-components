@@ -40,8 +40,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.colors = {
-      backgroundColor: "#A5761B",
-      hoverColor: "#B8841F"
+      corPrincipal: "#A5761B",
+      corSecundaria: "#B8841F"
     };
     this.radios = [
       {
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
     this.items = [
       {
         label: "Comissão",
-        icon: "fa fa-usd",
+        icon: "calendario",
         items: [
           {
             label: "Consulta Comissão",
@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
       },
       {
         label: "Recebimento",
-        icon: "fa fa-money",
+        icon: "mais-opcoes",
         items: [
           {
             label: "Consulta Cobrança",
@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
       },
       {
         label: "Permissões",
-        icon: "fa fa-key",
+        icon: "check-circulo",
         items: [
           {
             label: "Controle de Acesso",
@@ -99,5 +99,10 @@ export class AppComponent implements OnInit {
       }
     ];
     console.log(this.items);
+  }
+
+  teste(event) {
+    alert("LOGOU!");
+    console.log("CHEGOUE AQUI")
   }
 }

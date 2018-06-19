@@ -1,5 +1,8 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit } from "@angular/core";
+import { Component, forwardRef, Input, Output, OnInit, ElementRef, ViewChild, AfterViewInit, EventEmitter, DoCheck } from "@angular/core";
 import { trigger, style, animate, transition } from "@angular/animations";
+import { CapIconComponent } from "../cap-icon/cap-icon.component";
+
+declare var $: any;
 
 @Component({
   selector: "cap-header",
@@ -12,6 +15,8 @@ export class CapHeaderComponent implements OnInit {
   @Input("username") username: string;
   @Input("rotaPerfil") rotaPerfil: string;
   @ViewChild("logoHeader") logoHeader: ElementRef;
+  @ViewChild("elementIcon") elementIcon: CapIconComponent;
+  @Output() doLogin = new EventEmitter()
 
   constructor() {}
 
@@ -43,5 +48,28 @@ export class CapHeaderComponent implements OnInit {
     if (this.colors) {
       this.logoHeader.nativeElement.style.background = this.colors.corSecundaria;
     }
+    if (window.screen.width < 767) {
+      this.toggleMenu();
+    }
+ 
   }
+ 
+  logar() {
+    this.doLogin.emit(this.username);
+  }
+
+  toggleMenu() {
+    $(".cap-menu").toggle();
+    $(".logo").toggle();
+    $(".label-projeto").toggleClass("fechado");
+    $("#menu-toggle").toggleClass("is-active");
+    if ( $("#menu-toggle").hasClass("is-active") && window.screen.width < 480) {
+      $("#logo-img").hide();
+    } else {
+      $("#logo-img").show();
+    }
+  }
+
+
+
 }

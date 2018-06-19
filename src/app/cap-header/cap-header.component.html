@@ -8,10 +8,12 @@
 
   <nav class="navbar navbar-static-top">
     <div class="label-projeto">
-      <a href="#" class="sidebar-toggle" (click)="toggleMenu()" data-toggle="push-menu" role="button">
-        <span class="icomoon icon-arrow-left2"></span>
-      </a>
-      <img src="../../assets/img/produtos.svg">
+      <div id="menu-toggle" class="sidebar-toggle hamburger hamburger--arrowturn js-hamburger is-active" (click)="toggleMenu()">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
+      <img id="logo-img" src="../../assets/img/produtos.svg">
     </div>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
@@ -24,14 +26,14 @@
             <a [href]="rotaPerfil">
               <li class="user-body">
                 <span>Perfil</span>
-                <i class="fa fa-user"></i>
+                <cap-icon icon="usuario" styleClass="pull-right" [size]="24"></cap-icon>
               </li>
             </a>
             <span class="divisor"></span>
-            <a href="#">
+            <a href="#" (click)="logar()">
               <li class="user-body">
                 <span>Logout</span>
-                <i class="fa fa-sign-out"></i>
+                <cap-icon icon="sair" styleClass="pull-right" [size]="24"></cap-icon>
               </li>
             </a>
           </ul>

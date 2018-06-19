@@ -2,12 +2,6 @@
 <br/>
 <br/>
 
-
-
-
-<div class="container">
-  <div class="col-md-3">
-    <cap-table [value]="table" [draggable]="true"></cap-table>
-  </div>
-  {{data}}
-</div>
+<cap-header username="Felipe">
+</cap-header>
+<cap-menu [value]="items" (login)="teste($event)" [colors]="colors" ></cap-menu>

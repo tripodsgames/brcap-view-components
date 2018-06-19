@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "brcap-ico";
+  src: url("../fonts/brcap-ico/brcap-icon.ttf?mmqvqv") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.brcap-ico {
+  font-family: "brcap-ico" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.menu:before {
+  content: "\e900";
+}
+.voltar:before {
+  content: "\e901";
+}
+.usuario:before {
+  content: "\e913";
+}
+.sair:before {
+  content: "\e90f";
+}
+.calendario:before {
+  content: "\e906";
+}
+.mais-opcoes:before {
+  content: "\e90d";
+}
+
+.check-circulo:before {
+  content: "\e907";
+}
+
+.favorito:before {
+  content: "\e90b";
+}
+

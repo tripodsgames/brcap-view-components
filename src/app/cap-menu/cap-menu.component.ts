@@ -35,6 +35,8 @@ export class CapMenuComponent implements OnInit {
   ngOnInit() {
     if (this.width) {
       this.divMenu.nativeElement.style.width = this.width + "px";
+    } else {
+      this.divMenu.nativeElement.style.width = "225px";
     }
     if (this.modulo) {
       this.colors = this.paletaCoresSitemas[this.modulo].cores;
@@ -43,4 +45,6 @@ export class CapMenuComponent implements OnInit {
       this.divMenu.nativeElement.style.background = this.colors.corPrincipal;
     }
   }
+
+
 }
