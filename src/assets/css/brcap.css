@@ -52,6 +52,11 @@ body,html {
     padding-right: 15px;
 }
 
+.content-header {
+    position: relative;
+    padding: 0px 15px 0 15px;
+}
+
 .box {
     position: relative;
     border-radius: 3px;
@@ -62,11 +67,13 @@ body,html {
     padding: 15px;
 }
 .navbar {
-      background-color: #fff;
+    background-color: #fff;
     z-index: 1;
+    max-height: 100px;
+    height:100px;
 }
 
-.h1-brcap {
+h1 {
   font-family: "Ubuntu";
   font-size: 35px;
   letter-spacing: 0.2px;
@@ -74,7 +81,7 @@ body,html {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.h2-brcap {
+h2 {
   font-family: Ubuntu;
   font-size: 25px;
   font-weight: normal;
@@ -82,7 +89,7 @@ body,html {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.h3-brcap {
+h3 {
   font-family: Ubuntu;
   font-size: 21px;
   font-weight: normal;
