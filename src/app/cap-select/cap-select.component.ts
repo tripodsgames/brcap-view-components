@@ -1,5 +1,6 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit,ViewEncapsulation } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+import BRCapUtil from "../../brcap-util";
 
 const noop = () => {};
 
@@ -7,9 +8,9 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CapSelectComponent),
   multi: true
-};
+}; 
 
-declare var $: any;
+declare var $: any; 
 
 @Component({
   selector: "cap-select",
@@ -18,13 +19,14 @@ declare var $: any;
   },
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-select.component.html",
-  styleUrls: ["./cap-select.component.css"]
+  styleUrls: ["./cap-select.component.css"],
+  encapsulation: ViewEncapsulation.None
 })
-export class CapSelectComponent implements ControlValueAccessor, AfterViewInit {
+export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("styleClass") styleClass: string;
-  @Input("options") options: string;
+  @Input("options") options: string; 
   @Input("itemLabel") itemLabel: string;
   @Input("itemValue") itemValue: string;
   @Input("labelOptionAll") labelOptionAll: string;
@@ -33,23 +35,24 @@ export class CapSelectComponent implements ControlValueAccessor, AfterViewInit {
   @Input("optionAll") optionAll: boolean;
 
   @ViewChild("select") select;
-
+ 
   private $el: any;
   private innerValue: any = "";
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
-  }
-
-  ngAfterViewInit() {
-    // TODO: tratamento paleativo, necessário rever css.
-    setTimeout(() => {
-      $(".caret").text("");
-    }, 100);
-  }
+  }  
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
+
+  ngOnInit() {
+    if (!this.id) {
+      this.id = BRCapUtil.guid();
+    } else {
+      this.id += "_input";
+    }
+  }
 
   get value(): any {
     return this.innerValue;

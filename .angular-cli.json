@@ -25,6 +25,7 @@
         "../src/assets/css/brcap.css",
         "../src/assets/css/hamburgers.css",
         "../src/assets/css/font-awesome.min.css",
+        "../src/assets/css/bootstrap-select.min.css",
         "../src/assets/css/dragtable.css"
       ],
       "scripts": [
@@ -33,6 +34,7 @@
         "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../src/assets/js/bootstrap-datepicker.js",
         "../src/assets/js/bootstrap-datepicker.pt-BR.js",
+        "../src/assets/js/bootstrap-select.min.js",        
         "../src/assets/js/jquery-ui.min.js",
         "../src/assets/js/jquery.dragtable.js"
       ],

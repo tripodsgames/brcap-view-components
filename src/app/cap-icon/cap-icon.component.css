@@ -18,3 +18,13 @@ ul.list .icon-menu {
   padding-right: 5px;
   font-size: 16px;
 }
+
+.ico-ver-senha {
+    float: right;
+    position: relative;
+    top: -60px;
+    right: 15px;
+    font-size: 20px;
+    z-index: 2;
+    cursor:pointer;
+}

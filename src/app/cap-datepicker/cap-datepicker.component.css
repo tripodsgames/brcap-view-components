@@ -7,7 +7,26 @@
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  z-index: 1;
+  top: -24px;
 }
+
+.content-header .cap-inputText {
+    background-color: #EDCC8B;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+    border-radius: 0px;
+    padding-top: 20px; 
+    color: rgba(0, 0, 0, 0.87);
+} 
+
+.content-header label {
+    background: transparent;
+    top: 0px;
+    left: 9px;
+}
+ 
 
 .cap-inputText.sm {
   height: 40px;
@@ -35,9 +54,10 @@ label {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.87);
   position: relative;
-  top: 12px;
+  top: -10px; 
   left: 10px;
   padding: 0px 3px;
+  z-index: 3;  
 }
 
 label.error {
@@ -71,12 +91,12 @@ label.disabled {
 }
 
 .icon-calendar {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 10px;
-  font-size: 18px !important;
-  cursor: pointer;
+    float: right;
+    position: relative;
+    top: -60px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 3;
 }
 
 ::placeholder {

@@ -35,11 +35,18 @@
 .mais-opcoes:before {
   content: "\e90d";
 }
-
+.seta-baixo:before {
+  content: "\e911";
+}
 .check-circulo:before {
   content: "\e907";
 }
-
+.ver-senha:before {
+  content: "\e916";
+}
+.esconder-senha:before {
+  content: "\e909";
+}
 .favorito:before {
   content: "\e90b";
 }
