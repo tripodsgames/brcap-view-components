@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   item = false;
   radios = [];
+  combo;
   radioSelecionado = [];
   checkSelecionado1;
   checkSelecionado2;
@@ -98,11 +99,9 @@ export class AppComponent implements OnInit {
         ]
       }
     ];
-    console.log(this.items);
   }
 
   login(event) {
     alert("LOGOU!");
-    console.log("CHEGOUE AQUI")
   }
 }

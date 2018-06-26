@@ -7,7 +7,7 @@
       <cap-icon icon="ion-ios-arrow-up animated bounceIn" *ngIf="value?.items && exibir" styleClass="icon-arrow"></cap-icon>
     </div>
   </a>
-  <ul *ngIf="value.items && exibir" [@fadeInOut] class="list">
+  <ul *ngIf="value.items && exibir" class="list">
     <li *ngFor="let item of value.items">
       <cap-menuItem [value]="item" principal="true" *ngIf="item.items" [colors]="colors"></cap-menuItem>
       <cap-menuItem [value]="item" principal="false" *ngIf="!item.items" [colors]="colors"></cap-menuItem>
@@ -22,7 +22,7 @@
     <cap-icon icon="ion-ios-arrow-down animated bounceIn" *ngIf="value?.items && !exibir" styleClass="icon-arrow"></cap-icon>
     <cap-icon icon="ion-ios-arrow-up animated bounceIn" *ngIf="value?.items && exibir" styleClass="icon-arrow"></cap-icon>
   </div>
-  <ul *ngIf="value.items  && exibir" [@fadeInOut] class="list">
+  <ul *ngIf="value.items  && exibir" class="list">
     <li *ngFor="let item of value.items">
       <cap-menuItem [value]="item" principal="true" *ngIf="item.items" [colors]="colors"></cap-menuItem>
       <cap-menuItem [value]="item" principal="false" *ngIf="!item.items" [colors]="colors"></cap-menuItem>

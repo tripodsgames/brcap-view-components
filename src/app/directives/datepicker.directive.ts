@@ -1,5 +1,7 @@
 import { Directive, OnInit, Renderer, ElementRef } from "@angular/core";
-declare var $: any;
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
+import "../../assets/js/bootstrap-datepicker.js";
 
 @Directive({
   selector: "[datepicker]",
@@ -20,7 +22,7 @@ export class DatepickerDirective {
       .ready(function() {
         $(".datepicker").datepicker({
           format: "dd/mm/yyyy",
-          clearBtn: true
+          locale: "pt-BR"
         });
       })
       .on("changeDate", event => {

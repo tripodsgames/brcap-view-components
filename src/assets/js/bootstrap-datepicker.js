@@ -1704,8 +1704,8 @@ var defaults = $.fn.datepicker.defaults = {
   immediateUpdates: false,
   title: '',
   templates: {
-    leftArrow: '<i class="fa fa-angle-left"></i>',
-    rightArrow: '<i class="fa fa-angle-right"></i>'
+    leftArrow: '<i class="brcap-ico anterior"></i>',
+    rightArrow: '<i class="brcap-ico seguir"></i>'
   },
   showWeekDays: true
 };

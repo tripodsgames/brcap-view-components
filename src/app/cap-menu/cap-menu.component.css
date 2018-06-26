@@ -1,6 +1,6 @@
 .cap-menu {
   height: 100%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   padding-top: 115px;

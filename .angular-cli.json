@@ -15,29 +15,8 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
-        "../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
-        "../src/assets/css/iconmoon.css",
-        "../src/assets/css/brcap-ico.css",
-        "../src/assets/css/brcap.css",
-        "../src/assets/css/hamburgers.css",
-        "../src/assets/css/font-awesome.min.css",
-        "../src/assets/css/bootstrap-select.min.css",
-        "../src/assets/css/dragtable.css"
-      ],
-      "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/jquery-mask-plugin/dist/jquery.mask.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../src/assets/js/bootstrap-datepicker.js",
-        "../src/assets/js/bootstrap-datepicker.pt-BR.js",
-        "../src/assets/js/bootstrap-select.min.js",        
-        "../src/assets/js/jquery-ui.min.js",
-        "../src/assets/js/jquery.dragtable.js"
-      ],
+      "styles": ["styles.css", "../node_modules/bootstrap/dist/css/bootstrap.css", "../src/assets/css/brcap.css"],
+      "scripts": ["../node_modules/bootstrap/dist/js/bootstrap.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

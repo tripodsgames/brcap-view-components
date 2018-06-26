@@ -4,8 +4,7 @@ import { trigger, style, animate, transition } from "@angular/animations";
 @Component({
   selector: "cap-menuItem",
   templateUrl: "./cap-menuItem.component.html",
-  styleUrls: ["./cap-menuItem.component.css"],
-  animations: [trigger("fadeInOut", [transition(":enter", [style({ opacity: 0 }), animate(500, style({ opacity: 1 }))]), transition(":leave", [animate(250, style({ opacity: 0 }))])])]
+  styleUrls: ["./cap-menuItem.component.css"]
 })
 export class CapMenuItemComponent implements OnInit {
   @Input("id") id: string;

@@ -13,20 +13,19 @@
 }
 
 .content-header .cap-inputText {
-    background-color: #EDCC8B;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.54);
-    border-radius: 0px;
-    padding-top: 20px; 
-    color: rgba(0, 0, 0, 0.87);
-} 
+  background-color: #edcc8b;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 0px;
+  padding-top: 20px;
+  color: rgba(0, 0, 0, 0.87);
+}
 
 .content-header label {
-    background: transparent;
-    top: 0px;
-    left: 9px;
+  background: transparent;
+  top: 0px;
+  left: 9px;
 }
- 
 
 .cap-inputText.sm {
   height: 40px;
@@ -54,10 +53,10 @@ label {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.87);
   position: relative;
-  top: -10px; 
+  top: -10px;
   left: 10px;
   padding: 0px 3px;
-  z-index: 3;  
+  z-index: 3;
 }
 
 label.error {
@@ -91,12 +90,12 @@ label.disabled {
 }
 
 .icon-calendar {
-    float: right;
-    position: relative;
-    top: -60px;
-    right: 10px;
-    cursor: pointer;
-    z-index: 3;
+  float: right;
+  position: relative;
+  top: -60px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 3;
 }
 
 ::placeholder {
@@ -126,14 +125,22 @@ input:disabled:-ms-input-placeholder {
 
 .datepicker td {
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.old.day,
+.new.day {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .datepicker-days > table > tfoot > tr:nth-child(2) > th {
   padding: 0px 0px 0px 0px;
   position: relative;
-  top: -10px;
+  top: -5px;
   height: 0px;
   font-weight: 500;
+  text-align: center;
+  cursor: pointer;
 }
 .datepicker-days {
   position: relative;
@@ -145,7 +152,7 @@ input:disabled:-ms-input-placeholder {
   height: 1px;
   display: block;
   position: relative;
-  top: 44px;
+  top: 45px;
   left: -28px;
   opacity: 0.12;
   background-color: rgba(0, 0, 0, 0.87);
@@ -163,21 +170,21 @@ input:disabled:-ms-input-placeholder {
   height: 1px;
   display: block;
   position: relative;
-  top: 305px;
+  top: 320px;
   left: -28px;
   opacity: 0.12;
   background-color: rgba(0, 0, 0, 0.87);
 }
 
 .datepicker-months .line-down {
-  top: 193px;
+  top: 205px;
   left: 0px;
 }
 
 .datepicker-years .line-down,
 .datepicker-decades .line-down,
 .datepicker-centuries .line-down {
-  top: 204px;
+  top: 194px;
   left: 0px;
 }
 
@@ -194,11 +201,15 @@ input:disabled:-ms-input-placeholder {
   font-size: 14px !important;
   position: relative;
   top: -13px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .datepicker-months .datepicker-switch {
   position: relative;
   top: 0px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .datepicker table.table-condensed tbody tr {
@@ -238,6 +249,8 @@ input:disabled:-ms-input-placeholder {
 .datepicker .next,
 .datepicker .prev {
   font-size: 22px !important;
+  text-align: center;
+  cursor: pointer;
 }
 
 .dropdown-menu {
@@ -250,6 +263,12 @@ input:disabled:-ms-input-placeholder {
 .datepicker-centuries span.century {
   border-radius: 50% !important;
 }
+.datepicker-years .datepicker-switch,
+.datepicker-decades .datepicker-switch,
+.datepicker-centuries .datepicker-switch {
+  text-align: center;
+  cursor: pointer;
+}
 
 .datepicker td.day,
 .datepicker th.dow {
@@ -260,6 +279,7 @@ input:disabled:-ms-input-placeholder {
   font-weight: 500;
   position: relative;
   top: -20px;
+  text-align: center;
 }
 
 .datepicker table tr td.day.focused,
@@ -270,16 +290,25 @@ input:disabled:-ms-input-placeholder {
   color: #fff;
 }
 
+.datepicker table tr span.month:focused,
+.datepicker table tr span.month:hover {
+  background-color: rgb(0, 151, 167) !important;
+  background-image: none !important;
+  opacity: 0.6;
+  color: #fff;
+}
+
 .datepicker-months,
 .datepicker-years {
   width: 260px !important;
+  text-align: center;
 }
 
 .dow {
   font-size: 9px !important;
   font-weight: 600 !important;
-  padding-top: 15px !important;
-  padding-bottom: 7px !important;
+  padding-top: 20px !important;
+  padding-bottom: 10px !important;
   position: relative;
   top: -20px;
 }
@@ -357,6 +386,8 @@ input:disabled:-ms-input-placeholder {
   font-weight: 500;
   font-size: 10px;
   text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
 }
 
 .datepicker-months > table > thead > tr:nth-child(2) > th.next,
@@ -369,4 +400,8 @@ input:disabled:-ms-input-placeholder {
 .datepicker-days > table {
   border-spacing: 0px 7px;
   border-collapse: inherit;
+}
+
+.datepicker-months > table > tbody > tr > td {
+  padding: 15px 10px;
 }

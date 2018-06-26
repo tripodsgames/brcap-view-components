@@ -4,21 +4,23 @@
   font-weight: 500;
 }
 
-.bootstrap-select>.dropdown-toggle {
+.bootstrap-select > .dropdown-toggle {
   height: 50px;
   border-color: #757575;
 }
 
-.bootstrap-select>.dropdown-toggle:hover,
-.bootstrap-select>.dropdown-toggle:focus,
-.bootstrap-select>.dropdown-toggle:active,
+.bootstrap-select > .dropdown-toggle:hover,
+.bootstrap-select > .dropdown-toggle:focus,
+.bootstrap-select > .dropdown-toggle:active,
 .open > .dropdown-toggle.btn-default:hover,
 .open > .dropdown-toggle.btn-default:active,
-.open > .dropdown-toggle.btn-default:focus
-.open > .dropdown-toggle.btn-default,
-.btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{ 
+.open > .dropdown-toggle.btn-default:focus .open > .dropdown-toggle.btn-default,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
   background-color: #fff;
-    border-color: #757575;
+  border-color: #757575;
+  box-shadow: none;
 }
 
 .bootstrap-select .dropdown-toggle:focus {
@@ -26,7 +28,7 @@
 }
 
 .btn-group.open .dropdown-toggle {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .bootstrap-select.form-control {
@@ -44,24 +46,27 @@
 }
 
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li:hover  {
+.dropdown-menu > li:hover {
   background-color: #efefef;
 }
 
-.bootstrap-select.btn-group .dropdown-menu li { 
-    outline: none;
+.bootstrap-select.btn-group .dropdown-menu li {
+  outline: none;
 }
- 
+
 .bootstrap-select.btn-group .dropdown-menu li a {
-    border-top: 1px solid #ddd;
-    padding-left: 2px;
-    height: 45px;
-    padding-top: 14px;
-    outline: none !important;
-    margin-left: 11px;
+  border-top: 1px solid #ddd;
+  padding-left: 2px;
+  height: 45px;
+  padding-top: 14px;
+  outline: none !important;
+  margin-left: 11px;
 }
 
 .bootstrap-select.btn-group .dropdown-menu li:first-child a {
-    border-top: none; 
+  border-top: none;
 }
- 
+
+.dropdown-menu.open {
+  display: block !important;
+}

@@ -1,8 +1,5 @@
 <label [for]="id" class="{{textError}} {{disabled ? 'disabled' : ''}} " *ngIf="label?.length">
   {{label}}</label>
-<select [(ngModel)]="value" selectpicker class="form-control">
-  <option>Teste1</option>
-  <option>Teste2</option>
-  <option>Teste3</option>
-  <option>Teste4</option>
-<select>
+<select [(ngModel)]="value" selectpicker class="selectpicker form-control">
+  <ng-content></ng-content>
+  <select>

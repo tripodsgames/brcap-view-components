@@ -1,14 +1,15 @@
-import { Directive, OnInit, Renderer, ElementRef } from "@angular/core";
-declare var $: any;
+import { Directive, OnInit, Renderer, ElementRef, AfterViewInit } from "@angular/core";
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
+import "../../assets/js/bootstrap-select.min.js";
 
 @Directive({
   selector: "[selectpicker]",
   host: {
-    "data-provide": "selectpicker",
     class: "selectpicker"
   }
 })
-export class SelectpickerDirective {
+export class SelectpickerDirective implements AfterViewInit {
   $el: any;
   constructor(private el: ElementRef, private renderer: Renderer) {
     this.$el = $(el.nativeElement);
@@ -16,7 +17,17 @@ export class SelectpickerDirective {
 
   ngAfterViewInit() {
     $(document).ready(function() {
-        $('.selectpicker').selectpicker();
+      $(".selectpicker").selectpicker();
+      $(".bootstrap-select")
+        .find(".dropdown-menu")
+        .removeClass("open");
+      $(".bootstrap-select").click(function() {
+        $(this)
+          .find(".dropdown-menu")
+          .toggleClass("open");
+        $(this).find(".brcap-ico").toggleClass("expandir");
+        $(this).find(".brcap-ico").toggleClass("anterior");
+      });
     });
   }
 }

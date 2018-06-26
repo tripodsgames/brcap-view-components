@@ -1,5 +1,7 @@
 import { Component, forwardRef, Input, OnInit, ViewEncapsulation, Output, ElementRef, EventEmitter, ViewChild, AfterContentInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+import * as jqueryProxy from 'jquery';
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};
 
@@ -9,7 +11,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-declare var $: any;
+
 
 @Component({
   selector: "cap-datepicker",

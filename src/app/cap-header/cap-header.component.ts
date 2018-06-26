@@ -7,13 +7,13 @@ declare var $: any;
 @Component({
   selector: "cap-header",
   templateUrl: "./cap-header.component.html",
-  styleUrls: ["./cap-header.component.css"],
-  animations: [trigger("fadeInOut", [transition(":enter", [style({ opacity: 0 }), animate(500, style({ opacity: 1 }))]), transition(":leave", [animate(250, style({ opacity: 0 }))])])]
+  styleUrls: ["./cap-header.component.css"]
 })
 export class CapHeaderComponent implements OnInit {
   @Input("modulo") modulo: string;
   @Input("username") username: string;
   @Input("rotaPerfil") rotaPerfil: string;
+  @Input("logo") logo: string;
   @ViewChild("logoHeader") logoHeader: ElementRef;
   @ViewChild("elementIcon") elementIcon: CapIconComponent;
   @Output() login = new EventEmitter()
@@ -51,9 +51,9 @@ export class CapHeaderComponent implements OnInit {
     if (window.screen.width < 767) {
       this.toggleMenu();
     }
- 
+
   }
- 
+
   logar() {
     this.login.emit(this.username);
   }

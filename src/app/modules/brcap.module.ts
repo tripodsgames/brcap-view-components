@@ -5,7 +5,6 @@ import { FormsModule } from "@angular/forms";
 import { CapSelectComponent } from "../cap-select/cap-select.component";
 import { CapDateRangePickerComponent } from "../cap-dateRangePicker/cap-dateRangePicker.component";
 import { DateRangeDirective } from "../directives/date-range.directive";
-import { SelectpickerDirective } from "../directives/selectpicker.directive";
 import { CapDatepickerComponent } from "../cap-datepicker/cap-datepicker.component";
 import { DatepickerDirective } from "../directives/datepicker.directive";
 import { CapButtonComponent } from "../cap-button/cap-button.component";
@@ -14,7 +13,6 @@ import { CapMenuItemComponent } from "../cap-menuItem/cap-menuItem.component";
 import { CapMenuComponent } from "../cap-menu/cap-menu.component";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
 import { CapRadioComponent } from "../cap-radio/cap-radio.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CapHeaderComponent } from "../cap-header/cap-header.component";
 import { CapInputTextAreaComponent } from "../cap-inputTextArea/cap-inputTextArea.component";
 import { CapCheckBoxComponent } from "../cap-checkbox/cap-checkbox.component";
@@ -26,10 +24,10 @@ import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
 import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
-
+import { SelectpickerDirective } from "../directives/selectpicker.directive";
 
 @NgModule({
-  imports: [CommonModule, FormsModule, BrowserAnimationsModule],
+  imports: [CommonModule, FormsModule],
   declarations: [
     CapInputTextComponent,
     CapDatepickerComponent,
@@ -53,17 +51,16 @@ import { CapPasswordComponent } from "../cap-password/cap-password.component";
     CapDivisorComponent,
     CapCardComponent,
     CapTableComponent,
-    SelectpickerDirective,
-    CapPasswordComponent
+    CapPasswordComponent,
+    SelectpickerDirective
   ],
   exports: [
     CapInputTextComponent,
-    CapSelectComponent,
     CapDatepickerComponent,
+    CapSelectComponent,
     CapDateRangePickerComponent,
     DateRangeDirective,
     DatepickerDirective,
-    SelectpickerDirective,
     CapButtonComponent,
     CapPaginationComponent,
     CapMenuItemComponent,
@@ -80,7 +77,8 @@ import { CapPasswordComponent } from "../cap-password/cap-password.component";
     CapDivisorComponent,
     CapCardComponent,
     CapTableComponent,
-    CapPasswordComponent
+    CapPasswordComponent,
+    SelectpickerDirective
   ]
 })
 export class BRCapModule {}

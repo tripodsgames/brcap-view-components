@@ -1,6 +1,8 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit,ViewEncapsulation } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
+import * as jqueryProxy from 'jquery';
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};
 
@@ -8,9 +10,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CapSelectComponent),
   multi: true
-}; 
-
-declare var $: any; 
+};
 
 @Component({
   selector: "cap-select",
@@ -26,7 +26,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("styleClass") styleClass: string;
-  @Input("options") options: string; 
+  @Input("options") options: string;
   @Input("itemLabel") itemLabel: string;
   @Input("itemValue") itemValue: string;
   @Input("labelOptionAll") labelOptionAll: string;
@@ -35,13 +35,13 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("optionAll") optionAll: boolean;
 
   @ViewChild("select") select;
- 
+
   private $el: any;
   private innerValue: any = "";
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
-  }  
+  }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
