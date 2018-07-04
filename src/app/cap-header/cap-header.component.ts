@@ -2,7 +2,8 @@ import { Component, forwardRef, Input, Output, OnInit, ElementRef, ViewChild, Af
 import { trigger, style, animate, transition } from "@angular/animations";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
 
-declare var $: any;
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-header",

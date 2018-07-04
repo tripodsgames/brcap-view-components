@@ -11,7 +11,8 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-declare var $: any;
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-password",
@@ -93,7 +94,7 @@ export class CapPasswordComponent implements AfterViewInit, ControlValueAccessor
   }
 
   show() {
-     this.input.nativeElement.type = 'text'; 
+     this.input.nativeElement.type = 'text';
      this.icone.icon = "esconder-senha";
   }
   hide() {

@@ -145,6 +145,12 @@ h3 {
   top: 10px;
 }
 
+.container-header {
+  padding: 50px;
+  margin-top: -20px;
+}
+
+
 /* !
 * BRCap Icones
 * @author Felipe Sousa

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 import BRCapUtil from "../../brcap-util";
-declare var $: any;
+import * as jQuery from "jquery";
+const $: JQueryStatic = (<any>jQuery).default || jQuery;
 
 @Component({
   selector: "cap-table",
@@ -32,9 +33,7 @@ export class CapTableComponent implements OnInit, AfterViewInit {
   }
 
   carregaDraggable() {
-    if (this.draggable) {
-      $("#" + this.id).dragtable();
-    }
+
   }
 
   carregarColunas() {

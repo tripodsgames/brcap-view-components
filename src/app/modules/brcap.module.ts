@@ -33,8 +33,6 @@ import { SelectpickerDirective } from "../directives/selectpicker.directive";
     CapDatepickerComponent,
     CapSelectComponent,
     CapDateRangePickerComponent,
-    DateRangeDirective,
-    DatepickerDirective,
     CapButtonComponent,
     CapPaginationComponent,
     CapMenuItemComponent,
@@ -52,15 +50,15 @@ import { SelectpickerDirective } from "../directives/selectpicker.directive";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    SelectpickerDirective
+    SelectpickerDirective,
+    DateRangeDirective,
+    DatepickerDirective
   ],
   exports: [
     CapInputTextComponent,
     CapDatepickerComponent,
     CapSelectComponent,
     CapDateRangePickerComponent,
-    DateRangeDirective,
-    DatepickerDirective,
     CapButtonComponent,
     CapPaginationComponent,
     CapMenuItemComponent,
@@ -78,7 +76,9 @@ import { SelectpickerDirective } from "../directives/selectpicker.directive";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    SelectpickerDirective
+    SelectpickerDirective,
+    DateRangeDirective,
+    DatepickerDirective
   ]
 })
 export class BRCapModule {}

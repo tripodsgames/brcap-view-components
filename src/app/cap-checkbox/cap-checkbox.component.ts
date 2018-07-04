@@ -3,6 +3,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@an
 import { Subject } from "rxjs/Subject";
 
 import BRCapUtil from "../../brcap-util";
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};
 
@@ -11,8 +13,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   useExisting: forwardRef(() => CapCheckBoxComponent),
   multi: true
 };
-
-declare var $: any;
 
 @Component({
   selector: "cap-checkbox",

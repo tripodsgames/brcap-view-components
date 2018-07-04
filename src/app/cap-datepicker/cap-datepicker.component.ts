@@ -2,6 +2,7 @@ import { Component, forwardRef, Input, OnInit, ViewEncapsulation, Output, Elemen
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import * as jqueryProxy from 'jquery';
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
+import "jquery-mask-plugin";
 
 const noop = () => {};
 

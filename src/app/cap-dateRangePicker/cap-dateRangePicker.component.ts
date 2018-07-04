@@ -1,6 +1,9 @@
-import { Component, forwardRef, Input, OnInit, Output, ElementRef, EventEmitter, ViewChild, AfterContentInit } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, Output, ElementRef, EventEmitter, ViewChild, AfterContentInit, ViewEncapsulation } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import { DateRangeDTO } from "../model/date-range.model";
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
+import "jquery-mask-plugin";
 
 const noop = () => {};
 
@@ -10,13 +13,12 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-declare var $: any;
-
 @Component({
   selector: "cap-dateRangePicker",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-dateRangePicker.component.html",
-  styleUrls: ["./cap-dateRangePicker.component.css"]
+  styleUrls: ["./cap-dateRangePicker.component.css"],
+  encapsulation: ViewEncapsulation.None
 })
 export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;

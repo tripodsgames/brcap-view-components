@@ -229,6 +229,7 @@ input:disabled:-ms-input-placeholder {
 
 .datepicker table tr td.range.day {
   border-radius: 0px !important;
+  background-color: rgba(0, 151, 167, 0.3) !important;
 }
 
 .datepicker table tr td.range-end.range-start {

@@ -1,7 +1,8 @@
 import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
-import { Subject } from "rxjs/Subject";
 import BRCapUtil from "../../brcap-util";
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};
 
@@ -10,8 +11,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   useExisting: forwardRef(() => CapChipsComponent),
   multi: true
 };
-
-declare var $: any;
 
 @Component({
   selector: "cap-chips",

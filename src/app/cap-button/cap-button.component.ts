@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
-
-declare var $: any;
+import * as jqueryProxy from "jquery";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-button",
@@ -17,7 +17,6 @@ export class CapButtonComponent {
   @Input("icon") icon: string;
   @Input("loader") loader: boolean;
   @Input("styleClass") styleClass: string;
-
 
   constructor() {}
 }
