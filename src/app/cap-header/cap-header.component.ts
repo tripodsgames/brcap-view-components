@@ -14,7 +14,8 @@ export class CapHeaderComponent implements OnInit {
   @Input("modulo") modulo: string;
   @Input("username") username: string;
   @Input("rotaPerfil") rotaPerfil: string;
-  @Input("logo") logo: string;
+  @Input("logoSistema") logoSistema: string;
+  @Input("logoBrasilCap") logoBrasilCap: string;
   @ViewChild("logoHeader") logoHeader: ElementRef;
   @ViewChild("elementIcon") elementIcon: CapIconComponent;
   @Output() login = new EventEmitter()
