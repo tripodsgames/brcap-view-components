@@ -7,25 +7,20 @@ import { trigger, style, animate, transition } from "@angular/animations";
   styleUrls: ["./cap-menuItem.component.css"]
 })
 export class CapMenuItemComponent implements OnInit {
-  @Input("id") id: string;
+  @Input("id") id: string;  
   @Input("value") value: any;
   @Input("link") link: string;
   @Input("styleClass") styleClass: string;
-  @Input("principal") principal: boolean;
-  @Input("colors") colors: any;
+  @Input("principal") principal: boolean;  
   @ViewChild("items") items: ElementRef;
-  @ViewChild("menuItem") menuItem: ElementRef;
-
-  color = "";
+  @ViewChild("menuItem") menuItem: ElementRef;  
 
   exibir = false;
 
   constructor() {}
 
   ngOnInit() {
-    if (this.colors) {
-      this.color = this.colors.backgroundColor;
-    }
+    
   }
 
   toggleClass(hasChild) {
@@ -33,7 +28,5 @@ export class CapMenuItemComponent implements OnInit {
       this.exibir = !this.exibir;
     }
   }
-  changeStyle($event, element) {
-    $event.currentTarget.style.background = $event.type === "mouseover" ? this.colors.corSecundaria : this.colors.corPrincipal;
-  }
+  
 }

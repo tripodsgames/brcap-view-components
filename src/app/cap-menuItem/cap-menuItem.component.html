@@ -1,31 +1,31 @@
-<span *ngIf="value.link">
-  <a class="link" [href]="value.link">
-    <div class="menu-item {{exibir ? 'active' : ''}}" #menuItem (mouseover)="changeStyle($event, menuItem)" (mouseout)="changeStyle($event)" (click)="toggleClass(value?.items)">
-      <cap-icon [icon]="value.icon" styleClass="icon-menu"></cap-icon>
-      <span class="label-menu {{value.sub ? 'sub' : ''}} ">{{value.label}}</span>
-      <cap-icon icon="ion-ios-arrow-down animated bounceIn" *ngIf="value?.items && !exibir" styleClass="icon-arrow"></cap-icon>
-      <cap-icon icon="ion-ios-arrow-up animated bounceIn" *ngIf="value?.items && exibir" styleClass="icon-arrow"></cap-icon>
+<span *ngIf="value.url">
+  <a class="link" [href]="value.url">
+    <div class="menu-item {{exibir ? 'active' : ''}}" #menuItem (click)="toggleClass(value?.funcionalidades)">
+      <cap-icon [icon]="value.icone" styleClass="icon-menu"></cap-icon>
+      <span class="label-menu {{value.visible ? 'visible' : ''}} ">{{value.title}}</span>
+      <cap-icon icon="ion-ios-arrow-down animated bounceIn" *ngIf="value?.funcionalidades && !exibir" styleClass="icon-arrow"></cap-icon>
+      <cap-icon icon="ion-ios-arrow-up animated bounceIn" *ngIf="value?.funcionalidades && exibir" styleClass="icon-arrow"></cap-icon>
     </div>
   </a>
-  <ul *ngIf="value.items && exibir" class="list">
-    <li *ngFor="let item of value.items">
-      <cap-menuItem [value]="item" principal="true" *ngIf="item.items" [colors]="colors"></cap-menuItem>
-      <cap-menuItem [value]="item" principal="false" *ngIf="!item.items" [colors]="colors"></cap-menuItem>
+  <ul *ngIf="value.funcionalidades && exibir" class="list">
+    <li *ngFor="let item of value.funcionalidades">
+      <cap-menuItem [value]="item" principal="true" *ngIf="item.funcionalidades"></cap-menuItem>
+      <cap-menuItem [value]="item" principal="false" *ngIf="!item.funcionalidades"></cap-menuItem>
     </li>
   </ul>
 </span>
 
-<span *ngIf="!value.link">
-  <div class="menu-item {{exibir ? 'active' : ''}}" #menuItem (mouseover)="changeStyle($event, menuItem)" (mouseout)="changeStyle($event)" (click)="toggleClass(value?.items)">
-    <cap-icon [icon]="value.icon" styleClass="icon-menu"></cap-icon>
-    <span class="label-menu {{value.sub ? 'sub' : ''}}">{{value.label}}</span>
-    <cap-icon icon="ion-ios-arrow-down animated bounceIn" *ngIf="value?.items && !exibir" styleClass="icon-arrow"></cap-icon>
-    <cap-icon icon="ion-ios-arrow-up animated bounceIn" *ngIf="value?.items && exibir" styleClass="icon-arrow"></cap-icon>
+<span *ngIf="!value.url">
+  <div class="menu-item {{exibir ? 'active' : ''}}" #menuItem (click)="toggleClass(value?.funcionalidades)">
+    <cap-icon [icon]="value.icone" styleClass="icon-menu"></cap-icon>
+    <span class="label-menu {{value.visible ? 'visible' : ''}}">{{value.titulo}}</span>
+    <cap-icon icon="ion-ios-arrow-down animated bounceIn" *ngIf="value?.funcionalidades && !exibir" styleClass="icon-arrow"></cap-icon>
+    <cap-icon icon="ion-ios-arrow-up animated bounceIn" *ngIf="value?.funcionalidades && exibir" styleClass="icon-arrow"></cap-icon>
   </div>
-  <ul *ngIf="value.items  && exibir" class="list">
-    <li *ngFor="let item of value.items">
-      <cap-menuItem [value]="item" principal="true" *ngIf="item.items" [colors]="colors"></cap-menuItem>
-      <cap-menuItem [value]="item" principal="false" *ngIf="!item.items" [colors]="colors"></cap-menuItem>
+  <ul *ngIf="value.funcionalidades  && exibir" class="list">
+    <li *ngFor="let item of value.funcionalidades">
+      <cap-menuItem [value]="item" principal="true" *ngIf="item.funcionalidades"></cap-menuItem>
+      <cap-menuItem [value]="item" principal="false" *ngIf="!item.funcionalidades"></cap-menuItem>
     </li>
   </ul>
 </span>

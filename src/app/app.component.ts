@@ -7,8 +7,8 @@ import BRCapUtil from "../brcap-util";
   templateUrl: "./app.component.html"
 })
 export class AppComponent implements OnInit {
-  private brcapUtil;
-  items = [];
+  private brcapUtil;  
+  funcionalidades = [];
   colors = {};
 
   item = false;
@@ -40,10 +40,6 @@ export class AppComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.colors = {
-      corPrincipal: "#A5761B",
-      corSecundaria: "#B8841F"
-    };
     this.radios = [
       {
         label: "Opção 1",
@@ -58,47 +54,54 @@ export class AppComponent implements OnInit {
         value: 3
       }
     ];
-    this.items = [
-      {
-        label: "Comissão",
-        icon: "calendario",
-        items: [
-          {
-            label: "Consulta Comissão",
-            link: "/#/teste",
-            sub: true
-          }
-        ]
+    this.funcionalidades = [
+      {         
+      modulo:'Usuarios',
+      titulo:'Usuarios',
+      icone:'menu',
+      descricao:'administração dos usuarios do sistema',
+      funcionalidades: [{
+                            id:"Usuarios#CadastroUsuarios",
+                            icon: 'fa fa-home',
+                            title: 'Cadastro Usuarios',
+                            url: 'cadastrousuario',
+                            acoes:['Incluir', 'Excluir'],
+                            visible:false
+                            },
+                            {
+                              id:"Usuarios#Exclusão",
+                              icon: 'fa fa-file-alt',
+                              title: 'Exclusão Usuarios',
+                              url: 'excluirusuario',
+                              acoes:[],
+                              visible:false
+                            }
+                            ]
       },
-      {
-        label: "Recebimento",
-        icon: "mais-opcoes",
-        items: [
-          {
-            label: "Consulta Cobrança",
-            sub: true
-          },
-          {
-            label: "Consulta Rateio",
-            sub: true
-          },
-          {
-            label: "Consulta Liquidação",
-            sub: true
-          }
-        ]
-      },
-      {
-        label: "Permissões",
-        icon: "check-circulo",
-        items: [
-          {
-            label: "Controle de Acesso",
-            sub: true
-          }
-        ]
+      {        
+        modulo:'Sistemas',
+        titulo:'Sistemas',
+        icone:'menu',
+        descricao:'administração dos sistemas',
+        funcionalidades: [{
+                              id: 'Sistemas#CadastroSistema',
+                              icon: 'fa fa-home',
+                              title: 'Cadastro Sistema',
+                              url: 'cadastrosistema',
+                              acoes:['Incluir', 'Excluir'],
+                              visible:false
+                              },
+                              {
+                                id: 'Sistemas#ExcluirSistema',
+                                icon: 'fa fa-file-alt',
+                                title: 'Excluir Sistemas',
+                                url: 'excluirsistema',
+                                acoes:[],
+                                visible:false
+                              }
+                              ]
       }
-    ];
+      ];
   }
 
   login(event) {

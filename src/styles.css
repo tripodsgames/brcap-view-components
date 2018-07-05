@@ -2,4 +2,14 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:300,400,700";
 
 
-
+/* Personalização da cor de fundo da logo no header de cada app */
+.main-header .logo{
+    background: #ffb72a;
+}
+/* Personalização de cor de fundo do menu e do hover de cada item */
+.cap-menu{
+    background: #A5761B;
+  }
+.menu-item:hover{
+    background: #B8841F;
+  }

@@ -21,38 +21,10 @@ export class CapHeaderComponent implements OnInit {
 
   constructor() {}
 
-  colors;
-
-  paletaCoresSitemas = {
-    produtos: {
-      sistema: "produtos",
-      cores: {
-        corPrincipal: "#A5761B",
-        corSecundaria: "#B8841F",
-        corLogo: "#339ddd"
-      }
-    },
-    posvenda: {
-      sistema: "posvenda",
-      cores: {
-        corPrincipal: "#006BBB",
-        corSecundaria: "#008CDE",
-        corLogo: "#339ddd"
-      }
-    }
-  };
-
   ngOnInit() {
-    if (this.modulo) {
-      this.colors = this.paletaCoresSitemas[this.modulo].cores;
-    }
-    if (this.colors) {
-      this.logoHeader.nativeElement.style.background = this.colors.corSecundaria;
-    }
     if (window.screen.width < 767) {
       this.toggleMenu();
     }
-
   }
 
   logar() {
@@ -71,7 +43,5 @@ export class CapHeaderComponent implements OnInit {
       $("#logo-img").show();
     }
   }
-
-
 
 }
