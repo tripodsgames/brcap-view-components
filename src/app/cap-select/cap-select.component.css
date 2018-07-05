@@ -66,7 +66,29 @@
 .bootstrap-select.btn-group .dropdown-menu li:first-child a {
   border-top: none;
 }
-
+/* 
 .dropdown-menu.open {
   display: block !important;
+} */
+
+label {
+  background-color: #fff;
+  max-width: 100%;
+  font-weight: bold;
+  font-family: Ubuntu;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  top: -10px;
+  left: 10px;
+  padding: 0px 3px;
+  z-index: 999
 }
+
+label.disabled {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+label.error {
+  color: #b00020;
+}  
