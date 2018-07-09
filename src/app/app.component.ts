@@ -4,10 +4,11 @@ import BRCapUtil from "../brcap-util";
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.html"
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  private brcapUtil;  
+  private brcapUtil;
   funcionalidades = [];
   colors = {};
 
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
   checkSelecionado1;
   checkSelecionado2;
   checkSelecionado3;
-  data;
+  data; select;
 
   table = [
     {
@@ -55,53 +56,53 @@ export class AppComponent implements OnInit {
       }
     ];
     this.funcionalidades = [
-      {         
-      modulo:'Usuarios',
-      titulo:'Usuarios',
-      icone:'menu',
-      descricao:'administração dos usuarios do sistema',
-      funcionalidades: [{
-                            id:"Usuarios#CadastroUsuarios",
-                            icon: 'fa fa-home',
-                            title: 'Cadastro Usuarios',
-                            url: 'cadastrousuario',
-                            acoes:['Incluir', 'Excluir'],
-                            visible:false
-                            },
-                            {
-                              id:"Usuarios#Exclusão",
-                              icon: 'fa fa-file-alt',
-                              title: 'Exclusão Usuarios',
-                              url: 'excluirusuario',
-                              acoes:[],
-                              visible:false
-                            }
-                            ]
-      },
-      {        
-        modulo:'Sistemas',
-        titulo:'Sistemas',
-        icone:'menu',
-        descricao:'administração dos sistemas',
+      {
+        modulo: 'Usuarios',
+        titulo: 'Usuarios',
+        icone: 'menu',
+        descricao: 'administração dos usuarios do sistema',
         funcionalidades: [{
-                              id: 'Sistemas#CadastroSistema',
-                              icon: 'fa fa-home',
-                              title: 'Cadastro Sistema',
-                              url: 'cadastrosistema',
-                              acoes:['Incluir', 'Excluir'],
-                              visible:false
-                              },
-                              {
-                                id: 'Sistemas#ExcluirSistema',
-                                icon: 'fa fa-file-alt',
-                                title: 'Excluir Sistemas',
-                                url: 'excluirsistema',
-                                acoes:[],
-                                visible:false
-                              }
-                              ]
+          id: "Usuarios#CadastroUsuarios",
+          icon: 'fa fa-home',
+          title: 'Cadastro Usuarios',
+          url: 'cadastrousuario',
+          acoes: ['Incluir', 'Excluir'],
+          visible: false
+        },
+        {
+          id: "Usuarios#Exclusão",
+          icon: 'fa fa-file-alt',
+          title: 'Exclusão Usuarios',
+          url: 'excluirusuario',
+          acoes: [],
+          visible: false
+        }
+        ]
+      },
+      {
+        modulo: 'Sistemas',
+        titulo: 'Sistemas',
+        icone: 'menu',
+        descricao: 'administração dos sistemas',
+        funcionalidades: [{
+          id: 'Sistemas#CadastroSistema',
+          icon: 'fa fa-home',
+          title: 'Cadastro Sistema',
+          url: 'cadastrosistema',
+          acoes: ['Incluir', 'Excluir'],
+          visible: false
+        },
+        {
+          id: 'Sistemas#ExcluirSistema',
+          icon: 'fa fa-file-alt',
+          title: 'Excluir Sistemas',
+          url: 'excluirsistema',
+          acoes: [],
+          visible: false
+        }
+        ]
       }
-      ];
+    ];
   }
 
   login(event) {

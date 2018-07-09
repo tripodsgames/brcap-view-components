@@ -4,14 +4,16 @@
 <div dateRange>
   <div class="{{colsStart}} form-group">
     <label>{{labelStart}}</label>
-    <input type="text" id="date1" [placeholder]="placeholderStart?placeholderStart:''" #date1 (blur)="setDates(date1.value, date2.value)" (change)="setDates(date1.value, date2.value)" class="form-control cap-inputText input-type-text left date" name="date1">
-    <i class="fa fa-calendar-o icon-calendar" (click)="date1.focus()"></i>
+    <input type="text" id="date1" [placeholder]="placeholderStart?placeholderStart:''" #date1 (blur)="setDates(date1.value, date2.value)"
+      (change)="setDates(date1.value, date2.value)" class="form-control cap-inputText input-type-text left date" name="date1">
+    <cap-icon icon="calendario" styleClass="icon-calendar" (click)="date1.focus()" [size]="20"></cap-icon>
 
   </div>
   <div class="{{colsEnd}} form-group">
     <label>{{labelEnd}}</label>
-    <input type="text" id="date2" [placeholder]="placeholderEnd?placeholderEnd:''" #date2 (blur)="setDates(date1.value, date2.value)" (change)="setDates(date1.value, date2.value)" class="form-control cap-inputText input-type-text left date" name="date2">
-    <i class="fa fa-calendar-o icon-calendar" (click)="date2.focus()"></i>
+    <input type="text" id="date2" [placeholder]="placeholderEnd?placeholderEnd:''" #date2 (blur)="setDates(date1.value, date2.value)"
+      (change)="setDates(date1.value, date2.value)" class="form-control cap-inputText input-type-text left date" name="date2">
+    <cap-icon icon="calendario" styleClass="icon-calendar" (click)="date2.focus()" [size]="20"></cap-icon>
 
   </div>
 </div>

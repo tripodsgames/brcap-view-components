@@ -1,15 +1,9 @@
-<cap-header></cap-header>
-<cap-menu [value]="funcionalidades" modulo="Sistemas"></cap-menu>
+<div class="wrapper">
 
-
-<div style=" margin-left:300px; background-color:black; width:400px">
-    
-<!-- <cap-select label="teste">
-    <option>teste</option>
-</cap-select>
-
-    <cap-inputText
-        label="teste">
-    </cap-inputText> -->
-
+  <cap-select [(ngModel)]="select">
+    <option value="1">Teste</option>
+    <option value="2">Teste1</option>
+    <option value="3">Teste2</option>
+  </cap-select>
+  {{select}}
 </div>

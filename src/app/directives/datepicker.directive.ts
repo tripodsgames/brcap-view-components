@@ -19,8 +19,8 @@ export class DatepickerDirective {
 
   ngAfterViewInit() {
     $(document)
-      .ready(function() {
-        this.$el.datepicker();
+      .ready(function () {
+        $(".datepicker").datepicker();
       })
       .on("changeDate", event => {
         let inputEvent = new Event("input", { bubbles: true });

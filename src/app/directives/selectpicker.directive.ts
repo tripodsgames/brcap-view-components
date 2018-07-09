@@ -16,12 +16,12 @@ export class SelectpickerDirective implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    $(document).ready(function() {
-      this.$el.selectpicker();
+    $(document).ready(function () {
+      $(".selectpicker").selectpicker();
       $(".bootstrap-select")
         .find(".dropdown-menu")
         .removeClass("open");
-      $(".bootstrap-select").click(function() {
+      $(".bootstrap-select").click(function () {
         $(this)
           .find(".dropdown-menu")
           .toggleClass("open");
