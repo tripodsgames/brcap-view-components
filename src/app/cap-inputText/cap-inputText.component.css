@@ -29,7 +29,7 @@
 
 label {
   background-color: #fff;
-  max-width: 100%;
+  max-width: 92%;
   font-weight: bold;
   font-family: Ubuntu;
   font-size: 11px;
@@ -38,6 +38,8 @@ label {
   top: 13px;
   left: 0px;
   padding: 0px 3px;
+  max-height: 24px;
+  vertical-align: middle;
 }
 
 label.error {
