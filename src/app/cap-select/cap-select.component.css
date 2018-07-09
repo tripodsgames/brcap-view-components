@@ -18,9 +18,13 @@
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  background-color: #fff;
+  background-color: #fff !important;
   border-color: #757575;
   box-shadow: none;
+}
+
+.bootstrap-select > .dropdown-toggle .open:hover {
+  background-color: #fff
 }
 
 .bootstrap-select .dropdown-toggle:focus {
