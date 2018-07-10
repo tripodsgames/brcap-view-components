@@ -1,16 +1,24 @@
-<div class="wrapper">
+<div class="content-wrapper">
+  <div class="content-header">
+    <cap-inputText label="Teste"></cap-inputText>
 
-  <cap-select [(ngModel)]="select">
-    <option value="1">Teste</option>
-    <option value="2">Teste1</option>
-    <option value="3">Teste2</option>
-  </cap-select>
-  {{select}}
+    <cap-select label="Tipo">
+      <option>Teste 1</option>
+      <option>Teste 2</option>
+      <option>Teste 3</option>
+    </cap-select>
+    <cap-datepicker label="Data"></cap-datepicker>
+  </div>
+  <div class="content">
+    <div class="box">
+      <cap-inputText label="Teste"></cap-inputText>
 
-
-
-  <cap-card content="<img src='' />">
-
-  </cap-card>
-  
+      <cap-select label="Tipo">
+        <option>Teste 1</option>
+        <option>Teste 2</option>
+        <option>Teste 3</option>
+      </cap-select>
+      <cap-datepicker label="Data"></cap-datepicker>
+    </div>
+  </div>
 </div>

@@ -19,8 +19,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   },
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-select.component.html",
-  styleUrls: ["./cap-select.component.css"],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ["./cap-select.component.css"]
 })
 export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
