@@ -32,6 +32,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("multiple") multiple: string;
   @Input("valueOptionAll") valueOptionAll: any;
   @Input("optionAll") optionAll: boolean;
+  @Input("disabled") disabled: boolean;
 
   @ViewChild("select") select;
 

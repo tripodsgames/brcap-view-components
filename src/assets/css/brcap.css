@@ -347,39 +347,72 @@ label.disabled {
 .voltar:before {
   content: "\e901";
 }
-.anterior:before {
-  content: "\e911";
+.adicionar:before {
+  content: "\e902";
 }
-
-.usuario:before {
-  content: "\e913";
+.alerta:before {
+  content: "\e903";
 }
-.sair:before {
-  content: "\e90f";
+.arquivo:before {
+  content: "\e904";
+}
+.busca:before {
+  content: "\e905";
 }
 .calendario:before {
   content: "\e906";
 }
-.mais-opcoes:before {
-  content: "\e90d";
-}
-.seguir:before {
-  content: "\e910";
-}
-.expandir:before {
-  content: "\e90a";
-}
 .check-circulo:before {
   content: "\e907";
 }
-.ver-senha:before {
-  content: "\e916";
+.compartilhar:before {
+  content: "\e908";
 }
 .esconder-senha:before {
   content: "\e909";
 }
+.seguir:before {
+  content: "\e910";
+}
+.anterior:before {
+  content: "\e911";
+}
+.seta-cimabaixo:before {
+  content: "\e912";
+}
+.usuario:before {
+  content: "\e913";
+}
+.x-circulo:before {
+  content: "\e914";
+}
+.ver-senha:before {
+  content: "\e916";
+}
+
+.retrair:before {
+  content: "\e918";
+}
+.expandir:before {
+  content: "\e90a";
+}
 .favorito:before {
   content: "\e90b";
+}
+.info:before {
+  content: "\e90c";
+}
+.mais-opcoes:before {
+  content: "\e90d";
+}
+.menos:before {
+  content: "\e90e";
+}
+.sair:before {
+  content: "\e90f";
+}
+.x:before {
+  content: "\78";
 }
 
 /*
@@ -1770,7 +1803,6 @@ select.selectpicker {
   font-weight: 500;
 }
 
-
 .datepicker td {
   border-radius: 5px;
   cursor: pointer;
@@ -1843,7 +1875,8 @@ select.selectpicker {
   height: auto;
   padding: 0px;
   border-radius: 5px !important;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14) !important;
 }
 .datepicker-days .datepicker-switch {
   font-size: 14px !important;
