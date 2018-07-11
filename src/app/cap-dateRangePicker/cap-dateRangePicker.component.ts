@@ -17,8 +17,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: "cap-dateRangePicker",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-dateRangePicker.component.html",
-  styleUrls: ["./cap-dateRangePicker.component.css"],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ["./cap-dateRangePicker.component.css"]
 })
 export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
@@ -38,6 +37,8 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   @Input("format") format: string;
 
   @Input("clearBtn") clearBtn: boolean;
+
+  @Input("disabled") disabled: boolean;
 
   @ViewChild("date1") date1;
   @ViewChild("date2") date2;

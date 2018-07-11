@@ -1,5 +1,5 @@
 <label [for]="id" class="{{textError}} {{disabled ? 'disabled' : ''}} " *ngIf="label?.length">
   {{label}}</label>
-<select [(ngModel)]="value" [disabled]="disabled" selectpicker class="selectpicker form-control">
+<select [(ngModel)]="value" (focus)="onFocus($event)" [disabled]="disabled" class="selectpicker form-control">
   <ng-content></ng-content>
   <select>

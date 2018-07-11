@@ -1,5 +1,20 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  AfterViewInit,
+  ViewChild,
+  Output,
+  EventEmitter
+} from "@angular/core";
+import {
+  NG_VALUE_ACCESSOR,
+  ControlValueAccessor,
+  NgControl,
+  NgModel
+} from "@angular/forms";
 import { Subject } from "rxjs/Subject";
 import BRCapUtil from "../../brcap-util";
 
@@ -20,7 +35,8 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   templateUrl: "./cap-inputText.component.html",
   styleUrls: ["./cap-inputText.component.css"]
 })
-export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
+export class CapInputTextComponent
+  implements AfterViewInit, ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("placeholder") placeholder: string;
@@ -30,6 +46,8 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   @Input("styleInline") styleInline: string;
   @Input("textHelper") textHelper: string;
   @Input("disabled") disabled: boolean;
+  @Output() keyup = new EventEmitter();
+  @Output() focus = new EventEmitter();
 
   @ViewChild("input") input;
 
@@ -65,6 +83,14 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
       this.innerValue = v;
       this.onChangeCallback(v);
     }
+  }
+
+  onKeyup(event) {
+    return this.keyup.emit(event);
+  }
+
+  onFocus(event) {
+    return this.focus.emit(event);
   }
 
   onBlur() {

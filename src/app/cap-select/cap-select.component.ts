@@ -1,7 +1,19 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  ViewEncapsulation,
+  Output,
+  EventEmitter
+} from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
-import * as jqueryProxy from 'jquery';
+import * as jqueryProxy from "jquery";
+import "assets/js/bootstrap-select.min.js";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};
@@ -34,6 +46,8 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("optionAll") optionAll: boolean;
   @Input("disabled") disabled: boolean;
 
+  @Output() focus = new EventEmitter();
+
   @ViewChild("select") select;
 
   private $el: any;
@@ -52,9 +66,31 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
     } else {
       this.id += "_input";
     }
+    $(document).ready(function() {
+      $(".selectpicker").selectpicker();
+      $(".bootstrap-select")
+        .find(".dropdown-menu")
+        .removeClass("open");
+      $(".bootstrap-select").click(function() {
+        $(this)
+          .find(".dropdown-menu")
+          .toggleClass("open");
+        $(this)
+          .find(".brcap-ico")
+          .toggleClass("expandir");
+        $(this)
+          .find(".brcap-ico")
+          .toggleClass("anterior");
+      });
+    });
+  }
+
+  onFocus(event) {
+    return this.focus.emit(event);
   }
 
   get value(): any {
+    $(".selectpicker").selectpicker("refresh");
     return this.innerValue;
   }
 

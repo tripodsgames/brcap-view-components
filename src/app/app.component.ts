@@ -20,6 +20,12 @@ export class AppComponent implements OnInit {
   checkSelecionado2;
   checkSelecionado3;
   data; select;
+  naoAtivo = true;
+  texto;
+  teste(event) {
+    console.log(event)
+    this.naoAtivo = !this.naoAtivo;
+  }
 
   table = [
     {

@@ -1,7 +1,7 @@
 import { Directive, OnInit, Renderer, ElementRef, AfterViewInit } from "@angular/core";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
-import "assets/js/bootstrap-select.min.js";
+
 
 @Directive({
   selector: "[selectpicker]",

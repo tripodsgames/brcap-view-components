@@ -8,6 +8,11 @@
   top: 2px;
 }
 
+.brcap-ico.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 ul.list .icon-menu {
   padding-left: 15px;
 }
@@ -20,11 +25,11 @@ ul.list .icon-menu {
 }
 
 .ico-ver-senha {
-    float: right;
-    position: relative;
-    top: -60px;
-    right: 15px;
-    font-size: 20px;
-    z-index: 2;
-    cursor:pointer;
+  float: right;
+  position: relative;
+  top: -60px;
+  right: 15px;
+  font-size: 20px;
+  z-index: 2;
+  cursor: pointer;
 }

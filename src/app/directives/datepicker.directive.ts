@@ -18,13 +18,6 @@ export class DatepickerDirective {
   }
 
   ngAfterViewInit() {
-    $(document)
-      .ready(function () {
-        $(".datepicker").datepicker();
-      })
-      .on("changeDate", event => {
-        let inputEvent = new Event("input", { bubbles: true });
-        this.renderer.invokeElementMethod(this.el.nativeElement, "dispatchEvent", [inputEvent]);
-      });
+
   }
 }

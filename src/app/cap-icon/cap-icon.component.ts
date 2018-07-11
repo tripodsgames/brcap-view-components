@@ -10,7 +10,7 @@ export class CapIconComponent implements OnInit {
   @Input("icon") icon: string;
   @Input("styleClass") styleClass: string;
   @Input("size") size: number;
-
+  @Input("disabled") disabled: boolean;
   @ViewChild("element") element: ElementRef;
 
   constructor() {}
