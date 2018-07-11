@@ -15,7 +15,7 @@
 }
 
 .cap-inputTextArea:disabled {
-  border: 1px solid #C9C9C9;
+  border: 1px solid #c9c9c9;
   background-color: #ffffff;
 }
 
@@ -23,7 +23,6 @@
   box-shadow: none;
   border-color: none;
 }
-
 label {
   background-color: #fff;
   max-width: 92%;
@@ -35,7 +34,7 @@ label {
   top: 12px;
   left: 0px;
   padding: 0px 3px;
-  max-height: 24px;
+  max-height: 28px;
   vertical-align: middle;
 }
 
