@@ -175,10 +175,11 @@ label {
   color: rgba(0, 0, 0, 0.87);
   position: relative;
   top: 13px;
-  left: 0px;
+  left: 10px;
   padding: 0px 3px;
   max-height: 24px;
   vertical-align: middle;
+  z-index:3;
 }
 
 label.error {
@@ -284,7 +285,7 @@ input:disabled:-ms-input-placeholder {
   box-shadow: none;
   border-color: none;
 }
-
+/* 
 label {
   background-color: #fff;
   max-width: 100%;
@@ -297,7 +298,7 @@ label {
   left: 10px;
   padding: 0px 3px;
   z-index: 3;
-}
+} */
 
 label.disabled {
   color: rgba(0, 0, 0, 0.5);
