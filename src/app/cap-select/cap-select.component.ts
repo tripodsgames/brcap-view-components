@@ -90,7 +90,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   get value(): any {
-    $(".selectpicker").selectpicker("refresh");
     return this.innerValue;
   }
 

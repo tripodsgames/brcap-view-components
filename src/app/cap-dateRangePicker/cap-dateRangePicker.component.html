@@ -1,7 +1,7 @@
 <label *ngIf="label?.length">
   {{label}}</label>
 
-<div class="input-daterange">
+<div dateRange>
   <div class="{{colsStart}} form-group">
     <label>{{labelStart}}</label>
     <input type="text" id="date1" [disabled]="disabled" [placeholder]="placeholderStart?placeholderStart:''" #date1 (blur)="setDates(date1.value, date2.value)"

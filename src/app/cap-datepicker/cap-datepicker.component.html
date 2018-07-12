@@ -1,6 +1,6 @@
 <label *ngIf="label?.length">
   {{label}}</label>
 
-<input #input autocomplete="off" type="text" [id]="id" class="form-control selectDate cap-inputText input-type-text date {{styleClass}}"
+<input #input datepicker autocomplete="off" type="text" [id]="id" class="form-control cap-inputText input-type-text date {{styleClass}}"
   [disabled]="disabled" placeholder="{{placeholder}}" name="{{name}}" [(ngModel)]="value">
 <cap-icon icon="calendario" styleClass="icon-calendar" [disabled]="disabled" (click)="input.focus()" [size]="20"></cap-icon>

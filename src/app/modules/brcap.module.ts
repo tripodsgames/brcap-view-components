@@ -22,6 +22,7 @@ import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
 import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
+import { DatepickerDirective } from "../directives/datepicker.directive";
 
 @NgModule({
   imports: [CommonModule, FormsModule],
@@ -46,7 +47,8 @@ import { CapPasswordComponent } from "../cap-password/cap-password.component";
     CapDivisorComponent,
     CapCardComponent,
     CapTableComponent,
-    CapPasswordComponent
+    CapPasswordComponent,
+    DatepickerDirective
   ],
   exports: [
     CapInputTextComponent,
@@ -69,7 +71,8 @@ import { CapPasswordComponent } from "../cap-password/cap-password.component";
     CapDivisorComponent,
     CapCardComponent,
     CapTableComponent,
-    CapPasswordComponent
+    CapPasswordComponent,
+    DatepickerDirective
   ]
 })
 export class BRCapModule {}

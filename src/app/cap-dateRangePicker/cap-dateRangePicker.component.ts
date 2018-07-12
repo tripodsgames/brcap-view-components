@@ -4,16 +4,13 @@ import {
   Input,
   OnInit,
   ElementRef,
-  ViewChild,
-  Renderer,
-  AfterViewInit
+  ViewChild
 } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import { DateRangeDTO } from "../model/date-range.model";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 import "jquery-mask-plugin";
-import "assets/js/bootstrap-datepicker.js";
 
 const noop = () => {};
 
@@ -30,7 +27,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   styleUrls: ["./cap-dateRangePicker.component.css"]
 })
 export class CapDateRangePickerComponent
-  implements ControlValueAccessor, OnInit, AfterViewInit {
+  implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("styleClass") styleClass: string;
@@ -60,7 +57,7 @@ export class CapDateRangePickerComponent
   private innerValueEnd: any = "";
   private dates: DateRangeDTO;
 
-  constructor(private el: ElementRef, private renderer: Renderer) {
+  constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
   }
 
@@ -71,21 +68,6 @@ export class CapDateRangePickerComponent
     if (this.maskEnd) {
       $(this.date2.nativeElement).mask(this.maskEnd);
     }
-  }
-
-  ngAfterViewInit() {
-    $(document)
-      .ready(function() {
-        $(".input-daterange").datepicker();
-      })
-      .on("changeDate", event => {
-        let inputEvent = new Event("input", { bubbles: true });
-        this.renderer.invokeElementMethod(
-          this.el.nativeElement,
-          "dispatchEvent",
-          [inputEvent]
-        );
-      });
   }
 
   private onTouchedCallback: () => void = noop;

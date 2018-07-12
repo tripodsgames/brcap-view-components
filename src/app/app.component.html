@@ -2,7 +2,9 @@
 
   <div class="content">
     <div class="box">
-      <cap-button>Teste</cap-button>
+      <cap-datepicker [disabled]="texto?.length > 0"></cap-datepicker>
+
+      <cap-inputText [(ngModel)]="texto"></cap-inputText>
     </div>
   </div>
 </div>
