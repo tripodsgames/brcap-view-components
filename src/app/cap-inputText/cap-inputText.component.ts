@@ -69,7 +69,7 @@ export class CapInputTextComponent
     } else {
       this.id += "_input";
     }
-    if (this.styleClass && this.styleClass.indexOf("error") != -1) {
+    if (this.styleClass && this.styleClass.indexOf("error") !== -1) {
       this.textError = "error";
     }
   }

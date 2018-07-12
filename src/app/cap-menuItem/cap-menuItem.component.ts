@@ -7,26 +7,23 @@ import { trigger, style, animate, transition } from "@angular/animations";
   styleUrls: ["./cap-menuItem.component.css"]
 })
 export class CapMenuItemComponent implements OnInit {
-  @Input("id") id: string;  
+  @Input("id") id: string;
   @Input("value") value: any;
   @Input("link") link: string;
   @Input("styleClass") styleClass: string;
-  @Input("principal") principal: boolean;  
+  @Input("principal") principal: boolean;
   @ViewChild("items") items: ElementRef;
-  @ViewChild("menuItem") menuItem: ElementRef;  
+  @ViewChild("menuItem") menuItem: ElementRef;
 
   exibir = false;
 
   constructor() {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   toggleClass(hasChild) {
     if (hasChild) {
       this.exibir = !this.exibir;
     }
   }
-  
 }

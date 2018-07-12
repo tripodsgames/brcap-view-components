@@ -3,13 +3,10 @@ import {
   forwardRef,
   Input,
   OnInit,
-  ViewEncapsulation,
-  Output,
   ElementRef,
-  EventEmitter,
   ViewChild,
-  AfterContentInit,
-  Renderer
+  Renderer,
+  AfterViewInit
 } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import * as jqueryProxy from "jquery";
@@ -31,7 +28,8 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   templateUrl: "./cap-datepicker.component.html",
   styleUrls: ["./cap-datepicker.component.css"]
 })
-export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
+export class CapDatepickerComponent
+  implements ControlValueAccessor, OnInit, AfterViewInit {
   @Input("id") id: string;
   @Input("styleClass") styleClass: string;
   @Input("label") label: string;
@@ -53,9 +51,12 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
     if (this.mask) {
       $(this.input.nativeElement).mask(this.mask);
     }
+  }
+
+  ngAfterViewInit() {
     $(document)
       .ready(function() {
-        $(".datepicker").datepicker();
+        $(".selectDate").datepicker();
       })
       .on("changeDate", event => {
         const inputEvent = new Event("input", { bubbles: true });
@@ -71,7 +72,7 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   private onChangeCallback: (_: any) => void = noop;
 
   get value(): any {
-    $(".datepicker").datepicker();
+    $(".selectDate").datepicker();
     return this.innerValue;
   }
 

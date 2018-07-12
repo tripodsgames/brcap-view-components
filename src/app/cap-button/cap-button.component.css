@@ -19,6 +19,20 @@ button {
   overflow: hidden;
 }
 
+button:hover:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
 button:after {
   content: "";
   position: absolute;
@@ -26,7 +40,7 @@ button:after {
   left: 50%;
   width: 5px;
   height: 5px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.16);
   opacity: 0;
   border-radius: 100%;
   transform: scale(1, 1) translate(-50%);
