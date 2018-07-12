@@ -6,7 +6,7 @@ input {
 label  {
   display: block;
   position: relative;
-  padding: 8px 40px;
+  padding: 2px 40px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   color: rgba(0, 0, 0, 0.87);

@@ -1,16 +1,22 @@
 .menu-item {
   padding: 15px;
   cursor: pointer;
+  height: 50px;
 }
 
 .menu-item:hover {
-  opacity: 0.9;
+  opacity: 0.9;  
 }
 
 ul.list {
   margin-bottom: 0px;
   list-style: none;
   padding-left: 0px;
+}
+
+ul.list li .menu-item{
+  height: 40px;
+  padding: 7px 40px;
 }
 
 .hide {

@@ -29,7 +29,8 @@ html {
 .content-wrapper {
   min-height: 100%;
   z-index: 800;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out,
+    margin 0.3s ease-in-out;
   -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
@@ -53,8 +54,7 @@ body.minimizado .content-wrapper {
 
 .content-header {
   position: relative;
-  padding: 10px 15px 0px 15px;
-  background-color: #ffdb95;
+  padding: 15px;
   height: auto;
   margin-top: -20px;
 }
@@ -65,7 +65,8 @@ body.minimizado .content-wrapper {
   background: #ffffff;
   margin-bottom: 20px;
   width: 100%;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14);
   padding: 15px;
 }
 .navbar {
@@ -150,6 +151,172 @@ h3 {
   margin-top: -20px;
 }
 
+.cap-inputText {
+  box-shadow: none;
+  border-radius: 4px;
+  border: 1px solid #757575;
+  height: 50px;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.cap-inputText.sm {
+  height: 40px;
+}
+
+label {
+  background-color: #fff;
+  max-width: 92%;
+  font-weight: bold;
+  font-family: Ubuntu;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  top: 13px;
+  left: 10px;
+  padding: 0px 3px;
+  max-height: 24px;
+  vertical-align: middle;
+  z-index:3;
+}
+
+label.error {
+  color: #b00020;
+}
+
+.helper-text {
+  font-size: 11px;
+  font-family: Ubuntu;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  padding-left: 12px;
+  padding-top: 3px;
+  position: relative;
+  top: -3px;
+  left: -5px;
+}
+
+.ico-error {
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 14px;
+  font-size: 20px;
+  color: #b00020;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+input:disabled::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+input:disabled:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+input:disabled::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+input:disabled:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.content-header .cap-inputText {
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+  border-radius: 0px !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+  padding-top: 20px;
+}
+
+.content-header .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  top: 7px;
+}
+
+.content-header .bootstrap-select > .dropdown-toggle {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 0px;
+}
+
+.content-header label {
+  background: transparent;
+  top: 22px !important;
+  left: 9px !important;
+}
+
+.icon-calendar {
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.content-header .icon-calendar {
+  top: -35px;
+}
+
+.cap-inputText.sm {
+  height: 40px;
+}
+
+.cap-inputText:disabled {
+  border: 1px solid #c9c9c9;
+  background-color: #ffffff;
+}
+
+.cap-inputText.error {
+  border: 1.5px solid #b00020;
+}
+
+.cap-inputText:focus {
+  box-shadow: none;
+  border-color: none;
+}
+/* 
+label {
+  background-color: #fff;
+  max-width: 100%;
+  font-weight: bold;
+  font-family: Ubuntu;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  top: 12px;
+  left: 10px;
+  padding: 0px 3px;
+  z-index: 3;
+} */
+
+label.disabled {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.helper-text.disabled {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ico-error {
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 14px;
+  font-size: 20px;
+  color: #b00020;
+}
 
 /* !
 * BRCap Icones
@@ -182,39 +349,72 @@ h3 {
 .voltar:before {
   content: "\e901";
 }
-.anterior:before {
-  content: "\e911";
+.adicionar:before {
+  content: "\e902";
 }
-
-.usuario:before {
-  content: "\e913";
+.alerta:before {
+  content: "\e903";
 }
-.sair:before {
-  content: "\e90f";
+.arquivo:before {
+  content: "\e904";
+}
+.busca:before {
+  content: "\e905";
 }
 .calendario:before {
   content: "\e906";
 }
-.mais-opcoes:before {
-  content: "\e90d";
-}
-.seguir:before {
-  content: "\e910";
-}
-.expandir:before {
-  content: "\e90a";
-}
 .check-circulo:before {
   content: "\e907";
 }
-.ver-senha:before {
-  content: "\e916";
+.compartilhar:before {
+  content: "\e908";
 }
 .esconder-senha:before {
   content: "\e909";
 }
+.seguir:before {
+  content: "\e910";
+}
+.anterior:before {
+  content: "\e911";
+}
+.seta-cimabaixo:before {
+  content: "\e912";
+}
+.usuario:before {
+  content: "\e913";
+}
+.x-circulo:before {
+  content: "\e914";
+}
+.ver-senha:before {
+  content: "\e916";
+}
+
+.retrair:before {
+  content: "\e918";
+}
+.expandir:before {
+  content: "\e90a";
+}
 .favorito:before {
   content: "\e90b";
+}
+.info:before {
+  content: "\e90c";
+}
+.mais-opcoes:before {
+  content: "\e90d";
+}
+.menos:before {
+  content: "\e90e";
+}
+.sair:before {
+  content: "\e90f";
+}
+.x:before {
+  content: "\78";
 }
 
 /*
@@ -342,7 +542,8 @@ h3 {
 }
 
 .hamburger--3dx .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .hamburger--3dx .hamburger-inner::before,
 .hamburger--3dx .hamburger-inner::after {
@@ -368,7 +569,8 @@ h3 {
 }
 
 .hamburger--3dx-r .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .hamburger--3dx-r .hamburger-inner::before,
 .hamburger--3dx-r .hamburger-inner::after {
@@ -394,7 +596,8 @@ h3 {
 }
 
 .hamburger--3dy .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .hamburger--3dy .hamburger-inner::before,
 .hamburger--3dy .hamburger-inner::after {
@@ -420,7 +623,8 @@ h3 {
 }
 
 .hamburger--3dy-r .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .hamburger--3dy-r .hamburger-inner::before,
 .hamburger--3dy-r .hamburger-inner::after {
@@ -446,7 +650,8 @@ h3 {
 }
 
 .hamburger--3dxy .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .hamburger--3dxy .hamburger-inner::before,
 .hamburger--3dxy .hamburger-inner::after {
@@ -472,7 +677,8 @@ h3 {
 }
 
 .hamburger--3dxy-r .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .hamburger--3dxy-r .hamburger-inner::before,
 .hamburger--3dxy-r .hamburger-inner::after {
@@ -516,46 +722,54 @@ h3 {
    * Arrow Alt
    */
 .hamburger--arrowalt .hamburger-inner::before {
-  transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: top 0.1s 0.1s ease,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hamburger--arrowalt .hamburger-inner::after {
-  transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: bottom 0.1s 0.1s ease,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::before {
   top: 0;
   transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
-  transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: top 0.1s ease,
+    transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::after {
   bottom: 0;
   transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
-  transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: bottom 0.1s ease,
+    transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 /*
    * Arrow Alt Right
    */
 .hamburger--arrowalt-r .hamburger-inner::before {
-  transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: top 0.1s 0.1s ease,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hamburger--arrowalt-r .hamburger-inner::after {
-  transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: bottom 0.1s 0.1s ease,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hamburger--arrowalt-r.is-active .hamburger-inner::before {
   top: 0;
   transform: translate3d(8px, -10px, 0) rotate(45deg) scale(0.7, 1);
-  transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: top 0.1s ease,
+    transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .hamburger--arrowalt-r.is-active .hamburger-inner::after {
   bottom: 0;
   transform: translate3d(8px, 10px, 0) rotate(-45deg) scale(0.7, 1);
-  transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: bottom 0.1s ease,
+    transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 /*
@@ -617,10 +831,12 @@ h3 {
 }
 .hamburger--collapse .hamburger-inner::after {
   top: -20px;
-  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0.1s linear;
 }
 .hamburger--collapse .hamburger-inner::before {
-  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--collapse.is-active .hamburger-inner {
@@ -631,12 +847,14 @@ h3 {
 .hamburger--collapse.is-active .hamburger-inner::after {
   top: 0;
   opacity: 0;
-  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0.1s 0.22s linear;
 }
 .hamburger--collapse.is-active .hamburger-inner::before {
   top: 0;
   transform: rotate(-90deg);
-  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
@@ -651,10 +869,12 @@ h3 {
 }
 .hamburger--collapse-r .hamburger-inner::after {
   top: -20px;
-  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0.1s linear;
 }
 .hamburger--collapse-r .hamburger-inner::before {
-  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--collapse-r.is-active .hamburger-inner {
@@ -665,12 +885,14 @@ h3 {
 .hamburger--collapse-r.is-active .hamburger-inner::after {
   top: 0;
   opacity: 0;
-  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0.1s 0.22s linear;
 }
 .hamburger--collapse-r.is-active .hamburger-inner::before {
   top: 0;
   transform: rotate(90deg);
-  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
@@ -744,12 +966,14 @@ h3 {
 }
 .hamburger--emphatic .hamburger-inner::before {
   left: 0;
-  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+    top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
 }
 .hamburger--emphatic .hamburger-inner::after {
   top: 10px;
   right: 0;
-  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+    top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
 }
 .hamburger--emphatic.is-active .hamburger-inner {
   transition-delay: 0s;
@@ -760,13 +984,15 @@ h3 {
   left: -80px;
   top: -80px;
   transform: translate3d(80px, 80px, 0) rotate(45deg);
-  transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: left 0.125s ease-out, top 0.05s 0.125s linear,
+    transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .hamburger--emphatic.is-active .hamburger-inner::after {
   right: -80px;
   top: -80px;
   transform: translate3d(-80px, 80px, 0) rotate(-45deg);
-  transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: right 0.125s ease-out, top 0.05s 0.125s linear,
+    transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /*
@@ -780,12 +1006,14 @@ h3 {
 }
 .hamburger--emphatic-r .hamburger-inner::before {
   left: 0;
-  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+    top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
 }
 .hamburger--emphatic-r .hamburger-inner::after {
   top: 10px;
   right: 0;
-  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+    top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
 }
 .hamburger--emphatic-r.is-active .hamburger-inner {
   transition-delay: 0s;
@@ -796,13 +1024,15 @@ h3 {
   left: -80px;
   top: 80px;
   transform: translate3d(80px, -80px, 0) rotate(-45deg);
-  transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: left 0.125s ease-out, top 0.05s 0.125s linear,
+    transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .hamburger--emphatic-r.is-active .hamburger-inner::after {
   right: -80px;
   top: 80px;
   transform: translate3d(-80px, -80px, 0) rotate(45deg);
-  transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: right 0.125s ease-out, top 0.05s 0.125s linear,
+    transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /*
@@ -892,7 +1122,8 @@ h3 {
   transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
 }
 .hamburger--spin .hamburger-inner::after {
-  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--spin.is-active .hamburger-inner {
@@ -908,7 +1139,8 @@ h3 {
 .hamburger--spin.is-active .hamburger-inner::after {
   bottom: 0;
   transform: rotate(-90deg);
-  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
@@ -922,7 +1154,8 @@ h3 {
   transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
 }
 .hamburger--spin-r .hamburger-inner::after {
-  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--spin-r.is-active .hamburger-inner {
@@ -938,7 +1171,8 @@ h3 {
 .hamburger--spin-r.is-active .hamburger-inner::after {
   bottom: 0;
   transform: rotate(90deg);
-  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
@@ -950,11 +1184,13 @@ h3 {
 }
 .hamburger--spring .hamburger-inner::before {
   top: 10px;
-  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .hamburger--spring .hamburger-inner::after {
   top: 20px;
-  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--spring.is-active .hamburger-inner {
@@ -963,12 +1199,14 @@ h3 {
 }
 .hamburger--spring.is-active .hamburger-inner::before {
   top: 0;
-  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
   transform: translate3d(0, 10px, 0) rotate(45deg);
 }
 .hamburger--spring.is-active .hamburger-inner::after {
   top: 0;
-  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
   transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
@@ -984,10 +1222,12 @@ h3 {
 }
 .hamburger--spring-r .hamburger-inner::after {
   top: -20px;
-  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0s linear;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0s linear;
 }
 .hamburger--spring-r .hamburger-inner::before {
-  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--spring-r.is-active .hamburger-inner {
@@ -998,70 +1238,84 @@ h3 {
 .hamburger--spring-r.is-active .hamburger-inner::after {
   top: 0;
   opacity: 0;
-  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0s 0.22s linear;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0s 0.22s linear;
 }
 .hamburger--spring-r.is-active .hamburger-inner::before {
   top: 0;
   transform: rotate(90deg);
-  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
    * Stand
    */
 .hamburger--stand .hamburger-inner {
-  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
+  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    background-color 0s 0.075s linear;
 }
 .hamburger--stand .hamburger-inner::before {
-  transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.075s 0.075s ease-in,
+    transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .hamburger--stand .hamburger-inner::after {
-  transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.075s 0.075s ease-in,
+    transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--stand.is-active .hamburger-inner {
   transform: rotate(90deg);
   background-color: transparent;
-  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
+  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0s 0.15s linear;
 }
 .hamburger--stand.is-active .hamburger-inner::before {
   top: 0;
   transform: rotate(-45deg);
-  transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.075s 0.1s ease-out,
+    transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .hamburger--stand.is-active .hamburger-inner::after {
   bottom: 0;
   transform: rotate(45deg);
-  transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.075s 0.1s ease-out,
+    transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
    * Stand Reverse
    */
 .hamburger--stand-r .hamburger-inner {
-  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
+  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    background-color 0s 0.075s linear;
 }
 .hamburger--stand-r .hamburger-inner::before {
-  transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.075s 0.075s ease-in,
+    transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .hamburger--stand-r .hamburger-inner::after {
-  transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.075s 0.075s ease-in,
+    transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--stand-r.is-active .hamburger-inner {
   transform: rotate(-90deg);
   background-color: transparent;
-  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
+  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0s 0.15s linear;
 }
 .hamburger--stand-r.is-active .hamburger-inner::before {
   top: 0;
   transform: rotate(-45deg);
-  transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.075s 0.1s ease-out,
+    transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .hamburger--stand-r.is-active .hamburger-inner::after {
   bottom: 0;
   transform: rotate(45deg);
-  transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.075s 0.1s ease-out,
+    transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
@@ -1075,7 +1329,8 @@ h3 {
   transition: top 0.075s 0.12s ease, opacity 0.075s ease;
 }
 .hamburger--squeeze .hamburger-inner::after {
-  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.075s 0.12s ease,
+    transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--squeeze.is-active .hamburger-inner {
@@ -1091,7 +1346,8 @@ h3 {
 .hamburger--squeeze.is-active .hamburger-inner::after {
   bottom: 0;
   transform: rotate(-90deg);
-  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.075s ease,
+    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*
@@ -1236,7 +1492,8 @@ select.selectpicker {
 .bootstrap-select.form-control.input-group-btn {
   z-index: auto;
 }
-.bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .btn {
+.bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child)
+  > .btn {
   border-radius: 0;
 }
 .bootstrap-select.btn-group:not(.input-group-btn),
@@ -1290,6 +1547,9 @@ select.selectpicker {
   overflow: hidden;
   width: 100%;
   text-align: left;
+  position: relative;
+  top: 3px;
+  font-weight: 500;
 }
 .bootstrap-select.btn-group .dropdown-toggle .caret {
   position: absolute;
@@ -1377,7 +1637,11 @@ select.selectpicker {
   top: auto;
   margin-top: -1px;
 }
-.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+.bootstrap-select.btn-group.show-tick
+  .dropdown-menu
+  li.selected
+  a
+  span.check-mark {
   position: absolute;
   display: inline-block;
   right: 15px;
@@ -1464,4 +1728,364 @@ select.selectpicker {
   margin-bottom: 0;
   width: 100%;
   float: none;
+}
+
+.bootstrap-select {
+  font-size: 14px;
+  font-family: Ubuntu;
+  font-weight: 500;
+}
+
+.bootstrap-select > .dropdown-toggle {
+  height: 50px;
+  border-color: #757575;
+}
+
+.bootstrap-select > .dropdown-toggle:hover,
+.bootstrap-select > .dropdown-toggle:focus,
+.bootstrap-select > .dropdown-toggle:active,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn-default:active,
+.open > .dropdown-toggle.btn-default:focus .open > .dropdown-toggle.btn-default,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-color: #fff !important;
+  border-color: #757575;
+  box-shadow: none;
+}
+
+.bootstrap-select > .dropdown-toggle .open:hover {
+  background-color: #fff;
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.btn-group.open .dropdown-toggle {
+  box-shadow: none;
+}
+
+.bootstrap-select.form-control {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+  outline: none !important;
+}
+
+.dropdown-menu > li > a:focus {
+  background: #fff;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li:hover {
+  background-color: #efefef;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li {
+  outline: none;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a {
+  border-top: 1px solid #ddd;
+  padding-left: 2px;
+  height: 45px;
+  padding-top: 14px;
+  outline: none !important;
+  margin-left: 11px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li:first-child a {
+  border-top: none;
+}
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+  font-weight: 500;
+}
+
+.datepicker td {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.old.day,
+.new.day {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.datepicker-days > table > tfoot > tr:nth-child(2) > th {
+  padding: 0px 0px 0px 0px;
+  position: relative;
+  top: -5px;
+  height: 0px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+.datepicker-days {
+  position: relative;
+  left: 27px;
+}
+
+.line-up {
+  width: 301px;
+  height: 1px;
+  display: block;
+  position: relative;
+  top: 45px;
+  left: -28px;
+  opacity: 0.12;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.datepicker-months .line-up,
+.datepicker-years .line-up,
+.datepicker-decades .line-up,
+.datepicker-centuries .line-up {
+  left: 0px;
+}
+
+.line-down {
+  width: 301px;
+  height: 1px;
+  display: block;
+  position: relative;
+  top: 320px;
+  left: -28px;
+  opacity: 0.12;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.datepicker-months .line-down {
+  top: 205px;
+  left: 0px;
+}
+
+.datepicker-years .line-down,
+.datepicker-decades .line-down,
+.datepicker-centuries .line-down {
+  top: 194px;
+  left: 0px;
+}
+
+.datepicker {
+  font-family: Ubuntu;
+  color: #000000;
+  width: 300px;
+  height: auto;
+  padding: 0px;
+  border-radius: 5px !important;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14) !important;
+}
+.datepicker-days .datepicker-switch {
+  font-size: 14px !important;
+  position: relative;
+  top: -13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.datepicker-months .datepicker-switch {
+  position: relative;
+  top: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.datepicker table.table-condensed tbody tr {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.datepicker table tr td.range-start {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.datepicker table tr td.range-end {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.datepicker table tr td.range.day {
+  border-radius: 0px !important;
+  background-color: rgba(0, 151, 167, 0.3) !important;
+}
+
+.datepicker table tr td.range-end.range-start {
+  border-radius: 5px !important;
+}
+
+.datepicker .next {
+  position: relative;
+  right: -15px;
+  top: -15px;
+}
+.datepicker .prev {
+  position: relative;
+  left: -15px;
+  top: -15px;
+}
+
+.datepicker .next,
+.datepicker .prev {
+  font-size: 22px !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  border: none;
+}
+
+.datepicker-months span.month,
+.datepicker-years span.year,
+.datepicker-decades span.decade,
+.datepicker-centuries span.century {
+  border-radius: 50% !important;
+}
+.datepicker-years .datepicker-switch,
+.datepicker-decades .datepicker-switch,
+.datepicker-centuries .datepicker-switch {
+  text-align: center;
+  cursor: pointer;
+}
+
+.datepicker td.day,
+.datepicker th.dow {
+  border: none !important;
+  width: 35px !important;
+  height: 30px !important;
+  font-size: 12.5px;
+  font-weight: 500;
+  position: relative;
+  top: -20px;
+  text-align: center;
+}
+
+.datepicker table tr td.day.focused,
+.datepicker table tr td.day:hover {
+  background-color: rgb(0, 151, 167) !important;
+  background-image: none !important;
+  opacity: 0.6;
+  color: #fff;
+}
+
+.datepicker table tr span.month:focused,
+.datepicker table tr span.month:hover {
+  background-color: rgb(0, 151, 167) !important;
+  background-image: none !important;
+  opacity: 0.6;
+  color: #fff;
+}
+
+.datepicker-months,
+.datepicker-years {
+  width: 260px !important;
+  text-align: center;
+}
+
+.dow {
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  padding-top: 20px !important;
+  padding-bottom: 10px !important;
+  position: relative;
+  top: -20px;
+}
+
+.datepicker .datepicker-switch:hover,
+.datepicker .next:hover,
+.datepicker .prev:hover,
+.datepicker tfoot tr th:hover {
+  background: transparent !important;
+}
+
+.datepicker-days > table > tfoot {
+  font-size: 10px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.selected,
+.datepicker table tr td span.active {
+  background-color: rgb(0, 151, 167) !important;
+  background-image: none !important;
+  color: #fff;
+}
+
+.datepicker table tr td span {
+  display: block;
+  width: 38px;
+  height: 38px;
+  float: left;
+  margin: 0px 10px 10px 20px;
+  cursor: pointer;
+  line-height: 38px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.datepicker-months > table,
+.datepicker-years > table,
+.datepicker-decades > table,
+.datepicker-centuries > table {
+  width: 300px;
+}
+
+.datepicker-months > table > thead > tr:nth-child(2) > th.next,
+.datepicker-years > table > thead > tr:nth-child(2) > th.next,
+.datepicker-decades > table > thead > tr:nth-child(2) > th.next,
+.datepicker-centuries > table > thead > tr:nth-child(2) > th.next {
+  position: relative;
+  right: 10px;
+  top: -2px;
+}
+
+.datepicker-months > table > thead > tr:nth-child(2) > th.prev,
+.datepicker-years > table > thead > tr:nth-child(2) > th.prev,
+.datepicker-centuries > table > thead > tr:nth-child(2) > th.prev {
+  position: relative;
+  left: 10px;
+  top: -2px;
+}
+.datepicker-decades > table > thead > tr:nth-child(2) > th.prev {
+  top: -6px;
+  left: 10px;
+}
+
+.datepicker-months > table > tfoot > tr:nth-child(2) > th,
+.datepicker-years > table > tfoot > tr:nth-child(2) > th,
+.datepicker-decades > table > tfoot > tr:nth-child(2) > th,
+.datepicker-centuries > table > tfoot > tr:nth-child(2) > th {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.datepicker-months > table > thead > tr:nth-child(2) > th.next,
+.datepicker-months > table > thead > tr:nth-child(2) > th.prev,
+.datepicker-decades > table > thead > tr:nth-child(2) > th.prev,
+.datepicker-centuries > table > thead > tr:nth-child(2) > th.prev {
+  padding-bottom: 0px;
+}
+
+.datepicker-days > table {
+  border-spacing: 0px 7px;
+  border-collapse: inherit;
+}
+
+.datepicker-months > table > tbody > tr > td {
+  padding: 15px 10px;
 }

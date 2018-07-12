@@ -17,8 +17,8 @@ export class DateRangeDirective {
 
   ngAfterViewInit() {
     $(document)
-      .ready(function() {
-        this.$el.datepicker();
+      .ready(function () {
+        $(".input-daterange").datepicker();
       })
       .on("changeDate", event => {
         let inputEvent = new Event("input", { bubbles: true });

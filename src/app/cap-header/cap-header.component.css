@@ -24,8 +24,7 @@
 }
 
 .main-header .logo {
-    color: #fff;
-    background-color: #ffb72a;
+    color: #fff;    
     border-bottom: 0 solid transparent;
     z-index: 3;
     position: relative;
