@@ -23,9 +23,23 @@ import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
 import { DatepickerDirective } from "../directives/datepicker.directive";
+import { CpfPipe } from "../pipes/cpf.pipe";
+import { NgxSelectModule, INgxSelectOptions } from "ngx-select-ex";
+import { DateRangeDirective } from "../directives/daterange.directive";
+import { MyDatePickerModule } from "mydatepicker";
+
+const CustomSelectOptions: INgxSelectOptions = {
+  optionValueField: "value",
+  optionTextField: "label"
+};
 
 @NgModule({
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    NgxSelectModule.forRoot(CustomSelectOptions),
+    MyDatePickerModule
+  ],
   declarations: [
     CapInputTextComponent,
     CapDatepickerComponent,
@@ -48,7 +62,9 @@ import { DatepickerDirective } from "../directives/datepicker.directive";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    DatepickerDirective
+    DatepickerDirective,
+    DateRangeDirective,
+    CpfPipe
   ],
   exports: [
     CapInputTextComponent,
@@ -72,7 +88,9 @@ import { DatepickerDirective } from "../directives/datepicker.directive";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    DatepickerDirective
+    DatepickerDirective,
+    CpfPipe,
+    DateRangeDirective
   ]
 })
 export class BRCapModule {}

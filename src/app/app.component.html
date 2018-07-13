@@ -1,10 +1,42 @@
 <div class="content-wrapper">
-
+  <div class="content-header">
+    <form name="teste2">
+      <div class="row">
+        <div class="col-md-4">
+          <cap-inputText label="Teste" [(ngModel)]="texto" name="texto" [required]="true"></cap-inputText>
+        </div>
+        <div class="col-md-4">
+          <cap-select [items]="items" label="Tipo" name="tipo" [(ngModel)]="select"></cap-select>
+          {{select}}
+        </div>
+        <div class="col-md-4">
+          <cap-datepicker label="Data" [(ngModel)]="data" mask="99/99/9999" name="data"></cap-datepicker>
+          {{data}}
+        </div>
+      </div>
+      {{itemId}}
+    </form>
+  </div>
   <div class="content">
     <div class="box">
-      <cap-datepicker [disabled]="texto?.length > 0"></cap-datepicker>
-
-      <cap-inputText [(ngModel)]="texto"></cap-inputText>
+      <form name="teste">
+        <div class="row">
+          <div class="col-md-4">
+            <cap-inputText label="Teste" [(ngModel)]="texto" name="texto" [required]="true"></cap-inputText>
+          </div>
+          <div class="col-md-4">
+            <cap-select [items]="items" label="Tipo" name="tipo" [(ngModel)]="select"></cap-select>
+            {{select}}
+          </div>
+          <div class="col-md-4">
+            <cap-datepicker label="Data" [(ngModel)]="data" mask="99/99/9999" name="data"></cap-datepicker>
+            {{data}}
+          </div>
+          <div class="col-md-4">
+            <cap-button label="Teste" styleClass="sm" type="submit" icon="arquivo"></cap-button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
 
 @Component({
@@ -11,6 +12,7 @@ export class CapIconComponent implements OnInit {
   @Input("styleClass") styleClass: string;
   @Input("size") size: number;
   @Input("disabled") disabled: boolean;
+  @Input("position") position: string;
   @ViewChild("element") element: ElementRef;
 
   constructor() {}
@@ -18,6 +20,9 @@ export class CapIconComponent implements OnInit {
   ngOnInit() {
     if (this.size) {
       this.element.nativeElement.style.fontSize = this.size + "px";
+    }
+    if (this.position) {
+      this.element.nativeElement.style.cssFloat = this.position;
     }
   }
 }

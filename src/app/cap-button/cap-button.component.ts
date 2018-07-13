@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit, ViewChild, ElementRef } from "@angular/core";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
@@ -7,13 +7,22 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   templateUrl: "./cap-button.component.html",
   styleUrls: ["./cap-button.component.css"]
 })
-export class CapButtonComponent {
+export class CapButtonComponent implements OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("disabled") disabled: boolean;
   @Input("icon") icon: string;
   @Input("loader") loader: boolean;
   @Input("styleClass") styleClass: string;
+  @Input("type") type: string;
+
+  @ViewChild("button") button: ElementRef;
 
   constructor() {}
+
+  ngOnInit() {
+    if (!this.type) {
+      this.type = "button";
+    }
+  }
 }

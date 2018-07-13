@@ -7,15 +7,15 @@ import {
   AfterViewInit,
   ViewChild,
   Output,
-  EventEmitter
+  EventEmitter,
+  ContentChild
 } from "@angular/core";
 import {
   NG_VALUE_ACCESSOR,
   ControlValueAccessor,
-  NgControl,
   NgModel
 } from "@angular/forms";
-import { Subject } from "rxjs/Subject";
+
 import BRCapUtil from "../../brcap-util";
 
 const noop = () => {};
@@ -46,10 +46,17 @@ export class CapInputTextComponent
   @Input("styleInline") styleInline: string;
   @Input("textHelper") textHelper: string;
   @Input("disabled") disabled: boolean;
+  @Input("required") required: boolean;
+  @Input("icon") icon: string;
+  @Input("erroMessage") erroMessage: string;
+  @Input("isValid") isValid: boolean;
+
   @Output() keyup = new EventEmitter();
   @Output() focus = new EventEmitter();
 
   @ViewChild("input") input;
+
+  @ViewChild(NgModel) inputModel;
 
   textError;
 
@@ -115,5 +122,12 @@ export class CapInputTextComponent
     if (this.mask) {
       $(this.input.nativeElement).mask(this.mask);
     }
+  }
+
+  hasError(): boolean {
+    return (
+      this.inputModel.invalid &&
+      (this.inputModel.dirty || this.inputModel.touched)
+    );
   }
 }

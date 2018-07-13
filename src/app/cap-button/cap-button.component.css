@@ -13,7 +13,13 @@ button.cap-button {
   letter-spacing: 1.2px;
   box-shadow: 0 0.5px 2.5px 0 rgba(0, 0, 0, 0.2),
     0 1.5px 0.5px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+  position: relative;
+  top: 20px;
 }
+button.cap-button.sm {
+  height: 38px;
+}
+
 button {
   position: relative;
   overflow: hidden;

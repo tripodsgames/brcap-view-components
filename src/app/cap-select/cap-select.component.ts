@@ -5,8 +5,6 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  AfterViewInit,
-  ViewEncapsulation,
   Output,
   EventEmitter
 } from "@angular/core";
@@ -37,14 +35,8 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("styleClass") styleClass: string;
-  @Input("options") options: string;
-  @Input("itemLabel") itemLabel: string;
-  @Input("itemValue") itemValue: string;
-  @Input("labelOptionAll") labelOptionAll: string;
-  @Input("multiple") multiple: string;
-  @Input("valueOptionAll") valueOptionAll: any;
-  @Input("optionAll") optionAll: boolean;
   @Input("disabled") disabled: boolean;
+  @Input("items") items: any[];
 
   @Output() focus = new EventEmitter();
 

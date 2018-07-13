@@ -1,5 +1,4 @@
-<label [for]="id" class="{{textError}} {{disabled ? 'disabled' : ''}} " *ngIf="label?.length">
+<label [for]="id" class="{{disabled ? 'disabled' : ''}} " *ngIf="label?.length">
   {{label}}</label>
-<select [(ngModel)]="value" (focus)="onFocus($event)" [disabled]="disabled" class="selectpicker form-control">
-  <ng-content></ng-content>
-  <select>
+<ngx-select [items]="items" (focus)="onFocus($event)" noResultsFound="Nenhum resultado encontrado" [disabled]="disabled"
+  class="cap-select" #select name="select" [(ngModel)]="value"></ngx-select>

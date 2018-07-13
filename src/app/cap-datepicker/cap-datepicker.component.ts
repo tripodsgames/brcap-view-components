@@ -3,13 +3,14 @@ import {
   forwardRef,
   Input,
   OnInit,
-  ElementRef,
-  ViewChild
+  ViewChild,
+  AfterViewInit
 } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 import "jquery-mask-plugin";
+import { IMyDpOptions } from "mydatepicker";
 
 const noop = () => {};
 
@@ -25,7 +26,8 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   templateUrl: "./cap-datepicker.component.html",
   styleUrls: ["./cap-datepicker.component.css"]
 })
-export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
+export class CapDatepickerComponent
+  implements ControlValueAccessor, OnInit, AfterViewInit {
   @Input("id") id: string;
   @Input("styleClass") styleClass: string;
   @Input("label") label: string;
@@ -37,15 +39,23 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   @ViewChild("input") input;
 
   private $el: any;
-  private innerValue: any = "";
+  private innerValue: any = new Date(Date.now());
 
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
-  }
+  public myDatePickerOptions: IMyDpOptions = {
+    dateFormat: "dd/mm/yyyy"
+  };
 
-  ngOnInit() {
+  // Initialized to specific date (09.10.2018).
+  public model: any = { date: { year: 2018, month: 10, day: 9 } };
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    (<HTMLInputElement>$(".ngx-datepicker-input")[0]).readOnly = false;
     if (this.mask) {
-      $(this.input.nativeElement).mask(this.mask);
+      $(".ngx-datepicker-input").mask(this.mask);
     }
   }
 
