@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, Renderer } from "@angular/core";
+import { Directive, ElementRef, Renderer, AfterViewInit } from "@angular/core";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 import "assets/js/bootstrap-datepicker.js";
@@ -9,7 +9,7 @@ import "assets/js/bootstrap-datepicker.js";
     "data-date-format": "dd/mm/yyyy"
   }
 })
-export class DateRangeDirective {
+export class DateRangeDirective implements AfterViewInit {
   $el: any;
   constructor(private el: ElementRef, private renderer: Renderer) {
     this.$el = $(el.nativeElement);

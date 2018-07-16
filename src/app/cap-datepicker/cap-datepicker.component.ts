@@ -1,11 +1,4 @@
-import {
-  Component,
-  forwardRef,
-  Input,
-  OnInit,
-  ViewChild,
-  AfterViewInit
-} from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
@@ -26,8 +19,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   templateUrl: "./cap-datepicker.component.html",
   styleUrls: ["./cap-datepicker.component.css"]
 })
-export class CapDatepickerComponent
-  implements ControlValueAccessor, OnInit, AfterViewInit {
+export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;
   @Input("styleClass") styleClass: string;
   @Input("label") label: string;
@@ -42,7 +34,18 @@ export class CapDatepickerComponent
   private innerValue: any = new Date(Date.now());
 
   public myDatePickerOptions: IMyDpOptions = {
-    dateFormat: "dd/mm/yyyy"
+    dateFormat: "dd/mm/yyyy",
+    dayLabels: {su: 'DOM', mo: 'SEG', tu: 'TER', we: 'QUA', th: 'QUI', fr: 'SEX', sa: 'SÁB'},
+    monthLabels: { 1: 'JAN', 2: 'FEV', 3: 'MAR', 4: 'ABR', 5: 'MAI', 6: 'JUN', 7: 'JUL', 8: 'AGO', 9: 'SET', 10: 'OUT', 11: 'NOV', 12: 'DEZ' },
+    firstDayOfWeek: 'su',
+    sunHighlight: false,
+    satHighlight: false,
+    markCurrentDay: false,
+    selectorHeight: '320px',
+    selectorWidth: '300px',
+    height: '50px',
+    openSelectorOnInputClick: true,
+    showTodayBtn: false
   };
 
   // Initialized to specific date (09.10.2018).
@@ -51,13 +54,6 @@ export class CapDatepickerComponent
   constructor() {}
 
   ngOnInit() {}
-
-  ngAfterViewInit() {
-    (<HTMLInputElement>$(".ngx-datepicker-input")[0]).readOnly = false;
-    if (this.mask) {
-      $(".ngx-datepicker-input").mask(this.mask);
-    }
-  }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;

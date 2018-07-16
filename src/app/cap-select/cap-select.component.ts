@@ -58,23 +58,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
     } else {
       this.id += "_input";
     }
-    $(document).ready(function() {
-      $(".selectpicker").selectpicker();
-      $(".bootstrap-select")
-        .find(".dropdown-menu")
-        .removeClass("open");
-      $(".bootstrap-select").click(function() {
-        $(this)
-          .find(".dropdown-menu")
-          .toggleClass("open");
-        $(this)
-          .find(".brcap-ico")
-          .toggleClass("expandir");
-        $(this)
-          .find(".brcap-ico")
-          .toggleClass("anterior");
-      });
-    });
   }
 
   onFocus(event) {

@@ -1507,6 +1507,17 @@ label.disabled {
   position: relative;
   top: 7px;
 }
+.content-header .ngx-select__toggle,
+.content-header .ngx-select__search,
+.content-header .mydp .selection {
+  border: none !important;
+  border-bottom: 1px solid #757575 !important;
+  border-radius: 0px !important;
+}
+
+.ngx-select__search {
+  padding-top: 20px !important;
+}
 
 .form-control:focus {
   outline: none;
@@ -1516,5 +1527,111 @@ label.disabled {
   height: 50px !important;
   border: 1px solid #757575 !important;
   padding-top: 15px !important;
-  padding-left: 10px !important;
+  padding-left: 11px !important;
+}
+
+.selbtngroup .mydpicon {
+  font-family: "brcap-ico" !important;
+  font-size: 20px !important;
+  position: relative;
+  right: 8px;
+}
+
+.mydp .mydpicon.icon-mydpcalendar:before {
+  content: "\e906" !important;
+}
+
+.mydp .mydpicon.icon-mydpremove:before {
+  content: "\78" !important;
+}
+
+.mydp .btnclear,
+.mydp .btndecrease,
+.mydp .btnincrease,
+.mydp .btnpicker,
+.mydp .headertodaybtn {
+  background-color: transparent !important;
+}
+
+.mydp .daycell {
+  background-color: #fff !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mydp .daycell .datevalue span,
+.yearvalue {
+  font-family: Ubuntu !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: 400 !important;
+}
+.mydp .weekdaytitle {
+  background-color: #fff !important;
+  font-size: 10px !important;
+  padding: 15px 0px !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+}
+
+.mydp .caltable,
+.mydp .monthtable,
+.mydp .yeartable {
+  width: 80% !important;
+  height: calc(100% - 50px) !important;
+  background-color: #fff !important;
+  font-size: 12px !important;
+  position: relative;
+  left: 28px;
+}
+
+.mydp .selectedday .datevalue,
+.mydp .selectedmonth .monthvalue,
+.mydp .selectedyear .yearvalue {
+  background-color: #ddd !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  font-family: Ubuntu;
+  font-weight: 400;
+}
+
+.monthvalue {
+  font-family: Ubuntu !important;
+  font-weight: 500 !important;
+  color: #000;
+  font-size: 13px;
+  text-decoration: none !important;
+}
+
+.mydp {
+  border: none !important;
+}
+
+.mydp .daycell .datevalue:hover {
+  background-color: #dfdfdf;
+}
+.mydp .daycell .datevalue {
+  padding: 8px 1px !important;
+  border-radius: 4px !important;
+}
+.mydp .selectorarrow,
+.mydp .headerbtn,
+.mydp .headerlabelbtn,
+.mydp .yearchangebtn,
+.mydp .headerbtncell,
+.mydp .yearchangebtncell,
+.mydp .header,
+.mydp .yearcell,
+.mydp .monthcell {
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+.mydp .daycell,
+.mydp .inputnoteditable,
+.mydp .monthcell,
+.mydp .monthlabel,
+.mydp .yearcell,
+.mydp .yearlabel {
+  font-family: Ubuntu;
+  font-weight: 500;
 }

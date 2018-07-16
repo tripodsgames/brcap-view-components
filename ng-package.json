@@ -1,6 +1,10 @@
 {
   "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
   "lib": {
-    "entryFile": "index.ts"
+    "entryFile": "index.ts",
+    "externals": {
+      "mydatepicker": "mydatepicker",
+      "ngx-select-ex": "ngx-select-ex"
+    }
   }
 }

@@ -22,7 +22,6 @@ import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
 import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
-import { DatepickerDirective } from "../directives/datepicker.directive";
 import { CpfPipe } from "../pipes/cpf.pipe";
 import { NgxSelectModule, INgxSelectOptions } from "ngx-select-ex";
 import { DateRangeDirective } from "../directives/daterange.directive";
@@ -62,7 +61,6 @@ const CustomSelectOptions: INgxSelectOptions = {
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    DatepickerDirective,
     DateRangeDirective,
     CpfPipe
   ],
@@ -88,7 +86,6 @@ const CustomSelectOptions: INgxSelectOptions = {
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    DatepickerDirective,
     CpfPipe,
     DateRangeDirective
   ]
