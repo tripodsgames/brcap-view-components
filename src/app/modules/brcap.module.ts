@@ -23,22 +23,12 @@ import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
-import { NgxSelectModule, INgxSelectOptions } from "ngx-select-ex";
+import { SelectModule } from "ng-select";
 import { DateRangeDirective } from "../directives/daterange.directive";
 import { MyDatePickerModule } from "mydatepicker";
 
-const CustomSelectOptions: INgxSelectOptions = {
-  optionValueField: "value",
-  optionTextField: "label"
-};
-
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    NgxSelectModule.forRoot(CustomSelectOptions),
-    MyDatePickerModule
-  ],
+  imports: [CommonModule, FormsModule, SelectModule, MyDatePickerModule],
   declarations: [
     CapInputTextComponent,
     CapDatepickerComponent,

@@ -1443,80 +1443,52 @@ label.disabled {
   transform: rotate(-90deg);
 }
 
-.ngx-select__toggle,
-.ngx-select__search {
-  height: 50px;
-  border-color: #757575 !important;
-  font-family: Ubuntu;
-}
-.ngx-select__toggle-caret {
-  font-family: "brcap-ico" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  position: relative !important;
-  height: 0px !important;
-  top: -12px !important;
-  right: 25px !important;
-  font-size: 30px !important;
-}
-.ngx-select__toggle-caret.caret {
-  border: none !important;
-}
-.ngx-select__toggle-caret:before {
-  content: "\e90a";
+ng-select > div {
+  border-radius: 4px;
+  border: 1px solid #757575 !important;
+  outline: none;
 }
 
-.cap-select > ngx-select > div > ul > li:nth-child(1) > a {
-  border-top: none !important;
-}
-
-.ngx-select__item_active,
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
-.dropdown-menu > li > a:active,
-.dropdown-menu > li > a:visited {
-  background: #dfdfdf !important;
-  color: rgba(0, 0, 0, 0.87) !important;
-  margin-left: 0px !important;
-  padding-left: 35px !important;
-  border-top: none !important;
-  margin-bottom: -1px;
-}
-
-.ngx-select__item {
-  height: 40px;
-  line-height: 35px !important;
-  font-size: 14px;
-  font-family: Ubuntu;
-  border-top: 1px solid #dfdfdf;
-  margin-left: 15px;
-}
-
-.ngx-select__item span {
-  margin-left: -15px;
-}
-
-.ngx-select__toggle:hover {
-  background-color: #fff !important;
-}
-
-.ngx-select__selected-single {
-  position: relative;
-  top: 7px;
-}
-.content-header .ngx-select__toggle,
-.content-header .ngx-select__search,
-.content-header .mydp .selection {
+.content-header ng-select > div {
   border: none !important;
   border-bottom: 1px solid #757575 !important;
-  border-radius: 0px !important;
+  border-radius: 0px;
 }
 
-.ngx-select__search {
-  padding-top: 20px !important;
+.content-header ng-select > div > div.single > div.value,
+.content-header ng-select > div > div.single > div.placeholder {
+  padding-top: 8px !important;
+}
+
+select-dropdown > div.below {
+  z-index: 4;
+}
+
+ng-select > div > div.single > div.value,
+ng-select > div > div.single > div.placeholder {
+  line-height: 50px !important;
+}
+ng-select > div > div.single {
+  height: 50px !important;
+}
+select-dropdown > div {
+  font-family: Ubuntu;
+  font-size: 14px;
+}
+select-dropdown > div .filter input {
+  height: 50px;
+  padding: 10px 10px !important;
+  outline: none;
+}
+
+ng-select > div > div.single > div.clear,
+ng-select > div > div.single > div.toggle {
+  line-height: 50px !important;
+  color: #000 !important;
+}
+
+select-dropdown > div .options ul li {
+  padding: 10px !important;
 }
 
 .form-control:focus {
