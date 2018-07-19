@@ -66,7 +66,7 @@ body.minimizado .content-wrapper {
   margin-bottom: 20px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
     0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  padding: 15px;
+  padding: 15px 15px 35px 15px;
 }
 .navbar {
   background-color: #fff;
@@ -428,6 +428,32 @@ label.disabled {
 .sair:before {
   content: "\e90f";
 }
+.adiantar10:before {
+  content: "\e919";
+}
+.pausar:before {
+  content: "\e91a";
+}
+.tocar:before {
+  content: "\e91b";
+}
+.voltar10:before {
+  content: "\e91c";
+}
+
+.volumeoff:before {
+  content: "\e91d";
+}
+.volumeon:before {
+  content: "\e91e";
+}
+.codigo:before {
+  content: "\e91f";
+}
+.editar:before {
+  content: "\e920";
+}
+
 .x:before {
   content: "\78";
 }
