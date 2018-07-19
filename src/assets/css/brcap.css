@@ -14,6 +14,7 @@ html {
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
+  font-family: Ubuntu;
 }
 
 #wrapper {
@@ -1511,21 +1512,42 @@ ng-select > div > div.single > div.clear,
 ng-select > div > div.single > div.toggle {
   line-height: 50px !important;
   color: #000 !important;
+  overflow: hidden;
+}
+
+ng-select > div > div.single > div.toggle:hover {
+  background-color: transparent !important;
 }
 
 select-dropdown > div .options ul li {
   padding: 10px !important;
+  border-top: 1px solid #f1f1f1;
 }
 
 .form-control:focus {
-  outline: none;
+  outline: none !important;
+  border-color: unset !important;
+  box-shadow: none !important;
 }
 
 .mydp .selection {
   height: 50px !important;
   border: 1px solid #757575 !important;
-  padding-top: 15px !important;
-  padding-left: 11px !important;
+  font-family: Ubuntu;
+  padding-left: 10px !important;
+}
+
+.mydp .nextmonth,
+.mydp .prevmonth {
+  color: #777 !important;
+}
+
+.mydp .invaliddate {
+  background: transparent !important;
+}
+
+.mydrp .invaliddaterange {
+  background: transparent !important;
 }
 
 .selbtngroup .mydpicon {
@@ -1559,7 +1581,6 @@ select-dropdown > div .options ul li {
 .mydp .daycell .datevalue span,
 .yearvalue {
   font-family: Ubuntu !important;
-  color: #000000 !important;
   text-decoration: none !important;
   font-weight: 400 !important;
 }
@@ -1632,4 +1653,174 @@ select-dropdown > div .options ul li {
 .mydp .yearlabel {
   font-family: Ubuntu;
   font-weight: 500;
+}
+
+.content-header .mydp .selection {
+  border: none !important;
+  border-bottom: 1px solid #757575 !important;
+  border-radius: 0px;
+  padding-top: 10px;
+}
+
+/** INICIO **/
+
+.mydrp {
+  width: 100% !important;
+}
+
+.mydrp .titleareatxt {
+  font-family: Ubuntu;
+}
+
+.mydrp .header {
+  height: 0px !important;
+}
+
+.mydrp .selection {
+  height: 50px !important;
+  border: 1px solid #757575 !important;
+  font-family: Ubuntu;
+  padding-left: 10px !important;
+}
+
+.mydrp .nextmonth,
+.mydrp .prevmonth {
+  color: #777 !important;
+}
+
+.mydrp .invaliddate {
+  background: transparent !important;
+}
+
+.selbtngroup .mydrpicon {
+  font-family: "brcap-ico" !important;
+  font-size: 20px !important;
+  position: relative;
+  right: 8px;
+}
+
+.mydrp .mydrpicon.icon-mydrpcalendar:before {
+  content: "\e906" !important;
+}
+
+.mydrp .mydrpicon.icon-mydrpremove:before {
+  content: "\78" !important;
+}
+
+.mydrp .btnclear,
+.mydrp .btndecrease,
+.mydrp .btnincrease,
+.mydrp .btnpicker,
+.mydrp .headertodaybtn {
+  background-color: transparent !important;
+}
+
+.mydrp .daycell {
+  background-color: #fff !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mydrp .daycell .datevalue span,
+.yearvalue {
+  font-family: Ubuntu !important;
+  text-decoration: none !important;
+  font-weight: 400 !important;
+}
+.mydrp .weekdaytitle {
+  background-color: #fff !important;
+  font-size: 10px !important;
+  padding: 13px 0px !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+}
+
+.mydrp .range {
+  background-color: #d9f2e6 !important;
+}
+
+.mydrp .caltable,
+.mydrp .monthtable,
+.mydrp .yeartable {
+  width: 80% !important;
+  height: calc(100% - 50px) !important;
+  background-color: #fff !important;
+  font-size: 12px !important;
+  position: relative;
+  left: 28px;
+}
+
+.mydrp .selectedday .datevalue,
+.mydrp .selectedmonth .monthvalue,
+.mydrp .selectedyear .yearvalue {
+  background-color: #ddd !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  font-family: Ubuntu;
+  font-weight: 400;
+}
+
+.monthvalue {
+  font-family: Ubuntu !important;
+  font-weight: 500 !important;
+  color: #000;
+  font-size: 13px;
+  text-decoration: none !important;
+}
+
+.mydrp {
+  border: none !important;
+}
+
+.mydrp .daycell .datevalue:hover {
+  background-color: #dfdfdf;
+}
+.mydrp .daycell .datevalue {
+  padding: 8px 1px !important;
+  border-radius: 4px !important;
+}
+.mydrp .selectorarrow,
+.mydrp .headerbtn,
+.mydrp .headerlabelbtn,
+.mydrp .yearchangebtn,
+.mydrp .headerbtncell,
+.mydrp .yearchangebtncell,
+.mydrp .header,
+.mydrp .yearcell,
+.mydrp .monthcell {
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+.mydrp .daycell,
+.mydrp .inputnoteditable,
+.mydrp .monthcell,
+.mydrp .monthlabel,
+.mydrp .yearcell,
+.mydrp .yearlabel {
+  font-family: Ubuntu;
+  font-weight: 500;
+}
+
+.content-header .mydrp .selection {
+  border: none !important;
+  border-bottom: 1px solid #757575 !important;
+  border-radius: 0px;
+  padding-top: 10px;
+}
+
+ng-select > div > div.single > div.toggle {
+  font-family: "brcap-ico";
+}
+
+ng-select > div > div.single > div.toggle:before {
+  content: "\e90a";
+  font-size: 28px;
+}
+
+ng-select > div.open > div.single > div.toggle:before {
+  content: "\e918";
+  font-size: 28px;
+}
+select-dropdown > div.above {
+  z-index: 3;
 }

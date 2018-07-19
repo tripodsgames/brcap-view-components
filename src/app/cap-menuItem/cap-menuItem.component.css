@@ -5,7 +5,7 @@
 }
 
 .menu-item:hover {
-  opacity: 0.9;  
+  opacity: 0.9;
 }
 
 ul.list {
@@ -15,7 +15,8 @@ ul.list {
 }
 
 ul.list li .menu-item{
-  height: 40px;
+  min-height: 40px;
+  height: auto;
   padding: 7px 40px;
 }
 

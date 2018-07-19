@@ -11,7 +11,6 @@ import {
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 import * as jqueryProxy from "jquery";
-import "assets/js/bootstrap-select.min.js";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};

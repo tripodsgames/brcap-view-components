@@ -1,3 +1,4 @@
+import { IMyDrpOptions } from "mydaterangepicker";
 import {
   Component,
   forwardRef,
@@ -31,80 +32,84 @@ export class CapDateRangePickerComponent
   @Input("id") id: string;
   @Input("label") label: string;
   @Input("styleClass") styleClass: string;
-  @Input("labelStart") labelStart: string;
-  @Input("labelEnd") labelEnd: string;
-  @Input("placeholderStart") placeholderStart: string;
-  @Input("placeholderEnd") placeholderEnd: string;
-
-  @Input("colsStart") colsStart: string;
-  @Input("colsEnd") colsEnd: string;
-
-  @Input("maskStart") maskStart: string;
-  @Input("maskEnd") maskEnd: string;
-
+  @Input("placeholder") placeholder: string;
+  @Input("mask") mask: string;
   @Input("format") format: string;
-
   @Input("clearBtn") clearBtn: boolean;
-
   @Input("disabled") disabled: boolean;
 
-  @ViewChild("date1") date1;
-  @ViewChild("date2") date2;
   @ViewChild("divRange") divRange;
 
   private $el: any;
-  private innerValue: any = "";
-  private innerValueEnd: any = "";
+  private innerValue: any = new Date(Date.now());
+
   private dates: DateRangeDTO;
+
+  public myDatePickerOptions: IMyDrpOptions = {
+    dateFormat: "dd/mm/yyyy",
+    showApplyBtn: false,
+    dayLabels: {
+      su: "DOM",
+      mo: "SEG",
+      tu: "TER",
+      we: "QUA",
+      th: "QUI",
+      fr: "SEX",
+      sa: "SÁB"
+    },
+    monthLabels: {
+      1: "JAN",
+      2: "FEV",
+      3: "MAR",
+      4: "ABR",
+      5: "MAI",
+      6: "JUN",
+      7: "JUL",
+      8: "AGO",
+      9: "SET",
+      10: "OUT",
+      11: "NOV",
+      12: "DEZ"
+    },
+    firstDayOfWeek: "su",
+    sunHighlight: false,
+    markCurrentDay: false,
+    selectorHeight: "320px",
+    selectorWidth: "300px",
+    height: "50px",
+    selectBeginDateTxt: "Selecione a data inicial",
+    selectEndDateTxt: "Selecione a data final",
+    openSelectorOnInputClick: true,
+    showClearBtn: false
+  };
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
   }
 
   ngOnInit() {
-    if (this.maskStart) {
-      $(this.date1.nativeElement).mask(this.maskStart);
-    }
-    if (this.maskEnd) {
-      $(this.date2.nativeElement).mask(this.maskEnd);
+    if (this.mask) {
+      $(".mydrp .selection").mask(this.mask, {
+        translation: {
+          S: {
+            pattern: /[a-zA-Z ]/
+          }
+        }
+      });
     }
   }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
-  setDates(dateStart, dateEnd) {
-    this.innerValue = dateStart;
-    this.innerValueEnd = dateEnd;
-    this.setValues();
-  }
-
-  setValues() {
-    this.dates = new DateRangeDTO(this.innerValue, this.innerValueEnd);
-    this.onChangeCallback(this.dates);
-  }
-
   get value(): any {
-    return this.dates;
+    return this.innerValue;
   }
 
   set value(v: any) {
     if (v !== this.innerValue) {
       this.innerValue = v;
-      this.dates = new DateRangeDTO(this.innerValue, this.innerValueEnd);
-      this.onChangeCallback(this.dates);
-    }
-  }
-
-  get valueEnd(): any {
-    return this.innerValueEnd;
-  }
-
-  set valueEnd(v: any) {
-    if (v !== this.innerValueEnd) {
-      this.innerValueEnd = v;
-      this.dates = new DateRangeDTO(this.innerValue, this.innerValueEnd);
-      this.onChangeCallback(this.dates);
+      this.onChangeCallback(v);
     }
   }
 

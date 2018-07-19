@@ -35,15 +35,36 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
 
   public myDatePickerOptions: IMyDpOptions = {
     dateFormat: "dd/mm/yyyy",
-    dayLabels: {su: 'DOM', mo: 'SEG', tu: 'TER', we: 'QUA', th: 'QUI', fr: 'SEX', sa: 'SÁB'},
-    monthLabels: { 1: 'JAN', 2: 'FEV', 3: 'MAR', 4: 'ABR', 5: 'MAI', 6: 'JUN', 7: 'JUL', 8: 'AGO', 9: 'SET', 10: 'OUT', 11: 'NOV', 12: 'DEZ' },
-    firstDayOfWeek: 'su',
+    dayLabels: {
+      su: "DOM",
+      mo: "SEG",
+      tu: "TER",
+      we: "QUA",
+      th: "QUI",
+      fr: "SEX",
+      sa: "SÁB"
+    },
+    monthLabels: {
+      1: "JAN",
+      2: "FEV",
+      3: "MAR",
+      4: "ABR",
+      5: "MAI",
+      6: "JUN",
+      7: "JUL",
+      8: "AGO",
+      9: "SET",
+      10: "OUT",
+      11: "NOV",
+      12: "DEZ"
+    },
+    firstDayOfWeek: "su",
     sunHighlight: false,
     satHighlight: false,
     markCurrentDay: false,
-    selectorHeight: '320px',
-    selectorWidth: '300px',
-    height: '50px',
+    selectorHeight: "320px",
+    selectorWidth: "300px",
+    height: "50px",
     openSelectorOnInputClick: true,
     showTodayBtn: false
   };
@@ -53,7 +74,11 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.mask) {
+      $(".mydp .selection").mask(this.mask);
+    }
+  }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;

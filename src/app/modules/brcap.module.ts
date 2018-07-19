@@ -26,9 +26,16 @@ import { CpfPipe } from "../pipes/cpf.pipe";
 import { SelectModule } from "ng-select";
 import { DateRangeDirective } from "../directives/daterange.directive";
 import { MyDatePickerModule } from "mydatepicker";
+import { MyDateRangePickerModule } from "mydaterangepicker";
 
 @NgModule({
-  imports: [CommonModule, FormsModule, SelectModule, MyDatePickerModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SelectModule,
+    MyDatePickerModule,
+    MyDateRangePickerModule
+  ],
   declarations: [
     CapInputTextComponent,
     CapDatepickerComponent,
