@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
           {
             id: "Usuarios#CadastroUsuarios",
             icon: "fa fa-home",
-            title: "Cadastro Usuarios",
+            title: "Cadastro Usuarios Teste Tamanho",
             url: "cadastrousuario",
             acoes: ["Incluir", "Excluir"],
             visible: false

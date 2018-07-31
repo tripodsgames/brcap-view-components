@@ -37,6 +37,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("disabled") disabled: boolean;
   @Input("items") items: any[];
   @Input("placeholder") placeholder: string;
+  @Input("filter") filter: boolean;
 
   @Output() focus = new EventEmitter();
 

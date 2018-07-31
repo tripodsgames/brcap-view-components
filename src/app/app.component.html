@@ -1,10 +1,3 @@
 <div class="container">
-  <div class="content-header">
-    <cap-dateRangePicker label="Data" [(ngModel)]="data"></cap-dateRangePicker>
-    {{data}}
-  </div>
-  <div class="box">
-    <cap-dateRangePicker label="Data" mask="99/99/9999"></cap-dateRangePicker>
-    <cap-datepicker label='Data'></cap-datepicker>
-  </div>
+  <cap-select [items]="items"></cap-select>
 </div>
