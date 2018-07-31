@@ -24,7 +24,6 @@ import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
 import { SelectModule } from "ng-select";
-import { DateRangeDirective } from "../directives/daterange.directive";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
 
@@ -58,7 +57,6 @@ import { MyDateRangePickerModule } from "mydaterangepicker";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    DateRangeDirective,
     CpfPipe
   ],
   exports: [
@@ -83,8 +81,7 @@ import { MyDateRangePickerModule } from "mydaterangepicker";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
-    CpfPipe,
-    DateRangeDirective
+    CpfPipe
   ]
 })
 export class BRCapModule {}
