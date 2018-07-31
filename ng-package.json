@@ -4,6 +4,7 @@
     "entryFile": "index.ts",
     "externals": {
       "mydatepicker": "mydatepicker",
+      "mydaterangepicker": "mydaterangepicker",
       "ng-select": "ng-select"
     }
   }
