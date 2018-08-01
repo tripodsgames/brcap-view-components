@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   naoAtivo = true;
   texto;
   erroMsg;
+  desabilitar = false;
 
   table = [
     {

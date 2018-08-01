@@ -1812,6 +1812,10 @@ ng-select > div > div.single > div.toggle {
   font-family: "brcap-ico";
 }
 
+ng-select > div.disabled > div.single > div.toggle {
+  color: #ddd !important;
+}
+
 ng-select > div > div.single > div.toggle:before {
   content: "\e90a";
   font-size: 28px;

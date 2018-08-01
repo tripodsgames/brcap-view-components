@@ -1,6 +1,6 @@
 <label [for]="id" class="{{disabled ? 'disabled' : ''}} " *ngIf="label?.length">
   {{label}}</label>
 <ng-select [options]="items" [noFilter]="!filter ? 100 : 0" [(ngModel)]="value" [placeholder]="placeholder" filterPlaceholder="Informe a busca"
-  notFoundMsg="Nenhum resultado encontrado" highlightColor="#dfdfdf" highlightTextColor="#000">
+  notFoundMsg="Nenhum resultado encontrado" [disabled]="disabled" highlightColor="#dfdfdf" highlightTextColor="#000">
 
 </ng-select>

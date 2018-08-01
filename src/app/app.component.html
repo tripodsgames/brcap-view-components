@@ -1,3 +1,4 @@
 <div class="container">
-  <cap-select [items]="items"></cap-select>
+  <cap-select [items]="items"  label="Tipo" [disabled]="desabilitar"></cap-select>
+  <cap-checkbox [(ngModel)]="desabilitar" name="teste" itemLabel="Teste"></cap-checkbox>
 </div>
