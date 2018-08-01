@@ -1,4 +1,10 @@
 <div class="container">
-  <cap-select [items]="items"  label="Tipo" [disabled]="desabilitar"></cap-select>
+  <cap-select [items]="items" label="Tipo" [disabled]="desabilitar"></cap-select>
   <cap-checkbox [(ngModel)]="desabilitar" name="teste" itemLabel="Teste"></cap-checkbox>
+
+  <cap-inputText label="TEste" [(ngModel)]="aaaa" [disabled]="true"></cap-inputText>
+  <cap-inputTextArea label="TEste" [(ngModel)]="aaaa" [disabled]="true"></cap-inputTextArea>
+
+  <cap-checkbox itemLabel="teste" label="Teste" [disabled]="true" name="teste"></cap-checkbox>
+  <cap-toggle itemLabel="teste" label="Teste" [disabled]="true" name="teste"></cap-toggle>
 </div>

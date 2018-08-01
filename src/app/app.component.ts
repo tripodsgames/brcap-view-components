@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   texto;
   erroMsg;
   desabilitar = false;
-
+  aaaa = "Teste texto";
   table = [
     {
       Nome: "Teste 1",

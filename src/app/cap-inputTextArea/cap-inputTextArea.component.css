@@ -17,6 +17,7 @@
 .cap-inputTextArea:disabled {
   border: 1px solid #c9c9c9;
   background-color: #ffffff;
+  color: #888;
 }
 
 .cap-inputTextArea:focus {

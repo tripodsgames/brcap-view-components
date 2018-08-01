@@ -288,6 +288,7 @@ input:disabled:-ms-input-placeholder {
 .cap-inputText:disabled {
   border: 1px solid #c9c9c9;
   background-color: #ffffff;
+  color: #888;
 }
 
 .cap-inputText.error {
