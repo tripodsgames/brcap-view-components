@@ -13,6 +13,7 @@ export class CapTableComponent implements OnInit, AfterViewInit {
   @Input("styleClass") styleClass: string;
   @Input("value") value: Array<any>;
   @Input("draggable") draggable: boolean;
+  @Input("disabled") disabled: boolean;
 
   @ViewChild("table") table: ElementRef;
   colunas = [];

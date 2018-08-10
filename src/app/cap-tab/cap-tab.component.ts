@@ -11,6 +11,7 @@ export class CapTabComponent implements OnInit {
   @Input("styleClass") styleClass: string;
   @Input("name") name: string;
   @Input("title") title: string;
+  @Input("disabled") disabled: boolean;
   @Input() active = false;
 
   constructor() {}
