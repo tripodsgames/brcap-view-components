@@ -36,8 +36,12 @@ export class CapTabPanelComponent implements OnInit, AfterContentInit {
   }
 
   selectTab(tab: CapTabComponent) {
-    this.tabs.toArray().forEach(tab => (tab.active = false));
-
-    tab.active = true;
+    const tabAtiva: CapTabComponent[] = this.tabs.filter(item => item.active === true);
+    this.tabs.toArray().forEach(tabI => (tabI.active = false));
+    if (!tab.disabled) {
+      tab.active = true;
+    } else {
+      tabAtiva[0].active = true;
+    }
   }
 }

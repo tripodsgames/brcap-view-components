@@ -11,10 +11,13 @@
   border: none;
   background-color: #fafafa;
   border-bottom: 1px solid #979797;
-  letter-spacing: 1.2px;
-  padding: 13px 35px;
+  letter-spacing: 0.2px;
+  padding: 13px 20px;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.6);
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .cap-tabPanel > li.active > a {
@@ -23,4 +26,14 @@
 
 .cap-tabPanel > li:hover > a {
   background-color: #e5e5e5;
+}
+
+.cap-tabPanel > li.disabled > a {
+  background-color: #e5e5e5;
+  color: #ccc;
+  cursor: not-allowed;
+}
+.cap-tabPanel > li.disabled:hover > a {
+  background-color: #e5e5e5;
+  color: #ccc;
 }

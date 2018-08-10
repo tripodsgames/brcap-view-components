@@ -1,13 +1,14 @@
-<div class="container">
-  <cap-select [items]="items" label="Tipo" [disabled]="desabilitar"></cap-select>
-  <cap-checkbox [(ngModel)]="desabilitar" name="teste" itemLabel="Teste"></cap-checkbox>
-
-  <cap-inputText label="TEste" [(ngModel)]="aaaa" [disabled]="true"></cap-inputText>
-  <cap-inputTextArea label="TEste" [(ngModel)]="aaaa" [disabled]="true"></cap-inputTextArea>
-
-  <cap-checkbox itemLabel="teste" label="Teste" [disabled]="true" name="teste"></cap-checkbox>
-  <cap-toggle itemLabel="teste" label="Teste" [disabled]="true" name="teste"></cap-toggle>
-
-  <cap-btnCollapse targetId="targetId" [disabled]="false" ></cap-btnCollapse>
+<div class="container" style="margin-top: 50p">
+  <cap-tabPanel>
+    <cap-tab title="LISTA DE SOLICITAÇÕES" [active]="true">
+      Teste 1
+    </cap-tab>
+    <cap-tab [disabled]="true" title="SERVIÇO">
+      Teste 2
+    </cap-tab>
+    <cap-tab title="Teste">
+      Teste 3
+    </cap-tab>
+  </cap-tabPanel>
 
 </div>
