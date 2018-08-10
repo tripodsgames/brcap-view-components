@@ -26,6 +26,7 @@ import { CpfPipe } from "../pipes/cpf.pipe";
 import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
+import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { MyDateRangePickerModule } from "mydaterangepicker";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
+    CapBtnCollapseComponent,
     CpfPipe
   ],
   exports: [
@@ -81,6 +83,7 @@ import { MyDateRangePickerModule } from "mydaterangepicker";
     CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
+    CapBtnCollapseComponent,
     CpfPipe
   ]
 })

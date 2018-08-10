@@ -1,0 +1,19 @@
+.btnCollapse{
+    width: 31px;
+    height: 31px;
+    background-color: #ffffff;
+    border-radius:15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
+    margin-left: 18px;
+    border: 0px;
+    font-size:23px !important;
+} 
+
+.btnCollapse:after {
+    font-family: "brcap-ico";
+    content: "\e918";
+}
+
+.btnCollapse.collapsed:after {
+    content: "\e90a";
+}
