@@ -27,6 +27,7 @@ import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
+import { CapGridPaginationComponent } from '../cap-grid-pagination/cap-grid-pagination.component';
 
 @NgModule({
   imports: [
@@ -59,7 +60,8 @@ import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.comp
     CapTableComponent,
     CapPasswordComponent,
     CapBtnCollapseComponent,
-    CpfPipe
+    CpfPipe,
+    CapGridPaginationComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -84,7 +86,8 @@ import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.comp
     CapTableComponent,
     CapPasswordComponent,
     CapBtnCollapseComponent,
-    CpfPipe
+    CpfPipe,
+    CapGridPaginationComponent
   ]
 })
 export class BRCapModule {}

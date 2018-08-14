@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { CapGridPaginationComponent } from './cap-grid-pagination/cap-grid-pagination.component'
 
 @Component({
   selector: "app-root",
@@ -45,14 +46,25 @@ export class AppComponent implements OnInit {
 
   itemId;
 
-  public items: any[] = [
-    { label: "Blue 1", value: 1 },
-    { label: "Blue 2", value: 2 },
-    { label: "Blue 3", value: 3 },
-    { label: "Blue 4", value: 4 },
-    { label: "Blue 5", value: 5 },
-    { label: "Blue 6", value: 6 }
-  ];
+  // public items: any[] = [
+  //   { label: "Blue 1", value: 1 },
+  //   { label: "Blue 2", value: 2 },
+  //   { label: "Blue 3", value: 3 },
+  //   { label: "Blue 4", value: 4 },
+  //   { label: "Blue 5", value: 5 },
+  //   { label: "Blue 6", value: 6 }
+  // ];
+
+  // CAP-GRID-PAGINAION
+  @ViewChild(CapGridPaginationComponent) gridPagination: CapGridPaginationComponent
+  columns = ["ID", "NOME"]
+  items = [[1, "JOÃO"], [2, "MARIA"]]
+
+  ngAfterViewInit(){
+    setTimeout(_=> {
+      this.gridPagination.setPage(true)
+    });
+  }
 
   ngOnInit() {
     this.radios = [
