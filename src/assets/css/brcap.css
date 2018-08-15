@@ -65,7 +65,7 @@ body.minimizado .content-wrapper {
   background: #ffffff;
   margin-bottom: 20px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  padding: 15px 15px 35px 15px;
+  padding: 15px 15px 15px 15px;
 }
 .navbar {
   background-color: #fff;
@@ -160,6 +160,18 @@ h3 {
   background-color: #fff !important;
   width: 100% !important;
   color: rgba(0, 0, 0, 0.87);
+}
+
+.cap-inputText.outline {
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+  background: transparent !important;
+  border-radius: 0px;
+  padding: 20px 10px 10px 13px;
+}
+
+cap-inputText[ng-reflect-style-class="outline"] label {
+  background: transparent !important;
 }
 
 .cap-inputText.sm {
@@ -460,6 +472,10 @@ label.disabled {
 .cap-button .brcap-ico {
   position: relative;
   left: -10px;
+}
+cap-button .xs i.brcap-ico {
+  left: -6px !important;
+  top: 2px !important;
 }
 
 /*
@@ -1790,4 +1806,21 @@ ng-select > div.open > div.single > div.toggle:before {
 }
 select-dropdown > div.above {
   z-index: 3;
+}
+
+div.inline-checkbox {
+  display: inline-flex;
+}
+
+div.inline-checkbox label {
+  padding-right: 1em !important;
+  white-space: nowrap !important;
+}
+
+.toogle i.expandir,
+.toogle i.retrair {
+  font-size: 24px;
+  position: relative;
+  top: 4px;
+  padding: 10px 5px 10px 0px;
 }

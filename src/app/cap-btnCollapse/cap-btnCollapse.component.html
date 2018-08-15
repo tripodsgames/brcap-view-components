@@ -1,3 +1,4 @@
 <div class="divColapse">
-  <button class="btnCollapse collapsed {{styleClass}}" [disabled]="disabled" data-toggle="collapse" [attr.data-target]="'#' + targetId"></button>
+  <button class="btnCollapse {{collapsed ? 'collapsed' : ''}} {{styleClass}}" [disabled]="disabled" data-toggle="collapse"
+    [attr.data-target]="'#' + targetId"></button>
 </div>

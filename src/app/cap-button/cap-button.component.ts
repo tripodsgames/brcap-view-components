@@ -20,9 +20,15 @@ export class CapButtonComponent implements OnInit {
 
   constructor() {}
 
+  iconFontSize = 20;
+
   ngOnInit() {
     if (!this.type) {
       this.type = "button";
+    }
+
+    if (this.styleClass.indexOf('xs') !== -1) {
+      this.iconFontSize = 10;
     }
   }
 }

@@ -1,3 +1,4 @@
+import { CapDropdownListItemComponent } from "../cap-dropdownListItem/cap-dropdownListItem.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CapInputTextComponent } from "../cap-inputText/cap-inputText.component";
@@ -27,16 +28,11 @@ import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
-import { CapGridPaginationComponent } from '../cap-grid-pagination/cap-grid-pagination.component';
+import { CapGridPaginationComponent } from "../cap-grid-pagination/cap-grid-pagination.component";
+import { CapDropdownListComponent } from "../cap-dropdownList/cap-dropdownList.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    SelectModule,
-    MyDatePickerModule,
-    MyDateRangePickerModule
-  ],
+  imports: [CommonModule, FormsModule, SelectModule, MyDatePickerModule, MyDateRangePickerModule],
   declarations: [
     CapInputTextComponent,
     CapDatepickerComponent,
@@ -61,7 +57,9 @@ import { CapGridPaginationComponent } from '../cap-grid-pagination/cap-grid-pagi
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
-    CapGridPaginationComponent
+    CapGridPaginationComponent,
+    CapDropdownListComponent,
+    CapDropdownListItemComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -87,7 +85,9 @@ import { CapGridPaginationComponent } from '../cap-grid-pagination/cap-grid-pagi
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
-    CapGridPaginationComponent
+    CapGridPaginationComponent,
+    CapDropdownListComponent,
+    CapDropdownListItemComponent
   ]
 })
 export class BRCapModule {}

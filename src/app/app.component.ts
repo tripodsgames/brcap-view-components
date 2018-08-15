@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { CapGridPaginationComponent } from './cap-grid-pagination/cap-grid-pagination.component'
+import { CapGridPaginationComponent } from "./cap-grid-pagination/cap-grid-pagination.component";
 
 @Component({
   selector: "app-root",
@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   private brcapUtil;
   funcionalidades = [];
   colors = {};
+  collapse = false;
 
   item = false;
   radios = [];
@@ -56,14 +57,21 @@ export class AppComponent implements OnInit {
   // ];
 
   // CAP-GRID-PAGINAION
-  @ViewChild(CapGridPaginationComponent) gridPagination: CapGridPaginationComponent
-  columns = ["ID", "NOME"]
-  items = [[1, "JOÃO"], [2, "MARIA"]]
+  @ViewChild(CapGridPaginationComponent)
+  gridPagination: CapGridPaginationComponent;
+  columns = ["ID", "NOME"];
+  items = [[1, "JOÃO"], [2, "MARIA"]];
 
-  ngAfterViewInit(){
-    setTimeout(_=> {
-      this.gridPagination.setPage(true)
-    });
+  ngAfterViewInit() {
+    if (this.gridPagination) {
+      setTimeout(_ => {
+        this.gridPagination.setPage(true);
+      });
+    }
+  }
+
+  toogleCollapse() {
+    this.collapse = !this.collapse;
   }
 
   ngOnInit() {

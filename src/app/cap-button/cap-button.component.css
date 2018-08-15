@@ -20,6 +20,13 @@ button.cap-button.sm {
   height: 38px;
 }
 
+button.cap-button.xs {
+  height: 24px;
+  padding: 0px 15px;
+  font-size: 10px;
+  top: 7px;
+}
+
 button {
   position: relative;
   overflow: hidden;
