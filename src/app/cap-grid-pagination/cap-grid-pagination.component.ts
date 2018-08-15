@@ -14,13 +14,16 @@ export class CapGridPaginationComponent implements OnInit {
   @Input() currentPage: number
   @Input() labelPaginas: string
 
-  totalPages = 1
-  pagedItens = []
+  totalPages: number
+  pagedItens: any
 
-  constructor() {}
+  constructor() {
+    this.totalPages = 1
+    this.pagedItens = []
+    if(!this.itemsPerPage) this.itemsPerPage = 10
+  }
 
   ngOnInit() {
-    if(!this.itemsPerPage) this.itemsPerPage = 10
     this.currentPage = 1
     this.setPage()
   }
