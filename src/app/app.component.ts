@@ -26,6 +26,50 @@ export class AppComponent implements OnInit {
   erroMsg;
   desabilitar = false;
   aaaa = "Teste texto";
+  menu = [
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      status: "A",
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          status: "A"
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          status: "A"
+        }
+      ]
+    }
+  ];
+
   table = [
     {
       Nome: "Teste 1",

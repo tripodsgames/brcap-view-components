@@ -27,7 +27,7 @@ export class CapButtonComponent implements OnInit {
       this.type = "button";
     }
 
-    if (this.styleClass.indexOf('xs') !== -1) {
+    if (this.styleClass && this.styleClass.indexOf('xs') !== -1) {
       this.iconFontSize = 10;
     }
   }
