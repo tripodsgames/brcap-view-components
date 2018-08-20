@@ -1,4 +1,4 @@
-<div *ngIf="value.status === 'A'">
+<div *ngIf="value.ativo">
   <span *ngIf="value.rota">
     <a class="link" [href]="value.rota">
       <div class="menu-item {{exibir ? 'active' : ''}}" #menuItem (click)="toggleClass(value?.funcionalidades)">
