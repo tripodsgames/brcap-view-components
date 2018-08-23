@@ -1,1 +1,34 @@
-<cap-menu [value]="menu"> </cap-menu>
+<div class="content">
+  <div class="content-header">
+    <div class="row">
+      <div class="col-md-4">
+
+        <cap-monthpicker label="Teste" format="MM/YYYY" placeholder="Informe o mes" [(ngModel)]="data"></cap-monthpicker>
+
+        {{data}}
+      </div>
+      <div class="col-md-4">
+
+        <cap-inputText label="Input"></cap-inputText>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="row">
+      <div class="col-md-4">
+
+        <cap-monthpicker label="Teste" placeholder="Informe o mes" [(ngModel)]="data"></cap-monthpicker>
+
+        {{data}}
+      </div>
+      <div class="col-md-4">
+
+        <cap-inputText label="Input"></cap-inputText>
+
+
+      </div>
+    </div>
+  </div>
+</div>

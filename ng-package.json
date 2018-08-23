@@ -5,7 +5,8 @@
     "externals": {
       "mydatepicker": "mydatepicker",
       "mydaterangepicker": "mydaterangepicker",
-      "ng-select": "ng-select"
+      "ng-select": "ng-select",
+      "ng2-date-picker": "ng2-date-picker"
     }
   }
 }
