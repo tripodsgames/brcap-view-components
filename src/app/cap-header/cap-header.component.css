@@ -1,10 +1,9 @@
 .main-header {
-    position: relative;
-    max-height: 100px;
-    z-index: 1030;
-      box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  max-height: 100px;
+  z-index: 1030;
+  box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
- 
 
 .main-header .logo {
   -webkit-transition: width 0.3s ease-in-out;
@@ -12,9 +11,9 @@
   transition: width 0.3s ease-in-out;
   display: block;
   float: left;
-  height: 100px;
+  height: 70px;
   font-size: 20px;
-  line-height: 100px;
+  line-height: 70px;
   text-align: center;
   width: 225px;
   font-family: "Ubuntu", Helvetica, Arial, sans-serif;
@@ -24,10 +23,10 @@
 }
 
 .main-header .logo {
-    color: #fff;    
-    border-bottom: 0 solid transparent;
-    z-index: 3;
-    position: relative;
+  color: #fff;
+  border-bottom: 0 solid transparent;
+  z-index: 3;
+  position: relative;
 }
 
 .main-header .sidebar-toggle {
@@ -72,8 +71,9 @@
 
 .user-menu {
   position: relative;
-  top: -17px;
-  right: 65%;
+  top: -32px;
+  float: right;
+  margin-right: 15px;
 }
 
 .user-body {
@@ -93,7 +93,7 @@
 
 .label-projeto {
   position: relative;
-  top: 30px;
+  top: 12px;
   vertical-align: middle;
 }
 
@@ -146,20 +146,18 @@
 .navbar-nav {
   margin: 0px;
 }
- 
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
-    background-color: #FFF;
+    background-color: #fff;
   }
 
   .navbar-custom-menu > ul > li.open > a > i {
     position: relative;
     left: 158px;
   }
-  
+
   .user-menu.open {
-    right:25%;
+    right: 25%;
   }
-  
 }

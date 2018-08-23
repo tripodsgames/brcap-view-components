@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       icone: "fa fa-if",
       open: false,
       descricao: "pagamentos de títulos",
-      status: "A",
+      ativo: true,
       funcionalidades: [
         {
           bloquear: false,
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
           alterar: true,
           open: false,
           rota: "/rateio",
-          status: "A"
+          ativo: true
         },
         {
           bloquear: false,
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
           alterar: true,
           open: false,
           rota: "/comissao",
-          status: "A"
+          ativo: true
         }
       ]
     }

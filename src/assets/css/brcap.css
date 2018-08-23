@@ -70,8 +70,8 @@ body.minimizado .content-wrapper {
 .navbar {
   background-color: #fff;
   z-index: 1;
-  max-height: 100px;
-  height: 100px;
+  max-height: 70px;
+  height: 70px;
 }
 
 h1 {
