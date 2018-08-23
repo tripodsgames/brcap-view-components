@@ -1,0 +1,89 @@
+@import './../../assets/sass/reset-link';
+$bg-color: #030303;
+$text-color: rgba(255, 255, 255, 0.87);
+$label-size: .8em;
+$project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financeiro: #378443, contabilidade: #1f2586, monitor: #187ca6, );
+@mixin border-radius() {
+  border-radius: 5px;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.form-login {
+  background: $bg-color;
+  color: $text-color;
+  width: 400px;
+  box-shadow: 2px 1px 20px #000;
+  padding: 35px;
+  @include border-radius();
+  h2 {
+    font-size: 1.1em;
+  }
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    position: absolute;
+    top: -($label-size / 2);
+    left: $label-size * 2;
+    font-size: $label-size;
+    background: $bg-color;
+    padding: 0 4px;
+  }
+  input {
+    background: none;
+    color: $text-color;
+    border-color: $text-color;
+    padding: 5px;
+    height: calc(1em + #{2 * ($label-size)});
+    width: 100%;
+    @include border-radius();
+    &:-webkit-autofill {
+      background: none;
+    }
+  }
+}
+
+.signup-button {
+  background: $bg-color;
+  border: 1px solid $text-color;
+  padding: 5px;
+  @include border-radius();
+  @include reset-link($text-color);
+  width: 45%;
+  display: inline-block;
+  text-align: center;
+}
+
+.submit-button {
+  background: $bg-color;
+  border: 1px solid $text-color;
+  padding: 5px;
+  color: $bg-color;
+  background: $text-color;
+  cursor: pointer;
+  width: 45%;
+  display: inline-block;
+
+  @include border-radius();
+}
+
+@each $project,
+$color in $project-colors {
+  .bg-project-#{$project} {
+    background: $color;
+  }
+}
