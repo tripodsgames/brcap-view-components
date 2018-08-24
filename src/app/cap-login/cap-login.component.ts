@@ -85,6 +85,7 @@ export class CapLoginComponent implements OnInit {
                   usuarioLogado.token = res.token;
                   usuarioLogado.modulos = res1;
                   sessionStorage.setItem("userSession_key_" + this.sistema, usuarioLogado);
+                  localStorage.setItem("userSession_key_" + this.sistema, usuarioLogado);
                   window.open(this.urlRedirect);
                 } else {
                   toastr["warning"]("Usuário ou senha inválidos");
