@@ -1,5 +1,9 @@
-<img src="{{ logo }}" alt="Logo {{ projeto }}">
-<div class="center-content full-height bg-project-{{ projeto }}">
+<header class="header">
+  <img class="logo" src="../../assets/img/brasilcap.svg" alt="Brasilcap Logo">
+  <span class="divider"></span>
+  <img class="logo" src="{{ logo }}" alt="Logo {{ projeto }}">
+</header>
+<main class="center-content full-height bg-project-{{ projeto }}">
   <form class="form-login" autocomplete="off">
     <h2>Login</h2>
     <div class="input-group" [ngClass]="emailValidationClass">
@@ -15,4 +19,4 @@
       <a href="{{ urlCadastro }}" class="signup-button">Cadastre-se</a>
     </div>
   </form>
-</div>
+</main>
