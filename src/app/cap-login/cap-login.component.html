@@ -1,0 +1,56 @@
+<div id="wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="header">
+        <img class="logo-darwin" src="../../assets/img/logo-darwin.svg">
+        <span class="divider"></span>
+        <img class="logo-brasilcap" src="../../assets/img/brasilcap.svg">
+      </div>
+    </div>
+  </div>
+  <div class="content-login">
+    <div class="row row-center">
+      <div class="col-lg-12 col-form">
+        <div class="box-login center-block">
+          <div class="logotipo">
+            <img [src]="srcLogo">
+          </div>
+          <form>
+            <fieldset>
+
+              <label>E-mail</label>
+              <input id="email-login" type="email" required class="form-control input-type-text {{loginInvalido || loginRequired ? 'login-invalido' : ''}}"
+                name="login" [(ngModel)]="usuario.login">
+              <small class="erro" *ngIf="loginRequired">Campo obrigatório</small>
+              <small class="erro" *ngIf="loginInvalido">E-mail inválido.</small>
+
+              <label>Senha</label>
+              <input id="senha-login" type="password" required class="form-control input-type-password {{senhaInvalida || senhaRequired ? 'senha-invalido' : ''}}"
+                name="senha" [(ngModel)]="usuario.senha">
+              <small class="erro" *ngIf="senhaRequired">Campo obrigatório</small>
+
+              <div class="form-group ">
+                <div class="text-center alert alert-danger" role="alert" *ngIf="msg?.title">
+                  <i class="pull-left fa fa-info-circle" aria-hidden="true"></i> {{ msg?.title }}
+                </div>
+              </div>
+              <div class="form-buttons">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button class="btn-acessar" (click)="login()" type="submit">Acessar
+                      <i class=" fa fa-spinner  fa-spin" *ngIf="loading"></i>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn-cadastrase" target="_blank" [href]="urlCadastro">Cadastre-se</a>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

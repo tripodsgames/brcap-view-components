@@ -1878,3 +1878,24 @@ dp-date-picker .dp-current-location-btn {
   color: rgba(0, 0, 0, 0.87) !important;
   padding-top: 20px !important;
 }
+
+#toast-container {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 5px;
+  padding: 15px;
+  background: #fff;
+  min-width: 360px;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+  border-left: 8px solid rgba(0, 0, 0, 0.54);
+}
+.toast-close-button {
+  display: block;
+  float: right;
+  background: transparent;
+  border: none;
+  transform: scale(2.5);
+  outline: none;
+}

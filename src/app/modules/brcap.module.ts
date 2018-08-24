@@ -32,9 +32,20 @@ import { CapGridPaginationComponent } from "../cap-grid-pagination/cap-grid-pagi
 import { CapDropdownListComponent } from "../cap-dropdownList/cap-dropdownList.component";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
+import { CapLoginComponent } from "../cap-login/cap-login.component";
+import { LoginService } from "../services/login.service";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
-  imports: [CommonModule, FormsModule, SelectModule, MyDatePickerModule, MyDateRangePickerModule, DpDatePickerModule],
+  imports: [
+    CommonModule,
+    HttpModule,
+    FormsModule,
+    SelectModule,
+    MyDatePickerModule,
+    MyDateRangePickerModule,
+    DpDatePickerModule
+  ],
   declarations: [
     CapInputTextComponent,
     CapDatepickerComponent,
@@ -62,7 +73,8 @@ import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.comp
     CapGridPaginationComponent,
     CapDropdownListComponent,
     CapDropdownListItemComponent,
-    CapMonthPickerComponent
+    CapMonthPickerComponent,
+    CapLoginComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -91,7 +103,9 @@ import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.comp
     CapGridPaginationComponent,
     CapDropdownListComponent,
     CapDropdownListItemComponent,
-    CapMonthPickerComponent
-  ]
+    CapMonthPickerComponent,
+    CapLoginComponent
+  ],
+  providers: [LoginService]
 })
 export class BRCapModule {}
