@@ -5,7 +5,6 @@ import { CommonModule } from "@angular/common";
 
 import { FormsModule } from "@angular/forms";
 import { BRCapModule } from "./modules/brcap.module";
-import { TelaLoginComponent } from './tela-login/tela-login.component';
 
 @NgModule({
   declarations: [AppComponent, TelaLoginComponent],
