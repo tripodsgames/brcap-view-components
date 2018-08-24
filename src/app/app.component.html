@@ -1,2 +1,14 @@
+<div class="container">
+  <cap-select [items]="items" label="Tipo" [disabled]="desabilitar"></cap-select>
+  <cap-checkbox [(ngModel)]="desabilitar" name="teste" itemLabel="Teste"></cap-checkbox>
+
+  <cap-inputText label="TEste" [(ngModel)]="aaaa" [disabled]="true"></cap-inputText>
+  <cap-inputTextArea label="TEste" [(ngModel)]="aaaa" [disabled]="true"></cap-inputTextArea>
+
+  <cap-checkbox itemLabel="teste" label="Teste" [disabled]="true" name="teste"></cap-checkbox>
+  <cap-toggle itemLabel="teste" label="Teste" [disabled]="true" name="teste"></cap-toggle>
+  <app-tela-login [projeto]="'financeiro'" [logo]="'assets/img/financeiro.svg'"></app-tela-login>
+
+</div>
 <cap-login sistema="financeiro" urlCadastro="https://darwin-dev.brasilcap.com.br/#/cadastro" urlEnv="https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/"
   srcLogo="../assets/img/financeiro.svg" urlRedirect="/#/dashboard"></cap-login>
