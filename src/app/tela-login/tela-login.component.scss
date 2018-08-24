@@ -34,7 +34,6 @@ $project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financ
   margin-bottom: 2em;
   display: flex;
   justify-content: space-between;
-
   label {
     position: absolute;
     top: -($label-size / 2);
@@ -52,7 +51,7 @@ $project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financ
     width: 100%;
     @include border-radius();
     &:-webkit-autofill {
-      background: none; 
+      background: none;
       box-shadow: 0 0 0 30px $bg-color inset !important;
       -webkit-text-fill-color: #fff;
     }
@@ -79,7 +78,6 @@ $project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financ
   cursor: pointer;
   width: 45%;
   display: inline-block;
-
   @include border-radius();
 }
 
@@ -90,9 +88,10 @@ $color in $project-colors {
   }
 }
 
+$header-size: 65px;
 .header {
   background-color: #fff;
-  height: 65px;
+  height: $header-size;
   padding-left: 30px;
   display: table-cell;
   vertical-align: middle;
@@ -104,9 +103,11 @@ $color in $project-colors {
     margin: 0px 20px;
     padding: 12px 0px;
   }
-
   .logo {
     width: 150px;
   }
 }
 
+.overlap-header {
+  margin-top: -$header-size;
+}
