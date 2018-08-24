@@ -7,7 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { BRCapModule } from "./modules/brcap.module";
 
 @NgModule({
-  declarations: [AppComponent, TelaLoginComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, CommonModule, FormsModule, BRCapModule],
   bootstrap: [AppComponent]
 })
