@@ -2,7 +2,13 @@
 $bg-color: #030303;
 $text-color: rgba(255, 255, 255, 0.87);
 $label-size: .8em;
-$project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financeiro: #378443, contabilidade: #1f2586, monitor: #187ca6, );
+$project-bgs: (
+  malthus: linear-gradient(55deg, #412614, #6e513c),
+  produto: linear-gradient(56deg, #5f3500, #ffd503),
+  posvenda: linear-gradient(54deg, #003d72, #016fb0),
+  financeiro: linear-gradient(55deg, #133018, #409932),
+  contabilidade: linear-gradient(55deg, #10123c, #565696), monitor: #187ca6,
+);
 @mixin border-radius() {
   border-radius: 5px;
 }
@@ -24,6 +30,9 @@ $project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financ
   box-shadow: 2px 1px 20px #000;
   padding: 35px;
   @include border-radius();
+  .logo {
+    margin-bottom: 2em;
+  }
   h2 {
     font-size: 1.1em;
   }
@@ -55,6 +64,9 @@ $project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financ
       box-shadow: 0 0 0 30px $bg-color inset !important;
       -webkit-text-fill-color: #fff;
     }
+    &:focus {
+      box-shadow: 0 0 2px #fff;
+    }
   }
 }
 
@@ -82,9 +94,9 @@ $project-colors: ( malthus: #914615, produto: #d07400, posvenda: #006bbb, financ
 }
 
 @each $project,
-$color in $project-colors {
+$bg-value in $project-bgs {
   .bg-project-#{$project} {
-    background: $color;
+    background: $bg-value;
   }
 }
 
