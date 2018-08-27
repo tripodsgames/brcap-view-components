@@ -68,8 +68,8 @@ export class CapGridPaginationComponent implements OnInit {
     }
   }
 
-  clickItemOption(opt, item){
-    this.itemOptionClick.emit({"option": opt, "item": {"id": item[0]}})
+  clickItemOption(opt, idx){
+    this.itemOptionClick.emit({"option": opt, "index": idx})
     this.showItemOptions = null
   }
 

@@ -15,7 +15,7 @@
             <img [src]="moreOptionsImg" (click)="clickItem(i)" class="cap-grid-options">
             <div *ngIf="showItemOptions === i" class="row-options">
               <ul>
-                <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, v)">{{opt}}</li>
+                <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">{{opt}}</li>
               </ul>
             </div>
           </td>
