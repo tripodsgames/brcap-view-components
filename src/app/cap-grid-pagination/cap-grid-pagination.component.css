@@ -58,3 +58,41 @@
     /* background-color: $cor-padrao-8; */
     border-radius: 8px;
 }
+
+.cap-grid-options {
+    cursor: pointer !important;
+    right: auto;
+    height: 15px;
+    width: 15px;
+    border: 0.5px solid;
+    border-radius: 3px;
+    margin-left: -8px;
+}
+
+.cap-grid-item-option {
+    cursor: pointer !important;
+    padding: 10px 1px 1px 15px;
+    text-align: left;
+}
+
+.cap-grid-item-option img {
+    position: relative;
+}
+
+.cap-grid-item-option:hover {
+    background-color: #E4E3DF;
+}
+
+.cap-grid-row-options {
+    text-align: center
+}
+
+.row-options {
+    width: 100px;
+    margin-top: 15px;
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    margin-left: -2%;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { log } from 'util';
+import { Component, OnInit, Input, Output, EventEmitter,HostListener } from '@angular/core';
 
 @Component({
   selector: 'cap-grid-pagination',
@@ -13,9 +12,23 @@ export class CapGridPaginationComponent implements OnInit {
   @Input() itemsPerPage: number
   @Input() currentPage: number
   @Input() labelPaginas: string
+  @Input() rowOptions: any
+
+  @Output() itemOptionClick = new EventEmitter<any>()
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event) {
+    let nonAffectedClasses = ['row-options', 'cap-grid-options', 'cap-grid-item-option']
+    if(!(nonAffectedClasses.includes(event.target.className))) this.showItemOptions = null
+  }
 
   totalPages: number
   pagedItens: any
+  showItemOptions: number
+
+  moreOptionsImg = require('../../assets/img/mais-op-es-vert.svg')
+  previousImg = require('../../assets/img/anterior.svg')
+  nextImg = require('../../assets/img/seguir.svg')
 
   constructor() {
     this.totalPages = 1
@@ -29,12 +42,12 @@ export class CapGridPaginationComponent implements OnInit {
   }
 
   prevPage(){
-    this.currentPage -= 1;
+    this.currentPage -= 1
     this.setPage()
   }
 
   nextPage(){
-    this.currentPage += 1;
+    this.currentPage += 1
     this.setPage()
   }
 
@@ -45,6 +58,19 @@ export class CapGridPaginationComponent implements OnInit {
     }
     this.labelPaginas = `Página ${this.currentPage} de ${this.totalPages}`
     this.pagedItens = this.items.slice((this.currentPage-1) * this.itemsPerPage, ((this.currentPage-1) * this.itemsPerPage) + this.itemsPerPage)
+  }
+
+  clickItem(index){
+    if(this.showItemOptions == index){
+      this.showItemOptions = null
+    }else{
+      this.showItemOptions = index
+    }
+  }
+
+  clickItemOption(opt, item){
+    this.itemOptionClick.emit({"option": opt, "item": {"id": item[0]}})
+    this.showItemOptions = null
   }
 
 }
