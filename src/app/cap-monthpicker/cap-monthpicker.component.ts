@@ -2,7 +2,8 @@ import { Component, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 
 const noop = () => {};
-import * as moment_ from "moment/moment";
+import * as momentImported from "moment";
+const moment = momentImported;
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -50,7 +51,7 @@ export class CapMonthPickerComponent implements ControlValueAccessor, OnInit {
     }
     this.config = {
       format: this.format,
-      locale: moment_.locale("pt-br")
+      locale: moment.locale("pt-br")
     };
   }
 

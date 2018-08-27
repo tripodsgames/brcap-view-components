@@ -1,7 +1,7 @@
 import { Observable } from "rxjs/Observable";
 import { Http, Response, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
-import "rxjs/Rx";
+import * as Rx from "rxjs/Rx";
 
 @Injectable()
 export class LoginService {

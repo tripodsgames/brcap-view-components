@@ -84,10 +84,15 @@ export class CapLoginComponent implements OnInit {
                   usuarioLogado.login = u.login;
                   usuarioLogado.token = res.token;
                   usuarioLogado.modulos = res1;
-                  sessionStorage.setItem("usuarioLogado", usuarioLogado);
-                  window.open(this.urlRedirect);
+                  sessionStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
+                  localStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
+                  window.location.href = this.urlRedirect;
+                } else {
+                  toastr["warning"]("Usuário ou senha inválidos");
                 }
               });
+            } else {
+              toastr["warning"]("Usuário ou senha inválidos");
             }
           });
         } else {
