@@ -12,7 +12,7 @@
         <tr *ngFor="let v of pagedItens;  let i = index">
           <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
           <td *ngIf="rowOptions" class="cap-grid-row-options">
-            <img src="assets/img/mais-op-es-vert.svg" (click)="clickItem(i)" class="cap-grid-options">
+            <img src="../../assets/img/mais-op-es-vert.svg" (click)="clickItem(i)" class="cap-grid-options">
             <div *ngIf="showItemOptions === i" class="row-options">
               <ul>
                 <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">{{opt}}</li>
@@ -23,9 +23,9 @@
       </tbody>
     </table>
     <div class="cap-grid-pagination">
-      <img class="pag-prev" src="assets/img/anterior.svg" (click)="prevPage()" *ngIf="currentPage > 1">
+      <img class="pag-prev" src="../../assets/img/anterior.svg" (click)="prevPage()" *ngIf="currentPage > 1">
       {{labelPaginas}}
-      <img class="pag-next" src="assets/img/seguir.svg" (click)="nextPage()" *ngIf="currentPage < totalPages">
+      <img class="pag-next" src="../../assets/img/seguir.svg" (click)="nextPage()" *ngIf="currentPage < totalPages">
     </div>
   </div>
 </div>
