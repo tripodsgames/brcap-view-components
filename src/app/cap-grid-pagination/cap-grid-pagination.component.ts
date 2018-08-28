@@ -29,9 +29,9 @@ export class CapGridPaginationComponent implements OnInit {
   pagedItens: any
   showItemOptions: number
 
-  moreOptionsImg = require('../../assets/img/mais-op-es-vert.svg')
-  previousImg = require('../../assets/img/anterior.svg')
-  nextImg = require('../../assets/img/seguir.svg')
+  moreOptionsImg = require('assets/img/mais-op-es-vert.svg')
+  previousImg = require('assets/img/anterior.svg')
+  nextImg = require('assets/img/seguir.svg')
 
   constructor() {
     this.totalPages = 1
