@@ -19,7 +19,7 @@ export class CapGridPaginationComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
     let nonAffectedClasses = ['row-options', 'cap-grid-options', 'cap-grid-item-option']
-    if(!(nonAffectedClasses.includes(event.target.className))) this.showItemOptions = null
+    if(nonAffectedClasses.indexOf(event.target.className) < 0) this.showItemOptions = null
   }
 
   totalPages: number
