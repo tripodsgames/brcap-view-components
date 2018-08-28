@@ -1,6 +1,6 @@
 {
   "name": "brcap-view-components",
-  "version": "1.2.37",
+  "version": "1.2.38",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
