@@ -5,7 +5,7 @@ import toastr from "toastr";
 @Component({
   selector: "cap-login",
   templateUrl: "./cap-login.component.html",
-  styleUrls: ["./cap-login.component.css"]
+  styleUrls: ["./cap-login.component.scss"]
 })
 export class CapLoginComponent implements OnInit {
   constructor(private loginService: LoginService) {}
