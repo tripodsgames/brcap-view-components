@@ -105,6 +105,7 @@ export class AppComponent implements OnInit {
   gridPagination: CapGridPaginationComponent;
   columns = ["ID", "NOME"];
   items = [[1, "JOÃO"], [2, "MARIA"]];
+  rowOptions=["Editar"]
 
   ngAfterViewInit() {
     if (this.gridPagination) {

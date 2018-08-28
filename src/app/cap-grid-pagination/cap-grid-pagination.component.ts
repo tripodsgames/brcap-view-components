@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter,HostListener } from '@angular/core';
 
-declare function require(path: string);
-
 @Component({
   selector: 'cap-grid-pagination',
   templateUrl: './cap-grid-pagination.component.html',
@@ -28,10 +26,6 @@ export class CapGridPaginationComponent implements OnInit {
   totalPages: number
   pagedItens: any
   showItemOptions: number
-
-  moreOptionsImg = require('assets/img/mais-op-es-vert.svg')
-  previousImg = require('assets/img/anterior.svg')
-  nextImg = require('assets/img/seguir.svg')
 
   constructor() {
     this.totalPages = 1
