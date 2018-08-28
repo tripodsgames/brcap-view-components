@@ -1,11 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter,HostListener } from '@angular/core';
 
+declare function require(path: string);
+
 @Component({
   selector: 'cap-grid-pagination',
   templateUrl: './cap-grid-pagination.component.html',
   styleUrls: ['./cap-grid-pagination.component.css']
 })
 export class CapGridPaginationComponent implements OnInit {
+  
 
   @Input() items: any
   @Input() columns: any
