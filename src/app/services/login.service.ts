@@ -2,6 +2,8 @@ import { Observable } from "rxjs/Observable";
 import { Http, Response, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
 import * as Rx from "rxjs/Rx";
+import "rxjs/add/operator/map";
+import "rxjs/Rx";
 
 @Injectable()
 export class LoginService {
@@ -10,11 +12,11 @@ export class LoginService {
   endpointLogin = "authentication";
   endpointAuth = "authorization";
   endpointUsuarios = "usuarios";
+  endpointEsqueciSenha = "?acao=esqueci_senha";
 
   login(usuario: any, url): Observable<any> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
-    //headers.append("authorization", this.service.getAuth());
     url += this.endpointLogin;
 
     return this.http
@@ -46,6 +48,16 @@ export class LoginService {
     return this.http
       .get(url, { headers: headers })
       .map(res => res.json())
+      .catch(this.handleError);
+  }
+
+  esqueciSenha(usuario: any, url): Observable<any> {
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    url += this.endpointUsuarios + this.endpointEsqueciSenha;
+    return this.http
+      .patch(url, JSON.stringify(usuario), { headers: headers })
+      .map(res => res)
       .catch(this.handleError);
   }
 

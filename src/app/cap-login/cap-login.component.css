@@ -1,0 +1,234 @@
+#wrapper {
+  height: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-size: 100%;
+  overflow: hidden;
+  font-family: Ubuntu;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1f2728 inset !important;
+  -webkit-text-fill-color: #fff;
+}
+.row-center {
+  display: table;
+  margin: 0 auto;
+  width: 100%;
+}
+.header {
+  background-color: #fff;
+  height: 65px;
+  padding-left: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  width: 1000vh;
+  min-width: 100%;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+.logo-brasilcap {
+  width: 150px;
+}
+.logo-darwin {
+  width: 100px;
+}
+.box-login {
+  padding: 30px;
+  display: table;
+  border-radius: 5px;
+  background-color: #1f2728;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+.box-header {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0.2px;
+  margin-bottom: 15px;
+}
+.divider {
+  border: 1px solid #e5e5e5;
+  margin: 0px 20px;
+  padding: 12px 0px;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #757575;
+  margin-bottom: 15px;
+  height: 56px;
+  line-height: 56px;
+  font-size: 16px;
+  outline: none !important;
+  background-color: #1f2728;
+  color: #fff;
+}
+input.error {
+  border: 2px solid #b00020;
+}
+label {
+  position: relative;
+  top: 12px;
+  left: 8px;
+  background: #1f2728;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+.help-block.text-danger {
+  font-size: 12px;
+  color: #b00020;
+  font-weight: 500;
+  position: relative;
+  top: -10px;
+  left: 14px;
+}
+.logotipo {
+  overflow: hidden;
+  max-width: 250px;
+  margin: 0 0 20px;
+}
+.content-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.form-buttons {
+  margin-top: 45px;
+}
+.btn-acessar {
+  background-color: #fff;
+  color: #1a3538;
+  border-radius: 4px;
+  padding: 8px 25px;
+  outline: none;
+  font-family: Ubuntu;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: none;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+  margin-bottom: 10px;
+}
+.btn-acessar:hover {
+  background-color: rgba(255, 255, 255, 0.87);
+}
+.row-btn-acessar {
+  margin-top: 40px;
+  padding-bottom: 15px;
+}
+.login-header {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 20px;
+  padding: 10px 0px 25px 0px;
+}
+.btn-cadastrase {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 9px 25px;
+  outline: none;
+  font-family: Ubuntu;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+  margin-bottom: 10px;
+  position: relative;
+  top: 7px;
+  text-decoration: none;
+}
+
+.btn-cadastrase:hover {
+  background-color: #fff;
+  color: #1a3538;
+}
+.icon-visualizar {
+  color: #fff;
+  float: right;
+  top: -54px;
+  position: relative;
+  left: -15px;
+}
+label.error {
+  color: #b00020;
+  font-size: 12px;
+  font-weight: 500;
+  position: relative;
+  top: -12px;
+  left: 10px;
+}
+@media (min-width: 720px) {
+  .box-login {
+    min-width: 400px;
+  }
+}
+@media (max-width: 720px) {
+  .box-login {
+    min-width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .box-login {
+    width: 100%;
+    margin: 0;
+    border-radius: 0px;
+  }
+  .logo-darwin {
+    width: 40%;
+  }
+  .logo-brasilcap {
+    width: 40%;
+  }
+}
+@media (max-height: 680px) {
+  .box-login {
+    position: relative;
+    top: -50px;
+  }
+}
+small.erro {
+  position: relative;
+  top: -10px;
+  left: 10px;
+  color: #b00020;
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+}
+
+.content-link {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  top: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -5,7 +5,7 @@ import toastr from "toastr";
 @Component({
   selector: "cap-login",
   templateUrl: "./cap-login.component.html",
-  styleUrls: ["./cap-login.component.scss"]
+  styleUrls: ["./cap-login.component.css"]
 })
 export class CapLoginComponent implements OnInit {
   constructor(private loginService: LoginService) {}
@@ -33,9 +33,7 @@ export class CapLoginComponent implements OnInit {
   loginRequired;
   senhaRequired;
 
-  ngOnInit() {}
-
-  login() {
+  ngOnInit() {
     toastr.options = {
       closeButton: true,
       debug: false,
@@ -53,6 +51,9 @@ export class CapLoginComponent implements OnInit {
       showMethod: "fadeIn",
       hideMethod: "fadeOut"
     };
+  }
+
+  login() {
     this.loginRequired = false;
     this.loginInvalido = false;
     this.senhaInvalida = false;
@@ -107,6 +108,38 @@ export class CapLoginComponent implements OnInit {
           this.msg.text = "Favor entrar em contato com o administrador de sistema!.";
         }
         this.loading = false;
+      }
+    );
+  }
+
+  esqueciSenha(usuario) {
+    usuario.plataforma = this.sistema;
+
+    this.loginService.esqueciSenha(usuario, this.urlEnv).subscribe(
+      resp1 => {
+        if (resp1.status === 200) {
+          toastr["warning"]("Em alguns minutos você receberá um email com instruções para redefinição de senha.");
+        } else if (resp1.status === 204) {
+          toastr["warning"]("Usuário e/ou senha inválido(s)");
+        } else if (resp1.status === 400) {
+          toastr["warning"]("Não possivél realizar a operação, por favor tente mais tarde!");
+        }
+      },
+      err => {
+        try {
+          if (err.status === 401) {
+            toastr["warning"](
+              "Usuário não possui permissão de acesso, favor entrar em contato com o administrador de sistema!"
+            );
+          } else {
+            toastr["warning"](
+              "Não possivél realizar a operação, por favor entre em contato com o administrador de sistema."
+            );
+          }
+        } catch (error) {
+          console.log("error: ", error);
+          console.log("err sv: ", err);
+        }
       }
     );
   }
