@@ -86,6 +86,7 @@ export class CapLoginComponent implements OnInit {
                       usuarioLogado.cpf = u.cpf;
                       usuarioLogado.situacao = u.situacao;
                       usuarioLogado.login = u.login;
+                      usuarioLogado.email = u.login;
                       usuarioLogado.token = res.token;
                       usuarioLogado.modulos = res1;
                       sessionStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
