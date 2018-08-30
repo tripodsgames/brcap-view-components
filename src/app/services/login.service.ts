@@ -19,10 +19,7 @@ export class LoginService {
     headers.append("Content-Type", "application/json");
     url += this.endpointLogin;
 
-    return this.http
-      .put(url, usuario, { headers: headers })
-      .map(res => res.json())
-      .catch(this.handleError);
+    return this.http.put(url, usuario, { headers: headers }).map(res => res);
   }
 
   getAuth(token, url): Observable<any> {
@@ -31,10 +28,7 @@ export class LoginService {
     headers.append("Authorization", token);
     url += this.endpointAuth;
 
-    return this.http
-      .get(url, { headers: headers })
-      .map(res => res.json())
-      .catch(this.handleError);
+    return this.http.get(url, { headers: headers }).map(res => res);
   }
 
   getUser(login, url): Observable<any> {

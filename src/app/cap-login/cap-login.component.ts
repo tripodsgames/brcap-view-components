@@ -54,6 +54,7 @@ export class CapLoginComponent implements OnInit {
   }
 
   login() {
+    toastr.clear();
     this.loginRequired = false;
     this.loginInvalido = false;
     this.senhaInvalida = false;
@@ -72,42 +73,54 @@ export class CapLoginComponent implements OnInit {
     this.usuario.sistema = this.sistema;
     this.loginService.login(this.usuario, this.urlEnv).subscribe(
       res => {
-        if (res) {
-          this.loginService.getAuth(res.token, this.urlEnv).subscribe(res1 => {
-            if (res1) {
-              this.loginService.getUser(this.usuario.login, this.urlEnv).subscribe(u => {
-                if (u) {
-                  u = u[0];
-                  const usuarioLogado: any = new Object();
-                  usuarioLogado.nome = u.nome;
-                  usuarioLogado.cpf = u.cpf;
-                  usuarioLogado.situacao = u.situacao;
-                  usuarioLogado.login = u.login;
-                  usuarioLogado.token = res.token;
-                  usuarioLogado.modulos = res1;
-                  sessionStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
-                  localStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
-                  window.location.href = this.urlRedirect;
-                } else {
-                  toastr["warning"]("Usuário ou senha inválidos");
+        if (res && res._body) {
+          this.loginService.getAuth(JSON.parse(res._body).token, this.urlEnv).subscribe(
+            res1 => {
+              if (res1) {
+                this.loginService.getUser(this.usuario.login, this.urlEnv).subscribe(
+                  u => {
+                    if (u) {
+                      u = u[0];
+                      const usuarioLogado: any = new Object();
+                      usuarioLogado.nome = u.nome;
+                      usuarioLogado.cpf = u.cpf;
+                      usuarioLogado.situacao = u.situacao;
+                      usuarioLogado.login = u.login;
+                      usuarioLogado.token = res.token;
+                      usuarioLogado.modulos = res1;
+                      sessionStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
+                      localStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
+                      window.location.href = this.urlRedirect;
+                    } else {
+                      toastr["warning"]("Usuário ou senha inválidos");
+                    }
+                  },
+                  err => {
+                    toastr["warning"]("Usuário ou senha inválidos");
+                  }
+                );
+              } else {
+                toastr["warning"]("Usuário ou senha inválidos");
+              }
+            },
+            err => {
+              if (err) {
+                if (err.status === 401) {
+                  toastr["warning"]("Usuário sem permissão de acesso.");
+                } else if (err._body) {
+                  toastr["warning"](JSON.parse(err._body).mensagem);
                 }
-              });
-            } else {
-              toastr["warning"]("Usuário ou senha inválidos");
+              }
             }
-          });
+          );
         } else {
           toastr["warning"]("Usuário ou senha inválidos");
         }
       },
       err => {
-        try {
-          this.msg.title = "Falha ao se logar!";
-          this.msg.text = err.json().mensagem;
-        } catch (err) {
-          this.msg.text = "Favor entrar em contato com o administrador de sistema!.";
+        if (err && err._body) {
+          toastr["warning"](JSON.parse(err._body).mensagem);
         }
-        this.loading = false;
       }
     );
   }
