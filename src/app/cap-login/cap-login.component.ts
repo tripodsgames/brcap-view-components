@@ -127,7 +127,7 @@ export class CapLoginComponent implements OnInit {
   }
 
   esqueciSenha(usuario) {
-    usuario.plataforma = this.sistema;
+    usuario.plataforma = "darwin";
 
     this.loginService.esqueciSenha(usuario, this.urlEnv).subscribe(
       resp1 => {

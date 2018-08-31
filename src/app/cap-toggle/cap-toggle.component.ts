@@ -21,11 +21,16 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   styleUrls: ["./cap-toggle.component.css"]
 })
 export class CapToggleComponent implements ControlValueAccessor, OnInit {
-  @Input("id") id: string;
-  @Input("name") name: string;
-  @Input("itemLabel") itemLabel: string;
-  @Input("disabled") disabled: boolean;
-  @Input("styleClass") styleClass: string;
+  @Input("id")
+  id: string;
+  @Input("name")
+  name: string;
+  @Input("itemLabel")
+  itemLabel: string;
+  @Input("disabled")
+  disabled: boolean;
+  @Input("styleClass")
+  styleClass: string;
 
   private $el: any;
   private innerValue: any = "";
@@ -36,7 +41,6 @@ export class CapToggleComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     if (null == this.name) throw new Error("Attribute 'name' is required");
-    if (null == this.itemLabel) throw new Error("Attribute 'itemLabel' is required");
     if (!this.id) {
       this.id = BRCapUtil.guid();
     } else {

@@ -1,4 +1,6 @@
 <input [attr.name]="name" [disabled]="disabled" [(ngModel)]="value" type="checkbox" [id]="id" class="{{styleClass}} switch-input">
-<label [for]="id" class="switch-label {{disabled ? 'disabled' : ''}}" *ngIf="itemLabel?.length">{{itemLabel}}
-
+<label [for]="id" class="switch-label {{disabled ? 'disabled' : ''}}" *ngIf="itemLabel?.length">
+  {{itemLabel}}
+</label>
+<label [for]="id" class="switch-label {{disabled ? 'disabled' : ''}}" *ngIf="!itemLabel?.length">
 </label>

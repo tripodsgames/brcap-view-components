@@ -26,7 +26,215 @@ export class AppComponent implements OnInit {
   erroMsg;
   desabilitar = false;
   aaaa = "Teste texto";
+  off = false;
+  on = true;
+
   menu = [
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
     {
       codigo: "financeiro#pagamento",
       icon: "retrair",
@@ -105,7 +313,7 @@ export class AppComponent implements OnInit {
   gridPagination: CapGridPaginationComponent;
   columns = ["ID", "NOME"];
   items = [[1, "JOÃO"], [2, "MARIA"]];
-  rowOptions=["Editar"]
+  rowOptions = ["Editar"];
 
   ngAfterViewInit() {
     if (this.gridPagination) {
