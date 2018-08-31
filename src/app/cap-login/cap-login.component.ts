@@ -23,6 +23,8 @@ export class CapLoginComponent implements OnInit {
   @Input("urlRedirect")
   urlRedirect;
 
+  userKeySession = "userSession_key_";
+
   loading;
   usuario: any = new Object();
   msg: any = {};
@@ -74,32 +76,19 @@ export class CapLoginComponent implements OnInit {
     this.loginService.login(this.usuario, this.urlEnv).subscribe(
       res => {
         if (res && res._body) {
-          this.loginService.getAuth(JSON.parse(res._body).token, this.urlEnv).subscribe(
-            res1 => {
-              if (res1) {
-                this.loginService.getUser(this.usuario.login, this.urlEnv).subscribe(
-                  u => {
-                    if (u) {
-                      u = u[0];
-                      const usuarioLogado: any = new Object();
-                      usuarioLogado.nome = u.nome;
-                      usuarioLogado.cpf = u.cpf;
-                      usuarioLogado.situacao = u.situacao;
-                      usuarioLogado.login = u.login;
-                      usuarioLogado.email = u.login;
-                      usuarioLogado.token = res.token;
-                      usuarioLogado.modulos = res1;
-                      sessionStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
-                      localStorage.setItem("userSession_key_" + this.sistema, JSON.stringify(usuarioLogado));
-                      window.location.href = this.urlRedirect;
-                    } else {
-                      toastr["warning"]("Usuário ou senha inválidos");
-                    }
-                  },
-                  err => {
-                    toastr["warning"]("Usuário ou senha inválidos");
-                  }
-                );
+          const body = JSON.parse(res._body);
+          this.loginService.getAuth(body.token, this.urlEnv).subscribe(
+            modulosPermitidos => {
+              if (modulosPermitidos && modulosPermitidos._body) {
+                const usuarioLogado: any = new Object();
+                usuarioLogado.nome = body.nome;
+                usuarioLogado.login = this.usuario.login;
+                usuarioLogado.email = this.usuario.login;
+                usuarioLogado.token = body.token;
+                usuarioLogado.modulos = JSON.parse(modulosPermitidos._body);
+                sessionStorage.setItem(this.userKeySession + this.sistema, JSON.stringify(usuarioLogado));
+                localStorage.setItem(this.userKeySession + this.sistema, JSON.stringify(usuarioLogado));
+                window.location.href = this.urlRedirect;
               } else {
                 toastr["warning"]("Usuário ou senha inválidos");
               }
