@@ -1,16 +1,13 @@
-@import './../../assets/sass/reset-link';
-$bg-color: #030303;
-$text-color: rgba(255, 255, 255, 0.87);
-$label-size: .8em;
-$project-bgs: ( malthus: linear-gradient(55deg, #412614, #6e513c), produtos: linear-gradient(56deg, #5f3500, #ffd503), posvenda: linear-gradient(54deg, #003d72, #016fb0), financeiro: linear-gradient(55deg, #133018, #409932), monitor: linear-gradient(55deg, #1b3743, #0a90a9), contabilidade: linear-gradient(55deg, #10123c, #565696));
-@mixin border-radius() {
-  border-radius: 5px;
-}
-
 .center-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .full-height {
@@ -18,94 +15,128 @@ $project-bgs: ( malthus: linear-gradient(55deg, #412614, #6e513c), produtos: lin
 }
 
 .form-login {
-  background: $bg-color;
-  color: $text-color;
+  background: #030303;
+  color: rgba(255, 255, 255, 0.87);
   width: 400px;
-  box-shadow: 2px 1px 20px #000;
+  -webkit-box-shadow: 2px 1px 20px #000;
+          box-shadow: 2px 1px 20px #000;
   padding: 35px;
-  @include border-radius();
-  .logo {
-    margin-bottom: 2em;
-  }
-  h2 {
-    font-size: 1.1em;
-  }
+  border-radius: 5px;
+}
+
+.form-login .logo {
+  margin-bottom: 2em;
+}
+
+.form-login h2 {
+  font-size: 1.1em;
 }
 
 .input-upper-label {
   position: relative;
   margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  input {
-    background: none;
-    color: $text-color;
-    border-color: $text-color;
-    padding: 5px;
-    height: calc(1em + #{2 * ($label-size)});
-    width: 100%;
-    @include border-radius();
-    &:-webkit-autofill {
-      background: none;
-      box-shadow: 0 0 0 30px $bg-color inset !important;
-      -webkit-text-fill-color: #fff;
-    }
-  }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input-upper-label input {
+  background: none;
+  color: rgba(255, 255, 255, 0.87);
+  border-color: rgba(255, 255, 255, 0.87);
+  padding: 5px;
+  height: calc(1em + 1.6em);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.input-upper-label input:-webkit-autofill {
+  background: none;
+  -webkit-box-shadow: 0 0 0 30px #030303 inset !important;
+          box-shadow: 0 0 0 30px #030303 inset !important;
+  -webkit-text-fill-color: #fff;
 }
 
 .signup-button {
-  background: $bg-color;
-  border: 1px solid $text-color;
+  background: #030303;
+  border: 1px solid rgba(255, 255, 255, 0.87);
   padding: 5px;
-  @include border-radius();
-  @include reset-link($text-color);
+  border-radius: 5px;
   width: 45%;
   display: inline-block;
   text-align: center;
 }
 
+.signup-button, .signup-button:visited, .signup-button:hover {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+}
+
 .submit-button {
-  background: $bg-color;
-  border: 1px solid $text-color;
+  background: #030303;
+  border: 1px solid rgba(255, 255, 255, 0.87);
   padding: 5px;
-  color: $bg-color;
-  background: $text-color;
+  color: #030303;
+  background: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   width: 45%;
   display: inline-block;
-  @include border-radius();
+  border-radius: 5px;
 }
 
-@each $project,
-$bg-value in $project-bgs {
-  .bg-project-#{$project} {
-    background: $bg-value;
-  }
+.bg-project-malthus {
+  background: linear-gradient(55deg, #412614, #6e513c);
 }
 
-$header-size: 65px;
+.bg-project-produtos {
+  background: linear-gradient(56deg, #5f3500, #ffd503);
+}
+
+.bg-project-posvenda {
+  background: linear-gradient(54deg, #003d72, #016fb0);
+}
+
+.bg-project-financeiro {
+  background: linear-gradient(55deg, #133018, #409932);
+}
+
+.bg-project-monitor {
+  background: linear-gradient(55deg, #1b3743, #0a90a9);
+}
+
+.bg-project-contabilidade {
+  background: linear-gradient(55deg, #10123c, #565696);
+}
+
 .header {
   background-color: #fff;
-  height: $header-size;
+  height: 65px;
   padding-left: 30px;
   display: table-cell;
   vertical-align: middle;
   width: 1000vh;
   min-width: 100%;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  .divider {
-    border: 1px solid #e5e5e5;
-    margin: 0px 20px;
-    padding: 12px 0px;
-  }
-  .logo {
-    width: 150px;
-  }
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+
+.header .divider {
+  border: 1px solid #e5e5e5;
+  margin: 0px 20px;
+  padding: 12px 0px;
+}
+
+.header .logo {
+  width: 150px;
 }
 
 .overlap-header {
-  margin-top: -$header-size;
+  margin-top: -65px;
 }
+
 #wrapper {
   height: 100%;
   height: 100%;
@@ -116,15 +147,18 @@ $header-size: 65px;
   overflow: hidden;
   font-family: Ubuntu;
 }
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #1f2728 inset !important;
   -webkit-text-fill-color: #fff;
 }
+
 .row-center {
   display: table;
   margin: 0 auto;
   width: 100%;
 }
+
 .header {
   background-color: #fff;
   height: 65px;
@@ -136,12 +170,15 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 }
+
 .logo-brasilcap {
   width: 150px;
 }
+
 .logo-darwin {
   width: 100px;
 }
+
 .box-login {
   padding: 30px;
   display: table;
@@ -150,17 +187,20 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 }
+
 .box-header {
   font-size: 24px;
   color: rgba(0, 0, 0, 0.87);
   letter-spacing: 0.2px;
   margin-bottom: 15px;
 }
+
 .divider {
   border: 1px solid #e5e5e5;
   margin: 0px 20px;
   padding: 12px 0px;
 }
+
 input {
   display: block;
   width: 100%;
@@ -177,9 +217,11 @@ input {
   background-color: #1f2728;
   color: #fff;
 }
+
 input.error {
   border: 2px solid #b00020;
 }
+
 label {
   position: relative;
   top: 12px;
@@ -191,6 +233,7 @@ label {
   font-weight: 500;
   color: #fff;
 }
+
 .help-block.text-danger {
   font-size: 12px;
   color: #b00020;
@@ -199,11 +242,13 @@ label {
   top: -10px;
   left: 14px;
 }
+
 .logotipo {
   overflow: hidden;
   max-width: 250px;
   margin: 0 0 20px;
 }
+
 .content-login {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,9 +259,11 @@ label {
   height: 100%;
   width: 100%;
 }
+
 .form-buttons {
   margin-top: 45px;
 }
+
 .btn-acessar {
   background-color: #fff;
   color: #1a3538;
@@ -237,18 +284,22 @@ label {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
   margin-bottom: 10px;
 }
+
 .btn-acessar:hover {
   background-color: rgba(255, 255, 255, 0.87);
 }
+
 .row-btn-acessar {
   margin-top: 40px;
   padding-bottom: 15px;
 }
+
 .login-header {
   color: rgba(255, 255, 255, 0.87);
   font-size: 20px;
   padding: 10px 0px 25px 0px;
 }
+
 .btn-cadastrase {
   width: 100%;
   background-color: transparent;
@@ -278,6 +329,7 @@ label {
   background-color: #fff;
   color: #1a3538;
 }
+
 .icon-visualizar {
   color: #fff;
   float: right;
@@ -285,6 +337,7 @@ label {
   position: relative;
   left: -15px;
 }
+
 label.error {
   color: #b00020;
   font-size: 12px;
@@ -293,16 +346,19 @@ label.error {
   top: -12px;
   left: 10px;
 }
+
 @media (min-width: 720px) {
   .box-login {
     min-width: 400px;
   }
 }
+
 @media (max-width: 720px) {
   .box-login {
     min-width: 90%;
   }
 }
+
 @media (max-width: 480px) {
   .box-login {
     width: 100%;
@@ -316,12 +372,14 @@ label.error {
     width: 40%;
   }
 }
+
 @media (max-height: 680px) {
   .box-login {
     position: relative;
     top: -50px;
   }
 }
+
 small.erro {
   position: relative;
   top: -10px;
@@ -340,3 +398,4 @@ small.erro {
   text-decoration: none;
   cursor: pointer;
 }
+/*# sourceMappingURL=cap-login.component.css.map */
