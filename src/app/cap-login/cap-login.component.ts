@@ -22,6 +22,8 @@ export class CapLoginComponent implements OnInit {
   sistema;
   @Input("urlRedirect")
   urlRedirect;
+  @Input("env")
+  env;
 
   userKeySession = "userSession_key_";
 
@@ -86,8 +88,8 @@ export class CapLoginComponent implements OnInit {
                 usuarioLogado.email = this.usuario.login;
                 usuarioLogado.token = body.token;
                 usuarioLogado.modulos = JSON.parse(modulosPermitidos._body);
-                sessionStorage.setItem(this.userKeySession + this.sistema, JSON.stringify(usuarioLogado));
-                localStorage.setItem(this.userKeySession + this.sistema, JSON.stringify(usuarioLogado));
+                sessionStorage.setItem(this.userKeySession + this.sistema + "_" + this.env, JSON.stringify(usuarioLogado));
+                localStorage.setItem(this.userKeySession + this.sistema + "_" + this.env, JSON.stringify(usuarioLogado));
                 window.location.href = this.urlRedirect;
               } else {
                 toastr["warning"]("Usuário ou senha inválidos");
