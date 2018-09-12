@@ -172,15 +172,11 @@ input:-webkit-autofill {
 }
 
 .logo-brasilcap {
-  width: 150px;
-}
-
-.logo-darwin {
-  width: 100px;
+  width: 143px;
 }
 
 .box-login {
-  padding: 30px;
+  padding: 35px;
   display: table;
   border-radius: 5px;
   background-color: #1f2728;
@@ -218,8 +214,31 @@ input {
   color: #fff;
 }
 
-input.error {
-  border: 2px solid #b00020;
+input.invalido,
+input.invalido:focus {
+  border: 2px solid #b00020 !important;
+}
+
+label.invalido {
+  color: #b00020;
+}
+
+.show-password {
+  float: right;
+  position: relative;
+  top: -57px;
+  right: 15px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.show-password.invalido {
+  color: #b00020;
+  top: -73px;
 }
 
 label {
@@ -270,9 +289,10 @@ label {
   border-radius: 4px;
   padding: 8px 25px;
   outline: none;
+  letter-spacing: 1.2px;
   font-family: Ubuntu;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   outline: none;
   text-transform: uppercase;
   -webkit-user-select: none;
@@ -306,11 +326,12 @@ label {
   color: #fff;
   border: 1px solid #fff;
   border-radius: 4px;
-  padding: 9px 25px;
+  padding: 9px 21px;
   outline: none;
+  letter-spacing: 1.2px;
   font-family: Ubuntu;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   outline: none;
   text-transform: uppercase;
   -webkit-user-select: none;
@@ -349,7 +370,8 @@ label.error {
 
 @media (min-width: 720px) {
   .box-login {
-    min-width: 400px;
+    min-width: 398px;
+    min-height: 420px;
   }
 }
 

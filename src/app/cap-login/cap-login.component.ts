@@ -1,5 +1,5 @@
 import { environment } from "./../../environments/environment";
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ViewChild } from "@angular/core";
 import { LoginService } from "../services/login.service";
 import toastr from "toastr";
 
@@ -25,6 +25,13 @@ export class CapLoginComponent implements OnInit {
   urlRedirect;
   @Input("environment")
   environment;
+
+  @ViewChild("senha")
+  senha;
+  @ViewChild("iconeEmail")
+  iconeEmail;
+  @ViewChild("icone")
+  icone;
 
   userKeySession = "userSession_key_";
 
@@ -58,6 +65,41 @@ export class CapLoginComponent implements OnInit {
     };
   }
 
+  checkLoginValido() {
+    this.loginRequired = !this.usuario.login;
+    if (this.loginRequired) {
+      this.loginInvalido = false;
+    } else {
+      this.loginInvalido = !this.validateEmail(this.usuario.login);
+    }
+  }
+
+  iconEmail() {
+    if (this.loginInvalido || this.loginRequired) {
+      this.iconeEmail.icon = "alerta";
+    } else if (this.usuario.login) {
+      this.iconeEmail.icon = "check-circulo";
+    }
+  }
+
+  checkSenhaValida() {
+    this.senhaRequired = !this.usuario.senha;
+    if (!this.senhaRequired) {
+      this.icone.icon = "ver-senha";
+    } else {
+      this.icone.icon = "alerta";
+    }
+  }
+
+  show() {
+    this.senha.nativeElement.type = "text";
+    this.icone.icon = "esconder-senha";
+  }
+  hide() {
+    this.senha.nativeElement.type = "password";
+    this.icone.icon = "ver-senha";
+  }
+
   login() {
     toastr.clear();
     this.loginRequired = false;
@@ -68,6 +110,7 @@ export class CapLoginComponent implements OnInit {
     if (!this.usuario.login || !this.usuario.senha) {
       this.loginRequired = !this.usuario.login;
       this.senhaRequired = !this.usuario.senha;
+      this.icone.icon = "alerta";
       return;
     } else if (!this.validateEmail(this.usuario.login)) {
       this.loginInvalido = true;

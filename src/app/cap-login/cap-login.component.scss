@@ -1,8 +1,15 @@
-@import './../../assets/sass/reset-link';
+@import "./../../assets/sass/reset-link";
 $bg-color: #030303;
 $text-color: rgba(255, 255, 255, 0.87);
-$label-size: .8em;
-$project-bgs: ( malthus: linear-gradient(55deg, #412614, #6e513c), produtos: linear-gradient(56deg, #5f3500, #ffd503), posvenda: linear-gradient(54deg, #003d72, #016fb0), financeiro: linear-gradient(55deg, #133018, #409932), monitor: linear-gradient(55deg, #1b3743, #0a90a9), contabilidade: linear-gradient(55deg, #10123c, #565696));
+$label-size: 0.8em;
+$project-bgs: (
+  malthus: linear-gradient(55deg, #412614, #6e513c),
+  produtos: linear-gradient(56deg, #5f3500, #ffd503),
+  posvenda: linear-gradient(54deg, #003d72, #016fb0),
+  financeiro: linear-gradient(55deg, #133018, #409932),
+  monitor: linear-gradient(55deg, #1b3743, #0a90a9),
+  contabilidade: linear-gradient(55deg, #10123c, #565696)
+);
 @mixin border-radius() {
   border-radius: 5px;
 }
@@ -76,8 +83,7 @@ $project-bgs: ( malthus: linear-gradient(55deg, #412614, #6e513c), produtos: lin
   @include border-radius();
 }
 
-@each $project,
-$bg-value in $project-bgs {
+@each $project, $bg-value in $project-bgs {
   .bg-project-#{$project} {
     background: $bg-value;
   }
@@ -137,13 +143,11 @@ input:-webkit-autofill {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 }
 .logo-brasilcap {
-  width: 150px;
+  width: 143px;
 }
-.logo-darwin {
-  width: 100px;
-}
+
 .box-login {
-  padding: 30px;
+  padding: 35px;
   display: table;
   border-radius: 5px;
   background-color: #1f2728;
@@ -177,9 +181,30 @@ input {
   background-color: #1f2728;
   color: #fff;
 }
-input.error {
-  border: 2px solid #b00020;
+input.invalido,
+input.invalido:focus {
+  border: 2px solid #b00020 !important;
 }
+label.invalido {
+  color: #b00020;
+}
+
+.show-password {
+  float: right;
+  position: relative;
+  top: -57px;
+  right: 15px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+}
+
+.show-password.invalido {
+  color: #b00020;
+  top: -73px;
+}
+
 label {
   position: relative;
   top: 12px;
@@ -223,9 +248,10 @@ label {
   border-radius: 4px;
   padding: 8px 25px;
   outline: none;
+  letter-spacing: 1.2px;
   font-family: Ubuntu;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   outline: none;
   text-transform: uppercase;
   -webkit-user-select: none;
@@ -255,11 +281,12 @@ label {
   color: #fff;
   border: 1px solid #fff;
   border-radius: 4px;
-  padding: 9px 25px;
+  padding: 9px 21px;
   outline: none;
+  letter-spacing: 1.2px;
   font-family: Ubuntu;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   outline: none;
   text-transform: uppercase;
   -webkit-user-select: none;
@@ -295,7 +322,8 @@ label.error {
 }
 @media (min-width: 720px) {
   .box-login {
-    min-width: 400px;
+    min-width: 398px;
+    min-height: 420px;
   }
 }
 @media (max-width: 720px) {

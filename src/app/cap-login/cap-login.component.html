@@ -18,16 +18,19 @@
           <form>
             <fieldset>
 
-              <label>E-mail</label>
-              <input id="email-login" type="email" required class="form-control input-type-text {{loginInvalido || loginRequired ? 'login-invalido' : ''}}"
-                name="login" [(ngModel)]="usuario.login">
+              <label class="{{loginInvalido || loginRequired ? 'invalido' : ''}}">E-mail</label>
+              <input id="email-login" type="email" autocomplete="off" required class="form-control input-type-text {{loginInvalido || loginRequired ? 'invalido' : ''}}"
+                name="login" [(ngModel)]="usuario.login" (ngModelChange)="checkLoginValido()">
               <small class="erro" *ngIf="loginRequired">Campo obrigatório</small>
               <small class="erro" *ngIf="loginInvalido">E-mail inválido.</small>
+              <cap-icon [icon]="iconEmail()" class="show-password {{loginInvalido || loginRequired ? 'invalido' : ''}}" (mousedown)="show()"
+                (mouseup)="hide()" #iconeEmail></cap-icon>
 
-              <label>Senha</label>
-              <input id="senha-login" type="password" required class="form-control input-type-password {{senhaInvalida || senhaRequired ? 'senha-invalido' : ''}}"
-                name="senha" [(ngModel)]="usuario.senha">
+              <label class="{{senhaInvalida || senhaRequired ? 'invalido' : ''}}">Senha</label>
+              <input id="senha-login" type="password" required class="form-control input-type-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}"
+                name="senha" #senha [(ngModel)]="usuario.senha" (ngModelChange)="checkSenhaValida()">
               <small class="erro" *ngIf="senhaRequired">Campo obrigatório</small>
+              <cap-icon class="show-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}" #icone (mousedown)="show()" (mouseup)="hide()"></cap-icon>
 
               <div class="form-group ">
                 <div class="text-center alert alert-danger" role="alert" *ngIf="msg?.title">
