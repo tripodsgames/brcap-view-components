@@ -35,6 +35,10 @@ import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.comp
 import { CapLoginComponent } from "../cap-login/cap-login.component";
 import { LoginService } from "../services/login.service";
 import { HttpModule } from "@angular/http";
+import { PermissoesComponent } from "../cap-permissoes/cap-permissoes.component";
+import { UsuarioService } from "../services/usuario.service";
+import { PlataformaService } from "../services/plataforma.service";
+import { CapFormComponent } from "../cap-form/cap-form.component";
 
 @NgModule({
   imports: [
@@ -74,7 +78,9 @@ import { HttpModule } from "@angular/http";
     CapDropdownListComponent,
     CapDropdownListItemComponent,
     CapMonthPickerComponent,
-    CapLoginComponent
+    CapLoginComponent,
+    PermissoesComponent,
+    CapFormComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -104,8 +110,10 @@ import { HttpModule } from "@angular/http";
     CapDropdownListComponent,
     CapDropdownListItemComponent,
     CapMonthPickerComponent,
-    CapLoginComponent
+    CapLoginComponent,
+    PermissoesComponent,
+    CapFormComponent
   ],
-  providers: [LoginService]
+  providers: [LoginService, UsuarioService, PlataformaService]
 })
 export class BRCapModule {}

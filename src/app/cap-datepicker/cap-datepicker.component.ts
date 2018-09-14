@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
@@ -20,15 +20,25 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   styleUrls: ["./cap-datepicker.component.css"]
 })
 export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
-  @Input("id") id: string;
-  @Input("styleClass") styleClass: string;
-  @Input("label") label: string;
-  @Input("placeholder") placeholder: string;
-  @Input("disabled") disabled: string;
-  @Input("name") name: string;
-  @Input("mask") mask: string;
+  @Input("id")
+  id: string;
+  @Input("styleClass")
+  styleClass: string;
+  @Input("label")
+  label: string;
+  @Input("placeholder")
+  placeholder: string;
+  @Input("disabled")
+  disabled: string;
+  @Input("name")
+  name: string;
+  @Input("mask")
+  mask: string;
+  @Input("textHelper")
+  textHelper: string;
 
-  @ViewChild("input") input;
+  @ViewChild("input")
+  input: ElementRef;
 
   private $el: any;
   private innerValue: any = new Date(Date.now());

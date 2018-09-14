@@ -2,9 +2,11 @@
   {{label}}</label>
 
 
-<input [attr.id]="id" #input (focus)="onFocus($event)" [required]="required" (keyup)="onKeyup($event)" class="form-control input-type-text cap-inputText {{hasError() ? 'error' : ''}} {{styleClass}}"
-  [(ngModel)]="value" [disabled]="disabled" type="text" #modelInput="ngModel" [attr.maxlength]="maxlength?.length ? maxlength : ''"
-  [placeholder]="placeholder?.length ? placeholder : ''" />
+<input [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)" (blur)="onBlurJS($event)"
+  (mouseover)="onMouseOver($event)" (mousedown)="onMouseDown($event)" (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)"
+  class="form-control input-type-text cap-inputText {{hasError() ? 'error' : ''}} {{styleClass}}" [(ngModel)]="value" [disabled]="disabled"
+  type="text" #modelInput="ngModel" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''"
+/>
 <cap-icon [icon]="icon" *ngIf="icon"></cap-icon>
 <cap-icon icon="alerta" *ngIf="hasError()" styleClass="ico-error {{disabled ? 'disabled' : ''}}"></cap-icon>
 

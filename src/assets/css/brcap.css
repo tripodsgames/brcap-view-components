@@ -54,7 +54,7 @@ body.minimizado .content-wrapper {
 
 .content-header {
   position: relative;
-  padding: 15px;
+  padding: 5px 10px 10px 15px;
   height: auto;
   margin-top: -20px;
 }
@@ -189,7 +189,7 @@ label {
   color: rgba(0, 0, 0, 0.87);
   position: relative;
   top: 13px;
-  left: 10px;
+  left: 8px;
   padding: 0px 3px;
   max-height: 24px;
   vertical-align: middle;
@@ -1913,4 +1913,12 @@ dp-date-picker .dp-current-location-btn {
   background: transparent;
   border: none;
   outline: none;
+}
+
+button.cap-button.btn-ico .brcap-ico {
+  left: 0px !important;
+}
+
+button.cap-button.sm.btn-ico .brcap-ico {
+  font-size: 15px
 }

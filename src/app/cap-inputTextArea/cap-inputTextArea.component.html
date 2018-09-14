@@ -2,7 +2,10 @@
   {{label}}</label>
 
 
-<textarea [id]="id" #input class="form-control input-type-text cap-inputTextArea {{styleClass}}" [disabled]="disabled" [cols]="cols" [rows]="rows" [(ngModel)]="value" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''">
+<textarea [id]="id" #input (focus)="onFocus($event)" (mouseout)="onMouseOut($event)" (blur)="onBlurJS($event)" (mouseover)="onMouseOver($event)"
+  (mousedown)="onMouseDown($event)" (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)" class="form-control input-type-text cap-inputTextArea {{styleClass}}"
+  [disabled]="disabled" [cols]="cols" [rows]="rows" [(ngModel)]="value" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''"
+  [placeholder]="placeholder?.length ? placeholder : ''">
   </textarea>
 <i class="fa fa-exclamation-circle ico-error {{disabled ? 'disabled' : ''}}" *ngIf="textError"></i>
 <p class="helper-text {{textError}} {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>

@@ -21,17 +21,29 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   styleUrls: ["./cap-dateRangePicker.component.css"]
 })
 export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit {
-  @Input("id") id: string;
-  @Input("label") label: string;
-  @Input("styleClass") styleClass: string;
-  @Input("placeholder") placeholder: string;
-  @Input("name") name: string;
-  @Input("mask") mask: string;
-  @Input("format") format: string;
-  @Input("clearBtn") clearBtn: boolean;
-  @Input("disabled") disabled: boolean;
+  @Input("id")
+  id: string;
+  @Input("label")
+  label: string;
+  @Input("styleClass")
+  styleClass: string;
+  @Input("placeholder")
+  placeholder: string;
+  @Input("name")
+  name: string;
+  @Input("mask")
+  mask: string;
+  @Input("format")
+  format: string;
+  @Input("textHelper")
+  textHelper: string;
+  @Input("clearBtn")
+  clearBtn: boolean;
+  @Input("disabled")
+  disabled: boolean;
 
-  @ViewChild("divRange") divRange;
+  @ViewChild("divRange")
+  divRange;
 
   private $el: any;
   private innerValue: any = new Date(Date.now());

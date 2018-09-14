@@ -1,6 +1,16 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
-import { Subject } from "rxjs/Subject";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  AfterViewInit,
+  ViewChild,
+  Output,
+  EventEmitter
+} from "@angular/core";
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+
 import BRCapUtil from "../../brcap-util";
 
 const noop = () => {};
@@ -21,20 +31,47 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   styleUrls: ["./cap-inputTextArea.component.css"]
 })
 export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAccessor, OnInit {
-  @Input("id") id: string;
-  @Input("label") label: string;
-  @Input("placeholder") placeholder: string;
-  @Input("mask") mask: string;
-  @Input("styleClass") styleClass: string;
-  @Input("maxlength") maxlength: string;
-  @Input("styleInline") styleInline: string;
-  @Input("textHelper") textHelper: string;
-  @Input("disabled") disabled: boolean;
+  @Input("id")
+  id: string;
+  @Input("label")
+  label: string;
+  @Input("placeholder")
+  placeholder: string;
+  @Input("mask")
+  mask: string;
+  @Input("styleClass")
+  styleClass: string;
+  @Input("maxlength")
+  maxlength: string;
+  @Input("styleInline")
+  styleInline: string;
+  @Input("textHelper")
+  textHelper: string;
+  @Input("disabled")
+  disabled: boolean;
 
-  @Input("cols") cols: string;
-  @Input("rows") rows: string;
+  @Input("cols")
+  cols: string;
+  @Input("rows")
+  rows: string;
 
-  @ViewChild("input") input;
+  @Output()
+  keyup = new EventEmitter();
+  @Output()
+  keydown = new EventEmitter();
+  @Output()
+  mousedown = new EventEmitter();
+  @Output()
+  mouseover = new EventEmitter();
+  @Output()
+  mouseout = new EventEmitter();
+  @Output()
+  focus = new EventEmitter();
+  @Output()
+  blur = new EventEmitter();
+
+  @ViewChild("input")
+  input;
 
   textError;
 
@@ -68,6 +105,32 @@ export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAcc
       this.innerValue = v;
       this.onChangeCallback(v);
     }
+  }
+
+  onKeyup(event) {
+    return this.keyup.emit(event);
+  }
+
+  onFocus(event) {
+    return this.focus.emit(event);
+  }
+
+  onKeyDown(event) {
+    return this.keydown.emit(event);
+  }
+
+  onMouseOver(event) {
+    return this.mouseover.emit(event);
+  }
+  onMouseDown(event) {
+    return this.mousedown.emit(event);
+  }
+  onMouseOut(event) {
+    return this.mouseout.emit(event);
+  }
+
+  onBlurJS(event) {
+    return this.blur.emit(event);
   }
 
   onBlur() {

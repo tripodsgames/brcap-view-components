@@ -1,2 +1,13 @@
-<cap-login sistema="malthus" environment="local" urlCadastro="https://darwin-dev.brasilcap.com.br/#/cadastro" urlEnv="https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/"
-  urlRedirect="/#/dashboard"></cap-login>
+<div class="content-wrapper">
+  <form>
+    <div class="row">
+      <div class="col-md-4">
+        <cap-inputText label="Teste" name="teste" [required]="true" [(ngModel)]="texto"></cap-inputText>
+        {{texto}}
+      </div>
+      <div class="col-md-4">
+        <cap-button icon="busca" label="Teste" (click)="alerta()"></cap-button>
+      </div>
+    </div>
+  </form>
+</div>

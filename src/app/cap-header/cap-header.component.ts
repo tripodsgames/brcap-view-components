@@ -1,5 +1,4 @@
-import { Component, forwardRef, Input, Output, OnInit, ElementRef, ViewChild, AfterViewInit, EventEmitter, DoCheck } from "@angular/core";
-import { trigger, style, animate, transition } from "@angular/animations";
+import { Component, Input, Output, OnInit, ElementRef, ViewChild, EventEmitter } from "@angular/core";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
 
 import * as jqueryProxy from "jquery";
@@ -11,14 +10,24 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   styleUrls: ["./cap-header.component.css"]
 })
 export class CapHeaderComponent implements OnInit {
-  @Input("modulo") modulo: string;
-  @Input("username") username: string;
-  @Input("rotaPerfil") rotaPerfil: string;
-  @Input("logoSistema") logoSistema: string;
-  @Input("logoBrasilCap") logoBrasilCap: string;
-  @ViewChild("logoHeader") logoHeader: ElementRef;
-  @ViewChild("elementIcon") elementIcon: CapIconComponent;
-  @Output() login = new EventEmitter()
+  @Input("modulo")
+  modulo: string;
+  @Input("username")
+  username: string;
+  @Input("rotaPerfil")
+  rotaPerfil: string;
+  @Input("logoSistema")
+  logoSistema: string;
+  @Input("logoBrasilCap")
+  logoBrasilCap: string;
+  @Input("rotaIndex")
+  rotaIndex: string;
+  @ViewChild("logoHeader")
+  logoHeader: ElementRef;
+  @ViewChild("elementIcon")
+  elementIcon: CapIconComponent;
+  @Output()
+  logout = new EventEmitter();
 
   constructor() {}
 
@@ -28,8 +37,8 @@ export class CapHeaderComponent implements OnInit {
     }
   }
 
-  logar() {
-    this.login.emit(this.username);
+  logoff() {
+    this.logout.emit(this.username);
   }
 
   toggleMenu() {
@@ -38,11 +47,10 @@ export class CapHeaderComponent implements OnInit {
     $("body").toggleClass("minimizado");
     $(".label-projeto").toggleClass("fechado");
     $("#menu-toggle").toggleClass("is-active");
-    if ( $("#menu-toggle").hasClass("is-active") && window.screen.width < 480) {
+    if ($("#menu-toggle").hasClass("is-active") && window.screen.width < 480) {
       $("#logo-img").hide();
     } else {
       $("#logo-img").show();
     }
   }
-
 }

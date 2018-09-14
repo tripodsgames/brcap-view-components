@@ -1,13 +1,4 @@
-import {
-  Component,
-  forwardRef,
-  Input,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  Output,
-  EventEmitter
-} from "@angular/core";
+import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, Output, EventEmitter } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 import * as jqueryProxy from "jquery";
@@ -31,17 +22,28 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   styleUrls: ["./cap-select.component.css"]
 })
 export class CapSelectComponent implements ControlValueAccessor, OnInit {
-  @Input("id") id: string;
-  @Input("label") label: string;
-  @Input("styleClass") styleClass: string;
-  @Input("disabled") disabled: boolean;
-  @Input("items") items: any[];
-  @Input("placeholder") placeholder: string;
-  @Input("filter") filter: boolean;
+  @Input("id")
+  id: string;
+  @Input("label")
+  label: string;
+  @Input("styleClass")
+  styleClass: string;
+  @Input("disabled")
+  disabled: boolean;
+  @Input("items")
+  items: any[];
+  @Input("placeholder")
+  placeholder: string;
+  @Input("textHelper")
+  textHelper: string;
+  @Input("filter")
+  filter: boolean;
 
-  @Output() focus = new EventEmitter();
+  @Output()
+  focus = new EventEmitter();
 
-  @ViewChild("select") select;
+  @ViewChild("select")
+  select;
 
   private $el: any;
   private innerValue: any = "";

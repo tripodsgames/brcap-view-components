@@ -7,7 +7,8 @@
       "mydaterangepicker": "mydaterangepicker",
       "ng-select": "ng-select",
       "ng2-date-picker": "ng2-date-picker",
-      "moment": "moment"
+      "moment": "moment",
+      "sweetalert2": "sweetalert2"
     }
   }
 }

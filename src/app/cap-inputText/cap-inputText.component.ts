@@ -7,14 +7,9 @@ import {
   AfterViewInit,
   ViewChild,
   Output,
-  EventEmitter,
-  ContentChild
+  EventEmitter
 } from "@angular/core";
-import {
-  NG_VALUE_ACCESSOR,
-  ControlValueAccessor,
-  NgModel
-} from "@angular/forms";
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel } from "@angular/forms";
 
 import BRCapUtil from "../../brcap-util";
 
@@ -35,28 +30,54 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   templateUrl: "./cap-inputText.component.html",
   styleUrls: ["./cap-inputText.component.css"]
 })
-export class CapInputTextComponent
-  implements AfterViewInit, ControlValueAccessor, OnInit {
-  @Input("id") id: string;
-  @Input("label") label: string;
-  @Input("placeholder") placeholder: string;
-  @Input("mask") mask: string;
-  @Input("styleClass") styleClass: string;
-  @Input("maxlength") maxlength: string;
-  @Input("styleInline") styleInline: string;
-  @Input("textHelper") textHelper: string;
-  @Input("disabled") disabled: boolean;
-  @Input("required") required: boolean;
-  @Input("icon") icon: string;
-  @Input("erroMessage") erroMessage: string;
-  @Input("isValid") isValid: boolean;
+export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
+  @Input("id")
+  id: string;
+  @Input("label")
+  label: string;
+  @Input("placeholder")
+  placeholder: string;
+  @Input("mask")
+  mask: string;
+  @Input("styleClass")
+  styleClass: string;
+  @Input("maxlength")
+  maxlength: string;
+  @Input("styleInline")
+  styleInline: string;
+  @Input("textHelper")
+  textHelper: string;
+  @Input("disabled")
+  disabled: boolean;
+  @Input("required")
+  required: boolean;
+  @Input("icon")
+  icon: string;
+  @Input("erroMessage")
+  erroMessage: string;
+  @Input("isValid")
+  isValid: boolean;
 
-  @Output() keyup = new EventEmitter();
-  @Output() focus = new EventEmitter();
+  @Output()
+  keyup = new EventEmitter();
+  @Output()
+  keydown = new EventEmitter();
+  @Output()
+  mousedown = new EventEmitter();
+  @Output()
+  mouseover = new EventEmitter();
+  @Output()
+  mouseout = new EventEmitter();
+  @Output()
+  focus = new EventEmitter();
+  @Output()
+  blur = new EventEmitter();
 
-  @ViewChild("input") input;
+  @ViewChild("input")
+  input;
 
-  @ViewChild(NgModel) inputModel;
+  @ViewChild(NgModel)
+  inputModel;
 
   textError;
 
@@ -100,6 +121,24 @@ export class CapInputTextComponent
     return this.focus.emit(event);
   }
 
+  onKeyDown(event) {
+    return this.keydown.emit(event);
+  }
+
+  onMouseOver(event) {
+    return this.mouseover.emit(event);
+  }
+  onMouseDown(event) {
+    return this.mousedown.emit(event);
+  }
+  onMouseOut(event) {
+    return this.mouseout.emit(event);
+  }
+
+  onBlurJS(event) {
+    return this.blur.emit(event);
+  }
+
   onBlur() {
     this.onTouchedCallback();
   }
@@ -125,9 +164,6 @@ export class CapInputTextComponent
   }
 
   hasError(): boolean {
-    return (
-      this.inputModel.invalid &&
-      (this.inputModel.dirty || this.inputModel.touched)
-    );
+    return this.inputModel.invalid && (this.inputModel.dirty || this.inputModel.touched);
   }
 }

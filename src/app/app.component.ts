@@ -275,6 +275,170 @@ export class AppComponent implements OnInit {
           ativo: true
         }
       ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
+    },
+    {
+      codigo: "financeiro#pagamento",
+      icon: "retrair",
+      nome: "pagamento",
+      icone: "fa fa-if",
+      open: false,
+      descricao: "pagamentos de títulos",
+      ativo: true,
+      funcionalidades: [
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "rateio",
+          descricao: null,
+          incluir: false,
+          consultar: true,
+          acao: ["excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/rateio",
+          ativo: true
+        },
+        {
+          bloquear: false,
+          codigo: null,
+          excluir: true,
+          icon: "expandir",
+          nome: "comissao",
+          descricao: null,
+          incluir: true,
+          consultar: true,
+          acao: ["incluir", "excluir", "consultar", "alterar"],
+          alterar: true,
+          open: false,
+          rota: "/comissao",
+          ativo: true
+        }
+      ]
     }
   ];
 
@@ -298,15 +462,7 @@ export class AppComponent implements OnInit {
   ];
 
   itemId;
-
-  // public items: any[] = [
-  //   { label: "Blue 1", value: 1 },
-  //   { label: "Blue 2", value: 2 },
-  //   { label: "Blue 3", value: 3 },
-  //   { label: "Blue 4", value: 4 },
-  //   { label: "Blue 5", value: 5 },
-  //   { label: "Blue 6", value: 6 }
-  // ];
+  url = "https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/";
 
   // CAP-GRID-PAGINAION
   @ViewChild(CapGridPaginationComponent)
@@ -393,6 +549,15 @@ export class AppComponent implements OnInit {
       }
     ];
   }
+
+  event(event) {
+    console.log("Event [" + event.type + "] ", event);
+  }
+
+  alerta() {
+    alert("Submiteu");
+  }
+
   teste(event) {
     console.log(event);
     this.naoAtivo = !this.naoAtivo;
