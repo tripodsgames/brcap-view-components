@@ -1,8 +1,9 @@
+import { Observable } from "rxjs/Observable";
+import { Http, Response, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
-import { Http, Headers } from "@angular/http";
-
+import * as Rx from "rxjs/Rx";
 import "rxjs/add/operator/map";
-import "rxjs";
+import "rxjs/Rx";
 
 @Injectable()
 export class UsuarioService {

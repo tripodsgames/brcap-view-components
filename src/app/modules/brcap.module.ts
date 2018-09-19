@@ -38,7 +38,6 @@ import { HttpModule } from "@angular/http";
 import { PermissoesComponent } from "../cap-permissoes/cap-permissoes.component";
 import { UsuarioService } from "../services/usuario.service";
 import { PlataformaService } from "../services/plataforma.service";
-import { CapFormComponent } from "../cap-form/cap-form.component";
 
 @NgModule({
   imports: [
@@ -79,8 +78,7 @@ import { CapFormComponent } from "../cap-form/cap-form.component";
     CapDropdownListItemComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
-    PermissoesComponent,
-    CapFormComponent
+    PermissoesComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -111,8 +109,7 @@ import { CapFormComponent } from "../cap-form/cap-form.component";
     CapDropdownListItemComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
-    PermissoesComponent,
-    CapFormComponent
+    PermissoesComponent
   ],
   providers: [LoginService, UsuarioService, PlataformaService]
 })
