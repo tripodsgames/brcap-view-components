@@ -1509,7 +1509,7 @@ select-dropdown > div .options ul li {
 
 .mydp .selection {
   height: 50px !important;
-  border: 1px solid #757575 !important;
+  border: 1px solid #757575;
   font-family: Ubuntu;
   padding-left: 10px !important;
 }
@@ -1634,7 +1634,7 @@ select-dropdown > div .options ul li {
 
 .content-header .mydp .selection {
   border: none !important;
-  border-bottom: 1px solid #757575 !important;
+  border-bottom: 1px solid #757575;
   border-radius: 0px;
   padding-top: 10px;
 }
@@ -1655,7 +1655,7 @@ select-dropdown > div .options ul li {
 
 .mydrp .selection {
   height: 50px !important;
-  border: 1px solid #757575 !important;
+  border: 1px solid #757575;
   font-family: Ubuntu;
   padding-left: 10px !important;
 }

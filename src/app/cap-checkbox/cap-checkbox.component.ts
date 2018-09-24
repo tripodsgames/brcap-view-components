@@ -36,7 +36,6 @@ export class CapCheckBoxComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     if (null == this.name) throw new Error("Attribute 'name' is required");
-    if (null == this.itemLabel) throw new Error("Attribute 'itemLabel' is required");
     if (!this.id) {
       this.id = BRCapUtil.guid();
     } else {

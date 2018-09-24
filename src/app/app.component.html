@@ -1,13 +1,3 @@
 <div class="content-wrapper">
-  <form>
-    <div class="row">
-      <div class="col-md-4">
-        <cap-inputText label="Teste" name="teste" [required]="true" [(ngModel)]="texto"></cap-inputText>
-        {{texto}}
-      </div>
-      <div class="col-md-4">
-        <cap-button icon="busca" label="Teste" (click)="alerta()"></cap-button>
-      </div>
-    </div>
-  </form>
+  <cap-permissoes sistema="posvenda" urlUsuarios="https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/" urlSistemas="https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/"></cap-permissoes>
 </div>
