@@ -8,4 +8,4 @@
   [placeholder]="placeholder?.length ? placeholder : ''">
   </textarea>
 <i class="fa fa-exclamation-circle ico-error {{disabled ? 'disabled' : ''}}" *ngIf="textError"></i>
-<p class="helper-text {{textError}} {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>
+<p *ngIf="textHelper?.length" class="helper-text   {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>

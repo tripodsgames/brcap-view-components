@@ -4,4 +4,4 @@
   notFoundMsg="Nenhum resultado encontrado" [disabled]="disabled" highlightColor="#dfdfdf" highlightTextColor="#000">
 
 </ng-select>
-<p class="helper-text   {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>
+<p *ngIf="textHelper?.length" class="helper-text   {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>
