@@ -1,6 +1,91 @@
-<div class="content-wrapper">
-  <cap-select label="Teste" [disabled]="true"></cap-select>
-  <cap-datepicker label="Teste" [disabled]="false"></cap-datepicker>
-  <cap-dateRangePicker label="aaa" [disabled]="true"></cap-dateRangePicker>
-  <cap-permissoes sistema="posvenda" urlUsuarios="https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/" urlSistemas="https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/"></cap-permissoes>
+<div id="wrapper">
+  <cap-header logoBrasilCap="../../../assets/img/logo-brasilcap.svg" logoSistema="../../../assets/img/posvenda.svg"></cap-header>
+  <cap-menu [value]="menu"></cap-menu>
+
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="row">
+        <div class="col-md-4">
+          <cap-inputText label="Teste"></cap-inputText>
+        </div>
+        <div class="col-md-4">
+          <cap-inputText label="Teste" [disabled]="true"></cap-inputText>
+        </div>
+        <div class="col-md-2">
+          <cap-button icon="busca"></cap-button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <cap-select label="Teste"></cap-select>
+        </div>
+        <div class="col-md-4">
+          <cap-select label="Teste" [disabled]="true"></cap-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <cap-datepicker label="Teste"></cap-datepicker>
+        </div>
+        <div class="col-md-4">
+          <cap-datepicker label="Teste" [disabled]="true"></cap-datepicker>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <cap-dateRangePicker label="Teste"></cap-dateRangePicker>
+        </div>
+        <div class="col-md-4">
+          <cap-dateRangePicker label="Teste" [disabled]="true"></cap-dateRangePicker>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Controle de Liberação</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <cap-inputText label="Teste"></cap-inputText>
+              </div>
+              <div class="col-md-4">
+                <cap-inputText label="Teste" [disabled]="true"></cap-inputText>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <cap-select label="Teste"></cap-select>
+              </div>
+              <div class="col-md-4">
+                <cap-select label="Teste" [disabled]="true"></cap-select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <cap-datepicker label="Teste"></cap-datepicker>
+              </div>
+              <div class="col-md-4">
+                <cap-datepicker label="Teste" [disabled]="true"></cap-datepicker>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <cap-dateRangePicker label="Teste"></cap-dateRangePicker>
+              </div>
+              <div class="col-md-4">
+                <cap-dateRangePicker label="Teste" [disabled]="true"></cap-dateRangePicker>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
