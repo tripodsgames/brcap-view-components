@@ -33,8 +33,6 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   name: string;
   @Input("mask")
   mask: string;
-  @Input("format")
-  format: string;
   @Input("textHelper")
   textHelper: string;
   @Input("clearBtn")

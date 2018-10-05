@@ -384,6 +384,9 @@ label.disabled {
 .menu:before {
   content: "\e900";
 }
+.permitir:before {
+  content: "\e919";
+}
 .voltar:before {
   content: "\e901";
 }
@@ -476,10 +479,16 @@ label.disabled {
 .editar:before {
   content: "\e920";
 }
-
+.mover:before {
+  content: "\e915";
+}
 .x:before {
   content: "\78";
 }
+.sucesso:before {
+  content: "\e917";
+}
+
 .cap-button .brcap-ico {
   position: relative;
   left: -10px;

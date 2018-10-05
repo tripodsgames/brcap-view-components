@@ -20,8 +20,6 @@ export class CapHeaderComponent implements OnInit {
   logoSistema: string;
   @Input("logoBrasilCap")
   logoBrasilCap: string;
-  @Input("rotaIndex")
-  rotaIndex: string;
   @ViewChild("logoHeader")
   logoHeader: ElementRef;
   @ViewChild("elementIcon")
