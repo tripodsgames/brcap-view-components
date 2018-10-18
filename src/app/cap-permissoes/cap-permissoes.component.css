@@ -9,6 +9,7 @@
 .func-label {
   padding: 10px 15px;
   display: block;
+  margin-left: 20px;
 }
 
 .item {
@@ -75,4 +76,13 @@
 .acoesVisualizar {
   font-size: 12px;
   margin-top: 10px;
+}
+.btn-voltar {
+  position: relative;
+  top: 20px;
+}
+
+.selectAll-modulos {
+  position: relative;
+  top: 8px;
 }

@@ -226,6 +226,15 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
+  selecionarTodos(modulo) {
+    if (modulo && modulo.funcionalidades) {
+      modulo.todos = !modulo.todos;
+      modulo.funcionalidades.forEach(funcionalidade => {
+        this.selecionarTodosFuncionalidade(funcionalidade);
+      });
+    }
+  }
+
   verificaSelecionouIncluir(func, value) {
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear;
   }
