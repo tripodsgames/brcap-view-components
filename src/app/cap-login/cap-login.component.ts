@@ -85,19 +85,15 @@ export class CapLoginComponent implements OnInit {
   checkSenhaValida() {
     this.senhaRequired = !this.usuario.senha;
     if (!this.senhaRequired) {
-      this.icone.icon = "ver-senha";
+      this.icone.icon = "esconder-senha";
     } else {
       this.icone.icon = "alerta";
     }
   }
 
-  show() {
-    this.senha.nativeElement.type = "text";
-    this.icone.icon = "esconder-senha";
-  }
-  hide() {
-    this.senha.nativeElement.type = "password";
-    this.icone.icon = "ver-senha";
+  toggle() {
+    this.senha.nativeElement.type = this.senha.nativeElement.type === "text" ? "password" : "text";
+    this.icone.icon = this.icone.icon === "ver-senha" ? "esconder-senha" : "ver-senha";
   }
 
   login() {
@@ -168,6 +164,12 @@ export class CapLoginComponent implements OnInit {
   }
 
   esqueciSenha(usuario) {
+    toastr.clear();
+    if (!usuario.login) {
+      toastr["info"]("É necessário informar o e-mail.");
+      return;
+    }
+    usuario.senha = undefined;
     usuario.plataforma = "darwin";
 
     this.loginService.esqueciSenha(usuario, this.urlEnv).subscribe(

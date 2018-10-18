@@ -23,14 +23,13 @@
                 name="login" [(ngModel)]="usuario.login" (ngModelChange)="checkLoginValido()">
               <small class="erro" *ngIf="loginRequired">Campo obrigatório</small>
               <small class="erro" *ngIf="loginInvalido">E-mail inválido.</small>
-              <cap-icon [icon]="iconEmail()" class="show-password {{loginInvalido || loginRequired ? 'invalido' : ''}}" (mousedown)="show()"
-                (mouseup)="hide()" #iconeEmail></cap-icon>
+              <cap-icon [icon]="iconEmail()" class="show-password {{loginInvalido || loginRequired ? 'invalido' : ''}}" #iconeEmail></cap-icon>
 
               <label class="{{senhaInvalida || senhaRequired ? 'invalido' : ''}}">Senha</label>
               <input id="senha-login" type="password" required class="form-control input-type-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}"
                 name="senha" #senha [(ngModel)]="usuario.senha" (ngModelChange)="checkSenhaValida()">
               <small class="erro" *ngIf="senhaRequired">Campo obrigatório</small>
-              <cap-icon class="show-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}" #icone (mousedown)="show()" (mouseup)="hide()"></cap-icon>
+              <cap-icon class="show-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}" #icone (click)="toggle()"></cap-icon>
 
               <div class="form-group ">
                 <div class="text-center alert alert-danger" role="alert" *ngIf="msg?.title">

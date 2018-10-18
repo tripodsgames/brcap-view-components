@@ -934,14 +934,6 @@ select-dropdown > div .options ul li {
   border-radius: 0px;
 }
 
-ng-select {
-  background: #fff;
-}
-
-ng-select > div.disabled {
-  background-color: #fff !important;
-}
-
 ng-select[ng-reflect-is-disabled="true"] {
   cursor: not-allowed !important;
 }
@@ -1030,4 +1022,7 @@ button.cap-button.btn-ico .brcap-ico {
 
 button.cap-button.sm.btn-ico .brcap-ico {
   font-size: 15px;
+}
+.buttons-form {
+  padding: 20px 0px 10px 0px;
 }
