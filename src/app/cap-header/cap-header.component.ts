@@ -20,6 +20,8 @@ export class CapHeaderComponent implements OnInit {
   logoSistema: string;
   @Input("logoBrasilCap")
   logoBrasilCap: string;
+  @Input("rotaLogo")
+  rotaLogo: string;
   @ViewChild("logoHeader")
   logoHeader: ElementRef;
   @ViewChild("elementIcon")
@@ -32,6 +34,9 @@ export class CapHeaderComponent implements OnInit {
   ngOnInit() {
     if (window.screen.width < 767) {
       this.toggleMenu();
+    }
+    if (!this.rotaLogo) {
+      this.rotaLogo = "javscript:void(0)";
     }
   }
 
