@@ -1,4 +1,4 @@
-<label [for]="id" class="{{textError}} {{disabled ? 'disabled' : ''}}" *ngIf="label?.length">
+<label [for]="id" class="label-input {{textError}}" [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 
 
@@ -7,5 +7,5 @@
   [disabled]="disabled" [cols]="cols" [rows]="rows" [(ngModel)]="value" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''"
   [placeholder]="placeholder?.length ? placeholder : ''">
   </textarea>
-<i class="fa fa-exclamation-circle ico-error {{disabled ? 'disabled' : ''}}" *ngIf="textError"></i>
-<p *ngIf="textHelper?.length" class="helper-text   {{disabled ? 'disabled' : ''}}">{{textHelper}}</p>
+<i class="fa fa-exclamation-circle ico-error" [class.disabled]="disabled" *ngIf="textError"></i>
+<p *ngIf="textHelper?.length" class="helper-text" [class.disabled]="disabled">{{textHelper}}</p>

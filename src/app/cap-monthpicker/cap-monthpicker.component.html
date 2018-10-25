@@ -1,5 +1,5 @@
-<label *ngIf="label?.length">
+<label [for]="id" class="label-input" [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 
-<dp-date-picker [(ngModel)]="value" class="dp-material dp-main" locale="pt-br" type="month" [placeholder]="placeholder" [disabled]="disabled"
-  [name]="name" [config]="config"></dp-date-picker>
+<dp-date-picker [(ngModel)]="value" locale="pt-br" type="month" [placeholder]="placeholder ? placeholder : ''" [disabled]="disabled" [name]="name"
+  [config]="config"></dp-date-picker>

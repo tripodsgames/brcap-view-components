@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   colors = {};
   collapse = false;
 
+  mes;
   item = false;
   radios = [];
   combo;

@@ -3,6 +3,7 @@
   cursor: pointer;
   height: 40px;
   margin-bottom: 10px;
+  line-height: 14px;
 }
 
 .menu-item:hover {
@@ -23,7 +24,9 @@ ul.list li .menu-item {
 ul.list li .menu-item .label-menu {
   position: relative;
   left: 30px;
-  padding-right: 30px;
+  word-break: break-word;
+  width: 155px;
+  display: block;
 }
 .hide {
   display: none;

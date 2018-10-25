@@ -157,18 +157,81 @@ h3 {
   padding: 50px;
   margin-top: -20px;
 }
+.dp-calendar-wrapper {
+  border: none;
+}
+
+.dp-calendar-nav-right {
+  right: 5px;
+  border: none;
+  outline: none !important;
+}
+
+.dp-calendar-nav-left {
+  left: 5px;
+  border: none;
+  outline: none !important;
+}
+
+.dp-calendar-wrapper {
+  border: none !important;
+}
+
+dp-date-picker {
+  display: block !important;
+}
+
+.dp-current-location-btn {
+  display: none !important;
+}
+
+.dp-calendar-nav-container {
+  border: none !important;
+  border-bottom: 1px solid #ddd !important;
+  height: 35px !important;
+}
+
+.dp-popup {
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+
+.dp-calendar-month:hover,
+.dp-calendar-nav-right:hover,
+.dp-calendar-nav-left:hover {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.dp-calendar-month {
+  box-sizing: border-box;
+  margin: 12px 8px;
+  padding: 5px 7px;
+  width: unset !important;
+  height: unset !important;
+  cursor: pointer;
+  border: none;
+  text-transform: capitalize;
+  outline: none !important;
+  border-radius: 5px;
+}
 
 .cap-inputText,
 .dp-input-container input {
   box-shadow: none;
-  border-radius: 4px;
   border: 1px solid #757575 !important;
-  height: 50px;
   font-family: Ubuntu;
-  font-size: 14px;
   background-color: #fff !important;
-  color: rgba(0, 0, 0, 0.87);
   outline: none;
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-image: none;
+  border-radius: 4px;
 }
 
 .cap-inputText.outline {
@@ -187,9 +250,8 @@ cap-inputText[ng-reflect-style-class="outline"] label {
   height: 40px;
 }
 
-label {
+label.label-input {
   background-color: #fff;
-
   font-weight: bold;
   font-family: Ubuntu;
   font-size: 11px;
@@ -283,7 +345,7 @@ input:disabled:-ms-input-placeholder {
   border-radius: 0px;
 }
 
-.content-header label {
+.content-header label.label-input {
   background: transparent;
   top: 22px !important;
   left: 9px !important;
@@ -601,7 +663,7 @@ ng-select > div > div.single {
 }
 select-dropdown > div {
   font-family: Ubuntu;
-  font-size: 14px;
+  font-size: 12px;
 }
 select-dropdown > div .filter input {
   height: 50px;
@@ -1025,4 +1087,108 @@ button.cap-button.sm.btn-ico .brcap-ico {
 }
 .buttons-form {
   padding: 20px 0px 10px 0px;
+}
+
+cap-icon.fecharQuickView {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: block;
+  z-index: 3;
+}
+.quickview {
+  position: absolute;
+  width: 280px;
+  height: 100%;
+  background: #f4f4f4;
+  float: right;
+  right: 0;
+  z-index: 2;
+  top: 0;
+  transition: all 2s;
+
+  .label-text-block {
+    margin: 0 !important;
+  }
+
+  label,
+  span {
+    font-size: 12px !important;
+    line-height: 12px;
+    display: inline;
+  }
+}
+
+.view-block {
+  margin: 15px 0px;
+}
+.over {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  float: left;
+  left: 0;
+  z-index: 1;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 2s;
+}
+
+cap-icon.fecharQuickView {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: block;
+  z-index: 3;
+}
+
+.content-quickview {
+  padding: 25px 20px 20px 20px;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.icone-quickview {
+  border: 1px solid rgba(117, 117, 117, 0.5);
+  padding: 5px;
+  border-radius: 4px;
+}
+.table-filter > thead > tr:nth-child(1) > th {
+  background-color: #e4e4e4 !important;
+  height: 40px;
+}
+
+.table-filter td.select {
+  padding: 0px;
+}
+
+.table-filter td.select cap-select > ng-select > div {
+  border: none !important;
+  height: 40px;
+}
+
+.table-filter ng-select > div > div.single > div.toggle:before,
+.table-filter ng-select > div.open > div.single > div.toggle:before {
+  font-size: 18px;
+}
+
+.table-filter > thead > tr:nth-child(2) > th {
+  background: #fff !important;
+  padding: 0;
+
+  ng-select > div {
+    border: none !important;
+    height: 40px;
+  }
+  ng-select > div > div.single > div.toggle {
+    line-height: 40px !important;
+  }
+  ng-select > div > div.single > div.toggle:before {
+    font-size: 20px;
+    color: #888;
+  }
 }
