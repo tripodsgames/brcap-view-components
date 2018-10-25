@@ -6,11 +6,16 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
   styleUrls: ["./cap-menu.component.css"]
 })
 export class CapMenuComponent implements OnInit {
-  @Input("id") id: string;
-  @Input("value") value: Array<any>;
-  @Input("width") width: number;  
-  @Input("modulo") modulo: string;
-  @ViewChild("divMenu") divMenu: ElementRef;
+  @Input("id")
+  id: string;
+  @Input("value")
+  value: Array<any>;
+  @Input("width")
+  width: number;
+  @Input("modulo")
+  modulo: string;
+  @ViewChild("divMenu")
+  divMenu: ElementRef;
 
   constructor() {}
 
@@ -18,9 +23,7 @@ export class CapMenuComponent implements OnInit {
     if (this.width) {
       this.divMenu.nativeElement.style.width = this.width + "px";
     } else {
-      this.divMenu.nativeElement.style.width = "225px";
+      this.divMenu.nativeElement.style.width = "230px";
     }
   }
-
-
 }
