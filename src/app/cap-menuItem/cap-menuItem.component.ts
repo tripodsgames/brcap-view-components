@@ -5,7 +5,7 @@ import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
   templateUrl: "./cap-menuItem.component.html",
   styleUrls: ["./cap-menuItem.component.css"]
 })
-export class CapMenuItemComponent implements OnInit {
+export class CapMenuItemComponent {
   @Input("id")
   id: string;
   @Input("value")
@@ -25,10 +25,8 @@ export class CapMenuItemComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
-
   public getIconUrl(icone) {
-    return icone.replace(/#/g, "%23");
+    return icone ? icone.replace(/#/g, "%23") : null;
   }
 
   toggleClass(hasChild) {
