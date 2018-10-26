@@ -120,7 +120,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   checkFuncionalidadeSelecionada(f) {
-    return f.incluir || f.excluir || f.alterar || f.pesquisar || f.bloquear;
+    return f.incluir || f.excluir || f.alterar || f.pesquisar || f.bloquear || f.aprovar;
   }
 
   preencherAcoesFuncionalidade(f) {
@@ -140,6 +140,9 @@ export class PermissoesComponent implements OnInit {
     if (f.bloquear) {
       lista.push("bloquear");
     }
+    if (f.aprovar) {
+      lista.push("aprovar");
+    }
     return lista;
   }
 
@@ -151,12 +154,14 @@ export class PermissoesComponent implements OnInit {
       f.pesquisar = true;
       f.alterar = true;
       f.bloquear = true;
+      f.aprovar = true;
     } else {
       f.incluir = false;
       f.excluir = false;
       f.pesquisar = false;
       f.alterar = false;
       f.bloquear = false;
+      f.aprovar = false;
     }
   }
 
@@ -189,6 +194,7 @@ export class PermissoesComponent implements OnInit {
             f.alterar = f.acao.indexOf("alterar") !== -1;
             f.excluir = f.acao.indexOf("excluir") !== -1;
             f.bloquear = f.acao.indexOf("bloquear") !== -1;
+            f.aprovar = f.acao.indexOf("aprovar") !== -1;
           });
         });
         this.unirUsuarioModulos();
@@ -211,11 +217,13 @@ export class PermissoesComponent implements OnInit {
                   funcModulo.pesquisar = funcPermissao.pesquisar;
                   funcModulo.excluir = funcPermissao.excluir;
                   funcModulo.bloquear = funcPermissao.bloquear;
+                  funcModulo.aprovar = funcPermissao.aprovar;
                   funcModulo.todos =
                     funcPermissao.incluir &&
                     funcPermissao.alterar &&
                     funcPermissao.pesquisar &&
                     funcPermissao.excluir &&
+                    funcPermissao.aprovar &&
                     funcPermissao.bloquear;
                 }
               });
@@ -236,18 +244,21 @@ export class PermissoesComponent implements OnInit {
   }
 
   verificaSelecionouIncluir(func, value) {
-    func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear;
+    func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouAlterar(func, value) {
-    func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear;
+    func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouPesquisar(func, value) {
-    func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear;
+    func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouExcluir(func, value) {
-    func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear;
+    func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
   }
   verificaSelecionouBloquear(func, value) {
-    func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value;
+    func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
+  }
+  verificaSelecionouAprovar(func, value) {
+    func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }
 }

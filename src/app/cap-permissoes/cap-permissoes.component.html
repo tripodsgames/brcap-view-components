@@ -115,6 +115,8 @@
                               <div class="item ">
                                 <cap-checkbox (ngModelChange)="verificaSelecionouBloquear(func, $event) " [(ngModel)]="func.bloquear
                               " name="bloquear-{{indexM}}-{{indexF}} " itemLabel="Bloquear "></cap-checkbox>
+                                <cap-checkbox (ngModelChange)="verificaSelecionouAprovar(func, $event) " [(ngModel)]="func.bloquear
+                              " name="aprovar-{{indexM}}-{{indexF}} " itemLabel="Aprovar "></cap-checkbox>
                               </div>
                             </div>
                           </div>
