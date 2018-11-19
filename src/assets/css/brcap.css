@@ -1192,3 +1192,8 @@ cap-icon.fecharQuickView {
     color: #888;
   }
 }
+
+.item cap-checkbox {
+  position: relative;
+  top: 13px;
+}

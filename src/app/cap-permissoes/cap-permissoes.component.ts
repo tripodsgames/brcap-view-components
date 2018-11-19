@@ -146,8 +146,18 @@ export class PermissoesComponent implements OnInit {
     return lista;
   }
 
-  selecionarTodosFuncionalidade(f) {
+  selecionarTodosFuncionalidade(f, modulo?, selectModule?) {
     f.todos = !f.todos;
+    if (!selectModule) {
+      let cont = 0;
+      modulo.funcionalidades.forEach(funcionalidade => {
+        if (funcionalidade.todos) {
+          cont++;
+        }
+      });
+      modulo.todos = cont > 0;
+      f.todos = modulo.todos;
+    }
     if (f.todos) {
       f.incluir = true;
       f.excluir = true;
@@ -208,6 +218,7 @@ export class PermissoesComponent implements OnInit {
         this.usuarioPermissao.permissoes.forEach(permissao => {
           if (modulo.codigo === this.sistema + "#" + permissao.codigo) {
             modulo.funcionalidades.forEach(funcModulo => {
+              modulo.todos = permissao.funcionalidades.length > 0;
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
                   funcModulo.acao = funcPermissao.acao;
@@ -234,31 +245,61 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
-  selecionarTodos(modulo) {
+  public selecionarTodos(modulo, selectModule) {
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
-        this.selecionarTodosFuncionalidade(funcionalidade);
+        this.selecionarTodosFuncionalidade(funcionalidade, modulo, selectModule);
       });
     }
   }
 
-  verificaSelecionouIncluir(func, value) {
+  public selectAllFuncionalidades(modulo) {
+    if (modulo && modulo.funcionalidades) {
+      modulo.todos = !modulo.todos;
+      modulo.funcionalidades.forEach(funcionalidade => {
+        funcionalidade.todos = modulo.todos;
+        if (funcionalidade.todos) {
+          funcionalidade.incluir = true;
+          funcionalidade.excluir = true;
+          funcionalidade.pesquisar = true;
+          funcionalidade.alterar = true;
+          funcionalidade.bloquear = true;
+          funcionalidade.aprovar = true;
+        } else {
+          funcionalidade.incluir = false;
+          funcionalidade.excluir = false;
+          funcionalidade.pesquisar = false;
+          funcionalidade.alterar = false;
+          funcionalidade.bloquear = false;
+          funcionalidade.aprovar = false;
+        }
+      });
+    }
+  }
+
+  verificaSelecionouIncluir(modulo, func, value) {
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
+    modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
-  verificaSelecionouAlterar(func, value) {
+  verificaSelecionouAlterar(modulo, func, value) {
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
+    modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
-  verificaSelecionouPesquisar(func, value) {
+  verificaSelecionouPesquisar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
+    modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
-  verificaSelecionouExcluir(func, value) {
+  verificaSelecionouExcluir(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
+    modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
   }
-  verificaSelecionouBloquear(func, value) {
+  verificaSelecionouBloquear(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
+    modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
   }
-  verificaSelecionouAprovar(func, value) {
+  verificaSelecionouAprovar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
+    modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }
 }
