@@ -443,10 +443,13 @@ label.disabled {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ajuda:before {
+  content: "\e921";
+}
 .menu:before {
   content: "\e900";
 }
-.permitir:before {
+.adiantar10:before {
   content: "\e919";
 }
 .voltar:before {
