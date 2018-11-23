@@ -10,4 +10,5 @@
 
 .content-header {
   background-color: #ccc;
+  z-index:1;
 }

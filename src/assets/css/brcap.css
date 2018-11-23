@@ -622,7 +622,7 @@ cap-button .xs i.brcap-ico {
 /*
  * Arrow Turn
  */
-.hamburger--arrowturn.is-active .hamburger-inner {
+/* .hamburger--arrowturn.is-active .hamburger-inner {
   transform: rotate(-180deg);
 }
 .hamburger--arrowturn.is-active .hamburger-inner::before {
@@ -630,7 +630,7 @@ cap-button .xs i.brcap-ico {
 }
 .hamburger--arrowturn.is-active .hamburger-inner::after {
   transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}
+} */
 
 ng-select > div {
   border-radius: 4px;

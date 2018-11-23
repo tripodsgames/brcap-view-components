@@ -14,10 +14,16 @@ export class CapHeaderComponent implements OnInit {
   modulo: string;
   @Input("username")
   username: string;
+  @Input("username_trat")
+  username_trat= this.nome(this.username);
+  @Input("n_avatar")
+  n_avatar="../../assets/img/avatar_provisorio.png";
   @Input("rotaPerfil")
   rotaPerfil: string;
   @Input("logoSistema")
   logoSistema: string;
+  @Input("mrkDagua")
+  mrkDagua: string;
   @Input("logoBrasilCap")
   logoBrasilCap: string;
   @Input("rotaLogo")
@@ -54,6 +60,17 @@ export class CapHeaderComponent implements OnInit {
       $("#logo-img").hide();
     } else {
       $("#logo-img").show();
+    }
+  }
+
+  nome(str) {
+    if (str !== null){
+      var arr = str.split(' ');
+      var primeiro = arr.slice(0, 1);
+      var ultimo = arr.slice(-1);
+      return primeiro + " " + ultimo;
+    } else {
+      return str;
     }
   }
 }

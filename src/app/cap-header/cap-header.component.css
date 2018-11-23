@@ -46,6 +46,8 @@
 .main-header .navbar-custom-menu,
 .main-header .navbar-right {
   float: right;
+  padding-top:0px !important;
+  padding-bottom:9px !important;
 }
 
 .navbar .navbar-static-top {
@@ -66,12 +68,13 @@
 }
 
 .box-user {
-  padding-left: 0px;
+  margin-left: -20px;
+  float: right;
 }
 
 .user-menu {
   position: relative;
-  top: -32px;
+  top: -48px;
   float: right;
   margin-right: 15px;
 }
@@ -89,6 +92,11 @@
 
 .user-body i {
   float: right;
+}
+
+.img-avatar-header {
+  height:40px;
+  margin-right: 10px;
 }
 
 .label-projeto {
@@ -136,7 +144,7 @@
 
 .dropdown-menu {
   padding: 0px 0 !important;
-  left: -65px;
+  /* left: -65px; */
 }
 
 .navbar {

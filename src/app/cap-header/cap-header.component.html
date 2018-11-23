@@ -8,7 +8,7 @@
 
   <nav class="navbar navbar-static-top">
     <div class="label-projeto">
-      <div id="menu-toggle" class="sidebar-toggle hamburger hamburger--arrowturn js-hamburger is-active" (click)="toggleMenu()">
+      <div id="menu-toggle" class="sidebar-toggle hamburger js-hamburger is-active" (click)="toggleMenu()">
         <div class="hamburger-box">
           <div class="hamburger-inner"></div>
         </div>
@@ -19,10 +19,10 @@
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle box-user" data-toggle="dropdown">
-            <span class="hidden-xs text-user">Olá, {{username}}</span>
+            <img [src]="n_avatar" class="img-avatar-header"> <span class="hidden-xs text-user">{{username_trat}}</span>
             <cap-icon icon="expandir" [size]="16"></cap-icon>
           </a>
-          <ul class="dropdown-menu dropdown-user">
+          <ul class="dropdown-menu dropdown-user" style="margin-top: -5px;">
             <a [href]="rotaPerfil">
               <li class="user-body">
                 <span>Perfil</span>

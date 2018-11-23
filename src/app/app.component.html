@@ -1,1 +1,18 @@
-<cap-menu [value]="menu"></cap-menu>
+<cap-menu [value]="menu" modulo="posvenda"></cap-menu>
+<cap-header username="Joaquim José Xavier"></cap-header>
+<div class="content-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-3">
+        <cap-inputText></cap-inputText>
+      </div>
+      <div class="col-md-3">
+        <cap-inputText label="Nome"></cap-inputText>
+      </div>
+      <div class="col-md-3">
+        <cap-monthpicker label="Mês" [(ngModel)]="mes"></cap-monthpicker>
+        {{mes}}
+      </div>
+    </div>
+  </div>
+</div>
