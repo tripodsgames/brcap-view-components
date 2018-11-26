@@ -13,7 +13,7 @@ export class CapHeaderComponent implements OnInit {
   @Input("modulo")
   modulo: string;
   @Input("username")
-  username="Marcio DAlessa Cunha"
+  username: string;
   @Input("username_trat")
   username_trat= this.nome(this.username);
   @Input("n_avatar")
