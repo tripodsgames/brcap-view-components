@@ -15,14 +15,15 @@
       </div>
       <img id="logo-img" [src]="logoSistema">
     </div>
-    <div class="navbar-custom-menu">
+    <div id="ddu" class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle box-user" data-toggle="dropdown">
             <img [src]="n_avatar" class="img-avatar-header"> <span class="hidden-xs text-user">{{username_trat}}</span>
             <cap-icon icon="expandir" [size]="16"></cap-icon>
           </a>
-          <ul class="dropdown-menu dropdown-user" style="margin-top: -5px;">
+          <ul class="dropdown-menu dropdown-user ignoreLeft" style="margin-top: -5px;right: 0;
+          left: 14px;">
             <a [href]="rotaPerfil">
               <li class="user-body">
                 <span>Perfil</span>

@@ -38,10 +38,10 @@
     "ng-select": "1.0.0",
     "ng2-date-picker": "2.0.0",
     "rxjs": "^5.1.0",
+    "sweetalert2": "^6.9.0",
     "toastr": "^2.1.2",
     "tsickle": "^0.28.0",
-    "uglify-js": "^3.3.18",
-    "sweetalert2": "^6.9.0",
+    "uglify-js": "2.4.2",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
