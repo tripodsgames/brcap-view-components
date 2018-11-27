@@ -30,7 +30,7 @@ import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
 import { CapGridPaginationComponent } from "../cap-grid-pagination/cap-grid-pagination.component";
 import { CapDropdownListComponent } from "../cap-dropdownList/cap-dropdownList.component";
-import { DpDatePickerModule } from "ng2-date-picker";
+
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
 import { CapLoginComponent } from "../cap-login/cap-login.component";
 import { LoginService } from "../services/login.service";
@@ -46,8 +46,7 @@ import { PlataformaService } from "../services/plataforma.service";
     FormsModule,
     SelectModule,
     MyDatePickerModule,
-    MyDateRangePickerModule,
-    DpDatePickerModule
+    MyDateRangePickerModule
   ],
   declarations: [
     CapInputTextComponent,
