@@ -1,4 +1,12 @@
-import { Component, Input, Output, OnInit, ElementRef, ViewChild, EventEmitter } from "@angular/core";
+import {
+  Component,
+  Input,
+  Output,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  EventEmitter
+} from "@angular/core";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
 
 import * as jqueryProxy from "jquery";
@@ -15,9 +23,9 @@ export class CapHeaderComponent implements OnInit {
   @Input("username")
   username: string;
   @Input("username_trat")
-  username_trat= this.nome(this.username);
+  username_trat: string;
   @Input("n_avatar")
-  n_avatar="../../assets/img/avatar_provisorio.png";
+  n_avatar = "../../assets/img/avatar_provisorio.png";
   @Input("rotaPerfil")
   rotaPerfil: string;
   @Input("logoSistema")
@@ -44,6 +52,8 @@ export class CapHeaderComponent implements OnInit {
     if (!this.rotaLogo) {
       this.rotaLogo = "javscript:void(0)";
     }
+
+    this.username_trat = this.nome(this.username);
   }
 
   logoff() {
@@ -64,8 +74,8 @@ export class CapHeaderComponent implements OnInit {
   }
 
   nome(str) {
-    if (str !== null){
-      var arr = str.split(' ');
+    if (str) {
+      var arr = str.split(" ");
       var primeiro = arr.slice(0, 1);
       var ultimo = arr.slice(-1);
       return primeiro + " " + ultimo;
