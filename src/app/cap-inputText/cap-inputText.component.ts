@@ -39,6 +39,8 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   placeholder: string;
   @Input("mask")
   mask: string;
+  @Input("reverseMask")
+  reverseMask: string;
   @Input("styleClass")
   styleClass: string;
   @Input("maxlength")
@@ -169,7 +171,10 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   }
 
   public ngAfterViewInit() {
-    if (this.mask) {
+    if(this.reverseMask){
+      $(this.input.nativeElement).mask(this.reverseMask, {reverse: true});
+    }
+    else if (this.mask) {
       $(this.input.nativeElement).mask(this.mask);
     }
   }
