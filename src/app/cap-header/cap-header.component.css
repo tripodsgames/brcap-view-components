@@ -122,10 +122,6 @@
   border: none !important;
 }
 
-#ddu ul:not(.ignoreLeft){
-  left: 0;
-}
-
 .nav .open > a,
 .nav > li > a:hover,
 .nav > li > a:focus {

@@ -261,16 +261,16 @@ cap-inputText[ng-reflect-style-class="outline"] label {
 
 label.label-input {
   background-color: #fff;
-  font-weight: bold;
+  font-weight: 500;
   font-family: Ubuntu;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.87);
   position: relative;
-  top: 13px;
+  top: 10px;
   left: 8px;
   padding: 0px 3px;
   z-index: 3;
-  height: 4px;
+  height: 10px;
 }
 
 label.error,
