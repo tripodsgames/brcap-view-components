@@ -1,6 +1,21 @@
 <cap-menu [value]="menu" modulo="posvenda"></cap-menu>
 <cap-header username="Joaquim José Xavier"></cap-header>
 <div class="content-wrapper">
+
+  <div class="content-header mainHeader">
+    <div class="row">
+      <div class="col-sm-6 mainTitle">
+        Processos de Cancelamento
+      </div>
+      <div class="col-sm mainTitle title2">
+        <span *ngIf="dataBusca">{{dataBusca | date:'EEEE' | titlecase }}</span>
+          <span *ngIf="!dataBusca">{{today | date:'EEEE' | titlecase }}</span>, 
+          <span *ngIf="dataBusca">{{dataBusca | date:'dd'}} de {{dataBusca | date:'MMMM' | titlecase }} de {{dataBusca | date:'yyyy'}}</span>
+          <span *ngIf="!dataBusca">{{today | date:'dd'}} de {{today | date:'MMMM' | titlecase }} de {{today | date:'yyyy'}}</span>
+      </div>
+    </div>
+  </div>
+
   <div class="content">
     <div class="row">
       <div class="col-md-3">

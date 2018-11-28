@@ -166,6 +166,8 @@
   .navbar-custom-menu > ul > li.open > a > i {
     position: relative;
     left: 158px;
+    position: absolute;
+    right: 0;
   }
 
   .user-menu.open {
