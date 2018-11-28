@@ -48,6 +48,8 @@
   float: right;
   padding-top:0px !important;
   padding-bottom:9px !important;
+  position: absolute;
+  right: 0;
 }
 
 .navbar .navbar-static-top {
