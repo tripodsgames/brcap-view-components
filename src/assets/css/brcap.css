@@ -242,6 +242,15 @@ dp-date-picker {
   padding: 20px 10px 10px 13px;
 }
 
+.cap-inputText-icon{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.54);
+    cursor: pointer;
+}
+
 cap-inputText[ng-reflect-style-class="outline"] label {
   background: transparent !important;
 }
@@ -261,6 +270,7 @@ label.label-input {
   left: 8px;
   padding: 0px 3px;
   z-index: 3;
+  height: 4px;
 }
 
 label.error,
