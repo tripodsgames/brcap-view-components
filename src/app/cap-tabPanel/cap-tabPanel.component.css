@@ -21,9 +21,9 @@
 }
 
 .nav-tabs > li.active > a {
-  height: 60px !important;
+  height: 55px !important;
   position: relative;
-  top: -13px;
+  top: -8px;
   right: 2px;
   margin-bottom: 20px;
   vertical-align: middle;
