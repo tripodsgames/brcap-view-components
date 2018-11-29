@@ -190,6 +190,7 @@
               </div>
             </div>
           </div>
+          <br>
           <div class="col-md-6 " *ngIf="usuarioPermissao">
             <div class="row ">
               <div class="col-md-12 "><cap-button label="Confirmar " (click)="salvar()"></cap-button></div>
@@ -221,7 +222,7 @@
                 <div class="col-md-12 ">
                   <table class="table table-hover table-bordered ">
                     <thead>
-                      <tr>
+                      <tr class="table-header">
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>E-mail</th>
@@ -230,7 +231,7 @@
                     <tbody>
                       <tr
                         (click)="selecionarUsuarioVisualizar(usuario)"
-                        class="pointer "
+                        class="animacao-hover pointer"
                         *ngFor="let usuario of listaUsuarios"
                       >
                         <td>{{ usuario?.nome }}</td>
@@ -243,6 +244,7 @@
               </div>
             </div>
           </div>
+          <br>
           <div class="col-md-4 ">
             <div class="box " *ngIf="usuarioVisualizar">
               <div class="row ">
