@@ -25,6 +25,9 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
   display: block;
+  background-image: url(../../assets/img/logo-marca-dagua.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 .content-wrapper {
