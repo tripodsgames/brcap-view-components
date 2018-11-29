@@ -4,7 +4,7 @@
 
 <input [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)" (blur)="onBlurJS($event)"
   (mouseover)="onMouseOver($event)" (mousedown)="onMouseDown($event)" (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)"
-  class="form-control input-type-text cap-inputText {{styleClass}}" [class.error]="hasError()" (ngModelChange)="typing()" [(ngModel)]="value" [disabled]="disabled"
+  class="form-control input-type-text cap-inputText {{styleClass}}" [class.error]="hasError()" (keyup)="typing()" [(ngModel)]="value" [disabled]="disabled"
   type="text" #modelInput="ngModel" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''"
 />
 

@@ -266,11 +266,11 @@ label.label-input {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.87);
   position: relative;
-  top: 10px;
+  top: 13px;
   left: 8px;
   padding: 0px 3px;
   z-index: 3;
-  height: 10px;
+  height: 4px;
 }
 
 label.error,
