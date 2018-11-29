@@ -96,6 +96,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   private onChangeCallback: (_: any) => void = noop;
 
   ngOnInit() {
+    console.log(this.value);
     if (!this.id) {
       this.id = BRCapUtil.guid();
     } else {
@@ -119,10 +120,15 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
 
   typing(){
     this.escrevendo = true;
+    console.log(this.value);
+    if(this.value == ""){
+      this.escrevendo = false;
+    }
   }
 
   erase(){
     this.value = "";
+    console.log(this.value);
     this.escrevendo = false;
   }
 
