@@ -84,6 +84,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   textError;
 
   escrevendo = false;
+  emptyMessage;
 
   private $el: any;
   private innerValue: any = "";
@@ -130,6 +131,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
     this.value = "";
     console.log(this.value);
     this.escrevendo = false;
+    this.emptyMessage = false;
   }
 
   onKeyup(event) {
