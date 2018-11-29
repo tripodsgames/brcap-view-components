@@ -1,4 +1,4 @@
-<div class="cap-grid-default">
+<div class="cap-grid-default box">
   <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
     <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
       <thead>
@@ -23,9 +23,9 @@
       </tbody>
     </table>
     <div class="cap-grid-pagination">
-      <img class="pag-prev" src="../../assets/img/anterior.svg" (click)="prevPage()" *ngIf="currentPage > 1">
+      <img class="pag-prev" src="../../../assets/img/anterior.svg" (click)="prevPage()" *ngIf="currentPage > 1">
       {{labelPaginas}}
-      <img class="pag-next" src="../../assets/img/seguir.svg" (click)="nextPage()" *ngIf="currentPage < totalPages">
+      <img class="pag-next" src="../../../assets/img/seguir.svg" (click)="nextPage()" *ngIf="currentPage < totalPages">
     </div>
   </div>
 </div>
