@@ -1,9 +1,9 @@
 <div class="cap-grid-default">
   <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
-    <table id="cap-cap-grid-default" class="table cap-grid-responsive" role="tablist" aria-multiselectable="true">
+    <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
       <thead>
-        <tr>      
-          <th *ngFor="let c of columns" class="cap-grid-header">{{c}}</th>
+        <tr class="table-header">      
+          <th *ngFor="let c of columns" class="cap-grid-header tools">{{c}}</th>
           <th *ngIf="rowOptions" class="cap-grid-header"></th>
         </tr>
       </thead>
