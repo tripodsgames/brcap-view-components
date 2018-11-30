@@ -168,40 +168,6 @@ table {
     }
   }
   
-  .dataEvento {
-    width: 93px;
-    height: 45px;
-  }
-  
-  .evento {
-    width: 129.5px;
-    height: 45px;
-  }
-  
-  .parceiro {
-    width: 200px;
-    height: 45px;
-  }
-  
-  .idContabil {
-    width: 105px;
-    height: 45px;
-  }
-  
-  .qntTitulo {
-    width: 73px;
-    height: 45px;
-  }
-  
-  .valor {
-    width: 129.5px;
-    height: 45px;
-  }
-  
-  .acoes {
-    width: 46.7px;
-    height: 45px;
-  }
   
   thead tr th {
     padding: 0;
