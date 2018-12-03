@@ -93,10 +93,20 @@ export class CapPasswordComponent implements AfterViewInit, ControlValueAccessor
     }
   }
 
-  show() {
-     this.input.nativeElement.type = 'text';
-     this.icone.icon = "esconder-senha";
+  toggle() {
+    switch(this.input.nativeElement.type) {
+      case 'password':
+      this.input.nativeElement.type = 'text';
+      this.icone.icon = "esconder-senha";
+      break;
+
+      case 'text':
+      this.input.nativeElement.type = 'password';
+      this.icone.icon = "ver-senha";
+      break;
+    }
   }
+  
   hide() {
      this.input.nativeElement.type = 'password';
      this.icone.icon = "ver-senha";

@@ -1,10 +1,18 @@
 .cap-menu {
+  margin-left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   min-height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   padding-top: 85px;
-  transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+}
+
+.cap-menu.fechado{
+  margin-left: -230px;
 }
 
 .icon-menu {

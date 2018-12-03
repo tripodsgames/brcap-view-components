@@ -43,6 +43,10 @@ body.minimizado .content-wrapper {
   z-index: 840;
 }
 
+.body.minimizaco cap-menu::ng-deep .cap-menu{
+  display: block !important;
+}
+
 .content {
   min-height: 250px;
   /* padding: 25px; */
