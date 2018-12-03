@@ -45,9 +45,10 @@ body.minimizado .content-wrapper {
 
 .content {
   min-height: 250px;
-  padding: 15px;
+  /* padding: 25px; */
   margin-right: auto;
   margin-left: auto;
+  padding-top: 5px;
   padding-left: 25px;
   padding-right: 25px;
 }
