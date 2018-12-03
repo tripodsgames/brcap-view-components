@@ -61,8 +61,8 @@ export class CapHeaderComponent implements OnInit {
   }
 
   toggleMenu() {
-    $(".cap-menu").toggle();
-    $(".logo").toggle();
+    $(".cap-menu").toggleClass("fechado");
+    $(".logo").toggleClass("fechado");
     $("body").toggleClass("minimizado");
     $(".label-projeto").toggleClass("fechado");
     $("#menu-toggle").toggleClass("is-active");
