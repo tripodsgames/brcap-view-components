@@ -31,7 +31,7 @@
         
         <span>{{labelPaginas}}</span>
         
-        <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage < totalPages)" [ngClass]="{ 'disabled': (currentPage < totalPages) }">
+        <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage === totalPages)" [ngClass]="{ 'disabled': (currentPage === totalPages) }">
             <i class="fa fa-angle-right"></i>
         </button>
         <!-- <img class="pag-next" src="../../../assets/img/seguir.svg" (click)="nextPage()" *ngIf="currentPage < totalPages"> -->
