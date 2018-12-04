@@ -167,9 +167,34 @@ table {
       }
     }
   }
-  
-  
+
   thead tr th {
     padding: 0;
     padding-left: 8px;
+  }
+
+
+
+  cap-inputText{
+    float: right;
+    margin-top: -10px;
+  }
+
+  cap-inputText::ng-deep label{
+    height: 15px;
+    z-index: 1;
+  }
+
+  cap-inputText::ng-deep .cap-inputText{
+    width: 180px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  cap-inputText::ng-deep .cap-inputText:focus{
+    border: 2px solid #c59609 !important;
+  }
+
+  cap-inputText::ng-deep .cap-inputText-icon{
+    top: 18px !important;
   }
