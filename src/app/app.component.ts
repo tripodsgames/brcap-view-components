@@ -311,7 +311,10 @@ export class AppComponent implements OnInit {
   @ViewChild(CapGridPaginationComponent)
   gridPagination: CapGridPaginationComponent;
   columns = ["ID", "NOME"];
-  items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"]];
+  items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],
+           [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],
+           [21, "JOÃO"], [22, "MARIA"], [23, "JOSÉ"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
+          ];
   rowOptions = ["Editar"];
 
   ngAfterViewInit() {
