@@ -24,6 +24,7 @@ import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
@@ -48,7 +49,8 @@ import { DpDatePickerModule } from "ng2-date-picker";
     SelectModule,
     MyDatePickerModule,
     MyDateRangePickerModule,
-    DpDatePickerModule
+    DpDatePickerModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     CapInputTextComponent,
