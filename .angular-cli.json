@@ -19,7 +19,8 @@
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/sweetalert2/dist/sweetalert2.min.css",
-        "../src/assets/css/brcap.css"
+        "../src/assets/css/brcap.css",
+        "../src/assets/css/main.min.css"
       ],
       "scripts": ["../node_modules/bootstrap/dist/js/bootstrap.js"],
       "environmentSource": "environments/environment.ts",

@@ -53,7 +53,7 @@ export class CapGridPaginationComponent implements OnInit {
       this.currentPage = 1
       this.totalPages = Math.ceil(this.items.length/this.itemsPerPage)
     }
-    this.labelPaginas = `Página ${this.currentPage} de ${this.totalPages}`
+    this.labelPaginas = `${this.currentPage} de ${this.totalPages}`
     this.pagedItens = this.items.slice((this.currentPage-1) * this.itemsPerPage, ((this.currentPage-1) * this.itemsPerPage) + this.itemsPerPage)
   }
 

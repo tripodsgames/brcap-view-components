@@ -1,3 +1,6 @@
+.page-counts{margin-right:50px}
+.numbers{display:block;text-align:left;-webkit-box-flex:1;-ms-flex:1;flex:1}
+
 button {
   z-index: 0 !important;
   border: none;
