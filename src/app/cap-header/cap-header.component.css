@@ -53,9 +53,9 @@
 .main-header .navbar-right {
   float: right;
   padding-top:0px !important;
-  padding-bottom:9px !important;
   position: absolute;
   right: 0;
+  top: 0;
 }
 
 .navbar .navbar-static-top {
@@ -82,7 +82,7 @@
 
 .user-menu {
   position: relative;
-  top: -48px;
+  //top: -48px;
   float: right;
   margin-right: 15px;
 }
