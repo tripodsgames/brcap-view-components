@@ -12,9 +12,9 @@ export class CapGridPaginationComponent implements OnInit {
   @Input() columns: any
   @Input() itemsPerPage: number
   @Input() currentPage: number
-  @Input() totalPaged: number
-  @Input() fistItem: number
-  @Input() lastItem: number
+  //@Input() totalPaged: number
+  //@Input() firstItem: number
+  //@Input() lastItem: number
   @Input() labelPaginas: string
   @Input() rowOptions: any
 
@@ -28,6 +28,9 @@ export class CapGridPaginationComponent implements OnInit {
 
   totalPages: number
   pagedItens: any
+  totalPaged: number
+  firstItem: number
+  lastItem: number
   showItemOptions: number
 
   constructor() {
@@ -56,10 +59,11 @@ export class CapGridPaginationComponent implements OnInit {
       this.currentPage = 1
       this.totalPages = Math.ceil(this.items.length/this.itemsPerPage)
     }
+    //this.labelPaginas = `Página ${this.currentPage} de ${this.totalPages}`
     this.pagedItens = this.items.slice((this.currentPage-1) * this.itemsPerPage, ((this.currentPage-1) * this.itemsPerPage) + this.itemsPerPage)
-    this.fistItem = (10*(this.currentPage - 1)) + 1
-    this.lastItem = this.fistItem + ((this.pagedItens.length) - 1)
-    this.labelPaginas = `${this.fistItem}-${this.lastItem} de ${this.totalPages}`
+    this.firstItem = (10*(this.currentPage - 1)) + 1
+    this.lastItem = this.firstItem + ((this.pagedItens.length) - 1)
+    this.labelPaginas = `${this.firstItem}-${this.lastItem} de ${this.totalPages}`
  
     // console.log("Total de Paginas = ", this.totalPages);
     // console.log("Itens da Pagina = ", this.pagedItens.length);
