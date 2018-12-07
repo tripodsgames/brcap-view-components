@@ -1,24 +1,38 @@
 .menu-item {
   padding: 10px;
   cursor: pointer;
-  height: 40px;
-  margin-bottom: 10px;
-  line-height: 14px;
+  height: 45px;
+  /* margin-bottom: 10px; */
+  /* line-height: 14px; */
 }
 
 .menu-item:hover {
-  opacity: 0.9;
+  /* opacity: 0.9; */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* .menu-item:focus {
+  opacity: 40.0;
+} */
+
+.link:hover,
+.link:active,
+.link:visited,
+.link:focus {
+  text-decoration: none !important;
 }
 
 ul.list {
   margin-bottom: 0px;
   list-style: none;
   padding-left: 0px;
+  background-color: rgba(0,0,0,0.2);
 }
 
 ul.list li .menu-item {
   min-height: 40px;
   height: auto;
+  line-height: 16px;
 }
 
 ul.list li .menu-item .label-menu {
@@ -28,6 +42,23 @@ ul.list li .menu-item .label-menu {
   width: 155px;
   display: block;
 }
+
+ul.list li {
+  border-top: 2px solid rgba(0,0,0,0);
+  border-bottom: 2px solid rgba(0,0,0,0);
+}
+
+ul.list li:hover {
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+ul.list li:active {
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.0); */
+  border-right: 6px solid rgba(255, 255, 255, 0.6);
+}
+
 .hide {
   display: none;
 }
@@ -46,13 +77,6 @@ ul.list li .menu-item .label-menu {
 
 .label-menu.sub {
   padding-left: 40px;
-}
-
-.link:hover,
-.link:active,
-.link:visited,
-.link:focus {
-  text-decoration: none !important;
 }
 
 .label-only {
