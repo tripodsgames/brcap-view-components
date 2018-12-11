@@ -28,12 +28,16 @@ export class PermissoesComponent implements OnInit {
   checkboxModificado = false;
   nomeCard;
 
+  card: {
+    nomeCard: ["bla", "blabla", "blablabla"];
+  };
+
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
-    // this.nomeCard = "blad";
+    console.log(this.nomeCard);
   }
 
   popularListaModulos() {
