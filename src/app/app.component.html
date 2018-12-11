@@ -9,9 +9,11 @@
       </div>
       <div class="col-sm mainTitle title2">
         <span *ngIf="dataBusca">{{dataBusca | date:'EEEE' | titlecase }}</span>
-          <span *ngIf="!dataBusca">{{today | date:'EEEE' | titlecase }}</span>, 
-          <span *ngIf="dataBusca">{{dataBusca | date:'dd'}} de {{dataBusca | date:'MMMM' | titlecase }} de {{dataBusca | date:'yyyy'}}</span>
-          <span *ngIf="!dataBusca">{{today | date:'dd'}} de {{today | date:'MMMM' | titlecase }} de {{today | date:'yyyy'}}</span>
+        <span *ngIf="!dataBusca">{{today | date:'EEEE' | titlecase }}</span>,
+        <span *ngIf="dataBusca">{{dataBusca | date:'dd'}} de {{dataBusca | date:'MMMM' | titlecase }} de {{dataBusca |
+          date:'yyyy'}}</span>
+        <span *ngIf="!dataBusca">{{today | date:'dd'}} de {{today | date:'MMMM' | titlecase }} de {{today |
+          date:'yyyy'}}</span>
       </div>
     </div>
   </div>
@@ -25,15 +27,18 @@
         <cap-datepicker label="Data"></cap-datepicker>
       </div>
     </div>
-  
-<div class="col-md-10 button-container">
-  <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
-  </cap-grid-pagination>
-</div>
-  
 
-<br>
-<br>
+    <div class="col-md-10 button-container">
+      <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
+      </cap-grid-pagination>
+    </div>
 
-</div>
+
+    <br>
+    <br>
+
+
+    <cap-datepicker></cap-datepicker>
+
+  </div>
 </div>
