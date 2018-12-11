@@ -69,12 +69,12 @@ export class PermissoesComponent implements OnInit {
     this.usuarioPermissao = null;
   }
 
-  toggleHint() {
-    this.exibirHint = !this.exibirHint;
+  toggleHint(modulo) {
+    modulo.exibirHint = !modulo.exibirHint;
   }
 
-  mouseLeaveHint(){
-    this.exibirHint = false;
+  mouseLeaveHint(modulo){
+    modulo.exibirHint = false;
   }
 
   selecionarUsuarioVisualizar(usuario) {
