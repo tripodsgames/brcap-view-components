@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, Input, ViewChild, ElementRef, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "cap-menuItem",
@@ -21,6 +21,12 @@ export class CapMenuItemComponent {
   @ViewChild("menuItem")
   menuItem: ElementRef;
 
+  @Input("itemSelecionado")
+  itemSelecionado
+
+  @Output()
+  selecionar = new EventEmitter();
+
   exibir = false;
 
   mod = "";
@@ -38,42 +44,14 @@ export class CapMenuItemComponent {
       this.exibir = !this.exibir;
     }
   }
+ 
 
-  // ativando(item) {
-
-  //   this.selecionado = item.nome;
-
-  //   if (this.selecionado == item.nome) {
-  //     this.subClass = "ativado";
-  //    } else {
-  //      this.subClass = "";
-  //    }
-
-  //   console.log("item = " + item);
-  //   console.log("Selecionado = " + item.nome);
-  //   console.log("Selec. Funcio = " + item[0]);
-  //   console.log("menuItem = " + this.styleClass);
-  //   console.log("subClass = " + this.subClass);
-  // }
-
-
-  clickEvent(value,item)
-   {
-    this.mod = value.nome
-    this.status = item.nome;
+  select(item)
+   { 
     this.subClass = "ativado"
-    
-
-    console.log("Mod = " + this.mod);
-    console.log("Item Nome = " + item.nome);
-    console.log("Status = " + this.status);
+    this.selecionar.emit(item.codigo);
+     
   }
 
-  cleanerAll() {
-    // this.mod = value.nome
-    // this.status = item.nome;
-
-    //if (this.selecionado == item.nome)
-    this.subClass = "";
-  }
+   
 }
