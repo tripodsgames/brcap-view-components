@@ -73,6 +73,14 @@
                 <div class="row">
                   <div class="col-md-10">
                     <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
+                      <div class="hint">
+                        <cap-icon icon="ajuda" [size]="24" class="pointer round" (click)="toggleHint()" (mouseleave)="mouseLeaveSorteio()"></cap-icon>
+                        <div class="hint-container" *ngIf="exibirHint">
+                          <div class="hint-content">
+                            {{ modulo.descricao }}
+                          </div>
+                        </div>
+                      </div>
                       <div class="box-closed" *ngIf="!modulo.open">
                         <div class="row">
                           <div class="col-md-1">
@@ -138,16 +146,6 @@
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="hint" *ngFor="let modulo of listaModulos">
-                      <cap-icon icon="ajuda" [size]="24" class="pointer round" (click)="toggleHint()" (mouseleave)="mouseLeaveSorteio()"></cap-icon>
-                      <div class="hint-container" *ngIf="exibirHint">
-                        <div class="hint-content">
-                          {{ modulo.descricao }}
                         </div>
                       </div>
                     </div>

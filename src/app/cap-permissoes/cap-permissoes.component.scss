@@ -32,10 +32,8 @@
 // }
 
 .hint {
-  z-index: 1;
   position: absolute;
-  top: 11%;
-  right: 8%;
+  right: -20px;
 
   .round {
     background: none;
@@ -61,7 +59,7 @@
 
     &:after,
     &:before {
-      left: 19px;
+      left: 22px;
       top: 51px;
       border: solid transparent;
       content: " ";
