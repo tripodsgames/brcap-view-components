@@ -54,9 +54,9 @@ ul.list li:hover {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-ul.list li:active {
+.ativado {
   /* border-bottom: 2px solid rgba(255, 255, 255, 0.0); */
-  border-right: 6px solid rgba(255, 255, 255, 0.6);
+  border-right: 6px solid rgba(255, 255, 255, 0.5);
 }
 
 .hide {

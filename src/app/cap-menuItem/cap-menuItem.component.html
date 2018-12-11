@@ -1,4 +1,5 @@
 <div *ngIf="value.ativo">
+
   <span *ngIf="value.rota">
     <a class="link" [href]="value.rota">
       <div class="menu-item" [class.active]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades) ">
@@ -8,26 +9,27 @@
         <cap-icon icon="retrair animated bounceIn " *ngIf="value?.funcionalidades && exibir " styleClass="icon-arrow "></cap-icon>
       </div>
     </a>
-    <ul *ngIf="value.funcionalidades && exibir " class="list ">
-      <li *ngFor="let item of value.funcionalidades ">
-        <cap-menuItem [value]="item " principal="true " *ngIf="item.funcionalidades "></cap-menuItem>
-        <cap-menuItem [value]="item " principal="false " *ngIf="!item.funcionalidades "></cap-menuItem>
+    <ul *ngIf="value.funcionalidades && exibir">
+      <li *ngFor="let item of value.funcionalidades" (click)="clickEvent(value,item)" [ngClass]="mod == value.nome && status == item.nome ? subClass : '' ">
+        <cap-menuItem [value]="item " principal="true " *ngIf="item.funcionalidades"></cap-menuItem>
+        <cap-menuItem [value]="item " principal="false " *ngIf="!item.funcionalidades"></cap-menuItem>
       </li>
     </ul>
   </span>
 
   <span *ngIf="!value.rota ">
-    <div class="menu-item" [class.active]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades) ">
+    <div class="menu-item" [class.active]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)">
       <img *ngIf="value.icone "  class="img-icone" [src]="getIconUrl(value.icone)">
       <span class="label-menu " [class.label-only]="!value.icone" [class.visible]="value.visible ">{{value.nome}}</span>
       <cap-icon icon="expandir animated bounceIn " *ngIf="value?.funcionalidades && !exibir " styleClass="icon-arrow "></cap-icon>
       <cap-icon icon="retrair animated bounceIn " *ngIf="value?.funcionalidades && exibir " styleClass="icon-arrow "></cap-icon>
     </div>
-    <ul *ngIf="value.funcionalidades && exibir " class="list ">
-      <li *ngFor="let item of value.funcionalidades ">
-        <cap-menuItem [value]="item " principal="true " *ngIf="item.funcionalidades "></cap-menuItem>
+    <ul *ngIf="value.funcionalidades && exibir" class="list">
+      <li *ngFor="let item of value.funcionalidades" (click)="clickEvent(value,item)" (change)="cleanerAll()" [ngClass]="mod == value.nome && status == item.nome ? subClass : '' ">
+        <cap-menuItem [value]="item " principal="true " *ngIf="item.funcionalidades " ></cap-menuItem>
         <cap-menuItem [value]="item " principal="false " *ngIf="!item.funcionalidades "></cap-menuItem>
       </li>
     </ul>
   </span>
+
 </div>
