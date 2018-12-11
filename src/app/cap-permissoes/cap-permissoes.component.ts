@@ -24,15 +24,19 @@ export class PermissoesComponent implements OnInit {
   usuarioVisualizar;
   permissao;
   exibirHint = false;
+  hintAtivo = false;
+  checkboxModificado = false;
+  nomeCard;
 
-  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) {}
+  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.popularListaUsuarios();
-    this.popoularListaModulos();
+    this.popularListaModulos();
+    // this.nomeCard = "blad";
   }
 
-  popoularListaModulos() {
+  popularListaModulos() {
     this.plataformaService.listarModulos(this.sistema, this.urlSistemas).subscribe(res => {
       if (res) {
         this.listaModulos = res[0].modulos;
@@ -73,8 +77,13 @@ export class PermissoesComponent implements OnInit {
     modulo.exibirHint = !modulo.exibirHint;
   }
 
-  mouseLeaveHint(modulo){
+  mouseLeaveHint(modulo) {
     modulo.exibirHint = false;
+    modulo.hintAtivo = false;
+  }
+
+  ativarHint(modulo) {
+    modulo.hintAtivo = !modulo.hintAtivo;
   }
 
   selecionarUsuarioVisualizar(usuario) {
@@ -156,6 +165,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   selecionarTodosFuncionalidade(f, modulo?, selectModule?) {
+    this.checkboxModificado = true;
     f.todos = !f.todos;
     if (!selectModule) {
       let cont = 0;
@@ -264,6 +274,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   public selectAllFuncionalidades(modulo) {
+    this.checkboxModificado = true;
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
@@ -288,26 +299,32 @@ export class PermissoesComponent implements OnInit {
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouAlterar(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouPesquisar(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouExcluir(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
   }
   verificaSelecionouBloquear(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
   }
   verificaSelecionouAprovar(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }

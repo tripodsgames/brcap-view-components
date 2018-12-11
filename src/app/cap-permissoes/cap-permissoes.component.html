@@ -7,8 +7,20 @@
     </div>
   </div>
   <div class="content">
-    <cap-tabPanel class="permissao">
+    <div class="row ">
+      <div class="col-lg-3 col-xl-2" *ngFor="let oi of card">
+        <div class="card pointer" (click)="abrirCard()" [ngClass]="{ 'cardAtivo': cardBla }">
+          <div class="card-body">
+            <h3 class="card-titulo">{{oi.nomeCard}}</h3>
+            <p class="card-valor-total"></p>
+            <p class="card-atualizacao"></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+
+    <cap-tabPanel class="permissao" *ngIf="nomeCard === bla">
       <!-- ABA PERMISSIONAR -->
       <cap-tab title="PERMISSIONAR">
         <div class="row">
@@ -73,8 +85,9 @@
                 <div class="row">
                   <div class="col-md-10">
                     <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
-                      <div class="hint">
-                        <cap-icon icon="ajuda" [size]="24" class="pointer round" (click)="toggleHint(modulo)" (mouseleave)="mouseLeaveHint(modulo)"></cap-icon>
+                      <div class="hint" (click)="ativarHint(modulo)">
+                        <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': modulo.hintAtivo}"
+                          (click)="toggleHint(modulo)" (mouseleave)="mouseLeaveHint(modulo)"></cap-icon>
                         <div class="hint-container" *ngIf="modulo.exibirHint">
                           <div class="hint-content">
                             {{ modulo.descricao }}
@@ -157,14 +170,7 @@
           <br>
 
           <div class="col-md-6 " *ngIf="usuarioPermissao">
-            <cap-button label="Confirmar" [disabled]="" (click)="salvar()"></cap-button>
-
-            <!-- <div class="description" *ngFor="let modulo of listaModulos">
-              <cap-icon icon="info"></cap-icon>
-              <span> {{ modulo.descricao }} </span>
-            </div> -->
-
-
+            <cap-button label="Confirmar" [disabled]="!checkboxModificado" (click)="salvar()"></cap-button>
           </div>
         </div>
       </cap-tab>
