@@ -514,10 +514,10 @@ label.disabled {
 }
 
 .retrair:before {
-  content: "\e918";
+  content: "\e90a";
 }
 .expandir:before {
-  content: "\e90a";
+  content: "\e910";
 }
 .favorito:before {
   content: "\e90b";

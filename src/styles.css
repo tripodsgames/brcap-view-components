@@ -2,17 +2,25 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:300,400,700";
 
 /* Personalização da cor de fundo da logo no header de cada app */
-.main-header .logo {
-  background: #ffb72a;
+.main-header .logo {   /* //Cor Secundária */
+   background: #ffe800;   /* //Monitor */
+  /* background: #ffb72a;   //Produtos */
 }
 /* Personalização de cor de fundo do menu e do hover de cada item */
-.cap-menu {
-  background: #a5761b;
+.cap-menu {  /* //Cor Primária */
+  background: #c59609;  /* //Monitor */
+  /* background: #a5761b;  //Produtos */
 }
-.menu-item:hover {
-  background: #b8841f;
+.menu-item:hover {   /* //Cor Secundária */
+  background-color: rgba(255, 204, 0, 0.2); /* #ffcc00;  //Monitor */
+  /* background: #b8841f;   //Produtos */
 }
-
+.active {
+  background-color: rgba(255, 204, 0, 0.1);
+}
+.ativado {
+  border-right: 6px solid #ffe800;  /* //Monitor */
+}
 .cap-button {
-  background-color: #006bbb;
+  background-color: #006bbb;  /* //Todos */
 }

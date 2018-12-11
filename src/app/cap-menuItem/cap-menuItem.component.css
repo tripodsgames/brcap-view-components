@@ -2,18 +2,8 @@
   padding: 10px;
   cursor: pointer;
   height: 45px;
-  /* margin-bottom: 10px; */
-  /* line-height: 14px; */
 }
 
-.menu-item:hover {
-  /* opacity: 0.9; */
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* .menu-item:focus {
-  opacity: 40.0;
-} */
 
 .link:hover,
 .link:active,
@@ -49,23 +39,22 @@ ul.list li {
 }
 
 ul.list li:hover {
-  border-top: 2px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.03);
+  border-top: 2px solid rgba(255, 204, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 204, 0, 0.5);
+  background-color: rgba(255, 204, 0, 0.005); /* #ffcc00;  //Monitor */
 }
 
-.ativado {
-  /* border-bottom: 2px solid rgba(255, 255, 255, 0.0); */
+/* .ativado {
   border-right: 6px solid rgba(255, 255, 255, 0.5);
-}
+} */
 
 .hide {
   display: none;
 }
 
 .label-menu {
-  color: #fff;
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: capitalize;
   font-size: 14px;
   font-family: "Ubuntu";
   outline: none;
