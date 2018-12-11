@@ -73,6 +73,10 @@ export class PermissoesComponent implements OnInit {
     this.exibirHint = !this.exibirHint;
   }
 
+  mouseLeaveHint(){
+    this.exibirHint = false;
+  }
+
   selecionarUsuarioVisualizar(usuario) {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
       if (res && res[0] && res[0].permissoes) {

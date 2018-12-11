@@ -74,14 +74,14 @@
                   <div class="col-md-10">
                     <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
                       <div class="hint">
-                        <cap-icon icon="ajuda" [size]="24" class="pointer round" (click)="toggleHint()" (mouseleave)="mouseLeaveSorteio()"></cap-icon>
+                        <cap-icon icon="ajuda" [size]="24" class="pointer round" (click)="toggleHint()" (mouseleave)="mouseLeaveHint()"></cap-icon>
                         <div class="hint-container" *ngIf="exibirHint">
                           <div class="hint-content">
                             {{ modulo.descricao }}
                           </div>
                         </div>
                       </div>
-                      <div class="box-closed" *ngIf="!modulo.open">
+                      <div class="box-closed" [hidden]="modulo.open">
                         <div class="row">
                           <div class="col-md-1">
                             <cap-checkbox [(ngModel)]="modulo.todos" class="selectAll-modulos" name="selectAllModules-{{indexM}}"
@@ -95,7 +95,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="box-opened " *ngIf="modulo.open">
+                      <div class="box-opened " [hidden]="!modulo.open">
                         <div class="row ">
                           <div class="col-md-1 ">
                             <cap-checkbox [(ngModel)]="modulo.todos" class="selectAll-modulos" name="selecionarTodos-{{indexM}}"
