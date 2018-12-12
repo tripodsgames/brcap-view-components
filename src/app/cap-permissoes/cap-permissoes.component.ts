@@ -26,18 +26,23 @@ export class PermissoesComponent implements OnInit {
   exibirHint = false;
   hintAtivo = false;
   checkboxModificado = false;
-  nomeCard;
 
-  card: {
-    nomeCard: ["bla", "blabla", "blablabla"];
-  };
+
+    nomeCard = ["bla", "blabla"];
+
+  bla = {
+    "sorteio": {
+      "valorTotal": 782.67,
+      "quantidade": 2,
+      "pagamentosAgrupados": [{ "dataVencimento": "2018-12-12", "dataInclusaoPagamento": "2018-12-07", "idTipoCompromisso": 3, "formaCredito": "Credito Conta Corrente", "valorTotal": 521.78, "quantidade": 2, "ID_ES": "2REYomcBlcvD_PWYVBR-" }, { "dataVencimento": "2018-12-14", "dataInclusaoPagamento": "2018-12-07", "idTipoCompromisso": 3, "formaCredito": "Credito Conta Corrente", "valorTotal": 260.89, "quantidade": 1, "ID_ES": "3hEYomcBlcvD_PWYVBTc" }]
+    }
+  }
 
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
-    console.log(this.nomeCard);
   }
 
   popularListaModulos() {

@@ -8,12 +8,11 @@
   </div>
   <div class="content">
 
-    
     <div class="row ">
       <div class="col-lg-3 col-xl-2">
         <div class="card pointer" (click)="abrirCard()" [ngClass]="{ 'cardAtivo': cardBla }">
           <div class="card-body">
-            <h3 class="card-titulo">{{card.nomeCard}}</h3>
+            <h3 class="card-titulo" *ngFor="let dashboard of nomeCard"></h3>
             <p class="card-valor-total"></p>
             <p class="card-atualizacao"></p>
           </div>

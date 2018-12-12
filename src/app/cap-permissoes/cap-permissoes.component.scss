@@ -26,6 +26,7 @@ cap-button::ng-deep .cap-button[disabled] {
   opacity: 0.65 !important;
 }
 
+// Card
 .card {
   background: white;
   padding: 13px 8px;
@@ -62,6 +63,7 @@ cap-button::ng-deep .cap-button[disabled] {
     font-weight: 500;
   }
 }
+// Card - end
 
 // Hint
 .hint {
@@ -131,6 +133,7 @@ cap-button::ng-deep .cap-button[disabled] {
     }
   }
 }
+// Hint - end
 
 .btn-permitir {
   display: table;
