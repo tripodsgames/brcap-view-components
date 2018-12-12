@@ -40,6 +40,7 @@ import { PermissoesComponent } from "../cap-permissoes/cap-permissoes.component"
 import { UsuarioService } from "../services/usuario.service";
 import { PlataformaService } from "../services/plataforma.service";
 import { DpDatePickerModule } from "ng2-date-picker";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { DpDatePickerModule } from "ng2-date-picker";
     MyDatePickerModule,
     MyDateRangePickerModule,
     DpDatePickerModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    RouterModule
   ],
   declarations: [
     CapInputTextComponent,

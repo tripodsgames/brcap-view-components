@@ -17,6 +17,8 @@ export class CapMenuComponent implements OnInit {
   @ViewChild("divMenu")
   divMenu: ElementRef;
 
+  itemSelecionado;
+
   constructor() {}
 
   ngOnInit() {
@@ -25,5 +27,9 @@ export class CapMenuComponent implements OnInit {
     } else {
       this.divMenu.nativeElement.style.width = "230px";
     }
+  }
+
+  public selecionarItem(item) {
+    this.itemSelecionado = item;
   }
 }

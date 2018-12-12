@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, Input, ViewChild, ElementRef, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "cap-menuItem",
@@ -21,7 +21,17 @@ export class CapMenuItemComponent {
   @ViewChild("menuItem")
   menuItem: ElementRef;
 
+  @Input("itemSelecionado")
+  itemSelecionado
+
+  @Output()
+  selecionar = new EventEmitter();
+
   exibir = false;
+
+  mod = "";
+  status = "";
+  subClass = "";
 
   constructor() {}
 
@@ -34,4 +44,14 @@ export class CapMenuItemComponent {
       this.exibir = !this.exibir;
     }
   }
+ 
+
+  select(item)
+   { 
+    this.subClass = "ativado"
+    this.selecionar.emit(item.codigo);
+     
+  }
+
+   
 }

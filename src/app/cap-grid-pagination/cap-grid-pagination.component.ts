@@ -10,8 +10,8 @@ export class CapGridPaginationComponent implements OnInit {
 
   @Input() items: any
   @Input() columns: any
-  @Input() itemsPerPage: number
-  @Input() currentPage: number
+  @Input() itemsPerPage: number = 10;
+  @Input() currentPage: number;
   //@Input() totalPaged: number
   //@Input() firstItem: number
   //@Input() lastItem: number
@@ -26,12 +26,12 @@ export class CapGridPaginationComponent implements OnInit {
     if(nonAffectedClasses.indexOf(event.target.className) < 0) this.showItemOptions = null
   }
 
-  totalPages: number
-  pagedItens: any
-  totalPaged: number
-  firstItem: number
-  lastItem: number
-  showItemOptions: number
+  totalPages: number;
+  pagedItens: any;
+  totalPaged: number;
+  firstItem: number;
+  lastItem: number;
+  showItemOptions: number;
 
   constructor() {
     this.totalPages = 1

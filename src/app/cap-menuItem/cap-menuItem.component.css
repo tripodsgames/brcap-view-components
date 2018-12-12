@@ -1,24 +1,28 @@
 .menu-item {
   padding: 10px;
   cursor: pointer;
-  height: 40px;
-  margin-bottom: 10px;
-  line-height: 14px;
+  height: 45px;
 }
 
-.menu-item:hover {
-  opacity: 0.9;
+
+.link:hover,
+.link:active,
+.link:visited,
+.link:focus {
+  text-decoration: none !important;
 }
 
 ul.list {
   margin-bottom: 0px;
   list-style: none;
   padding-left: 0px;
+  background-color: rgba(0,0,0,0.2);
 }
 
 ul.list li .menu-item {
   min-height: 40px;
   height: auto;
+  line-height: 16px;
 }
 
 ul.list li .menu-item .label-menu {
@@ -28,13 +32,29 @@ ul.list li .menu-item .label-menu {
   width: 155px;
   display: block;
 }
+
+ul.list li {
+  border-top: 2px solid rgba(0,0,0,0);
+  border-bottom: 2px solid rgba(0,0,0,0);
+}
+
+ul.list li:hover {
+  border-top: 2px solid rgba(255, 204, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 204, 0, 0.5);
+  background-color: rgba(255, 204, 0, 0.005); /* #ffcc00;  //Monitor */
+}
+
+/* .ativado {
+  border-right: 6px solid rgba(255, 255, 255, 0.5);
+} */
+
 .hide {
   display: none;
 }
 
 .label-menu {
-  color: #fff;
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: capitalize;
   font-size: 14px;
   font-family: "Ubuntu";
   outline: none;
@@ -46,13 +66,6 @@ ul.list li .menu-item .label-menu {
 
 .label-menu.sub {
   padding-left: 40px;
-}
-
-.link:hover,
-.link:active,
-.link:visited,
-.link:focus {
-  text-decoration: none !important;
 }
 
 .label-only {
