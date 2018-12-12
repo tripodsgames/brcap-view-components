@@ -31,6 +31,16 @@ export class PermissoesComponent implements OnInit {
   hintCardAtivo = false;
   exibirHintCard = false;
 
+  // pagination
+  total: number = 0;
+  page: number = 1;
+  limit: number = 10;
+  contagemPaginasTotal: number = 0;
+  primeiraLinha: number;
+  ultimaLinha: number;
+  LiberacaoPaginado: any[];
+  mensagemLabel: string;
+
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
@@ -49,6 +59,41 @@ export class PermissoesComponent implements OnInit {
         });
       }
     });
+  }
+
+  //Pagination
+  montarPaginacao() {
+    this.LiberacaoPaginado = [];
+    this.contagemPaginasTotal = Math.ceil(
+      this.listaUsuarios.length / this.limit
+    );
+    const primeiraLinha = (this.page - 1) * this.limit;
+    const ultimaLinha = primeiraLinha + this.limit - 1;
+
+    for (let i = primeiraLinha; i <= ultimaLinha; i++) {
+      if (this.listaUsuarios[i]) {
+        this.LiberacaoPaginado.push(
+          this.listaUsuarios[i]
+        );
+      }
+    }
+
+    this.total =
+      this.LiberacaoPaginado.length + 1 >= this.limit
+        ? this.limit
+        : this.LiberacaoPaginado.length;
+    this.primeiraLinha = primeiraLinha + 1;
+    this.ultimaLinha = primeiraLinha + this.LiberacaoPaginado.length;
+  }
+
+  onNext(): void {
+    this.page++;
+    this.montarPaginacao();
+  }
+
+  onPrev(): void {
+    this.page--;
+    this.montarPaginacao();
   }
 
   salvar() {
@@ -85,22 +130,22 @@ export class PermissoesComponent implements OnInit {
     modulo.hintAtivo = false;
   }
 
-  abrirCardPermissionados(){
+  abrirCardPermissionados() {
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
   }
 
-  abrirCardNaoPermissionados(){
+  abrirCardNaoPermissionados() {
     this.cardPermissionados = false;
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
   }
 
-  mouseLeaveHintCard(){
+  mouseLeaveHintCard() {
     this.exibirHintCard = false;
     this.hintCardAtivo = false;
   }
 
-  toggleHintCard(){
+  toggleHintCard() {
     this.exibirHintCard = !this.exibirHintCard;
     this.hintCardAtivo = !this.hintCardAtivo;
   }

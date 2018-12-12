@@ -1,3 +1,53 @@
+/* TABELA */
+table {
+  background-color: white;
+  border: 1px solid;
+  border-color: rgba(117, 117, 117, 0.1);
+  margin-bottom: 0;
+}
+tbody tr:nth-child(even) {
+  background: rgba(117, 117, 117, 0.1);
+}
+.table-header {
+  height: 45px;
+  background-color: rgba(74, 74, 74, 0.2);
+}
+th,
+td {
+  vertical-align: middle !important;
+  border: 1px solid;
+  border-color: rgba(117, 117, 117, 0.1);
+}
+th {
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1 !important;
+  letter-spacing: 0.4px;
+  color: #000000;
+  border-bottom-color: inherit;
+}
+/* end TABELA */
+
+// CAP CARD
+cap-card::ng-deep{
+  .cap-card{
+    width: inherit;
+    padding: 25px;
+
+    h3{ 
+      font-size: 20px; 
+      margin: 0 0 25px;
+    }
+  }
+}
+// CAP CARD - end
+
+.name{ width: 160px; }
+.cpf{ width: 110px; }
+.email{ width: 196px; }
+
 .boxPermissao {
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
@@ -26,7 +76,7 @@ cap-button::ng-deep .cap-button[disabled] {
   opacity: 0.65 !important;
 }
 
-// Card
+// CARD
 .card {
   background: white;
   padding: 13px 8px;
@@ -57,9 +107,9 @@ cap-button::ng-deep .cap-button[disabled] {
     font-weight: 500;
   }
 }
-// Card - end
+// CARD - end
 
-// Hint
+// HINT
 .hint {
 
   .round {
@@ -136,7 +186,7 @@ cap-button::ng-deep .cap-button[disabled] {
   float: left;
   margin-top: 40px;
 }
-// Hint - end
+// HINT - end
 
 .btn-permitir {
   display: table;
@@ -194,7 +244,7 @@ cap-button::ng-deep .cap-button[disabled] {
   top: 20px;
 }
 
-/* // Tabelas */
+/*  Tabelas */
 
 table {
     background-color: white;
@@ -281,27 +331,27 @@ table {
   }
 
 
-
-  cap-inputText{
-    float: right;
-    margin-top: -10px;
+  .button-container {
+    display: flex;
+    padding: 0 !important;
+    align-items: center;
+    height: 24px;
+    margin: 40px 0 15px;
+    justify-content: space-between;
   }
-
-  cap-inputText::ng-deep label{
-    height: 15px;
-    z-index: 1;
+  
+  pagination-cobranca::ng-deep .pagination {
+    padding: 0px !important;
+    width: 116px !important;
   }
-
-  cap-inputText::ng-deep .cap-inputText{
-    width: 180px;
-    height: 38px;
-    font-size: 12px;
-  }
-
-  cap-inputText::ng-deep .cap-inputText:focus{
-    border: 2px solid #c59609 !important;
-  }
-
-  cap-inputText::ng-deep .cap-inputText-icon{
-    top: 18px !important;
+  
+  pagination-cobranca::ng-deep span {
+    font-size: 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #000000;
   }
