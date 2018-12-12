@@ -16,6 +16,8 @@
   /* background: #b8841f;   //Produtos */
 }
 .active {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
   background-color: rgba(255, 204, 0, 0.1);
 }
 .ativado {
