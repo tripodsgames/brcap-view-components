@@ -31,6 +31,8 @@ export class PermissoesComponent implements OnInit {
   hintCardAtivo = false;
   exibirHintCard = false;
 
+  linhaUsuario;
+
   // pagination
   total: number = 0;
   page: number = 1;
@@ -266,6 +268,7 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.listarUsuarios(this.urlUsuarios).subscribe(res => {
       if (res) {
         this.listaUsuarios = res;
+        this.montarPaginacao();
       }
     });
   }

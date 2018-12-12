@@ -3,21 +3,25 @@ table {
   background-color: white;
   border: 1px solid;
   border-color: rgba(117, 117, 117, 0.1);
-  margin-bottom: 0;
+  margin-bottom: 25px;
 }
+
 tbody tr:nth-child(even) {
   background: rgba(117, 117, 117, 0.1);
 }
+
 .table-header {
   height: 45px;
   background-color: rgba(74, 74, 74, 0.2);
 }
+
 th,
 td {
   vertical-align: middle !important;
   border: 1px solid;
   border-color: rgba(117, 117, 117, 0.1);
 }
+
 th {
   font-size: 12px;
   font-weight: 500;
@@ -28,25 +32,35 @@ th {
   color: #000000;
   border-bottom-color: inherit;
 }
+
 /* end TABELA */
 
 // CAP CARD
-cap-card::ng-deep{
-  .cap-card{
+cap-card::ng-deep {
+  .cap-card {
     width: inherit;
     padding: 25px;
 
-    h3{ 
-      font-size: 20px; 
+    .card-title {
+      font-size: 20px;
       margin: 0 0 25px;
     }
   }
 }
+
 // CAP CARD - end
 
-.name{ width: 160px; }
-.cpf{ width: 110px; }
-.email{ width: 196px; }
+.name {
+  width: 160px;
+}
+
+.cpf {
+  width: 110px;
+}
+
+.email {
+  width: 196px;
+}
 
 .boxPermissao {
   border-radius: 5px;
@@ -107,6 +121,7 @@ cap-button::ng-deep .cap-button[disabled] {
     font-weight: 500;
   }
 }
+
 // CARD - end
 
 // HINT
@@ -123,8 +138,8 @@ cap-button::ng-deep .cap-button[disabled] {
     padding-top: 1px;
   }
 
-  .active{
-    color: rgba(0,0,0,0.54);
+  .active {
+    color: rgba(0, 0, 0, 0.54);
   }
 
   &-container {
@@ -176,16 +191,17 @@ cap-button::ng-deep .cap-button[disabled] {
   }
 }
 
-.hint-absolute{
+.hint-absolute {
   position: absolute;
   right: -20px;
 }
 
-.hint-static{
+.hint-static {
   position: static;
   float: left;
   margin-top: 40px;
 }
+
 // HINT - end
 
 .btn-permitir {
@@ -234,124 +250,106 @@ cap-button::ng-deep .cap-button[disabled] {
   font-size: 12px;
   margin-top: 10px;
 }
-.btn-voltar {
-  position: relative;
-  top: 20px;
-}
 
 .selectAll-modulos {
   position: relative;
   top: 20px;
 }
 
+.button_confirmar {
+  float: right;
+}
+
+.text--right {
+  text-align: right;
+}
+
+cap-btnCollapse.volta::ng-deep .btnCollapse::after {
+  content: "\78";
+}
+
+
 /*  Tabelas */
+// table {
+//     background-color: white;
+//     border: 1px solid;
+//     border-color: rgba(117, 117, 117, 0.1);
+//   }
 
-table {
-    background-color: white;
-    border: 1px solid;
-    border-color: rgba(117, 117, 117, 0.1);
-  }
-  
-  tbody tr:nth-child(even) {
-    background: rgba(117, 117, 117, 0.1);
-  }
-  
-  .table-header {
-    height: 45px;
-    background-color: rgba(74, 74, 74, 0.2);
-  }
-  
-  th,
-  td {
-    vertical-align: middle !important;
-    border: 1px solid;
-    border-color: rgba(117, 117, 117, 0.1);
-    text-transform: capitalize;
-  }
-  
-  th {
-    font-family: Ubuntu;
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1;
-    letter-spacing: 0.4px;
-    color: #000000;
-    border-bottom-color: inherit;
-  }
-  
-  th span {
-    font-family: Ubuntu;
-    font-size: 12px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1;
-    letter-spacing: 0.4px;
-    color: #4a4a4a;
-    position: relative;
-    left: 3px;
-  }
-  
-  .tools {
-    // background-image: url("../../assets/img/mover-celula.svg");
-    background-image: url("../../assets/img/seta-cima-baixo.svg");
-    // background-position: left, right;
-    background-position: right;
-    // background-size: 12px, 12px;
-    background-size: 12px;
-    // background-repeat: no-repeat, no-repeat;
-    background-repeat: no-repeat;
-  }
-  
-  .filtros {
-    border-bottom-color: #979797;
-  
-    th {
-      padding: 0;
-    }
-  
-    select {
-      appearance: none;
-      border: none;
-      height: 36px;
-      width: 100%;
-      background: right no-repeat url("../../assets/img/seta-baixo.svg");
-  
-      * {
-        border-bottom: 1px solid #979797;
-      }
-    }
-  }
+//   tbody tr:nth-child(even) {
+//     background: rgba(117, 117, 117, 0.1);
+//   }
 
-  thead tr th {
-    padding: 0;
-    padding-left: 8px;
-  }
+//   .table-header {
+//     height: 45px;
+//     background-color: rgba(74, 74, 74, 0.2);
+//   }
 
+//   th,
+//   td {
+//     vertical-align: middle !important;
+//     border: 1px solid;
+//     border-color: rgba(117, 117, 117, 0.1);
+//     text-transform: capitalize;
+//   }
 
-  .button-container {
-    display: flex;
-    padding: 0 !important;
-    align-items: center;
-    height: 24px;
-    margin: 40px 0 15px;
-    justify-content: space-between;
-  }
-  
-  pagination-cobranca::ng-deep .pagination {
-    padding: 0px !important;
-    width: 116px !important;
-  }
-  
-  pagination-cobranca::ng-deep span {
-    font-size: 10px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.6;
-    letter-spacing: 0.9px;
-    text-align: center;
-    color: #000000;
-  }
+//   th {
+//     font-family: Ubuntu;
+//     font-size: 12px;
+//     font-weight: normal;
+//     font-style: normal;
+//     font-stretch: normal;
+//     line-height: 1;
+//     letter-spacing: 0.4px;
+//     color: #000000;
+//     border-bottom-color: inherit;
+//   }
+
+//   th span {
+//     font-family: Ubuntu;
+//     font-size: 12px;
+//     font-weight: 500;
+//     font-style: normal;
+//     font-stretch: normal;
+//     line-height: 1;
+//     letter-spacing: 0.4px;
+//     color: #4a4a4a;
+//     position: relative;
+//     left: 3px;
+//   }
+
+//   .tools {
+//     // background-image: url("../../assets/img/mover-celula.svg");
+//     background-image: url("../../assets/img/seta-cima-baixo.svg");
+//     // background-position: left, right;
+//     background-position: right;
+//     // background-size: 12px, 12px;
+//     background-size: 12px;
+//     // background-repeat: no-repeat, no-repeat;
+//     background-repeat: no-repeat;
+//   }
+
+//   .filtros {
+//     border-bottom-color: #979797;
+
+//     th {
+//       padding: 0;
+//     }
+
+//     select {
+//       appearance: none;
+//       border: none;
+//       height: 36px;
+//       width: 100%;
+//       background: right no-repeat url("../../assets/img/seta-baixo.svg");
+
+//       * {
+//         border-bottom: 1px solid #979797;
+//       }
+//     }
+//   }
+
+//   thead tr th {
+//     padding: 0;
+//     padding-left: 8px;
+//   }
