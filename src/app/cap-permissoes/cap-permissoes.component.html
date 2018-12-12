@@ -1,8 +1,14 @@
 <form #ngForm>
-  <div class="content-header permissao">
+  <div class="content-header">
     <div class="row">
-      <div class="col-md-12">
-        <h1>Permissionar Usuário</h1>
+      <div class="col-md-8">
+        <h1>Permissionar Usuários</h1>
+      </div>
+      <div class="col-md-3">
+        <cap-inputText placeholder="Nome ou CPF"></cap-inputText>
+      </div>
+      <div class="col-md-1">
+          <cap-button class="busca" icon="busca"></cap-button>
       </div>
     </div>
   </div>
@@ -178,8 +184,8 @@
         </cap-card>
       </div>
       <div class="col-lg-5" *ngIf="cardNaoPermissionados && usuarioPermissao">
-          <cap-button label="Confirmar" [disabled]="!checkboxModificado" (click)="salvar()"></cap-button>
-        </div>
+        <cap-button label="Confirmar" [disabled]="!checkboxModificado" (click)="toggleModal()"></cap-button>
+      </div>
     </div>
 
 
@@ -419,3 +425,17 @@
 
   </div>
 </form>
+
+<div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)">
+  <div id="modal-body" class="modal-content">
+    <p>
+      <span>DESEJA ALTERAR ACESSO?</span>
+      <br /> <br />
+      Ao confirmar o usuário receberá uma notificação por e-mail informando sobre a ação.
+    </p>
+    <div class="modal-buttons">
+      <button class="outline" (click)="toggleModal()">NÃO</button>
+      <button class="normal" (click)="salvar()">SIM</button>
+    </div>
+  </div>
+</div>

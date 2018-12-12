@@ -30,8 +30,7 @@ export class PermissoesComponent implements OnInit {
   cardNaoPermissionados = false;
   hintCardAtivo = false;
   exibirHintCard = false;
-
-  linhaUsuario;
+  modalActive = false;
 
   // pagination
   total: number = 0;
@@ -99,6 +98,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   salvar() {
+    this.modalActive = false;
     this.montarRequest();
     this.usuarioService
       .permissionar(this.permissao, this.usuarioPermissao.login, this.sistema, this.urlUsuarios)
@@ -151,6 +151,18 @@ export class PermissoesComponent implements OnInit {
     this.exibirHintCard = !this.exibirHintCard;
     this.hintCardAtivo = !this.hintCardAtivo;
   }
+
+  toggleModal(){
+    this.modalActive = !this.modalActive;
+  }
+
+  clickOutside(event) {
+    var target = event.target || event.srcElement || event.currentTarget;
+    if (!document.getElementById("modal-body").contains(target)) {
+      this.toggleModal();
+    }
+  }
+
 
   selecionarUsuarioVisualizar(usuario) {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
