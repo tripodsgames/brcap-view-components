@@ -7,14 +7,33 @@
     </div>
   </div>
   <div class="content">
-
     <div class="row ">
       <div class="col-lg-3 col-xl-2">
-        <div class="card pointer" (click)="abrirCard()" [ngClass]="{ 'cardAtivo': cardBla }">
+        <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados }">
           <div class="card-body">
-            <h3 class="card-titulo" *ngFor="let dashboard of nomeCard"></h3>
-            <p class="card-valor-total"></p>
-            <p class="card-atualizacao"></p>
+            <h3 class="card-titulo">Usuários<br />Permissionados</h3>
+            <p class="card-valor-total">12</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-xl-2">
+        <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados }">
+          <div class="card-body">
+            <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
+            <p class="card-valor-total">12</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-xl-2">
+        <div class="hint hint-static">
+          <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': hintCardAtivo}" (click)="toggleHintCard()"
+            (mouseleave)="mouseLeaveHintCard()"></cap-icon>
+          <div class="hint-container" *ngIf="exibirHintCard">
+            <div class="hint-content">
+              Selecione o card para ver detalhes.
+            </div>
           </div>
         </div>
       </div>
@@ -86,7 +105,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
-                      <div class="hint" (click)="ativarHint(modulo)">
+                      <div class="hint hint-absolute">
                         <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': modulo.hintAtivo}"
                           (click)="toggleHint(modulo)" (mouseleave)="mouseLeaveHint(modulo)"></cap-icon>
                         <div class="hint-container" *ngIf="modulo.exibirHint">

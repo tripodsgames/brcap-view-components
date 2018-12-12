@@ -26,17 +26,10 @@ export class PermissoesComponent implements OnInit {
   exibirHint = false;
   hintAtivo = false;
   checkboxModificado = false;
-
-
-    nomeCard = ["bla", "blabla"];
-
-  bla = {
-    "sorteio": {
-      "valorTotal": 782.67,
-      "quantidade": 2,
-      "pagamentosAgrupados": [{ "dataVencimento": "2018-12-12", "dataInclusaoPagamento": "2018-12-07", "idTipoCompromisso": 3, "formaCredito": "Credito Conta Corrente", "valorTotal": 521.78, "quantidade": 2, "ID_ES": "2REYomcBlcvD_PWYVBR-" }, { "dataVencimento": "2018-12-14", "dataInclusaoPagamento": "2018-12-07", "idTipoCompromisso": 3, "formaCredito": "Credito Conta Corrente", "valorTotal": 260.89, "quantidade": 1, "ID_ES": "3hEYomcBlcvD_PWYVBTc" }]
-    }
-  }
+  cardPermissionados = false;
+  cardNaoPermissionados = false;
+  hintCardAtivo = false;
+  exibirHintCard = false;
 
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
@@ -84,6 +77,7 @@ export class PermissoesComponent implements OnInit {
 
   toggleHint(modulo) {
     modulo.exibirHint = !modulo.exibirHint;
+    modulo.hintAtivo = !modulo.hintAtivo;
   }
 
   mouseLeaveHint(modulo) {
@@ -91,8 +85,24 @@ export class PermissoesComponent implements OnInit {
     modulo.hintAtivo = false;
   }
 
-  ativarHint(modulo) {
-    modulo.hintAtivo = !modulo.hintAtivo;
+  abrirCardPermissionados(){
+    this.cardPermissionados = !this.cardPermissionados;
+    this.cardNaoPermissionados = false;
+  }
+
+  abrirCardNaoPermissionados(){
+    this.cardPermissionados = false;
+    this.cardNaoPermissionados = !this.cardNaoPermissionados;
+  }
+
+  mouseLeaveHintCard(){
+    this.exibirHintCard = false;
+    this.hintCardAtivo = false;
+  }
+
+  toggleHintCard(){
+    this.exibirHintCard = !this.exibirHintCard;
+    this.hintCardAtivo = !this.hintCardAtivo;
   }
 
   selecionarUsuarioVisualizar(usuario) {
