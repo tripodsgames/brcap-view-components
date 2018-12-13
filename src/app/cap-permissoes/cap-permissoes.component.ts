@@ -142,10 +142,10 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
   }
 
-  mouseLeaveHintCard() {
-    this.exibirHintCard = false;
-    this.hintCardAtivo = false;
-  }
+  // mouseLeaveHintCard() {
+  //   this.exibirHintCard = false;
+  //   this.hintCardAtivo = false;
+  // }
 
   toggleHintCard() {
     this.exibirHintCard = !this.exibirHintCard;

@@ -4,11 +4,11 @@
       <div class="col-md-8">
         <h1>Permissionar Usuários</h1>
       </div>
-      <div class="col-md-3">
-        <cap-inputText placeholder="Nome ou CPF"></cap-inputText>
+      <div class="col-md-3" *ngIf="!usuarioPermissao">
+        <cap-inputText placeholder="Nome, CPF ou E-mail" [(ngModel)]="busca"></cap-inputText>
       </div>
-      <div class="col-md-1">
-          <cap-button class="busca" icon="busca"></cap-button>
+      <div class="col-md-1" *ngIf="!usuarioPermissao">
+          <cap-button icon="busca" #bla></cap-button>
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <p>{{ usuarioPermissao.cpf | cpfMask }} | {{ usuarioPermissao.login }}</p>
+                    <p class="usuario-info">{{ usuarioPermissao.cpf | cpfMask }} | {{ usuarioPermissao.login }}</p>
                   </div>
                 </div>
 
@@ -115,7 +115,8 @@
                               (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
                           </div>
                           <div class="col-md-8">
-                            <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer">{{ modulo.nome }}</h3>
+                            <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">{{ modulo.nome }}</h3>
+                            <p class="chips-caption-brcap">6 Funcionalidades de 6</p>
                           </div>
                           <div class="col-md-3 ">
                             <cap-btnCollapse class="pull-right " (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
@@ -129,7 +130,8 @@
                               (ngModelChange)="selectAllFuncionalidades(modulo, false)"></cap-checkbox>
                           </div>
                           <div class="col-md-8 ">
-                            <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer">{{ modulo.nome }}</h3>
+                            <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">{{ modulo.nome }}</h3>
+                            <p class="chips-caption-brcap">6 Funcionalidades de 6</p>
                           </div>
                           <div class="col-md-3 ">
                             <cap-btnCollapse class="pull-right " (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>

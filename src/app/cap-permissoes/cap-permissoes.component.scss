@@ -32,6 +32,7 @@ th {
   color: #000000;
   border-bottom-color: inherit;
 }
+
 /* TABELA - end */
 
 // CAP CARD
@@ -45,18 +46,31 @@ cap-card::ng-deep {
       margin: 0 0 25px;
     }
   }
+  h2{ margin: 0; }
+  .usuario-info{ margin: 15px 0 25px; }
 }
 // CAP CARD - end
 
-cap-inputText::ng-deep .cap-inputText{
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.08) !important;
+.text--right cap-btncollapse::ng-deep .btnCollapse{
+  margin: 0;
 }
 
-.content-header{
+cap-inputText::ng-deep {
+  .cap-inputText {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.08) !important;
+    padding-top: 6px !important;
+  }
+  .cap-inputText-icon {
+    display: none !important;
+  }
+}
+
+.content-header {
   padding: 25px;
   height: 71px;
-  h1{
+
+  h1 {
     margin: 0;
     line-height: 1;
   }
@@ -79,7 +93,13 @@ cap-inputText::ng-deep .cap-inputText{
   background-color: rgb(255, 255, 255);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   padding: 10px 15px;
-  margin: 10px 0px;
+  margin-bottom: 35px;
+  h3{ margin-bottom: 0; }
+  &:last-child{ margin-bottom: 0; }
+}
+
+.subtitle-1-brcap{
+  font-weight: 500;
 }
 
 .func-label {
@@ -102,13 +122,18 @@ cap-button::ng-deep .cap-button[disabled] {
   opacity: 0.65 !important;
 }
 
-cap-button.busca::ng-deep .cap-button{
+.col-md-1 cap-button::ng-deep .cap-button {
   width: 40px;
   height: 40px;
   padding: 0px 20px;
+
+  cap-icon::ng-deep .brcap-ico {
+    font-size: 24px !important;
+    left: -11px;
+  }
 }
 
-// CARD
+// CARD - DASHBOARD
 .card {
   background: white;
   padding: 13px 8px;
@@ -142,7 +167,7 @@ cap-button.busca::ng-deep .cap-button{
   }
 }
 
-// CARD - end
+// CARD - DASHBOARD - end
 
 // HINT
 .hint {
@@ -220,12 +245,17 @@ cap-button.busca::ng-deep .cap-button{
   position: static;
   float: left;
   margin-top: 40px;
-  // .hint-container{
-  //   position: relative;
-  //   top: 45px;
-  // }
+  .hint-container{
+    top: 31px;
+    left: 60px;
+    &:after,
+    &:before {
+      left: -26px;
+      top: 19px;
+      transform: none;
+    }
+  }
 }
-
 // HINT - end
 
 .btn-permitir {
@@ -356,6 +386,7 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
     }
   }
 }
+
 // MODAL - end
 
 
