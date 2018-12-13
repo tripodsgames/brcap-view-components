@@ -522,6 +522,9 @@ label.disabled {
 .favorito:before {
   content: "\e90b";
 }
+.fullscreen:before {
+  content: "\e922";
+}
 .info:before {
   content: "\e90c";
 }

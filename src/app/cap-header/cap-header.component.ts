@@ -1,5 +1,6 @@
 import {
   Component,
+  Inject,
   Input,
   Output,
   OnInit,
@@ -8,6 +9,7 @@ import {
   EventEmitter
 } from "@angular/core";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
+import { DOCUMENT } from '@angular/common';
 
 import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
@@ -28,8 +30,12 @@ export class CapHeaderComponent implements OnInit {
   n_avatar = "../../assets/img/avatar_provisorio.png";
   @Input("rotaPerfil")
   rotaPerfil: string;
+  @Input("primerPage")
+  primerPage: string;
   @Input("logoSistema")
   logoSistema: string;
+  @Input("tela")
+  tela: boolean = false;
   @Input("mrkDagua")
   mrkDagua: string;
   @Input("logoBrasilCap")
@@ -43,7 +49,8 @@ export class CapHeaderComponent implements OnInit {
   @Output()
   logout = new EventEmitter();
 
-  constructor() {}
+  constructor(@Inject(DOCUMENT) private document: any) {}
+  elem;
 
   ngOnInit() {
     if (window.screen.width < 767) {
@@ -83,4 +90,33 @@ export class CapHeaderComponent implements OnInit {
       return str;
     }
   }
+
+  toggleFullScreen() {
+
+    let elem =  document.body; 
+    if (!this.tela) {
+
+      let methodToBeInvoked = elem.requestFullscreen || elem.webkitRequestFullScreen || 
+      elem['mozRequestFullscreen'] || elem['msRequestFullscreen']; 
+      if(methodToBeInvoked) methodToBeInvoked.call(elem);
+
+    } else {
+      if (this.document.exitFullscreen) {
+        this.document.exitFullscreen();
+      } else if (this.document.mozCancelFullScreen) {
+        /* Firefox */
+        this.document.mozCancelFullScreen();
+      } else if (this.document.webkitExitFullscreen) {
+        /* Chrome, Safari and Opera */
+        this.document.webkitExitFullscreen();
+      } else if (this.document.msExitFullscreen) {
+        /* IE/Edge */
+        this.document.msExitFullscreen();
+      }
+    }
+    console.log("Tela = " + this.tela)
+    this.tela = !this.tela;
+  }
+
+
 }

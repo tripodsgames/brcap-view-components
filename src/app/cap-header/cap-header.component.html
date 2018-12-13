@@ -13,32 +13,41 @@
           <div class="hamburger-inner"></div>
         </div>
       </div>
-      <img id="logo-img" [src]="logoSistema">
+      <a [href]="primerPage" title="">
+        <img id="logo-img" [src]="logoSistema">
+      </a>
     </div>
+
     <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
-        <li class="dropdown user user-menu">
-          <a href="#" class="dropdown-toggle box-user" data-toggle="dropdown">
-            <img [src]="n_avatar" class="img-avatar-header"> <span class="hidden-xs text-user">{{username_trat}}</span>
-            <cap-icon icon="retrair" [size]="16"></cap-icon>
-          </a>
-          <ul class="dropdown-menu dropdown-user" style="margin-top: -5px;right: 0;left: auto !important;">
-            <a [href]="rotaPerfil">
-              <li class="user-body">
-                <span>Perfil</span>
-                <cap-icon icon="usuario" styleClass="pull-right" [size]="24"></cap-icon>
-              </li>
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle box-user" data-toggle="dropdown">
+              <img [src]="n_avatar" class="img-avatar-header"> <span class="hidden-xs text-user">{{username_trat}}</span>
+              <cap-icon icon="retrair" [size]="16"></cap-icon>
             </a>
-            <span class="divisor"></span>
-            <a href="#" (click)="logoff()">
-              <li class="user-body">
-                <span>Logout</span>
-                <cap-icon icon="sair" styleClass="pull-right" [size]="24"></cap-icon>
-              </li>
-            </a>
-          </ul>
-        </li>
-      </ul>
+            <ul class="dropdown-menu dropdown-user" style="margin-top: -5px;right: 0;left: auto !important;">
+              <a [href]="rotaPerfil">
+                <li class="user-body">
+                  <span>Perfil</span>
+                  <cap-icon icon="usuario" styleClass="pull-right" [size]="24"></cap-icon>
+                </li>
+              </a>
+              <span class="divisor"></span>
+              <a href="#" (click)="logoff()">
+                <li class="user-body">
+                  <span>Logout</span>
+                  <cap-icon icon="sair" styleClass="pull-right" [size]="24"></cap-icon>
+                </li>
+              </a>
+            </ul>
+          </li>
+        </ul>
+    </div>
+
+    <div class="navbar-custom-menu" style="top:25px;" title="Tela cheia">
+      <a href="#" (click)="toggleFullScreen()" class="icon-fullscreen">
+        <cap-icon icon="fullscreen" [size]="16"></cap-icon>
+      </a>
     </div>
 
   </nav>

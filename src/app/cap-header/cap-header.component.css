@@ -75,6 +75,11 @@
   font-weight: bold;
 }
 
+.icon-fullscreen {
+  top:25px;
+  text-decoration: none !important;
+}
+
 .box-user {
   margin-left: -20px;
   float: right;
