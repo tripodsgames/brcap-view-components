@@ -19,9 +19,25 @@
   color: rgb(255, 255, 255);
   background-color: rgba(255, 204, 0, 0.1);
 }
-.ativado {
-  border-right: 6px solid #ffe800;  /* //Monitor */
+
+.sub-item {
+  position: relative;
 }
+.ativado {
+  height: inherit;
+}
+
+.ativado:after {
+  top:-2px;
+  width: 6px;
+  content: "";
+  background-color: #ffe800;
+  color: #ffe800;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+}
+
 .cap-button {
   background-color: #006bbb;  /* //Todos */
 }

@@ -17,7 +17,7 @@
     </ul>
   </span>
 
-  <span *ngIf="!value.rota ">
+  <span *ngIf="!value.rota">
     <div class="menu-item" [class.active]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)">
       <img *ngIf="value.icone "  class="img-icone" [src]="getIconUrl(value.icone)">
       <span class="label-menu " [class.label-only]="!value.icone" [class.visible]="value.visible ">{{value.nome}}</span>
@@ -25,7 +25,7 @@
       <cap-icon icon="retrair animated bounceIn " *ngIf="value?.funcionalidades && exibir " styleClass="icon-arrow "></cap-icon>
     </div>
     <ul *ngIf="value.funcionalidades && exibir" class="list">
-      <li *ngFor="let item of value.funcionalidades" (click)="select(item)" (change)="cleanerAll()" [class.subClass]="itemSelecionado == item.nome" [ngClass]="itemSelecionado == item.codigo ? subClass : '' ">
+      <li *ngFor="let item of value.funcionalidades" class="sub-item" (click)="select(item)" [class.subClass]="itemSelecionado == item.nome" [ngClass]="itemSelecionado == item.codigo ? subClass : '' ">
         <cap-menuItem [value]="item " principal="true " *ngIf="item.funcionalidades " ></cap-menuItem>
         <cap-menuItem [value]="item " principal="false " *ngIf="!item.funcionalidades "></cap-menuItem>
       </li>
