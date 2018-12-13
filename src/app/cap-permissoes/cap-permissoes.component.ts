@@ -40,7 +40,6 @@ export class PermissoesComponent implements OnInit {
   primeiraLinha: number;
   ultimaLinha: number;
   LiberacaoPaginado: any[];
-  mensagemLabel: string;
 
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
@@ -142,10 +141,10 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
   }
 
-  // mouseLeaveHintCard() {
-  //   this.exibirHintCard = false;
-  //   this.hintCardAtivo = false;
-  // }
+  mouseLeaveHintCard() {
+    this.exibirHintCard = false;
+    this.hintCardAtivo = false;
+  }
 
   toggleHintCard() {
     this.exibirHintCard = !this.exibirHintCard;
@@ -163,33 +162,33 @@ export class PermissoesComponent implements OnInit {
     }
   }
 
-
-  selecionarUsuarioVisualizar(usuario) {
-    this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
-      if (res && res[0] && res[0].permissoes) {
-        res[0].permissoes.forEach(p => {
-          p.funcionalidades.forEach(f => {
-            const modulo = p.codigo;
-            const funcionalidade = f.codigo;
-            if (modulo) {
-              p.modulo = modulo;
-            }
-            if (funcionalidade) {
-              if (!p.funcionalidades) {
-                p.funcionalidades = [];
-              }
-              f.nome = funcionalidade.replace(/^\w/, c => c.toUpperCase());
-              f.acoes = f.acao;
-            }
-          });
-        });
-        this.usuarioVisualizar = usuario;
-        this.usuarioVisualizar.permissoes = res[0].permissoes;
-      } else {
-        swal("Aviso!", "Usuário não possui permissão!", "warning");
-      }
-    });
-  }
+// NAO SENDO USADO
+  // selecionarUsuarioVisualizar(usuario) {
+  //   this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
+  //     if (res && res[0] && res[0].permissoes) {
+  //       res[0].permissoes.forEach(p => {
+  //         p.funcionalidades.forEach(f => {
+  //           const modulo = p.codigo;
+  //           const funcionalidade = f.codigo;
+  //           if (modulo) {
+  //             p.modulo = modulo;
+  //           }
+  //           if (funcionalidade) {
+  //             if (!p.funcionalidades) {
+  //               p.funcionalidades = [];
+  //             }
+  //             f.nome = funcionalidade.replace(/^\w/, c => c.toUpperCase());
+  //             f.acoes = f.acao;
+  //           }
+  //         });
+  //       });
+  //       this.usuarioVisualizar = usuario;
+  //       this.usuarioVisualizar.permissoes = res[0].permissoes;
+  //     } else {
+  //       swal("Aviso!", "Usuário não possui permissão!", "warning");
+  //     }
+  //   });
+  // }
 
   montarRequest() {
     this.permissao = new Object();

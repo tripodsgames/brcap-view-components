@@ -64,7 +64,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of listaUsuarios | filter: busca;">
+                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of LiberacaoPaginado | filter: busca;">
                   <td>{{ usuario.nome }}</td>
                   <td>{{ usuario.cpf | cpfMask }}</td>
                   <td>{{ usuario.login }}</td>
@@ -73,8 +73,7 @@
             </table>
 
             <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
-              [count]=" total
-                      " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
+              [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
               [ultimaLinha]="ultimaLinha "></cap-new-pagination>
 
           </div>
