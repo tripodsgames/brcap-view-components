@@ -113,6 +113,11 @@ export class CapHeaderComponent implements OnInit {
         /* IE/Edge */
         this.document.msExitFullscreen();
       }
+
+      // let methodToBeInvoked = elem.exitFullscreen || elem.webkitExitFullscreen || 
+      // elem['mozCancelFullScreen'] || elem['msExitFullscreen']; 
+      // if(methodToBeInvoked) methodToBeInvoked.call(elem);
+
     }
     console.log("Tela = " + this.tela)
     this.tela = !this.tela;
