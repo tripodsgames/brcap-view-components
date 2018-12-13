@@ -32,7 +32,6 @@ th {
   color: #000000;
   border-bottom-color: inherit;
 }
-
 /* TABELA - end */
 
 // CAP CARD
@@ -73,6 +72,8 @@ cap-inputText::ng-deep {
   h1 {
     margin: 0;
     line-height: 1;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.87);
   }
 }
 
@@ -386,91 +387,7 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
     }
   }
 }
-
 // MODAL - end
 
-
-/*  Tabelas */
-// table {
-//     background-color: white;
-//     border: 1px solid;
-//     border-color: rgba(117, 117, 117, 0.1);
-//   }
-
-//   tbody tr:nth-child(even) {
-//     background: rgba(117, 117, 117, 0.1);
-//   }
-
-//   .table-header {
-//     height: 45px;
-//     background-color: rgba(74, 74, 74, 0.2);
-//   }
-
-//   th,
-//   td {
-//     vertical-align: middle !important;
-//     border: 1px solid;
-//     border-color: rgba(117, 117, 117, 0.1);
-//     text-transform: capitalize;
-//   }
-
-//   th {
-//     font-family: Ubuntu;
-//     font-size: 12px;
-//     font-weight: normal;
-//     font-style: normal;
-//     font-stretch: normal;
-//     line-height: 1;
-//     letter-spacing: 0.4px;
-//     color: #000000;
-//     border-bottom-color: inherit;
-//   }
-
-//   th span {
-//     font-family: Ubuntu;
-//     font-size: 12px;
-//     font-weight: 500;
-//     font-style: normal;
-//     font-stretch: normal;
-//     line-height: 1;
-//     letter-spacing: 0.4px;
-//     color: #4a4a4a;
-//     position: relative;
-//     left: 3px;
-//   }
-
-//   .tools {
-//     // background-image: url("../../assets/img/mover-celula.svg");
-//     background-image: url("../../assets/img/seta-cima-baixo.svg");
-//     // background-position: left, right;
-//     background-position: right;
-//     // background-size: 12px, 12px;
-//     background-size: 12px;
-//     // background-repeat: no-repeat, no-repeat;
-//     background-repeat: no-repeat;
-//   }
-
-//   .filtros {
-//     border-bottom-color: #979797;
-
-//     th {
-//       padding: 0;
-//     }
-
-//     select {
-//       appearance: none;
-//       border: none;
-//       height: 36px;
-//       width: 100%;
-//       background: right no-repeat url("../../assets/img/seta-baixo.svg");
-
-//       * {
-//         border-bottom: 1px solid #979797;
-//       }
-//     }
-//   }
-
-//   thead tr th {
-//     padding: 0;
-//     padding-left: 8px;
-//   }
+.col-md-3,
+.col-md-1{ margin-top: -10px; }
