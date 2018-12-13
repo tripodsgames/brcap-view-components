@@ -39,7 +39,7 @@ export class PermissoesComponent implements OnInit {
   contagemPaginasTotal: number = 0;
   primeiraLinha: number;
   ultimaLinha: number;
-  LiberacaoPaginado: any[];
+  usuariosTabela: any[];
 
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
@@ -63,7 +63,7 @@ export class PermissoesComponent implements OnInit {
 
   //Pagination
   montarPaginacao() {
-    this.LiberacaoPaginado = [];
+    this.usuariosTabela = [];
     this.contagemPaginasTotal = Math.ceil(
       this.listaUsuarios.length / this.limit
     );
@@ -72,18 +72,18 @@ export class PermissoesComponent implements OnInit {
 
     for (let i = primeiraLinha; i <= ultimaLinha; i++) {
       if (this.listaUsuarios[i]) {
-        this.LiberacaoPaginado.push(
+        this.usuariosTabela.push(
           this.listaUsuarios[i]
         );
       }
     }
 
     this.total =
-      this.LiberacaoPaginado.length + 1 >= this.limit
+      this.usuariosTabela.length + 1 >= this.limit
         ? this.limit
-        : this.LiberacaoPaginado.length;
+        : this.usuariosTabela.length;
     this.primeiraLinha = primeiraLinha + 1;
-    this.ultimaLinha = primeiraLinha + this.LiberacaoPaginado.length;
+    this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
   onNext(): void {

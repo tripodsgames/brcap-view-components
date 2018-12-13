@@ -5,10 +5,10 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-md-3" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Nome, CPF ou E-mail" [(ngModel)]="busca"></cap-inputText>
+        <cap-inputText placeholder="Nome, CPF ou E-mail" [(ngModel)]="pesquisar" name="pesquisar"></cap-inputText>
       </div>
       <div class="col-md-1" *ngIf="!usuarioPermissao">
-          <cap-button icon="busca" #bla></cap-button>
+          <cap-button icon="busca"></cap-button>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of LiberacaoPaginado | filter: busca;">
+                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela | filter: pesquisar;">
                   <td>{{ usuario.nome }}</td>
                   <td>{{ usuario.cpf | cpfMask }}</td>
                   <td>{{ usuario.login }}</td>
