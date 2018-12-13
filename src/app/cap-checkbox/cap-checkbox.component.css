@@ -52,12 +52,13 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   margin-top: -9px;
   border: 2px solid #787878;
   text-align: center;
   transition: all 0.4s ease;
+  border-radius: 2px;
 }
 
 .cap-checkbox input[type="checkbox"] + label:after,
@@ -109,12 +110,12 @@
   background-color: transparent;
   top: 50%;
   left: 4px;
-  width: 8px;
-  height: 3px;
-  margin-top: -4px;
+  width: 12px;
+  height: 5px;
+  margin-top: -3px;
   border-style: solid;
   border-color: #ffffff;
-  border-width: 0 0 3px 3px;
+  border-width: 0 0 2px 2px;
   border-image: none;
   transform: rotate(-45deg) scale(0);
 }
@@ -148,6 +149,7 @@
 .cap-radiobutton input[type="checkbox"]:checked + label:before {
   animation: borderscale 200ms ease-in;
   background: #4f8196;
+  border-color: transparent;
 }
 
 .cap-checkbox input[type="checkbox"]:checked + label:after,

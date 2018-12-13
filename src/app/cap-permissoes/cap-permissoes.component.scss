@@ -1,0 +1,393 @@
+/* TABELA */
+table {
+  background-color: white;
+  border: 1px solid;
+  border-color: rgba(117, 117, 117, 0.1);
+  margin-bottom: 25px;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(117, 117, 117, 0.1);
+}
+
+.table-header {
+  height: 45px;
+  background-color: rgba(74, 74, 74, 0.2);
+}
+
+th,
+td {
+  vertical-align: middle !important;
+  border: 1px solid;
+  border-color: rgba(117, 117, 117, 0.1);
+}
+
+th {
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1 !important;
+  letter-spacing: 0.4px;
+  color: #000000;
+  border-bottom-color: inherit;
+}
+/* TABELA - end */
+
+// CAP CARD
+cap-card::ng-deep {
+  .cap-card {
+    width: inherit;
+    padding: 25px;
+
+    .card-title {
+      font-size: 20px;
+      margin: 0 0 25px;
+    }
+  }
+  h2{ margin: 0; }
+  .usuario-info{ margin: 15px 0 25px; }
+}
+// CAP CARD - end
+
+.text--right cap-btncollapse::ng-deep .btnCollapse{
+  margin: 0;
+}
+
+cap-inputText::ng-deep {
+  .cap-inputText {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.08) !important;
+    padding-top: 6px !important;
+  }
+  .cap-inputText-icon {
+    display: none !important;
+  }
+}
+
+.content-header {
+  padding: 25px;
+  height: 71px;
+
+  h1 {
+    margin: 0;
+    line-height: 1;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+.name {
+  width: 160px;
+}
+
+.cpf {
+  width: 110px;
+}
+
+.email {
+  width: 196px;
+}
+
+.boxPermissao {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  padding: 10px 15px;
+  margin-bottom: 35px;
+  h3{ margin-bottom: 0; }
+  &:last-child{ margin-bottom: 0; }
+}
+
+.subtitle-1-brcap{
+  font-weight: 500;
+}
+
+.func-label {
+  padding: 10px 15px;
+  display: block;
+  margin-left: 20px;
+}
+
+.item {
+  display: block;
+  height: 46px;
+  border-bottom: 1px solid #ddd;
+}
+
+.acoes {
+  padding-left: 20px;
+}
+
+cap-button::ng-deep .cap-button[disabled] {
+  opacity: 0.65 !important;
+}
+
+.col-md-1 cap-button::ng-deep .cap-button {
+  width: 40px;
+  height: 40px;
+  padding: 0px 20px;
+
+  cap-icon::ng-deep .brcap-ico {
+    font-size: 24px !important;
+    left: -11px;
+  }
+}
+
+// CARD - DASHBOARD
+.card {
+  background: white;
+  padding: 13px 8px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border-left: 5px solid transparent;
+  margin-bottom: 25px;
+
+  &-titulo {
+    color: green;
+    display: inline;
+    font-size: 16px;
+  }
+
+  &-valor-total {
+    font-size: 30px;
+    color: #616161;
+    margin: 10px 0 7px;
+    line-height: 1;
+    text-align: right;
+  }
+}
+
+.cardAtivo {
+  border-left-color: green;
+  transition: 0.6s;
+
+  .card-titulo,
+  .card-valor-total {
+    font-weight: 500;
+  }
+}
+
+// CARD - DASHBOARD - end
+
+// HINT
+.hint {
+
+  .round {
+    background: none;
+    color: #9e9e9e;
+    border-radius: 11px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    padding-left: 3px;
+    padding-top: 1px;
+  }
+
+  .active {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  &-container {
+    position: absolute;
+    top: -53px;
+    left: -20px;
+    background-color: #fff;
+    padding: 10px 25px;
+    min-width: max-content;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+
+    &:after,
+    &:before {
+      left: 22px;
+      top: 51px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      transform: rotate(-90deg);
+      margin-top: -11px;
+    }
+
+    &:after {
+      border-right-color: #fff;
+      border-width: 12px;
+    }
+
+    &:before {
+      border-right-color: rgba(0, 0, 0, 0.23);
+      border-width: 13px;
+      margin-right: -1px;
+    }
+
+    &-inverse {
+      right: -20px;
+      left: inherit;
+    }
+
+    &-inverse:before,
+    &-inverse:after {
+      left: inherit;
+      right: 17px;
+    }
+  }
+}
+
+.hint-absolute {
+  position: absolute;
+  right: -20px;
+}
+
+.hint-static {
+  position: static;
+  float: left;
+  margin-top: 40px;
+  .hint-container{
+    top: 31px;
+    left: 60px;
+    &:after,
+    &:before {
+      left: -26px;
+      top: 19px;
+      transform: none;
+    }
+  }
+}
+// HINT - end
+
+.btn-permitir {
+  display: table;
+  margin: 0 auto;
+  border: 1px solid #838383;
+  border-radius: 5px;
+}
+
+.icone-toggle-funcionalidade {
+  float: right;
+  position: relative;
+  top: -12px;
+  font-size: 22px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.btn-permitir:hover {
+  opacity: 0.8;
+}
+
+.nome {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cpf {
+  margin: 0;
+}
+
+.nomeModulo {
+  font-size: 16px;
+}
+
+.funcionalidade {
+  margin-top: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 10px;
+}
+
+.acoesVisualizar {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.selectAll-modulos {
+  position: relative;
+  top: 20px;
+}
+
+.button_confirmar {
+  float: right;
+}
+
+.text--right {
+  text-align: right;
+}
+
+cap-btnCollapse.volta::ng-deep .btnCollapse::after {
+  content: "\78";
+}
+
+// MODAL
+.modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+
+  &-active {
+    display: block;
+  }
+
+  &-content {
+    width: 335px;
+    height: 183px;
+    top: 50%;
+    margin-top: -91px;
+    left: 50%;
+    margin-left: -167px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 35px 20px;
+  }
+
+  p {
+    font-size: 12px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 20px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .big-button {
+    width: 100px !important;
+  }
+
+  &-buttons {
+    text-align: center;
+
+    .outline,
+    .normal {
+      width: 71px;
+      height: 24px;
+      font-size: 10px;
+      border-radius: 5px;
+    }
+
+    .outline {
+      border: solid 1px rgba(0, 0, 0, 0.12);
+      background: none;
+      margin-right: 43px;
+    }
+
+    .normal {
+      border: none;
+      background-color: #006bbb;
+      color: white;
+    }
+  }
+}
+// MODAL - end
+
+.col-md-3,
+.col-md-1{ margin-top: -10px; }

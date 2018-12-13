@@ -24,6 +24,7 @@ import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
+import { NewPaginationComponent } from "../cap-new-pagination/cap-new-pagination.component";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
@@ -83,7 +84,8 @@ import { RouterModule } from "@angular/router";
     CapDropdownListItemComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
-    PermissoesComponent
+    PermissoesComponent,
+    NewPaginationComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -114,7 +116,8 @@ import { RouterModule } from "@angular/router";
     CapDropdownListItemComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
-    PermissoesComponent
+    PermissoesComponent,
+    NewPaginationComponent
   ],
   providers: [LoginService, UsuarioService, PlataformaService]
 })

@@ -8,7 +8,7 @@ import swal from "sweetalert2";
 @Component({
   selector: "cap-permissoes",
   templateUrl: "./cap-permissoes.component.html",
-  styleUrls: ["./cap-permissoes.component.css"]
+  styleUrls: ["./cap-permissoes.component.scss"]
 })
 export class PermissoesComponent implements OnInit {
   @Input("urlSistemas")
@@ -23,16 +23,33 @@ export class PermissoesComponent implements OnInit {
   usuarioPermissao;
   usuarioVisualizar;
   permissao;
-  // mock = [{"cpf":"65743117136","login":"acambuy.terceiro@brasilcap.com.br","situacao":"A","nome":"Alex Caminha Cambuy","plataforma":"darwin"},{"cpf":"11971795771","login":"admin@brasilcap.com.br","situacao":"A","nome":"Administrador","plataforma":"darwin"},{"cpf":"79912001753","login":"anasueli@brasilcap.com.br","situacao":"A","nome":"Ana Sueli","plataforma":"darwin"},{"cpf":"08311220727","login":"antojunior@brasilcap.com.br","situacao":"A","nome":"Antonio Junior","plataforma":"darwin"},{"cpf":"07209605762","login":"apoli@brasilcap.com.br","situacao":"A","nome":"Andre Poli","plataforma":"darwin"},{"cpf":"10788031708","login":"arquiteturateste@brasilcap.com.br","situacao":"A","nome":"Arquitetura teste","plataforma":"darwin"},{"cpf":"12938508700","login":"asantos@brasilcap.com.br","situacao":"A","nome":"Arthur Ávilla Santos","plataforma":"darwin"},{"cpf":"03874970728","login":"aschiaffarino@brasilcap.com.br","situacao":"A","nome":"ANTONIO OMAR SCHIAFFARINO JUNIOR","plataforma":"darwin"},{"cpf":"12536578747","login":"assumpcao.terceiro@brasilcap.com.br","situacao":"A","nome":"Rafael Assumpcao","plataforma":"darwin"},{"cpf":"53651156001","login":"clecruz@brasilcap.com.br","situacao":"A","nome":"CLEYTON GUIMARAES DA CRUZ","plataforma":"darwin"},{"cpf":"16049069794","login":"dlerner.terceiro@brasilcap.com.br","situacao":"A","nome":"david lerner","plataforma":"darwin"},{"cpf":"11971795771","login":"felipesousa@brasilcap.com.br","situacao":"A","nome":"Felipe Sousa","plataforma":"darwin"},{"cpf":"11971795771","login":"felipesousasantos1993@gmail.com","situacao":"B","nome":"Felipe de Sousa Santos","plataforma":"darwin"},{"cpf":"07924179763","login":"fferreira@brasilcap.com.br","situacao":"A","nome":"Flavia Corrêa Ferreira","plataforma":"darwin"},{"cpf":"50769536077","login":"fsousa@brasilcap.com.br","situacao":"A","nome":"Felipe Sousa","plataforma":"darwin"},{"cpf":"11032485701","login":"gazevedo@brasilcap.com.br","situacao":"A","nome":"Gustavo Azevedo","plataforma":"darwin"},{"cpf":"13708532708","login":"gfranca.terceiro@brasilcap.com.br","situacao":"A","nome":"Gilmar Barbosa","plataforma":"darwin"},{"cpf":"11615665706","login":"gilmarfranca@outlook.com","situacao":"A","nome":"Gilmar Barbosa","plataforma":"darwin"},{"cpf":"13178135707","login":"henriquecruz@brasilcap.com.br","situacao":"A","nome":"Henrique Espindola Cruz","plataforma":"darwin"},{"cpf":"10676311784","login":"hgrillo.terceiro@brasilcap.com.br","situacao":"A","nome":"Humberto Grillo","plataforma":"darwin"},{"cpf":"08787256797","login":"jthomaz@brasilcap.com.br","situacao":"A","nome":"Julio Cesar Grativol Thomaz","plataforma":"darwin"},{"cpf":"08638605757","login":"jvictorio.terceiro@brasilcap.com.br","situacao":"A","nome":"Julio Victorio","plataforma":"darwin"},{"cpf":"09952423721","login":"leandrogon@brasilcap.com.br","situacao":"A","nome":"Leandro Gonçalo de Oliveir","plataforma":"darwin"},{"cpf":"05273861705","login":"leoramos@brasilcap.com.br","situacao":"A","nome":"Leonardo Gonçalves Ramos","plataforma":"darwin"},{"cpf":"17131225533","login":"lucasncs.terceiro@brasilcap.com.br","situacao":"A","nome":"Lucas Sousa","plataforma":"darwin"},{"cpf":"13035931739","login":"lunetto@brasilcap.com.br","situacao":"A","nome":"LUIS HENRIQUE DA SILVA PINUDO DE SOUZA NETTO","plataforma":"darwin"},{"cpf":"14201594700","login":"maiello@brasilcap.com.br","situacao":"A","nome":"Mmilena Chrislei Aiello Gomes","plataforma":"darwin"},{"cpf":"12255803747","login":"maraujo@brasilcap.com.br","situacao":"A","nome":"Marcos Werneck Cardoso Araujo","plataforma":"darwin"},{"cpf":"02871373760","login":"marcelsilva@brasilcap.com.br","situacao":"A","nome":"Marcelo Rosa e Silva","plataforma":"darwin"},{"cpf":"02943701700","login":"mcunha.terceiro@brasilcap.com.br","situacao":"A","nome":"Marcio Cunha","plataforma":"darwin"},{"cpf":"14201594700","login":"milenaaiello@hotmail.com","situacao":"A","nome":"Milena Chrislei Aiello Gomes","plataforma":"darwin"},{"cpf":"13591394866","login":"mlavrador@brasilcap.com.br","situacao":"A","nome":"Marcello Lavrador","plataforma":"darwin"},{"cpf":"02836686790","login":"mousilva@brasilcap.com.br","situacao":"A","nome":"Marcos Moutinho","plataforma":"darwin"},{"cpf":"11803083794","login":"otaviopr@brasilcap.com.br","situacao":"A","nome":"Otávio Ribeiro","plataforma":"darwin"},{"cpf":"08042378750","login":"rajunior@brasilcap.com.br","situacao":"A","nome":"Rafael Rodrigues dos Santos Junior","plataforma":"darwin"},{"cpf":"10162035780","login":"rodrigomm.terceiro@brasilcap.com.br","situacao":"B","nome":"Rodrigo Moreira Martins","plataforma":"darwin"},{"cpf":"12289530743","login":"taispedreira@brasilcap.com.br","situacao":"A","nome":"Taís Raquel Pedreira Aguiar","plataforma":"darwin"},{"cpf":"04334508006","login":"teste00@brasilcap.com.br","situacao":"B","nome":"teste usuario","plataforma":"darwin"},{"cpf":"18579405041","login":"teste@gmail.com","situacao":"B","nome":"Teste","plataforma":"darwin"},{"cpf":"08787256797","login":"teste@teste.com.br","situacao":"A","nome":"testando julio","plataforma":"darwin"},{"cpf":"10788031708","login":"tsantos@brasilcap.com.br","situacao":"A","nome":"Tiago Brito","plataforma":"darwin"},{"cpf":"13267780721","login":"vitornunes@brasilcap.com.br","situacao":"A","nome":"Vitor Nunes","plataforma":"darwin"},{"cpf":"09777196776","login":"vvincler.terceiro@brasilcap.com.br","situacao":"A","nome":"Vinicius Vieira Vincler","plataforma":"darwin"}];
+  exibirHint = false;
+  hintAtivo = false;
+  checkboxModificado = false;
+  cardPermissionados = false;
+  cardNaoPermissionados = false;
+  hintCardAtivo = false;
+  exibirHintCard = false;
+  modalActive = false;
 
-  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) {}
+  // pagination
+  total: number = 0;
+  page: number = 1;
+  limit: number = 10;
+  contagemPaginasTotal: number = 0;
+  primeiraLinha: number;
+  ultimaLinha: number;
+  LiberacaoPaginado: any[];
+  mensagemLabel: string;
+
+  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.popularListaUsuarios();
-    this.popoularListaModulos();
+    this.popularListaModulos();
   }
 
-  popoularListaModulos() {
+  popularListaModulos() {
     this.plataformaService.listarModulos(this.sistema, this.urlSistemas).subscribe(res => {
       if (res) {
         this.listaModulos = res[0].modulos;
@@ -45,7 +62,43 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
+  //Pagination
+  montarPaginacao() {
+    this.LiberacaoPaginado = [];
+    this.contagemPaginasTotal = Math.ceil(
+      this.listaUsuarios.length / this.limit
+    );
+    const primeiraLinha = (this.page - 1) * this.limit;
+    const ultimaLinha = primeiraLinha + this.limit - 1;
+
+    for (let i = primeiraLinha; i <= ultimaLinha; i++) {
+      if (this.listaUsuarios[i]) {
+        this.LiberacaoPaginado.push(
+          this.listaUsuarios[i]
+        );
+      }
+    }
+
+    this.total =
+      this.LiberacaoPaginado.length + 1 >= this.limit
+        ? this.limit
+        : this.LiberacaoPaginado.length;
+    this.primeiraLinha = primeiraLinha + 1;
+    this.ultimaLinha = primeiraLinha + this.LiberacaoPaginado.length;
+  }
+
+  onNext(): void {
+    this.page++;
+    this.montarPaginacao();
+  }
+
+  onPrev(): void {
+    this.page--;
+    this.montarPaginacao();
+  }
+
   salvar() {
+    this.modalActive = false;
     this.montarRequest();
     this.usuarioService
       .permissionar(this.permissao, this.usuarioPermissao.login, this.sistema, this.urlUsuarios)
@@ -68,6 +121,48 @@ export class PermissoesComponent implements OnInit {
   voltar() {
     this.usuarioPermissao = null;
   }
+
+  toggleHint(modulo) {
+    modulo.exibirHint = !modulo.exibirHint;
+    modulo.hintAtivo = !modulo.hintAtivo;
+  }
+
+  mouseLeaveHint(modulo) {
+    modulo.exibirHint = false;
+    modulo.hintAtivo = false;
+  }
+
+  abrirCardPermissionados() {
+    this.cardPermissionados = !this.cardPermissionados;
+    this.cardNaoPermissionados = false;
+  }
+
+  abrirCardNaoPermissionados() {
+    this.cardPermissionados = false;
+    this.cardNaoPermissionados = !this.cardNaoPermissionados;
+  }
+
+  // mouseLeaveHintCard() {
+  //   this.exibirHintCard = false;
+  //   this.hintCardAtivo = false;
+  // }
+
+  toggleHintCard() {
+    this.exibirHintCard = !this.exibirHintCard;
+    this.hintCardAtivo = !this.hintCardAtivo;
+  }
+
+  toggleModal(){
+    this.modalActive = !this.modalActive;
+  }
+
+  clickOutside(event) {
+    var target = event.target || event.srcElement || event.currentTarget;
+    if (!document.getElementById("modal-body").contains(target)) {
+      this.toggleModal();
+    }
+  }
+
 
   selecionarUsuarioVisualizar(usuario) {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
@@ -148,6 +243,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   selecionarTodosFuncionalidade(f, modulo?, selectModule?) {
+    this.checkboxModificado = true;
     f.todos = !f.todos;
     if (!selectModule) {
       let cont = 0;
@@ -184,6 +280,7 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.listarUsuarios(this.urlUsuarios).subscribe(res => {
       if (res) {
         this.listaUsuarios = res;
+        this.montarPaginacao();
       }
     });
   }
@@ -256,6 +353,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   public selectAllFuncionalidades(modulo) {
+    this.checkboxModificado = true;
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
@@ -280,26 +378,32 @@ export class PermissoesComponent implements OnInit {
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouAlterar(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouPesquisar(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouExcluir(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
   }
   verificaSelecionouBloquear(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
   }
   verificaSelecionouAprovar(modulo, func, value) {
+    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }
