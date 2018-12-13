@@ -118,22 +118,22 @@
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">{{ modulo.nome }}</h3>
                             <p class="chips-caption-brcap">6 Funcionalidades de 6</p>
                           </div>
-                          <div class="col-md-3 ">
+                          <div class="col-md-3">
                             <cap-btnCollapse class="pull-right " (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
                           </div>
                         </div>
                       </div>
                       <div class="box-opened " [hidden]="!modulo.open">
                         <div class="row ">
-                          <div class="col-md-1 ">
+                          <div class="col-md-1">
                             <cap-checkbox [(ngModel)]="modulo.todos" class="selectAll-modulos" name="selecionarTodos-{{indexM}}"
                               (ngModelChange)="selectAllFuncionalidades(modulo, false)"></cap-checkbox>
                           </div>
-                          <div class="col-md-8 ">
+                          <div class="col-md-8">
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">{{ modulo.nome }}</h3>
                             <p class="chips-caption-brcap">6 Funcionalidades de 6</p>
                           </div>
-                          <div class="col-md-3 ">
+                          <div class="col-md-3">
                             <cap-btnCollapse class="pull-right " (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
                           </div>
                         </div>
