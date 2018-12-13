@@ -78,6 +78,7 @@
 .icon-fullscreen {
   top:25px;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 .box-user {
