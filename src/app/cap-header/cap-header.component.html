@@ -13,7 +13,7 @@
           <div class="hamburger-inner"></div>
         </div>
       </div>
-      <a [href]="primerPage" title="">
+      <a [href]="primerPage" title="Voltar à página inicial">
         <img id="logo-img" [src]="logoSistema">
       </a>
     </div>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="navbar-custom-menu" style="top:25px;" title="Tela cheia">
-      <a href="#" (click)="toggleFullScreen()" class="icon-fullscreen">
+      <a (click)="toggleFullScreen()" class="cursor-pointer icon-fullscreen">
         <cap-icon icon="fullscreen" [size]="16"></cap-icon>
       </a>
     </div>
