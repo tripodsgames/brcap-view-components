@@ -31,6 +31,7 @@ export class PermissoesComponent implements OnInit {
   hintCardAtivo = false;
   exibirHintCard = false;
   modalActive = false;
+  filtro;
 
   // pagination
   total: number = 0;
@@ -64,16 +65,28 @@ export class PermissoesComponent implements OnInit {
   //Pagination
   montarPaginacao() {
     this.usuariosTabela = [];
+    let listaFiltrado = this.listaUsuarios;
+
+    if(this.filtro){
+      listaFiltrado = [];
+      this.listaUsuarios.forEach(element => {
+        delete element.plataforma;
+        if(Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0 )){
+          listaFiltrado.push(element);
+        }
+      });
+    }
+
     this.contagemPaginasTotal = Math.ceil(
-      this.listaUsuarios.length / this.limit
+      listaFiltrado.length / this.limit
     );
     const primeiraLinha = (this.page - 1) * this.limit;
     const ultimaLinha = primeiraLinha + this.limit - 1;
 
     for (let i = primeiraLinha; i <= ultimaLinha; i++) {
-      if (this.listaUsuarios[i]) {
+      if (listaFiltrado[i]) {
         this.usuariosTabela.push(
-          this.listaUsuarios[i]
+          listaFiltrado[i]
         );
       }
     }

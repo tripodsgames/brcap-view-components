@@ -5,7 +5,7 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-md-3" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Nome, CPF ou E-mail" [(ngModel)]="pesquisar" name="pesquisar"></cap-inputText>
+        <cap-inputText placeholder="Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" name="filtro"></cap-inputText>
       </div>
       <div class="col-md-1" *ngIf="!usuarioPermissao">
           <cap-button icon="busca"></cap-button>
@@ -28,7 +28,7 @@
         <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
-            <p class="card-valor-total">{{listaUsuarios.length}}</p>
+            <p class="card-valor-total">12</p>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela | filter: pesquisar;">
+                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela">
                   <td>{{ usuario.nome }}</td>
                   <td>{{ usuario.cpf | cpfMask }}</td>
                   <td>{{ usuario.login }}</td>
@@ -440,3 +440,19 @@
     </div>
   </div>
 </div>
+
+
+<div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)">
+    <div id="modal-body" class="modal-content">
+      <p>
+        <span>DESEJA CONCEDER ACESSO?</span>
+        <br /> <br />
+        Ao confirmar você concederá as funcionalidades selecionadas para este usuário.
+      </p>
+      <div class="modal-buttons">
+        <button class="outline" (click)="toggleModal()">NÃO</button>
+        <button class="normal" (click)="salvar()">SIM</button>
+      </div>
+    </div>
+  </div>
+  
