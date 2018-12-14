@@ -4,12 +4,12 @@
       <div class="col-md-8">
         <h1>Permissionar Usuários</h1>
       </div>
-      <div class="col-md-3" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" name="filtro"></cap-inputText>
+      <div class="col-md-3 float--right" *ngIf="!usuarioPermissao">
+        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro"></cap-inputText>
       </div>
-      <div class="col-md-1" *ngIf="!usuarioPermissao">
+      <!-- <div class="col-md-1" *ngIf="!usuarioPermissao">
           <cap-button icon="busca"></cap-button>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -19,7 +19,7 @@
         <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários<br />Permissionados</h3>
-            <p class="card-valor-total">12</p>
+            <p class="card-valor-total">{{usuariosPermissionados}}</p>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
         <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
-            <p class="card-valor-total">12</p>
+            <p class="card-valor-total">40</p>
           </div>
         </div>
       </div>
@@ -48,11 +48,13 @@
 
     <div class="row">
       <div class="col-lg-8 col-xl-7" [ngClass]="{'col-lg-7': usuarioPermissao}">
-        <cap-card *ngIf="cardNaoPermissionados">
+        <cap-card *ngIf="cardNaoPermissionados || filtrando">
           <div *ngIf="!usuarioPermissao">
             <div class="row">
               <div class="col-lg-12">
-                <h3 class="card-title">Usuários não Permissionados</h3>
+                <h3 class="card-title" *ngIf="!filtrando">Usuários não Permissionados</h3>
+                <h3 class="card-title" *ngIf="filtrando">Listagem de Usuários Pesquisados</h3>
+                <cap-btnCollapse class="volta" (click)="fecharCard()" *ngIf="filtrando"></cap-btnCollapse>
               </div>
             </div>
             <table class="table table-responsive" #table id="table">
@@ -71,6 +73,7 @@
                 </tr>
               </tbody>
             </table>
+            <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
 
             <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
               [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
@@ -110,7 +113,7 @@
                       <div class="box-closed" [hidden]="modulo.open">
                         <div class="row">
                           <div class="col-md-1">
-                            <cap-checkbox [(ngModel)]="modulo.todos" class="selectAll-modulos" name="selectAllModules-{{indexM}}"
+                            <cap-checkbox [ngClass]="{'checkbox-cinza': checkboxAtivo}" [(ngModel)]="modulo.todos" class="selectAll-modulos" name="selectAllModules-{{indexM}}"
                               (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
                           </div>
                           <div class="col-md-8">
@@ -139,7 +142,7 @@
                         <div class="row " *ngFor="let func of modulo?.funcionalidades; let indexF = index">
                           <div class="func-label ">
                             <div class="item ">
-                              <cap-checkbox (ngModelChange)="selecionarTodosFuncionalidade(func, modulo, true)"
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': checkboxAtivo}" (ngModelChange)="selecionarTodosFuncionalidade(func, modulo, true)"
                                 [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
                               <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
                                 *ngIf="!func.exibirAcoes"></cap-icon>

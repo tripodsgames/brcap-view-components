@@ -2,6 +2,7 @@ import { Http } from "@angular/http";
 import { UsuarioService } from "./../services/usuario.service";
 import { Component, OnInit, Input } from "@angular/core";
 import { PlataformaService } from "../services/plataforma.service";
+import { CpfPipe } from "../pipes/cpf.pipe";
 
 import swal from "sweetalert2";
 
@@ -32,6 +33,12 @@ export class PermissoesComponent implements OnInit {
   exibirHintCard = false;
   modalActive = false;
   filtro;
+  checkboxAtivo = false;
+  usuariosPermissionados;
+  listaFiltrado;
+  tabelaLinha;
+  emptyMessage = false;
+  filtrando = false;
 
   // pagination
   total: number = 0;
@@ -65,28 +72,34 @@ export class PermissoesComponent implements OnInit {
   //Pagination
   montarPaginacao() {
     this.usuariosTabela = [];
-    let listaFiltrado = this.listaUsuarios;
-
+    this.listaFiltrado = this.listaUsuarios;
+    this.contarUsuariosPermissonados();
     if(this.filtro){
-      listaFiltrado = [];
+      this.filtrando = true;
+      this.listaFiltrado = [];
+      this.contarUsuariosPermissonados();
       this.listaUsuarios.forEach(element => {
         delete element.plataforma;
         if(Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0 )){
-          listaFiltrado.push(element);
+          this.listaFiltrado.push(element);
+          this.contarUsuariosPermissonados();
         }
       });
+      if(this.filtro == ""){
+        this.filtrando = false;
+      }
     }
 
     this.contagemPaginasTotal = Math.ceil(
-      listaFiltrado.length / this.limit
+      this.listaFiltrado.length / this.limit
     );
     const primeiraLinha = (this.page - 1) * this.limit;
     const ultimaLinha = primeiraLinha + this.limit - 1;
 
     for (let i = primeiraLinha; i <= ultimaLinha; i++) {
-      if (listaFiltrado[i]) {
+      if (this.listaFiltrado[i]) {
         this.usuariosTabela.push(
-          listaFiltrado[i]
+          this.listaFiltrado[i]
         );
       }
     }
@@ -97,6 +110,10 @@ export class PermissoesComponent implements OnInit {
         : this.usuariosTabela.length;
     this.primeiraLinha = primeiraLinha + 1;
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
+  }
+
+  contarUsuariosPermissonados(){
+    this.usuariosPermissionados = this.listaFiltrado.length;
   }
 
   onNext(): void {
@@ -174,6 +191,26 @@ export class PermissoesComponent implements OnInit {
       this.toggleModal();
     }
   }
+
+  checkEmpty() {
+    this.tabelaLinha = document.querySelector(".animacao-hover");
+    if (this.tabelaLinha === null) {
+      this.emptyMessage = true;
+    } else {
+      this.emptyMessage = false;
+    }
+    if(this.filtro == ""){
+      this.filtrando = false;
+    }
+  }
+
+  fecharCard(){
+    this.cardNaoPermissionados = false;
+    this.filtrando = false;
+    this.filtro = "";
+    this.montarPaginacao();
+  }
+
 
 // NAO SENDO USADO
   // selecionarUsuarioVisualizar(usuario) {
@@ -256,6 +293,7 @@ export class PermissoesComponent implements OnInit {
 
   selecionarTodosFuncionalidade(f, modulo?, selectModule?) {
     this.checkboxModificado = true;
+    this.checkboxAtivo = true;
     f.todos = !f.todos;
     if (!selectModule) {
       let cont = 0;
@@ -366,6 +404,9 @@ export class PermissoesComponent implements OnInit {
 
   public selectAllFuncionalidades(modulo) {
     this.checkboxModificado = true;
+    if(modulo.todos){
+      this.checkboxAtivo = true;
+    }
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {

@@ -3,7 +3,6 @@ table {
   background-color: white;
   border: 1px solid;
   border-color: rgba(117, 117, 117, 0.1);
-  margin-bottom: 25px;
 }
 
 tbody tr:nth-child(even) {
@@ -394,3 +393,19 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
 
 .content-header .col-md-3,
 .content-header .col-md-1{ margin-top: -5px; }
+
+.checkbox-cinza label:before{
+  background: red !important;
+}
+
+.empty-message{
+  text-align: center;
+}
+
+cap-new-pagination::ng-deep .pagination{
+  margin-top: 25px;
+}
+
+.float--right{
+  float: right;
+}
