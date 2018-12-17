@@ -13,6 +13,7 @@ export class UsuarioService {
 
   constructor(private _http: Http) {
     this.headers.append("Content-Type", "application/json");
+    this.headers.append("authorization", "testet");
   }
 
   alterar(usuario: any, urlUsuarios) {

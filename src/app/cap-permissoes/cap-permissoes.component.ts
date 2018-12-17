@@ -41,6 +41,7 @@ export class PermissoesComponent implements OnInit {
   emptyMessage = false;
   filtrando = false;
   value;
+  quantidadeFuncoes;
 
   // pagination
   total: number = 0;
@@ -65,6 +66,10 @@ export class PermissoesComponent implements OnInit {
         this.listaModulos.forEach(m => {
           m.funcionalidades.forEach(f => {
             f.exibirAcoes = false;
+            if(f.acao !== undefined){
+              this.quantidadeFuncoes = f.acao.length;
+              console.log(this.quantidadeFuncoes)
+            }
           });
         });
       }

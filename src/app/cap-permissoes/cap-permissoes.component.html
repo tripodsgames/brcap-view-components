@@ -119,7 +119,7 @@
                           <div class="col-md-8">
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">{{
                               modulo.nome }}</h3>
-                            <p class="chips-caption-brcap">6 Funcionalidades de 6</p>
+                            <p class="chips-caption-brcap">{{quantidadeFuncoes}} Funcionalidades de 6</p>
                           </div>
                           <div class="col-md-3">
                             <cap-btnCollapse class="pull-right " (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
@@ -135,7 +135,7 @@
                           <div class="col-md-8">
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">{{
                               modulo.nome }}</h3>
-                            <p class="chips-caption-brcap">6 Funcionalidades de 6</p>
+                            <p class="chips-caption-brcap"> Funcionalidades de 6</p>
                           </div>
                           <div class="col-md-3">
                             <cap-btnCollapse class="pull-right " (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
@@ -432,7 +432,7 @@
   </div>
 </form>
 
-<div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)">
+<div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)" *ngIf="cardPermissionados">
   <div id="modal-body" class="modal-content">
     <p>
       <span>DESEJA ALTERAR ACESSO?</span>
@@ -447,7 +447,7 @@
 </div>
 
 
-<!-- <div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)">
+<div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)" *ngIf="cardNaoPermissionados">
   <div id="modal-body" class="modal-content">
     <p>
       <span>DESEJA CONCEDER ACESSO?</span>
@@ -459,4 +459,4 @@
       <button class="normal" (click)="salvar()">SIM</button>
     </div>
   </div>
-</div> -->
+</div>
