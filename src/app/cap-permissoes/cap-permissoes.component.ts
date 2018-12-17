@@ -356,7 +356,6 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlSistemas).subscribe(res => {
       if (res && res[0] && res[0].permissoes) {
         this.usuarioPermissao.permissoes = res[0].permissoes;
-        console.log(this.usuarioPermissao.permissoes);
         this.usuarioPermissao.permissoes.forEach(p => { 
           p.funcionalidades.forEach(f => {
             f.acoes = [];
@@ -369,7 +368,6 @@ export class PermissoesComponent implements OnInit {
           });
         });
         this.unirUsuarioModulos();
-        console.log(this.listaModulos);
       }
     });
   }
