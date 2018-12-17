@@ -29,7 +29,7 @@
         <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
-            <p class="card-valor-total">40</p>
+            <p class="card-valor-total">{{usuariosPermissionados}}</p>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@
                         <div class="row " *ngFor="let func of modulo?.funcionalidades; let indexF = index">
                           <div class="func-label ">
                             <div class="item ">
-                              <cap-checkbox [ngClass]="{'checkbox-cinza': checkboxAtivo}" (ngModelChange)="selecionarTodosFuncionalidade(func, modulo, true)"
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
                                 [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
                               <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
                                 *ngIf="!func.exibirAcoes"></cap-icon>
@@ -450,7 +450,7 @@
 </div>
 
 
-<div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)">
+<!-- <div class="modal" [ngClass]="{'modal-active': modalActive}" (click)="clickOutside($event)">
   <div id="modal-body" class="modal-content">
     <p>
       <span>DESEJA CONCEDER ACESSO?</span>
@@ -462,4 +462,4 @@
       <button class="normal" (click)="salvar()">SIM</button>
     </div>
   </div>
-</div>
+</div> -->

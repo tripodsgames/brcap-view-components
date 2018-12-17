@@ -170,7 +170,6 @@ cap-button::ng-deep .cap-button[disabled] {
     font-weight: 500;
   }
 }
-
 // CARD - DASHBOARD - end
 
 // HINT
@@ -309,11 +308,6 @@ cap-button::ng-deep .cap-button[disabled] {
   margin-top: 10px;
 }
 
-// .selectAll-modulos {
-//   position: relative;
-//   top: 20px;
-// }
-
 .button_confirmar {
   float: right;
 }
@@ -395,8 +389,8 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
 .content-header .col-md-3,
 .content-header .col-md-1{ margin-top: -5px; }
 
-.checkbox-cinza label:before{
-  background: red !important;
+cap-checkbox.checkbox-cinza::ng-deep label:before{
+  background: rgb(117, 117, 117) !important;
 }
 
 .empty-message{

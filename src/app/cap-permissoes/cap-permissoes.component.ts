@@ -11,6 +11,7 @@ import swal from "sweetalert2";
   templateUrl: "./cap-permissoes.component.html",
   styleUrls: ["./cap-permissoes.component.scss"]
 })
+
 export class PermissoesComponent implements OnInit {
   @Input("urlSistemas")
   urlSistemas;
@@ -74,18 +75,20 @@ export class PermissoesComponent implements OnInit {
     this.usuariosTabela = [];
     this.listaFiltrado = this.listaUsuarios;
     this.contarUsuariosPermissonados();
-    if(this.filtro){
+    if (this.filtro) {
       this.filtrando = true;
       this.listaFiltrado = [];
+      this.page = 1;
       this.contarUsuariosPermissonados();
+      
       this.listaUsuarios.forEach(element => {
         delete element.plataforma;
-        if(Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0 )){
+        if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
           this.contarUsuariosPermissonados();
         }
       });
-      if(this.filtro == ""){
+      if (this.filtro == "") {
         this.filtrando = false;
       }
     }
@@ -112,7 +115,7 @@ export class PermissoesComponent implements OnInit {
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
-  contarUsuariosPermissonados(){
+  contarUsuariosPermissonados() {
     this.usuariosPermissionados = this.listaFiltrado.length;
   }
 
@@ -181,7 +184,7 @@ export class PermissoesComponent implements OnInit {
     this.hintCardAtivo = !this.hintCardAtivo;
   }
 
-  toggleModal(){
+  toggleModal() {
     this.modalActive = !this.modalActive;
   }
 
@@ -199,46 +202,44 @@ export class PermissoesComponent implements OnInit {
     } else {
       this.emptyMessage = false;
     }
-    if(this.filtro == ""){
+    if (this.filtro == "") {
       this.filtrando = false;
     }
   }
 
-  fecharCard(){
+  fecharCard() {
     this.cardNaoPermissionados = false;
     this.filtrando = false;
     this.filtro = "";
     this.montarPaginacao();
   }
 
-
-// NAO SENDO USADO
-  // selecionarUsuarioVisualizar(usuario) {
-  //   this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
-  //     if (res && res[0] && res[0].permissoes) {
-  //       res[0].permissoes.forEach(p => {
-  //         p.funcionalidades.forEach(f => {
-  //           const modulo = p.codigo;
-  //           const funcionalidade = f.codigo;
-  //           if (modulo) {
-  //             p.modulo = modulo;
-  //           }
-  //           if (funcionalidade) {
-  //             if (!p.funcionalidades) {
-  //               p.funcionalidades = [];
-  //             }
-  //             f.nome = funcionalidade.replace(/^\w/, c => c.toUpperCase());
-  //             f.acoes = f.acao;
-  //           }
-  //         });
-  //       });
-  //       this.usuarioVisualizar = usuario;
-  //       this.usuarioVisualizar.permissoes = res[0].permissoes;
-  //     } else {
-  //       swal("Aviso!", "Usuário não possui permissão!", "warning");
-  //     }
-  //   });
-  // }
+  selecionarUsuarioVisualizar(usuario) {
+    this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
+      if (res && res[0] && res[0].permissoes) {
+        res[0].permissoes.forEach(p => {
+          p.funcionalidades.forEach(f => {
+            const modulo = p.codigo;
+            const funcionalidade = f.codigo;
+            if (modulo) {
+              p.modulo = modulo;
+            }
+            if (funcionalidade) {
+              if (!p.funcionalidades) {
+                p.funcionalidades = [];
+              }
+              f.nome = funcionalidade.replace(/^\w/, c => c.toUpperCase());
+              f.acoes = f.acao;
+            }
+          });
+        });
+        this.usuarioVisualizar = usuario;
+        this.usuarioVisualizar.permissoes = res[0].permissoes;
+      } else {
+        swal("Aviso!", "Usuário não possui permissão!", "warning");
+      }
+    });
+  }
 
   montarRequest() {
     this.permissao = new Object();
@@ -291,9 +292,8 @@ export class PermissoesComponent implements OnInit {
     return lista;
   }
 
-  selecionarTodosFuncionalidade(f, modulo?, selectModule?) {
+  selecionarTodasFuncionalidade(f, modulo?, selectModule?) {
     this.checkboxModificado = true;
-    this.checkboxAtivo = true;
     f.todos = !f.todos;
     if (!selectModule) {
       let cont = 0;
@@ -397,16 +397,13 @@ export class PermissoesComponent implements OnInit {
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
-        this.selecionarTodosFuncionalidade(funcionalidade, modulo, selectModule);
+        this.selecionarTodasFuncionalidade(funcionalidade, modulo, selectModule);
       });
     }
   }
 
   public selectAllFuncionalidades(modulo) {
     this.checkboxModificado = true;
-    if(modulo.todos){
-      this.checkboxAtivo = true;
-    }
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
