@@ -40,6 +40,7 @@ export class PermissoesComponent implements OnInit {
   tabelaLinha;
   emptyMessage = false;
   filtrando = false;
+  value;
 
   // pagination
   total: number = 0;
@@ -80,7 +81,7 @@ export class PermissoesComponent implements OnInit {
       this.listaFiltrado = [];
       this.page = 1;
       this.contarUsuariosPermissonados();
-      
+
       this.listaUsuarios.forEach(element => {
         delete element.plataforma;
         if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
@@ -88,7 +89,11 @@ export class PermissoesComponent implements OnInit {
           this.contarUsuariosPermissonados();
         }
       });
+      
       if (this.filtro == "") {
+        this.filtrando = false;
+      }
+      if(this.value == ""){
         this.filtrando = false;
       }
     }
@@ -204,6 +209,7 @@ export class PermissoesComponent implements OnInit {
     }
     if (this.filtro == "") {
       this.filtrando = false;
+      this.emptyMessage = false;
     }
   }
 

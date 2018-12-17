@@ -1,16 +1,13 @@
 <form #ngForm>
   <div class="content-header">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <h1>Permissionar Usuários</h1>
       </div>
-      <div class="col-md-3 float--right" *ngIf="!usuarioPermissao">
+      <div class="col-lg-4 float--right" *ngIf="!usuarioPermissao">
         <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()"
-          (keyup)="checkEmpty()" name="filtro"></cap-inputText>
+          (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
       </div>
-      <!-- <div class="col-md-1" *ngIf="!usuarioPermissao">
-          <cap-button icon="busca"></cap-button>
-      </div> -->
     </div>
   </div>
 
@@ -53,7 +50,7 @@
           <div *ngIf="!usuarioPermissao">
             <div class="row">
               <div class="col-lg-8">
-                <h3 class="card-title" *ngIf="!filtrando">Usuários não Permissionados</h3>
+                <h3 class="card-title" *ngIf="!filtrando">Usuários Não Permissionados</h3>
                 <h3 class="card-title" *ngIf="filtrando">Listagem de Usuários Pesquisados</h3>
               </div>
               <div class="col-lg-4 text--right">
