@@ -17,6 +17,7 @@ export class LoginService {
   login(usuario: any, url): Observable<any> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
+    headers.append("authorization", "testet");
     url += this.endpointLogin;
 
     return this.http.put(url, usuario, { headers: headers }).map(res => res);

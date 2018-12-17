@@ -13,6 +13,7 @@ export class PlataformaService {
 
   constructor(private _http: Http) {
     this.headers.append("Content-Type", "application/json");
+    this.headers.append("authorization", "testet");
   }
 
   listarModulos(sistema, urlSistemas) {
