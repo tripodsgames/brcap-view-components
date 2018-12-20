@@ -5,7 +5,7 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-lg-4 float--right" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacaoPermissionados() && montarPaginacaoNaoPermissionados()"
+        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacaoPermissionados() || montarPaginacaoNaoPermissionados()"
           (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
       </div>
     </div>
@@ -14,7 +14,7 @@
   <div class="content">
     <div class="row" *ngIf="!usuarioPermissao">
       <div class="col-lg-3 col-xl-2" *ngIf="usuariosPermissionados.length > 0">
-        <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados }">
+        <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários<br />Permissionados</h3>
             <p class="card-valor-total">{{usuariosPermissionados.length}}</p>
@@ -23,7 +23,7 @@
       </div>
 
       <div class="col-lg-3 col-xl-2" *ngIf="usuariosNaoPermissionados.length > 0">
-        <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados }">
+        <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados && !filtrando, 'disabled': filtrando }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
             <p class="card-valor-total">{{usuariosNaoPermissionados.length}}</p>

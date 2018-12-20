@@ -98,6 +98,7 @@ export class PermissoesComponent implements OnInit {
         delete element.plataforma;
         if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
+          // this.contarUsuarios();
         }
       });
 
@@ -238,6 +239,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   abrirCardPermissionados() {
+    this.checkEmpty();
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
     this.page = 1;
@@ -245,6 +247,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   abrirCardNaoPermissionados() {
+    this.checkEmpty();
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
     this.cardPermissionados = false;
     this.page = 1;
