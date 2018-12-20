@@ -5,7 +5,7 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-lg-4 float--right" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()"
+        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacaoPermissionados() && montarPaginacaoNaoPermissionados()"
           (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
       </div>
     </div>
@@ -66,7 +66,6 @@
                   <th class="email">E-mail</th>
                 </tr>
               </thead>
-
               <tbody>
                 <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela">
                   <td>{{ usuario.nome }}</td>
@@ -74,7 +73,6 @@
                   <td>{{ usuario.login }}</td>
                 </tr>
               </tbody>
-
             </table>
             <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
             <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "

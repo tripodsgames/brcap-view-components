@@ -88,18 +88,16 @@ export class PermissoesComponent implements OnInit {
   montarPaginacaoPermissionados() {
     this.usuariosTabela = [];
     this.listaFiltrado = this.usuariosPermissionados;
-    // this.contarUsuariosPermissonados();
+    
     if (this.filtro) {
       this.filtrando = true;
       this.listaFiltrado = [];
       this.page = 1;
-      // this.contarUsuariosPermissonados();
 
       this.usuariosPermissionados.forEach(element => {
         delete element.plataforma;
         if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
-          // this.contarUsuariosPermissonados();
         }
       });
 
@@ -136,18 +134,16 @@ export class PermissoesComponent implements OnInit {
   montarPaginacaoNaoPermissionados(){
     this.usuariosTabela = [];
     this.listaFiltrado = this.usuariosNaoPermissionados;
-    // this.contarUsuariosPermissonados();
+
     if (this.filtro) {
       this.filtrando = true;
       this.listaFiltrado = [];
       this.page = 1;
-      // this.contarUsuariosPermissonados();
 
       this.usuariosNaoPermissionados.forEach(element => {
         delete element.plataforma;
         if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
-          // this.contarUsuariosPermissonados();
         }
       });
 
@@ -181,9 +177,10 @@ export class PermissoesComponent implements OnInit {
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
-  // contarUsuariosPermissonados() {
-  //   this.usuariosPermissionados = this.listaFiltrado.length;
-  // }
+  contarUsuarios() {
+    this.usuariosPermissionados = this.listaFiltrado.length;
+    this.usuariosNaoPermissionados = this.listaFiltrado.length;
+  }
 
   onNext(): void {
     this.page++;
@@ -243,11 +240,15 @@ export class PermissoesComponent implements OnInit {
   abrirCardPermissionados() {
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
+    this.page = 1;
+    this.montarPaginacaoPermissionados();
   }
 
   abrirCardNaoPermissionados() {
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
     this.cardPermissionados = false;
+    this.page = 1;
+    this.montarPaginacaoNaoPermissionados();
   }
 
   mouseLeaveHintCard() {
