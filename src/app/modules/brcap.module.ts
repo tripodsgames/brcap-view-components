@@ -32,7 +32,7 @@ import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
 import { CapGridPaginationComponent } from "../cap-grid-pagination/cap-grid-pagination.component";
 import { CapDropdownListComponent } from "../cap-dropdownList/cap-dropdownList.component";
-
+import { CapModalComponent } from "../cap-modal/cap-modal.component";
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
 import { CapLoginComponent } from "../cap-login/cap-login.component";
 import { LoginService } from "../services/login.service";
@@ -85,7 +85,8 @@ import { RouterModule } from "@angular/router";
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
-    NewPaginationComponent
+    NewPaginationComponent,
+    CapModalComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -117,7 +118,8 @@ import { RouterModule } from "@angular/router";
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
-    NewPaginationComponent
+    NewPaginationComponent,
+    CapModalComponent
   ],
   providers: [LoginService, UsuarioService, PlataformaService]
 })

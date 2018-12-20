@@ -2,6 +2,29 @@
 <cap-header username="Joaquim José Xavier"></cap-header>
 
 <div class="content-wrapper">
+  <cap-button (click)="modal.show()"></cap-button>
+  <cap-modal #modal class="sm">
+    <div class="app-modal-header">
+      Edição do Título 123456
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <cap-select label="Tipo de Gravame" placeholder="Selecione o tipo"> </cap-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <cap-inputTextArea label="Observação" rows="5"></cap-inputTextArea>
+        </div>
+      </div>
+
+    </div>
+    <div class="app-modal-footer">
+      <cap-button label="Salvar" styleClass="sm" (click)="modal.hide()"></cap-button>
+    </div>
+  </cap-modal>
+
 
   <!-- <div class="content-header mainHeader">
     <div class="row">
@@ -20,7 +43,7 @@
   </div> -->
 
   <!-- <div class="content"> -->
-    <!-- <div class="row">
+  <!-- <div class="row">
       <div class="col-md-3">
         <cap-inputText label="Nome" icon="busca"></cap-inputText>
       </div>
@@ -39,7 +62,7 @@
     <br> -->
 
 
-    <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes>
+  <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes>
 
   <!-- </div> -->
 </div>
