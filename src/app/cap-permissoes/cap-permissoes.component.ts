@@ -35,7 +35,6 @@ export class PermissoesComponent implements OnInit {
   modalActive = false;
   filtro;
   checkboxAtivo = false;
-  usuariosPermissionados;
   listaFiltrado;
   tabelaLinha;
   emptyMessage = false;
@@ -43,6 +42,9 @@ export class PermissoesComponent implements OnInit {
   value;
   quantidadeFuncionalidades;
   quantidadePermissionados;
+
+  usuariosPermissionados;
+  usuariosNaoPermissionados;
 
   // pagination
   total: number = 0;
@@ -53,11 +55,13 @@ export class PermissoesComponent implements OnInit {
   ultimaLinha: number;
   usuariosTabela: any[];
 
-  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
+  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) {}
 
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
+    this.usuariosPermissionados = this.verEstadoPermissionamento("usuarios-permissionados");
+    this.usuariosNaoPermissionados = this.verEstadoPermissionamento("usuarios-nao-permissionados");
   }
 
   popularListaModulos() {
@@ -369,6 +373,14 @@ export class PermissoesComponent implements OnInit {
         });
         this.unirUsuarioModulos();
       }
+    });
+  }
+
+  verEstadoPermissionamento(estadoPermissionamento){
+    this.usuarioService.listarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento).subscribe(res => {
+      console.log(res);
+      console.log(estadoPermissionamento);
+      return res;
     });
   }
 
