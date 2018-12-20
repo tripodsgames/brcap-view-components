@@ -98,7 +98,6 @@ export class PermissoesComponent implements OnInit {
         delete element.plataforma;
         if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
-          // this.contarUsuarios();
         }
       });
 
@@ -178,10 +177,10 @@ export class PermissoesComponent implements OnInit {
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
-  contarUsuarios() {
-    this.usuariosPermissionados = this.listaFiltrado.length;
-    this.usuariosNaoPermissionados = this.listaFiltrado.length;
-  }
+  // contarUsuarios() {
+  //   this.usuariosPermissionados.length = this.listaFiltrado.length;
+  //   this.usuariosNaoPermissionados.length = this.listaFiltrado.length;
+  // }
 
   onNext(): void {
     this.page++;

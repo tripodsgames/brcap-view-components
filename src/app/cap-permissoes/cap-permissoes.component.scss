@@ -406,6 +406,11 @@ cap-new-pagination::ng-deep .pagination{
 }
 
 .disabled{
-  opacity: 0.65;
-  pointer-events: none;
+  cursor: not-allowed;
+
+  .card-titulo,
+  .card-valor-total{
+    opacity: 0.65;
+    pointer-events: none;
+  }
 }
