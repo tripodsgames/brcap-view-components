@@ -35,7 +35,6 @@ export class PermissoesComponent implements OnInit {
   modalActive = false;
   filtro;
   checkboxAtivo = false;
-  usuariosPermissionados;
   listaFiltrado;
   tabelaLinha;
   emptyMessage = false;
@@ -43,6 +42,9 @@ export class PermissoesComponent implements OnInit {
   value;
   quantidadeFuncionalidades;
   quantidadePermissionados;
+
+  usuariosPermissionados = [];
+  usuariosNaoPermissionados = [];
 
   // pagination
   total: number = 0;
@@ -53,11 +55,19 @@ export class PermissoesComponent implements OnInit {
   ultimaLinha: number;
   usuariosTabela: any[];
 
-  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
+  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) {}
 
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
+    this.verEstadoPermissionamento("usuarios-permissionados").subscribe(res => {
+      this.usuariosPermissionados = res;
+      this.montarPaginacaoPermissionados();
+    });
+    this.verEstadoPermissionamento("usuarios-nao-permissionados").subscribe(res => {
+      this.usuariosNaoPermissionados = res;
+      this.montarPaginacaoNaoPermissionados();
+    });
   }
 
   popularListaModulos() {
@@ -75,21 +85,20 @@ export class PermissoesComponent implements OnInit {
   }
 
   //Pagination
-  montarPaginacao() {
+  montarPaginacaoPermissionados() {
     this.usuariosTabela = [];
-    this.listaFiltrado = this.listaUsuarios;
-    this.contarUsuariosPermissonados();
+    this.listaFiltrado = this.usuariosPermissionados;
+    
     if (this.filtro) {
       this.filtrando = true;
       this.listaFiltrado = [];
       this.page = 1;
-      this.contarUsuariosPermissonados();
 
-      this.listaUsuarios.forEach(element => {
+      this.usuariosPermissionados.forEach(element => {
         delete element.plataforma;
         if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
-          this.contarUsuariosPermissonados();
+          // this.contarUsuarios();
         }
       });
 
@@ -123,18 +132,75 @@ export class PermissoesComponent implements OnInit {
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
-  contarUsuariosPermissonados() {
+  montarPaginacaoNaoPermissionados(){
+    this.usuariosTabela = [];
+    this.listaFiltrado = this.usuariosNaoPermissionados;
+
+    if (this.filtro) {
+      this.filtrando = true;
+      this.listaFiltrado = [];
+      this.page = 1;
+
+      this.usuariosNaoPermissionados.forEach(element => {
+        delete element.plataforma;
+        if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
+          this.listaFiltrado.push(element);
+        }
+      });
+
+      if (this.filtro == "") {
+        this.filtrando = false;
+      }
+      if (this.value == "") {
+        this.filtrando = false;
+      }
+    }
+
+    this.contagemPaginasTotal = Math.ceil(
+      this.listaFiltrado.length / this.limit
+    );
+    const primeiraLinha = (this.page - 1) * this.limit;
+    const ultimaLinha = primeiraLinha + this.limit - 1;
+
+    for (let i = primeiraLinha; i <= ultimaLinha; i++) {
+      if (this.listaFiltrado[i]) {
+        this.usuariosTabela.push(
+          this.listaFiltrado[i]
+        );
+      }
+    }
+
+    this.total =
+      this.usuariosTabela.length + 1 >= this.limit
+        ? this.limit
+        : this.usuariosTabela.length;
+    this.primeiraLinha = primeiraLinha + 1;
+    this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
+  }
+
+  contarUsuarios() {
     this.usuariosPermissionados = this.listaFiltrado.length;
+    this.usuariosNaoPermissionados = this.listaFiltrado.length;
   }
 
   onNext(): void {
     this.page++;
-    this.montarPaginacao();
+    if(this.cardPermissionados){
+      this.montarPaginacaoPermissionados();
+    }
+    if(this.cardNaoPermissionados){
+      this.montarPaginacaoNaoPermissionados();
+    }
   }
 
   onPrev(): void {
     this.page--;
-    this.montarPaginacao();
+    if(this.cardPermissionados){
+      this.montarPaginacaoPermissionados();
+    }
+    if(this.cardNaoPermissionados){
+      this.montarPaginacaoNaoPermissionados();
+    }
   }
 
   salvar() {
@@ -173,13 +239,19 @@ export class PermissoesComponent implements OnInit {
   }
 
   abrirCardPermissionados() {
+    this.checkEmpty();
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
+    this.page = 1;
+    this.montarPaginacaoPermissionados();
   }
 
   abrirCardNaoPermissionados() {
-    this.cardPermissionados = false;
+    this.checkEmpty();
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
+    this.cardPermissionados = false;
+    this.page = 1;
+    this.montarPaginacaoNaoPermissionados();
   }
 
   mouseLeaveHintCard() {
@@ -220,7 +292,7 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = false;
     this.filtrando = false;
     this.filtro = "";
-    this.montarPaginacao();
+    this.montarPaginacaoNaoPermissionados();
   }
 
   selecionarUsuarioVisualizar(usuario) {
@@ -342,9 +414,12 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.listarUsuarios(this.urlUsuarios).subscribe(res => {
       if (res) {
         this.listaUsuarios = res;
-        this.montarPaginacao();
       }
     });
+  }
+
+  verEstadoPermissionamento(estadoPermissionamento){
+    return this.usuarioService.buscarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento);
   }
 
   toggleModulo(modulo) {
@@ -382,8 +457,6 @@ export class PermissoesComponent implements OnInit {
               modulo.todos = permissao.funcionalidades.length > 0;
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
-                  // modulo.checkboxAtivo = true;
-                  // modulo.funcionalidades.checkboxAtivo = true;
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
                   funcModulo.incluir = funcPermissao.incluir;

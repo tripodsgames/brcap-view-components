@@ -5,7 +5,7 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-lg-4 float--right" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()"
+        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacaoPermissionados() || montarPaginacaoNaoPermissionados()"
           (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
       </div>
     </div>
@@ -13,20 +13,20 @@
 
   <div class="content">
     <div class="row" *ngIf="!usuarioPermissao">
-      <div class="col-lg-3 col-xl-2">
-        <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados }">
+      <div class="col-lg-3 col-xl-2" *ngIf="usuariosPermissionados.length > 0">
+        <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários<br />Permissionados</h3>
-            <p class="card-valor-total">{{usuariosPermissionados}}</p>
+            <p class="card-valor-total">{{usuariosPermissionados.length}}</p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-xl-2">
-        <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados }">
+      <div class="col-lg-3 col-xl-2" *ngIf="usuariosNaoPermissionados.length > 0">
+        <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados && !filtrando, 'disabled': filtrando }">
           <div class="card-body">
             <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
-            <p class="card-valor-total">{{usuariosPermissionados}}</p>
+            <p class="card-valor-total">{{usuariosNaoPermissionados.length}}</p>
           </div>
         </div>
       </div>
@@ -46,11 +46,12 @@
 
     <div class="row">
       <div class="col-lg-8 col-xl-7" [ngClass]="{'col-lg-6': usuarioPermissao}">
-        <cap-card *ngIf="cardNaoPermissionados || filtrando">
+        <cap-card *ngIf="cardPermissionados || cardNaoPermissionados || filtrando">
           <div *ngIf="!usuarioPermissao">
             <div class="row">
               <div class="col-lg-8">
-                <h3 class="card-title" *ngIf="!filtrando">Usuários Não Permissionados</h3>
+                <h3 class="card-title" *ngIf="!filtrando && cardPermissionados">Usuários Permissionados</h3>
+                <h3 class="card-title" *ngIf="!filtrando && cardNaoPermissionados">Usuários Não Permissionados</h3>
                 <h3 class="card-title" *ngIf="filtrando">Listagem de Usuários Pesquisados</h3>
               </div>
               <div class="col-lg-4 text--right">
@@ -74,11 +75,9 @@
               </tbody>
             </table>
             <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
-
             <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
               [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
               [ultimaLinha]="ultimaLinha "></cap-new-pagination>
-
           </div>
 
           <div class="row" *ngIf="usuarioPermissao">
@@ -97,7 +96,6 @@
                     <p class="usuario-info">{{ usuarioPermissao.cpf | cpfMask }} | {{ usuarioPermissao.login }}</p>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-11">
                     <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">

@@ -404,3 +404,8 @@ cap-new-pagination::ng-deep .pagination{
 .float--right{
   float: right;
 }
+
+.disabled{
+  opacity: 0.65;
+  pointer-events: none;
+}

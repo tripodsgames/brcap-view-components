@@ -4,7 +4,6 @@
   height: 45px;
 }
 
-
 .link:hover,
 .link:active,
 .link:visited,
@@ -18,6 +17,7 @@ ul.list {
   padding-left: 0px;
   background-color: rgba(0,0,0,0.2);
 }
+
 
 ul.list li .menu-item {
   min-height: 40px;
@@ -76,4 +76,30 @@ ul.list li:hover {
   width: 26px;
   position: relative;
   top: -3px;
+}
+
+.rotate::ng-deep .brcap-ico{
+  padding-top: 3px;
+  transition-delay: 0.3s;
+  transition: 0.3s;
+}
+
+.rotate::ng-deep .brcap-ico:before{
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+
+.rotate-2::ng-deep .brcap-ico:before{
+  display: inline-block;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transition: 0.3s;
 }
