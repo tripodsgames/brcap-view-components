@@ -52,7 +52,7 @@ export class UsuarioService {
     return this._http.get(url, { headers: this.headers }).map(res => res.json());
   }
 
-  listarEstadoPermissionamento(urlUsuarios, sistema, estadoPermissionamento){
+  buscarEstadoPermissionamento(urlUsuarios, sistema, estadoPermissionamento){
     let url = urlUsuarios + this.endpointUsuarios;
     url += "/plataformas/darwin/sistemas";
     url += "/" + sistema;

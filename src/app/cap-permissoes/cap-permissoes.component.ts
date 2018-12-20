@@ -351,6 +351,13 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
+  verEstadoPermissionamento(estadoPermissionamento){
+    this.usuarioService.buscarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento).subscribe(res => {
+      console.log(res);
+      return res;
+    });
+  }
+
   toggleModulo(modulo) {
     modulo.open = !modulo.open;
   }
@@ -373,14 +380,6 @@ export class PermissoesComponent implements OnInit {
         });
         this.unirUsuarioModulos();
       }
-    });
-  }
-
-  verEstadoPermissionamento(estadoPermissionamento){
-    this.usuarioService.listarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento).subscribe(res => {
-      console.log(res);
-      console.log(estadoPermissionamento);
-      return res;
     });
   }
 
