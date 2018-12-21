@@ -87,7 +87,14 @@ export class PermissoesComponent implements OnInit {
   //Pagination
   montarPaginacao() {
     this.usuariosTabela = [];
-    this.listaFiltrado = this.usuariosPermissionados || this.usuariosNaoPermissionados;
+
+    if (this.cardPermissionados) {
+      this.listaFiltrado = this.usuariosPermissionados
+    }
+
+    if (this.cardNaoPermissionados) {
+      this.listaFiltrado = this.usuariosNaoPermissionados
+    }
 
     if (this.filtro) {
       this.filtrando = true;
@@ -184,11 +191,11 @@ export class PermissoesComponent implements OnInit {
   }
 
   abrirCardPermissionados() {
-    this.checkEmpty();
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
     this.page = 1;
     this.montarPaginacao();
+    this.checkEmpty();
   }
 
   abrirCardNaoPermissionados() {
@@ -359,6 +366,7 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.listarUsuarios(this.urlUsuarios).subscribe(res => {
       if (res) {
         this.listaUsuarios = res;
+        this.checkEmpty();
       }
     });
   }
