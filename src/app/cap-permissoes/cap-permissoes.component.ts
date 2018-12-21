@@ -327,8 +327,7 @@ export class PermissoesComponent implements OnInit {
 
   selecionarTodasFuncionalidade(f, modulo?, selectModule?) {
     this.checkboxModificado = true;
-
-    modulo.funcionalidades.checkboxAtivo = false;
+    modulo.checkboxAtivo = false;
 
     f.todos = !f.todos;
     if (!selectModule) {
@@ -410,6 +409,10 @@ export class PermissoesComponent implements OnInit {
               modulo.todos = permissao.funcionalidades.length > 0;
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
+
+                  modulo.checkboxAtivo = true;
+
+
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
                   funcModulo.incluir = funcPermissao.incluir;
@@ -479,16 +482,19 @@ export class PermissoesComponent implements OnInit {
 
   verificaSelecionouIncluir(modulo, func, value) {
     this.checkboxModificado = true;
+    modulo.checkboxAtivo = false;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouAlterar(modulo, func, value) {
     this.checkboxModificado = true;
+    modulo.checkboxAtivo = false;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouPesquisar(modulo, func, value) {
     this.checkboxModificado = true;
+    modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
@@ -499,11 +505,13 @@ export class PermissoesComponent implements OnInit {
   }
   verificaSelecionouBloquear(modulo, func, value) {
     this.checkboxModificado = true;
+    modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
   }
   verificaSelecionouAprovar(modulo, func, value) {
     this.checkboxModificado = true;
+    modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }
