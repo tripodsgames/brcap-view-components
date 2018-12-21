@@ -96,7 +96,7 @@ export class PermissoesComponent implements OnInit {
 
       this.usuariosPermissionados.forEach(element => {
         delete element.plataforma;
-        if (Object.values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
+        if (Object.keys(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
         }
       });
