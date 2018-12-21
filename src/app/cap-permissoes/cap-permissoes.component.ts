@@ -55,7 +55,7 @@ export class PermissoesComponent implements OnInit {
   ultimaLinha: number;
   usuariosTabela: any[];
 
-  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) {}
+  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.popularListaUsuarios();
@@ -88,7 +88,7 @@ export class PermissoesComponent implements OnInit {
   montarPaginacaoPermissionados() {
     this.usuariosTabela = [];
     this.listaFiltrado = this.usuariosPermissionados;
-    
+
     if (this.filtro) {
       this.filtrando = true;
       this.listaFiltrado = [];
@@ -131,7 +131,7 @@ export class PermissoesComponent implements OnInit {
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
-  montarPaginacaoNaoPermissionados(){
+  montarPaginacaoNaoPermissionados() {
     this.usuariosTabela = [];
     this.listaFiltrado = this.usuariosNaoPermissionados;
 
@@ -184,20 +184,20 @@ export class PermissoesComponent implements OnInit {
 
   onNext(): void {
     this.page++;
-    if(this.cardPermissionados){
+    if (this.cardPermissionados) {
       this.montarPaginacaoPermissionados();
     }
-    if(this.cardNaoPermissionados){
+    if (this.cardNaoPermissionados) {
       this.montarPaginacaoNaoPermissionados();
     }
   }
 
   onPrev(): void {
     this.page--;
-    if(this.cardPermissionados){
+    if (this.cardPermissionados) {
       this.montarPaginacaoPermissionados();
     }
-    if(this.cardNaoPermissionados){
+    if (this.cardNaoPermissionados) {
       this.montarPaginacaoNaoPermissionados();
     }
   }
@@ -417,7 +417,7 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
-  verEstadoPermissionamento(estadoPermissionamento){
+  verEstadoPermissionamento(estadoPermissionamento) {
     return this.usuarioService.buscarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento);
   }
 
@@ -430,7 +430,7 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlSistemas).subscribe(res => {
       if (res && res[0] && res[0].permissoes) {
         this.usuarioPermissao.permissoes = res[0].permissoes;
-        this.usuarioPermissao.permissoes.forEach(p => { 
+        this.usuarioPermissao.permissoes.forEach(p => {
           p.funcionalidades.forEach(f => {
             f.acoes = [];
             f.incluir = f.acao.indexOf("incluir") !== -1;
@@ -471,11 +471,11 @@ export class PermissoesComponent implements OnInit {
                     funcPermissao.excluir &&
                     funcPermissao.aprovar &&
                     funcPermissao.bloquear;
-                  if (funcModulo.incluir 
-                    || funcModulo.alterar 
-                    || funcModulo.pesquisar 
-                    || funcModulo.excluir 
-                    || funcModulo.bloquear 
+                  if (funcModulo.incluir
+                    || funcModulo.alterar
+                    || funcModulo.pesquisar
+                    || funcModulo.excluir
+                    || funcModulo.bloquear
                     || funcModulo.aprovar) {
                     modulo.quantidadePermissionados++;
                   }
