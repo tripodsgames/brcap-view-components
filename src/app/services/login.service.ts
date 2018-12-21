@@ -1,4 +1,4 @@
-// import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 import { Http, Response, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
 import * as Rx from "rxjs/Rx";
@@ -14,7 +14,7 @@ export class LoginService {
   endpointUsuarios = "usuarios";
   endpointEsqueciSenha = "?acao=esqueci_senha";
 
-  login(usuario: any, url) {
+  login(usuario: any, url): Observable<any> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     headers.append("authorization", "testet");
@@ -23,7 +23,7 @@ export class LoginService {
     return this.http.put(url, usuario, { headers: headers }).map(res => res);
   }
 
-  getAuth(token, url) {
+  getAuth(token, url): Observable<any> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     headers.append("Authorization", token);
@@ -32,7 +32,7 @@ export class LoginService {
     return this.http.get(url, { headers: headers }).map(res => res);
   }
 
-  getUser(login, url) {
+  getUser(login, url): Observable<any> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
 
@@ -46,7 +46,7 @@ export class LoginService {
       .catch(this.handleError);
   }
 
-  esqueciSenha(usuario: any, url) {
+  esqueciSenha(usuario: any, url): Observable<any> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     url += this.endpointUsuarios + this.endpointEsqueciSenha;
