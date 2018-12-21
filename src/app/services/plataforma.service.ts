@@ -16,7 +16,7 @@ export class PlataformaService {
     this.headers.append("authorization", "testet");
   }
 
-  listarModulos(sistema, urlSistemas) {
+  listarModulos(sistema, urlSistemas):Observable<any> {
     let url = urlSistemas + this.endPointSistemas;
     url += "?plataforma=darwin";
     url += "&codigo=" + sistema;
