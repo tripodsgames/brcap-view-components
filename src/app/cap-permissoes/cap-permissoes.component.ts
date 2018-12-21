@@ -3,6 +3,9 @@ import { UsuarioService } from "./../services/usuario.service";
 import { Component, OnInit, Input } from "@angular/core";
 import { PlataformaService } from "../services/plataforma.service";
 
+import { Observable } from "rxjs/Observable"; 
+import "rxjs/add/operator/map";
+import "rxjs/Rx";
 import swal from "sweetalert2";
 
 @Component({
@@ -87,15 +90,12 @@ export class PermissoesComponent implements OnInit {
   //Pagination
   montarPaginacao() {
     this.usuariosTabela = [];
-
     if (this.cardPermissionados) {
       this.listaFiltrado = this.usuariosPermissionados
     }
-
     if (this.cardNaoPermissionados) {
       this.listaFiltrado = this.usuariosNaoPermissionados
     }
-
     if (this.filtro) {
       this.filtrando = true;
       this.listaFiltrado = [];
@@ -370,7 +370,7 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
-  verEstadoPermissionamento(estadoPermissionamento) {
+  verEstadoPermissionamento(estadoPermissionamento): Observable<any[]> {
     return this.usuarioService.buscarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento);
   }
 

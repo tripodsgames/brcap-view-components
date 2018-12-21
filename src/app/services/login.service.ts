@@ -1,13 +1,12 @@
-import { Observable } from "rxjs/Observable";
-import { Http, Response, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
-import * as Rx from "rxjs/Rx";
+import { Observable } from "rxjs/Observable";
+import { Http, Headers } from "@angular/http";
 import "rxjs/add/operator/map";
 import "rxjs/Rx";
 
 @Injectable()
 export class LoginService {
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
   endpointLogin = "authentication";
   endpointAuth = "authorization";
@@ -32,7 +31,7 @@ export class LoginService {
     return this.http.get(url, { headers: headers }).map(res => res);
   }
 
-  getUser(login, url): Observable<any> {
+  getUser(login, url): Observable<any[]> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
 

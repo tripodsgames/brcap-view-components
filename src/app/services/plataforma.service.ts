@@ -1,7 +1,6 @@
+ import { Injectable } from "@angular/core"; 
 import { Observable } from "rxjs/Observable";
-import { Http, Response, Headers } from "@angular/http";
-import { Injectable } from "@angular/core";
-import * as Rx from "rxjs/Rx";
+import { Http, Headers } from "@angular/http";
 import "rxjs/add/operator/map";
 import "rxjs/Rx";
 
@@ -16,7 +15,7 @@ export class PlataformaService {
     this.headers.append("authorization", "testet");
   }
 
-  listarModulos(sistema, urlSistemas):Observable<any> {
+  listarModulos(sistema, urlSistemas): Observable<any[]>   {
     let url = urlSistemas + this.endPointSistemas;
     url += "?plataforma=darwin";
     url += "&codigo=" + sistema;
