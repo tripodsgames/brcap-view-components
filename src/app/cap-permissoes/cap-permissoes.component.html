@@ -5,7 +5,7 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-lg-4 float--right" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacaoPermissionados() || montarPaginacaoNaoPermissionados()"
+        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()"
           (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
       </div>
     </div>
