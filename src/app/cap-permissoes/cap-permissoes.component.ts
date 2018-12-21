@@ -2,7 +2,6 @@ import { Http } from "@angular/http";
 import { UsuarioService } from "./../services/usuario.service";
 import { Component, OnInit, Input } from "@angular/core";
 import { PlataformaService } from "../services/plataforma.service";
-import { CpfPipe } from "../pipes/cpf.pipe";
 
 import swal from "sweetalert2";
 
@@ -60,13 +59,14 @@ export class PermissoesComponent implements OnInit {
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
+    this.checkEmpty();
     this.verEstadoPermissionamento("usuarios-permissionados").subscribe(res => {
       this.usuariosPermissionados = res;
-      this.montarPaginacaoPermissionados();
+      this.montarPaginacao();
     });
     this.verEstadoPermissionamento("usuarios-nao-permissionados").subscribe(res => {
       this.usuariosNaoPermissionados = res;
-      this.montarPaginacaoNaoPermissionados();
+      this.montarPaginacao();
     });
   }
 
@@ -84,15 +84,10 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
-  montarPaginacao(){
-    this.montarPaginacaoPermissionados();
-    this.montarPaginacaoNaoPermissionados();
-  }
-
   //Pagination
-  montarPaginacaoPermissionados() {
+  montarPaginacao() {
     this.usuariosTabela = [];
-    this.listaFiltrado = this.usuariosPermissionados;
+    this.listaFiltrado = this.usuariosPermissionados || this.usuariosNaoPermissionados;
 
     if (this.filtro) {
       this.filtrando = true;
@@ -105,45 +100,6 @@ export class PermissoesComponent implements OnInit {
           this.listaFiltrado.push(element);
         }
       });
-
-      if (this.filtro == "") {
-        this.filtrando = false;
-      }
-      if (this.value == "") {
-        this.filtrando = false;
-      }
-    }
-
-    this.contagemPaginasTotal = Math.ceil(
-      this.listaFiltrado.length / this.limit
-    );
-    const primeiraLinha = (this.page - 1) * this.limit;
-    const ultimaLinha = primeiraLinha + this.limit - 1;
-
-    for (let i = primeiraLinha; i <= ultimaLinha; i++) {
-      if (this.listaFiltrado[i]) {
-        this.usuariosTabela.push(
-          this.listaFiltrado[i]
-        );
-      }
-    }
-
-    this.total =
-      this.usuariosTabela.length + 1 >= this.limit
-        ? this.limit
-        : this.usuariosTabela.length;
-    this.primeiraLinha = primeiraLinha + 1;
-    this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
-  }
-
-  montarPaginacaoNaoPermissionados() {
-    this.usuariosTabela = [];
-    this.listaFiltrado = this.usuariosNaoPermissionados;
-
-    if (this.filtro) {
-      this.filtrando = true;
-      this.listaFiltrado = [];
-      this.page = 1;
 
       this.usuariosNaoPermissionados.forEach(element => {
         delete element.plataforma;
@@ -182,29 +138,14 @@ export class PermissoesComponent implements OnInit {
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
   }
 
-  // contarUsuarios() {
-  //   this.usuariosPermissionados.length = this.listaFiltrado.length;
-  //   this.usuariosNaoPermissionados.length = this.listaFiltrado.length;
-  // }
-
   onNext(): void {
     this.page++;
-    if (this.cardPermissionados) {
-      this.montarPaginacaoPermissionados();
-    }
-    if (this.cardNaoPermissionados) {
-      this.montarPaginacaoNaoPermissionados();
-    }
+    this.montarPaginacao();
   }
 
   onPrev(): void {
     this.page--;
-    if (this.cardPermissionados) {
-      this.montarPaginacaoPermissionados();
-    }
-    if (this.cardNaoPermissionados) {
-      this.montarPaginacaoNaoPermissionados();
-    }
+    this.montarPaginacao();
   }
 
   salvar() {
@@ -247,7 +188,7 @@ export class PermissoesComponent implements OnInit {
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
     this.page = 1;
-    this.montarPaginacaoPermissionados();
+    this.montarPaginacao();
   }
 
   abrirCardNaoPermissionados() {
@@ -255,7 +196,7 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
     this.cardPermissionados = false;
     this.page = 1;
-    this.montarPaginacaoNaoPermissionados();
+    this.montarPaginacao();
   }
 
   mouseLeaveHintCard() {
@@ -293,10 +234,10 @@ export class PermissoesComponent implements OnInit {
   }
 
   fecharCard() {
+    this.cardPermissionados = false;
     this.cardNaoPermissionados = false;
     this.filtrando = false;
     this.filtro = "";
-    this.montarPaginacaoNaoPermissionados();
   }
 
   selecionarUsuarioVisualizar(usuario) {
