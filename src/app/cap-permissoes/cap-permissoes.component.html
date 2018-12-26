@@ -4,7 +4,7 @@
       <div class="col-lg-8">
         <h1>Permissionar Usuários</h1>
       </div>
-      <div class="col-lg-4 float--right" *ngIf="!usuarioPermissao">
+      <div class="col-lg-4 col-xl-3 float--right" *ngIf="!usuarioPermissao">
         <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()"
           (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
       </div>
@@ -37,7 +37,7 @@
             (mouseleave)="mouseLeaveHintCard()"></cap-icon>
           <div class="hint-container" *ngIf="exibirHintCard">
             <div class="hint-content">
-              Selecione o card para ver detalhes.
+              Selecione um card para ver detalhes.
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-8 col-xl-7" [ngClass]="{'col-lg-6': usuarioPermissao}">
+      <div class="col-lg-8 col-xl-5" [ngClass]="{'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
         <cap-card *ngIf="cardPermissionados || cardNaoPermissionados || filtrando">
           <div *ngIf="!usuarioPermissao">
             <div class="row">
@@ -68,7 +68,7 @@
               </thead>
               <tbody>
                 <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela">
-                  <td>{{ usuario.nome }}</td>
+                  <td class="nome">{{ capitalize(usuario.nome) }}</td>
                   <td>{{ usuario.cpf | cpfMask }}</td>
                   <td>{{ usuario.login }}</td>
                 </tr>

@@ -3,7 +3,7 @@ import { UsuarioService } from "./../services/usuario.service";
 import { Component, OnInit, Input } from "@angular/core";
 import { PlataformaService } from "../services/plataforma.service";
 
-import { Observable } from "rxjs/Observable"; 
+import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import "rxjs/Rx";
 import swal from "sweetalert2";
@@ -245,6 +245,11 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = false;
     this.filtrando = false;
     this.filtro = "";
+  }
+
+
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   selecionarUsuarioVisualizar(usuario) {
