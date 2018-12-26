@@ -62,7 +62,6 @@ export class PermissoesComponent implements OnInit {
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
-    this.checkEmpty();
     this.verEstadoPermissionamento("usuarios-permissionados").subscribe(res => {
       this.usuariosPermissionados = res;
       this.montarPaginacao();
@@ -127,7 +126,7 @@ export class PermissoesComponent implements OnInit {
         .concat(element.cpf.substring(6, 9))
         .concat("-")
         .concat(element.cpf.substring(9, 11));
-        
+
         if ((<any>Object).values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
         }
@@ -215,11 +214,9 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = false;
     this.page = 1;
     this.montarPaginacao();
-    this.checkEmpty();
   }
 
   abrirCardNaoPermissionados() {
-    this.checkEmpty();
     this.cardNaoPermissionados = !this.cardNaoPermissionados;
     this.cardPermissionados = false;
     this.page = 1;
@@ -242,7 +239,7 @@ export class PermissoesComponent implements OnInit {
 
   clickOutside(event) {
     var target = event.target || event.srcElement || event.currentTarget;
-    if (!document.getElementById("modal-body").contains(target)) {
+    if (!document.getElementById("old-modal-body").contains(target)) {
       this.toggleModal();
     }
   }
@@ -265,6 +262,7 @@ export class PermissoesComponent implements OnInit {
     this.cardNaoPermissionados = false;
     this.filtrando = false;
     this.filtro = "";
+    this.checkEmpty();
   }
 
 
@@ -391,7 +389,6 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.listarUsuarios(this.urlUsuarios).subscribe(res => {
       if (res) {
         this.listaUsuarios = res;
-        this.checkEmpty();
       }
     });
   }
