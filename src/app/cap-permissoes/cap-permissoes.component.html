@@ -45,7 +45,7 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-8 col-xl-5" [ngClass]="{'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
+      <div [ngClass]="{'col-lg-8': !usuarioPermissao,'col-xl-5': !usuarioPermissao, 'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
         <cap-card *ngIf="cardPermissionados || cardNaoPermissionados || filtrando">
           <div *ngIf="!usuarioPermissao">
             <div class="row">
