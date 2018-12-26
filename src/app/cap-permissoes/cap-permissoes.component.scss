@@ -62,16 +62,14 @@ cap-card::ng-deep {
   margin: 0;
 }
 
-cap-inputText::ng-deep {
-  .cap-inputText {
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.08) !important;
-    padding-top: 6px !important;
-  }
+.cap-inputText {
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  padding-top: 6px !important;
+}
 
-  .cap-inputText-icon {
-    top: 5px;
-  }
+.cap-inputText-icon {
+  top: 5px;
 }
 
 .content-header {
@@ -158,15 +156,15 @@ cap-button::ng-deep .cap-button[disabled] {
   }
 }
 
-cap-icon{
+cap-icon {
   color: #7b7b7b;
 
-  &::ng-deep .brcap-ico{
+  &::ng-deep .brcap-ico {
     position: static !important;
   }
 }
 
-.col-lg-5 cap-button::ng-deep .cap-button{
+.col-lg-5 cap-button::ng-deep .cap-button {
   height: 36px;
   padding: 0px 23px;
 }
@@ -424,6 +422,7 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
     }
   }
 }
+
 // MODAL - end
 
 .content-header .col-md-3,
@@ -450,7 +449,7 @@ cap-new-pagination::ng-deep .pagination {
 
 .disabled {
   pointer-events: none;
-  
+
   .card-titulo,
   .card-valor-total {
     opacity: 0.65;

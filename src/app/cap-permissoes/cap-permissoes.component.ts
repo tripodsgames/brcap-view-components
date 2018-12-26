@@ -103,13 +103,13 @@ export class PermissoesComponent implements OnInit {
       this.usuariosPermissionados.forEach(element => {
         delete element.plataforma;
         element.cpfMascarado = element.cpf
-        .substring(0, 3)
-        .concat(".")
-        .concat(element.cpf.substring(3, 6))
-        .concat(".")
-        .concat(element.cpf.substring(6, 9))
-        .concat("-")
-        .concat(element.cpf.substring(9, 11));
+          .substring(0, 3)
+          .concat(".")
+          .concat(element.cpf.substring(3, 6))
+          .concat(".")
+          .concat(element.cpf.substring(6, 9))
+          .concat("-")
+          .concat(element.cpf.substring(9, 11));
 
         if ((<any>Object).values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
@@ -119,13 +119,13 @@ export class PermissoesComponent implements OnInit {
       this.usuariosNaoPermissionados.forEach(element => {
         delete element.plataforma;
         element.cpfMascarado = element.cpf
-        .substring(0, 3)
-        .concat(".")
-        .concat(element.cpf.substring(3, 6))
-        .concat(".")
-        .concat(element.cpf.substring(6, 9))
-        .concat("-")
-        .concat(element.cpf.substring(9, 11));
+          .substring(0, 3)
+          .concat(".")
+          .concat(element.cpf.substring(3, 6))
+          .concat(".")
+          .concat(element.cpf.substring(6, 9))
+          .concat("-")
+          .concat(element.cpf.substring(9, 11));
 
         if ((<any>Object).values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
@@ -180,9 +180,9 @@ export class PermissoesComponent implements OnInit {
       .subscribe(
         res => {
           if (res) {
-            swal("Sucesso!", "Operação realizada com sucesso!", "success").then(function(){
+            swal("Sucesso!", "Operação realizada com sucesso!", "success").then(function () {
               location.reload();
-          });
+            });
           } else {
             swal("Erro!", "Ocorreu um erro ao salvar!", "error");
           }

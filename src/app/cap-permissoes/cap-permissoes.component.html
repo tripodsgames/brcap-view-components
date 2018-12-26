@@ -5,8 +5,9 @@
         <h1>Permissionar Usuários</h1>
       </div>
       <div class="col-lg-4 col-xl-3 float--right" *ngIf="!usuarioPermissao">
-        <cap-inputText placeholder="Pesquisar Nome, CPF ou E-mail" [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()"
-          (keyup)="checkEmpty()" name="filtro" icon="busca"></cap-inputText>
+        <input class="form-control input-type-text cap-inputText" placeholder="Pesquisar Nome, CPF ou E-mail"
+          [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca">
+        <cap-icon icon="busca" class="cap-inputText-icon"></cap-icon>
       </div>
     </div>
   </div>
@@ -147,9 +148,8 @@
                           <div class="func-label">
 
                             <div class="item">
-                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
-                                (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)" [(ngModel)]="func.todos"
-                                name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
+                                [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
                               <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
                                 *ngIf="!func.exibirAcoes"></cap-icon>
                               <cap-icon class="icone-toggle-funcionalidade pointer " icon="retrair " (click)="toggleAcoes(func)"
