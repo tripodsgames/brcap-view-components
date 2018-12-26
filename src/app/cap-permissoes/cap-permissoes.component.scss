@@ -160,6 +160,10 @@ cap-button::ng-deep .cap-button[disabled] {
 
 cap-icon{
   color: #7b7b7b;
+
+  &::ng-deep .brcap-ico{
+    position: static !important;
+  }
 }
 
 .col-lg-5 cap-button::ng-deep .cap-button{
