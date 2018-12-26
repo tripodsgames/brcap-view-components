@@ -6,7 +6,7 @@
       </div>
       <div class="col-lg-4 col-xl-3 float--right" *ngIf="!usuarioPermissao">
         <input class="form-control input-type-text cap-inputText" placeholder="Pesquisar Nome, CPF ou E-mail"
-          [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca">
+          [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca" autocomplete="off">
         <cap-icon icon="busca" class="cap-inputText-icon"></cap-icon>
       </div>
     </div>
