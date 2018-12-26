@@ -1,11 +1,11 @@
 <div class="pagination">
     <button class="link prev" (click)="onPrev()" [disabled]="page === 1 || loading" [ngClass]="{ 'disabled': page === 1 || loading }">
-        <i class="fa fa-angle-left"></i>
+        <cap-icon icon="anterior"></cap-icon>
     </button>
 
     <span>{{ primeiraLinha }}-{{ ultimaLinha }} DE {{ contagemPaginasTotal }}</span>
 
     <button class="link next" (click)="onNext(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">
-        <i class="fa fa-angle-right"></i>
+        <cap-icon icon="seguir"></cap-icon>
     </button>
 </div>  
