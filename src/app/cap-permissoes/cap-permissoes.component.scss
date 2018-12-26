@@ -114,6 +114,10 @@ cap-inputText::ng-deep {
   }
 }
 
+cap-btncollapse::ng-deep .btnCollapse {
+  color: #7b7b7b;
+}
+
 .subtitle-1-brcap {
   font-weight: 500;
 }
@@ -152,6 +156,10 @@ cap-button::ng-deep .cap-button[disabled] {
     font-size: 24px !important;
     left: -11px;
   }
+}
+
+cap-icon{
+  color: #7b7b7b;
 }
 
 .col-lg-5 cap-button::ng-deep .cap-button{
