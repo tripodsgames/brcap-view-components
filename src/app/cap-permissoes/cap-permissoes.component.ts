@@ -163,7 +163,9 @@ export class PermissoesComponent implements OnInit {
       .subscribe(
         res => {
           if (res) {
-            swal("Sucesso!", "Operação realizada com sucesso!", "success");
+            swal("Sucesso!", "Operação realizada com sucesso!", "success").then(function(){
+              location.reload();
+          });
           } else {
             swal("Erro!", "Ocorreu um erro ao salvar!", "error");
           }
