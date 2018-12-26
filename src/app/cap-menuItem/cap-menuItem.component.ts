@@ -57,9 +57,7 @@ export class CapMenuItemComponent {
   rotacionar(){
     if(this.exibir){
       this.exibido = true;
-      console.log("oi");
     }
   }
-
    
 }

@@ -54,7 +54,6 @@ export class CapTableComponent implements OnInit, AfterViewInit {
           }
         });
       }
-      console.log(this.colunas);
     }
   }
 }

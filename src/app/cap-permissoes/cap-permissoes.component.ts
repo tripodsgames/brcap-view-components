@@ -249,6 +249,7 @@ export class PermissoesComponent implements OnInit {
 
 
   capitalize(string) {
+    console.log(string.charAt(0));
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 

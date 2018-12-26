@@ -131,7 +131,6 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
     this.escrevendo = false;
     this.emptyMessage = false;
     this.filtrando = false;
-    console.log(this.filtrando);
   }
 
   onKeyup(event) {
