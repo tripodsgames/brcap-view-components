@@ -337,10 +337,9 @@ export class PermissoesComponent implements OnInit {
 
   selecionarTodasFuncionalidade(f, modulo?, selectModule?) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
-
+    // modulo.checkboxAtivo = false;
     f.todos = !f.todos;
-    if (!selectModule) {
+    if (selectModule) {
       let cont = 0;
       modulo.funcionalidades.forEach(funcionalidade => {
         if (funcionalidade.todos) {
@@ -465,7 +464,7 @@ export class PermissoesComponent implements OnInit {
 
   public selectAllFuncionalidades(modulo) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
+    // modulo.checkboxAtivo = false;
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
@@ -491,19 +490,19 @@ export class PermissoesComponent implements OnInit {
 
   verificaSelecionouIncluir(modulo, func, value) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
+    // modulo.checkboxAtivo = false;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouAlterar(modulo, func, value) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
+    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouPesquisar(modulo, func, value) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
+    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
@@ -514,13 +513,13 @@ export class PermissoesComponent implements OnInit {
   }
   verificaSelecionouBloquear(modulo, func, value) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
+    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
   }
   verificaSelecionouAprovar(modulo, func, value) {
     this.checkboxModificado = true;
-    modulo.checkboxAtivo = false;
+    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }
