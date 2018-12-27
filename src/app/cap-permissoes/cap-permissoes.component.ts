@@ -184,6 +184,7 @@ export class PermissoesComponent implements OnInit {
 
   voltar() {
     this.usuarioPermissao = null;
+    this.popularListaModulos();
   }
 
   toggleHint(modulo) {
@@ -420,7 +421,6 @@ export class PermissoesComponent implements OnInit {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
 
                   modulo.checkboxAtivo = true;
-
 
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
