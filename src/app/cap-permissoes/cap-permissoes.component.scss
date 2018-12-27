@@ -3,7 +3,6 @@ table {
   background-color: white;
   border: 1px solid;
   border-color: rgba(117, 117, 117, 0.1);
-  margin-bottom: 25px;
 }
 
 tbody tr:nth-child(even) {
@@ -32,6 +31,7 @@ th {
   color: #000000;
   border-bottom-color: inherit;
 }
+
 /* TABELA - end */
 
 // CAP CARD
@@ -39,30 +39,37 @@ cap-card::ng-deep {
   .cap-card {
     width: inherit;
     padding: 25px;
+    margin-bottom: 25px;
 
     .card-title {
       font-size: 20px;
       margin: 0 0 25px;
     }
   }
-  h2{ margin: 0; }
-  .usuario-info{ margin: 15px 0 25px; }
+
+  h2 {
+    margin: 0;
+  }
+
+  .usuario-info {
+    margin-bottom: 25px;
+  }
 }
+
 // CAP CARD - end
 
-.text--right cap-btncollapse::ng-deep .btnCollapse{
+.text--right cap-btncollapse::ng-deep .btnCollapse {
   margin: 0;
 }
 
-cap-inputText::ng-deep {
-  .cap-inputText {
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.08) !important;
-    padding-top: 6px !important;
-  }
-  .cap-inputText-icon {
-    display: none !important;
-  }
+.cap-inputText {
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  padding-top: 6px !important;
+}
+
+.cap-inputText-icon {
+  top: 5px;
 }
 
 .content-header {
@@ -94,17 +101,29 @@ cap-inputText::ng-deep {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   padding: 15px;
-  margin-bottom: 35px;
-  &:last-child{ margin-bottom: 0; }
-  cap-btncollapse::ng-deep .btnCollapse{ margin: 0; }
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  cap-btncollapse::ng-deep .btnCollapse {
+    margin: 0;
+  }
 }
 
-.subtitle-1-brcap{
+cap-btncollapse::ng-deep .btnCollapse {
+  color: #7b7b7b;
+}
+
+.subtitle-1-brcap {
   font-weight: 500;
 }
 
 .subtitle-1-brcap,
-.chips-caption-brcap{ margin: 0; }
+.chips-caption-brcap {
+  margin: 0;
+}
 
 .func-label {
   padding: 10px 15px;
@@ -135,6 +154,19 @@ cap-button::ng-deep .cap-button[disabled] {
     font-size: 24px !important;
     left: -11px;
   }
+}
+
+cap-icon {
+  color: #7b7b7b;
+
+  &::ng-deep .brcap-ico {
+    position: static !important;
+  }
+}
+
+.col-lg-5 cap-button::ng-deep .cap-button {
+  height: 36px;
+  padding: 0px 23px;
 }
 
 // CARD - DASHBOARD
@@ -218,7 +250,7 @@ cap-button::ng-deep .cap-button[disabled] {
 
     &:after {
       border-right-color: #fff;
-      border-width: 12px;
+      border-width: 13px;
     }
 
     &:before {
@@ -249,17 +281,20 @@ cap-button::ng-deep .cap-button[disabled] {
   position: static;
   float: left;
   margin-top: 40px;
-  .hint-container{
+
+  .hint-container {
     top: 31px;
     left: 60px;
+
     &:after,
     &:before {
       left: -26px;
-      top: 19px;
+      top: 18px;
       transform: none;
     }
   }
 }
+
 // HINT - end
 
 .btn-permitir {
@@ -285,8 +320,7 @@ cap-button::ng-deep .cap-button[disabled] {
 }
 
 .nome {
-  font-size: 20px;
-  margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .cpf {
@@ -309,11 +343,6 @@ cap-button::ng-deep .cap-button[disabled] {
   margin-top: 10px;
 }
 
-// .selectAll-modulos {
-//   position: relative;
-//   top: 20px;
-// }
-
 .button_confirmar {
   float: right;
 }
@@ -327,11 +356,13 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
 }
 
 // MODAL
-.modal {
+.old-modal {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 2;
 
@@ -349,6 +380,7 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
     border-radius: 10px;
     background-color: white;
     padding: 35px 20px;
+    position: relative;
   }
 
   p {
@@ -390,7 +422,36 @@ cap-btnCollapse.volta::ng-deep .btnCollapse::after {
     }
   }
 }
+
 // MODAL - end
 
 .content-header .col-md-3,
-.content-header .col-md-1{ margin-top: -5px; }
+.content-header .col-md-1 {
+  margin-top: -5px;
+}
+
+cap-checkbox.checkbox-cinza::ng-deep label:before {
+  background: rgb(117, 117, 117) !important;
+}
+
+.empty-message {
+  text-align: center;
+}
+
+cap-new-pagination::ng-deep .pagination {
+  margin-top: 25px;
+}
+
+.float--right {
+  float: right;
+  margin-top: -5px;
+}
+
+.disabled {
+  pointer-events: none;
+
+  .card-titulo,
+  .card-valor-total {
+    opacity: 0.65;
+  }
+}

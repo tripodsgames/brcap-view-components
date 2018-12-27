@@ -117,17 +117,17 @@ export class CapLoginComponent implements OnInit {
     this.usuario.sistema = this.sistema;
     this.loginService.login(this.usuario, this.urlEnv).subscribe(
       res => {
-        if (res && res._body) {
-          const body = JSON.parse(res._body);
+        if (res && res["_body"]) {
+          const body = JSON.parse(res["_body"]);
           this.loginService.getAuth(body.token, this.urlEnv).subscribe(
             modulosPermitidos => {
-              if (modulosPermitidos && modulosPermitidos._body) {
+              if (modulosPermitidos && modulosPermitidos["_body"]) {
                 const usuarioLogado: any = new Object();
                 usuarioLogado.nome = body.nome;
                 usuarioLogado.login = this.usuario.login;
                 usuarioLogado.email = this.usuario.login;
                 usuarioLogado.token = body.token;
-                usuarioLogado.modulos = JSON.parse(modulosPermitidos._body);
+                usuarioLogado.modulos = JSON.parse(modulosPermitidos["_body"]);
                 sessionStorage.setItem(
                   this.userKeySession + this.sistema + "_" + this.environment,
                   JSON.stringify(usuarioLogado)
@@ -145,8 +145,8 @@ export class CapLoginComponent implements OnInit {
               if (err) {
                 if (err.status === 401) {
                   toastr["warning"]("Usuário sem permissão de acesso.");
-                } else if (err._body) {
-                  toastr["warning"](JSON.parse(err._body).mensagem);
+                } else if (err["_body"]) {
+                  toastr["warning"](JSON.parse(err["_body"]).mensagem);
                 }
               }
             }
@@ -156,8 +156,8 @@ export class CapLoginComponent implements OnInit {
         }
       },
       err => {
-        if (err && err._body) {
-          toastr["warning"](JSON.parse(err._body).mensagem);
+        if (err && err["_body"]) {
+          toastr["warning"](JSON.parse(err["_body"]).mensagem);
         }
       }
     );

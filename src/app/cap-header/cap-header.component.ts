@@ -119,7 +119,6 @@ export class CapHeaderComponent implements OnInit {
       // if(methodToBeInvoked) methodToBeInvoked.call(elem);
 
     }
-    console.log("Tela = " + this.tela)
     this.tela = !this.tela;
   }
 

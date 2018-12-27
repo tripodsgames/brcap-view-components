@@ -19,8 +19,9 @@
     </div>
   </div> -->
 
+
   <div class="content">
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-md-3">
         <cap-inputText label="Nome" icon="busca"></cap-inputText>
       </div>
@@ -36,32 +37,9 @@
 
 
     <br>
-    <br> -->
+    <br>
 
-      <!-- <div class="box">
-        <cap-tabPanel class="fix"> -->
-          <cap-tab title="INFORMAÇÕES GERAIS">
-            <app-informacoes-gerais-plano #infoGeral [camposDesabilitados]="camposDesabilitados" 
-            [modalidades]="modalidades" [indicadores]="indicadores" [periodicidades]="periodicidades" [body]="body"></app-informacoes-gerais-plano>
-          </cap-tab>
-          <cap-tab title="SORTEIOS">
-            <app-sorteios-plano #formSorteio [camposDesabilitados]="camposDesabilitados" [tiposSorteio]="tiposSorteio" [tiposMesSorteio]="tiposMesSorteio" 
-            [body]="body"></app-sorteios-plano>
-          </cap-tab>
-          <cap-tab title="QUOTAS">
-            <app-quotas-plano [camposDesabilitados]="camposDesabilitados" [body]="body"></app-quotas-plano>
-          </cap-tab>
-          <cap-tab title="RESGATE">
-            <app-resgate-plano [body]="body" [camposDesabilitados]="camposDesabilitados" [formatosLimite]="formatosLimite" [formatosIntervalo]="formatosIntervalo"></app-resgate-plano>
-          </cap-tab>
-          <cap-tab title="PROVISÕES">
-            <app-provisoes-plano [tiposReserva]="tiposReserva" [camposDesabilitados]="camposDesabilitados" [indicadores]="indicadores" [tiposPrazoCorrecao]="tiposPrazoCorrecao"
-              [quotasRateio]="quotasRateio" [body]="body"> </app-provisoes-plano>
-          </cap-tab>
-        <!-- </cap-tabPanel>
-      </div> -->
-
-    <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes>
+    <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes>
 
   </div>
 </div>

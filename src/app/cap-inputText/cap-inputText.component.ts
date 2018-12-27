@@ -85,6 +85,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
 
   escrevendo = false;
   emptyMessage;
+  filtrando = false;
 
   private $el: any;
   private innerValue: any = "";
@@ -129,6 +130,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
     this.value = "";
     this.escrevendo = false;
     this.emptyMessage = false;
+    this.filtrando = false;
   }
 
   onKeyup(event) {

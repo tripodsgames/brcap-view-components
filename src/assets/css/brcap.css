@@ -43,7 +43,7 @@ body.minimizado .content-wrapper {
   z-index: 840;
 }
 
-.body.minimizaco cap-menu::ng-deep .cap-menu{
+.body.minimizaco cap-menu::ng-deep .cap-menu {
   display: block !important;
 }
 
@@ -81,6 +81,7 @@ body.minimizado .content-wrapper {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   padding: 15px 15px 15px 15px;
 }
+
 .navbar {
   background-color: #fff;
   z-index: 1;
@@ -160,6 +161,7 @@ h3 {
   padding: 50px;
   margin-top: -20px;
 }
+
 .dp-calendar-wrapper {
   border: none;
 }
@@ -245,13 +247,13 @@ dp-date-picker {
   padding: 20px 10px 10px 13px;
 }
 
-.cap-inputText-icon{
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    font-size: 24px;
-    color: rgba(0, 0, 0, 0.54);
-    cursor: pointer;
+.cap-inputText-icon {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.54);
+  cursor: pointer;
 }
 
 cap-inputText[ng-reflect-style-class="outline"] label {
@@ -326,12 +328,15 @@ label.error,
 input:disabled::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
+
 input:disabled:-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
+
 input:disabled::-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
+
 input:disabled:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
@@ -352,7 +357,7 @@ input:disabled:-ms-input-placeholder {
   top: 7px;
 }
 
-.content-header .bootstrap-select > .dropdown-toggle {
+.content-header .bootstrap-select>.dropdown-toggle {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.87);
   border-radius: 0px;
@@ -395,9 +400,11 @@ input:disabled:-ms-input-placeholder {
   box-shadow: none;
   border-color: none;
 }
+
 p.label-text {
   margin: 10px 0px;
 }
+
 p.label-text label {
   background-color: transparent;
   top: 0;
@@ -459,54 +466,71 @@ label.disabled {
 .ajuda:before {
   content: "\e921";
 }
+
 .menu:before {
   content: "\e900";
 }
+
 .adiantar10:before {
   content: "\e919";
 }
+
 .voltar:before {
   content: "\e901";
 }
+
 .adicionar:before {
   content: "\e902";
 }
+
 .alerta:before {
   content: "\e903";
 }
+
 .arquivo:before {
   content: "\e904";
 }
+
 .busca:before {
   content: "\e905";
 }
+
 .calendario:before {
   content: "\e906";
 }
+
 .check-circulo:before {
   content: "\e907";
 }
+
 .compartilhar:before {
   content: "\e908";
 }
+
 .esconder-senha:before {
   content: "\e909";
 }
+
 .seguir:before {
   content: "\e910";
 }
+
 .anterior:before {
   content: "\e911";
 }
+
 .seta-cimabaixo:before {
   content: "\e912";
 }
+
 .usuario:before {
   content: "\e913";
 }
+
 .x-circulo:before {
   content: "\e914";
 }
+
 .ver-senha:before {
   content: "\e916";
 }
@@ -514,36 +538,47 @@ label.disabled {
 .retrair:before {
   content: "\e90a";
 }
+
 .expandir:before {
   content: "\e910";
 }
+
 .favorito:before {
   content: "\e90b";
 }
+
 .fullscreen:before {
   content: "\e922";
 }
+
 .info:before {
   content: "\e90c";
 }
+
 .mais-opcoes:before {
   content: "\e90d";
 }
+
 .menos:before {
   content: "\e90e";
 }
+
 .sair:before {
   content: "\e90f";
 }
+
 .adiantar10:before {
   content: "\e919";
 }
+
 .pausar:before {
   content: "\e91a";
 }
+
 .tocar:before {
   content: "\e91b";
 }
+
 .voltar10:before {
   content: "\e91c";
 }
@@ -551,21 +586,27 @@ label.disabled {
 .volumeoff:before {
   content: "\e91d";
 }
+
 .volumeon:before {
   content: "\e91e";
 }
+
 .codigo:before {
   content: "\e91f";
 }
+
 .editar:before {
   content: "\e920";
 }
+
 .mover:before {
   content: "\e915";
 }
+
 .x:before {
   content: "\78";
 }
+
 .sucesso:before {
   content: "\e917";
 }
@@ -574,6 +615,7 @@ label.disabled {
   position: relative;
   left: -10px;
 }
+
 cap-button .xs i.brcap-ico {
   left: -6px !important;
   top: 2px !important;
@@ -595,6 +637,7 @@ cap-button .xs i.brcap-ico {
   margin: 0;
   overflow: visible;
 }
+
 .hamburger:hover {
   opacity: 0.7;
 }
@@ -611,6 +654,7 @@ cap-button .xs i.brcap-ico {
   top: 50%;
   margin-top: -2px;
 }
+
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -623,14 +667,17 @@ cap-button .xs i.brcap-ico {
   transition-duration: 0.15s;
   transition-timing-function: ease;
 }
+
 .hamburger-inner::before,
 .hamburger-inner::after {
   content: "";
   display: block;
 }
+
 .hamburger-inner::before {
   top: -11px;
 }
+
 .hamburger-inner::after {
   bottom: -11px;
 }
@@ -648,60 +695,63 @@ cap-button .xs i.brcap-ico {
   transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 } */
 
-ng-select > div {
+ng-select>div {
   border-radius: 4px;
   border: 1px solid #757575 !important;
   outline: none;
 }
 
-.content-header ng-select > div {
+.content-header ng-select>div {
   border: none !important;
   border-bottom: 1px solid #757575 !important;
   border-radius: 0px;
 }
 
-.content-header ng-select[ng-reflect-is-disabled="true"] > div {
+.content-header ng-select[ng-reflect-is-disabled="true"]>div {
   border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
 }
 
-.content-header ng-select > div > div.single > div.value,
-.content-header ng-select > div > div.single > div.placeholder {
+.content-header ng-select>div>div.single>div.value,
+.content-header ng-select>div>div.single>div.placeholder {
   padding-top: 8px !important;
 }
 
-select-dropdown > div.below {
+select-dropdown>div.below {
   z-index: 4;
 }
 
-ng-select > div > div.single > div.value,
-ng-select > div > div.single > div.placeholder {
+ng-select>div>div.single>div.value,
+ng-select>div>div.single>div.placeholder {
   line-height: 50px !important;
 }
-ng-select > div > div.single {
+
+ng-select>div>div.single {
   height: 50px !important;
 }
-select-dropdown > div {
+
+select-dropdown>div {
   font-family: Ubuntu;
   font-size: 12px;
 }
-select-dropdown > div .filter input {
+
+select-dropdown>div .filter input {
   height: 50px;
   padding: 10px 10px !important;
   outline: none;
 }
 
-ng-select > div > div.single > div.clear,
-ng-select > div > div.single > div.toggle {
+ng-select>div>div.single>div.clear,
+ng-select>div>div.single>div.toggle {
   line-height: 50px !important;
   color: #000 !important;
   overflow: hidden;
 }
 
-ng-select > div > div.single > div.toggle:hover {
+ng-select>div>div.single>div.toggle:hover {
   background-color: transparent !important;
 }
 
-select-dropdown > div .options ul li {
+select-dropdown>div .options ul li {
   padding: 10px !important;
   border-top: 1px solid #f1f1f1;
 }
@@ -783,6 +833,7 @@ select-dropdown > div .options ul li {
   text-decoration: none !important;
   font-weight: 400 !important;
 }
+
 .mydp .weekdaytitle {
   background-color: #fff !important;
   font-size: 10px !important;
@@ -828,10 +879,12 @@ select-dropdown > div .options ul li {
 .mydp .daycell .datevalue:hover {
   background-color: #dfdfdf;
 }
+
 .mydp .daycell .datevalue {
   padding: 8px 1px !important;
   border-radius: 4px !important;
 }
+
 .mydp .selectorarrow,
 .mydp .headerbtn,
 .mydp .headerlabelbtn,
@@ -844,6 +897,7 @@ select-dropdown > div .options ul li {
   background-color: #fff !important;
   box-shadow: none !important;
 }
+
 .mydp .daycell,
 .mydp .inputnoteditable,
 .mydp .monthcell,
@@ -926,6 +980,7 @@ select-dropdown > div .options ul li {
   text-decoration: none !important;
   font-weight: 400 !important;
 }
+
 .mydrp .weekdaytitle {
   background-color: #fff !important;
   font-size: 10px !important;
@@ -975,10 +1030,12 @@ select-dropdown > div .options ul li {
 .mydrp .daycell .datevalue:hover {
   background-color: #dfdfdf;
 }
+
 .mydrp .daycell .datevalue {
   padding: 8px 1px !important;
   border-radius: 4px !important;
 }
+
 .mydrp .selectorarrow,
 .mydrp .headerbtn,
 .mydrp .headerlabelbtn,
@@ -991,6 +1048,7 @@ select-dropdown > div .options ul li {
   background-color: #fff !important;
   box-shadow: none !important;
 }
+
 .mydrp .daycell,
 .mydrp .inputnoteditable,
 .mydrp .monthcell,
@@ -1019,24 +1077,25 @@ ng-select[ng-reflect-is-disabled="true"] {
   cursor: not-allowed !important;
 }
 
-ng-select > div > div.single > div.toggle {
+ng-select>div>div.single>div.toggle {
   font-family: "brcap-ico";
 }
 
-ng-select > div.disabled > div.single > div.toggle {
+ng-select>div.disabled>div.single>div.toggle {
   color: #ddd !important;
 }
 
-ng-select > div > div.single > div.toggle:before {
+ng-select>div>div.single>div.toggle:before {
   content: "\e90a";
   font-size: 28px;
 }
 
-ng-select > div.open > div.single > div.toggle:before {
+ng-select>div.open>div.single>div.toggle:before {
   content: "\e918";
   font-size: 28px;
 }
-select-dropdown > div.above {
+
+select-dropdown>div.above {
   z-index: 3;
 }
 
@@ -1066,6 +1125,7 @@ div.inline-checkbox label {
   right: 20px;
   top: 20px;
 }
+
 .toast {
   border: 2px solid;
   border-left: 10px solid;
@@ -1079,12 +1139,15 @@ div.inline-checkbox label {
 .toast.toast-warning {
   border-color: #ffb72a;
 }
+
 .toast.toast-info {
   border-color: rgba(0, 0, 0, 0.54);
 }
+
 .toast.toast-error {
   border-color: #b00020;
 }
+
 .toast.toast-success {
   border-color: #086930;
 }
@@ -1104,6 +1167,7 @@ button.cap-button.btn-ico .brcap-ico {
 button.cap-button.sm.btn-ico .brcap-ico {
   font-size: 15px;
 }
+
 .buttons-form {
   padding: 20px 0px 10px 0px;
 }
@@ -1116,6 +1180,7 @@ cap-icon.fecharQuickView {
   display: block;
   z-index: 3;
 }
+
 .quickview {
   position: absolute;
   width: 280px;
@@ -1142,6 +1207,7 @@ cap-icon.fecharQuickView {
 .view-block {
   margin: 15px 0px;
 }
+
 .over {
   position: absolute;
   width: 100%;
@@ -1176,7 +1242,8 @@ cap-icon.fecharQuickView {
   padding: 5px;
   border-radius: 4px;
 }
-.table-filter > thead > tr:nth-child(1) > th {
+
+.table-filter>thead>tr:nth-child(1)>th {
   background-color: #e4e4e4 !important;
   height: 40px;
 }
@@ -1185,28 +1252,30 @@ cap-icon.fecharQuickView {
   padding: 0px;
 }
 
-.table-filter td.select cap-select > ng-select > div {
+.table-filter td.select cap-select>ng-select>div {
   border: none !important;
   height: 40px;
 }
 
-.table-filter ng-select > div > div.single > div.toggle:before,
-.table-filter ng-select > div.open > div.single > div.toggle:before {
+.table-filter ng-select>div>div.single>div.toggle:before,
+.table-filter ng-select>div.open>div.single>div.toggle:before {
   font-size: 18px;
 }
 
-.table-filter > thead > tr:nth-child(2) > th {
+.table-filter>thead>tr:nth-child(2)>th {
   background: #fff !important;
   padding: 0;
 
-  ng-select > div {
+  ng-select>div {
     border: none !important;
     height: 40px;
   }
-  ng-select > div > div.single > div.toggle {
+
+  ng-select>div>div.single>div.toggle {
     line-height: 40px !important;
   }
-  ng-select > div > div.single > div.toggle:before {
+
+  ng-select>div>div.single>div.toggle:before {
     font-size: 20px;
     color: #888;
   }
@@ -1218,19 +1287,54 @@ cap-icon.fecharQuickView {
 }
 
 /** COL-XL **/
-@media screen and (min-width:1441px){
-  .col-xl-1{ width: 8.33333333%; }
-  .col-xl-2{ width: 16.66666667%; }
-  .col-xl-3{ width: 25%; }
-  .col-xl-4{ width: 33.33333333%; }
-  .col-xl-5{ width: 41.66666667%; }
-  .col-xl-6{ width: 50%; }
-  .col-xl-7{ width: 58.33333333%; }
-  .col-xl-8{ width: 66.66666667%; }
-  .col-xl-9{ width: 75%; }
-  .col-xl-10{ width: 83.33333333%; }
-  .col-xl-11{ width: 91.66666667%; }
-  .col-xl-12{ width: 100%; }
+@media screen and (min-width:1441px) {
+  .col-xl-1 {
+    width: 8.33333333%;
+  }
+
+  .col-xl-2 {
+    width: 16.66666667%;
+  }
+
+  .col-xl-3 {
+    width: 25%;
+  }
+
+  .col-xl-4 {
+    width: 33.33333333%;
+  }
+
+  .col-xl-5 {
+    width: 41.66666667%;
+  }
+
+  .col-xl-6 {
+    width: 50%;
+  }
+
+  .col-xl-7 {
+    width: 58.33333333%;
+  }
+
+  .col-xl-8 {
+    width: 66.66666667%;
+  }
+
+  .col-xl-9 {
+    width: 75%;
+  }
+
+  .col-xl-10 {
+    width: 83.33333333%;
+  }
+
+  .col-xl-11 {
+    width: 91.66666667%;
+  }
+
+  .col-xl-12 {
+    width: 100%;
+  }
 
   .col-xl-1,
   .col-xl-2,
@@ -1243,13 +1347,43 @@ cap-icon.fecharQuickView {
   .col-xl-9,
   .col-xl-10,
   .col-xl-11,
-  .col-xl-12{ 
-    float: left; 
+  .col-xl-12 {
+    float: left;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
   }
 
-  .hidden-xl{ display: none; }
+  .hidden-xl {
+    display: none;
+  }
+}
+
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+cap-modal.sm .modal-dialog {
+  width: 350px;
+}
+
+cap-modal.lg .modal-dialog {
+  width: 750px;
 }

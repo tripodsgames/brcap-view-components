@@ -63,7 +63,6 @@
   margin-left: 225px;
 }
 .text-user {
-  color: rgba(0, 0, 0, 0.87);
   font-family: Ubuntu;
   font-weight: 500;
   padding-right: 10px;
@@ -79,16 +78,17 @@
   top:25px;
   text-decoration: none !important;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .box-user {
   margin-left: -20px;
   float: right;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .user-menu {
   position: relative;
-  //top: -48px;
   float: right;
   margin-right: 15px;
 }

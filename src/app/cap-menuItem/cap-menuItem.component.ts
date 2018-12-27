@@ -28,10 +28,11 @@ export class CapMenuItemComponent {
   selecionar = new EventEmitter();
 
   exibir = false;
-
+  icone;
   mod = "";
   status = "";
   subClass = "";
+  exibido = false;
 
   constructor() {}
 
@@ -53,5 +54,10 @@ export class CapMenuItemComponent {
      
   }
 
+  rotacionar(){
+    if(this.exibir){
+      this.exibido = true;
+    }
+  }
    
 }
