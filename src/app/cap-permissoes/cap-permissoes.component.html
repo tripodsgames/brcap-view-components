@@ -110,11 +110,11 @@
                         </div>
                       </div>
 
-                      <div class="box-closed" [hidden]="modulo.open">
+                      <!-- <div class="box-closed" [hidden]="modulo.open">
                         <div class="row">
                           <div class="col-md-1">
-                            <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" [(ngModel)]="modulo.todos"
-                              class="selectAll-modulos" name="selectAllModules-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
+                            <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && modulo.todos}" [(ngModel)]="modulo.todos"
+                              class="selectAll-modulos" name="selectAllModules-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo, true)"></cap-checkbox>
                           </div>
                           <div class="col-md-8">
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
@@ -127,18 +127,20 @@
                             <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
 
-                      <div class="box-opened" [hidden]="!modulo.open">
+                      <div [ngClass]="{'box-opened': modulo.open, 'box-closed': !modulo.open}">
                         <div class="row">
                           <div class="col-md-1">
-                            <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" [(ngModel)]="modulo.todos"
-                              class="selectAll-modulos" name="selecionarTodos-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo, false)"></cap-checkbox>
+                            <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && modulo.todos}" [(ngModel)]="modulo.todos"
+                              class="selectAll-modulos" name="selecionarTodos-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo, true)"></cap-checkbox>
                           </div>
                           <div class="col-md-8">
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
                               {{modulo.nome }}
                             </h3>
+                            <p class="chips-caption-brcap" *ngIf="!modulo.open">{{modulo.quantidadePermissionados}} FUNCIONALIDADES DE
+                              {{modulo.quantidadeFuncionalidades}}</p>
                           </div>
                           <div class="col-md-3">
                             <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
@@ -148,7 +150,7 @@
                           <div class="func-label">
 
                             <div class="item">
-                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && modulo.todos}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
                                 [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
                               <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
                                 *ngIf="!func.exibirAcoes"></cap-icon>
@@ -158,27 +160,27 @@
 
                             <div class="acoes " [hidden]="!func.exibirAcoes">
                               <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouIncluir(modulo, func, $event)"
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && func.incluir}" (ngModelChange)="verificaSelecionouIncluir(modulo, func, $event)"
                                   [(ngModel)]="func.incluir" name="incluir-{{indexM}}-{{indexF}} " itemLabel="Incluir"></cap-checkbox>
                               </div>
                               <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouExcluir(modulo, func, $event)"
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && func.excluir}" (ngModelChange)="verificaSelecionouExcluir(modulo, func, $event)"
                                   [(ngModel)]="func.excluir" name="excluir-{{indexM}}-{{indexF}} " itemLabel="Excluir"></cap-checkbox>
                               </div>
                               <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouPesquisar(modulo, func, $event)"
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && func.pesquisar}" (ngModelChange)="verificaSelecionouPesquisar(modulo, func, $event)"
                                   [(ngModel)]="func.pesquisar" name="pesquisar-{{indexM}}-{{indexF}} " itemLabel="Pesquisar"></cap-checkbox>
                               </div>
                               <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAlterar(modulo, func, $event)"
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && func.alterar}" (ngModelChange)="verificaSelecionouAlterar(modulo, func, $event)"
                                   [(ngModel)]="func.alterar" name="alterar-{{indexM}}-{{indexF}} " itemLabel="Alterar"></cap-checkbox>
                               </div>
                               <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouBloquear(modulo, func, $event)"
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && func.bloquear}" (ngModelChange)="verificaSelecionouBloquear(modulo, func, $event)"
                                   [(ngModel)]="func.bloquear" name="bloquear-{{indexM}}-{{indexF}} " itemLabel="Bloquear"></cap-checkbox>
                               </div>
                               <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAprovar(modulo, func, $event)"
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && func.aprovar}" (ngModelChange)="verificaSelecionouAprovar(modulo, func, $event)"
                                   [(ngModel)]="func.aprovar" name="aprovar-{{indexM}}-{{indexF}} " itemLabel="Aprovar"></cap-checkbox>
                               </div>
                             </div>

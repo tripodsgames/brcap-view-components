@@ -78,6 +78,7 @@ export class PermissoesComponent implements OnInit {
         this.listaModulos = res[0].modulos;
         this.listaModulos.forEach(m => {
           m.quantidadePermissionados = 0;
+          // m.open = false;
           m.quantidadeFuncionalidades = m.funcionalidades.length;
           m.funcionalidades.forEach(f => {
             f.exibirAcoes = false;
@@ -338,8 +339,6 @@ export class PermissoesComponent implements OnInit {
   }
 
   selecionarTodasFuncionalidade(f, modulo?, selectModule?) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     f.todos = !f.todos;
     if (selectModule) {
       let cont = 0;
@@ -358,6 +357,7 @@ export class PermissoesComponent implements OnInit {
       f.alterar = true;
       f.bloquear = true;
       f.aprovar = true;
+      this.checkboxModificado = true;
     } else {
       f.incluir = false;
       f.excluir = false;
@@ -365,6 +365,7 @@ export class PermissoesComponent implements OnInit {
       f.alterar = false;
       f.bloquear = false;
       f.aprovar = false;
+      this.checkboxModificado = false;
     }
   }
 
@@ -385,6 +386,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   toggleModulo(modulo) {
+    console.log(modulo.open)
     modulo.open = !modulo.open;
   }
 
@@ -420,7 +422,7 @@ export class PermissoesComponent implements OnInit {
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
 
-                  modulo.checkboxAtivo = true;
+                  // modulo.checkboxAtivo = true;
 
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
@@ -464,8 +466,6 @@ export class PermissoesComponent implements OnInit {
   }
 
   public selectAllFuncionalidades(modulo) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     if (modulo && modulo.funcionalidades) {
       modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
@@ -490,37 +490,26 @@ export class PermissoesComponent implements OnInit {
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouAlterar(modulo, func, value) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouPesquisar(modulo, func, value) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
   }
   verificaSelecionouExcluir(modulo, func, value) {
-    this.checkboxModificado = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
   }
   verificaSelecionouBloquear(modulo, func, value) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
   }
   verificaSelecionouAprovar(modulo, func, value) {
-    this.checkboxModificado = true;
-    // modulo.checkboxAtivo = false;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
   }
