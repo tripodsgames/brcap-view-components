@@ -29,7 +29,6 @@ export class PermissoesComponent implements OnInit {
   permissao;
   exibirHint = false;
   hintAtivo = false;
-  checkboxModificado = false;
   cardPermissionados = false;
   cardNaoPermissionados = false;
   hintCardAtivo = false;
@@ -37,6 +36,7 @@ export class PermissoesComponent implements OnInit {
   modalActive = false;
   filtro;
   checkboxAtivo = false;
+  checkboxModificado = false;
   listaFiltrado;
   tabelaLinha;
   emptyMessage = false;
@@ -356,7 +356,6 @@ export class PermissoesComponent implements OnInit {
       f.alterar = true;
       f.bloquear = true;
       f.aprovar = true;
-      this.checkboxModificado = true;
     } else {
       f.incluir = false;
       f.excluir = false;
@@ -364,8 +363,8 @@ export class PermissoesComponent implements OnInit {
       f.alterar = false;
       f.bloquear = false;
       f.aprovar = false;
-      this.checkboxModificado = false;
     }
+    // this.compareOriginalEditado();
   }
 
   toggleAcoes(f) {
@@ -452,6 +451,7 @@ export class PermissoesComponent implements OnInit {
         });
       }
     });
+    localStorage.setItem("lista", JSON.stringify(this.listaModulos));
   }
 
   public selecionarTodos(modulo, selectModule) {
@@ -464,7 +464,6 @@ export class PermissoesComponent implements OnInit {
   }
 
   public selectAllFuncionalidades(modulo) {
-    this.checkboxModificado = true;
     if (modulo && modulo.funcionalidades) {
       modulo.funcionalidades.forEach(funcionalidade => {
         funcionalidade.todos = modulo.todos;
@@ -485,6 +484,25 @@ export class PermissoesComponent implements OnInit {
         }
       });
     }
+
+    this.compareOriginalEditado();
+  }
+
+  private compareOriginalEditado() {
+    let lista:any;
+    lista = JSON.parse(localStorage.getItem("lista"));
+    let hasAlteracao = true;
+    lista.forEach(original => {
+      this.listaModulos.forEach(editado => {
+        if (original.codigo === editado.codigo && editado.todos !== original.todos) {
+          hasAlteracao = true;
+          return;
+        }
+        if(original.codigo === editado.codigo && editado.todos == original.todos){
+          hasAlteracao = false;
+        }
+      });
+    });
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
