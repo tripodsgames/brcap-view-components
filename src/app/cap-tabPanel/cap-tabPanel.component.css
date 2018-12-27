@@ -37,7 +37,7 @@
 .cap-tabPanel > li.disabled > a {
   background-color: #e5e5e5;
   color: #ccc;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
 }
 .cap-tabPanel > li.disabled:hover > a {
   background-color: #e5e5e5;

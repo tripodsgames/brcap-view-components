@@ -737,9 +737,9 @@ select-dropdown > div .options ul li {
   background: transparent !important;
 }
 
-.mydp .selectiongroup {
+/* .mydp .selectiongroup {
   border: 1px solid #757575 !important;
-}
+} */
 
 .mydrp .invaliddaterange {
   background: transparent !important;
