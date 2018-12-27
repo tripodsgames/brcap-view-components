@@ -386,7 +386,6 @@ export class PermissoesComponent implements OnInit {
   }
 
   toggleModulo(modulo) {
-    console.log(modulo.open)
     modulo.open = !modulo.open;
   }
 

@@ -110,25 +110,6 @@
                         </div>
                       </div>
 
-                      <!-- <div class="box-closed" [hidden]="modulo.open">
-                        <div class="row">
-                          <div class="col-md-1">
-                            <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo && modulo.todos}" [(ngModel)]="modulo.todos"
-                              class="selectAll-modulos" name="selectAllModules-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo, true)"></cap-checkbox>
-                          </div>
-                          <div class="col-md-8">
-                            <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
-                              {{modulo.nome }}
-                            </h3>
-                            <p class="chips-caption-brcap">{{modulo.quantidadePermissionados}} FUNCIONALIDADES DE
-                              {{modulo.quantidadeFuncionalidades}}</p>
-                          </div>
-                          <div class="col-md-3">
-                            <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
-                          </div>
-                        </div>
-                      </div> -->
-
                       <div [ngClass]="{'box-opened': modulo.open, 'box-closed': !modulo.open}">
                         <div class="row">
                           <div class="col-md-1">
