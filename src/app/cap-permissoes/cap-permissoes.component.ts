@@ -77,6 +77,7 @@ export class PermissoesComponent implements OnInit {
       if (res) {
         this.listaModulos = res[0].modulos;
         this.listaModulos.forEach(m => {
+          m.quantidadePermissionados = 0;
           m.quantidadeFuncionalidades = m.funcionalidades.length;
           m.funcionalidades.forEach(f => {
             f.exibirAcoes = false;
