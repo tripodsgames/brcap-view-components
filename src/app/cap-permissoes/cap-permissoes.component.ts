@@ -465,8 +465,8 @@ export class PermissoesComponent implements OnInit {
   }
 
   public selectAllFuncionalidades(modulo) {
+    this.checkboxModificado = true;
     if (modulo && modulo.funcionalidades) {
-      modulo.todos = !modulo.todos;
       modulo.funcionalidades.forEach(funcionalidade => {
         funcionalidade.todos = modulo.todos;
         if (funcionalidade.todos) {
