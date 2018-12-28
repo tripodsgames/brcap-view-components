@@ -444,6 +444,7 @@ export class PermissoesComponent implements OnInit {
                     || funcModulo.bloquear
                     || funcModulo.aprovar) {
                     modulo.quantidadePermissionados++;
+                    funcModulo.todos = true;
                   }
                 }
               });
