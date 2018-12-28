@@ -418,9 +418,7 @@ export class PermissoesComponent implements OnInit {
               modulo.todos = permissao.funcionalidades.length > 0;
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
-
                   // modulo.checkboxAtivo = true;
-
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
                   funcModulo.incluir = funcPermissao.incluir;
@@ -500,7 +498,13 @@ export class PermissoesComponent implements OnInit {
             this.hasAlteracao = true;
           }
           editadoM.funcionalidades.forEach(editadoF => {
-            if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos) {
+            if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos || 
+              originalF.codigo === editadoF.codigo && editadoF.incluir !== originalF.incluir ||
+              originalF.codigo === editadoF.codigo && editadoF.excluir !== originalF.excluir ||
+              originalF.codigo === editadoF.codigo && editadoF.pesquisar !== originalF.pesquisar ||
+              originalF.codigo === editadoF.codigo && editadoF.alterar !== originalF.alterar ||
+              originalF.codigo === editadoF.codigo && editadoF.bloquear !== originalF.bloquear ||
+              originalF.codigo === editadoF.codigo && editadoF.aprovar !== originalF.aprovar) {
               this.hasAlteracao = true;
             }
           });
