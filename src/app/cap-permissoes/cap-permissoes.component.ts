@@ -487,59 +487,77 @@ export class PermissoesComponent implements OnInit {
   }
 
   private compareOriginalEditado() {
-    let lista: any;
-    lista = JSON.parse(localStorage.getItem("lista"));
     this.hasAlteracao = false;
-    lista.forEach(originalM => {
-      originalM.funcionalidades.forEach(originalF => {
-        this.listaModulos.forEach(editadoM => {
-          if (originalM.codigo === editadoM.codigo && editadoM.todos !== originalM.todos) {
-            this.hasAlteracao = true;
+
+    if (this.usuariosNaoPermissionados.find((usuNaoPerm) => usuNaoPerm.login == this.usuarioPermissao.login)) {
+      this.listaModulos.forEach(naoPermiModulo => {
+        if(naoPermiModulo.todos){
+          this.hasAlteracao = true;
+        }
+      });
+
+    } else {
+
+      let lista: any;
+      lista = JSON.parse(localStorage.getItem("lista"));
+      this.hasAlteracao = false;
+      lista.forEach(originalM => {
+        if (!originalM.todos) {
+          originalM.todos = false;
+        }
+        originalM.funcionalidades.forEach(originalF => {
+          if (!originalF.todos) {
+            originalF.todos = false;
           }
-          editadoM.funcionalidades.forEach(editadoF => {
-            if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos || 
-              originalF.codigo === editadoF.codigo && editadoF.incluir !== originalF.incluir ||
-              originalF.codigo === editadoF.codigo && editadoF.excluir !== originalF.excluir ||
-              originalF.codigo === editadoF.codigo && editadoF.pesquisar !== originalF.pesquisar ||
-              originalF.codigo === editadoF.codigo && editadoF.alterar !== originalF.alterar ||
-              originalF.codigo === editadoF.codigo && editadoF.bloquear !== originalF.bloquear ||
-              originalF.codigo === editadoF.codigo && editadoF.aprovar !== originalF.aprovar) {
-                this.hasAlteracao = true;
+          this.listaModulos.forEach(editadoM => {
+            if (!editadoM.todos) {
+              editadoM.todos = false;
             }
+            if (originalM.codigo === editadoM.codigo && editadoM.todos !== originalM.todos) {
+              this.hasAlteracao = true;
+            }
+            editadoM.funcionalidades.forEach(editadoF => {
+              if (!editadoF.todos) {
+                editadoF.todos = false;
+              }
+              if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos) {
+                this.hasAlteracao = true;
+              }
+            });
           });
         });
       });
-    });
+    }
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
-    this.compareOriginalEditado();
+    // this.compareOriginalEditado();
   }
   verificaSelecionouAlterar(modulo, func, value) {
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
-    this.compareOriginalEditado();
+    // this.compareOriginalEditado();
   }
   verificaSelecionouPesquisar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
-    this.compareOriginalEditado();
+    // this.compareOriginalEditado();
   }
   verificaSelecionouExcluir(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
-    this.compareOriginalEditado();
+    // this.compareOriginalEditado();
   }
   verificaSelecionouBloquear(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
-    this.compareOriginalEditado();
+    // this.compareOriginalEditado();
   }
   verificaSelecionouAprovar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
-    this.compareOriginalEditado();
+    // this.compareOriginalEditado();
   }
 }
