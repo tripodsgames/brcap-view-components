@@ -29,7 +29,6 @@ export class PermissoesComponent implements OnInit {
   permissao;
   exibirHint = false;
   hintAtivo = false;
-  checkboxModificado = false;
   cardPermissionados = false;
   cardNaoPermissionados = false;
   hintCardAtivo = false;
@@ -44,6 +43,7 @@ export class PermissoesComponent implements OnInit {
   value;
   quantidadeFuncionalidades;
   quantidadePermissionados;
+  hasAlteracao = false;
 
   usuariosPermissionados = [];
   usuariosNaoPermissionados = [];
@@ -87,7 +87,7 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
-  //Pagination
+  // pagination
   montarPaginacao() {
     this.usuariosTabela = [];
     if (this.cardPermissionados) {
@@ -347,7 +347,6 @@ export class PermissoesComponent implements OnInit {
         }
       });
       modulo.todos = cont > 0;
-      f.todos = modulo.todos;
     }
     if (f.todos) {
       f.incluir = true;
@@ -356,7 +355,6 @@ export class PermissoesComponent implements OnInit {
       f.alterar = true;
       f.bloquear = true;
       f.aprovar = true;
-      this.checkboxModificado = true;
     } else {
       f.incluir = false;
       f.excluir = false;
@@ -364,8 +362,8 @@ export class PermissoesComponent implements OnInit {
       f.alterar = false;
       f.bloquear = false;
       f.aprovar = false;
-      this.checkboxModificado = false;
     }
+    this.compareOriginalEditado();
   }
 
   toggleAcoes(f) {
@@ -419,9 +417,7 @@ export class PermissoesComponent implements OnInit {
               modulo.todos = permissao.funcionalidades.length > 0;
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
-
                   // modulo.checkboxAtivo = true;
-
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
                   funcModulo.incluir = funcPermissao.incluir;
@@ -444,6 +440,7 @@ export class PermissoesComponent implements OnInit {
                     || funcModulo.bloquear
                     || funcModulo.aprovar) {
                     modulo.quantidadePermissionados++;
+                    funcModulo.todos = true;
                   }
                 }
               });
@@ -452,6 +449,7 @@ export class PermissoesComponent implements OnInit {
         });
       }
     });
+    localStorage.setItem("lista", JSON.stringify(this.listaModulos));
   }
 
   public selecionarTodos(modulo, selectModule) {
@@ -464,7 +462,6 @@ export class PermissoesComponent implements OnInit {
   }
 
   public selectAllFuncionalidades(modulo) {
-    this.checkboxModificado = true;
     if (modulo && modulo.funcionalidades) {
       modulo.funcionalidades.forEach(funcionalidade => {
         funcionalidade.todos = modulo.todos;
@@ -485,30 +482,84 @@ export class PermissoesComponent implements OnInit {
         }
       });
     }
+
+    this.compareOriginalEditado();
+  }
+
+  private compareOriginalEditado() {
+    this.hasAlteracao = false;
+    if (this.usuariosNaoPermissionados.find((usuNaoPerm) => usuNaoPerm.login == this.usuarioPermissao.login)) {
+      this.listaModulos.forEach(naoPermiModulo => {
+        if (naoPermiModulo.todos) {
+          this.hasAlteracao = true;
+        }
+      });
+    } else {
+      let lista: any;
+      lista = JSON.parse(localStorage.getItem("lista"));
+      lista.forEach(originalM => {
+        if (!originalM.todos) {
+          originalM.todos = false;
+        }
+        originalM.funcionalidades.forEach(originalF => {
+          if (!originalF.todos) {
+            originalF.todos = false;
+          }
+          this.listaModulos.forEach(editadoM => {
+            if (!editadoM.todos) {
+              editadoM.todos = false;
+            }
+            if (originalM.codigo === editadoM.codigo && editadoM.todos !== originalM.todos) {
+              this.hasAlteracao = true;
+            }
+            editadoM.funcionalidades.forEach(editadoF => {
+              if (!editadoF.todos) {
+                editadoF.todos = false;
+              }
+              if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos) {
+                this.hasAlteracao = true;
+              }
+            });
+          });
+        });
+      });
+    }
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouAlterar(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouPesquisar(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouExcluir(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouBloquear(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouAprovar(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
+    this.compareOriginalEditado();
   }
 }
