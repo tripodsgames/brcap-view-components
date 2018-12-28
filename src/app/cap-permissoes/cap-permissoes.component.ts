@@ -87,7 +87,7 @@ export class PermissoesComponent implements OnInit {
     });
   }
 
-  //Pagination
+  // pagination
   montarPaginacao() {
     this.usuariosTabela = [];
     if (this.cardPermissionados) {
@@ -488,19 +488,15 @@ export class PermissoesComponent implements OnInit {
 
   private compareOriginalEditado() {
     this.hasAlteracao = false;
-
     if (this.usuariosNaoPermissionados.find((usuNaoPerm) => usuNaoPerm.login == this.usuarioPermissao.login)) {
       this.listaModulos.forEach(naoPermiModulo => {
-        if(naoPermiModulo.todos){
+        if (naoPermiModulo.todos) {
           this.hasAlteracao = true;
         }
       });
-
     } else {
-
       let lista: any;
       lista = JSON.parse(localStorage.getItem("lista"));
-      this.hasAlteracao = false;
       lista.forEach(originalM => {
         if (!originalM.todos) {
           originalM.todos = false;
@@ -531,33 +527,39 @@ export class PermissoesComponent implements OnInit {
   }
 
   verificaSelecionouIncluir(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
   verificaSelecionouAlterar(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
   verificaSelecionouPesquisar(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
   verificaSelecionouExcluir(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
   verificaSelecionouBloquear(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
   verificaSelecionouAprovar(modulo, func, value) {
+    this.hasAlteracao = true;
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
 }

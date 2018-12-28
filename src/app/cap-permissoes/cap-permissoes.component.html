@@ -6,7 +6,8 @@
       </div>
       <div class="col-lg-4 col-xl-3 float--right" *ngIf="!usuarioPermissao">
         <input class="form-control input-type-text cap-inputText" placeholder="Pesquisar Nome, CPF ou E-mail"
-          [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca" autocomplete="off">
+          [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca"
+          autocomplete="off">
         <cap-icon icon="busca" class="cap-inputText-icon"></cap-icon>
       </div>
     </div>
@@ -120,7 +121,8 @@
                             <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
                               {{modulo.nome }}
                             </h3>
-                            <p class="chips-caption-brcap" *ngIf="!modulo.open">{{modulo.quantidadePermissionados}} FUNCIONALIDADES DE
+                            <p class="chips-caption-brcap" *ngIf="!modulo.open">{{modulo.quantidadePermissionados}}
+                              FUNCIONALIDADES DE
                               {{modulo.quantidadeFuncionalidades}}</p>
                           </div>
                           <div class="col-md-3">
