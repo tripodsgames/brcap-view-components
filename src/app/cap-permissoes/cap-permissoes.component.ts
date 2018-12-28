@@ -44,6 +44,7 @@ export class PermissoesComponent implements OnInit {
   value;
   quantidadeFuncionalidades;
   quantidadePermissionados;
+  hasAlteracao = false;
 
   usuariosPermissionados = [];
   usuariosNaoPermissionados = [];
@@ -391,6 +392,7 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlSistemas).subscribe(res => {
       if (res && res[0] && res[0].permissoes) {
         this.usuarioPermissao.permissoes = res[0].permissoes;
+        console.log(this.usuarioPermissao.permissoes);
         this.usuarioPermissao.permissoes.forEach(p => {
           p.funcionalidades.forEach(f => {
             f.acoes = [];
@@ -490,15 +492,11 @@ export class PermissoesComponent implements OnInit {
   private compareOriginalEditado() {
     let lista:any;
     lista = JSON.parse(localStorage.getItem("lista"));
-    let hasAlteracao = true;
+    this.hasAlteracao = false;
     lista.forEach(original => {
       this.listaModulos.forEach(editado => {
         if (original.codigo === editado.codigo && editado.todos !== original.todos) {
-          hasAlteracao = true;
-          return;
-        }
-        if(original.codigo === editado.codigo && editado.todos == original.todos){
-          hasAlteracao = false;
+          this.hasAlteracao = true;
         }
       });
     });
