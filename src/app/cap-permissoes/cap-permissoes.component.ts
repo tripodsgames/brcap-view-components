@@ -347,7 +347,6 @@ export class PermissoesComponent implements OnInit {
         }
       });
       modulo.todos = cont > 0;
-      f.todos = modulo.todos;
     }
     if (f.todos) {
       f.incluir = true;

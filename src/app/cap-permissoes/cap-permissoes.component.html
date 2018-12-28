@@ -131,7 +131,7 @@
                           <div class="func-label">
 
                             <div class="item">
-                              <cap-checkbox [ngClass]="{'checkbox-cinza': func.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
                                 [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
                               <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
                                 *ngIf="!func.exibirAcoes"></cap-icon>
@@ -177,7 +177,8 @@
         </cap-card>
       </div>
       <div class="col-lg-5" *ngIf="usuarioPermissao">
-        <cap-button label="Confirmar" [disabled]="!hasAlteracao" (click)="toggleModal()"></cap-button>
+        <!-- <cap-button label="Confirmar" [disabled]="!hasAlteracao" (click)="toggleModal()"></cap-button> -->
+        <cap-button label="Confirmar" (click)="toggleModal()"></cap-button>
       </div>
     </div>
   </div>
