@@ -504,7 +504,7 @@ export class PermissoesComponent implements OnInit {
               originalF.codigo === editadoF.codigo && editadoF.alterar !== originalF.alterar ||
               originalF.codigo === editadoF.codigo && editadoF.bloquear !== originalF.bloquear ||
               originalF.codigo === editadoF.codigo && editadoF.aprovar !== originalF.aprovar) {
-              this.hasAlteracao = true;
+                this.hasAlteracao = true;
             }
           });
         });
