@@ -364,7 +364,7 @@ export class PermissoesComponent implements OnInit {
       f.bloquear = false;
       f.aprovar = false;
     }
-    // this.compareOriginalEditado();
+    this.compareOriginalEditado();
   }
 
   toggleAcoes(f) {
@@ -392,7 +392,6 @@ export class PermissoesComponent implements OnInit {
     this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlSistemas).subscribe(res => {
       if (res && res[0] && res[0].permissoes) {
         this.usuarioPermissao.permissoes = res[0].permissoes;
-        console.log(this.usuarioPermissao.permissoes)
         this.usuarioPermissao.permissoes.forEach(p => {
           p.funcionalidades.forEach(f => {
             f.acoes = [];
@@ -491,14 +490,21 @@ export class PermissoesComponent implements OnInit {
   }
 
   private compareOriginalEditado() {
-    let lista:any;
+    let lista: any;
     lista = JSON.parse(localStorage.getItem("lista"));
     this.hasAlteracao = false;
-    lista.forEach(original => {
-      this.listaModulos.forEach(editado => {
-        if (original.codigo === editado.codigo && editado.todos !== original.todos) {
-          this.hasAlteracao = true;
-        }
+    lista.forEach(originalM => {
+      originalM.funcionalidades.forEach(originalF => {
+        this.listaModulos.forEach(editadoM => {
+          if (originalM.codigo === editadoM.codigo && editadoM.todos !== originalM.todos) {
+            this.hasAlteracao = true;
+          }
+          editadoM.funcionalidades.forEach(editadoF => {
+            if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos) {
+              this.hasAlteracao = true;
+            }
+          });
+        });
       });
     });
   }
