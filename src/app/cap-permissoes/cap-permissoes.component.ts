@@ -36,7 +36,6 @@ export class PermissoesComponent implements OnInit {
   modalActive = false;
   filtro;
   checkboxAtivo = false;
-  checkboxModificado = false;
   listaFiltrado;
   tabelaLinha;
   emptyMessage = false;
@@ -516,25 +515,31 @@ export class PermissoesComponent implements OnInit {
   verificaSelecionouIncluir(modulo, func, value) {
     func.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouAlterar(modulo, func, value) {
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouPesquisar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouExcluir(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouBloquear(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
+    this.compareOriginalEditado();
   }
   verificaSelecionouAprovar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
+    this.compareOriginalEditado();
   }
 }
