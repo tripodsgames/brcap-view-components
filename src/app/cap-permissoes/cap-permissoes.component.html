@@ -1,170 +1,172 @@
-<form #ngForm>
-  <div class="content-header">
-    <div class="row">
-      <div class="col-lg-8">
-        <h1>Permissionar Usuários</h1>
-      </div>
-      <div class="col-lg-4 col-xl-3 float--right" *ngIf="!usuarioPermissao">
-        <input class="form-control input-type-text cap-inputText" placeholder="Pesquisar Nome, CPF ou E-mail"
-          [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca"
-          autocomplete="off">
-        <cap-icon icon="busca" class="cap-inputText-icon"></cap-icon>
-      </div>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="row" *ngIf="!usuarioPermissao">
-      <div class="col-lg-3 col-xl-2" *ngIf="usuariosPermissionados.length > 0">
-        <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
-          <div class="card-body">
-            <h3 class="card-titulo">Usuários<br />Permissionados</h3>
-            <p class="card-valor-total">{{usuariosPermissionados.length}}</p>
-          </div>
+<div class="content-wrapper">
+  <form #ngForm>
+    <div class="content-header">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Permissionar Usuários</h1>
         </div>
-      </div>
-
-      <div class="col-lg-3 col-xl-2" *ngIf="usuariosNaoPermissionados.length > 0">
-        <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados && !filtrando, 'disabled': filtrando }">
-          <div class="card-body">
-            <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
-            <p class="card-valor-total">{{usuariosNaoPermissionados.length}}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-xl-2">
-        <div class="hint hint-static">
-          <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': hintCardAtivo}" (click)="toggleHintCard()"
-            (mouseleave)="mouseLeaveHintCard()"></cap-icon>
-          <div class="hint-container" *ngIf="exibirHintCard">
-            <div class="hint-content">
-              Selecione um card para ver detalhes.
-            </div>
-          </div>
+        <div class="col-lg-4 col-xl-3 float--right" *ngIf="!usuarioPermissao">
+          <input class="form-control input-type-text cap-inputText" placeholder="Pesquisar Nome, CPF ou E-mail"
+            [(ngModel)]="filtro" (ngModelChange)="montarPaginacao()" (keyup)="checkEmpty()" name="filtro" icon="busca"
+            autocomplete="off">
+          <cap-icon icon="busca" class="cap-inputText-icon"></cap-icon>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div [ngClass]="{'col-lg-8': !usuarioPermissao,'col-xl-5': !usuarioPermissao, 'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
-        <cap-card *ngIf="cardPermissionados || cardNaoPermissionados || filtrando">
-          <div *ngIf="!usuarioPermissao">
-            <div class="row">
-              <div class="col-lg-8">
-                <h3 class="card-title" *ngIf="!filtrando && cardPermissionados">Usuários Permissionados</h3>
-                <h3 class="card-title" *ngIf="!filtrando && cardNaoPermissionados">Usuários Não Permissionados</h3>
-                <h3 class="card-title" *ngIf="filtrando">Listagem de Usuários Pesquisados</h3>
-              </div>
-              <div class="col-lg-4 text--right">
-                <cap-btnCollapse class="volta" (click)="fecharCard()" *ngIf="filtrando"></cap-btnCollapse>
+    <div class="content">
+      <div class="row" *ngIf="!usuarioPermissao">
+        <div class="col-lg-3 col-xl-2" *ngIf="usuariosPermissionados.length > 0">
+          <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
+            <div class="card-body">
+              <h3 class="card-titulo">Usuários<br />Permissionados</h3>
+              <p class="card-valor-total">{{usuariosPermissionados.length}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-xl-2" *ngIf="usuariosNaoPermissionados.length > 0">
+          <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados && !filtrando, 'disabled': filtrando }">
+            <div class="card-body">
+              <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
+              <p class="card-valor-total">{{usuariosNaoPermissionados.length}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-xl-2">
+          <div class="hint hint-static">
+            <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': hintCardAtivo}" (click)="toggleHintCard()"
+              (mouseleave)="mouseLeaveHintCard()"></cap-icon>
+            <div class="hint-container" *ngIf="exibirHintCard">
+              <div class="hint-content">
+                Selecione um card para ver detalhes.
               </div>
             </div>
-            <table class="table table-responsive" #table id="table">
-              <thead>
-                <tr class="table-header">
-                  <th class="name">Nome</th>
-                  <th class="cpf">CPF</th>
-                  <th class="email">E-mail</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela">
-                  <td class="nome">{{ capitalize(usuario.nome) }}</td>
-                  <td>{{ usuario.cpf | cpfMask }}</td>
-                  <td>{{ usuario.login }}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
-            <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
-              [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
-              [ultimaLinha]="ultimaLinha "></cap-new-pagination>
           </div>
+        </div>
+      </div>
 
-          <div class="row" *ngIf="usuarioPermissao">
-            <div class="col-md-12">
-              <div class="permissaoUsuario">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h2 class="nome">{{ capitalize(usuarioPermissao.nome) }}</h2>
-                  </div>
-                  <div class="col-md-4 text--right">
-                    <cap-btnCollapse class="volta" (click)="voltar()"></cap-btnCollapse>
-                  </div>
+      <div class="row">
+        <div [ngClass]="{'col-lg-8': !usuarioPermissao,'col-xl-5': !usuarioPermissao, 'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
+          <cap-card *ngIf="cardPermissionados || cardNaoPermissionados || filtrando">
+            <div *ngIf="!usuarioPermissao">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h3 class="card-title" *ngIf="!filtrando && cardPermissionados">Usuários Permissionados</h3>
+                  <h3 class="card-title" *ngIf="!filtrando && cardNaoPermissionados">Usuários Não Permissionados</h3>
+                  <h3 class="card-title" *ngIf="filtrando">Listagem de Usuários Pesquisados</h3>
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <p class="usuario-info">{{ usuarioPermissao.cpf | cpfMask }} | {{ usuarioPermissao.login }}</p>
-                  </div>
+                <div class="col-lg-4 text--right">
+                  <cap-btnCollapse class="volta" (click)="fecharCard()" *ngIf="filtrando"></cap-btnCollapse>
                 </div>
-                <div class="row">
-                  <div class="col-md-11">
-                    <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
-                      <div class="hint hint-absolute">
-                        <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': modulo.hintAtivo}"
-                          (click)="toggleHint(modulo)" (mouseleave)="mouseLeaveHint(modulo)"></cap-icon>
-                        <div class="hint-container" *ngIf="modulo.exibirHint">
-                          <div class="hint-content">
-                            {{ modulo.descricao }}
-                          </div>
-                        </div>
-                      </div>
+              </div>
+              <table class="table table-responsive" #table id="table">
+                <thead>
+                  <tr class="table-header">
+                    <th class="name">Nome</th>
+                    <th class="cpf">CPF</th>
+                    <th class="email">E-mail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela">
+                    <td class="nome">{{ capitalize(usuario.nome) }}</td>
+                    <td>{{ usuario.cpf | cpfMask }}</td>
+                    <td>{{ usuario.login }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
+              <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page "
+                [perPage]=" limit " [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
+                [ultimaLinha]="ultimaLinha "></cap-new-pagination>
+            </div>
 
-                      <div [ngClass]="{'box-opened': modulo.open, 'box-closed': !modulo.open}">
-                        <div class="row">
-                          <div class="col-md-1">
-                            <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" [(ngModel)]="modulo.todos"
-                              class="selectAll-modulos" name="selecionarTodos-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
-                          </div>
-                          <div class="col-md-8">
-                            <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
-                              {{modulo.nome }}
-                            </h3>
-                            <p class="chips-caption-brcap" *ngIf="!modulo.open">{{modulo.quantidadePermissionados}}
-                              FUNCIONALIDADES DE
-                              {{modulo.quantidadeFuncionalidades}}</p>
-                          </div>
-                          <div class="col-md-3">
-                            <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
-                          </div>
-                        </div>
-                        <div class="row" *ngFor="let func of modulo?.funcionalidades; let indexF = index">
-                          <div class="func-label">
-
-                            <div class="item">
-                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
-                                [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
-                              <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
-                                *ngIf="!func.exibirAcoes"></cap-icon>
-                              <cap-icon class="icone-toggle-funcionalidade pointer " icon="retrair " (click)="toggleAcoes(func)"
-                                *ngIf="func.exibirAcoes"></cap-icon>
+            <div class="row" *ngIf="usuarioPermissao">
+              <div class="col-md-12">
+                <div class="permissaoUsuario">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h2 class="nome">{{ capitalize(usuarioPermissao.nome) }}</h2>
+                    </div>
+                    <div class="col-md-4 text--right">
+                      <cap-btnCollapse class="volta" (click)="voltar()"></cap-btnCollapse>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="usuario-info">{{ usuarioPermissao.cpf | cpfMask }} | {{ usuarioPermissao.login }}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-11">
+                      <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
+                        <div class="hint hint-absolute">
+                          <cap-icon icon="ajuda" [size]="24" class="pointer round" [ngClass]="{'active': modulo.hintAtivo}"
+                            (click)="toggleHint(modulo)" (mouseleave)="mouseLeaveHint(modulo)"></cap-icon>
+                          <div class="hint-container" *ngIf="modulo.exibirHint">
+                            <div class="hint-content">
+                              {{ modulo.descricao }}
                             </div>
+                          </div>
+                        </div>
 
-                            <div class="acoes " [hidden]="!func.exibirAcoes">
-                              <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouIncluir(modulo, func, $event)"
-                                  [(ngModel)]="func.incluir" name="incluir-{{indexM}}-{{indexF}} " itemLabel="Incluir"></cap-checkbox>
+                        <div [ngClass]="{'box-opened': modulo.open, 'box-closed': !modulo.open}">
+                          <div class="row">
+                            <div class="col-md-1">
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" [(ngModel)]="modulo.todos"
+                                class="selectAll-modulos" name="selecionarTodos-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
+                            </div>
+                            <div class="col-md-8">
+                              <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
+                                {{modulo.nome }}
+                              </h3>
+                              <p class="chips-caption-brcap" *ngIf="!modulo.open">{{modulo.quantidadePermissionados}}
+                                FUNCIONALIDADES DE
+                                {{modulo.quantidadeFuncionalidades}}</p>
+                            </div>
+                            <div class="col-md-3">
+                              <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
+                            </div>
+                          </div>
+                          <div class="row" *ngFor="let func of modulo?.funcionalidades; let indexF = index">
+                            <div class="func-label">
+
+                              <div class="item">
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
+                                  [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
+                                <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
+                                  *ngIf="!func.exibirAcoes"></cap-icon>
+                                <cap-icon class="icone-toggle-funcionalidade pointer " icon="retrair " (click)="toggleAcoes(func)"
+                                  *ngIf="func.exibirAcoes"></cap-icon>
                               </div>
-                              <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouExcluir(modulo, func, $event)"
-                                  [(ngModel)]="func.excluir" name="excluir-{{indexM}}-{{indexF}} " itemLabel="Excluir"></cap-checkbox>
-                              </div>
-                              <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouPesquisar(modulo, func, $event)"
-                                  [(ngModel)]="func.pesquisar" name="pesquisar-{{indexM}}-{{indexF}} " itemLabel="Pesquisar"></cap-checkbox>
-                              </div>
-                              <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAlterar(modulo, func, $event)"
-                                  [(ngModel)]="func.alterar" name="alterar-{{indexM}}-{{indexF}} " itemLabel="Alterar"></cap-checkbox>
-                              </div>
-                              <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouBloquear(modulo, func, $event)"
-                                  [(ngModel)]="func.bloquear" name="bloquear-{{indexM}}-{{indexF}} " itemLabel="Bloquear"></cap-checkbox>
-                              </div>
-                              <div class="item ">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAprovar(modulo, func, $event)"
-                                  [(ngModel)]="func.aprovar" name="aprovar-{{indexM}}-{{indexF}} " itemLabel="Aprovar"></cap-checkbox>
+
+                              <div class="acoes " [hidden]="!func.exibirAcoes">
+                                <div class="item ">
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouIncluir(modulo, func, $event)"
+                                    [(ngModel)]="func.incluir" name="incluir-{{indexM}}-{{indexF}} " itemLabel="Incluir"></cap-checkbox>
+                                </div>
+                                <div class="item ">
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouExcluir(modulo, func, $event)"
+                                    [(ngModel)]="func.excluir" name="excluir-{{indexM}}-{{indexF}} " itemLabel="Excluir"></cap-checkbox>
+                                </div>
+                                <div class="item ">
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouPesquisar(modulo, func, $event)"
+                                    [(ngModel)]="func.pesquisar" name="pesquisar-{{indexM}}-{{indexF}} " itemLabel="Pesquisar"></cap-checkbox>
+                                </div>
+                                <div class="item ">
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAlterar(modulo, func, $event)"
+                                    [(ngModel)]="func.alterar" name="alterar-{{indexM}}-{{indexF}} " itemLabel="Alterar"></cap-checkbox>
+                                </div>
+                                <div class="item ">
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouBloquear(modulo, func, $event)"
+                                    [(ngModel)]="func.bloquear" name="bloquear-{{indexM}}-{{indexF}} " itemLabel="Bloquear"></cap-checkbox>
+                                </div>
+                                <div class="item ">
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAprovar(modulo, func, $event)"
+                                    [(ngModel)]="func.aprovar" name="aprovar-{{indexM}}-{{indexF}} " itemLabel="Aprovar"></cap-checkbox>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -175,27 +177,27 @@
                 </div>
               </div>
             </div>
-          </div>
-        </cap-card>
-      </div>
-      <div class="col-lg-5" *ngIf="usuarioPermissao">
-        <cap-button label="Confirmar" [disabled]="!hasAlteracao" (click)="toggleModal()"></cap-button>
+          </cap-card>
+        </div>
+        <div class="col-lg-5" *ngIf="usuarioPermissao">
+          <cap-button label="Confirmar" [disabled]="!hasAlteracao" (click)="toggleModal()"></cap-button>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
 
-<div class="old-modal" [ngClass]="{'old-modal-active': modalActive}" (click)="clickOutside($event)">
-  <div id="old-modal-body" class="old-modal-content">
-    <p>
-      <span *ngIf="cardPermissionados">DESEJA ALTERAR ACESSO?</span>
-      <span *ngIf="cardNaoPermissionados">DESEJA CONCEDER ACESSO?</span>
-      <br /> <br />
-      Ao confirmar você concederá as funcionalidades selecionadas para este usuário.
-    </p>
-    <div class="old-modal-buttons">
-      <button class="outline" (click)="toggleModal()">NÃO</button>
-      <button class="normal" (click)="salvar()">SIM</button>
+  <div class="old-modal" [ngClass]="{'old-modal-active': modalActive}" (click)="clickOutside($event)">
+    <div id="old-modal-body" class="old-modal-content">
+      <p>
+        <span *ngIf="cardPermissionados">DESEJA ALTERAR ACESSO?</span>
+        <span *ngIf="cardNaoPermissionados">DESEJA CONCEDER ACESSO?</span>
+        <br /> <br />
+        Ao confirmar você concederá as funcionalidades selecionadas para este usuário.
+      </p>
+      <div class="old-modal-buttons">
+        <button class="outline" (click)="toggleModal()">NÃO</button>
+        <button class="normal" (click)="salvar()">SIM</button>
+      </div>
     </div>
   </div>
 </div>
