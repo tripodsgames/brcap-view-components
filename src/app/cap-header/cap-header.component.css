@@ -79,6 +79,9 @@
   text-decoration: none !important;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.87);
+  margin-right: 8px;
+  position: relative;
+  top: 2px;
 }
 
 .box-user {
@@ -183,4 +186,9 @@
   .user-menu.open {
     right: 25%;
   }
+}
+
+.navbar-custom-menu cap-icon::ng-deep .retrair{
+  position: relative;
+  top: 3px;
 }
