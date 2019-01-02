@@ -167,7 +167,7 @@ export class PermissoesComponent implements OnInit {
       .subscribe(
         res => {
           if (res) {
-            swal("Sucesso!", "Operação realizada com sucesso!", "success").then(function () {
+            swal("Sucesso!", "Operação realizada com sucesso! <br/> Por favor faça o logout para atualizar as informações.", "success").then(function () {
               location.reload();
             });
           } else {
