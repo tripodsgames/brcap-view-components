@@ -53,11 +53,5 @@ export class CapMenuItemComponent {
     this.selecionar.emit(item.codigo);
      
   }
-
-  rotacionar(){
-    if(this.exibir){
-      this.exibido = true;
-    }
-  }
    
 }

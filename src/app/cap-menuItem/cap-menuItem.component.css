@@ -78,7 +78,7 @@ ul.list li:hover {
   top: -3px;
 }
 
-.rotate::ng-deep .brcap-ico{
+/* .rotate::ng-deep .brcap-ico{
   padding-top: 3px;
   transition-delay: 0.3s;
   transition: 0.3s;
@@ -102,4 +102,4 @@ ul.list li:hover {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
   transition: 0.3s;
-}
+} */
