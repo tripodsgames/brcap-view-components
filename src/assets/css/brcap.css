@@ -1073,10 +1073,6 @@ select-dropdown>div .options ul li {
   border-radius: 0px;
 }
 
-ng-select[ng-reflect-is-disabled="true"] {
-  cursor: not-allowed !important;
-}
-
 ng-select>div>div.single>div.toggle {
   font-family: "brcap-ico";
 }

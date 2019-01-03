@@ -84,7 +84,6 @@
 .cap-checkbox input[type="radio"]:disabled + label:before,
 .cap-radiobutton input[type="radio"]:disabled + label:before {
   border-color: #cccccc;
-  cursor: not-allowed;
 }
 
 .cap-checkbox input[type="checkbox"]:disabled:focus + label:before,

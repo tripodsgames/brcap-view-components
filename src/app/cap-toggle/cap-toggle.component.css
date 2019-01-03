@@ -12,10 +12,6 @@
   padding: 16px 0 16px 44px;
   background: transparent;
 }
-.switch-label.disabled:before,
-.switch-label.disabled:after {
-  cursor: not-allowed;
-}
 
 .switch-label:before,
 .switch-label:after {

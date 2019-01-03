@@ -95,7 +95,6 @@ button.next {
 
 button.disabled {
   background-color: #B4B4B4;
-  cursor: not-allowed;
 }
 
 button.first {
