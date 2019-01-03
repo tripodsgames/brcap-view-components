@@ -1,5 +1,5 @@
 <button class="cap-button  {{styleClass}}" [type]="type" [disabled]="disabled == true">{{label}}
-  <cap-icon *ngIf="icon" position="left" [size]="iconFontSize" [icon]="icon"></cap-icon>
+  <cap-icon *ngIf="icon" position="left" [size]="iconFontSize" [icon]="icon" [disabled]="disabled == true"></cap-icon>
   <i *ngIf="loader" class="loader fa fa-spinner fa-spin"></i>
   <ng-content></ng-content>
 </button>
