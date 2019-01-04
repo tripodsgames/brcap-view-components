@@ -280,6 +280,18 @@ cap-icon {
 .hint-absolute {
   position: absolute;
   right: -20px;
+
+  .hint-container {
+    top: -7px;
+    left: 43px;
+
+    &:after,
+    &:before {
+      left: -26px;
+      top: 18px;
+      transform: none;
+    }
+  }
 }
 
 .hint-static {
@@ -299,7 +311,6 @@ cap-icon {
     }
   }
 }
-
 // HINT - end
 
 .btn-permitir {

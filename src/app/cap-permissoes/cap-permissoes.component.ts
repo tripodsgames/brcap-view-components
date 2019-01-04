@@ -65,11 +65,9 @@ export class PermissoesComponent implements OnInit {
     this.popularListaModulos();
     this.verEstadoPermissionamento("usuarios-permissionados").subscribe(res => {
       this.usuariosPermissionados = res;
-      this.montarPaginacao();
     });
     this.verEstadoPermissionamento("usuarios-nao-permissionados").subscribe(res => {
       this.usuariosNaoPermissionados = res;
-      this.montarPaginacao();
     });
   }
 
@@ -127,7 +125,7 @@ export class PermissoesComponent implements OnInit {
         this.filtrando = false;
       }
     }
-
+    
     this.contagemPaginasTotal = Math.ceil(
       this.listaFiltrado.length / this.limit
     );
@@ -184,9 +182,6 @@ export class PermissoesComponent implements OnInit {
   }
 
   reload() {
-    // this.usuarioPermissao = null;
-    // this.popularListaModulos();
-
     location.reload();
   }
 
