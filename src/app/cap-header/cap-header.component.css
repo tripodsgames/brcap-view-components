@@ -1,7 +1,7 @@
 .main-header {
   position: relative;
   max-height: 100px;
-  z-index: 1030;
+  /* z-index: 1030; */
   box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -31,7 +31,8 @@
 .main-header .logo {
   color: #fff;
   border-bottom: 0 solid transparent;
-  z-index: 3;
+    /* z-index: 3; */
+  z-index: 2;
   position: relative;
 }
 
