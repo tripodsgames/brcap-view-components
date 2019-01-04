@@ -184,7 +184,8 @@ export class PermissoesComponent implements OnInit {
 
   voltar() {
     this.usuarioPermissao = null;
-    this.popularListaModulos();
+    // this.popularListaModulos();
+    this.toggleModal();
   }
 
   toggleHint(modulo) {
