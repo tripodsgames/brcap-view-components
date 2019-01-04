@@ -91,7 +91,7 @@
                       <h2 class="nome">{{ capitalize(usuarioPermissao.nome) }}</h2>
                     </div>
                     <div class="col-md-4 text--right">
-                      <cap-btnCollapse class="volta" (click)="voltar()"></cap-btnCollapse>
+                      <cap-btnCollapse class="volta" (click)="toggleModalWarning()"></cap-btnCollapse>
                     </div>
                   </div>
                   <div class="row">
@@ -197,6 +197,20 @@
       <div class="old-modal-buttons">
         <button class="outline" (click)="toggleModal()">NÃO</button>
         <button class="normal" (click)="salvar()">SIM</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="old-modal" [ngClass]="{'old-modal-active': modalWarningActive}" (click)="clickOutsideWarning($event)">
+    <div id="old-modal-warning-body" class="old-modal-content">
+      <p>
+        <span *ngIf="cardPermissionados">AS ALTERAÇÕES NÃO FORAM SALVAS!</span>
+        <br /> <br />
+        Ao sair desta tela as alterações de acesso deste usuário não serão salvas.
+      </p>
+      <div class="old-modal-buttons">
+        <button class="outline" (click)="toggleModalWarning()">VOLTAR</button>
+        <button class="normal" (click)="reload()">SAIR</button>
       </div>
     </div>
   </div>

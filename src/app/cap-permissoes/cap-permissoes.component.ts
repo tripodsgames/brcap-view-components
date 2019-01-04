@@ -34,6 +34,7 @@ export class PermissoesComponent implements OnInit {
   hintCardAtivo = false;
   exibirHintCard = false;
   modalActive = false;
+  modalWarningActive = false;
   filtro;
   checkboxAtivo = false;
   listaFiltrado;
@@ -182,10 +183,11 @@ export class PermissoesComponent implements OnInit {
       );
   }
 
-  voltar() {
-    this.usuarioPermissao = null;
+  reload() {
+    // this.usuarioPermissao = null;
     // this.popularListaModulos();
-    this.toggleModal();
+
+    location.reload();
   }
 
   toggleHint(modulo) {
@@ -226,10 +228,26 @@ export class PermissoesComponent implements OnInit {
     this.modalActive = !this.modalActive;
   }
 
+  toggleModalWarning(){
+    if(this.hasAlteracao){
+      this.modalWarningActive = !this.modalWarningActive;
+    } else{
+      this.usuarioPermissao = null;
+      this.popularListaModulos();
+    }
+  }
+
   clickOutside(event) {
     var target = event.target || event.srcElement || event.currentTarget;
     if (!document.getElementById("old-modal-body").contains(target)) {
       this.toggleModal();
+    }
+  }
+
+  clickOutsideWarning(event){
+    var target = event.target || event.srcElement || event.currentTarget;
+    if (!document.getElementById("old-modal-warning-body").contains(target)) {
+      this.toggleModalWarning();
     }
   }
 
