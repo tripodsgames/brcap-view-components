@@ -3,7 +3,7 @@
 
 <!-- <div class="content-wrapper"> -->
 
-  <!-- <div class="content-header mainHeader">
+<!-- <div class="content-header mainHeader">
     <div class="row">
       <div class="col-sm-6 mainTitle">
         Processos de Cancelamento
@@ -20,8 +20,8 @@
   </div> -->
 
 
-  <!-- <div class="content"> -->
-    <!-- <div class="row">
+<!-- <div class="content"> -->
+<!-- <div class="row">
       <div class="col-md-3">
         <cap-inputText label="Nome" icon="busca"></cap-inputText>
       </div>
@@ -36,10 +36,16 @@
     </div> -->
 
 
-    <!-- <br>
+<!-- <br>
     <br> -->
 
-    <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes>
-
-  <!-- </div> -->
+<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
+<div class="content-wrapper">
+  <div class="content">
+    <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
+      (itemOptionClick)="itemOptionClick($event)">
+    </cap-grid-pagination>
+  </div>
+</div>
+<!-- </div> -->
 <!-- </div> -->

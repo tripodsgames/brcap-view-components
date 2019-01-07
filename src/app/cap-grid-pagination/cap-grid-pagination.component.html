@@ -25,13 +25,13 @@
 
     <div class="pagination">
         <button class="link prev" (click)="prevPage()" [disabled]="(currentPage === 1)" [ngClass]="{ 'disabled': currentPage === 1 }">
-          <i class="fa fa-angle-left"></i>
+            <cap-icon icon="anterior"></cap-icon>
         </button>
         
         <span>{{labelPaginas}}</span>
         
         <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage === totalPages)" [ngClass]="{ 'disabled': (currentPage === totalPages) }">
-            <i class="fa fa-angle-right"></i>
+            <cap-icon icon="seguir"></cap-icon>
         </button>
     </div>
 
