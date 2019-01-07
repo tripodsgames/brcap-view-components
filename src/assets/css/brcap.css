@@ -221,6 +221,26 @@ dp-date-picker {
   border-radius: 5px;
 }
 
+/* MENU */
+.sub-item {
+  position: relative;
+}
+.ativado {
+  height: inherit;
+}
+
+.ativado:after {
+  top:-2px;
+  width: 6px;
+  content: "";
+  background-color: #ffe800;
+  color: #ffe800;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+}
+/* MENU - end */
+
 .cap-inputText,
 .dp-input-container input {
   box-shadow: none;
