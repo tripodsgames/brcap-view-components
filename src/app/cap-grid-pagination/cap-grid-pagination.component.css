@@ -1,3 +1,19 @@
+.cap-grid-row-options{
+  text-align: center;
+}
+
+cap-button::ng-deep .cap-button{
+  width: 20px !important; 
+  height: 20px !important;
+  padding: 10px !important;
+}
+
+cap-button::ng-deep .cap-button .brcap-ico{
+  left: -7px;
+  top: -7px;
+  font-size: 14px !important;
+}
+
 /* TABELA */
 table {
   background-color: white;

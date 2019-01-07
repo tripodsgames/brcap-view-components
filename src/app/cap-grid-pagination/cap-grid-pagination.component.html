@@ -12,10 +12,14 @@
         <tr *ngFor="let v of pagedItens;  let i = index">
           <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
           <td *ngIf="rowOptions" class="cap-grid-row-options">
-            <img src="../../assets/img/mais-op-es-vert.svg" (click)="clickItem(i)" class="cap-grid-options">
+            <cap-button icon="mais-opcoes" (click)="clickItem(i)" class="cap-grid-options"></cap-button>
+            <!-- <img src="../../assets/img/mais-op-es-vert.svg" (click)="clickItem(i)" class="cap-grid-options"> -->
             <div *ngIf="showItemOptions === i" class="row-options">
               <ul>
-                <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">{{opt}}</li>
+                <!-- <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">{{opt}}</li> -->
+                <li class="cap-grid-item-option">Visualizar</li>
+                <li class="cap-grid-item-option">Editar</li>
+                <li class="cap-grid-item-option">Excluir</li>
               </ul>
             </div>
           </td>
