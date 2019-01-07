@@ -15,11 +15,6 @@
   background-color: rgba(255, 204, 0, 0.2); /* #ffcc00;  //Monitor */
   /* background: #b8841f;   //Produtos */
 }
-.active {
-  color: rgb(255, 255, 255);
-  background-color: rgba(255, 204, 0, 0.1);
-}
-
 .cap-button {
   background-color: #006bbb;  /* //Todos */
 }

@@ -222,13 +222,16 @@ dp-date-picker {
 }
 
 /* MENU */
+.active {
+  /* color: rgb(255, 255, 255); */
+  background-color: rgba(255, 204, 0, 0.1);
+}
 .sub-item {
   position: relative;
 }
 .ativado {
   height: inherit;
 }
-
 .ativado:after {
   top:-2px;
   width: 6px;
