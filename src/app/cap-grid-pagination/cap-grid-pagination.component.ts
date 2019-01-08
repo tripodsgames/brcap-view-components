@@ -17,6 +17,9 @@ export class CapGridPaginationComponent implements OnInit {
   //@Input() lastItem: number
   @Input() labelPaginas: string
   @Input() rowOptions: any
+  @Input() primeiraInformacao: any
+  @Input() segundaInformacao: any
+  @Input() terceiraInformacao: any
 
   @Output() itemOptionClick = new EventEmitter<any>()
 
