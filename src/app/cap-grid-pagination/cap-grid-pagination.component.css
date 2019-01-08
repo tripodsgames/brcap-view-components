@@ -48,6 +48,7 @@
   height: 32px;
   line-height: 32px;
   border-left: 5px solid transparent;
+  cursor: pointer;
 }
 
 .row-options ul li:hover{
