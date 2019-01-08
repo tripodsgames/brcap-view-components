@@ -1,43 +1,45 @@
-<div class="cap-grid-default box">
-  <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
-    <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
-      <thead>
-        <tr class="table-header">      
-          <th *ngFor="let c of columns" class="cap-grid-header tools">{{c}}</th>
-          <th *ngIf="rowOptions" class="cap-grid-header"></th>
-        </tr>
-      </thead>
-    
-      <tbody>
-        <tr *ngFor="let v of pagedItens;  let i = index">
-          <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
-          <td *ngIf="rowOptions" class="cap-grid-row-options">
-            <cap-button icon="mais-opcoes" (click)="clickItem(i)" class="cap-grid-options"></cap-button>
-            <!-- <img src="../../assets/img/mais-op-es-vert.svg" (click)="clickItem(i)" class="cap-grid-options"> -->
-            <div *ngIf="showItemOptions === i" class="row-options">
-              <ul>
-                <!-- <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">{{opt}}</li> -->
-                <li class="cap-grid-item-option">Visualizar</li>
-                <li class="cap-grid-item-option">Editar</li>
-                <li class="cap-grid-item-option">Excluir</li>
-              </ul>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="col-lg-9 col-xl-6 no-padding-left">
+  <div class="cap-grid-default box">
+    <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
+      <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
+        <thead>
+          <tr class="table-header">
+            <th *ngFor="let c of columns">{{c}}</th>
+            <th *ngIf="rowOptions"></th>
+          </tr>
+        </thead>
 
-    <div class="pagination">
+        <tbody>
+          <tr class="animacao-hover" *ngFor="let v of pagedItens;  let i = index">
+            <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
+            <td *ngIf="rowOptions" class="cap-grid-row-options">
+              <!-- <cap-button icon="mais-opcoes" (click)="clickItem(i)" class="cap-grid-options"></cap-button> -->
+              <img src="../../assets/img/mais-op-es-vert.svg" (click)="clickItem(i)" class="cap-grid-options">
+              <div *ngIf="showItemOptions === i" class="row-options">
+                <ul>
+                  <!-- <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">{{opt}}</li> -->
+                  <li class="cap-grid-item-option" (click)="clickItem(i)">Visualizar</li>
+                  <span _ngcontent-c2="" class="divisor"></span>
+                  <li class="cap-grid-item-option" (click)="clickItem(i)">Editar</li>
+                  <span _ngcontent-c2="" class="divisor"></span>
+                  <li class="cap-grid-item-option" (click)="clickItem(i)">Excluir</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
         <button class="link prev" (click)="prevPage()" [disabled]="(currentPage === 1)" [ngClass]="{ 'disabled': currentPage === 1 }">
-            <cap-icon icon="anterior"></cap-icon>
+          <cap-icon icon="anterior"></cap-icon>
         </button>
-        
         <span>{{labelPaginas}}</span>
-        
         <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage === totalPages)" [ngClass]="{ 'disabled': (currentPage === totalPages) }">
-            <cap-icon icon="seguir"></cap-icon>
+          <cap-icon icon="seguir"></cap-icon>
         </button>
-    </div>
+      </div>
 
+    </div>
   </div>
 </div>
