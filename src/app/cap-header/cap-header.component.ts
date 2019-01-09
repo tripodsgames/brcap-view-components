@@ -48,6 +48,8 @@ export class CapHeaderComponent implements OnInit {
   elementIcon: CapIconComponent;
   @Output()
   logout = new EventEmitter();
+  @Input("flagMenu")
+  flagMenu: boolean;
 
   constructor(@Inject(DOCUMENT) private document: any) {}
   elem;
@@ -120,6 +122,10 @@ export class CapHeaderComponent implements OnInit {
 
     }
     this.tela = !this.tela;
+  }
+
+  expandCollapseMenu(flagMenu){
+    this.toggleMenu();
   }
 
 
