@@ -6,7 +6,8 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  EventEmitter
+  EventEmitter,
+  DoCheck
 } from "@angular/core";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
 import { DOCUMENT } from '@angular/common';
@@ -19,7 +20,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   templateUrl: "./cap-header.component.html",
   styleUrls: ["./cap-header.component.css"]
 })
-export class CapHeaderComponent implements OnInit {
+export class CapHeaderComponent implements OnInit, DoCheck {
   @Input("modulo")
   modulo: string;
   @Input("username")
@@ -42,14 +43,16 @@ export class CapHeaderComponent implements OnInit {
   logoBrasilCap: string;
   @Input("rotaLogo")
   rotaLogo: string;
+  @Input("exibeMenu")
+  exibeMenu: boolean = true;
   @ViewChild("logoHeader")
   logoHeader: ElementRef;
   @ViewChild("elementIcon")
   elementIcon: CapIconComponent;
   @Output()
   logout = new EventEmitter();
-  @Input("flagMenu")
-  flagMenu: boolean;
+  @Output()
+  atualizaEstadoMenu = new EventEmitter<boolean>();
 
   constructor(@Inject(DOCUMENT) private document: any) {}
   elem;
@@ -70,16 +73,37 @@ export class CapHeaderComponent implements OnInit {
   }
 
   toggleMenu() {
-    $(".cap-menu").toggleClass("fechado");
-    $(".logo").toggleClass("fechado");
-    $("body").toggleClass("minimizado");
-    $(".label-projeto").toggleClass("fechado");
-    $("#menu-toggle").toggleClass("is-active");
+    this.setExibeMenu(!this.exibeMenu);
+    this.renderMenu();
+  }
+
+  setExibeMenu(exibe: boolean) {
+    this.exibeMenu = exibe;
+    this.atualizaEstadoMenu.emit(exibe);
+  }
+  renderMenu() {
+    if (this.exibeMenu) {
+      $(".cap-menu").removeClass("fechado");
+      $(".logo").removeClass("fechado");
+      $("body").removeClass("minimizado");
+      $(".label-projeto").removeClass("fechado");
+      $("#menu-toggle").addClass("is-active");
+    } else {
+      $(".cap-menu").addClass("fechado");
+      $(".logo").addClass("fechado");
+      $("body").addClass("minimizado");
+      $(".label-projeto").addClass("fechado");
+      $("#menu-toggle").removeClass("is-active");
+    }
     if ($("#menu-toggle").hasClass("is-active") && window.screen.width < 480) {
       $("#logo-img").hide();
     } else {
       $("#logo-img").show();
     }
+  }
+
+  ngDoCheck() {
+    this.renderMenu();
   }
 
   nome(str) {
@@ -95,11 +119,11 @@ export class CapHeaderComponent implements OnInit {
 
   toggleFullScreen() {
 
-    let elem =  document.body; 
+    let elem =  document.body;
     if (!this.tela) {
 
-      let methodToBeInvoked = elem.requestFullscreen || elem.webkitRequestFullScreen || 
-      elem['mozRequestFullscreen'] || elem['msRequestFullscreen']; 
+      let methodToBeInvoked = elem.requestFullscreen || elem.webkitRequestFullScreen ||
+      elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
       if(methodToBeInvoked) methodToBeInvoked.call(elem);
 
     } else {
@@ -116,8 +140,8 @@ export class CapHeaderComponent implements OnInit {
         this.document.msExitFullscreen();
       }
 
-      // let methodToBeInvoked = elem.exitFullscreen || elem.webkitExitFullscreen || 
-      // elem['mozCancelFullScreen'] || elem['msExitFullscreen']; 
+      // let methodToBeInvoked = elem.exitFullscreen || elem.webkitExitFullscreen ||
+      // elem['mozCancelFullScreen'] || elem['msExitFullscreen'];
       // if(methodToBeInvoked) methodToBeInvoked.call(elem);
 
     }
@@ -127,6 +151,5 @@ export class CapHeaderComponent implements OnInit {
   expandCollapseMenu(flagMenu){
     this.toggleMenu();
   }
-
 
 }
