@@ -148,4 +148,8 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     this.tela = !this.tela;
   }
 
+  expandCollapseMenu(flagMenu){
+    this.toggleMenu();
+  }
+
 }
