@@ -6,8 +6,8 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  EventEmitter,
-  DoCheck
+  DoCheck,
+  EventEmitter
 } from "@angular/core";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
 import { DOCUMENT } from '@angular/common';
@@ -43,7 +43,6 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   logoBrasilCap: string;
   @Input("rotaLogo")
   rotaLogo: string;
-  @Input("exibeMenu")
   exibeMenu: boolean = true;
   @ViewChild("logoHeader")
   logoHeader: ElementRef;
@@ -54,7 +53,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   @Output()
   atualizaEstadoMenu = new EventEmitter<boolean>();
 
-  constructor(@Inject(DOCUMENT) private document: any) {}
+  constructor(@Inject(DOCUMENT) private document: any) { }
   elem;
 
   ngOnInit() {
@@ -66,6 +65,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     }
 
     this.username_trat = this.nome(this.username);
+    this.resgistrarMenuListerner();
   }
 
   logoff() {
@@ -119,12 +119,12 @@ export class CapHeaderComponent implements OnInit, DoCheck {
 
   toggleFullScreen() {
 
-    let elem =  document.body;
+    let elem = document.body;
     if (!this.tela) {
 
       let methodToBeInvoked = elem.requestFullscreen || elem.webkitRequestFullScreen ||
-      elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
-      if(methodToBeInvoked) methodToBeInvoked.call(elem);
+        elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
+      if (methodToBeInvoked) methodToBeInvoked.call(elem);
 
     } else {
       if (this.document.exitFullscreen) {
@@ -148,8 +148,19 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     this.tela = !this.tela;
   }
 
-  expandCollapseMenu(flagMenu){
-    this.toggleMenu();
+  handlerMenuEvent = (res) => {
+    if (res.detail !== null) {
+      const exibe = res.detail.exibeMenu;
+      if(exibe !== undefined){
+        this.setExibeMenu(exibe);
+        this.renderMenu();
+      }
+    } else
+      this.toggleMenu();
+  }
+
+  resgistrarMenuListerner() {
+    document.addEventListener('toggleMenuEvent', this.handlerMenuEvent);
   }
 
 }
