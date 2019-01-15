@@ -61,8 +61,8 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   isValid: boolean;
   @Input("options")
   options: object;
-  @Input("currencyMask")
-  currencyMask: boolean;
+  @Input("isCurrencyMask")
+  isCurrencyMask: boolean;
 
   @Output()
   keyup = new EventEmitter();
@@ -122,7 +122,11 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
       this.onChangeCallback(v);
     }
   }
-  
+
+  teste(){
+    console.log(this.isCurrencyMask);
+  }
+
   typing(){
     this.escrevendo = true;
     if(this.value == ""){

@@ -21,7 +21,9 @@
 
   <div class="content">
 
-      <cap-inputText currencyMask="true" [(ngModel)]="value"></cap-inputText>
+      <cap-inputText [(ngModel)]="value" isCurrencyMask="true"></cap-inputText>
+
+      <!-- <input currencyMask [(ngModel)]="bla" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/> -->
 
       <!-- <div class="box abas">
           <cap-tabPanel class="fix">

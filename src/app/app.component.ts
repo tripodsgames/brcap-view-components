@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   off = false;
   on = true;
   options = { prefix: 'R$ ', thousands: '.', decimal: ',' }
-
+  
   menu = [
     {
       codigo: "posvenda#gravame",
