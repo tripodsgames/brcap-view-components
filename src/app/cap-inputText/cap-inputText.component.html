@@ -1,7 +1,7 @@
 <label [for]="id" class="label-input {{textError}} {{styleClass}}" [class.error]="hasError()" [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 
-<input [attr.currencyMask]="isCurrencyMask ? '' : null" [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)" (blur)="onBlurJS($event)"
+<input currencyMask [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)" (blur)="onBlurJS($event)"
   (mouseover)="onMouseOver($event)" (mousedown)="onMouseDown($event)" (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)"
   class="form-control input-type-text cap-inputText {{styleClass}}" [class.error]="hasError()" (keyup)="typing()" [(ngModel)]="value" [disabled]="disabled"
   type="text" #modelInput="ngModel" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''"
