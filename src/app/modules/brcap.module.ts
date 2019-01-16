@@ -43,7 +43,7 @@ import { UsuarioService } from "../services/usuario.service";
 import { PlataformaService } from "../services/plataforma.service";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { RouterModule } from "@angular/router";
-// import { CurrencyMaskModule } from "ng2-currency-mask";
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   imports: [
@@ -55,8 +55,8 @@ import { RouterModule } from "@angular/router";
     MyDateRangePickerModule,
     DpDatePickerModule,
     Ng2SearchPipeModule,
-    RouterModule
-    // CurrencyMaskModule
+    RouterModule,
+    CurrencyMaskModule
   ],
   declarations: [
     CapInputTextComponent,
