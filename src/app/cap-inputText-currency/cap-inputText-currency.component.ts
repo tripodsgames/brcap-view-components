@@ -17,7 +17,7 @@ const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => CapInputTextComponent),
+  useExisting: forwardRef(() => CapInputTextCurrencyComponent),
   multi: true
 };
 
@@ -25,12 +25,12 @@ import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
-  selector: "cap-inputText",
+  selector: "cap-inputText-currency",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  templateUrl: "./cap-inputText.component.html",
-  styleUrls: ["./cap-inputText.component.css"]
+  templateUrl: "./cap-inputText-currency.component.html",
+  styleUrls: ["./cap-inputText-currency.component.css"]
 })
-export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
+export class CapInputTextCurrencyComponent implements AfterViewInit, ControlValueAccessor, OnInit {
   @Input("id")
   id: string;
   @Input("label")
@@ -59,6 +59,8 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   erroMessage: string;
   @Input("isValid")
   isValid: boolean;
+  @Input("options")
+  options: any;
 
   @Output()
   keyup = new EventEmitter();
@@ -117,6 +119,10 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
       this.innerValue = v;
       this.onChangeCallback(v);
     }
+  }
+
+  getOptions(){
+    return JSON.parse(this.options)
   }
 
   typing(){

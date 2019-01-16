@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
   aaaa = "Teste texto";
   off = false;
   on = true;
-  options = { prefix: 'R$ ', thousands: '.', decimal: ',' }
   
   menu = [
     {
