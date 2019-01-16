@@ -59,10 +59,10 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   erroMessage: string;
   @Input("isValid")
   isValid: boolean;
-  @Input("options")
-  options: object;
-  @Input("currencyMask")
-  currencyMask: boolean;
+  // @Input("options")
+  // options: object;
+  // @Input("currencyMask")
+  // currencyMask: boolean;
 
   @Output()
   keyup = new EventEmitter();
