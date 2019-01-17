@@ -24,20 +24,17 @@ cap-icon::ng-deep .brcap-ico {
 }
 
 .cap-grid-options {
-  width: 30px !important;
-  height: 30px !important;
+  width: 24px !important;
+  height: 26px !important;
   border-radius: 5px;
   cursor: pointer;
   background: url(../../assets/img/mais-op-es-vert.svg) no-repeat top center, white;
-  border: 1px solid black;
+  border: 1px solid #757575;
 }
 
-.cap-grid-options:hover {
-  width: 30px !important;
-  height: 30px !important;
-  border-radius: 5px;
-  cursor: pointer;
-  background: url(../../assets/img/mais-op-es-vert-white.svg) no-repeat top center, blue;
+.cap-grid-options:hover,
+.cap-grid-options:focus{
+  background: url(../../assets/img/mais-op-es-vert-white.svg) no-repeat top center, #006bbb;
   border: 1px solid transparent;
 }
 
