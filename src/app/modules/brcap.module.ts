@@ -2,7 +2,6 @@ import { CapDropdownListItemComponent } from "../cap-dropdownListItem/cap-dropdo
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CapInputTextComponent } from "../cap-inputText/cap-inputText.component";
-import { CapInputTextCurrencyComponent } from "../cap-inputText-currency/cap-inputText-currency.component";
 import { FormsModule } from "@angular/forms";
 import { CapSelectComponent } from "../cap-select/cap-select.component";
 import { CapDateRangePickerComponent } from "../cap-dateRangePicker/cap-dateRangePicker.component";
@@ -43,7 +42,6 @@ import { UsuarioService } from "../services/usuario.service";
 import { PlataformaService } from "../services/plataforma.service";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { RouterModule } from "@angular/router";
-import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   imports: [
@@ -55,12 +53,10 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     MyDateRangePickerModule,
     DpDatePickerModule,
     Ng2SearchPipeModule,
-    RouterModule,
-    CurrencyMaskModule
+    RouterModule
   ],
   declarations: [
     CapInputTextComponent,
-    CapInputTextCurrencyComponent,
     CapDatepickerComponent,
     CapSelectComponent,
     CapDateRangePickerComponent,
@@ -94,7 +90,6 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
   ],
   exports: [
     CapInputTextComponent,
-    CapInputTextCurrencyComponent,
     CapDatepickerComponent,
     CapSelectComponent,
     CapDateRangePickerComponent,

@@ -1,35 +1,20 @@
-.cap-grid-row-options{
+.cap-grid-row-options {
   text-align: center;
 }
 
-.mais-opcoes{
-  font-family: "brcap-ico" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-}
-
-.mais-opcoes:after{
-  content: "\E90D";
-}
-
-cap-icon::ng-deep .brcap-ico{
+cap-icon::ng-deep .brcap-ico {
   margin-left: -1px;
 }
 
-.divisor{
+.divisor {
   height: 0.5px;
   opacity: 0.54;
   background-color: #979797;
-  width: 90%;
+  width: 100%;
   display: block;
-  float: right;
 }
 
-.cap-grid-title{
+.cap-grid-title {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.87);
   letter-spacing: 0.3px;
@@ -38,18 +23,30 @@ cap-icon::ng-deep .brcap-ico{
   margin-top: 10px;
 }
 
-.cap-grid-options{
-  width: 20px !important; 
-  height: 20px !important;
+.cap-grid-options {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 5px;
   cursor: pointer;
+  background: url(../../assets/img/mais-op-es-vert.svg) no-repeat top center, white;
+  border: 1px solid black;
 }
 
-.no-padding-left{
+.cap-grid-options:hover {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 5px;
+  cursor: pointer;
+  background: url(../../assets/img/mais-op-es-vert-white.svg) no-repeat top center, blue;
+  border: 1px solid transparent;
+}
+
+.no-padding-left {
   padding-left: 0;
 }
 
 /* ROW OPTIONS */
-.row-options{
+.row-options {
   position: absolute;
   width: 128px;
   background: white;
@@ -57,20 +54,24 @@ cap-icon::ng-deep .brcap-ico{
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   z-index: 3;
 }
-.row-options ul{
+
+.row-options ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 }
-.row-options ul li{
+
+.row-options ul li {
   height: 32px;
   line-height: 32px;
   border-left: 5px solid transparent;
   cursor: pointer;
 }
 
-.row-options ul li:hover{
+.row-options ul li:hover {
   border-left: 5px solid #ffb72a;
 }
+
 /* ROW OPTIONS - end */
 
 /* TABELA */
@@ -78,19 +79,23 @@ table {
   background-color: white;
   border: 1px solid rgba(117, 117, 117, 0.1);
 }
+
 tbody tr:nth-child(even) {
   background: rgba(117, 117, 117, 0.1);
 }
+
 .table-header {
   height: 45px;
   background-color: rgba(74, 74, 74, 0.2);
 }
+
 th,
 td {
   vertical-align: middle !important;
   border: 1px solid rgba(117, 117, 117, 0.1);
   font-size: 12px;
 }
+
 th {
   font-weight: 500;
   line-height: 1 !important;
@@ -98,6 +103,7 @@ th {
   color: #4a4a4a;
   border-bottom-color: inherit;
 }
+
 /* end TABELA */
 
 /* PAGINATION */
@@ -184,6 +190,7 @@ button.last {
 i {
   font-size: 18px;
 }
+
 /* end PAGINATION */
 
 .fa {
