@@ -1,7 +1,7 @@
 <cap-menu [value]="menu" modulo="monitor"></cap-menu>
 <cap-header username="Joaquim José Xavier"></cap-header>
 
-<div class="content-wrapper">
+<!-- <div class="content-wrapper"> -->
   <!-- <div class="content-header mainHeader">
     <div class="row">
       <div class="col-sm-6 mainTitle">
@@ -19,7 +19,7 @@
   </div> -->
 
 
-  <div class="content">
+  <!-- <div class="content"> -->
 
       <!-- <cap-inputText-currency [(ngModel)]="value" options='{ "prefix": "R$", "thousands": ".", "decimal": ","}'></cap-inputText-currency> -->
 
@@ -63,11 +63,12 @@
 
     <!-- <br>
     <br> -->
-
-    <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
     
-    <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
+    <!-- <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
       (itemOptionClick)="itemOptionClick($event)">
-    </cap-grid-pagination>
-  </div>
-</div>
+    </cap-grid-pagination> -->
+  <!-- </div>
+</div> -->
+
+
+<cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes>
