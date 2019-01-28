@@ -23,6 +23,7 @@ import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
 import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
+import { CapScrollUp } from "../cap-scrollUp/cap-scrollUp.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
 import { NewPaginationComponent } from "../cap-new-pagination/cap-new-pagination.component";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
@@ -76,6 +77,7 @@ import { RouterModule } from "@angular/router";
     CapDivisorComponent,
     CapCardComponent,
     CapTableComponent,
+    CapScrollUp,
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
@@ -97,6 +99,7 @@ import { RouterModule } from "@angular/router";
     CapPaginationComponent,
     CapMenuItemComponent,
     CapMenuComponent,
+    CapScrollUp,
     CapIconComponent,
     CapRadioComponent,
     CapHeaderComponent,
