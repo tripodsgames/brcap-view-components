@@ -45,6 +45,7 @@ export class PermissoesComponent implements OnInit {
   quantidadeFuncionalidades;
   quantidadePermissionados;
   hasAlteracao = false;
+  loading = true;
 
   usuariosPermissionados = [];
   usuariosNaoPermissionados = [];
@@ -68,6 +69,7 @@ export class PermissoesComponent implements OnInit {
     });
     this.verEstadoPermissionamento("usuarios-nao-permissionados").subscribe(res => {
       this.usuariosNaoPermissionados = res;
+      this.loading = false;
     });
   }
 
