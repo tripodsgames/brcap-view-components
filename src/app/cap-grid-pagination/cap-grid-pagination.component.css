@@ -15,6 +15,10 @@
   padding-left: 0;
 }
 
+.full-table{
+  width: 100% !important;
+}
+
 /* ROW OPTIONS */
 
 .row-options {
