@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from "@angular/core";
 export class CapLoadingComponent implements OnInit {
   @Input("loading") loading: boolean;
   @Input("styleClass") styleClass: string;
+  @Input("texto") texto: string;
 
   constructor() {}
 
