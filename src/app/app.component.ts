@@ -315,7 +315,7 @@ export class AppComponent implements OnInit {
            [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],
            [21, "JOÃO"], [22, "MARIA"], [23, "JOSÉ"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
           ];
-  rowOptions = ["Vsualizar","Editar","Excluir"];
+  rowOptions = ["Visualizar","Editar","Excluir"];
 
   ngAfterViewInit() {
     if (this.gridPagination) {

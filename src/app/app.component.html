@@ -1,8 +1,9 @@
 <cap-menu [value]="menu" modulo="monitor"></cap-menu>
 <cap-header username="Joaquim José Xavier"></cap-header>
 
-<div class="content-wrapper">
-  <!-- <div class="content-header mainHeader">
+ <div class="content-wrapper">
+
+  <!-- <div class="content-header">
     <div class="row">
       <div class="col-sm-6 mainTitle">
         Processos de Cancelamento
@@ -21,53 +22,56 @@
 
   <div class="content">
 
-      <!-- <cap-inputText-currency [(ngModel)]="value" options='{ "prefix": "R$", "thousands": ".", "decimal": ","}'></cap-inputText-currency> -->
+      <!-- <cap-scrollUp></cap-scrollUp> -->
 
-      <!-- <div class="box abas">
-          <cap-tabPanel class="fix">
-            <cap-tab title="INF.GERAIS" #listTab class="aba1">
+      <!-- <cap-button icon="calendario"></cap-button>  -->
 
-            </cap-tab>
-            <cap-tab title="CONVÊNIO RECEBIMENTO" #listTab >
+    <!-- <div class="box abas">
+      <cap-tabPanel class="fix">
+        <cap-tab title="INF.GERAIS" #listTab class="aba1">
 
-            </cap-tab>
-            <cap-tab title="VALORES COMERCIALIZAÇÃO" #listTab styleClass="aba3" >
+        </cap-tab>
+        <cap-tab title="CONVÊNIO RECEBIMENTO" #listTab>
 
-            </cap-tab>
-            <cap-tab title="LIBERAÇÃO PGTO" #listTab>
+        </cap-tab>
+        <cap-tab title="VALORES COMERCIALIZAÇÃO" #listTab styleClass="aba3">
 
-            </cap-tab>
-            <cap-tab title="RATEIO" #listTab>
+        </cap-tab>
+        <cap-tab title="LIBERAÇÃO PGTO" #listTab>
 
-            </cap-tab>
-            <cap-tab title="CLIENTE DÁ SORTE" #listTab>
-              
-            </cap-tab>
-          </cap-tabPanel>
-        </div> -->
+        </cap-tab>
+        <cap-tab title="RATEIO" #listTab>
 
-    <!-- <div class="row">
+        </cap-tab>
+        <cap-tab title="CLIENTE DÁ SORTE" #listTab>
+
+        </cap-tab>
+      </cap-tabPanel>
+    </div> -->
+
+     <!-- <div class="row">
       <div class="col-md-3">
         <cap-inputText label="Nome" icon="busca"></cap-inputText>
       </div>
       <div class="col-md-3">
         <cap-datepicker label="Data"></cap-datepicker>
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-md-10 button-container">
+    <!-- <div class="col-md-10 button-container"> -->
+      <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items" fullTable="full-table">
+      </cap-grid-pagination>
+
+      <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
+      </cap-grid-pagination>
+    <!-- </div> -->
+
+    <!-- <div class="col-md-10 button-container">
       <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
       </cap-grid-pagination>
     </div> -->
 
-
-    <!-- <br>
-    <br> -->
-
-    <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
-    
-    <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
-      (itemOptionClick)="itemOptionClick($event)">
-    </cap-grid-pagination>
-  </div>
 </div>
+</div>
+
+<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->

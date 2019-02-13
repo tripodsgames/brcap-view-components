@@ -45,6 +45,7 @@ export class PermissoesComponent implements OnInit {
   quantidadeFuncionalidades;
   quantidadePermissionados;
   hasAlteracao = false;
+  loading = true;
 
   usuariosPermissionados = [];
   usuariosNaoPermissionados = [];
@@ -68,6 +69,7 @@ export class PermissoesComponent implements OnInit {
     });
     this.verEstadoPermissionamento("usuarios-nao-permissionados").subscribe(res => {
       this.usuariosNaoPermissionados = res;
+      this.loading = false;
     });
   }
 
@@ -166,7 +168,7 @@ export class PermissoesComponent implements OnInit {
       .subscribe(
         res => {
           if (res) {
-            swal("Sucesso!", "Operação realizada com sucesso! <br/> Por favor faça o logout para atualizar as informações.", "success").then(function () {
+            swal("Sucesso!", "Operação realizada com sucesso!", "success").then(function () {
               location.reload();
             });
           } else {

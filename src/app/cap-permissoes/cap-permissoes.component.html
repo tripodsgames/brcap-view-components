@@ -14,7 +14,15 @@
       </div>
     </div>
 
+    <div class="loader" *ngIf="loading">
+      <div class="loader-body">
+        <i class="fa fa-2x fa-spinner fa-spin"></i>
+        <p>Carregando permissionamento</p>
+      </div>
+    </div>
+
     <div class="content">
+      <cap-scrollUp></cap-scrollUp>
       <div class="row" *ngIf="!usuarioPermissao">
         <div class="col-lg-3 col-xl-2" *ngIf="usuariosPermissionados.length > 0">
           <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
