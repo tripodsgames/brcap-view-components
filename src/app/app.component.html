@@ -19,14 +19,21 @@
     </div>
   </div> -->
 
-  <div class="content-header content-header-small">
-    <p>Exemplo</p>
-  </div>
-
-
   <div class="content">
+    <div class="row">
+      <div class="col-lg-6">
+        <cap-hint texto="{{bla}}" position="left"></cap-hint>
+      </div>
+      <div class="col-lg-6">
+        <cap-hint texto="outro textofffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"></cap-hint>
+      </div>
+    </div>
 
-    <cap-loading [loading]="loading" texto="Carregando alguma coisa"></cap-loading>
+    <div class="row">
+      <div class="box">
+        <cap-hint texto="{{bla}}"></cap-hint>
+      </div>
+    </div>
 
     <!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
 
