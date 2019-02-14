@@ -19,7 +19,7 @@
   </span>
 
   <span *ngIf="!value.rota">
-    <div class="menu-item" [class.menuActive]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)" ><!-- ng-controller="codigoTrat === blocSelecionado ? exibir = exibir : exibir = false" -->
+    <div class="menu-item" [class.menuActive]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)" >
 
       <img *ngIf="value.icone" class="img-icone" [src]="getIconUrl(value.icone)">
       <span class="label-menu" [class.visible]="value.visible" [class.label-only]="!value.icone">{{value.nome}}</span>

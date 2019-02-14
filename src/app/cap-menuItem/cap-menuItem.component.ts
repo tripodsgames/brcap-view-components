@@ -62,21 +62,21 @@ export class CapMenuItemComponent implements OnChanges {
 
     this.exibir = !this.exibir;
   
-    // console.log("codigoTrat = "+ this.codigoTrat);
-    // console.log("blocSelecionado = "+ this.blocSelecionado);
-    // console.log("hasChild0.codigo = "+hasChild[0].codigo);
+    console.log("codigoTrat = "+ this.codigoTrat);
+    console.log("blocSelecionado = "+ this.blocSelecionado);
+    console.log("hasChild0.codigo = "+hasChild[0].codigo);
   }
  
   ngOnChanges(changes): void{
-
-    if(changes.blocSelecionado && this.codigoTrat){
-      if(this.codigoTrat !== changes.blocSelecionado.currentValue){
+    if (changes.hasChild) {
+      if(changes.blocSelecionado){
+        if(this.codigoTrat !== changes.blocSelecionado.currentValue){
+          this.exibir = false
+        }
+      }else{
         this.exibir = false
       }
-    }else{
-      this.exibir = false
     }
-    
   }
   
   select(item)
