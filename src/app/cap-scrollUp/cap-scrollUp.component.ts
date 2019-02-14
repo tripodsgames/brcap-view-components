@@ -5,7 +5,7 @@ import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewCh
     templateUrl: "./cap-scrollUp.component.html",
     styleUrls: ["./cap-scrollUp.component.css"]
 })
-export class CapScrollUp implements OnInit {
+export class CapScrollUpComponent implements OnInit {
 
     pageTop = true;
 
