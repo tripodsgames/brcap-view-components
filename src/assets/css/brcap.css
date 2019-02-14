@@ -49,7 +49,6 @@ body.minimizado .content-wrapper {
 
 .content {
   min-height: 250px;
-  /* padding: 25px; */
   margin-right: auto;
   margin-left: auto;
   padding-top: 5px;
@@ -59,27 +58,40 @@ body.minimizado .content-wrapper {
 
 .content-header {
   position: relative;
-  padding: 10px 20px 10px 20px;
-  height: auto;
+  padding: 25px;
   top: -20px;
+}
+
+.content-header-small {
+  height: 75px !important;
+}
+
+.content-header-medium {
+  height: 80px !important;
+}
+
+.content-header-large {
+  height: 150px !important;
+}
+
+.content-header-abas,
+.content-header-cards {
+  height: 130px !important;
 }
 
 .content-header h1,
 .content-header h2,
-.content-header h3,
-.content-header h4,
-.content-header h5,
-.content-header h6 {
-  margin: 10px 0px;
+.content-header h3{
+  margin: 0;
 }
 
 .box {
   position: relative;
   border-radius: 5px;
   background: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  padding: 15px 15px 15px 15px;
+  padding: 25px;
 }
 
 .navbar {
@@ -90,31 +102,27 @@ body.minimizado .content-wrapper {
 }
 
 h1 {
-  font-family: "Ubuntu";
-  font-size: 28px;
+  font-size: 24px;
   letter-spacing: 0.2px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-  font-family: Ubuntu;
-  font-size: 24px;
-  font-weight: normal;
-  letter-spacing: 0.2px;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-h3 {
-  font-family: Ubuntu;
   font-size: 20px;
   font-weight: normal;
   letter-spacing: 0.2px;
   color: rgba(0, 0, 0, 0.87);
 }
 
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
 .subtitle-1-brcap {
-  font-family: Ubuntu;
   font-size: 16px;
   line-height: 1.48;
   letter-spacing: 0.2px;
@@ -122,7 +130,6 @@ h3 {
 }
 
 .subtitle-2-brcap {
-  font-family: Ubuntu;
   font-size: 16px;
   line-height: 1.48;
   letter-spacing: 0.2px;
@@ -130,13 +137,11 @@ h3 {
 }
 
 .caption-brcap {
-  font-family: Ubuntu;
   font-size: 12px;
   letter-spacing: 0.2px;
 }
 
 .sm-btn-caption-brcap {
-  font-family: Ubuntu;
   font-size: 10px;
   line-height: 1.6;
   letter-spacing: 0.2px;
@@ -144,7 +149,6 @@ h3 {
 }
 
 .chips-caption-brcap {
-  font-family: Ubuntu;
   font-size: 9px;
   letter-spacing: 0.2px;
   text-transform: uppercase;
