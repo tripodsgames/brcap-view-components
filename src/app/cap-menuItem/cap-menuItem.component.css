@@ -105,6 +105,10 @@ ul.list li:hover {
   bottom: -2px;
 }
 
+.h7{
+  font-size: 9px;
+}
+
 /* .rotate::ng-deep .brcap-ico{
   padding-top: 3px;
   transition-delay: 0.3s;
