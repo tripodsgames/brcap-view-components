@@ -425,12 +425,18 @@ p.label-text span {
   top: 1px;
 }
 
+.helper-text.disabled,
 label.disabled {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.38);
 }
 
-.helper-text.disabled {
-  color: rgba(0, 0, 0, 0.5);
+ng-select .disabled{
+  background: white !important;
+  border: 1px solid rgba(117, 117, 117, 0.38) !important;
+}
+
+ng-select .disabled .placeholder{
+  color: rgba(0,0,0,0.38) !important;
 }
 
 .ico-error {

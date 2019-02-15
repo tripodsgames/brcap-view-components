@@ -324,6 +324,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ];
   rowOptions = ["Visualizar", "Editar", "Excluir"];
 
+  listaTipoPessoa = "dd"
   ngAfterViewInit() {
     if (this.gridPagination) {
       setTimeout(_ => {
