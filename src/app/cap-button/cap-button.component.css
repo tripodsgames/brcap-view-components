@@ -125,3 +125,11 @@ button.cap-button.btn-ico {
 button.cap-button.sm.btn-ico {
   padding: 0px 10px;
 }
+
+.cap-button[disabled] {
+  opacity: 0.38;
+}
+
+.cap-button[disabled]:hover:after{
+  opacity: 0;
+}

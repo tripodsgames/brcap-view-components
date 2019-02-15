@@ -23,19 +23,20 @@
 
     <div class="row box">
       <div class="col-lg-3">
-        <cap-inputText label="Nome" mask="99.999-999" [(ngModel)]="nome"
-          textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" error="true">
+        <cap-inputText label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+          maxlength="20" error="true" [disabled]="disabled">
         </cap-inputText>
       </div>
 
       <div class="col-lg-3">
-        <cap-button icon="busca" [disabled]="disabled"></cap-button>
-      </div>
-
-      <div class="col-lg-3">
-
+        <cap-button icon="busca" [disabled]="true"></cap-button>
       </div>
     </div>
+
+    <div class="col-lg-3">
+        <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data" mask="99/99/9999">
+        </cap-datepicker>
+      </div>
 
     <!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
 
