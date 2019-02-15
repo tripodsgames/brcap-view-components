@@ -129,3 +129,7 @@ button.cap-button.sm.btn-ico {
 .cap-button[disabled] {
   opacity: 0.38;
 }
+
+.cap-button[disabled]:hover:after{
+  opacity: 0;
+}
