@@ -4,7 +4,7 @@
     <a class="link" [href]="value.rota">
       <div class="menu-item" [class.menuActive]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)" >
 
-        <span class="label-menu " [class.visible]="value.visible ">{{value.nome}} / <b class="h7">{{exibir}} / {{blocSelecionado}}</b></span>
+        <span class="label-menu " [class.visible]="value.visible ">{{value.nome}}</b></span>
         <cap-icon icon="expandir animated bounceIn" *ngIf="value?.funcionalidades && codigoTrat !== blocSelecionado " styleClass="icon-arrow "></cap-icon>
         <cap-icon icon="retrair animated bounceIn" *ngIf="value?.funcionalidades && codigoTrat === blocSelecionado " styleClass="icon-arrow "></cap-icon>
 
@@ -22,7 +22,7 @@
     <div class="menu-item" [class.menuActive]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)" >
 
       <img *ngIf="value.icone" class="img-icone" [src]="getIconUrl(value.icone)">
-      <span class="label-menu" [class.visible]="value.visible" [class.label-only]="!value.icone">{{value.nome}} / <b class="h7">{{exibir}} / {{blocSelecionado}}</b></span>
+      <span class="label-menu" [class.visible]="value.visible" [class.label-only]="!value.icone">{{value.nome}}</b></span>
       <cap-icon icon="expandir animated bounceIn" *ngIf="value?.funcionalidades && !exibir " styleClass="icon-arrow "></cap-icon>
       <cap-icon icon="retrair animated bounceIn" *ngIf="value?.funcionalidades && exibir " styleClass="icon-arrow "></cap-icon>
 
