@@ -40,10 +40,4 @@ export class CapMenuComponent implements OnInit {
 
   }
 
- /*  public selecionarItem2(bolle) {
-    this.exibir = bolle;
-  } */
-
-
-
 }

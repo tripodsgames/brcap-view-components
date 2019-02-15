@@ -10,7 +10,7 @@
 
       </div>
     </a>
-    <ul *ngIf="(value.funcionalidades && codigoTrat === blocSelecionado) && exibir">
+    <ul *ngIf="(value.funcionalidades && codigoTrat === blocSelecionado) && exibir" >
       <li *ngFor="let item of value.funcionalidades" (click)="select(item)" [ngClass]="itemSelecionado == item.codigo ? subClass : '' ">
         <cap-menuItem [value]="item " principal="true " *ngIf="item.funcionalidades"></cap-menuItem>
         <cap-menuItem [value]="item " principal="false " *ngIf="!item.funcionalidades"></cap-menuItem>
@@ -27,7 +27,7 @@
       <cap-icon icon="retrair animated bounceIn" *ngIf="value?.funcionalidades && exibir " styleClass="icon-arrow "></cap-icon>
 
     </div>
-    <ul *ngIf="(value.funcionalidades && codigoTrat === blocSelecionado) && exibir " class="list">
+    <ul class="list fechado" [class.abrir]="(value.funcionalidades && codigoTrat === blocSelecionado) && exibir ">
       <li *ngFor="let item of value.funcionalidades" (click)="select(item)" [ngClass]="itemSelecionado == item.codigo ? subClass : '' "
           class="sub-item" [class.subClass]="itemSelecionado == item.nome">
         <cap-menuItem [value]="item" principal="true" *ngIf="item.funcionalidades " ></cap-menuItem>
