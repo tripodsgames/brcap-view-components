@@ -425,29 +425,6 @@ p.label-text span {
   top: 1px;
 }
 
-.helper-text.disabled,
-label.disabled {
-  color: rgba(0, 0, 0, 0.38);
-}
-
-ng-select .disabled{
-  background: white !important;
-  border: 1px solid rgba(117, 117, 117, 0.38) !important;
-}
-
-ng-select .disabled .placeholder{
-  color: rgba(0,0,0,0.38) !important;
-}
-
-.ico-error {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 14px;
-  font-size: 20px;
-  color: #b00020;
-}
-
 /* !
 * BRCap Icones
 * @author Felipe Sousa
@@ -753,7 +730,7 @@ select-dropdown>div .filter input {
 ng-select>div>div.single>div.clear,
 ng-select>div>div.single>div.toggle {
   line-height: 50px !important;
-  color: #000 !important;
+  color: #757575 !important;
   overflow: hidden;
 }
 
@@ -1392,4 +1369,38 @@ cap-modal.sm .modal-dialog {
 
 cap-modal.lg .modal-dialog {
   width: 750px;
+}
+
+/* disabled */
+.helper-text.disabled,
+label.disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+ng-select .disabled{
+  background: white !important;
+  border: 1px solid rgba(117, 117, 117, 0.38) !important;
+}
+
+ng-select .disabled .placeholder{
+  color: rgba(0,0,0,0.38) !important;
+}
+
+/* error */
+ng-select.error .below{
+  border: 1px solid #b00020 !important;
+}
+
+ng-select.error > div > div.single > div.toggle,
+.error {
+  color: #b00020 !important;
+}
+
+.ico-error {
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 14px;
+  font-size: 20px;
+  color: #b00020;
 }
