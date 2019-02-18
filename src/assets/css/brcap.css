@@ -74,7 +74,13 @@ body.minimizado .content-wrapper {
   height: 80px !important;
 }
 
-.content-header-medium .cap-inputText,
+.content-header label.label-input {
+  background: transparent;
+  top: 22px !important;
+  left: 9px !important;
+}
+
+/* .content-header-medium .cap-inputText,
 .content-header-medium .below,
 .content-header-medium .cap-button,
 .content-header-medium .mydp .selection,
@@ -107,13 +113,13 @@ body.minimizado .content-wrapper {
 .content-header-medium label.label-input{
   top: -4px;
   left: 8px;
-}
+} */
 
 .content-header-large {
   height: 150px !important;
 }
 
-.content-header-large .cap-inputText,
+/* .content-header-large .cap-inputText,
 .content-header-large .cap-button,
 .content-header-large .below,
 .content-header-large .mydp .selection,
@@ -130,19 +136,13 @@ body.minimizado .content-wrapper {
 .content-header-large button.cap-button .brcap-ico{
   left: -12px !important;
   font-size: 24px !important;
-}
+} */
 
-.content-header-large label.label-input {
-  background: transparent;
-  top: 22px !important;
-  left: 9px !important;
-}
-
-.content-header-large .mydp,
+/* .content-header-large .mydp,
 .content-header-large .mydrp,
 .content-header-large .cap-button{
   margin-top: 21px;
-}
+} */
 
 .content-header-abas,
 .content-header-cards {
@@ -1481,4 +1481,17 @@ ng-select.error > div > div.single > div.toggle,
 
 .no-padding{
   padding: 0;
+}
+
+/* botão nova pesquisa */
+.nova-pesquisa .cap-button {
+  width: 195px !important;
+  height: 36px !important;
+  margin-top: -3px !important;
+  float: right;
+  padding: 0px 20px !important;
+}
+
+.nova-pesquisa .cap-button .busca {
+  font-size: 20px !important;
 }
