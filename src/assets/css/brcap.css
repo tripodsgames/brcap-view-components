@@ -62,6 +62,10 @@ body.minimizado .content-wrapper {
   top: -20px;
 }
 
+.content-header label.label-input {
+  background: transparent;
+}
+
 .content-header-small {
   height: 75px !important;
 }
@@ -70,8 +74,74 @@ body.minimizado .content-wrapper {
   height: 80px !important;
 }
 
+.content-header-medium .cap-inputText,
+.content-header-medium .below,
+.content-header-medium .cap-button,
+.content-header-medium .mydp .selection,
+.content-header-medium .mydp .selbtngroup,
+.content-header-medium .mydrp .selection,
+.content-header-medium .mydrp .selbtngroup{
+  height: 40px !important;
+}
+
+.content-header-medium h1{
+  line-height: 1.5;
+}
+
+.content-header-medium .cap-inputText,
+.content-header-medium .below{
+  margin-top: -23px;
+}
+
+.content-header-medium .mydp,
+.content-header-medium .mydrp,
+.content-header-medium .cap-button{
+  margin-top: -3px;
+}
+
+.content-header-medium .cap-button{
+  width: 40px;
+  padding: 0px 20px !important;
+}
+
+.content-header-medium label.label-input{
+  top: -4px;
+  left: 8px;
+}
+
 .content-header-large {
   height: 150px !important;
+}
+
+.content-header-large .cap-inputText,
+.content-header-large .cap-button,
+.content-header-large .below,
+.content-header-large .mydp .selection,
+.content-header-large .mydp .selbtngroup,
+.content-header-large .mydrp .selection,
+.content-header-large .mydrp .selbtngroup{
+  height: 50px !important;
+}
+
+.content-header-large .cap-button{
+  width: 50px;
+}
+
+.content-header-large button.cap-button .brcap-ico{
+  left: -12px !important;
+  font-size: 24px !important;
+}
+
+.content-header-large label.label-input {
+  background: transparent;
+  top: 22px !important;
+  left: 9px !important;
+}
+
+.content-header-large .mydp,
+.content-header-large .mydrp,
+.content-header-large .cap-button{
+  margin-top: 21px;
 }
 
 .content-header-abas,
@@ -365,12 +435,6 @@ input:disabled:-ms-input-placeholder {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.87);
   border-radius: 0px;
-}
-
-.content-header label.label-input {
-  background: transparent;
-  top: 22px !important;
-  left: 9px !important;
 }
 
 .icon-calendar {
@@ -1403,4 +1467,18 @@ ng-select.error > div > div.single > div.toggle,
   right: 14px;
   font-size: 20px;
   color: #b00020;
+}
+
+
+/* classes gerais */
+.no-padding-right{
+  padding-right: 0;
+}
+
+.no-padding-left{
+  padding-left: 0;
+}
+
+.no-padding{
+  padding: 0;
 }
