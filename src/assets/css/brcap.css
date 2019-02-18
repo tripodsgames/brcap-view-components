@@ -22,8 +22,7 @@ html {
   height: auto;
   min-height: 100%;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   display: block;
 }
 
