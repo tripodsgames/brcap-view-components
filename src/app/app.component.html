@@ -1,6 +1,8 @@
 <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
 
 <cap-header username="Joaquim José Xavier"></cap-header>
+<!-- 
+<div class="content-wrapper"> -->
 
 <div class="content-wrapper">
 
@@ -34,15 +36,15 @@
         </cap-datepicker>
       </div> -->
 
-  <!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
+<!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
 
-  <!-- <input id="test">
+<!-- <input id="test">
  -->
-  <!-- <cap-scrollUp></cap-scrollUp> -->
+<!-- <cap-scrollUp></cap-scrollUp> -->
 
-  <!-- <cap-button icon="calendario"></cap-button>  -->
+<!-- <cap-button icon="calendario"></cap-button>  -->
 
-  <!-- <div class="box abas">
+<!-- <div class="box abas">
       <cap-tabPanel class="fix">
         <cap-tab title="INF.GERAIS" #listTab class="aba1">
 
@@ -65,7 +67,7 @@
       </cap-tabPanel>
     </div> -->
 
-  <!-- <div class="row">
+<!-- <div class="row">
       <div class="col-md-3">
         <cap-inputText label="Nome" icon="busca"></cap-inputText>
       </div>
@@ -74,11 +76,11 @@
       </div>
     </div> -->
 
-  <!-- <div class="col-md-10 button-container"> -->
+<!-- <div class="col-md-10 button-container"> -->
 
-  <!-- <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
+<!-- <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
     </cap-grid-pagination> -->
-  <!-- </div> -->
+<!-- </div> -->
 
   <!-- <div class="col-md-10 button-container">
       <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
@@ -88,4 +90,186 @@
   </div>
 </div>
 
+
 <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
+
+<!-- ACERTOS DOS COMPONENTES -->
+<div class="content-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="box" style="height: 750px;">
+          CAP-BUTTON
+          <div class="col-md-12">
+            <cap-button styleClass="xs" label="Atualizar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="sm" label="Atualizar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button label="Atualizar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico sm" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="outline" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="white" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico white" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico" icon="busca" [disabled]="true"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button icon="busca" label="Buscar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button class="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="box">
+          CAP-DIVISOR
+          <cap-divisor></cap-divisor>
+          <cap-divisor styleClass="light"></cap-divisor>
+        </div>
+
+        <div class="box" style="height: 100px;">
+          <div class="col-md-12">
+            <cap-icon icon="info" size="24"></cap-icon>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-icon icon="x-circulo" size="24" [disabled]="true"></cap-icon>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
+            <br /><br />
+          </div>
+          <div class="col-md-12" style="margin-top: -55px;">
+            <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
+            <br /><br />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        CAP-RADIO
+        <div class="box" style="height: 200px;">
+          <div class="col-md-12">
+            <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-radio itemValue="2" name="options" [(ngModel)]="radio2" itemLabel="Opção 2"></cap-radio>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true"></cap-radio>
+            <br /><br />
+          </div>
+        </div>
+
+        <div class="box" style="height: 300px;">
+          CAP-CHIPS
+          <div class="col-md-12">
+            <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
+            </cap-chips>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-chips name="chip" itemLabel="Opção 2" [(ngModel)]="selecionadoChips2">
+            </cap-chips>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-chips name="chip" itemLabel="Opção 3" [(ngModel)]="selecionadoChips3" [disabled]="true">
+            </cap-chips>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
+            </cap-chips>
+            <br /><br />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="box" style="height: 150px;">
+          CAP-CHECKBOX
+          <div class="col-md-12">
+            <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
+            </cap-checkbox>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-checkbox name="options" [(ngModel)]="value2" itemLabel="Opção 2" [disabled]="true">
+            </cap-checkbox>
+            <br /><br />
+          </div>
+        </div>
+
+        <div class="box" style="height: 200px;">
+          CAP-TOGGLE
+          <div class="col-md-12">
+            <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
+            </cap-toggle>
+          </div>
+          <div class="col-md-12">
+            <cap-toggle name="options" itemLabel="Opção 2" [(ngModel)]="toggle2" [disabled]="true">
+            </cap-toggle>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        CAP-GRID-PAGINATION
+        <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items">
+        </cap-grid-pagination>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        CAP-NEW-GRID-PAGINATION
+        <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
+          [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
+          [ultimaLinha]="ultimaLinha "></cap-new-pagination>
+      </div>
+    </div>
+
+    <cap-scrollUp></cap-scrollUp>
+
+    <div class="row">
+      <div class="col-xs-12">
+        
+
+      </div>
+    </div>
+
+  </div>
+</div>
