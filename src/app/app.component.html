@@ -152,6 +152,11 @@
             <br /><br />
           </div>
         </div>
+
+        <div class="box">
+            CAP-HINT
+          <cap-hint texto="olar"></cap-hint>
+        </div>
       </div>
 
       <div class="col-lg-3">
@@ -235,7 +240,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        CAP-NEW-GRID-PAGINATION
+        CAP-NEW-PAGINATION
         <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
           [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
           [ultimaLinha]="ultimaLinha "></cap-new-pagination>
@@ -245,8 +250,9 @@
     <cap-scrollUp></cap-scrollUp>
 
     <div class="row">
+        CAP-PAGINATION
       <div class="col-xs-12">
-        
+        <cap-pagination></cap-pagination>
 
       </div>
     </div>
