@@ -78,37 +78,151 @@
 
 <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
 
-
+<!-- ACERTOS DOS COMPONENTES -->
 <div class="content-wrapper">
   <div class="content">
-    <div class="box col-lg-3" style="height: 500px;">
-      <div class="col-md-12">
-        <cap-button styleClass="xs" label="Atualizar"></cap-button>
-        <br /><br />
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="box" style="height: 750px;">
+          <div class="col-md-12">
+            <cap-button styleClass="xs" label="Atualizar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="sm" label="Atualizar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button label="Atualizar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico sm" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="outline" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="white" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico white" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="btn-ico" icon="busca" [disabled]="true"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button icon="busca" label="Buscar"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button class="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+        </div>
       </div>
-      <div class="col-md-12">
-        <cap-button styleClass="sm" label="Atualizar"></cap-button>
-        <br /><br />
+
+      <div class="col-lg-2">
+        <div class="box">
+          <cap-divisor></cap-divisor>
+          <cap-divisor styleClass="light"></cap-divisor>
+        </div>
+
+        <div class="box" style="height: 100px;">
+          <div class="col-md-12">
+            <cap-icon icon="info" size="24"></cap-icon>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-icon icon="x-circulo" size="24" [disabled]="true"></cap-icon>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
+            <br /><br />
+          </div>
+          <div class="col-md-12" style="margin-top: -55px;">
+            <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
+            <br /><br />
+          </div>
+        </div>
+
       </div>
-      <div class="col-md-12">
-        <cap-button label="Atualizar"></cap-button>
-        <br /><br />
+
+      <div class="col-lg-3">
+
+        <div class="box" style="height: 200px;">
+          <div class="col-md-12">
+            <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-radio itemValue="2" name="options" [(ngModel)]="radio2" itemLabel="Opção 2"></cap-radio>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true"></cap-radio>
+            <br /><br />
+          </div>
+        </div>
+
+        <div class="box" style="height: 300px;">
+          <div class="col-md-12">
+            <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
+            </cap-chips>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-chips name="chip" itemLabel="Opção 2" [(ngModel)]="selecionadoChips2">
+            </cap-chips>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-chips name="chip" itemLabel="Opção 3" [(ngModel)]="selecionadoChips3" [disabled]="true">
+            </cap-chips>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+              <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
+              </cap-chips>
+              <br /><br />
+            </div>
+        </div>
       </div>
-      <div class="col-md-12">
-        <cap-button styleClass="btn-ico sm" icon="busca"></cap-button>
-        <br /><br />
-      </div>
-      <div class="col-md-12">
-        <cap-button styleClass="btn-ico" icon="busca"></cap-button>
-        <br /><br />
-      </div>
-      <div class="col-md-12">
-        <cap-button styleClass="outline" label="inserir"></cap-button>
-        <br /><br />
-      </div>
-      <div class="col-md-12">
-        <cap-button styleClass="white" label="inserir"></cap-button>
-        <br /><br />
+
+      <div class="col-lg-3">
+        <div class="box" style="height: 150px;">
+          <div class="col-md-12">
+            <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
+            </cap-checkbox>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-checkbox name="options" [(ngModel)]="value2" itemLabel="Opção 2" [disabled]="true">
+            </cap-checkbox>
+            <br /><br />
+          </div>
+        </div>
+
+        <div class="box" style="height: 200px;">
+          <div class="col-md-12">
+            <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
+            </cap-toggle>
+          </div>
+          <div class="col-md-12">
+            <cap-toggle name="options" itemLabel="Opção 2" [(ngModel)]="toggle2" [disabled]="true">
+            </cap-toggle>
+          </div>
+        </div>
       </div>
     </div>
   </div>

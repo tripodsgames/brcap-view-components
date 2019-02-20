@@ -30,8 +30,6 @@ label.disabled {
   opacity: 0.4;
 }
 
-
-
 label:first-of-type {
   transform: translateX(-40px);
 }
