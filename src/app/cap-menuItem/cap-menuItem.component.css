@@ -128,7 +128,7 @@ ul.list li:hover {
 
 .ativado:after {
   top: -2px;
-  width: 6px;
+  width: 8px;
   content: "";
   background-color: #ffe800;
   position: absolute;

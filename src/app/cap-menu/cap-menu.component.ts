@@ -28,7 +28,7 @@ export class CapMenuComponent implements OnInit {
     if (this.width) {
       this.divMenu.nativeElement.style.width = this.width + "px";
     } else {
-      this.divMenu.nativeElement.style.width = "";  //230px
+      this.divMenu.nativeElement.style.width = "230px";  //
     }
     this.exibir = false;
   }

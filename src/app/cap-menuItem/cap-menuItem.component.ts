@@ -65,9 +65,9 @@ export class CapMenuItemComponent implements OnChanges {
     
     this.exibir = !this.exibir;
   
-    console.log("codigoTrat = "+ this.codigoTrat);
-    console.log("blocSelecionado = "+ this.blocSelecionado);
-    console.log("hasChild0.codigo = "+hasChild[0].codigo);
+    // console.log("codigoTrat = "+ this.codigoTrat);
+    // console.log("blocSelecionado = "+ this.blocSelecionado);
+    // console.log("hasChild0.codigo = "+hasChild[0].codigo);
   }
  
   ngOnChanges(changes): void{
@@ -85,8 +85,8 @@ export class CapMenuItemComponent implements OnChanges {
     this.subClass = "ativado"
     this.selecionar.emit(item.codigo);
   
-    console.log("codigoTrat2 = "+ this.codigoTrat);
-    console.log("blocSelecionado2 = "+ this.blocSelecionado);
+    // console.log("codigoTrat2 = "+ this.codigoTrat);
+    // console.log("blocSelecionado2 = "+ this.blocSelecionado);
   }
    
 }
