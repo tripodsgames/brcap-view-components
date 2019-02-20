@@ -1,3 +1,9 @@
+.menuFixo {
+  position: fixed;
+  top: 0px;
+  background-color: #ccf;
+}
+
 .menu-item {
   padding: 10px;
   cursor: pointer;
@@ -39,7 +45,7 @@ ul.list li {
 }
 
 ul.list li:hover {
-  border-top: 2px solid rgba(255, 204, 0, 0.2);
+  border-top: 2px solid rgba(255, 204, 0, 0);
   border-bottom: 2px solid rgba(255, 204, 0, 0.5);
   background-color: rgba(255, 204, 0, 0.005);
   /* #ffcc00;  //Monitor */
@@ -73,18 +79,12 @@ ul.list li:hover {
   transition: max-height 1s ease-in-out;
 }
 
-
-
-
-/* .ativado {
-  border-right: 6px solid rgba(255, 255, 255, 0.5);
-} */
-
 .hide {
   display: none;
 }
 
 .label-menu {
+  border-top: 2px solid rgba(0, 0, 0, 0);
   color: rgba(255, 255, 255, 0.8);
   text-transform: capitalize;
   font-size: 14px;
@@ -128,7 +128,7 @@ ul.list li:hover {
 
 .ativado:after {
   top: -2px;
-  width: 6px;
+  width: 8px;
   content: "";
   background-color: #ffe800;
   position: absolute;

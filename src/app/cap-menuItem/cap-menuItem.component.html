@@ -2,7 +2,7 @@
 
   <span *ngIf="value.rota">
     <a class="link" [href]="value.rota">
-      <div class="menu-item" [class.menuActive]="exibir" #menuItem (click)="toggleClass(value?.funcionalidades)" >
+      <div class="menu-item" #menuItem (click)="toggleClass(value?.funcionalidades)" >
 
         <span class="label-menu " [class.visible]="value.visible ">{{value.nome}}</span>
         <cap-icon icon="expandir animated bounceIn" *ngIf="value?.funcionalidades && codigoTrat !== blocSelecionado " styleClass="icon-arrow "></cap-icon>

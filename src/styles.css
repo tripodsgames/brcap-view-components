@@ -18,3 +18,7 @@
 .cap-button {
   background-color: #006bbb;  /* //Todos */
 }
+
+html {
+  scroll-behavior: smooth;
+}
