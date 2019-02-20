@@ -68,11 +68,6 @@
     </cap-grid-pagination> -->
 <!-- </div> -->
 
-<!-- <div class="col-md-10 button-container">
-      <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
-      </cap-grid-pagination>
-    </div> -->
-
 <!-- </div> -->
 <!-- </div> -->
 
@@ -84,6 +79,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="box" style="height: 750px;">
+          CAP-BUTTON
           <div class="col-md-12">
             <cap-button styleClass="xs" label="Atualizar"></cap-button>
             <br /><br />
@@ -133,6 +129,7 @@
 
       <div class="col-lg-2">
         <div class="box">
+          CAP-DIVISOR
           <cap-divisor></cap-divisor>
           <cap-divisor styleClass="light"></cap-divisor>
         </div>
@@ -155,11 +152,10 @@
             <br /><br />
           </div>
         </div>
-
       </div>
 
       <div class="col-lg-3">
-
+        CAP-RADIO
         <div class="box" style="height: 200px;">
           <div class="col-md-12">
             <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
@@ -176,6 +172,7 @@
         </div>
 
         <div class="box" style="height: 300px;">
+          CAP-CHIPS
           <div class="col-md-12">
             <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
             </cap-chips>
@@ -192,15 +189,16 @@
             <br /><br />
           </div>
           <div class="col-md-12">
-              <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
-              </cap-chips>
-              <br /><br />
-            </div>
+            <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
+            </cap-chips>
+            <br /><br />
+          </div>
         </div>
       </div>
 
       <div class="col-lg-3">
         <div class="box" style="height: 150px;">
+          CAP-CHECKBOX
           <div class="col-md-12">
             <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
             </cap-checkbox>
@@ -214,6 +212,7 @@
         </div>
 
         <div class="box" style="height: 200px;">
+          CAP-TOGGLE
           <div class="col-md-12">
             <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
             </cap-toggle>
@@ -225,5 +224,32 @@
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        CAP-GRID-PAGINATION
+        <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items">
+        </cap-grid-pagination>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        CAP-NEW-GRID-PAGINATION
+        <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
+          [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
+          [ultimaLinha]="ultimaLinha "></cap-new-pagination>
+      </div>
+    </div>
+
+    <cap-scrollUp></cap-scrollUp>
+
+    <div class="row">
+      <div class="col-xs-12">
+        
+
+      </div>
+    </div>
+
   </div>
 </div>
