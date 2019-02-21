@@ -4,9 +4,9 @@
 <!-- 
 <div class="content-wrapper"> -->
 
-<div class="content-wrapper">
+<!-- <div class="content-wrapper"> -->
 
-  <div class="content-header">
+<!-- <div class="content-header">
     <div class="row">
       <div class="col-lg-6">
         <h1 style="font-weight: 500">frhj</h1>
@@ -15,11 +15,11 @@
         <cap-button label="Nova Pesquisa" icon="busca" class="nova-pesquisa"></cap-button>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="content">
+<!-- <div class="content"> -->
 
-    <!-- <div class="row box">
+<!-- <div class="row box">
       <div class="col-lg-3">
         <cap-inputText label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
           maxlength="20" error="true" [disabled]="disabled">
@@ -82,13 +82,13 @@
     </cap-grid-pagination> -->
 <!-- </div> -->
 
-  <!-- <div class="col-md-10 button-container">
+<!-- <div class="col-md-10 button-container">
       <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
       </cap-grid-pagination>
     </div> -->
 
-  </div>
-</div>
+<!-- </div>
+</div> -->
 
 
 <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
@@ -174,8 +174,15 @@
         </div>
 
         <div class="box">
-            CAP-HINT
-          <cap-hint texto="olar"></cap-hint>
+          CAP-HINT
+          <div class="col-md-12">
+            <cap-hint texto="olar"></cap-hint>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-hint styleClass="left" texto="olar"></cap-hint>
+            <br /><br />
+          </div>
         </div>
       </div>
 
@@ -270,10 +277,65 @@
     <cap-scrollUp></cap-scrollUp>
 
     <div class="row">
-        CAP-PAGINATION
+      CAP-PAGINATION
       <div class="col-xs-12">
         <cap-pagination></cap-pagination>
+      </div>
+    </div>
 
+    <div class="row">
+      CAP-TABPANEL
+      <div class="box">
+        <cap-tabPanel>
+          <cap-tab title="INFORMAÇÕES GERAIS">
+            FDBGFDGDFG
+          </cap-tab>
+          <cap-tab title="SORTEIOS" [disabled]="true">
+            AAAAAAAAA
+          </cap-tab>
+          <cap-tab title="QUOTAS">
+            MNFBMGOBMGFIKBM
+          </cap-tab>
+          <cap-tab title="RESGATE">
+            DRGDFFD
+          </cap-tab>
+        </cap-tabPanel>
+      </div>
+    </div>
+
+    <div class="row">
+      CAP-BTNCOLLAPSE - COLLAPSED
+      <div class="box">
+        <div class="divColapse">
+          <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
+        </div>
+        <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
+          ddthhghfgh
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      CAP-BTNCOLLAPSE
+      <div class="box">
+        <div class="divColapse">
+          <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
+        </div>
+        <div class="conteudoInterno collapse" [id]="'conteudoInterno2' + i">
+          ddthhghfgh
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      CAP-BTNCOLLAPSE DISABLED
+      <div class="box">
+        <div class="divColapse">
+          <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true"></cap-btnCollapse>
+        </div>
+        <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
+          ddthhghfgh
+        </div>
       </div>
     </div>
 

@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class CapHintComponent implements OnInit {
     @Input() texto: string
-    @Input("position") position: string;
+    @Input("styleClass") styleClass: string;
 
     exibirHint;
 
