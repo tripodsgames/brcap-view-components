@@ -1468,6 +1468,15 @@ ng-select.error > div > div.single > div.toggle,
   color: #b00020;
 }
 
+.error label{
+  color: #b00020;
+}
+
+.error input{
+  color: #b00020 !important;
+  border-color: #b00020 !important;
+}
+
 /* classes gerais */
 .no-padding-right {
   padding-right: 0 !important;
