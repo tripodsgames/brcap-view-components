@@ -1477,6 +1477,11 @@ ng-select.error > div > div.single > div.toggle,
   border-color: #b00020 !important;
 }
 
+.error .below{
+  color: #b00020 !important;
+  border-color: #b00020 !important;
+}
+
 /* classes gerais */
 .no-padding-right {
   padding-right: 0 !important;

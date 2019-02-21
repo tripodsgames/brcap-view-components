@@ -425,5 +425,13 @@
       </cap-password>
     </div>
 
+    <div class="row box">
+      CAP-SELECT
+      <br />
+      <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+      <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
+      <cap-select class="error" label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+    </div>
+
   </div>
 </div>
