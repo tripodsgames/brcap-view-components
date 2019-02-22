@@ -363,15 +363,6 @@ label.label-input {
   left: 0px;
 }
 
-.ico-error {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 14px;
-  font-size: 20px;
-  color: #b00020;
-}
-
 ::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
@@ -1445,8 +1436,11 @@ input[disabled] {
 }
 
 /* error */
-ng-select.error>div>div.single>div.toggle,
-.error {
+.below.error .toggle,
+.error,
+.ico-error,
+my-date-range-picker.error .mydrp .selectiongroup .btnpicker,
+my-date-picker.error .mydp .selectiongroup .btnpicker{
   color: #b00020 !important;
 }
 
@@ -1456,14 +1450,13 @@ ng-select.error>div>div.single>div.toggle,
   top: -35px;
   right: 14px;
   font-size: 20px;
-  color: #b00020;
 }
 
 .below.error,
 dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
 .cap-inputTextArea.error,
-/* my-date-picker.error .mydp .selectiongroup */
+/* my-date-picker.error .mydp .selectiongroup, */
 my-date-range-picker.error .mydrp .selectiongroup {
   border: 2px solid #b00020 !important;
 }
