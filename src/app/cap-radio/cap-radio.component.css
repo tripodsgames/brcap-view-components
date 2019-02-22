@@ -161,6 +161,10 @@ label.cap-radiobutton {
   font-family: Ubuntu;
 }
 
+label.error{
+  color: rgba(0,0,0,0.87) !important;
+}
+
 @keyframes borderscale {
   50% {
     box-shadow: 0 0 0px 10px rgba(100, 100, 100, 0.3);

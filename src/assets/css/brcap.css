@@ -1439,6 +1439,7 @@ input[disabled] {
 .below.error .toggle,
 .error,
 .ico-error,
+cap-icon.error .ver-senha-password, 
 my-date-range-picker.error .mydrp .selectiongroup .btnpicker,
 my-date-picker.error .mydp .selectiongroup .btnpicker{
   color: #b00020 !important;
@@ -1457,6 +1458,7 @@ dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
 .cap-inputTextArea.error,
 /* my-date-picker.error .mydp .selectiongroup, */
+.cap-radiobutton.error:before,
 my-date-range-picker.error .mydrp .selectiongroup {
   border: 2px solid #b00020 !important;
 }

@@ -34,6 +34,7 @@
   }
 }
 
-my-date-picker::ng-deep .mydp .btnpickerdisabled {
+my-date-picker::ng-deep .mydp .btnpickerdisabled,
+my-date-picker::ng-deep .mydp .selectiondisabled  {
   opacity: 0.38;
 }

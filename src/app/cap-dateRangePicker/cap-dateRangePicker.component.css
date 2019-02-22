@@ -1,7 +1,4 @@
-my-date-range-picker::ng-deep .mydrp .selectiongroup {
-  border: 1px solid rgba(117, 117, 117, 0.38) !important;
-}
-
-my-date-range-picker::ng-deep .mydrp .btnpickerdisabled {
+my-date-range-picker::ng-deep .mydrp .btnpickerdisabled,
+my-date-range-picker::ng-deep .mydrp .selectiondisabled {
   opacity: 0.38;
 }
