@@ -5,4 +5,4 @@
   highlightTextColor="#000">
 
 </ng-select>
-<p *ngIf="textHelper?.length" class="helper-text" [class.disabled]="disabled">{{textHelper}}</p>
+<p *ngIf="textHelper?.length" class="helper-text {{styleClass}}" [class.disabled]="disabled">{{textHelper}}</p>

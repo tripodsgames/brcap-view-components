@@ -150,7 +150,7 @@ body.minimizado .content-wrapper {
 
 .content-header h1,
 .content-header h2,
-.content-header h3{
+.content-header h3 {
   margin: 0;
 }
 
@@ -351,20 +351,6 @@ label.label-input {
   height: 4px;
 }
 
-label.error,
-.helper-text.error {
-  color: #b00020;
-}
-
-.cap-inputText.error {
-  border-color: #b00020;
-  border-width: 2px;
-}
-
-.content-header .cap-inputText.error {
-  border: 1.5px solid #b00020;
-}
-
 .helper-text {
   font-size: 11px;
   font-family: Ubuntu;
@@ -457,10 +443,6 @@ input:disabled:-ms-input-placeholder {
   border: 1px solid #c9c9c9;
   background-color: #ffffff;
   color: #888;
-}
-
-.cap-inputText.error {
-  border: 1.5px solid #b00020;
 }
 
 .cap-inputText:focus {
@@ -853,7 +835,7 @@ select-dropdown>div .options ul li {
 .mydp .selectiondisabled,
 .mydrp .btnpickerdisabled,
 .mydp .btnpickerdisabled,
-.form-control[disabled]{
+.form-control[disabled] {
   cursor: default !important;
 }
 
@@ -1449,25 +1431,21 @@ label.disabled {
   cursor: default !important;
 }
 
-ng-select .disabled{
+ng-select .disabled {
   background: white !important;
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 
-ng-select .disabled .placeholder{
-  color: rgba(0,0,0,0.38) !important;
+ng-select .disabled .placeholder {
+  color: rgba(0, 0, 0, 0.38) !important;
 }
 
-input[disabled]{
+input[disabled] {
   text-transform: none !important;
 }
 
 /* error */
-ng-select.error .below{
-  border: 1px solid #b00020 !important;
-}
-
-ng-select.error > div > div.single > div.toggle,
+ng-select.error>div>div.single>div.toggle,
 .error {
   color: #b00020 !important;
 }
@@ -1481,18 +1459,13 @@ ng-select.error > div > div.single > div.toggle,
   color: #b00020;
 }
 
-.error label{
-  color: #b00020;
-}
-
-.error input{
-  color: #b00020 !important;
-  border-color: #b00020 !important;
-}
-
-.error .below{
-  color: #b00020 !important;
-  border-color: #b00020 !important;
+.below.error,
+dp-date-picker.error .dp-input-container .dp-picker-input,
+.cap-inputText.error,
+.cap-inputTextArea.error,
+/* my-date-picker.error .mydp .selectiongroup */
+my-date-range-picker.error .mydrp .selectiongroup {
+  border: 2px solid #b00020 !important;
 }
 
 /* classes gerais */

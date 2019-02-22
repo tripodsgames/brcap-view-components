@@ -1,4 +1,4 @@
-my-date-range-picker::ng-deep .mydrp .selectiongroup {
+my-date-range-picker[disabled]::ng-deep .mydrp .selectiongroup {
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 

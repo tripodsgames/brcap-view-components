@@ -3,12 +3,3 @@
   cursor: default !important;
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
-
-/* erro */
-.cap-inputText.error {
-  border: 1px solid #b00020 !important;
-}
-
-.error {
-  color: #b00020 !important;
-}
