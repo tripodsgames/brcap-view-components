@@ -344,6 +344,7 @@
         CAP-MONTH-PICKER
         <br />
         <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
+        <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" [disabled]="true"></cap-monthpicker>
       </div>
 
       <div class=" col-xs-4" style="height: 500px">
@@ -397,10 +398,6 @@
 
       <cap-inputText placehoholder="Informe seu nome" icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
       </cap-inputText>
-
-      <cap-inputText class="error" placehoholder="Informe seu nome" label="Nome" mask="99.999-999" [(ngModel)]="nome"
-        maxlength="20">
-      </cap-inputText>
     </div>
 
     <div class="row box">
@@ -412,9 +409,6 @@
 
       <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
         maxlength="200" [disabled]="true"></cap-inputTextArea>
-
-      <cap-inputTextArea class="error" placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
-        maxlength="200"></cap-inputTextArea>
     </div>
 
     <div class="row box">
@@ -430,7 +424,6 @@
       <br />
       <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
       <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
-      <cap-select class="error" label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
     </div>
 
   </div>

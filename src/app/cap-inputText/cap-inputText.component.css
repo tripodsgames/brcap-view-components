@@ -4,12 +4,6 @@
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 
-.cap-inputText:disabled,
-.helper-text.disabled,
-label.disabled {
-  color: rgba(0, 0, 0, 0.38) !important;
-}
-
 /* erro */
 .cap-inputText.error {
   border: 1px solid #b00020 !important;

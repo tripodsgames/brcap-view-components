@@ -423,7 +423,7 @@ input:disabled:-ms-input-placeholder {
 }
 
 .content-header input[ng-reflect-is-disabled="true"].cap-inputText {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
+  border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 
 .content-header .bootstrap-select.btn-group .dropdown-toggle .filter-option {
@@ -847,6 +847,14 @@ select-dropdown>div .options ul li {
 
 .mydrp .selectiondisabled {
   background: transparent !important;
+}
+
+.mydrp .selectiondisabled,
+.mydp .selectiondisabled,
+.mydrp .btnpickerdisabled,
+.mydp .btnpickerdisabled,
+.form-control[disabled]{
+  cursor: default !important;
 }
 
 .selbtngroup .mydpicon {
@@ -1437,7 +1445,8 @@ cap-modal.lg .modal-dialog {
 /* disabled */
 .helper-text.disabled,
 label.disabled {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(0, 0, 0, 0.38) !important;
+  cursor: default !important;
 }
 
 ng-select .disabled{
@@ -1447,6 +1456,10 @@ ng-select .disabled{
 
 ng-select .disabled .placeholder{
   color: rgba(0,0,0,0.38) !important;
+}
+
+input[disabled]{
+  text-transform: none !important;
 }
 
 /* error */

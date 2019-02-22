@@ -3,7 +3,7 @@
         <cap-icon icon="anterior"></cap-icon>
     </button>
 
-    <span>{{ primeiraLinha }}-{{ ultimaLinha }} DE {{ contagemPaginasTotal }}</span>
+    <span>{{ primeiraLinha }}-{{ ultimaLinha }} de {{ contagemPaginasTotal }}</span>
 
     <button class="link next" (click)="onNext(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">
         <cap-icon icon="seguir"></cap-icon>

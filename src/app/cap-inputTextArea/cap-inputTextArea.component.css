@@ -39,10 +39,6 @@ label {
   vertical-align: middle;
 }
 
-label.disabled {
-  color: rgba(0, 0, 0, 0.5);
-}
-
 label.error {
   color: #b00020;
 }
