@@ -340,20 +340,18 @@ cap-inputText[ng-reflect-style-class="outline"] label {
 label.label-input {
   background-color: #fff;
   font-weight: 500;
-  font-family: Ubuntu;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.87);
   position: relative;
-  top: 13px;
+  top: 10px;
   left: 8px;
   padding: 0px 3px;
   z-index: 3;
-  height: 4px;
+  height: 8px;
 }
 
 .helper-text {
   font-size: 11px;
-  font-family: Ubuntu;
   letter-spacing: 0.2px;
   font-weight: 500;
   padding-left: 12px;
@@ -793,7 +791,8 @@ select-dropdown>div .options ul li {
   padding-left: 10px !important;
 }
 
-.mydrp .selectiongroup {
+.mydrp .selectiongroup,
+.mydp .selectiongroup {
   border: 1px solid #757575 !important;
 }
 
@@ -809,10 +808,6 @@ select-dropdown>div .options ul li {
 .mydp .invaliddate {
   background: transparent !important;
 }
-
-/* .mydp .selectiongroup {
-  border: 1px solid #757575 !important;
-} */
 
 .mydrp .invaliddaterange {
   background: transparent !important;
@@ -1435,13 +1430,17 @@ input[disabled] {
   text-transform: none !important;
 }
 
+.cap-inputText:disabled {
+  border: 1px solid rgba(117, 117, 117, 0.38) !important;
+}
+
 /* error */
 .below.error .toggle,
 .error,
 .ico-error,
-cap-icon.error .ver-senha-password, 
+cap-icon.error .ver-senha-password,
 my-date-range-picker.error .mydrp .selectiongroup .btnpicker,
-my-date-picker.error .mydp .selectiongroup .btnpicker{
+my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 

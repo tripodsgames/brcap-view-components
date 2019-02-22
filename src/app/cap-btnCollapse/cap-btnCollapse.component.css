@@ -7,6 +7,7 @@
   border: 0px;
   font-size: 23px !important;
   margin: 15px 0px;
+  outline: none;
 }
 
 .btnCollapse:after {

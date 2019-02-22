@@ -1,119 +1,29 @@
 <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
-
 <cap-header username="Joaquim José Xavier"></cap-header>
-<!-- 
-<div class="content-wrapper"> -->
-
-<!-- <div class="content-wrapper"> -->
-
-<!-- <div class="content-header">
-    <div class="row">
-      <div class="col-lg-6">
-        <h1 style="font-weight: 500">frhj</h1>
-      </div>
-      <div class="col-lg-6">
-        <cap-button label="Nova Pesquisa" icon="busca" class="nova-pesquisa"></cap-button>
-      </div>
-    </div>
-  </div> -->
-
-<!-- <div class="content"> -->
-
-<!-- <div class="row box">
-      <div class="col-lg-3">
-        <cap-inputText label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-          maxlength="20" error="true" [disabled]="disabled">
-        </cap-inputText>
-      </div>
-
-      <div class="col-lg-3">
-        <cap-button icon="busca" [disabled]="true"></cap-button>
-      </div>
-    </div>
-
-    <div class="col-lg-3">
-        <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data" mask="99/99/9999">
-        </cap-datepicker>
-      </div> -->
-
-<!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
-
-<!-- <input id="test">
- -->
-<!-- <cap-scrollUp></cap-scrollUp> -->
-
-<!-- <cap-button icon="calendario"></cap-button>  -->
-
-<!-- <div class="box abas">
-      <cap-tabPanel class="fix">
-        <cap-tab title="INF.GERAIS" #listTab class="aba1">
-
-        </cap-tab>
-        <cap-tab title="CONVÊNIO RECEBIMENTO" #listTab>
-
-        </cap-tab>
-        <cap-tab title="VALORES COMERCIALIZAÇÃO" #listTab styleClass="aba3">
-
-        </cap-tab>
-        <cap-tab title="LIBERAÇÃO PGTO" #listTab>
-
-        </cap-tab>
-        <cap-tab title="RATEIO" #listTab>
-
-        </cap-tab>
-        <cap-tab title="CLIENTE DÁ SORTE" #listTab>
-
-        </cap-tab>
-      </cap-tabPanel>
-    </div> -->
-
-<!-- <div class="row">
-      <div class="col-md-3">
-        <cap-inputText label="Nome" icon="busca"></cap-inputText>
-      </div>
-      <div class="col-md-3">
-        <cap-datepicker label="Data"></cap-datepicker>
-      </div>
-    </div> -->
-
-<!-- <div class="col-md-10 button-container"> -->
-
-<!-- <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
-    </cap-grid-pagination> -->
-<!-- </div> -->
-
-<!-- <div class="col-md-10 button-container">
-      <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
-      </cap-grid-pagination>
-    </div> -->
-
-<!-- </div>
-</div> -->
-
-
-<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
 
 <!-- ACERTOS DOS COMPONENTES -->
 <div class="content-wrapper">
   <div class="content">
     <div class="row">
       <div class="col-lg-4">
-        <div class="box" style="height: 750px;">
+        <div class="box" style="height: 1150px;">
           CAP-BUTTON
           <div class="col-md-12">
+            XS
+            <br /><br />
             <cap-button styleClass="xs" label="Atualizar"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
-            <cap-button styleClass="sm" label="Atualizar"></cap-button>
+            DEFAULT
             <br /><br />
-          </div>
-          <div class="col-md-12">
             <cap-button label="Atualizar"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
-            <cap-button styleClass="btn-ico sm" icon="busca"></cap-button>
+            LG
+            <br /><br />
+            <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
@@ -121,11 +31,35 @@
             <br /><br />
           </div>
           <div class="col-md-12">
+            <cap-button styleClass="btn-ico lg" icon="busca"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            OUTLINE
+            <br /><br />
+            <cap-button styleClass="outline xs" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
             <cap-button styleClass="outline" label="inserir"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
+            <cap-button styleClass="outline lg" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            WHITE
+            <br /><br />
+            <cap-button styleClass="white xs" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
             <cap-button styleClass="white" label="inserir"></cap-button>
+            <br /><br />
+          </div>
+          <div class="col-md-12">
+            <cap-button styleClass="white lg" label="inserir"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
@@ -137,11 +71,11 @@
             <br /><br />
           </div>
           <div class="col-md-12">
-            <cap-button icon="busca" label="Buscar"></cap-button>
+            <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
-            <cap-button class="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
+            <cap-button styleClass="baixar" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
             <br /><br />
           </div>
         </div>
@@ -417,9 +351,9 @@
       <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao"
         maxlength="200">
       </cap-password>
-      <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao" [disabled]="true"
-      maxlength="200">
-    </cap-password>
+      <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao"
+        [disabled]="true" maxlength="200">
+      </cap-password>
     </div>
 
     <div class="row box">

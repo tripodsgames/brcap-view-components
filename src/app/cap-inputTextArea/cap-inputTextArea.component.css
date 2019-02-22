@@ -20,7 +20,8 @@
   box-shadow: none;
   border-color: none;
 }
-label {
+
+/* label {
   background-color: #fff;
   max-width: 92%;
   font-weight: bold;
@@ -33,7 +34,7 @@ label {
   padding: 0px 3px;
   max-height: 28px;
   vertical-align: middle;
-}
+} */
 
 /* .ico-error {
   float: right;
