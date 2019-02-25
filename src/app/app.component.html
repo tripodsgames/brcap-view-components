@@ -3,6 +3,38 @@
 
 <!-- ACERTOS DOS COMPONENTES -->
 <div class="content-wrapper">
+
+  <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important">
+    <h1>Componentes</h1>
+    <div class="row">
+      <div class="col-md-2 no-padding-right">
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+          textHelper="Nome deve possuir" maxlength="20">
+        </cap-inputText>
+      </div>
+      <div class="col-md-2">
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+          textHelper="Nome deve possuir" maxlength="20" [disabled]="true">
+        </cap-inputText>
+      </div>
+      <div class="col-md-2">
+        <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+      </div>
+      <div class="col-md-2">
+        <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
+      </div>
+      <div class="col-md-2">
+        <cap-datepicker id="dataInicial" placeholder="Informe" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
+        </cap-datepicker>
+      </div>
+      <div class="col-md-2">
+        <cap-datepicker id="dataInicial" placeholder="Informe" [(ngModel)]="data" textHelper="Informe uma data"
+          [disabled]="true" pp mask="99/99/9999">
+        </cap-datepicker>
+      </div>
+    </div>
+  </div>
+
   <div class="content">
     <div class="row">
       <div class="col-lg-4">
@@ -329,7 +361,8 @@
       <br />
 
       <div class="col-md-2 no-padding-left">
-        <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem" icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
+        <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem" icon="busca"
+          mask="99.999-999" [(ngModel)]="nome" maxlength="20">
         </cap-inputText>
       </div>
     </div>

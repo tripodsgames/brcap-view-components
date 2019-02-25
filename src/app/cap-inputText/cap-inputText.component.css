@@ -1,7 +1,6 @@
 /* disabled */
 .cap-inputText:disabled {
   cursor: default !important;
-  border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 
 label.label-duas-linhas {
