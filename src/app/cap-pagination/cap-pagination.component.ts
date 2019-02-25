@@ -6,11 +6,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'cap-new-pagination',
-  templateUrl: './cap-new-pagination.component.html',
-  styleUrls: ['./cap-new-pagination.component.scss']
+  selector: 'cap-pagination',
+  templateUrl: './cap-pagination.component.html',
+  styleUrls: ['./cap-pagination.component.scss']
 })
-export class NewPaginationComponent {
+export class CapPaginationComponent {
 
   @Input() page: number;
   @Input() count: number;
