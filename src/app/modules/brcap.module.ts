@@ -7,7 +7,6 @@ import { CapSelectComponent } from "../cap-select/cap-select.component";
 import { CapDateRangePickerComponent } from "../cap-dateRangePicker/cap-dateRangePicker.component";
 import { CapDatepickerComponent } from "../cap-datepicker/cap-datepicker.component";
 import { CapButtonComponent } from "../cap-button/cap-button.component";
-import { CapPaginationComponent } from "../cap-pagination/cap-pagination.component";
 import { CapMenuItemComponent } from "../cap-menuItem/cap-menuItem.component";
 import { CapMenuComponent } from "../cap-menu/cap-menu.component";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
@@ -64,7 +63,6 @@ import { RouterModule } from "@angular/router";
     CapSelectComponent,
     CapDateRangePickerComponent,
     CapButtonComponent,
-    CapPaginationComponent,
     CapMenuItemComponent,
     CapMenuComponent,
     CapIconComponent,
@@ -100,7 +98,6 @@ import { RouterModule } from "@angular/router";
     CapSelectComponent,
     CapDateRangePickerComponent,
     CapButtonComponent,
-    CapPaginationComponent,
     CapMenuItemComponent,
     CapMenuComponent,
     CapScrollUpComponent,
