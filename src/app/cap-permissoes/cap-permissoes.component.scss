@@ -146,10 +146,6 @@ cap-btncollapse::ng-deep .btnCollapse {
   padding-left: 20px;
 }
 
-cap-button::ng-deep .cap-button[disabled] {
-  opacity: 0.38 !important;
-}
-
 .col-md-1 cap-button::ng-deep .cap-button {
   width: 40px;
   height: 40px;

@@ -321,9 +321,10 @@ dp-date-picker {
 }
 
 .cap-inputText-icon {
-  position: absolute;
-  top: 30px;
-  right: 20px;
+  position: relative;
+  top: -40px;
+  right: 10px;
+  float: right;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.54);
   cursor: pointer;
@@ -426,12 +427,6 @@ input:disabled:-ms-input-placeholder {
 
 .cap-inputText.sm {
   height: 40px;
-}
-
-.cap-inputText:disabled {
-  border: 1px solid #c9c9c9;
-  background-color: #ffffff;
-  color: #888;
 }
 
 .cap-inputText:focus {
@@ -815,14 +810,6 @@ select-dropdown>div .options ul li {
 
 .mydrp .selectiondisabled {
   background: transparent !important;
-}
-
-.mydrp .selectiondisabled,
-.mydp .selectiondisabled,
-.mydrp .btnpickerdisabled,
-.mydp .btnpickerdisabled,
-.form-control[disabled] {
-  cursor: default !important;
 }
 
 .selbtngroup .mydpicon {
@@ -1414,7 +1401,6 @@ cap-modal.lg .modal-dialog {
 .helper-text.disabled,
 label.disabled {
   color: rgba(0, 0, 0, 0.38) !important;
-  cursor: default !important;
 }
 
 ng-select .disabled {
@@ -1432,6 +1418,23 @@ input[disabled] {
 
 .cap-inputText:disabled {
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
+}
+
+.ver-senha-password.disabled,
+.cap-inputText-icon.disabled {
+  opacity: 0.38;
+}
+
+.ver-senha-password.disabled .ver-senha,
+.helper-text.disabled,
+label.disabled,
+.cap-inputText-icon.disabled,
+.mydrp .selectiondisabled,
+.mydp .selectiondisabled,
+.mydrp .btnpickerdisabled,
+.mydp .btnpickerdisabled,
+.form-control[disabled] {
+  cursor: default !important;
 }
 
 /* error */
