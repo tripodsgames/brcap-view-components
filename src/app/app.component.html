@@ -95,6 +95,21 @@
 
 <!-- ACERTOS DOS COMPONENTES -->
 <div class="content-wrapper">
+
+  <div class="content-header content-header-large">
+    <h1>Componentes</h1>
+    <div class="row">
+      <div class="col-md-3">
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+          textHelper="Nome deve possuir no mínimo" maxlength="20" [disabled]="true">
+        </cap-inputText>
+      </div>
+      <div class="col-md-3">
+        <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
+      </div>
+    </div>
+  </div>
+
   <div class="content">
     <div class="row">
       <div class="col-lg-4">
@@ -417,9 +432,9 @@
       <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao"
         maxlength="200">
       </cap-password>
-      <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao" [disabled]="true"
-      maxlength="200">
-    </cap-password>
+      <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao"
+        [disabled]="true" maxlength="200">
+      </cap-password>
     </div>
 
     <div class="row box">

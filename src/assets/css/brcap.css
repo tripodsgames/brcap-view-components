@@ -399,6 +399,11 @@ input:disabled:-ms-input-placeholder {
   padding-top: 20px;
 }
 
+.content .cap-inputText:disabled {
+  cursor: default !important;
+  border: 1px solid rgba(117, 117, 117, 0.38) !important;
+}
+
 .content-header input[ng-reflect-is-disabled="true"].cap-inputText {
   border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
@@ -1109,7 +1114,7 @@ ng-select>div>div.single>div.toggle {
 }
 
 ng-select>div.disabled>div.single>div.toggle {
-  color: #ddd !important;
+  color: rgba(117,117,117,0.38) !important;
 }
 
 ng-select>div>div.single>div.toggle:before {
