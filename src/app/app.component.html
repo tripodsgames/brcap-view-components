@@ -7,11 +7,12 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="box" style="height: 1150px;">
+            <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
           CAP-BUTTON
           <div class="col-md-12">
-            XS
+            SM
             <br /><br />
-            <cap-button styleClass="xs" label="Atualizar"></cap-button>
+            <cap-button styleClass="sm" label="Atualizar"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
@@ -37,7 +38,7 @@
           <div class="col-md-12">
             OUTLINE
             <br /><br />
-            <cap-button styleClass="outline xs" label="inserir" icon="adicionar"></cap-button>
+            <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
@@ -51,7 +52,7 @@
           <div class="col-md-12">
             WHITE
             <br /><br />
-            <cap-button styleClass="white xs" label="inserir"></cap-button>
+            <cap-button styleClass="white sm" label="inserir"></cap-button>
             <br /><br />
           </div>
           <div class="col-md-12">
@@ -248,7 +249,7 @@
         <div class="divColapse">
           <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
         </div>
-        <div class="conteudoInterno collapse" [id]="'conteudoInterno2' + i">
+        <div class="conteudoInterno" [id]="'conteudoInterno2' + i">
           ddthhghfgh
         </div>
       </div>

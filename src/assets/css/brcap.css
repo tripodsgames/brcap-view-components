@@ -425,13 +425,14 @@ input:disabled:-ms-input-placeholder {
   top: -35px;
 }
 
-.cap-inputText.sm {
-  height: 40px;
-}
-
 .cap-inputText:focus {
   box-shadow: none;
   border-color: none;
+}
+
+/* apagar */
+ng-select ul{
+  height: 100px;
 }
 
 p.label-text {

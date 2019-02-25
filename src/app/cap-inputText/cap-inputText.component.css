@@ -10,3 +10,7 @@ label.label-duas-linhas {
   height: 20px !important;
   margin-top: -10px;
 }
+
+.cap-inputText.sm {
+  height: 40px;
+}

@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "cap-scrollUp",
@@ -16,7 +16,7 @@ export class CapScrollUpComponent implements OnInit {
     }
 
     scrollEvent = (event: any): void => {
-        if (event.target.scrollTop > 1) {
+        if (event.target.scrollTop > 1 && event.target == document.body) {
             this.pageTop = false;
         } else {
             this.pageTop = true;
