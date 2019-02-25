@@ -3,3 +3,10 @@
   cursor: default !important;
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
+
+label.label-duas-linhas {
+  max-width: 69% !important;
+  top: 15px !important;
+  height: 20px !important;
+  margin-top: -10px;
+}
