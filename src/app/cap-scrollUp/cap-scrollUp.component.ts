@@ -16,7 +16,7 @@ export class CapScrollUpComponent implements OnInit {
     }
 
     scrollEvent = (event: any): void => {
-        if (event.target.scrollTop > 1) {
+        if (event.target.scrollTop > 1 && event.target == document.body) {
             this.pageTop = false;
         } else {
             this.pageTop = true;
