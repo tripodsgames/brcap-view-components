@@ -1,9 +1,9 @@
-.button_datepicker::ng-deep .mydp .selectorarrowleft:before {
-  right: 15px;
-}
-
 .button_datepicker::ng-deep {
   & .mydp {
+    & .selectorarrowleft:before {
+      right: 15px;
+    }
+
     & .selectiongroup {
       width: 45px;
       height: 45px;
@@ -35,6 +35,6 @@
 }
 
 my-date-picker::ng-deep .mydp .btnpickerdisabled,
-my-date-picker::ng-deep .mydp .selectiondisabled  {
+my-date-picker::ng-deep .mydp .selectiondisabled {
   opacity: 0.38;
 }

@@ -1415,6 +1415,7 @@ input[disabled] {
 
 .content .cap-inputText:disabled {
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
+  color: rgba(117, 117, 117, 0.38) !important;
 }
 
 .ver-senha-password.disabled,

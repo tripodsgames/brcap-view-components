@@ -16,7 +16,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: "cap-chips",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-chips.component.html",
-  styleUrls: ["./cap-chips.component.css"]
+  styleUrls: ["./cap-chips.component.scss"]
 })
 export class CapChipsComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;

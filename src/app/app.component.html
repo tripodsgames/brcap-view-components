@@ -189,7 +189,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
+              <cap-chips styleClass="lg" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
               </cap-chips>
               <br /><br />
             </div>
@@ -369,11 +369,11 @@
       <div class="row box">
         CAP-INPUT-TEXT-AREA
         <br />
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
           maxlength="200">
         </cap-inputTextArea>
 
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
           maxlength="200" [disabled]="true"></cap-inputTextArea>
       </div>
 
