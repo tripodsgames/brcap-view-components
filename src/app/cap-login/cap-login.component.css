@@ -145,7 +145,6 @@
   align-items: center;
   background-size: 100%;
   overflow: hidden;
-  font-family: Ubuntu;
 }
 
 input:-webkit-autofill {
@@ -290,7 +289,6 @@ label {
   padding: 8px 25px;
   outline: none;
   letter-spacing: 1.2px;
-  font-family: Ubuntu;
   width: 100%;
   font-size: 14px;
   outline: none;
@@ -331,7 +329,6 @@ label {
   display: inline-block;
   text-align: center;
   letter-spacing: 1.2px;
-  font-family: Ubuntu;
   width: 100%;
   font-size: 14px;
   outline: none;

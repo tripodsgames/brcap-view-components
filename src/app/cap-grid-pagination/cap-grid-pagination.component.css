@@ -3285,7 +3285,6 @@ form fieldset legend {
   font-size: 2.0em;
   line-height: 2em;
   border: none;
-  font-family: 'Ubuntu';
   text-transform: uppercase;
   color: #6bbf5e
 }
@@ -3297,7 +3296,6 @@ form fieldset .form-group {
 form fieldset .form-group label {
   width: 100%;
   text-transform: uppercase;
-  font-family: 'Ubuntu';
   font-weight: bold;
   font-size: 1.2em;
   color: #6bbf5e
@@ -3406,7 +3404,6 @@ form fieldset legend {
   font-size: 2.0em;
   line-height: 1.2em;
   border: none;
-  font-family: 'Ubuntu';
   text-transform: uppercase;
   color: #6bbf5e
 }
@@ -3418,7 +3415,6 @@ form fieldset .form-group {
 form fieldset .form-group label {
   width: 100%;
   text-transform: uppercase;
-  font-family: 'Ubuntu';
   font-weight: bold;
   font-size: 1.2em;
   color: #6bbf5e

@@ -1,5 +1,4 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700";
-@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
 
 /** GERAL **/
 * {
@@ -298,7 +297,6 @@ dp-date-picker {
 .dp-input-container input {
   box-shadow: none;
   border: 1px solid #757575 !important;
-  font-family: Ubuntu;
   background-color: #fff !important;
   outline: none;
   display: block;
@@ -748,7 +746,6 @@ ng-select>div>div.single {
 }
 
 select-dropdown>div {
-  font-family: Ubuntu;
   font-size: 12px;
 }
 
@@ -783,7 +780,6 @@ select-dropdown>div .options ul li {
 .mydp .selection {
   height: 50px !important;
   border: 1px solid #757575;
-  font-family: Ubuntu;
   color: rgba(0, 0, 0, 0.87) !important;
   padding-left: 10px !important;
 }
@@ -875,7 +871,6 @@ select-dropdown>div .options ul li {
   background-color: #ddd !important;
   border-radius: 4px !important;
   padding: 4px !important;
-  font-family: Ubuntu;
   font-weight: 400;
 }
 
@@ -919,7 +914,6 @@ select-dropdown>div .options ul li {
 .mydp .monthlabel,
 .mydp .yearcell,
 .mydp .yearlabel {
-  font-family: Ubuntu;
   font-weight: 500;
 }
 
@@ -937,7 +931,6 @@ select-dropdown>div .options ul li {
 }
 
 .mydrp .titleareatxt {
-  font-family: Ubuntu;
 }
 
 .mydrp .header {
@@ -947,7 +940,6 @@ select-dropdown>div .options ul li {
 .mydrp .selection {
   height: 50px !important;
   border: none !important;
-  font-family: Ubuntu;
   color: rgba(0, 0, 0, 0.87) !important;
   padding-left: 10px !important;
 }
@@ -1026,7 +1018,6 @@ select-dropdown>div .options ul li {
   background-color: #ddd !important;
   border-radius: 4px !important;
   padding: 4px !important;
-  font-family: Ubuntu;
   font-weight: 400;
 }
 
@@ -1070,7 +1061,6 @@ select-dropdown>div .options ul li {
 .mydrp .monthlabel,
 .mydrp .yearcell,
 .mydrp .yearlabel {
-  font-family: Ubuntu;
   font-weight: 500;
 }
 

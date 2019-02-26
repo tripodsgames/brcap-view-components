@@ -64,7 +64,6 @@
   margin-left: 225px;
 }
 .text-user {
-  font-family: Ubuntu;
   font-weight: 500;
   padding-right: 10px;
   font-size: 13px;
@@ -102,7 +101,6 @@
 }
 
 .user-body span {
-  font-family: Ubuntu;
   font-weight: 500;
   text-align: left;
   font-size: 13px;
