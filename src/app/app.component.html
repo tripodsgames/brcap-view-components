@@ -24,7 +24,7 @@
         <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
       </div>
       <div class="col-md-2">
-        <cap-datepicker id="dataInicial" placeholder="Informe" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
+        <cap-datepicker id="dataInicial" placeholder="Informe" label="Data" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
         </cap-datepicker>
       </div>
       <div class="col-md-2">
@@ -226,7 +226,7 @@
     <div class="row">
       <div class="col-xs-12">
         CAP-GRID-PAGINATION
-        <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items">
+        <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions">
         </cap-grid-pagination>
       </div>
     </div>
@@ -265,10 +265,8 @@
     <div class="row">
       CAP-BTNCOLLAPSE - COLLAPSED
       <div class="box">
-        <div class="divColapse">
-          <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
-        </div>
-        <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
+        <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
+        <div class="collapse" [id]="'conteudoInterno' + i">
           ddthhghfgh
         </div>
       </div>
@@ -277,10 +275,8 @@
     <div class="row">
       CAP-BTNCOLLAPSE
       <div class="box">
-        <div class="divColapse">
-          <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
-        </div>
-        <div class="conteudoInterno" [id]="'conteudoInterno2' + i">
+        <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
+        <div class="collapse in" [id]="'conteudoInterno2' + i">
           ddthhghfgh
         </div>
       </div>
@@ -361,8 +357,8 @@
       <br />
 
       <div class="col-md-2 no-padding-left">
-        <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem" icon="busca"
-          mask="99.999-999" [(ngModel)]="nome" maxlength="20">
+        <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem fscsd"
+          icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
         </cap-inputText>
       </div>
     </div>

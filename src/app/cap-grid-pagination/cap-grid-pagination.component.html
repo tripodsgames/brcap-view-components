@@ -1,7 +1,6 @@
 <div class="{{fullTable}} col-lg-9 col-xl-6 no-padding-left" [class.full-table]="fullTable">
-  <div class="cap-grid-default box">
+  <div class="box">
     <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
-      <!-- <p class="cap-grid-title">Consulta da Familia "{{primeiraInformacao}}" Plano "{{segundaInformacao}}" Status "{{terceiraInformacao}}"</p> -->
       <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
         <thead>
           <tr class="table-header">
@@ -13,7 +12,7 @@
         <tbody>
           <tr class="animacao-hover" *ngFor="let v of pagedItens;  let i = index">
             <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
-            <td *ngIf="rowOptions" class="cap-grid-row-options">
+            <td *ngIf="rowOptions" class="text-center">
               <button (click)="clickItem(i)" class="cap-grid-options"></button>
               <div *ngIf="showItemOptions === i" class="row-options">
                 <ul>

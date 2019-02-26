@@ -396,6 +396,7 @@ input:disabled:-ms-input-placeholder {
   border-radius: 0px !important;
   color: rgba(0, 0, 0, 0.87);
   padding-top: 20px;
+  background: #9DCAE4;
 }
 
 .content-header input[ng-reflect-is-disabled="true"].cap-inputText {
@@ -1436,6 +1437,7 @@ label.disabled,
 .mydp .btnpickerdisabled,
 .form-control[disabled] {
   cursor: default !important;
+  pointer-events: none;
 }
 
 /* error */

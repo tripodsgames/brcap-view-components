@@ -1,26 +1,8 @@
-.cap-grid-row-options {
-  text-align: center;
-}
-
-.cap-grid-title {
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.87);
-  letter-spacing: 0.3px;
-  margin-bottom: 25px;
-  line-height: 1;
-  margin-top: 10px;
-}
-
-.no-padding-left {
-  padding-left: 0;
-}
-
-.full-table{
+.full-table {
   width: 100% !important;
 }
 
 /* ROW OPTIONS */
-
 .row-options {
   position: absolute;
   width: 128px;
@@ -47,6 +29,10 @@
   border-left: 5px solid #006bbb;
 }
 
+ul li:last-child .divisor {
+  background: white;
+}
+
 .cap-grid-options {
   width: 20px !important;
   height: 20px !important;
@@ -58,7 +44,7 @@
 }
 
 .cap-grid-options:hover,
-.cap-grid-options:focus{
+.cap-grid-options:focus {
   background: url(../../assets/img/mais-op-es-vert-white.svg) no-repeat center, #006bbb;
   border: 1px solid transparent;
   background-size: 14px;
@@ -72,13 +58,11 @@
   display: block;
 }
 
-/* ROW OPTIONS - end */
-
 /* TABELA */
-
 table {
   background-color: white;
   border: 1px solid rgba(117, 117, 117, 0.1);
+  margin-bottom: 15px;
 }
 
 tbody tr:nth-child(even) {
@@ -105,11 +89,12 @@ th {
   border-bottom-color: inherit;
 }
 
-/* end TABELA */
+tbody tr:hover {
+  background-color: rgba(255, 232, 0, 0.12) !important;
+}
 
 /* PAGINATION */
 .pagination {
-  /* width: 116px; */
   display: inline-block;
   flex-direction: row;
   align-items: center;
@@ -120,12 +105,6 @@ th {
   overflow: hidden;
   margin: 0px;
 }
-
-/* .description {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-  } */
 
 .page-counts {
   margin-right: 50px;
@@ -191,8 +170,6 @@ button.last {
 i {
   font-size: 18px;
 }
-
-/* end PAGINATION */
 
 .fa {
   display: inline-block;
