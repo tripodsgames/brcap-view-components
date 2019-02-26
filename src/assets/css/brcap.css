@@ -1440,14 +1440,6 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
-.ico-error {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 14px;
-  font-size: 20px;
-}
-
 .below.error,
 dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
@@ -1456,6 +1448,14 @@ my-date-picker.error .mydp .selectiongroup,
 .cap-radiobutton.error:before,
 my-date-range-picker.error .mydrp .selectiongroup {
   border: 2px solid #b00020 !important;
+}
+
+.ico-error {
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 14px;
+  font-size: 20px;
 }
 
 /* classes gerais */
@@ -1509,17 +1509,4 @@ my-date-range-picker.error .mydrp .selectiongroup {
   position: absolute;
   top: 50%;
   left: 50%;
-}
-
-/* botão nova pesquisa */
-.nova-pesquisa .cap-button {
-  width: 195px !important;
-  height: 36px !important;
-  margin-top: -3px !important;
-  float: right;
-  padding: 0px 20px !important;
-}
-
-.nova-pesquisa .cap-button .busca {
-  font-size: 20px !important;
 }
