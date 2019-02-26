@@ -1122,14 +1122,12 @@ div.inline-checkbox label {
   padding: 10px 5px 10px 0px;
 }
 
-/**
-** Toast
-**/
-
+/* toast */
 #toast-container {
   position: absolute;
   right: 20px;
   top: 20px;
+  z-index: 2;
 }
 
 .toast {
@@ -1140,6 +1138,16 @@ div.inline-checkbox label {
   background: #fff;
   border-radius: 5px;
   min-width: 300px;
+}
+
+.toast-close-button {
+  display: block;
+  float: right;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 35px;
+  line-height: 20px;
 }
 
 .toast.toast-warning {
@@ -1156,14 +1164,6 @@ div.inline-checkbox label {
 
 .toast.toast-success {
   border-color: #086930;
-}
-
-.toast-close-button {
-  display: block;
-  float: right;
-  background: transparent;
-  border: none;
-  outline: none;
 }
 
 button.cap-button.btn-ico .brcap-ico {

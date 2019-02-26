@@ -1,396 +1,400 @@
-<cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
-<cap-header username="Joaquim José Xavier"></cap-header>
+<div id="wrapper">
+  <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
+  <cap-header username="Joaquim José Xavier"></cap-header>
 
-<!-- ACERTOS DOS COMPONENTES -->
-<div class="content-wrapper">
+  <!-- ACERTOS DOS COMPONENTES -->
+  <div class="content-wrapper">
 
-  <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important">
-    <h1>Componentes</h1>
-    <div class="row">
-      <div class="col-md-2 no-padding-right">
-        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
-          textHelper="Nome deve possuir" maxlength="20">
-        </cap-inputText>
+    <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important">
+      <h1>Componentes</h1>
+      <div class="row">
+        <div class="col-md-2 no-padding-right">
+          <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+            textHelper="Nome deve possuir" maxlength="20">
+          </cap-inputText>
+        </div>
+        <div class="col-md-2">
+          <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+            textHelper="Nome deve possuir" maxlength="20" [disabled]="true">
+          </cap-inputText>
+        </div>
+        <div class="col-md-2">
+          <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+        </div>
+        <div class="col-md-2">
+          <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
+        </div>
+        <div class="col-md-2">
+          <cap-datepicker id="dataInicial" placeholder="Informe" label="Data" [(ngModel)]="data" textHelper="Informe uma data"
+            pp mask="99/99/9999">
+          </cap-datepicker>
+        </div>
+        <div class="col-md-2">
+          <cap-datepicker id="dataInicial" placeholder="Informe" [(ngModel)]="data" textHelper="Informe uma data"
+            [disabled]="true" pp mask="99/99/9999">
+          </cap-datepicker>
+        </div>
       </div>
-      <div class="col-md-2">
-        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
-          textHelper="Nome deve possuir" maxlength="20" [disabled]="true">
-        </cap-inputText>
+    </div>
+
+    <div class="content">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="box" style="height: 1150px;">
+            CAP-BUTTON
+            <div class="col-md-12">
+              SM
+              <br /><br />
+              <cap-button styleClass="sm" label="Atualizar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              DEFAULT
+              <br /><br />
+              <cap-button label="Atualizar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              LG
+              <br /><br />
+              <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="btn-ico" icon="busca"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="btn-ico lg" icon="busca"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              OUTLINE
+              <br /><br />
+              <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="outline" label="inserir" icon="adicionar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="outline lg" label="inserir" icon="adicionar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              WHITE
+              <br /><br />
+              <cap-button styleClass="white sm" label="inserir"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="white" label="inserir"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="white lg" label="inserir"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="btn-ico white" icon="busca"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="btn-ico" icon="busca" [disabled]="true"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="baixar" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
+              <br /><br />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="box">
+            CAP-DIVISOR
+            <cap-divisor></cap-divisor>
+            <cap-divisor styleClass="light"></cap-divisor>
+          </div>
+
+          <div class="box" style="height: 100px;">
+            <div class="col-md-12">
+              <cap-icon icon="info" size="24"></cap-icon>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-icon icon="x-circulo" size="24" [disabled]="true"></cap-icon>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
+              <br /><br />
+            </div>
+            <div class="col-md-12" style="margin-top: -55px;">
+              <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
+              <br /><br />
+            </div>
+          </div>
+
+          <div class="box" style="height: 200px">
+            CAP-HINT
+            <div class="col-md-12">
+              <cap-hint texto="olar"></cap-hint>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-hint styleClass="left" texto="olar"></cap-hint>
+              <br /><br />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          CAP-RADIO
+          <div class="box" style="height: 200px;">
+            <div class="col-md-12">
+              <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-radio itemValue="2" name="options" [(ngModel)]="radio2" itemLabel="Opção 2"></cap-radio>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true"></cap-radio>
+              <br /><br />
+            </div>
+          </div>
+
+          <div class="box" style="height: 300px;">
+            CAP-CHIPS
+            <div class="col-md-12">
+              <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
+              </cap-chips>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-chips name="chip" itemLabel="Opção 2" [(ngModel)]="selecionadoChips2">
+              </cap-chips>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-chips name="chip" itemLabel="Opção 3" [(ngModel)]="selecionadoChips3" [disabled]="true">
+              </cap-chips>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
+              </cap-chips>
+              <br /><br />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="box" style="height: 150px;">
+            CAP-CHECKBOX
+            <div class="col-md-12">
+              <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
+              </cap-checkbox>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-checkbox name="options" [(ngModel)]="value2" itemLabel="Opção 2" [disabled]="true">
+              </cap-checkbox>
+              <br /><br />
+            </div>
+          </div>
+
+          <div class="box" style="height: 200px;">
+            CAP-TOGGLE
+            <div class="col-md-12">
+              <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
+              </cap-toggle>
+            </div>
+            <div class="col-md-12">
+              <cap-toggle name="options" itemLabel="Opção 2" [(ngModel)]="toggle2" [disabled]="true">
+              </cap-toggle>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-2">
+
+      <div class="row">
+        <div class="col-xs-12">
+          CAP-GRID-PAGINATION
+          <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions">
+          </cap-grid-pagination>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          CAP-PAGINATION
+          <cap-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
+            [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
+            [ultimaLinha]="ultimaLinha "></cap-pagination>
+        </div>
+      </div>
+
+      <cap-scrollUp></cap-scrollUp>
+
+      <div class="row">
+        CAP-TABPANEL
+        <div class="box">
+          <cap-tabPanel>
+            <cap-tab title="INFORMAÇÕES GERAIS">
+              FDBGFDGDFG
+            </cap-tab>
+            <cap-tab title="SORTEIOS" [disabled]="true">
+              AAAAAAAAA
+            </cap-tab>
+            <cap-tab title="QUOTAS">
+              MNFBMGOBMGFIKBM
+            </cap-tab>
+            <cap-tab title="RESGATE">
+              DRGDFFD
+            </cap-tab>
+          </cap-tabPanel>
+        </div>
+      </div>
+
+      <div class="row">
+        CAP-BTNCOLLAPSE - COLLAPSED
+        <div class="box">
+          <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
+          <div class="collapse" [id]="'conteudoInterno' + i">
+            ddthhghfgh
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        CAP-BTNCOLLAPSE
+        <div class="box">
+          <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
+          <div class="collapse in" [id]="'conteudoInterno2' + i">
+            ddthhghfgh
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        CAP-BTNCOLLAPSE DISABLED
+        <div class="box">
+          <div class="divColapse">
+            <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true"></cap-btnCollapse>
+          </div>
+          <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
+            ddthhghfgh
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="box col-xs-4">
+          CAP-MONTH-PICKER
+          <br />
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+            [disabled]="true"></cap-monthpicker>
+        </div>
+
+        <div class=" col-xs-4" style="height: 500px">
+          CAP-DATE-PICKER
+          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+            [disabled]="false" pp mask="99/99/9999">
+          </cap-datepicker>
+
+          <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+            [disabled]="false" pp mask="99/99/9999">
+          </cap-datepicker>
+
+          <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" [disabled]="false"
+            pp mask="99/99/9999">
+          </cap-datepicker>
+
+          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+            [disabled]="true" pp mask="99/99/9999">
+          </cap-datepicker>
+
+          <cap-datepicker id="dataInicial" label="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+            [disabled]="true" pp mask="99/99/9999">
+          </cap-datepicker>
+        </div>
+
+        <div class=" col-xs-4" style="height: 500px">
+          CAP-DATE-RANGEPICKER
+          <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
+          <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
+          <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
+          <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true"></cap-dateRangePicker>
+          <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data"></cap-dateRangePicker>
+        </div>
+      </div>
+
+      <div class="row box">
+        CAP-INPUT-TEXT
+        <br />
+        <br />
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+          textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20">
+        </cap-inputText>
+
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+          textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" [disabled]="true">
+        </cap-inputText>
+
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+          maxlength="20">
+        </cap-inputText>
+
+        <cap-inputText placehoholder="Informe seu nome" icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
+        </cap-inputText>
+
+        <br />
+
+        <div class="col-md-2 no-padding-left">
+          <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem fscsd"
+            icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
+          </cap-inputText>
+        </div>
+      </div>
+
+      <div class="row box">
+        CAP-INPUT-TEXT-AREA
+        <br />
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
+          maxlength="200">
+        </cap-inputTextArea>
+
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
+          maxlength="200" [disabled]="true"></cap-inputTextArea>
+      </div>
+
+      <div class="row box">
+        CAP-PASSWORD
+        <br />
+        <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+          [(ngModel)]="descricao" maxlength="200">
+        </cap-password>
+        <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+          [(ngModel)]="descricao" [disabled]="true" maxlength="200">
+        </cap-password>
+      </div>
+
+      <div class="row box">
+        CAP-SELECT
+        <br />
         <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
-      </div>
-      <div class="col-md-2">
         <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
       </div>
-      <div class="col-md-2">
-        <cap-datepicker id="dataInicial" placeholder="Informe" label="Data" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
-        </cap-datepicker>
-      </div>
-      <div class="col-md-2">
-        <cap-datepicker id="dataInicial" placeholder="Informe" [(ngModel)]="data" textHelper="Informe uma data"
-          [disabled]="true" pp mask="99/99/9999">
-        </cap-datepicker>
-      </div>
+
     </div>
-  </div>
-
-  <div class="content">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="box" style="height: 1150px;">
-          CAP-BUTTON
-          <div class="col-md-12">
-            SM
-            <br /><br />
-            <cap-button styleClass="sm" label="Atualizar"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            DEFAULT
-            <br /><br />
-            <cap-button label="Atualizar"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            LG
-            <br /><br />
-            <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="btn-ico" icon="busca"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="btn-ico lg" icon="busca"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            OUTLINE
-            <br /><br />
-            <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="outline" label="inserir" icon="adicionar"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="outline lg" label="inserir" icon="adicionar"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            WHITE
-            <br /><br />
-            <cap-button styleClass="white sm" label="inserir"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="white" label="inserir"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="white lg" label="inserir"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="btn-ico white" icon="busca"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="btn-ico" icon="busca" [disabled]="true"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-button styleClass="baixar" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
-            <br /><br />
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2">
-        <div class="box">
-          CAP-DIVISOR
-          <cap-divisor></cap-divisor>
-          <cap-divisor styleClass="light"></cap-divisor>
-        </div>
-
-        <div class="box" style="height: 100px;">
-          <div class="col-md-12">
-            <cap-icon icon="info" size="24"></cap-icon>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-icon icon="x-circulo" size="24" [disabled]="true"></cap-icon>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
-            <br /><br />
-          </div>
-          <div class="col-md-12" style="margin-top: -55px;">
-            <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
-            <br /><br />
-          </div>
-        </div>
-
-        <div class="box" style="height: 200px">
-          CAP-HINT
-          <div class="col-md-12">
-            <cap-hint texto="olar"></cap-hint>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-hint styleClass="left" texto="olar"></cap-hint>
-            <br /><br />
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        CAP-RADIO
-        <div class="box" style="height: 200px;">
-          <div class="col-md-12">
-            <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-radio itemValue="2" name="options" [(ngModel)]="radio2" itemLabel="Opção 2"></cap-radio>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true"></cap-radio>
-            <br /><br />
-          </div>
-        </div>
-
-        <div class="box" style="height: 300px;">
-          CAP-CHIPS
-          <div class="col-md-12">
-            <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
-            </cap-chips>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-chips name="chip" itemLabel="Opção 2" [(ngModel)]="selecionadoChips2">
-            </cap-chips>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-chips name="chip" itemLabel="Opção 3" [(ngModel)]="selecionadoChips3" [disabled]="true">
-            </cap-chips>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-chips styleClass="sm" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
-            </cap-chips>
-            <br /><br />
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <div class="box" style="height: 150px;">
-          CAP-CHECKBOX
-          <div class="col-md-12">
-            <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
-            </cap-checkbox>
-            <br /><br />
-          </div>
-          <div class="col-md-12">
-            <cap-checkbox name="options" [(ngModel)]="value2" itemLabel="Opção 2" [disabled]="true">
-            </cap-checkbox>
-            <br /><br />
-          </div>
-        </div>
-
-        <div class="box" style="height: 200px;">
-          CAP-TOGGLE
-          <div class="col-md-12">
-            <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
-            </cap-toggle>
-          </div>
-          <div class="col-md-12">
-            <cap-toggle name="options" itemLabel="Opção 2" [(ngModel)]="toggle2" [disabled]="true">
-            </cap-toggle>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        CAP-GRID-PAGINATION
-        <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions">
-        </cap-grid-pagination>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        CAP-PAGINATION
-        <cap-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
-          [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
-          [ultimaLinha]="ultimaLinha "></cap-pagination>
-      </div>
-    </div>
-
-    <cap-scrollUp></cap-scrollUp>
-
-    <div class="row">
-      CAP-TABPANEL
-      <div class="box">
-        <cap-tabPanel>
-          <cap-tab title="INFORMAÇÕES GERAIS">
-            FDBGFDGDFG
-          </cap-tab>
-          <cap-tab title="SORTEIOS" [disabled]="true">
-            AAAAAAAAA
-          </cap-tab>
-          <cap-tab title="QUOTAS">
-            MNFBMGOBMGFIKBM
-          </cap-tab>
-          <cap-tab title="RESGATE">
-            DRGDFFD
-          </cap-tab>
-        </cap-tabPanel>
-      </div>
-    </div>
-
-    <div class="row">
-      CAP-BTNCOLLAPSE - COLLAPSED
-      <div class="box">
-        <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
-        <div class="collapse" [id]="'conteudoInterno' + i">
-          ddthhghfgh
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      CAP-BTNCOLLAPSE
-      <div class="box">
-        <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
-        <div class="collapse in" [id]="'conteudoInterno2' + i">
-          ddthhghfgh
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      CAP-BTNCOLLAPSE DISABLED
-      <div class="box">
-        <div class="divColapse">
-          <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true"></cap-btnCollapse>
-        </div>
-        <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
-          ddthhghfgh
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="box col-xs-4">
-        CAP-MONTH-PICKER
-        <br />
-        <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
-        <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" [disabled]="true"></cap-monthpicker>
-      </div>
-
-      <div class=" col-xs-4" style="height: 500px">
-        CAP-DATE-PICKER
-        <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-          [disabled]="false" pp mask="99/99/9999">
-        </cap-datepicker>
-
-        <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-          [disabled]="false" pp mask="99/99/9999">
-        </cap-datepicker>
-
-        <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" [disabled]="false"
-          pp mask="99/99/9999">
-        </cap-datepicker>
-
-        <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-          [disabled]="true" pp mask="99/99/9999">
-        </cap-datepicker>
-
-        <cap-datepicker id="dataInicial" label="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-          [disabled]="true" pp mask="99/99/9999">
-        </cap-datepicker>
-      </div>
-
-      <div class=" col-xs-4" style="height: 500px">
-        CAP-DATE-RANGEPICKER
-        <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
-        <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
-        <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
-        <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true"></cap-dateRangePicker>
-        <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data"></cap-dateRangePicker>
-      </div>
-    </div>
-
-    <div class="row box">
-      CAP-INPUT-TEXT
-      <br />
-      <br />
-      <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
-        textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20">
-      </cap-inputText>
-
-      <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
-        textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" [disabled]="true">
-      </cap-inputText>
-
-      <cap-inputText placehoholder="Informe seu nome" label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-        maxlength="20">
-      </cap-inputText>
-
-      <cap-inputText placehoholder="Informe seu nome" icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
-      </cap-inputText>
-
-      <br />
-
-      <div class="col-md-2 no-padding-left">
-        <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem fscsd"
-          icon="busca" mask="99.999-999" [(ngModel)]="nome" maxlength="20">
-        </cap-inputText>
-      </div>
-    </div>
-
-    <div class="row box">
-      CAP-INPUT-TEXT-AREA
-      <br />
-      <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
-        maxlength="200">
-      </cap-inputTextArea>
-
-      <cap-inputTextArea placehoholder="Informe a descrição do produto" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
-        maxlength="200" [disabled]="true"></cap-inputTextArea>
-    </div>
-
-    <div class="row box">
-      CAP-PASSWORD
-      <br />
-      <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao"
-        maxlength="200">
-      </cap-password>
-      <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição" [(ngModel)]="descricao"
-        [disabled]="true" maxlength="200">
-      </cap-password>
-    </div>
-
-    <div class="row box">
-      CAP-SELECT
-      <br />
-      <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
-      <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
-    </div>
-
   </div>
 </div>
