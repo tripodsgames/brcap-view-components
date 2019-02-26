@@ -347,6 +347,10 @@
         </cap-inputText>
 
         <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
+          textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" styleClass="error">
+        </cap-inputText>
+
+        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
           textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" [disabled]="true">
         </cap-inputText>
 
@@ -369,12 +373,15 @@
       <div class="row box">
         CAP-INPUT-TEXT-AREA
         <br />
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
-          maxlength="200">
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200">
         </cap-inputTextArea>
 
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição" textHelper="Nome deve possuir no máximo 200 caracateres"
-          maxlength="200" [disabled]="true"></cap-inputTextArea>
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200"></cap-inputTextArea>
+
+        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true"></cap-inputTextArea>
       </div>
 
       <div class="row box">

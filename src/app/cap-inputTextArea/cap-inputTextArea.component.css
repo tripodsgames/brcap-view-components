@@ -20,29 +20,6 @@
   border-color: none;
 }
 
-/* label {
-  background-color: #fff;
-  max-width: 92%;
-  font-weight: bold;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.87);
-  position: relative;
-  top: 12px;
-  left: 10px;
-  padding: 0px 3px;
-  max-height: 28px;
-  vertical-align: middle;
-} */
-
-/* .ico-error {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 14px;
-  font-size: 20px;
-  color: #b00020;
-} */
-
 ::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
@@ -66,4 +43,8 @@ textarea:disabled::-moz-placeholder {
 }
 textarea:disabled:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
+}
+
+cap-icon::ng-deep .ico-error {
+  top: -40px;
 }

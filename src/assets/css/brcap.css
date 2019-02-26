@@ -58,6 +58,7 @@ body.minimizado .content-wrapper {
   padding-right: 25px;
 }
 
+/* content-header */
 .content-header {
   position: relative;
   padding: 25px;
@@ -344,7 +345,6 @@ label.label-input {
   background-color: #fff;
   font-weight: 500;
   font-size: 11px;
-  color: rgba(0, 0, 0, 0.87);
   position: relative;
   top: 10px;
   left: 8px;
@@ -1444,6 +1444,10 @@ cap-icon.error .ver-senha-password,
 my-date-range-picker.error .mydrp .selectiongroup .btnpicker,
 my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
+}
+
+.error .cap-inputText{
+  border: 2px solid red;
 }
 
 .ico-error {
