@@ -13,6 +13,10 @@ html {
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+body, html, input, button, select, textarea{
   font-family: Ubuntu;
 }
 
@@ -399,6 +403,7 @@ input:disabled:-ms-input-placeholder {
 
 .content-header input[ng-reflect-is-disabled="true"].cap-inputText {
   border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
+  color: rgba(117, 117, 117, 0.38);
 }
 
 .content-header .bootstrap-select.btn-group .dropdown-toggle .filter-option {
