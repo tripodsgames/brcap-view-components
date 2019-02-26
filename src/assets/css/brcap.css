@@ -312,14 +312,6 @@ dp-date-picker {
   border-radius: 4px;
 }
 
-.cap-inputText.outline {
-  border: none !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
-  background: transparent !important;
-  border-radius: 0px;
-  padding: 20px 10px 10px 13px;
-}
-
 .cap-inputText-icon {
   position: relative;
   top: -40px;
@@ -331,6 +323,11 @@ dp-date-picker {
 
 cap-inputText[ng-reflect-style-class="outline"] label {
   background: transparent !important;
+}
+
+.cap-inputText.sm .cap-inputText-icon{
+  top: -32px;
+  font-size: 20px;
 }
 
 label.label-input {
@@ -424,11 +421,6 @@ input:disabled:-ms-input-placeholder {
 .cap-inputText:focus {
   box-shadow: none;
   border-color: none;
-}
-
-/* apagar */
-ng-select ul{
-  height: 100px;
 }
 
 p.label-text {
@@ -936,12 +928,8 @@ select-dropdown>div .options ul li {
 }
 
 /** INICIO **/
-
 .mydrp {
   width: 100% !important;
-}
-
-.mydrp .titleareatxt {
 }
 
 .mydrp .header {
@@ -1452,10 +1440,6 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
-.error .cap-inputText{
-  border: 2px solid red;
-}
-
 .ico-error {
   float: right;
   position: relative;
@@ -1468,7 +1452,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
 dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
 .cap-inputTextArea.error,
-/* my-date-picker.error .mydp .selectiongroup, */
+my-date-picker.error .mydp .selectiongroup,
 .cap-radiobutton.error:before,
 my-date-range-picker.error .mydrp .selectiongroup {
   border: 2px solid #b00020 !important;

@@ -26,3 +26,7 @@ label.label-input.sm {
   border-radius: 0px;
   padding: 20px 10px 10px 13px;
 }
+
+label.label-input.outline {
+  top: 20px;
+}
