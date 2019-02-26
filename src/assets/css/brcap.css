@@ -330,7 +330,6 @@ dp-date-picker {
   float: right;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.54);
-  cursor: pointer;
 }
 
 cap-inputText[ng-reflect-style-class="outline"] label {
@@ -836,6 +835,20 @@ select-dropdown>div .options ul li {
 .mydp .btnpicker,
 .mydp .headertodaybtn {
   background-color: transparent !important;
+}
+
+.mydp .btnpicker,
+.mydrp .btnpicker,
+.ver-senha-password .ico-ver-senha{
+  color: #9e9e9e !important;
+  transition: 0.3s all ease-in-out;
+}
+
+.mydp .btnpicker:hover,
+.mydrp .btnpicker:hover,
+.ver-senha-password .ico-ver-senha:hover{
+  color: #757575 !important;
+  transition: 0.5s all ease-in-out;
 }
 
 .mydp .daycell {
