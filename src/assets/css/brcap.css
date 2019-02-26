@@ -185,21 +185,18 @@ h2 {
   font-size: 20px;
   font-weight: normal;
   letter-spacing: 0.2px;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 h3 {
   font-size: 18px;
   font-weight: normal;
   letter-spacing: 0.2px;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 .subtitle-1-brcap {
   font-size: 16px;
   line-height: 1.48;
   letter-spacing: 0.2px;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 .subtitle-2-brcap {
@@ -234,10 +231,10 @@ h3 {
   top: 10px;
 }
 
-.container-header {
+/* .container-header {
   padding: 50px;
   margin-top: -20px;
-}
+} */
 
 .dp-calendar-wrapper {
   border: none;
@@ -334,10 +331,6 @@ dp-date-picker {
 
 cap-inputText[ng-reflect-style-class="outline"] label {
   background: transparent !important;
-}
-
-.cap-inputText.sm {
-  height: 40px;
 }
 
 label.label-input {
