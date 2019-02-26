@@ -1,0 +1,52 @@
+input {
+  position: absolute;
+  left: -9999px;
+
+  &:checked+label {
+    background-color: #faefe0;
+    border-color: #dc963d;
+
+    &::before {
+      background-color: #fff;
+    }
+  }
+}
+
+label {
+  display: block;
+  position: relative;
+  padding: 2px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  //styleClass
+  &.lg {
+    padding: 6px 40px;
+  }
+
+  &:first-of-type {
+    transform: translateX(-40px);
+  }
+
+  &:last-of-type {
+    transform: translateX(40px);
+  }
+
+  &.disabled {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+.cap-chips-container {
+  width: fit-content;
+}
