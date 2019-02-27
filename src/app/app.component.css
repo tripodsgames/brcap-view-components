@@ -13,11 +13,39 @@
   z-index:1;
 }
 
-.produtos {
-  width: 200px;
-  height:200px;
-  background-image: url(../assets/img/loading-produto.svg);
+.produtos,
+.posvenda,
+.malthus,
+.monitor,
+.financeiro,
+.contabilidade  {
+  margin-top: 100px;
+  width: 100px;
+  height:100px;
   background-repeat: no-repeat;
-  background-size: 200px;
-  background-position-y: 8px;
+  background-size: 100px 100px;
+}
+
+.produtos {
+  background-image: url(../assets/img/loading-produto.svg);
+}
+
+.posvenda {
+  background-image: url(../assets/img/loading-posvenda.svg);
+}
+
+.malthus {
+  background-image: url(../assets/img/loading-malthus.svg);
+}
+
+.monitor {
+  background-image: url(../assets/img/loading-monitor.svg);
+}
+
+.financeiro {
+  background-image: url(../assets/img/loading-financeiro.svg);
+}
+
+.contabilidade {
+  background-image: url(../assets/img/loading-contabilidade.svg);
 }
