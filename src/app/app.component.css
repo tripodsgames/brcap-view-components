@@ -12,3 +12,12 @@
   background-color: #ccc;
   z-index:1;
 }
+
+.produtos {
+  width: 200px;
+  height:200px;
+  background-image: url(../assets/img/loading-produto.svg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position-y: 8px;
+}
