@@ -12,7 +12,6 @@ export class CapButtonComponent implements OnInit {
   @Input("label") label: string;
   @Input("disabled") disabled: boolean;
   @Input("icon") icon: string;
-  @Input("loader") loader: boolean;
   @Input("styleClass") styleClass: string;
   @Input("type") type: string;
 
