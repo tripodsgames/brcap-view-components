@@ -59,6 +59,8 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   erroMessage: string;
   @Input("isValid")
   isValid: boolean;
+  @Input("buttonErase")
+  buttonErase: boolean;
 
   @Output()
   keyup = new EventEmitter();
