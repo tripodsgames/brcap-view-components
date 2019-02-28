@@ -1,6 +1,7 @@
 <div id="wrapper">
   <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
-  <cap-header username="Joaquim José Xavier"></cap-header>
+  <cap-header username="Joaquim José Xavier" primerPage="/#/dashboard" rotaLogo="/#/dashboard" logoBrasilCap="../../../assets/img/logo-brasilcap.svg"
+    logoSistema="../../../assets/img/contabilidade.svg"></cap-header>
 
   <div class="content-wrapper">
 
@@ -8,53 +9,33 @@
       <h1>Componentes</h1>
       <div class="row">
         <div class="col-md-2 no-padding-right">
-          <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
-            textHelper="Nome deve possuir" maxlength="20">
+          <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
+            maxlength="20">
           </cap-inputText>
         </div>
-        <div class="col-md-2">
-          <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" mask="99.999-999" [(ngModel)]="nome"
-            textHelper="Nome deve possuir" maxlength="20" [disabled]="true">
+        <div class="col-md-3">
+          <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
+            maxlength="20" [disabled]="true">
           </cap-inputText>
         </div>
-        <div class="col-md-2">
-          <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+        <div class="col-md-3">
+          <cap-inputText placehoholder="Informe seu nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
+            maxlength="20" styleClass="sm">
+          </cap-inputText>
         </div>
-        <div class="col-md-2">
-          <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
-        </div>
-        <div class="col-md-2">
-          <cap-datepicker id="dataInicial" placeholder="Informe" label="Data" [(ngModel)]="data" textHelper="Informe uma data"
-            pp mask="99/99/9999">
-          </cap-datepicker>
-        </div>
-        <div class="col-md-2">
-          <cap-datepicker id="dataInicial" placeholder="Informe" [(ngModel)]="data" textHelper="Informe uma data"
-            [disabled]="true" pp mask="99/99/9999">
-          </cap-datepicker>
+        <div class="col-md-3">
+          <cap-inputText placehoholder="Informe seu nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
+            maxlength="20" [disabled]="true" styleClass="sm">
+          </cap-inputText>
         </div>
       </div>
     </div>
 
     <div class="content">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>Isso é um h1</h1>
-          <h2>Isso é um h2</h2>
-          <h3>Isso é um h3</h3>
-          <p class="subtitle-1-brcap">subtitle-1-brcap</p>
-        </div>
-        <div class="col-md-6">
-          <p class="subtitle-2-brcap">subtitle-2-brcap</p>
-          <p class="caption-brcap">caption-brcap</p>
-          <p class="sm-btn-caption-brcap">sm-btn-caption-brcap</p>
-          <p class="chips-caption-brcap">chips-caption-brcap</p>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="box" style="height: 1150px;">
+          <div class="box" style="height: 1200px;">
             CAP-BUTTON
             <div class="col-md-12">
               SM
@@ -83,9 +64,17 @@
               <br /><br />
             </div>
             <div class="col-md-12">
+              <cap-button styleClass="sm" label="voltar" icon="anterior"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
               OUTLINE
               <br /><br />
               <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="outline sm btn-ico" icon="x"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
@@ -123,7 +112,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-button styleClass="baixar" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
+              <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
               <br /><br />
             </div>
           </div>
@@ -136,7 +125,8 @@
             <cap-divisor styleClass="light"></cap-divisor>
           </div>
 
-          <div class="box" style="height: 100px;">
+          <div class="box" style="height: 150px;">
+            CAP-ICON
             <div class="col-md-12">
               <cap-icon icon="info" size="24"></cap-icon>
               <br /><br />
@@ -208,6 +198,13 @@
               <br /><br />
             </div>
           </div>
+
+          <div class="box" style="height: 100px;">
+            <h1>Isso é um h1</h1>
+            <h2>Isso é um h2</h2>
+            <h3>Isso é um h3</h3>
+          </div>
+
         </div>
 
         <div class="col-lg-3">
@@ -235,6 +232,14 @@
               <cap-toggle name="options" itemLabel="Opção 2" [(ngModel)]="toggle2" [disabled]="true">
               </cap-toggle>
             </div>
+          </div>
+
+          <div class="box" style="height: 150px;">
+            <p class="subtitle-1-brcap">subtitle-1-brcap</p>
+            <p class="subtitle-2-brcap">subtitle-2-brcap</p>
+            <p class="caption-brcap">caption-brcap</p>
+            <p class="sm-btn-caption-brcap">sm-btn-caption-brcap</p>
+            <p class="chips-caption-brcap">chips-caption-brcap</p>
           </div>
         </div>
       </div>
@@ -405,7 +410,7 @@
         </cap-inputTextArea>
 
         <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200"></cap-inputTextArea>
+          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" styleClass="error"></cap-inputTextArea>
 
         <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
           textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true"></cap-inputTextArea>

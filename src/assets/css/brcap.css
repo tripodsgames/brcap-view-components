@@ -152,10 +152,9 @@ body.minimizado .content-wrapper {
   height: 130px !important;
 }
 
-.content-header h1,
-.content-header h2,
-.content-header h3 {
+h1, h2, h3, p{
   margin: 0;
+  color: rgba(0,0,0,0.87);
 }
 
 .box {
@@ -343,7 +342,7 @@ label.label-input {
 }
 
 .helper-text {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2px;
   font-weight: 500;
   padding-left: 12px;
@@ -351,6 +350,10 @@ label.label-input {
   position: relative;
   top: 0px;
   left: 0px;
+}
+
+.content-header-medium .helper-text{
+  font-size: 11px;
 }
 
 ::placeholder {
@@ -384,7 +387,7 @@ input:disabled:-ms-input-placeholder {
 .content-header .cap-inputText {
   border: none !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
-  border-radius: 0px !important;
+  border-radius: 4px 4px 0 0 !important;
   color: rgba(0, 0, 0, 0.87);
   padding-top: 20px;
   background: #9DCAE4;
@@ -1132,6 +1135,7 @@ div.inline-checkbox label {
   background: #fff;
   border-radius: 5px;
   min-width: 300px;
+  cursor: pointer;
 }
 
 .toast-close-button {

@@ -68,12 +68,16 @@ button {
     }
 
     //styleClass
-    &.baixar,
     &.sm {
       height: 24px;
       padding: 0px 15px;
       font-size: 10px;
       letter-spacing: 0px;
+    }
+
+    &.sm cap-icon::ng-deep .brcap-ico {
+      font-size: 13px !important;
+      left: -5px !important;
     }
 
     &.lg {
@@ -87,6 +91,12 @@ button {
       border: solid 1px rgba(0, 0, 0, 0.12);
       box-shadow: none;
       color: rgba(0, 0, 0, 0.87);
+
+      &:hover {
+        background-color: #006bbb;
+        transition: 0.4s all ease-in-out;
+        color: white;
+      }
     }
 
     &.white {
@@ -113,14 +123,8 @@ button {
     }
 
     &.nova-pesquisa {
-      height: 40px;
       margin-top: -3px !important;
       float: right;
-    }
-
-    &.baixar cap-icon::ng-deep .brcap-ico{
-      font-size: 12px !important;
-      left: -5px !important;
     }
 
     &.btn-ico {
@@ -128,10 +132,16 @@ button {
       width: 40px;
     }
 
+    &.btn-ico.sm {
+      padding: 0px 12px;
+      width: 30px;
+    }
+
     &.lg.btn-ico {
       padding: 0px 13px;
       width: 50px;
-      cap-icon::ng-deep .brcap-ico{
+
+      cap-icon::ng-deep .brcap-ico {
         font-size: 24px !important;
       }
     }
