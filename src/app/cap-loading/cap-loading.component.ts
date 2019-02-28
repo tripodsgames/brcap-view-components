@@ -9,10 +9,21 @@ export class CapLoadingComponent implements OnInit {
   @Input("loading") loading: boolean;
   @Input("styleClass") styleClass: string;
   @Input("texto") texto: string;
+  @Input("sistema") sistema: string;
 
-  constructor() {}
+  produtos;
+  posvenda;
+  malthis;
+  monitor;
+  financeiro;
+  contabilidade;
+
+  constructor() { }
 
   ngOnInit() {
-
+    console.log(this.sistema);
+    if(this.sistema === "posvenda"){
+      this.posvenda = true;
+    }
   }
 }
