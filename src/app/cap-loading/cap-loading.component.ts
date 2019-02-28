@@ -13,7 +13,7 @@ export class CapLoadingComponent implements OnInit {
 
   produtos;
   posvenda;
-  malthis;
+  malthus;
   monitor;
   financeiro;
   contabilidade;
@@ -21,9 +21,23 @@ export class CapLoadingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.sistema);
     if(this.sistema === "posvenda"){
       this.posvenda = true;
+    }
+    if(this.sistema === "malthus"){
+      this.malthus = true;
+    }
+    if(this.sistema === "monitor"){
+      this.monitor = true;
+    }
+    if(this.sistema === "financeiro"){
+      this.financeiro = true;
+    }
+    if(this.sistema === "produtos"){
+      this.produtos = true;
+    }
+    if(this.sistema === "contabilidade"){
+      this.contabilidade = true;
     }
   }
 }

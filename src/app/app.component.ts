@@ -36,6 +36,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   mascara;
   loading = true;
   disabled = true;
+  sistema="financeiro"
 
   menu = [
     {
