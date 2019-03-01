@@ -3,6 +3,7 @@ import {
   forwardRef,
   Input,
   OnInit,
+  OnChanges,
   ElementRef,
   AfterViewInit,
   ViewChild,
@@ -30,7 +31,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   templateUrl: "./cap-inputText.component.html",
   styleUrls: ["./cap-inputText.component.css"]
 })
-export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
+export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit, OnChanges {
   @Input("id")
   id: string;
   @Input("label")
@@ -60,7 +61,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   @Input("isValid")
   isValid: boolean;
   @Input("eraseButton")
-  eraseButton: boolean;
+  eraseButton: boolean = true;
 
   @Output()
   keyup = new EventEmitter();
@@ -88,6 +89,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   escrevendo = false;
   emptyMessage;
   filtrando = false;
+
 
   private $el: any;
   private innerValue: any = "";
@@ -193,7 +195,6 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
       $(this.input.nativeElement).unmask();
       $(this.input.nativeElement).mask(this.mask);
     }
-
   }
 
   hasError(): boolean {
