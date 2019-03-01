@@ -6,7 +6,16 @@
   <div class="content-wrapper">
 
     <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important">
-      <h1>Componentes</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Componentes</h1>
+        </div>
+        <div class="col-md-6 text-right">
+          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data"
+          pp mask="99/99/9999" [buttonDatepicker]="true">
+          </cap-datepicker>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-2 no-padding-right">
           <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
@@ -320,10 +329,6 @@
         <div class=" col-xs-4" style="height: 500px">
           CAP-DATE-PICKER
           <cap-datepicker id="dataInicial" [(ngModel)]="data" [disabled]="false" pp mask="99/99/9999">
-          </cap-datepicker>
-
-          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-            [disabled]="false" pp mask="99/99/9999" [buttonDatepicker]="true">
           </cap-datepicker>
 
           <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
