@@ -1,11 +1,18 @@
 <div class="pagination">
-    <button class="link prev" (click)="onPrev()" [disabled]="page === 1 || loading" [ngClass]="{ 'disabled': page === 1 || loading }">
-        <cap-icon icon="anterior"></cap-icon>
-    </button>
+  <button class="link first" (click)="onFirst()" [disabled]="page === 1 || loading" [ngClass]="{ 'disabled': page === 1 || loading }">
+    <cap-icon icon="anterior"></cap-icon>
+  </button>
+  <button class="link prev" (click)="onPrev()" [disabled]="page === 1 || loading" [ngClass]="{ 'disabled': page === 1 || loading }">
+    <cap-icon icon="anterior"></cap-icon>
+  </button>
 
-    <span>{{ primeiraLinha }}-{{ ultimaLinha }} de {{ contagemPaginasTotal }}</span>
+  <span>{{ primeiraLinha }}-{{ ultimaLinha }} de {{ numeroItens }}</span>
 
-    <button class="link next" (click)="onNext(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">
-        <cap-icon icon="seguir"></cap-icon>
-    </button>
-</div>  
+  <button class="link next" (click)="onNext(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">
+    <cap-icon icon="seguir"></cap-icon>
+  </button>
+
+  <button class="link last" (click)="onLast(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">
+    <cap-icon icon="seguir"></cap-icon>
+  </button>
+</div>

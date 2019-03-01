@@ -20,6 +20,7 @@ export class CapPaginationComponent {
   @Input() perPage: number;
   @Input() loading: boolean;
   @Input() pagesToShow: number;
+  @Input() numeroItens: number;
 
   @Output() goPrev = new EventEmitter < boolean > ();
   @Output() goNext = new EventEmitter < boolean > ();

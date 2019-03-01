@@ -394,6 +394,10 @@ input:disabled:-ms-input-placeholder {
   background: #9DCAE4;
 }
 
+.content-header .cap-inputText.sm{
+  padding-top: 6px;
+}
+
 .content-header input[ng-reflect-is-disabled="true"].cap-inputText {
   border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
   color: rgba(117, 117, 117, 0.38);

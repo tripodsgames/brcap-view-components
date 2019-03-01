@@ -14,6 +14,7 @@
             <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
             <td *ngIf="rowOptions" class="text-center">
               <button (click)="clickItem(i)" class="cap-grid-options"></button>
+              <!-- <cap-button (click)="clickItem(i)" styleClass="outline sm btn-ico" icon="mais-opcoes"></cap-button> -->
               <div *ngIf="showItemOptions === i" class="row-options">
                 <ul>
                   <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">
@@ -27,15 +28,8 @@
         </tbody>
       </table>
 
-      <div class="pagination">
-        <button class="link prev" (click)="prevPage()" [disabled]="(currentPage === 1)" [ngClass]="{ 'disabled': currentPage === 1 }">
-          <cap-icon icon="anterior"></cap-icon>
-        </button>
-        <span>{{labelPaginas}}</span>
-        <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage === totalPages)" [ngClass]="{ 'disabled': (currentPage === totalPages) }">
-          <cap-icon icon="seguir"></cap-icon>
-        </button>
-      </div>
+      <cap-pagination (goNext)="nextPage()" (goPrev)="prevPage()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="currentPage"
+      [contagemPaginasTotal]="totalPages" [primeiraLinha]="firstItem" [ultimaLinha]="lastItem" [numeroItens]="numeroItens"></cap-pagination>
 
     </div>
   </div>

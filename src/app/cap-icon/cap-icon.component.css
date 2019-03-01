@@ -32,3 +32,13 @@ ul.list .icon-menu {
   z-index: 2;
   cursor: pointer;
 }
+
+.x-circulo{
+  color: #9e9e9e;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.x-circulo:hover{
+  color: #757575;
+}
