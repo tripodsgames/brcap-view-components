@@ -459,6 +459,9 @@
           [(ngModel)]="descricao" maxlength="200">
         </cap-password>
         <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+        [(ngModel)]="descricao" maxlength="200" styleClass="error">
+      </cap-password>
+        <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
           [(ngModel)]="descricao" [disabled]="true" maxlength="200">
         </cap-password>
       </div>

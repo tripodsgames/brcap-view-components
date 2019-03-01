@@ -170,6 +170,13 @@ body.minimizado .content-wrapper {
   color: rgba(0, 0, 0, 0.87);
 }
 
+.content-header my-date-picker.sm .mydp .selection,
+.content-header my-date-picker.sm .mydp .selbtngroup,
+.content-header my-date-range-picker.sm .mydrp .selection,
+.content-header my-date-range-picker.sm .mydrp .selbtngroup{
+  height: 40px !important;
+}
+
 h1, h2, h3, p{
   margin: 0;
   color: rgba(0,0,0,0.87);
@@ -1390,6 +1397,7 @@ label.disabled,
 }
 
 /* error */
+.ver-senha-password.error .brcap-ico,
 ng-select.error .below .toggle,
 .error,
 .ico-error,
