@@ -36,6 +36,8 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   mask: string;
   @Input("textHelper")
   textHelper: string;
+  @Input("buttonDatepicker")
+  buttonDatepicker: boolean;
 
   @ViewChild("input")
   input: ElementRef;

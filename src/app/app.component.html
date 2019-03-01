@@ -107,17 +107,17 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-                NOVA PESQUISA
+              NOVA PESQUISA
               <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
               <br /><br /><br />
             </div>
             <div class="col-md-12">
-                BAIXAR
+              BAIXAR
               <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-                FECHAR
+              FECHAR
               <cap-button icon="x-circulo" styleClass="fechar"></cap-button>
               <br /><br />
             </div>
@@ -319,8 +319,11 @@
 
         <div class=" col-xs-4" style="height: 500px">
           CAP-DATE-PICKER
+          <cap-datepicker id="dataInicial" [(ngModel)]="data" [disabled]="false" pp mask="99/99/9999">
+          </cap-datepicker>
+
           <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-            [disabled]="false" pp mask="99/99/9999">
+            [disabled]="false" pp mask="99/99/9999" [buttonDatepicker]="true">
           </cap-datepicker>
 
           <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"

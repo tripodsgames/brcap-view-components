@@ -14,7 +14,7 @@
             <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
             <td *ngIf="rowOptions" class="text-center">
               <button (click)="clickItem(i)" class="cap-grid-options"></button>
-              <cap-button (click)="clickItem(i)" styleClass="outline sm btn-ico" icon="mais-opcoes"></cap-button>
+              <!-- <cap-button (click)="clickItem(i)" styleClass="outline sm btn-ico" icon="mais-opcoes"></cap-button> -->
               <div *ngIf="showItemOptions === i" class="row-options">
                 <ul>
                   <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">
