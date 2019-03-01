@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'cap-grid-pagination',
-  templateUrl: './cap-grid-pagination.component.html',
-  styleUrls: ['./cap-grid-pagination.component.css']
+  selector: 'cap-table-pagination',
+  templateUrl: './cap-table-pagination.component.html',
+  styleUrls: ['./cap-table-pagination.component.css']
 })
-export class CapGridPaginationComponent implements OnInit {
+export class CapTablePaginationComponent implements OnInit {
 
   @Input() items: any
   @Input() columns: any
