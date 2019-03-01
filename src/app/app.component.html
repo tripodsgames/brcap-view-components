@@ -19,8 +19,7 @@
           </cap-inputText>
         </div>
         <div class="col-md-3">
-          <cap-inputText icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
-           styleClass="sm" placeholder="Informe seu nome">
+          <cap-inputText icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir" styleClass="sm" placeholder="Informe seu nome">
           </cap-inputText>
         </div>
         <div class="col-md-3">
@@ -35,7 +34,7 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="box" style="height: 1200px;">
+          <div class="box" style="height: 1300px;">
             CAP-BUTTON
             <div class="col-md-12">
               SM
@@ -108,11 +107,18 @@
               <br /><br />
             </div>
             <div class="col-md-12">
+                NOVA PESQUISA
               <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
+              <br /><br /><br />
+            </div>
+            <div class="col-md-12">
+                BAIXAR
+              <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
+                FECHAR
+              <cap-button icon="x-circulo" styleClass="fechar"></cap-button>
               <br /><br />
             </div>
           </div>
@@ -132,14 +138,10 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-icon icon="x-circulo"></cap-icon>
-              <br /><br />
-            </div>
-            <div class="col-md-12">
               <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
               <br /><br />
             </div>
-            <div class="col-md-12" style="margin-top: -55px;">
+            <div class="col-md-12" style="margin-top: -55px;background: BLACK">
               <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
               <br /><br />
             </div>
@@ -252,15 +254,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12">
-          CAP-PAGINATION
-          <cap-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page " [perPage]=" limit "
-            [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
-            [ultimaLinha]="ultimaLinha "></cap-pagination>
-        </div>
-      </div>
-
       <cap-scrollUp></cap-scrollUp>
 
       <div class="row">
@@ -361,7 +354,7 @@
         CAP-INPUT-TEXT
         <br />
         <br />
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" [eraseButton]="true">
+        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" [eraseButton]="false">
         </cap-inputText>
 
         <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" styleClass="sm">

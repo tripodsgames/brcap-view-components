@@ -1,4 +1,5 @@
 <label class="label-input {{styleClass}}" *ngIf="label?.length" [class.disabled]="disabled"> {{label}}</label>
 
-<my-date-range-picker [(ngModel)]="value" [name]="name" [disabled]="disabled" [placeholder]="placeholder" [options]="myDatePickerOptions" class="{{styleClass}}"></my-date-range-picker>
+<my-date-range-picker [(ngModel)]="value" [name]="name" [placeholder]="placeholder" [options]="myDatePickerOptions" class="{{styleClass}}" [class.disabled]="disabled"></my-date-range-picker>
+
 <p *ngIf="textHelper?.length" class="helper-text {{styleClass}}" [class.disabled]="disabled">{{textHelper}}</p>

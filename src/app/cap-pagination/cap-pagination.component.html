@@ -6,7 +6,7 @@
     <cap-icon icon="anterior"></cap-icon>
   </button>
 
-  <span>{{ primeiraLinha }}-{{ ultimaLinha }} de {{ numeroItens }}</span>
+  <span class="sm-btn-caption-brcap">{{ primeiraLinha }}-{{ ultimaLinha }} de {{ numeroItens }}</span>
 
   <button class="link next" (click)="onNext(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">
     <cap-icon icon="seguir"></cap-icon>

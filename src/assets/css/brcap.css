@@ -303,7 +303,7 @@ dp-date-picker {
   display: block;
   width: 100%;
   height: 50px;
-  padding: 6px 36px 6px 12px;
+  padding: 6px 32px 6px 12px;
   /* padding: 6px 12px; */
   font-size: 14px;
   line-height: 1.42857143;
@@ -1421,11 +1421,15 @@ input[disabled] {
   color: rgba(117, 117, 117, 0.38) !important;
 }
 
+my-date-range-picker.disabled .mydrp .selectiongroup,
+my-date-picker.disabled .mydp .selectiongroup,
 .ver-senha-password.disabled,
 .cap-inputText-icon.disabled {
   opacity: 0.38;
 }
 
+my-date-range-picker.disabled .mydrp .selectiongroup,
+my-date-picker.disabled .mydp .selectiongroup,
 .ver-senha-password.disabled .ver-senha,
 .helper-text.disabled,
 label.disabled,
