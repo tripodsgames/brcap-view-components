@@ -5,19 +5,19 @@
 
   <div class="content-wrapper">
 
-    <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important">
+    <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important; height: 400px !important;">
       <div class="row">
         <div class="col-md-6">
           <h1>Componentes</h1>
         </div>
         <div class="col-md-6 text-right">
-          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data"
-          pp mask="99/99/9999" [buttonDatepicker]="true">
+          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" pp mask="99/99/9999"
+            [buttonDatepicker]="true">
           </cap-datepicker>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 no-padding-right">
+        <div class="col-md-2">
           <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
             maxlength="20">
           </cap-inputText>
@@ -35,6 +35,39 @@
           <cap-inputText placehoholder="Informe seu nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
             maxlength="20" [disabled]="true" styleClass="sm">
           </cap-inputText>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+        </div>
+        <div class="col-md-3">
+          <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
+        </div>
+        <div class="col-md-3">
+          <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="sm"></cap-select>
+        </div>
+        <div class="col-md-3">
+          <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="sm"
+            [disabled]="true"></cap-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" [disabled]="false" pp mask="99/99/9999">
+          </cap-datepicker>
+        </div>
+        <div class="col-md-3">
+          <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" [disabled]="false" pp mask="99/99/9999" [disabled]="true">
+          </cap-datepicker>
+        </div>
+        <div class="col-md-3">
+          <cap-datepicker id="dataInicial" [(ngModel)]="data" [disabled]="false" pp mask="99/99/9999" styleClass="sm">
+          </cap-datepicker>
+        </div>
+        <div class="col-md-3">
+          <cap-datepicker id="dataInicial" [(ngModel)]="data" [disabled]="false" pp mask="99/99/9999" styleClass="sm" [disabled]="true">
+          </cap-datepicker>
         </div>
       </div>
     </div>
@@ -339,6 +372,10 @@
             pp mask="99/99/9999">
           </cap-datepicker>
 
+          <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" [disabled]="false"
+          pp mask="99/99/9999" styleClass="error">
+        </cap-datepicker>
+
           <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
             [disabled]="true" pp mask="99/99/9999">
           </cap-datepicker>
@@ -350,9 +387,10 @@
 
         <div class=" col-xs-4" style="height: 500px">
           CAP-DATE-RANGEPICKER
-          <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
+          <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 - 99/99/9999"></cap-dateRangePicker>
           <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
           <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo"></cap-dateRangePicker>
+          <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" styleClass="error"></cap-dateRangePicker>
           <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true"></cap-dateRangePicker>
           <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data"></cap-dateRangePicker>
         </div>
@@ -363,9 +401,6 @@
         <br />
         <br />
         <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" [eraseButton]="false">
-        </cap-inputText>
-
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" styleClass="sm">
         </cap-inputText>
 
         <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" styleClass="outline">
@@ -432,6 +467,7 @@
         CAP-SELECT
         <br />
         <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+        <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="error"></cap-select>
         <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
       </div>
 

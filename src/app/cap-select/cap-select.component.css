@@ -1,3 +1,11 @@
-ng-select {
+/* ng-select {
   margin-bottom: 5px;
+} */
+
+:host ::ng-deep ng-select.sm .below{
+  height: 40px;
+}
+
+:host ::ng-deep ng-select.sm .below .toggle{
+  line-height: 40px !important;
 }

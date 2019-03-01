@@ -83,73 +83,91 @@ body.minimizado .content-wrapper {
   left: 9px !important;
 }
 
-/* .content-header-medium .cap-inputText,
-.content-header-medium .below,
-.content-header-medium .cap-button,
-.content-header-medium .mydp .selection,
-.content-header-medium .mydp .selbtngroup,
-.content-header-medium .mydrp .selection,
-.content-header-medium .mydrp .selbtngroup{
-  height: 40px !important;
-}
-
-.content-header-medium h1{
-  line-height: 1.5;
-}
-
-.content-header-medium .cap-inputText,
-.content-header-medium .below{
-  margin-top: -23px;
-}
-
-.content-header-medium .mydp,
-.content-header-medium .mydrp,
-.content-header-medium .cap-button{
-  margin-top: -3px;
-}
-
-.content-header-medium .cap-button{
-  width: 40px;
-  padding: 0px 20px !important;
-}
-
-.content-header-medium label.label-input{
-  top: -4px;
-  left: 8px;
-} */
-
 .content-header-large {
   height: 150px !important;
 }
 
-/* .content-header-large .cap-inputText,
-.content-header-large .cap-button,
-.content-header-large .below,
-.content-header-large .mydp .selection,
-.content-header-large .mydp .selbtngroup,
-.content-header-large .mydrp .selection,
-.content-header-large .mydrp .selbtngroup{
-  height: 50px !important;
-}
-
-.content-header-large .cap-button{
-  width: 50px;
-}
-
-.content-header-large button.cap-button .brcap-ico{
-  left: -12px !important;
-  font-size: 24px !important;
-} */
-
-/* .content-header-large .mydp,
-.content-header-large .mydrp,
-.content-header-large .cap-button{
-  margin-top: 21px;
-} */
-
 .content-header-abas,
 .content-header-cards {
   height: 130px !important;
+}
+
+.content-header-medium .helper-text{
+  font-size: 11px;
+}
+
+.content-header .cap-inputText {
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+  border-radius: 4px 4px 0 0 !important;
+  color: rgba(0, 0, 0, 0.87);
+  padding-top: 20px;
+  background: #9DCAE4;
+}
+
+.content-header .cap-inputText.sm{
+  padding-top: 6px;
+}
+
+.content-header input[ng-reflect-is-disabled="true"].cap-inputText {
+  border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
+  color: rgba(117, 117, 117, 0.38);
+}
+
+.content-header .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  top: 7px;
+}
+
+.content-header .bootstrap-select>.dropdown-toggle {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 0px;
+}
+.content-header .icon-calendar {
+  top: -35px;
+}
+
+.content-header .mydrp .selection {
+  border: none !important;
+  border-bottom: 1px solid #757575 !important;
+  border-radius: 0px;
+  padding-top: 10px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.content-header .mydp .selectiongroup,
+.content-header .mydrp .selectiongroup {
+  border: none !important;
+  border-radius: 0px;
+}
+
+.content-header ng-select>div {
+  border: none !important;
+  border-bottom: 1px solid #757575 !important;
+  border-radius: 0px;
+  background: white;
+  border-radius: 4px 4px 0 0 !important;
+}
+
+.content-header ng-select.sm>div>div.single>div.placeholder {
+  line-height: 40px !important;
+  padding-top: 0 !important;
+}
+
+.content-header ng-select[ng-reflect-is-disabled="true"]>div {
+  border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
+}
+
+.content-header ng-select>div>div.single>div.value,
+.content-header ng-select>div>div.single>div.placeholder {
+  padding-top: 8px !important;
+}
+
+.content-header .mydp .selection {
+  border-bottom: 1px solid #757575;
+  border-radius: 0px;
+  padding-top: 10px;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 h1, h2, h3, p{
@@ -353,10 +371,6 @@ label.label-input {
   left: 0px;
 }
 
-.content-header-medium .helper-text{
-  font-size: 11px;
-}
-
 ::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
@@ -385,34 +399,6 @@ input:disabled:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.content-header .cap-inputText {
-  border: none !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
-  border-radius: 4px 4px 0 0 !important;
-  color: rgba(0, 0, 0, 0.87);
-  padding-top: 20px;
-  background: #9DCAE4;
-}
-
-.content-header .cap-inputText.sm{
-  padding-top: 6px;
-}
-
-.content-header input[ng-reflect-is-disabled="true"].cap-inputText {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
-  color: rgba(117, 117, 117, 0.38);
-}
-
-.content-header .bootstrap-select.btn-group .dropdown-toggle .filter-option {
-  top: 7px;
-}
-
-.content-header .bootstrap-select>.dropdown-toggle {
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.87);
-  border-radius: 0px;
-}
-
 .icon-calendar {
   float: right;
   position: relative;
@@ -420,10 +406,6 @@ input:disabled:-ms-input-placeholder {
   right: 10px;
   cursor: pointer;
   z-index: 3;
-}
-
-.content-header .icon-calendar {
-  top: -35px;
 }
 
 .cap-inputText:focus {
@@ -714,21 +696,6 @@ ng-select>div {
   outline: none;
 }
 
-.content-header ng-select>div {
-  border: none !important;
-  border-bottom: 1px solid #757575 !important;
-  border-radius: 0px;
-}
-
-.content-header ng-select[ng-reflect-is-disabled="true"]>div {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
-}
-
-.content-header ng-select>div>div.single>div.value,
-.content-header ng-select>div>div.single>div.placeholder {
-  padding-top: 8px !important;
-}
-
 select-dropdown>div.below {
   z-index: 4;
 }
@@ -928,13 +895,6 @@ select-dropdown>div .options ul li {
   font-weight: 500;
 }
 
-.content-header .mydp .selection {
-  border-bottom: 1px solid #757575;
-  border-radius: 0px;
-  padding-top: 10px;
-  color: rgba(0, 0, 0, 0.87);
-}
-
 /** INICIO **/
 .mydrp {
   width: 100% !important;
@@ -1069,20 +1029,6 @@ select-dropdown>div .options ul li {
 .mydrp .yearcell,
 .mydrp .yearlabel {
   font-weight: 500;
-}
-
-.content-header .mydrp .selection {
-  border: none !important;
-  border-bottom: 1px solid #757575 !important;
-  border-radius: 0px;
-  padding-top: 10px;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.content-header .mydp .selectiongroup,
-.content-header .mydrp .selectiongroup {
-  border: none !important;
-  border-radius: 0px;
 }
 
 ng-select>div>div.single>div.toggle {
@@ -1444,7 +1390,7 @@ label.disabled,
 }
 
 /* error */
-.below.error .toggle,
+ng-select.error .below .toggle,
 .error,
 .ico-error,
 cap-icon.error .ver-senha-password,
@@ -1453,7 +1399,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
-.below.error,
+ng-select.error .below,
 dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
 .cap-inputTextArea.error,
