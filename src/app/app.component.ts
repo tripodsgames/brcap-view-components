@@ -36,6 +36,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   on = true;
   mascara;
   disabled = true;
+  loading = true;
 
   menu = [
     {
