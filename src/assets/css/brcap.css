@@ -17,7 +17,7 @@ html {
 }
 
 body, html, input, button, select, textarea{
-  font-family: Ubuntu;
+  font-family: Ubuntu !important;
 }
 
 #wrapper {
@@ -127,12 +127,17 @@ body.minimizado .content-wrapper {
   top: -35px;
 }
 
-.content-header .mydrp .selection {
+.content-header .mydrp .selection,
+.content-header .mydp .selection{
   border: none !important;
   border-bottom: 1px solid #757575 !important;
   border-radius: 0px;
-  padding-top: 10px;
-  color: rgba(0, 0, 0, 0.87);
+  padding-top: 10px; 
+}
+
+.content-header .sm .mydrp .selection,
+.content-header .sm .mydp .selection{
+  padding-top: 0px;  
 }
 
 .content-header .mydp .selectiongroup,
@@ -161,13 +166,6 @@ body.minimizado .content-wrapper {
 .content-header ng-select>div>div.single>div.value,
 .content-header ng-select>div>div.single>div.placeholder {
   padding-top: 8px !important;
-}
-
-.content-header .mydp .selection {
-  border-bottom: 1px solid #757575;
-  border-radius: 0px;
-  padding-top: 10px;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 .content-header my-date-picker.sm .mydp .selection,
@@ -804,6 +802,8 @@ select-dropdown>div .options ul li {
   background-color: transparent !important;
 }
 
+.mydp .btnclear,
+.mydrp .btnclear,
 .mydp .btnpicker,
 .mydrp .btnpicker,
 .ver-senha-password .ico-ver-senha{
@@ -811,6 +811,8 @@ select-dropdown>div .options ul li {
   transition: 0.3s all ease-in-out;
 }
 
+.mydp .btnclear:hover,
+.mydrp .btnclear:hover,
 .mydp .btnpicker:hover,
 .mydrp .btnpicker:hover,
 .ver-senha-password .ico-ver-senha:hover{
@@ -1153,17 +1155,17 @@ cap-icon.fecharQuickView {
   z-index: 2;
   top: 0;
   transition: all 2s;
+}
 
-  .label-text-block {
-    margin: 0 !important;
-  }
+.quickview .label-text-block{
+  margin: 0 !important;
+}
 
-  label,
-  span {
-    font-size: 12px !important;
-    line-height: 12px;
-    display: inline;
-  }
+.quickview label,
+.quickview span {
+  font-size: 12px !important;
+  line-height: 12px;
+  display: inline;
 }
 
 .view-block {
@@ -1227,20 +1229,20 @@ cap-icon.fecharQuickView {
 .table-filter>thead>tr:nth-child(2)>th {
   background: #fff !important;
   padding: 0;
+}
 
-  ng-select>div {
-    border: none !important;
-    height: 40px;
-  }
+.table-filter>thead>tr:nth-child(2)>th ng-select>div {
+  border: none !important;
+  height: 40px;
+}
 
-  ng-select>div>div.single>div.toggle {
-    line-height: 40px !important;
-  }
+.table-filter>thead>tr:nth-child(2)>th ng-select>div>div.single>div.toggle {
+  line-height: 40px !important;
+}
 
-  ng-select>div>div.single>div.toggle:before {
-    font-size: 20px;
-    color: #888;
-  }
+.table-filter>thead>tr:nth-child(2)>th ng-select>div>div.single>div.toggle:before {
+  font-size: 20px;
+  color: #888;
 }
 
 .item cap-checkbox {
@@ -1407,6 +1409,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
+.error .dp-input-container input,
 ng-select.error .below,
 dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
