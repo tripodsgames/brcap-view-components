@@ -1352,6 +1352,7 @@ ng-select .disabled,
   color: rgba(117, 117, 117, 0.38) !important;
 }
 
+.dp-picker-input[disabled]::placeholder,
 my-date-range-picker.disabled .mydrp .selectiongroup,
 my-date-picker.disabled .mydp .selectiongroup,
 .ver-senha-password.disabled,

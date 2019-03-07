@@ -2,6 +2,10 @@ button {
   position: relative;
   overflow: hidden;
 
+  &:hover{
+    opacity: 0.8;
+  }
+
   &:hover:after {
     content: "";
     position: absolute;

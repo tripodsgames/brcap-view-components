@@ -217,11 +217,11 @@
           <div class="box" style="height: 200px">
             CAP-HINT
             <div class="col-md-12">
-              <cap-hint texto="olar"></cap-hint>
+              <cap-hint texto="olar."></cap-hint>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-hint styleClass="left" texto="olar"></cap-hint>
+              <cap-hint styleClass="left" texto="olar."></cap-hint>
               <br /><br />
             </div>
           </div>
@@ -247,7 +247,13 @@
           <div class="box" style="height: 350px;">
             CAP-CHIPS
             <div class="col-md-12">
-              <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
+              SM
+              <cap-chips styleClass="sm" name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
+              </cap-chips>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-chips name="chip" itemLabel="Opção 2" [(ngModel)]="selecionadoChips2">
               </cap-chips>
               <br /><br />
             </div>
@@ -422,20 +428,19 @@
         CAP-INPUT-TEXT
         <br />
         <br />
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" [eraseButton]="false">
+        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" [eraseButton]="false">
         </cap-inputText>
 
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" styleClass="outline">
+        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline">
         </cap-inputText>
 
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" maxlength="20" styleClass="outline error"
+        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline error"
           textHelper="Campo obrigatório">
         </cap-inputText>
 
         <div class="row">
           <div class="col-lg-12">
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-              maxlength="20">
+            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres">
             </cap-inputText>
           </div>
         </div>
@@ -479,6 +484,14 @@
       </div>
 
       <div class="row box">
+        CAP-SELECT
+        <br />
+        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
+        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error"></cap-select>
+        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3" [disabled]="true"></cap-select>
+      </div>
+
+      <div class="row box">
         CAP-PASSWORD
         <br />
         <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
@@ -491,16 +504,6 @@
           [(ngModel)]="descricao" [disabled]="true" maxlength="200">
         </cap-password>
       </div>
-
-      <div class="row box">
-        CAP-SELECT
-        <br />
-        <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
-        <cap-select label="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="error"></cap-select>
-        <cap-select label="Tipo Pessoa" [items]="items" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
-      </div>
-
-
 
     </div>
   </div>
