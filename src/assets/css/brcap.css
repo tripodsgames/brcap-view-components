@@ -79,69 +79,9 @@ body.minimizado .content-wrapper {
   left: 9px !important;
 }
 
-/* .content-header-medium .cap-inputText,
-.content-header-medium .below,
-.content-header-medium .cap-button,
-.content-header-medium .mydp .selection,
-.content-header-medium .mydp .selbtngroup,
-.content-header-medium .mydrp .selection,
-.content-header-medium .mydrp .selbtngroup{
-  height: 40px !important;
-}
-
-.content-header-medium h1{
-  line-height: 1.5;
-}
-
-.content-header-medium .cap-inputText,
-.content-header-medium .below{
-  margin-top: -23px;
-}
-
-.content-header-medium .mydp,
-.content-header-medium .mydrp,
-.content-header-medium .cap-button{
-  margin-top: -3px;
-}
-
-.content-header-medium .cap-button{
-  width: 40px;
-  padding: 0px 20px !important;
-}
-
-.content-header-medium label.label-input{
-  top: -4px;
-  left: 8px;
-} */
-
 .content-header-large {
   height: 150px !important;
 }
-
-/* .content-header-large .cap-inputText,
-.content-header-large .cap-button,
-.content-header-large .below,
-.content-header-large .mydp .selection,
-.content-header-large .mydp .selbtngroup,
-.content-header-large .mydrp .selection,
-.content-header-large .mydrp .selbtngroup{
-  height: 50px !important;
-}
-
-.content-header-large .cap-button{
-  width: 50px;
-}
-
-.content-header-large button.cap-button .brcap-ico{
-  left: -12px !important;
-  font-size: 24px !important;
-} */
-
-/* .content-header-large .mydp,
-.content-header-large .mydrp,
-.content-header-large .cap-button{
-  margin-top: 21px;
-} */
 
 .content-header-abas,
 .content-header-cards {
@@ -161,6 +101,10 @@ body.minimizado .content-wrapper {
   margin-bottom: 25px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   padding: 25px;
+}
+
+.specialBoxPadding {
+  padding: 15px;
 }
 
 .navbar {
