@@ -9,7 +9,7 @@ export class CapHintComponent implements OnInit {
     @Input() texto: string
     @Input("styleClass") styleClass: string;
 
-    exibirHint;
+    exibirHint = false;
 
     constructor() { }
 

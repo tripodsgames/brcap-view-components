@@ -335,22 +335,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.gridPagination.setPage(true);
       }, 0);
     }
-
   }
-
-  // cpf;
-  // changeMask(event) {
-  //   var digit = event.key.replace(/\D/g, '');
-  //   var value = this.cpf.replace(/\D/g, '');
-  //   var size = value.concat(digit).length;
-  //   if (size === 14) {
-  //     this.mascara = "00.000.000/0000-00"
-  //   } else if (size === 11) {
-  //     this.mascara = "000.000.000-00000"
-  //   } else{
-  //     this.mascara = "";
-  //   }
-  // }
 
   toogleCollapse() {
     this.collapse = !this.collapse;

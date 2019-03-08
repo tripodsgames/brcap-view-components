@@ -20,23 +20,22 @@
       <div class="row">
         <div class="col-md-2">
           DEFAULT
-          <br/>
-          <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve bla"
-            maxlength="20">
+          <br />
+          <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve bla" maxlength="20">
           </cap-inputText>
         </div>
         <div class="col-md-3">
           DISABLED
-          <br/>
-          <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
-            maxlength="20" [disabled]="true">
+          <br />
+          <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir" maxlength="20"
+            [disabled]="true">
           </cap-inputText>
         </div>
         <div class="col-md-3">
           ERROR
-          <br/>
-          <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
-            maxlength="20" styleClass="error">
+          <br />
+          <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir" maxlength="20"
+            styleClass="error">
           </cap-inputText>
         </div>
       </div>
@@ -60,13 +59,16 @@
 
       <div class="row">
         <div class="col-md-3">
-          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" title="bla"></cap-select>
+          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
+            title="bla"></cap-select>
         </div>
         <div class="col-md-3">
-          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
+          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
+            [disabled]="true"></cap-select>
         </div>
         <div class="col-md-3">
-          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="error"></cap-select>
+          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
+            styleClass="error"></cap-select>
         </div>
       </div>
 
@@ -116,32 +118,34 @@
 
       <div class="row">
         <div class="col-md-3">
-          <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data" [disabled]="false"  mask="99/99/9999 a 99/99/9999">
+          <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data" [disabled]="false" mask="99/99/9999 a 99/99/9999">
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3">
-          <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data"  mask="99/99/9999 a 99/99/9999" [disabled]="true">
+          <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
+            [disabled]="true">
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3">
-          <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data"  mask="99/99/9999 a 99/99/9999" styleClass="error">
+          <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
+            styleClass="error">
           </cap-dateRangePicker>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3">
-          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data"  mask="99/99/9999 a 99/99/9999"
+          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
             styleClass="sm">
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3">
-          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data"  mask="99/99/9999 a 99/99/9999"
+          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
             styleClass="sm" [disabled]="true">
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3">
-          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data"  mask="99/99/9999 a 99/99/9999"
+          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
             styleClass="sm error">
           </cap-dateRangePicker>
         </div>
@@ -298,11 +302,11 @@
           <div class="box" style="height: 200px">
             CAP-HINT
             <div class="col-md-12">
-              <cap-hint texto="olar."></cap-hint>
+              <cap-hint texto="olarfdfbvffb grgrgrt hgrt rtgrgr g rg rgrgr hbhv kmjikmv kmikmm komolm,l omommoo."></cap-hint>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-hint styleClass="left" texto="olar."></cap-hint>
+              <cap-hint styleClass="left" texto="clique nos cards"></cap-hint>
               <br /><br />
             </div>
           </div>
@@ -499,9 +503,11 @@
           <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
           <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
           <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" styleClass="error" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+          <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" styleClass="error"
+            mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
           <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+          <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data"
+            mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
         </div>
       </div>
 
@@ -566,8 +572,9 @@
       <div class="row box">
         CAP-SELECT
         <br />
-        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"></cap-select>
-        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error" texthelper="Campo obrigatório"></cap-select>
+        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" title="blaaaaa"></cap-select>
+        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error"
+          texthelper="Campo obrigatório"></cap-select>
         <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3" [disabled]="true"></cap-select>
       </div>
 

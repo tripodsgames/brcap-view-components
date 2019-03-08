@@ -3,6 +3,7 @@
   padding: 0 !important;
   overflow: hidden !important;
 }
+
 .wrapper {
   height: 100%;
   margin: 50px;
@@ -10,5 +11,5 @@
 
 .content-header {
   background-color: #ccc;
-  z-index:1;
+  z-index: 1;
 }

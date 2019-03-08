@@ -1,6 +1,4 @@
-<div class="hint">
+<div class="cap-hint">
   <cap-icon icon="ajuda" [size]="24" class="round" (click)="toggleHint()" (mouseleave)="mouseLeaveHint()"></cap-icon>
-  <div class="hint-container hideHint {{styleClass}}" [class.showHint]="exibirHint">
-    <div class="hint-content">{{texto}}</div>
-  </div>
+  <span class="hintText {{styleClass}}" [class.showHint]="exibirHint">{{texto}}</span>
 </div>
