@@ -14,12 +14,7 @@
       </div>
     </div>
 
-    <div class="loader" *ngIf="loading">
-      <div class="loader-body">
-        <i class="fa fa-2x fa-spinner fa-spin"></i>
-        <p>Carregando permissionamento</p>
-      </div>
-    </div>
+    <cap-loading texto="Carregando permissionamento" [loading]="loading" [sistema]="sistema"></cap-loading>
 
     <div class="content">
       <cap-scrollUp></cap-scrollUp>

@@ -9,10 +9,35 @@ export class CapLoadingComponent implements OnInit {
   @Input("loading") loading: boolean;
   @Input("styleClass") styleClass: string;
   @Input("texto") texto: string;
+  @Input("sistema") sistema: string;
 
-  constructor() {}
+  produtos;
+  posvenda;
+  malthus;
+  monitor;
+  financeiro;
+  contabilidade;
+
+  constructor() { }
 
   ngOnInit() {
-
+    if(this.sistema === "posvenda"){
+      this.posvenda = true;
+    }
+    if(this.sistema === "malthus"){
+      this.malthus = true;
+    }
+    if(this.sistema === "monitor"){
+      this.monitor = true;
+    }
+    if(this.sistema === "financeiro"){
+      this.financeiro = true;
+    }
+    if(this.sistema === "produtos"){
+      this.produtos = true;
+    }
+    if(this.sistema === "contabilidade"){
+      this.contabilidade = true;
+    }
   }
 }

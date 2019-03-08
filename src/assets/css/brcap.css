@@ -202,6 +202,10 @@ p {
   padding: 25px;
 }
 
+.specialBoxPadding {
+  padding: 15px;
+}
+
 .navbar {
   background-color: #fff;
   z-index: 1;
@@ -604,6 +608,22 @@ p.label-text span {
 .sucesso:before {
   content: "\e917";
 }
+
+/* .primeira-pagina{
+  content: "\";
+}
+
+.ultima-pagina{
+  content: "\";
+}
+
+.permissionar{
+  content: "\";
+}
+
+.pesquisa-avancada{
+  content: "\";
+} */
 
 .cap-button .brcap-ico {
   position: relative;

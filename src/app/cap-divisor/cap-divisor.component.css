@@ -1,0 +1,13 @@
+.cap-divisor {
+  display: block;
+  height: 1px;
+  background-color: #979797;
+  margin: 25px 0px;
+}
+
+.cap-divisor.light {
+  display: block;
+  height: 1px;
+  opacity: 0.12;
+  background-color: rgba(0, 0, 0, 0.87);
+}

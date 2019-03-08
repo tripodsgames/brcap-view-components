@@ -5,8 +5,6 @@
 
   <div class="content-wrapper">
 
-    <!-- <cap-loading [loading]="loading" texto="cd" sistema="posvenda"></cap-loading> -->
-
     <div class="content-header content-header-large" style="background-color: rgba(0,161,255,0.3) !important; height: 800px !important;">
       <div class="row">
         <div class="col-md-6">
@@ -148,9 +146,9 @@
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
         </div>
         <div class="col-md-3">
-            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
-              [disabled]="true"></cap-monthpicker>
-          </div>
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+            [disabled]="true"></cap-monthpicker>
+        </div>
         <div class="col-md-3">
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
             styleClass="error"></cap-monthpicker>
@@ -159,12 +157,13 @@
 
       <div class="row">
         <div class="col-md-3">
-          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" styleClass="sm"></cap-monthpicker>
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+            styleClass="sm"></cap-monthpicker>
         </div>
         <div class="col-md-3">
-            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" styleClass="sm"
-              [disabled]="true"></cap-monthpicker>
-          </div>
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+            styleClass="sm" [disabled]="true"></cap-monthpicker>
+        </div>
         <div class="col-md-3">
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
             styleClass="sm error"></cap-monthpicker>
@@ -583,3 +582,8 @@
     </div>
   </div>
 </div>
+
+
+<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
+
+<!-- <cap-loading [loading]="loading" texto="cd" sistema="posvenda"></cap-loading> -->
