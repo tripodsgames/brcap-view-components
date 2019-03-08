@@ -34,6 +34,8 @@ export class CapMonthPickerComponent implements ControlValueAccessor, OnInit {
   mask: string;
   @Input("format")
   format: string;
+  @Input("textHelper")
+  textHelper: string;
 
   @ViewChild("input")
   input;

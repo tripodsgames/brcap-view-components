@@ -145,6 +145,11 @@ body.minimizado .loader {
   padding-top: 10px;
 }
 
+.content-header my-date-picker.disabled .mydp .selection,
+.content-header my-date-range-picker.disabled .mydrp .selection{
+  border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
+}
+
 .content-header .sm .mydrp .selection,
 .content-header .sm .mydp .selection {
   padding-top: 0px;
@@ -1352,6 +1357,8 @@ cap-modal.lg .modal-dialog {
 }
 
 /* disabled */
+my-date-picker.disabled input::placeholder,
+my-date-range-picker.disabled input::placeholder,
 .helper-text.disabled,
 label.disabled,
 ng-select .disabled .placeholder {
@@ -1369,15 +1376,18 @@ input[disabled] {
 ng-select .disabled,
 .content .cap-inputText:disabled {
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
-  color: rgba(117, 117, 117, 0.38) !important;
 }
 
+ng-select .disabled,
+.content .cap-inputText:disabled,
 .dp-picker-input[disabled]::placeholder,
 my-date-range-picker.disabled .mydrp .selectiongroup,
+my-date-range-picker.disabled .mydrp .selectiongroup .btnpicker,
 my-date-picker.disabled .mydp .selectiongroup,
+my-date-picker.disabled .mydp .selectiongroup .btnpicker,
 .ver-senha-password.disabled,
 .cap-inputText-icon.disabled {
-  opacity: 0.38;
+  color: rgba(117, 117, 117, 0.38) !important;
 }
 
 my-date-range-picker.disabled .mydrp .selectiongroup,
