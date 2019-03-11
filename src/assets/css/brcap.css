@@ -1373,11 +1373,14 @@ input[disabled] {
   text-transform: none !important;
 }
 
+.dp-input-container input[disabled],
 ng-select .disabled,
 .content .cap-inputText:disabled {
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 
+.dp-input-container input[disabled],
+.cap-inputTextArea:disabled,
 ng-select .disabled,
 .content .cap-inputText:disabled,
 .dp-picker-input[disabled]::placeholder,
@@ -1395,6 +1398,7 @@ my-date-picker.disabled .mydp .selectiongroup,
 .ver-senha-password.disabled .ver-senha,
 .helper-text.disabled,
 label.disabled,
+.cap-inputText:disabled,
 .cap-inputText-icon.disabled,
 .mydrp .selectiondisabled,
 .mydp .selectiondisabled,
@@ -1403,6 +1407,12 @@ label.disabled,
 .form-control[disabled] {
   cursor: default !important;
   pointer-events: none;
+}
+
+.cap-button[disabled],
+.cap-button[disabled]:hover,
+.brcap-ico.disabled {
+  opacity: 0.38;
 }
 
 /* error */

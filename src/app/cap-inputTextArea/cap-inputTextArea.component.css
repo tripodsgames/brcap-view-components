@@ -12,7 +12,6 @@
 .cap-inputTextArea:disabled {
   border: 1px solid #c9c9c9;
   background-color: #ffffff;
-  color: rgba(117,117,117,0.38);
 }
 
 .cap-inputTextArea:focus {

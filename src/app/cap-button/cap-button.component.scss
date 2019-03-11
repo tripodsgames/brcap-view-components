@@ -50,14 +50,6 @@ button {
       outline: none;
     }
 
-    &[disabled] {
-      opacity: 0.38;
-
-      &:hover:after {
-        opacity: 0;
-      }
-    }
-
     &:focus:not(:active)::after {
       animation: ripple 1s ease-out;
     }
