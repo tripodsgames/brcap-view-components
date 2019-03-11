@@ -1,39 +1,3 @@
-/* TABELA */
-table {
-  background-color: white;
-  border: 1px solid;
-  border-color: rgba(117, 117, 117, 0.1);
-}
-
-tbody tr:nth-child(even) {
-  background: rgba(117, 117, 117, 0.1);
-}
-
-.table-header {
-  height: 45px;
-  background-color: rgba(74, 74, 74, 0.2);
-}
-
-th,
-td {
-  vertical-align: middle !important;
-  border: 1px solid;
-  border-color: rgba(117, 117, 117, 0.1);
-}
-
-th {
-  font-size: 12px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1 !important;
-  letter-spacing: 0.4px;
-  color: #000000;
-  border-bottom-color: inherit;
-}
-
-/* TABELA - end */
-
 // CAP CARD
 cap-card::ng-deep {
   .cap-card {
