@@ -1,7 +1,7 @@
 cap-button.scroll::ng-deep .cap-button {
   opacity: 0;
   position: fixed;
-  top: inherit !important;
+  top: inherit;
   bottom: 20px;
   right: 30px;
   width: 38px;
@@ -15,12 +15,12 @@ cap-button.scroll::ng-deep .cap-button {
 }
 
 cap-button.show::ng-deep .cap-button {
-  opacity: 1 !important;
+  opacity: 1;
   transition: .3s ease-in-out all;
 }
 
 cap-button.scroll::ng-deep .brcap-ico {
   transform: rotate(180deg);
-  left: -8px !important;
+  left: -8px;
   font-size: 24px !important;
 }

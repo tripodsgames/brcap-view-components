@@ -10,7 +10,7 @@ label.label-duas-linhas {
   margin-top: -10px;
 }
 
-/* styleClass */
+/* styleClass(sm e outline) */
 .cap-inputText.sm {
   height: 40px;
 }
@@ -27,7 +27,7 @@ label.label-input.sm {
 .cap-inputText.outline {
   border: none !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
-  background: transparent !important;
+  background: transparent;
   border-radius: 0px;
   padding: 20px 32px 10px 13px;
 }

@@ -29,7 +29,7 @@ label {
   font-size: 14px;
   font-weight: 500;
 
-  //styleClass
+  //styleClass(sm e lg)
   &.sm {
     padding: 3px 25px;
     font-size: 10px;
@@ -48,7 +48,7 @@ label {
   }
 
   &.disabled {
-    border-color: rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(0, 0, 0, 0.1);
   }
 }
 

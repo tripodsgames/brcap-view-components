@@ -22,7 +22,7 @@
 }
 
 .nav-tabs > li.active > a {
-  height: 55px !important;
+  height: 55px;
   position: relative;
   top: -8px;
   right: 2px;

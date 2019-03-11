@@ -1,16 +1,16 @@
-<div class="{{fullTable}} col-lg-9 col-xl-6 no-padding-left" [class.full-table]="fullTable">
+<div class="{{styleClass}} col-lg-9 col-xl-6">
   <div class="box">
-    <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
+    <div *ngIf="pagedItens.length > 0">
       <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
         <thead>
-          <tr class="table-header">
+          <tr>
             <th *ngFor="let c of columns">{{c}}</th>
             <th *ngIf="rowOptions"></th>
           </tr>
         </thead>
 
         <tbody>
-          <tr class="animacao-hover" *ngFor="let v of pagedItens;  let i = index">
+          <tr *ngFor="let v of pagedItens;  let i = index">
             <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
             <td *ngIf="rowOptions" class="text-center">
               <button (click)="clickItem(i)" class="cap-grid-options"></button>

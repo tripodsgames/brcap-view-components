@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@a
 @Component({
   selector: 'cap-table-pagination',
   templateUrl: './cap-table-pagination.component.html',
-  styleUrls: ['./cap-table-pagination.component.css']
+  styleUrls: ['./cap-table-pagination.component.scss']
 })
 export class CapTablePaginationComponent implements OnInit {
 
@@ -17,6 +17,7 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() labelPaginas: string
   @Input() rowOptions: any
   @Input() fullTable: boolean
+  @Input() styleClass: string
   // @Input() primeiraInformacao: any
   // @Input() segundaInformacao: any
   // @Input() terceiraInformacao: any

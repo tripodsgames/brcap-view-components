@@ -17,8 +17,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: "cap-dateRangePicker",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  templateUrl: "./cap-dateRangePicker.component.html",
-  styleUrls: ["./cap-dateRangePicker.component.css"]
+  templateUrl: "./cap-dateRangePicker.component.html"
 })
 export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit {
   @Input("id")
