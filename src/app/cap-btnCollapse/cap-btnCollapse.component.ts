@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from "@angular/core";
 @Component({
   selector: "cap-btnCollapse",
   templateUrl: "./cap-btnCollapse.component.html",
-  styleUrls: ["./cap-btnCollapse.component.scss"]
+  styleUrls: ["../../assets/css/cap-btnCollapse.component.min.css"]
 })
 export class CapBtnCollapseComponent implements OnInit {
   @Input("targetId")

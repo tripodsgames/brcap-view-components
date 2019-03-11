@@ -18,7 +18,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 @Component({
   selector: "cap-header",
   templateUrl: "./cap-header.component.html",
-  styleUrls: ["./cap-header.component.scss"]
+  styleUrls: ["../../assets/css/cap-header.component.min.css"]
 })
 export class CapHeaderComponent implements OnInit, DoCheck {
   @Input("modulo")

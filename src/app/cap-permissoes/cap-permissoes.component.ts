@@ -11,7 +11,7 @@ import swal from "sweetalert2";
 @Component({
   selector: "cap-permissoes",
   templateUrl: "./cap-permissoes.component.html",
-  styleUrls: ["./cap-permissoes.component.scss"]
+  styleUrls: ["../../assets/css/cap-permissoes.component.min.css"]
 })
 
 export class PermissoesComponent implements OnInit {

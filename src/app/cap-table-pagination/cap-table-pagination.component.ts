@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@a
 @Component({
   selector: 'cap-table-pagination',
   templateUrl: './cap-table-pagination.component.html',
-  styleUrls: ['./cap-table-pagination.component.scss']
+  styleUrls: ['../../assets/css/cap-table-pagination.component.min.css']
 })
 export class CapTablePaginationComponent implements OnInit {
 

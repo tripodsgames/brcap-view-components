@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from "@angular/core";
 @Component({
     selector: "cap-hint",
     templateUrl: "./cap-hint.component.html",
-    styleUrls: ["./cap-hint.component.scss"]
+    styleUrls: ["../../assets/css/cap-hint.component.min.css"]
 })
 export class CapHintComponent implements OnInit {
     @Input() texto: string

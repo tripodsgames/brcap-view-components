@@ -4,7 +4,7 @@ import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
 @Component({
   selector: "cap-icon",
   templateUrl: "./cap-icon.component.html",
-  styleUrls: ["./cap-icon.component.scss"]
+  styleUrls: ["../../assets/css/cap-icon.component.min.css"]
 })
 export class CapIconComponent implements OnInit {
   @Input("id") id: string;
