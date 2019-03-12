@@ -359,7 +359,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       showMethod: "fadeIn",
       hideMethod: "fadeOut"
     };
-    toastr["warning"]("Usuário ou senha inválidos");
+    // toastr["warning"]("Usuário ou senha inválidos");
 
     this.radios = [
       {

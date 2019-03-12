@@ -75,10 +75,6 @@ body.minimizado .loader {
   top: -20px;
 }
 
-.content-header label.label-input {
-  background: transparent;
-}
-
 .content-header-small {
   height: 75px !important;
 }
@@ -98,8 +94,22 @@ body.minimizado .loader {
 
 .content-header label.label-input {
   background: transparent;
+}
+
+/* .content-header label.label-input {
+  background: transparent;
   top: 22px !important;
   left: 9px !important;
+} */
+
+.content-header label.label-input {
+  background: transparent;
+  top: 12px;
+  left: 9px;
+}
+
+.content-header .cap-inputText-icon{
+  right: 25px;
 }
 
 .content-header-medium .helper-text {
