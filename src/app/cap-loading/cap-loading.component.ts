@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class CapLoadingComponent implements OnInit {
   @Input("loading") loading: boolean;
-  @Input("styleClass") styleClass: string;
   @Input("texto") texto: string;
   @Input("sistema") sistema: string;
 
@@ -17,27 +16,45 @@ export class CapLoadingComponent implements OnInit {
   monitor;
   financeiro;
   contabilidade;
+  atendimento;
+
+  contentLarge;
+  large;
 
   constructor() { }
 
   ngOnInit() {
-    if(this.sistema === "posvenda"){
+    if (this.sistema === "posvenda") {
       this.posvenda = true;
     }
-    if(this.sistema === "malthus"){
+    if (this.sistema === "malthus") {
       this.malthus = true;
     }
-    if(this.sistema === "monitor"){
+    if (this.sistema === "monitor") {
       this.monitor = true;
     }
-    if(this.sistema === "financeiro"){
+    if (this.sistema === "financeiro") {
       this.financeiro = true;
     }
-    if(this.sistema === "produtos"){
+    if (this.sistema === "produtos") {
       this.produtos = true;
     }
-    if(this.sistema === "contabilidade"){
+    if (this.sistema === "contabilidade") {
       this.contabilidade = true;
     }
+    if (this.sistema === "atendimento") {
+      this.atendimento = true;
+    }
+
+    this.checkContentHeaderLarge();
+  }
+
+  checkContentHeaderLarge() {
+    this.contentLarge = document.querySelector(".content-header-large");
+
+    if(this.contentLarge !== null){
+      this.large = true;
+    }
+
   }
 }
