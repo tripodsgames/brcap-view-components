@@ -1,8 +1,14 @@
 label.label-duas-linhas {
-  max-width: 69% !important;
-  top: 15px !important;
-  height: 20px !important;
-  margin-top: -10px;
+  max-width: 69%;
+  top: -8px;
+  height: 20px;
+}
+
+@media screen and (min-width: 1900px) {
+  label.label-duas-linhas {
+    max-width: none;
+    top: -1px;
+  }
 }
 
 /* styleClass(sm e outline) */
@@ -10,7 +16,7 @@ label.label-duas-linhas {
   height: 40px;
 }
 
-.cap-inputText-icon.sm{
+.cap-inputText-icon.sm {
   font-size: 20px;
   top: -33px;
 }
@@ -28,5 +34,5 @@ label.label-input.sm {
 }
 
 label.label-input.outline {
-  top: 20px;
+  margin-top: 5px;
 }

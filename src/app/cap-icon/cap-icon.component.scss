@@ -19,11 +19,20 @@ ul.list .icon-menu {
   font-size: 16px;
 }
 
+// .ico-ver-senha {
+//   float: right;
+//   position: relative;
+//   top: -35px;
+//   right: 15px;
+//   font-size: 20px;
+//   z-index: 2;
+//   cursor: pointer;
+// }
+
 .ico-ver-senha {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 15px;
+  position: absolute;
+  right: 35px;
+  margin-top: -35px;
   font-size: 20px;
   z-index: 2;
   cursor: pointer;

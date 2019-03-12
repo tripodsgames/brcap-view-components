@@ -22,7 +22,7 @@ input,
 button,
 select,
 textarea {
-  font-family: Ubuntu !important;
+  font-family: Ubuntu;
 }
 
 #wrapper {
@@ -345,7 +345,6 @@ dp-date-picker {
   width: 100%;
   height: 50px;
   padding: 6px 32px 6px 12px;
-  /* padding: 6px 12px; */
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
@@ -353,11 +352,19 @@ dp-date-picker {
   border-radius: 4px;
 }
 
-.cap-inputText-icon {
+/* .cap-inputText-icon {
   position: relative;
   top: -40px;
   right: 10px;
   float: right;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.54);
+} */
+
+.cap-inputText-icon {
+  position: absolute;
+  margin-top: -40px;
+  right: 35px;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.54);
 }
