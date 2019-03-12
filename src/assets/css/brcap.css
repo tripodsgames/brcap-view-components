@@ -108,7 +108,7 @@ body.minimizado .loader {
   left: 9px;
 }
 
-.content-header .cap-inputText-icon{
+.content-header .cap-inputText-icon {
   right: 25px;
 }
 
@@ -148,11 +148,22 @@ body.minimizado .loader {
 }
 
 .content-header .mydrp .selection,
-.content-header .mydp .selection {
+.content-header .mydp .selection,
+.content-header .dp-input-container input {
   border: none !important;
   border-bottom: 1px solid #757575 !important;
   border-radius: 4px 4px 0 0;
   padding-top: 10px;
+}
+
+.content-header .dp-input-container input{
+  padding-top: 20px;
+}
+
+.content-header ng-select.error .below,
+.content-header my-date-picker.error .mydp input,
+.content-header my-date-range-picker.error .mydrp input{
+  border-bottom: 2px solid #b00020 !important;
 }
 
 .content-header my-date-picker.disabled .mydp .selection,
@@ -179,9 +190,11 @@ body.minimizado .loader {
   border-radius: 4px 4px 0 0 !important;
 }
 
-.content-header ng-select.sm>div>div.single>div.placeholder {
+.content-header ng-select.sm>div>div.single>div.placeholder,
+.content-header ng-select.sm>div>div.single>div.toggle {
   line-height: 40px !important;
   padding-top: 0 !important;
+  height: 40px;
 }
 
 .content-header ng-select[ng-reflect-is-disabled="true"]>div {
@@ -1454,14 +1467,13 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
-.error .dp-input-container input,
-ng-select.error .below,
-dp-date-picker.error .dp-input-container .dp-picker-input,
+.content ng-select.error .below,
+.content dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
 .cap-inputTextArea.error,
-my-date-picker.error .mydp .selectiongroup,
+.content my-date-picker.error .mydp .selectiongroup,
 .cap-radiobutton.error:before,
-my-date-range-picker.error .mydrp .selectiongroup {
+.content my-date-range-picker.error .mydrp .selectiongroup {
   border: 2px solid #b00020 !important;
 }
 
