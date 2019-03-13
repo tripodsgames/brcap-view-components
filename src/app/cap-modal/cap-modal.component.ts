@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 @Component({
   selector: "cap-modal",
   templateUrl: "./cap-modal.component.html",
-  styleUrls: ["../../assets/css/cap-modal.component.min.css"]
+  styleUrls: ["./cap-modal.component.scss"]
 })
 export class CapModalComponent {
   public visible = false;

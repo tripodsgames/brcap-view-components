@@ -8,7 +8,7 @@ import {
 @Component({
   selector: 'cap-new-pagination',
   templateUrl: './cap-new-pagination.component.html',
-  styleUrls: ['../../assets/css/cap-new-pagination.component.min.css']
+  styleUrls: ['./cap-new-pagination.component.scss']
 })
 export class NewPaginationComponent {
 

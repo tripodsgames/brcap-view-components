@@ -21,3 +21,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.content-header{
+  background-color: rgba(0,161,255,0.3); 
+}
