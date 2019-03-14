@@ -269,10 +269,11 @@ export class PermissoesComponent implements OnInit {
     this.checkEmpty();
   }
 
-
   capitalize(string) {
-    var usuarioNome = string.toLowerCase();
-    return usuarioNome;
+    if(string !== undefined){
+      var usuarioNome = string.toLowerCase();
+      return usuarioNome;
+    }
   }
 
   selecionarUsuarioVisualizar(usuario) {
