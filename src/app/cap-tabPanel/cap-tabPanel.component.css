@@ -48,3 +48,8 @@
 .nav-tabs {
   border: none;
 }
+
+.content-header .tabPanel-content-header .nav-tabs{
+  margin-top: -72px;
+  z-index: 100;
+}

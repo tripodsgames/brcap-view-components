@@ -25,12 +25,12 @@
         <div class="col-md-5">
           <h1>Exemplo content-header-medium II</h1>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-inputText placeholder="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve bla" maxlength="20"
             styleClass="sm" placeholder="Informe seu nome">
           </cap-inputText>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-select placeholder="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
             styleClass="sm" title="bla"></cap-select>
         </div>
@@ -47,11 +47,11 @@
         <div class="col-md-5">
           <h1>Exemplo content-header-medium III</h1>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-datepicker id="dataInicial" placeholder="Algo" [(ngModel)]="data" mask="99/99/9999" styleClass="sm">
           </cap-datepicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-dateRangePicker id="dataInicial" placeholder="Algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
             styleClass="sm">
           </cap-dateRangePicker>
@@ -69,9 +69,8 @@
         <div class="col-md-8">
           <h1>Exemplo content-header-medium IV</h1>
         </div>
-        <div class="col-md-3">
-          <cap-monthpicker placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
-            styleClass="sm"></cap-monthpicker>
+        <div class="col-md-3 no-padding-right">
+          <cap-monthpicker placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" styleClass="sm"></cap-monthpicker>
         </div>
         <div class="col-md-1">
           <cap-button icon="busca" styleClass="btn-ico"></cap-button>
@@ -101,14 +100,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
-          <cap-inputText label="Bla" placeholder="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve bla" maxlength="20"
-            placeholder="Informe seu nome">
+        <div class="col-md-3 no-padding-right">
+          <cap-inputText label="Bla" placeholder="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve bla"
+            maxlength="20" placeholder="Informe seu nome">
           </cap-inputText>
         </div>
-        <div class="col-md-3">
-          <cap-select label="Bla" placeholder="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
-            title="bla"></cap-select>
+        <div class="col-md-3 no-padding-right">
+          <cap-select label="Bla" placeholder="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa"
+            [(ngModel)]="tipoPessoa" title="bla"></cap-select>
         </div>
         <div class="col-md-1">
           <cap-button icon="busca" styleClass="btn-ico lg"></cap-button>
@@ -125,11 +124,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe algo" [(ngModel)]="data" mask="99/99/9999">
           </cap-datepicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-dateRangePicker id="dataInicial" label="Algo" placeholder="Informe algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999">
           </cap-dateRangePicker>
         </div>
@@ -148,7 +147,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
         </div>
         <div class="col-md-1">
@@ -159,7 +158,33 @@
 
     <br />
 
-    <div class="content-header content-header-large">
+    <div class="content-header content-header-abas">
+      <div class="row">
+        <div class="col-md-9">
+          <h1>Exemplo content-header-tab</h1>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <cap-tabPanel styleClass="tabPanel-content-header">
+        <cap-tab title="INFORMAÇÕES GERAIS">
+          FDBGFDGDFG
+        </cap-tab>
+        <cap-tab title="SORTEIOS" [disabled]="true">
+          AAAAAAAAA
+        </cap-tab>
+        <cap-tab title="QUOTAS">
+          MNFBMGOBMGFIKBM
+        </cap-tab>
+        <cap-tab title="RESGATE">
+          DRGDFFD
+        </cap-tab>
+      </cap-tabPanel>
+    </div>
+
+    <br />
+
+    <div class="content-header">
       <h1>Comportamento de erro e disabled</h1>
       <div class="row">
         <div class="col-md-3">
@@ -271,19 +296,19 @@
           <div class="box" style="height: 1300px;">
             CAP-BUTTON
             <div class="col-md-12">
-              SM
+              Sm
               <br /><br />
               <cap-button styleClass="sm" label="Atualizar"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              DEFAULT
+              Default
               <br /><br />
               <cap-button label="Atualizar"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              LG
+              Lg
               <br /><br />
               <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
               <br /><br />
@@ -301,7 +326,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              OUTLINE
+              Outline
               <br /><br />
               <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
               <br /><br />
@@ -319,7 +344,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              WHITE
+              White
               <br /><br />
               <cap-button styleClass="white sm" label="inserir"></cap-button>
               <br /><br />
@@ -341,17 +366,17 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              NOVA PESQUISA
+              Nova Pesquisa
               <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
               <br /><br /><br />
             </div>
             <div class="col-md-12">
-              BAIXAR
+              Baixar(sm com size=12)
               <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              FECHAR
+              Fechar
               <cap-button icon="x-circulo" styleClass="fechar"></cap-button>
               <br /><br />
             </div>
@@ -362,6 +387,7 @@
           <div class="box">
             CAP-DIVISOR
             <cap-divisor></cap-divisor>
+            Light
             <cap-divisor styleClass="light"></cap-divisor>
           </div>
 
@@ -369,13 +395,13 @@
             CAP-ICON
             <br /><br />
             <div class="col-md-12">
-              ICO-VER-SENHA
+              Ico-ver-senha
               <br /><br /><br />
               <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
               <br />
             </div>
             <div class="col-md-12">
-              ICON-ARROW
+              Icon-arrow
               <div style="background: BLACK">
                 <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
                 <br /><br />
@@ -416,7 +442,7 @@
           <div class="box" style="height: 350px;">
             CAP-CHIPS
             <div class="col-md-12">
-              SM
+              Sm
               <cap-chips styleClass="sm" name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
               </cap-chips>
               <br /><br />
@@ -432,7 +458,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              LG
+              Lg
               <cap-chips styleClass="lg" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
               </cap-chips>
               <br /><br />
@@ -524,176 +550,198 @@
       </div>
 
       <div class="row">
-        CAP-BTNCOLLAPSE - COLLAPSED
-        <div class="box">
-          <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
-          <div class="collapse" [id]="'conteudoInterno' + i">
-            ddthhghfgh
+        <div class="col-xs-4">
+          CAP-BTNCOLLAPSE - Collapsed
+          <div class="box">
+            <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
+            <div class="collapse" [id]="'conteudoInterno' + i">
+              ddthhghfgh
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-4">
+          CAP-BTNCOLLAPSE
+          <div class="box">
+            <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
+            <div class="collapse in" [id]="'conteudoInterno2' + i">
+              ddthhghfgh
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-4">
+          CAP-BTNCOLLAPSE Disabled
+          <div class="box">
+            <div class="divColapse">
+              <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true"></cap-btnCollapse>
+            </div>
+            <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
+              ddthhghfgh
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        CAP-BTNCOLLAPSE
-        <div class="box">
-          <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
-          <div class="collapse in" [id]="'conteudoInterno2' + i">
-            ddthhghfgh
+        <div class="col-xs-4">
+          <div class="box">
+            CAP-MONTH-PICKER
+            <br />
+            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
+            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+              styleClass="error"></cap-monthpicker>
+            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+              [disabled]="true"></cap-monthpicker>
+          </div>
+        </div>
+
+        <div class="col-xs-4">
+          <div class="box" style="height: 600px">
+            CAP-DATE-PICKER
+            <cap-datepicker id="dataInicial" [(ngModel)]="data" pp mask="99/99/9999">
+            </cap-datepicker>
+
+            <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+              pp mask="99/99/9999">
+            </cap-datepicker>
+
+            <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
+            </cap-datepicker>
+
+            <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999"
+              styleClass="error">
+            </cap-datepicker>
+
+            <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+              [disabled]="true" pp mask="99/99/9999">
+            </cap-datepicker>
+
+            <cap-datepicker id="dataInicial" label="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
+              [disabled]="true" pp mask="99/99/9999">
+            </cap-datepicker>
+          </div>
+        </div>
+
+        <div class="col-xs-4">
+          <div class="box" style="height: 550px">
+            CAP-DATE-RANGEPICKER
+            <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+            <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+            <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+            <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" styleClass="error"
+              mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+            <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+            <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data"
+              mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
           </div>
         </div>
       </div>
 
       <div class="row">
-        CAP-BTNCOLLAPSE DISABLED
-        <div class="box">
-          <div class="divColapse">
-            <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true"></cap-btnCollapse>
-          </div>
-          <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
-            ddthhghfgh
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="box col-xs-4">
-          CAP-MONTH-PICKER
-          <br />
-          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
-          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
-            styleClass="error"></cap-monthpicker>
-          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
-            [disabled]="true"></cap-monthpicker>
-        </div>
-
-        <div class="box col-xs-4" style="height: 600px">
-          CAP-DATE-PICKER
-          <cap-datepicker id="dataInicial" [(ngModel)]="data" pp mask="99/99/9999">
-          </cap-datepicker>
-
-          <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-            pp mask="99/99/9999">
-          </cap-datepicker>
-
-          <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
-          </cap-datepicker>
-
-          <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999"
-            styleClass="error">
-          </cap-datepicker>
-
-          <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-            [disabled]="true" pp mask="99/99/9999">
-          </cap-datepicker>
-
-          <cap-datepicker id="dataInicial" label="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-            [disabled]="true" pp mask="99/99/9999">
-          </cap-datepicker>
-        </div>
-
-        <div class="box col-xs-4" style="height: 550px">
-          CAP-DATE-RANGEPICKER
-          <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" styleClass="error"
-            mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-          <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true" textHelper="Informe uma data"
-            mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-        </div>
-      </div>
-
-      <div class="row box">
-        <p>CAP-INPUT-TEXT</p>
-        <br />
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" [eraseButton]="false">
-        </cap-inputText>
-
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline">
-        </cap-inputText>
-
-        <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline error" textHelper="Campo obrigatório">
-        </cap-inputText>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres">
+        <div class="col-md-6">
+          <div class="box">
+            <p>CAP-INPUT-TEXT</p>
+            <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome">
             </cap-inputText>
+            
+            Outline
+            <br />
+            <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline">
+            </cap-inputText>
+
+            <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline error" textHelper="Campo obrigatório">
+            </cap-inputText>
+
+            Sem erase-button(funcionalidade)
+            <br />
+            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres" [eraseButton]="false">
+            </cap-inputText>
+
+            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+              maxlength="20" styleClass="error">
+            </cap-inputText>
+
+            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+              maxlength="20" [disabled]="true">
+            </cap-inputText>
+
+            <cap-inputText placehoholder="Informe seu nome" label="Nome" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+              maxlength="20">
+            </cap-inputText>
+
+            <cap-inputText placehoholder="Informe seu nome" icon="busca" [(ngModel)]="nome" maxlength="20">
+            </cap-inputText>
+
+            <div class="col-md-6 no-padding-left">
+              <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem do fulano de tal"
+                icon="busca" [(ngModel)]="nome" maxlength="20">
+              </cap-inputText>
+            </div>
+            <div class="col-md-6">
+                Label-duas-linhas
+            </div>
           </div>
         </div>
 
-        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-          maxlength="20" styleClass="error">
-        </cap-inputText>
+        <div class="col-md-6">
+          <div class="box">
+            CAP-INPUT-TEXT-AREA
+            <br />
+            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200">
+            </cap-inputTextArea>
 
-        <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-          maxlength="20" [disabled]="true">
-        </cap-inputText>
+            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+              maxlength="200">
+            </cap-inputTextArea>
 
-        <cap-inputText placehoholder="Informe seu nome" label="Nome" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-          maxlength="20">
-        </cap-inputText>
+            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" styleClass="error"></cap-inputTextArea>
 
-        <cap-inputText placehoholder="Informe seu nome" icon="busca" [(ngModel)]="nome" maxlength="20">
-        </cap-inputText>
-
-        <div class="col-md-2 no-padding-left">
-          <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem do fulano de tal"
-            icon="busca" [(ngModel)]="nome" maxlength="20" [eraseButton]="false">
-          </cap-inputText>
+            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true"></cap-inputTextArea>
+          </div>
         </div>
       </div>
 
-      <div class="row box">
-        CAP-INPUT-TEXT-AREA
-        <br />
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200">
-        </cap-inputTextArea>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="box">
+            CAP-SELECT
+            <br />
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" title="blaaaaa"></cap-select>
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error"
+              texthelper="Campo obrigatório"></cap-select>
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3" [disabled]="true"></cap-select>
+          </div>
+        </div>
 
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-          maxlength="200">
-        </cap-inputTextArea>
-
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" styleClass="error"></cap-inputTextArea>
-
-        <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true"></cap-inputTextArea>
+        <div class="col-xs-6">
+          <div class="box">
+            CAP-PASSWORD
+            <br />
+            <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+              [(ngModel)]="descricao" maxlength="200">
+            </cap-password>
+            <cap-password placehoholder="Informe a descrição do produto" textHelper="Escreva algo" [showPassword]="true"
+              label="Descrição" [(ngModel)]="descricao" maxlength="200">
+            </cap-password>
+            <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+              [(ngModel)]="descricao" maxlength="200" styleClass="error">
+            </cap-password>
+            <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+              [(ngModel)]="descricao" [disabled]="true" maxlength="200">
+            </cap-password>
+          </div>
+        </div>
       </div>
-
-      <div class="row box">
-        CAP-SELECT
-        <br />
-        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" title="blaaaaa"></cap-select>
-        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error"
-          texthelper="Campo obrigatório"></cap-select>
-        <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3" [disabled]="true"></cap-select>
-      </div>
-
-      <div class="row box">
-        CAP-PASSWORD
-        <br />
-        <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
-          [(ngModel)]="descricao" maxlength="200">
-        </cap-password>
-        <cap-password placehoholder="Informe a descrição do produto" textHelper="Escreva algo" [showPassword]="true"
-          label="Descrição" [(ngModel)]="descricao" maxlength="200">
-        </cap-password>
-        <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
-          [(ngModel)]="descricao" maxlength="200" styleClass="error">
-        </cap-password>
-        <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
-          [(ngModel)]="descricao" [disabled]="true" maxlength="200">
-        </cap-password>
-      </div>
-
-      <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="malthus"></cap-permissoes> -->
 
     </div>
   </div>
 
 </div>
+
+<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="malthus"></cap-permissoes> -->
 
 <!-- <cap-loading [loading]="loading" texto="cd" sistema="posvenda"></cap-loading> -->

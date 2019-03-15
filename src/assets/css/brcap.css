@@ -76,20 +76,20 @@ body.minimizado .loader {
 }
 
 .content-header-small {
-  height: 75px !important;
+  height: 75px;
 }
 
 .content-header-medium {
-  height: 80px !important;
+  height: 80px;
 }
 
 .content-header-large {
-  height: 150px !important;
+  height: 150px;
 }
 
 .content-header-abas,
 .content-header-cards {
-  height: 130px !important;
+  height: 130px;
 }
 
 .content-header label.label-input {
