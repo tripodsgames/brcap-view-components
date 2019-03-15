@@ -10,6 +10,6 @@
 }
 
 .content-header {
-  background-color: #ccc;
+  background-color: rgba(0,161,255,0.3);;
   z-index: 1;
 }
