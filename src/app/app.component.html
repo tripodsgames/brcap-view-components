@@ -305,19 +305,19 @@
           <div class="box" style="height: 1300px;">
             CAP-BUTTON
             <div class="col-md-12">
-              Sm
+              <strong>Sm</strong>
               <br /><br />
               <cap-button styleClass="sm" label="Atualizar"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              Default
+              <strong>Default</strong>
               <br /><br />
               <cap-button label="Atualizar"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              Lg
+              <strong>Lg</strong>
               <br /><br />
               <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
               <br /><br />
@@ -335,7 +335,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              Outline
+              <strong>Outline</strong>
               <br /><br />
               <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
               <br /><br />
@@ -353,7 +353,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              White
+              <strong>White</strong>
               <br /><br />
               <cap-button styleClass="white sm" label="inserir"></cap-button>
               <br /><br />
@@ -375,17 +375,17 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              Nova Pesquisa
+              <strong>Nova Pesquisa</strong>
               <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
               <br /><br /><br />
             </div>
             <div class="col-md-12">
-              Baixar(sm com size=12)
+              <strong>Baixar(sm com size=12)</strong>
               <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              Fechar
+              <strong>Fechar</strong>
               <cap-button icon="x-circulo" styleClass="fechar"></cap-button>
               <br /><br />
             </div>
@@ -396,7 +396,7 @@
           <div class="box">
             CAP-DIVISOR
             <cap-divisor></cap-divisor>
-            Light
+            <strong>Light</strong>
             <cap-divisor styleClass="light"></cap-divisor>
           </div>
 
@@ -404,13 +404,13 @@
             CAP-ICON
             <br /><br />
             <div class="col-md-12">
-              Ico-ver-senha
+              <strong>Ico-ver-senha</strong>
               <br /><br /><br />
               <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
               <br />
             </div>
             <div class="col-md-12">
-              Icon-arrow
+              <strong>Icon-arrow</strong>
               <div style="background: BLACK">
                 <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
                 <br /><br />
@@ -451,7 +451,7 @@
           <div class="box" style="height: 350px;">
             CAP-CHIPS
             <div class="col-md-12">
-              Sm
+              <strong>Sm</strong>
               <cap-chips styleClass="sm" name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
               </cap-chips>
               <br /><br />
@@ -467,7 +467,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              Lg
+              <strong>Lg</strong>
               <cap-chips styleClass="lg" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
               </cap-chips>
               <br /><br />
@@ -560,20 +560,20 @@
 
       <div class="row">
         <div class="col-xs-4">
-          CAP-BTNCOLLAPSE - Collapsed
+          CAP-BTNCOLLAPSE
           <div class="box">
-            <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
-            <div class="collapse" [id]="'conteudoInterno' + i">
+            <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
+            <div class="collapse in" [id]="'conteudoInterno2' + i">
               ddthhghfgh
             </div>
           </div>
         </div>
 
         <div class="col-xs-4">
-          CAP-BTNCOLLAPSE
+          CAP-BTNCOLLAPSE - <strong>Collapsed</strong>
           <div class="box">
-            <cap-btnCollapse [targetId]="'conteudoInterno2' + i"></cap-btnCollapse>
-            <div class="collapse in" [id]="'conteudoInterno2' + i">
+            <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
+            <div class="collapse" [id]="'conteudoInterno' + i">
               ddthhghfgh
             </div>
           </div>
@@ -606,7 +606,7 @@
         </div>
 
         <div class="col-xs-4">
-          <div class="box" style="height: 600px">
+          <div class="box" style="height: 500px">
             CAP-DATE-PICKER
             <cap-datepicker id="dataInicial" [(ngModel)]="data" pp mask="99/99/9999">
             </cap-datepicker>
@@ -633,7 +633,7 @@
         </div>
 
         <div class="col-xs-4">
-          <div class="box" style="height: 550px">
+          <div class="box" style="height: 420px">
             CAP-DATE-RANGEPICKER
             <cap-dateRangePicker placeholder="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
             <cap-dateRangePicker label="Período" name="periodo" [(ngModel)]="periodo" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
@@ -654,7 +654,7 @@
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome">
             </cap-inputText>
 
-            Outline
+            <strong>Outline</strong>
             <br />
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline">
             </cap-inputText>
@@ -689,7 +689,7 @@
               </cap-inputText>
             </div>
             <div class="col-md-6">
-              Label-duas-linhas
+                <strong>Label-duas-linhas</strong>
             </div>
           </div>
         </div>
