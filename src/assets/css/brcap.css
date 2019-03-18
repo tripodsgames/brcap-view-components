@@ -159,6 +159,7 @@ body.minimizado .loader {
   height: 40px;
 }
 
+.content-header .error .dp-picker-input,
 .content-header ng-select.error .below,
 .content-header my-date-picker.error .mydp input,
 .content-header my-date-range-picker.error .mydrp input{
@@ -1487,6 +1488,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
+.content .error .dp-picker-input,
 .content ng-select.error .below,
 .content dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,

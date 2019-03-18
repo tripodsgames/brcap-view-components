@@ -1,7 +1,9 @@
 <label [for]="id" class="label-input {{styleClass}}" [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 
-<dp-date-picker [(ngModel)]="value" locale="pt-br" type="month" [placeholder]="placeholder ? placeholder : ''"
-  [disabled]="disabled" [name]="name" [config]="config" class="{{styleClass}}"></dp-date-picker>
+<div class="{{styleClass}}">
+  <dp-date-picker [(ngModel)]="value" locale="pt-br" type="month" [placeholder]="placeholder ? placeholder : ''"
+  [disabled]="disabled" [name]="name" [config]="config"></dp-date-picker>
+</div>
 
 <p *ngIf="textHelper?.length" class="helper-text {{styleClass}}" [class.disabled]="disabled">{{textHelper}}</p>
