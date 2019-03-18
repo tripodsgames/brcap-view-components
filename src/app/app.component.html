@@ -168,18 +168,27 @@
     <div class="content">
       <cap-tabPanel styleClass="tabPanel-content-header">
         <cap-tab title="INFORMAÇÕES GERAIS">
-          FDBGFDGDFG
+          <div class="box">
+            FDBGFDGDFG
+          </div>
         </cap-tab>
         <cap-tab title="SORTEIOS" [disabled]="true">
-          AAAAAAAAA
+          <div class="box">
+            AAAAAAAAA
+          </div>
         </cap-tab>
         <cap-tab title="QUOTAS">
-          MNFBMGOBMGFIKBM
+          <div class="box">
+            MNFBMGOBMGFIKBM
+          </div>
         </cap-tab>
         <cap-tab title="RESGATE">
-          DRGDFFD
+          <div class="box">
+            DRGDFFD
+          </div>
         </cap-tab>
       </cap-tabPanel>
+
     </div>
 
     <br />
@@ -644,7 +653,7 @@
             <p>CAP-INPUT-TEXT</p>
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome">
             </cap-inputText>
-            
+
             Outline
             <br />
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline">
@@ -655,7 +664,8 @@
 
             Sem erase-button(funcionalidade)
             <br />
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres" [eraseButton]="false">
+            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+              [eraseButton]="false">
             </cap-inputText>
 
             <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
@@ -679,7 +689,7 @@
               </cap-inputText>
             </div>
             <div class="col-md-6">
-                Label-duas-linhas
+              Label-duas-linhas
             </div>
           </div>
         </div>

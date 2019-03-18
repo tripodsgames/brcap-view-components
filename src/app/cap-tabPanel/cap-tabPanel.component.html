@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs cap-tabPanel">
+<ul class="nav nav-tabs cap-tabPanel {{styleClass}}">
   <li *ngFor="let tab of tabs" [class]="tab.disabled ? 'disabled' : ''" (click)="selectTab(tab)" [class.active]="tab.active">
     <a href="javascript:void(0);" class="{{tab.styleClass}}" >{{tab.title}}</a>
   </li>

@@ -3,7 +3,8 @@ import BRCapUtil from "../../brcap-util";
 
 @Component({
   selector: "cap-tab",
-  templateUrl: "./cap-tab.component.html"
+  templateUrl: "./cap-tab.component.html",
+  styleUrls: ["./cap-tab.component.css"]
 })
 export class CapTabComponent implements OnInit {
   @Input("id") id: string;

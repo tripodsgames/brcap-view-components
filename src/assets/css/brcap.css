@@ -160,6 +160,11 @@ body.minimizado .loader {
   padding-top: 20px;
 }
 
+.content-header-medium .dp-input-container input{
+  padding-top: 10px;
+  height: 40px;
+}
+
 .content-header ng-select.error .below,
 .content-header my-date-picker.error .mydp input,
 .content-header my-date-range-picker.error .mydrp input{
@@ -211,6 +216,19 @@ body.minimizado .loader {
 .content-header my-date-range-picker.sm .mydrp .selection,
 .content-header my-date-range-picker.sm .mydrp .selbtngroup {
   height: 40px !important;
+}
+
+.content-header-medium .below,
+.content-header-medium .cap-inputText,
+.content-header-medium .mydp,
+.content-header-medium  .mydrp,
+.content-header-medium button,
+.content-header-medium dp-date-picker{
+  margin-top: -4px;
+}
+
+.content-header h1{
+  margin-bottom: 15px;
 }
 
 /* box */

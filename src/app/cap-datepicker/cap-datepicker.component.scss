@@ -2,7 +2,6 @@
 :host ::ng-deep .buttonDatepicker {
   .mydp {
     width: inherit !important;
-    top: -13px;
     margin-left: -4px;
 
     .selectorarrowleft:after, .selectorarrowleft:before{
@@ -34,6 +33,7 @@
 
     .selbtngroup .mydpicon {
       right: 0;
+      top: 2px;
     }
 
     .selection {
