@@ -10,7 +10,7 @@
         <div class="col-md-6">
           <h1>Exemplo content-header-medium I</h1>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6">
           <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" pp mask="99/99/9999"
             [buttonDatepicker]="true">
           </cap-datepicker>
@@ -598,7 +598,7 @@
             CAP-MONTH-PICKER
             <br />
             <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
-            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
+            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" textHelper="Informe uma data"
               styleClass="error"></cap-monthpicker>
             <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
               [disabled]="true"></cap-monthpicker>
@@ -662,7 +662,7 @@
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline error" textHelper="Campo obrigatório">
             </cap-inputText>
 
-            Sem erase-button(funcionalidade)
+            <em class="text-right">Sem erase-button(funcionalidade)</em>
             <br />
             <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
               [eraseButton]="false">

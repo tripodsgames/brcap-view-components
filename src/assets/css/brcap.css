@@ -1144,6 +1144,11 @@ div.inline-checkbox label {
   padding: 10px 5px 10px 0px;
 }
 
+my-date-picker .mydp,
+my-date-range-picker .mydrp{
+  display: block;
+}
+
 /* toast */
 #toast-container {
   position: absolute;
@@ -1432,6 +1437,8 @@ input[disabled] {
   text-transform: none !important;
 }
 
+.content my-date-picker.disabled .mydp .selectiongroup,
+my-date-range-picker.disabled .mydrp .selectiongroup,
 .dp-input-container input[disabled],
 ng-select .disabled,
 .content .cap-inputText:disabled {
