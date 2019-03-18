@@ -96,12 +96,6 @@ body.minimizado .loader {
   background: transparent;
 }
 
-/* .content-header label.label-input {
-  background: transparent;
-  top: 22px !important;
-  left: 9px !important;
-} */
-
 .content-header label.label-input {
   background: transparent;
   top: 12px;
@@ -109,7 +103,7 @@ body.minimizado .loader {
 }
 
 .content-header .cap-inputText-icon {
-  right: 25px;
+  right: 10px;
 }
 
 .content-header-medium .helper-text {
@@ -1475,6 +1469,7 @@ label.disabled,
   pointer-events: none;
 }
 
+.ver-senha-password.disabled i,
 .cap-button[disabled],
 .cap-button[disabled]:hover,
 .brcap-ico.disabled {

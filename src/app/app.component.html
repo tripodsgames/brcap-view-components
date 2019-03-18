@@ -521,7 +521,7 @@
 
       <div class="row">
         <div class="col-xs-12">
-          CAP-GRID-PAGINATION
+          CAP-TABLE-PAGINATION
           <cap-table-pagination #CapTablePaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions">
           </cap-table-pagination>
         </div>
@@ -529,9 +529,9 @@
 
       <div class="row">
         <div class="col-xs-12">
-          CAP-GRID-PAGINATION (FULL-WIDTH)
+          CAP-TABLE-PAGINATION <strong>Lg</strong>
           <cap-table-pagination #CapTablePaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
-            styleClass="full-width">
+            styleClass="lg">
           </cap-table-pagination>
         </div>
       </div>
@@ -664,27 +664,27 @@
 
             <em class="text-right">Sem erase-button(funcionalidade)</em>
             <br />
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
               [eraseButton]="false">
             </cap-inputText>
 
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
               maxlength="20" styleClass="error">
             </cap-inputText>
 
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
               maxlength="20" [disabled]="true">
             </cap-inputText>
 
-            <cap-inputText placehoholder="Informe seu nome" label="Nome" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+            <cap-inputText placeholder="Informe seu nome" label="Nome" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
               maxlength="20">
             </cap-inputText>
 
-            <cap-inputText placehoholder="Informe seu nome" icon="busca" [(ngModel)]="nome" maxlength="20">
+            <cap-inputText placeholder="Informe seu nome" icon="busca" [(ngModel)]="nome" maxlength="20">
             </cap-inputText>
 
             <div class="col-md-6 no-padding-left">
-              <cap-inputText styleClass="label-duas-linhas" placehoholder="Informe seu nome" label="Nome de alguem do fulano de tal"
+              <cap-inputText styleClass="label-duas-linhas" placeholder="Informe seu nome" label="Nome de alguem do fulano de tal"
                 icon="busca" [(ngModel)]="nome" maxlength="20">
               </cap-inputText>
             </div>
@@ -698,18 +698,18 @@
           <div class="box">
             CAP-INPUT-TEXT-AREA
             <br />
-            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+            <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
               textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200">
             </cap-inputTextArea>
 
-            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+            <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
               maxlength="200">
             </cap-inputTextArea>
 
-            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+            <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
               textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" styleClass="error"></cap-inputTextArea>
 
-            <cap-inputTextArea placehoholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+            <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
               textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true"></cap-inputTextArea>
           </div>
         </div>
@@ -721,7 +721,7 @@
             CAP-SELECT
             <br />
             <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" title="blaaaaa"></cap-select>
-            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error"
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error" textHelper="Clique em alguma das opções"
               texthelper="Campo obrigatório"></cap-select>
             <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3" [disabled]="true"></cap-select>
           </div>
@@ -731,16 +731,16 @@
           <div class="box">
             CAP-PASSWORD
             <br />
-            <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+            <cap-password placeholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
               [(ngModel)]="descricao" maxlength="200">
             </cap-password>
-            <cap-password placehoholder="Informe a descrição do produto" textHelper="Escreva algo" [showPassword]="true"
+            <cap-password placeholder="Informe a descrição do produto" textHelper="Escreva algo" [showPassword]="true"
               label="Descrição" [(ngModel)]="descricao" maxlength="200">
             </cap-password>
-            <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+            <cap-password placeholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
               [(ngModel)]="descricao" maxlength="200" styleClass="error">
             </cap-password>
-            <cap-password placehoholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
+            <cap-password placeholder="Informe a descrição do produto" [showPassword]="true" label="Descrição"
               [(ngModel)]="descricao" [disabled]="true" maxlength="200">
             </cap-password>
           </div>

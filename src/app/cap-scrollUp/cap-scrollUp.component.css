@@ -24,3 +24,8 @@ cap-button.scroll::ng-deep .brcap-ico {
   left: -8px;
   font-size: 24px !important;
 }
+
+.anchor{
+  position: absolute;
+  top: 0;
+}
