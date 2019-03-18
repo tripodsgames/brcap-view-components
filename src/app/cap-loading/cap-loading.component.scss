@@ -48,7 +48,8 @@
 .malthus,
 .monitor,
 .financeiro,
-.contabilidade  {
+.contabilidade,
+.atendimento {
   width: 100px;
   height:100px;
   background-repeat: no-repeat;
@@ -77,4 +78,8 @@
 
 .contabilidade {
   background-image: url(../../assets/img/loading-contabilidade.svg);
+}
+
+.atendimento {
+  background-image: url(../../assets/img/loading-atendimento.svg);
 }
