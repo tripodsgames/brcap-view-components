@@ -73,9 +73,6 @@ body.minimizado .loader {
   position: relative;
   padding: 25px;
   top: -20px;
-}
-
-.content-header-small {
   height: 75px;
 }
 
