@@ -316,7 +316,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   // CAP-TABLE-PAGINAION
   @ViewChild(CapTablePaginationComponent)
-  gridPagination: CapTablePaginationComponent;
+  tablePagination: CapTablePaginationComponent;
   columns = ["ID", "NOME"];
   items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],
   [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],
@@ -326,9 +326,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   listaTipoPessoa = "dd"
   ngAfterViewInit() {
-    if (this.gridPagination) {
+    if (this.tablePagination) {
       setTimeout(_ => {
-        this.gridPagination.setPage(true);
+        this.tablePagination.setPage(true);
       }, 0);
     }
 
