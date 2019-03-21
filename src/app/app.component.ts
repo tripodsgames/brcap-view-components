@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
-import { CapGridPaginationComponent } from "./cap-grid-pagination/cap-grid-pagination.component";
+import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pagination.component";
 
 @Component({
   selector: "app-root",
@@ -314,9 +314,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   itemId;
   url = "https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/";
 
-  // CAP-GRID-PAGINAION
-  @ViewChild(CapGridPaginationComponent)
-  gridPagination: CapGridPaginationComponent;
+  // CAP-TABLE-PAGINAION
+  @ViewChild(CapTablePaginationComponent)
+  gridPagination: CapTablePaginationComponent;
   columns = ["ID", "NOME"];
   items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],
   [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],

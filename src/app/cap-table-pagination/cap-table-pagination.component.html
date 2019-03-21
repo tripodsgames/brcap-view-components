@@ -1,7 +1,6 @@
 <div class="{{fullTable}} col-lg-9 col-xl-6 no-padding-left" [class.full-table]="fullTable">
   <div class="cap-grid-default box">
     <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
-      <!-- <p class="cap-grid-title">Consulta da Familia "{{primeiraInformacao}}" Plano "{{segundaInformacao}}" Status "{{terceiraInformacao}}"</p> -->
       <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
         <thead>
           <tr class="table-header">
@@ -30,16 +29,6 @@
 
       <cap-pagination (goNext)="nextPage()" (goPrev)="prevPage()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="currentPage"
       [contagemPaginasTotal]="totalPages" [primeiraLinha]="firstItem" [ultimaLinha]="lastItem" [numeroItens]="numeroItens"></cap-pagination>
-
-      <!-- <div class="pagination">
-        <button class="link prev" (click)="prevPage()" [disabled]="(currentPage === 1)" [ngClass]="{ 'disabled': currentPage === 1 }">
-          <cap-icon icon="anterior"></cap-icon>
-        </button>
-        <span>{{labelPaginas}}</span>
-        <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage === totalPages)" [ngClass]="{ 'disabled': (currentPage === totalPages) }">
-          <cap-icon icon="seguir"></cap-icon>
-        </button>
-      </div> -->
 
     </div>
   </div>
