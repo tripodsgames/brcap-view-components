@@ -27,7 +27,6 @@ import { CapScrollUpComponent } from "../cap-scrollUp/cap-scrollUp.component";
 import { CapLoadingComponent } from "../cap-loading/cap-loading.component";
 import { CapHintComponent } from "../cap-hint/cap-hint.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
-import { NewPaginationComponent } from "../cap-new-pagination/cap-new-pagination.component";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
@@ -91,7 +90,6 @@ import { RouterModule } from "@angular/router";
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
-    NewPaginationComponent,
     CapModalComponent
   ],
   exports: [
@@ -127,7 +125,6 @@ import { RouterModule } from "@angular/router";
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
-    NewPaginationComponent,
     CapModalComponent
   ],
   providers: [LoginService, UsuarioService, PlataformaService]

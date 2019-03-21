@@ -81,9 +81,9 @@
                 </tbody>
               </table>
               <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
-              <cap-new-pagination (goNext)="onNext() " (goPrev)="onPrev() " [pagesToShow]=" 1 " [page]=" page "
-                [perPage]=" limit " [count]=" total " [contagemPaginasTotal]=" contagemPaginasTotal " [primeiraLinha]=" primeiraLinha "
-                [ultimaLinha]="ultimaLinha "></cap-new-pagination>
+              <cap-pagination (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="1" [page]="page"
+                [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="primeiraLinha"
+                [ultimaLinha]="ultimaLinha"></cap-pagination>
             </div>
 
             <div class="row" *ngIf="usuarioPermissao">
