@@ -28,7 +28,11 @@
         </tbody>
       </table>
 
-      <div class="pagination">
+      <cap-pagination (goNext)="nextPage(true)" (goPrev)="prevPage()" [pagesToShow]="1" [page]="page"
+      [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="firstItem"
+      [ultimaLinha]="lastItem"></cap-pagination>
+
+      <!-- <div class="pagination">
         <button class="link prev" (click)="prevPage()" [disabled]="(currentPage === 1)" [ngClass]="{ 'disabled': currentPage === 1 }">
           <cap-icon icon="anterior"></cap-icon>
         </button>
@@ -36,7 +40,7 @@
         <button class="link next" (click)="nextPage(true)" [disabled]="(currentPage === totalPages)" [ngClass]="{ 'disabled': (currentPage === totalPages) }">
           <cap-icon icon="seguir"></cap-icon>
         </button>
-      </div>
+      </div> -->
 
     </div>
   </div>

@@ -1,4 +1,3 @@
-import { CapDropdownListItemComponent } from "../cap-dropdownListItem/cap-dropdownListItem.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CapInputTextComponent } from "../cap-inputText/cap-inputText.component";
@@ -33,7 +32,6 @@ import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
 import { CapGridPaginationComponent } from "../cap-grid-pagination/cap-grid-pagination.component";
-import { CapDropdownListComponent } from "../cap-dropdownList/cap-dropdownList.component";
 import { CapModalComponent } from "../cap-modal/cap-modal.component";
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
 import { CapLoginComponent } from "../cap-login/cap-login.component";
@@ -85,8 +83,6 @@ import { RouterModule } from "@angular/router";
     CapBtnCollapseComponent,
     CpfPipe,
     CapGridPaginationComponent,
-    CapDropdownListComponent,
-    CapDropdownListItemComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
@@ -120,8 +116,6 @@ import { RouterModule } from "@angular/router";
     CapBtnCollapseComponent,
     CpfPipe,
     CapGridPaginationComponent,
-    CapDropdownListComponent,
-    CapDropdownListItemComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
