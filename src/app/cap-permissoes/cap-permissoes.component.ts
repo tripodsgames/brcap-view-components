@@ -27,12 +27,8 @@ export class PermissoesComponent implements OnInit {
   usuarioPermissao;
   usuarioVisualizar;
   permissao;
-  exibirHint = false;
-  hintAtivo = false;
   cardPermissionados = false;
   cardNaoPermissionados = false;
-  hintCardAtivo = false;
-  exibirHintCard = false;
   modalActive = false;
   modalWarningActive = false;
   filtro;
@@ -202,16 +198,6 @@ export class PermissoesComponent implements OnInit {
     location.reload();
   }
 
-  toggleHint(modulo) {
-    modulo.exibirHint = !modulo.exibirHint;
-    modulo.hintAtivo = !modulo.hintAtivo;
-  }
-
-  mouseLeaveHint(modulo) {
-    modulo.exibirHint = false;
-    modulo.hintAtivo = false;
-  }
-
   abrirCardPermissionados() {
     this.cardPermissionados = !this.cardPermissionados;
     this.cardNaoPermissionados = false;
@@ -224,16 +210,6 @@ export class PermissoesComponent implements OnInit {
     this.cardPermissionados = false;
     this.page = 1;
     this.montarPaginacao();
-  }
-
-  mouseLeaveHintCard() {
-    this.exibirHintCard = false;
-    this.hintCardAtivo = false;
-  }
-
-  toggleHintCard() {
-    this.exibirHintCard = !this.exibirHintCard;
-    this.hintCardAtivo = !this.hintCardAtivo;
   }
 
   toggleModal() {
