@@ -28,9 +28,8 @@
         </tbody>
       </table>
 
-      <cap-pagination (goNext)="nextPage(true)" (goPrev)="prevPage()" [pagesToShow]="1" [page]="page"
-      [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="firstItem"
-      [ultimaLinha]="lastItem"></cap-pagination>
+      <cap-pagination (goNext)="nextPage()" (goPrev)="prevPage()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="currentPage"
+      [contagemPaginasTotal]="totalPages" [primeiraLinha]="firstItem" [ultimaLinha]="lastItem" [numeroItens]="numeroItens"></cap-pagination>
 
       <!-- <div class="pagination">
         <button class="link prev" (click)="prevPage()" [disabled]="(currentPage === 1)" [ngClass]="{ 'disabled': currentPage === 1 }">
