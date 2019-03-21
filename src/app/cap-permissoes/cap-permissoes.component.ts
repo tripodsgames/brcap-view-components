@@ -58,6 +58,7 @@ export class PermissoesComponent implements OnInit {
   primeiraLinha: number;
   ultimaLinha: number;
   usuariosTabela: any[];
+  numeroItens: number;
 
   constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
 
@@ -148,6 +149,7 @@ export class PermissoesComponent implements OnInit {
         : this.usuariosTabela.length;
     this.primeiraLinha = primeiraLinha + 1;
     this.ultimaLinha = primeiraLinha + this.usuariosTabela.length;
+    this.numeroItens = this.listaFiltrado.length;
   }
 
   onNext(): void {
@@ -157,6 +159,16 @@ export class PermissoesComponent implements OnInit {
 
   onPrev(): void {
     this.page--;
+    this.montarPaginacao();
+  }
+
+  firstPage(){
+    this.page = 1;
+    this.montarPaginacao();
+  }
+
+  lastPage() {
+    this.page = this.contagemPaginasTotal;
     this.montarPaginacao();
   }
 
