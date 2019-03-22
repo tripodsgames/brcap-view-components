@@ -28,7 +28,15 @@ export class CapPaginationComponent {
   @Output() goFirst = new EventEmitter < boolean > ();
   @Output() goLast = new EventEmitter < boolean > ();
 
+  needPagination = true;
+
   constructor() {}
+
+  ngOnInit() {
+    if(this.numeroItens < 11){
+      this.needPagination = false;
+    } 
+  }
 
   getMin(): number {
     return ((this.perPage * this.page) - this.perPage) + 1;

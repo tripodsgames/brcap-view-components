@@ -1,4 +1,4 @@
-<div class="pagination">
+<div class="pagination" *ngIf="needPagination">
   <button class="link first" (click)="onFirst()" [disabled]="page === 1 || loading" [ngClass]="{ 'disabled': page === 1 || loading }">
     <cap-icon icon="anterior"></cap-icon>
   </button>
