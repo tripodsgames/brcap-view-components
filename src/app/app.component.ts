@@ -327,6 +327,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   rowOptions = ["Visualizar", "Editar", "Excluir"];
 
+  variavel = "dfvfdfghgfhfggfhhfg"
+
   listaTipoPessoa = "dd"
   ngAfterViewInit() {
     if (this.tablePagination) {

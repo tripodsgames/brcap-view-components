@@ -1,5 +1,7 @@
 <div class="{{styleClass}} col-lg-9 col-xl-6 no-padding-left">
-  <div class="cap-grid-default" [class.box]="withBox">
+  <div class="cap-grid-default box">
+    <div class="table-title" *ngIf="tableTitle?.length">{{tableTitle}}</div>
+    <div class="table-sub-title" *ngIf="tableSubTitle?.length">{{tableSubTitle}}</div>
     <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
       <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
         <thead>
@@ -27,8 +29,9 @@
         </tbody>
       </table>
 
-      <cap-pagination (goNext)="nextPage()" (goPrev)="prevPage()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="currentPage"
-      [contagemPaginasTotal]="totalPages" [primeiraLinha]="firstItem" [ultimaLinha]="lastItem" [numeroItens]="numeroItens"></cap-pagination>
+      <cap-pagination (goNext)="nextPage()" (goPrev)="prevPage()" (goFirst)="firstPage()" (goLast)="lastPage()"
+        [page]="currentPage" [contagemPaginasTotal]="totalPages" [primeiraLinha]="firstItem" [ultimaLinha]="lastItem"
+        [numeroItens]="numeroItens"></cap-pagination>
 
     </div>
   </div>

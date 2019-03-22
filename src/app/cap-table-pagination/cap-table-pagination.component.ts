@@ -17,7 +17,8 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() labelPaginas: string
   @Input() rowOptions: any
   @Input() styleClass: string
-  @Input() withBox: boolean = true;
+  @Input() tableTitle: string
+  @Input() tableSubTitle: string
 
   @Output() itemOptionClick = new EventEmitter<any>()
 
