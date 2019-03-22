@@ -2,7 +2,6 @@ import {
   Component,
   Input,
   EventEmitter,
-  AfterViewInit,
   Output
 } from '@angular/core';
 
@@ -11,7 +10,7 @@ import {
   templateUrl: './cap-pagination.component.html',
   styleUrls: ['./cap-pagination.component.scss']
 })
-export class CapPaginationComponent implements AfterViewInit {
+export class CapPaginationComponent {
 
   @Input() page: number;
   @Input() count: number;
@@ -32,12 +31,6 @@ export class CapPaginationComponent implements AfterViewInit {
   needPagination = true;
 
   constructor() {}
-
-  ngAfterViewInit() {
-    if(this.numeroItens < 11){
-      this.needPagination = false;
-    } 
-  }
 
   getMin(): number {
     return ((this.perPage * this.page) - this.perPage) + 1;
