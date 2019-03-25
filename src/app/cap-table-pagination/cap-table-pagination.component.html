@@ -2,6 +2,8 @@
   <div class="cap-grid-default box">
     <div class="table-title" *ngIf="tableTitle?.length">{{tableTitle}}</div>
     <div class="table-sub-title" *ngIf="tableSubTitle?.length">{{tableSubTitle}}</div>
+    <cap-inputText class="pesquisa-tabela" placehoholder="Pesquise qualquer elemento da tabela" label="Pesquisar" icon="busca" [(ngModel)]="nome" *ngIf="hasSearch">
+    </cap-inputText>
     <div *ngIf="pagedItens.length > 0" class="cap-grid-content">
       <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
         <thead>
