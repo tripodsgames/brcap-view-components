@@ -357,6 +357,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.collapse = !this.collapse;
   }
 
+  gerarPdf(){
+    console.log(this.items2)
+  }
+
+  gerarXls(){
+    console.log(this.items)
+  }
+
   ngOnInit() {
 
     this.radios = [

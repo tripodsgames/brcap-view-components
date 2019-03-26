@@ -34,6 +34,10 @@ cap-inputtext::ng-deep .cap-inputText-icon{
   margin-top: 10px;
 }
 
+.invisible{
+  opacity: 0;
+}
+
 /* ROW OPTIONS */
 
 .row-options {

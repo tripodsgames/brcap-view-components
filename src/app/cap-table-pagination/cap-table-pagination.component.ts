@@ -21,6 +21,8 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() hasSearch: boolean = true
 
   @Output() itemOptionClick = new EventEmitter<any>()
+  @Output() gerarPdf = new EventEmitter<any>()
+  @Output() gerarXls = new EventEmitter<any>()
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
@@ -90,6 +92,14 @@ export class CapTablePaginationComponent implements OnInit {
   clickItemOption(opt, idx) {
     this.itemOptionClick.emit({ "option": opt, "index": (idx + ((this.currentPage - 1) * 10)) })
     this.showItemOptions = null
+  }
+
+  exportarPdf(){
+    this.gerarPdf.emit(true);
+  }
+
+  exportarXls(){
+    this.gerarXls.emit(true);
   }
 
   pesquisar(){
