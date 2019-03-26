@@ -20,7 +20,7 @@
 }
 
 .cap-hint .hintText {
-  opacity: 0;
+  display: none;
   background-color: white;
   text-align: center;
   border-radius: 6px;
@@ -74,6 +74,5 @@
 }
 
 .showHint {
-  opacity: 1 !important;
-  transition: opacity 0.3s ease-in-out;
+  display: block !important;
 }

@@ -16,9 +16,9 @@ export class CapTablePaginationComponent implements OnInit {
   //@Input() lastItem: number
   @Input() labelPaginas: string
   @Input() rowOptions: any
-  @Input() styleClass: string
   @Input() tableTitle: string
   @Input() tableSubTitle: string
+  @Input() hasSearch: boolean = true
 
   @Output() itemOptionClick = new EventEmitter<any>()
 
@@ -90,6 +90,10 @@ export class CapTablePaginationComponent implements OnInit {
   clickItemOption(opt, idx) {
     this.itemOptionClick.emit({ "option": opt, "index": (idx + ((this.currentPage - 1) * 10)) })
     this.showItemOptions = null
+  }
+
+  pesquisar(){
+    
   }
 
 }

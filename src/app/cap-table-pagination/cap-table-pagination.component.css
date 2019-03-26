@@ -34,14 +34,6 @@ cap-inputtext::ng-deep .cap-inputText-icon{
   margin-top: 10px;
 }
 
-.no-padding-left {
-  padding-left: 0;
-}
-
-.lg{
-  width: 100% !important;
-}
-
 /* ROW OPTIONS */
 
 .row-options {
