@@ -19,6 +19,8 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() tableTitle: string
   @Input() tableSubTitle: string
   @Input() hasSearch: boolean = true
+  @Input() baixarPdf: boolean
+  @Input() baixarXls: boolean
 
   @Output() itemOptionClick = new EventEmitter<any>()
   @Output() gerarPdf = new EventEmitter<any>()
