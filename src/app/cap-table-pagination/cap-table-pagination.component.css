@@ -1,41 +1,19 @@
 /* Input de Pesquisa */
-cap-inputtext::ng-deep{
-  position: absolute;
-  top: 8px;
-  right: 25px;
-}
-
-cap-inputtext::ng-deep label{
+cap-inputtext::ng-deep label {
   height: 8px;
-  top: 10px;
+  top: -2px;
 }
 
-cap-inputtext::ng-deep .cap-inputText{
+cap-inputtext::ng-deep .cap-inputText {
   width: 180px !important;
   height: 38px !important;
   font-size: 12px !important;
+  margin-top: -12px;
 }
 
-cap-inputtext::ng-deep .cap-inputText-icon{
-    top: 23px;
-    right: 6px;
-}
-
-.cap-grid-row-options {
-  text-align: center;
-}
-
-.cap-grid-title {
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.87);
-  letter-spacing: 0.3px;
-  margin-bottom: 25px;
-  line-height: 1;
-  margin-top: 10px;
-}
-
-.invisible{
-  opacity: 0;
+cap-inputtext::ng-deep .cap-inputText-icon {
+  top: 11px;
+  right: 20px;
 }
 
 /* ROW OPTIONS */
@@ -77,7 +55,7 @@ cap-inputtext::ng-deep .cap-inputText-icon{
 }
 
 .cap-grid-options:hover,
-.cap-grid-options:focus{
+.cap-grid-options:focus {
   background: url(../../assets/img/mais-op-es-vert-white.svg) no-repeat center, #006bbb;
   border: 1px solid transparent;
   background-size: 14px;
@@ -89,6 +67,10 @@ cap-inputtext::ng-deep .cap-inputText-icon{
   background-color: #979797;
   width: 100%;
   display: block;
+}
+
+ul li:last-child .divisor {
+  background-color: white;
 }
 
 /* ROW OPTIONS - end */

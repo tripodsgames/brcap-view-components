@@ -21,6 +21,7 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() hasSearch: boolean = true
   @Input() baixarPdf: boolean
   @Input() baixarXls: boolean
+  @Input() nameColumn: string;
 
   @Output() itemOptionClick = new EventEmitter<any>()
   @Output() gerarPdf = new EventEmitter<any>()
@@ -73,7 +74,7 @@ export class CapTablePaginationComponent implements OnInit {
     this.setPage();
   }
 
-  firstPage(){
+  firstPage() {
     this.currentPage = 1;
     this.setPage();
   }
@@ -96,15 +97,15 @@ export class CapTablePaginationComponent implements OnInit {
     this.showItemOptions = null
   }
 
-  exportarPdf(){
+  exportarPdf() {
     this.gerarPdf.emit(true);
   }
 
-  exportarXls(){
+  exportarXls() {
     this.gerarXls.emit(true);
   }
 
-  pesquisar(){
+  pesquisar(string) {
     
   }
 
