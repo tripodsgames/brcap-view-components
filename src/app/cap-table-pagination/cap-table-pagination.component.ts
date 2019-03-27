@@ -11,9 +11,6 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() columns: any
   @Input() itemsPerPage: number = 10;
   @Input() currentPage: number;
-  //@Input() totalPaged: number
-  //@Input() firstItem: number
-  //@Input() lastItem: number
   @Input() labelPaginas: string
   @Input() rowOptions: any
   @Input() tableTitle: string
