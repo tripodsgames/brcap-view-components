@@ -160,7 +160,7 @@
         </div>
       </div>
     </div>
-    <div class="content">
+    <div class="content" style="min-height: inherit;">
       <cap-tabPanel styleClass="tabPanel-content-header">
         <cap-tab title="INFORMAÇÕES GERAIS">
           <div class="box">
@@ -191,17 +191,17 @@
     <div class="content-header" style="height: 370px">
       <h1>Comportamento de erro e disabled</h1>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir" maxlength="20"
             placeholder="Informe seu nome" [disabled]="true">
           </cap-inputText>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir" maxlength="20"
             placeholder="Informe seu nome" styleClass="error">
           </cap-inputText>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-inputText placeholder="Informe seu nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
             maxlength="20" [disabled]="true" styleClass="sm">
           </cap-inputText>
@@ -214,15 +214,15 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa"
             [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa"
             [(ngModel)]="tipoPessoa" styleClass="error"></cap-select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"
             styleClass="sm" [disabled]="true"></cap-select>
         </div>
@@ -233,15 +233,15 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" mask="99/99/9999" [disabled]="true">
           </cap-datepicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" mask="99/99/9999" styleClass="error">
           </cap-datepicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-datepicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999"
             styleClass="sm" [disabled]="true">
           </cap-datepicker>
@@ -254,17 +254,17 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
             [disabled]="true">
           </cap-dateRangePicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-dateRangePicker id="dataInicial" label="Algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
             styleClass="error">
           </cap-dateRangePicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data"
             mask="99/99/9999 a 99/99/9999" styleClass="sm" [disabled]="true">
           </cap-dateRangePicker>
@@ -277,15 +277,15 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
             [disabled]="true"></cap-monthpicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
             styleClass="error"></cap-monthpicker>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 no-padding-right">
           <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
             styleClass="sm" [disabled]="true"></cap-monthpicker>
         </div>
@@ -314,8 +314,8 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-                default
-                <br /><br />
+              default
+              <br /><br />
               <cap-button label="Atualizar"></cap-button>
               <br /><br />
             </div>
@@ -541,9 +541,9 @@
       <div class="row">
         <div class="col-xs-12">
           CAP-TABLE
-          <cap-table #CapTableComponent [columns]="columns" [items]="items"
-            [rowOptions]="rowOptions" tableTitle="Título" tableSubTitle="Subtítulo" (gerarPdf)="gerarPdf()"
-            (gerarXls)="gerarXls()" [baixarPdf]="true" [baixarXls]="true">
+          <cap-table #CapTableComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
+            tableTitle="Título" tableSubTitle="Subtítulo" (gerarPdf)="gerarPdf()" (gerarXls)="gerarXls()"
+            [baixarPdf]="true" [baixarXls]="true">
           </cap-table>
         </div>
       </div>
@@ -551,22 +551,24 @@
       <cap-scrollUp></cap-scrollUp>
 
       <div class="row">
-        CAP-TABPANEL
-        <div class="box">
-          <cap-tabPanel>
-            <cap-tab title="INFORMAÇÕES GERAIS">
-              FDBGFDGDFG
-            </cap-tab>
-            <cap-tab title="SORTEIOS" [disabled]="true">
-              AAAAAAAAA
-            </cap-tab>
-            <cap-tab title="QUOTAS">
-              MNFBMGOBMGFIKBM
-            </cap-tab>
-            <cap-tab title="RESGATE">
-              DRGDFFD
-            </cap-tab>
-          </cap-tabPanel>
+        <div class="col-xs-12">
+            CAP-TABPANEL
+          <div class="box">
+            <cap-tabPanel>
+              <cap-tab title="INFORMAÇÕES GERAIS">
+                FDBGFDGDFG
+              </cap-tab>
+              <cap-tab title="SORTEIOS" [disabled]="true">
+                AAAAAAAAA
+              </cap-tab>
+              <cap-tab title="QUOTAS">
+                MNFBMGOBMGFIKBM
+              </cap-tab>
+              <cap-tab title="RESGATE">
+                DRGDFFD
+              </cap-tab>
+            </cap-tabPanel>
+          </div>
         </div>
       </div>
 
