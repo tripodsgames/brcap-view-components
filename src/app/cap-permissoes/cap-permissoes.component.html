@@ -38,7 +38,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-xl-2">
+        <div class="col-lg-3 col-xl-2 firstHint">
           <cap-hint texto="Selecione um card para ver detalhes."></cap-hint>
         </div>
       </div>
@@ -101,17 +101,9 @@
                   </div>
                   <div class="row">
                     <div class="col-md-11">
-                      <div class="boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
-                        <div class="hint hint-absolute">
-                          <cap-icon icon="ajuda" [size]="24" class="pointer round"
-                            [ngClass]="{'active': modulo.hintAtivo}" (click)="toggleHint(modulo)"
-                            (mouseleave)="mouseLeaveHint(modulo)"></cap-icon>
-                          <div class="hint-container" *ngIf="modulo.exibirHint">
-                            <div class="hint-content">
-                              {{ modulo.descricao }}
-                            </div>
-                          </div>
-                        </div>
+                      <div class="box boxPermissao" *ngFor="let modulo of listaModulos; let indexM = index">
+
+                        <cap-hint texto="{{ modulo.descricao }}" *ngIf="modulo.descricao"></cap-hint>
 
                         <div [ngClass]="{'box-opened': modulo.open, 'box-closed': !modulo.open}">
                           <div class="row">
@@ -121,7 +113,7 @@
                                 (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
                             </div>
                             <div class="col-md-8">
-                              <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
+                              <h3 class="subtitle-1-brcap">
                                 {{modulo.nome }}
                               </h3>
                               <p class="chips-caption-brcap" *ngIf="!modulo.open">{{modulo.quantidadePermissionados}}
