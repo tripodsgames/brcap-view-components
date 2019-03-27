@@ -1,59 +1,104 @@
-import { Component, Input, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
-import BRCapUtil from "../../brcap-util";
-import * as jQuery from "jquery";
-const $: JQueryStatic = (<any>jQuery).default || jQuery;
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
-  selector: "cap-table",
-  templateUrl: "./cap-table.component.html",
-  styleUrls: ["./cap-table.component.css"]
+  selector: 'cap-table',
+  templateUrl: './cap-table.component.html',
+  styleUrls: ['../../assets/css/cap-table.component.min.css']
 })
-export class CapTableComponent implements OnInit, AfterViewInit {
-  @Input("id") id: string;
-  @Input("styleClass") styleClass: string;
-  @Input("value") value: Array<any>;
-  @Input("draggable") draggable: boolean;
-  @Input("disabled") disabled: boolean;
+export class CapTableComponent implements OnInit {
 
-  @ViewChild("table") table: ElementRef;
-  colunas = [];
+  @Input() items: any
+  @Input() columns: any
+  @Input() itemsPerPage: number = 10;
+  @Input() currentPage: number;
+  @Input() labelPaginas: string
+  @Input() rowOptions: any
+  @Input() tableTitle: string
+  @Input() tableSubTitle: string
+  @Input() hasSearch: boolean = true
+  @Input() baixarPdf: boolean
+  @Input() baixarXls: boolean
+  @Input() nameColumn: string;
 
-  constructor() {}
+  @Output() itemOptionClick = new EventEmitter<any>()
+  @Output() gerarPdf = new EventEmitter<any>()
+  @Output() gerarXls = new EventEmitter<any>()
+
+  //pagination
+  totalPages: number;
+  pagedItens: any;
+  totalPaged: number;
+  firstItem: number;
+  lastItem: number;
+  showItemOptions: number;
+  numeroItens: number;
+
+  constructor() {
+    this.totalPages = 1
+    this.pagedItens = []
+    if (!this.itemsPerPage) this.itemsPerPage = 10
+  }
 
   ngOnInit() {
-    if (!this.id) {
-      this.id = BRCapUtil.guid();
+    this.currentPage = 1
+    this.setPage();
+  }
+
+  setPage(isNew = false) {
+    if (isNew) {
+      this.currentPage = 1
+      this.totalPages = Math.ceil(this.items.length / this.itemsPerPage)
+    }
+    this.pagedItens = this.items.slice((this.currentPage - 1) * this.itemsPerPage, ((this.currentPage - 1) * this.itemsPerPage) + this.itemsPerPage)
+    this.firstItem = (10 * (this.currentPage - 1)) + 1
+    this.lastItem = this.firstItem + ((this.pagedItens.length) - 1)
+    this.numeroItens = this.items.length;
+  }
+
+  prevPage() {
+    this.currentPage -= 1;
+    this.setPage();
+  }
+
+  nextPage() {
+    this.currentPage += 1;
+    this.setPage();
+  }
+
+  firstPage() {
+    this.currentPage = 1;
+    this.setPage();
+  }
+
+  lastPage() {
+    this.currentPage = this.totalPages;
+    this.setPage();
+  }
+
+  clickItem(index) {
+    if (this.showItemOptions == index) {
+      this.showItemOptions = null;
     } else {
-      this.id += "_table";
-    }
-    this.carregarColunas();
-  }
-
-  ngAfterViewInit() {
-    this.carregaDraggable();
-  }
-
-  carregaDraggable() {
-
-  }
-
-  carregarColunas() {
-    if (this.value) {
-      var obj = this.value[0];
-      for (const key in obj) {
-        if (this.colunas.length === 0) {
-          this.colunas.push(key);
-          continue;
-        }
-        this.colunas.forEach(c => {
-          if (c === key) {
-            return;
-          } else {
-            this.colunas.push(key);
-            return;
-          }
-        });
-      }
+      this.showItemOptions = index;
     }
   }
+
+  clickItemOption(opt, idx) {
+    this.itemOptionClick.emit({ "option": opt, "index": (idx + ((this.currentPage - 1) * 10)) })
+    this.showItemOptions = null
+  }
+
+  exportarPdf() {
+    this.gerarPdf.emit(true);
+    this.baixarPdf = true;
+  }
+
+  exportarXls() {
+    this.gerarXls.emit(true);
+    this.baixarXls = true;
+  }
+
+  pesquisar(string) {
+    
+  }
+
 }

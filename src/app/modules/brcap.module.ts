@@ -31,7 +31,6 @@ import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
-import { CapTablePaginationComponent } from "../cap-table-pagination/cap-table-pagination.component";
 import { CapModalComponent } from "../cap-modal/cap-modal.component";
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
 import { CapLoginComponent } from "../cap-login/cap-login.component";
@@ -81,7 +80,6 @@ import { RouterModule } from "@angular/router";
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
-    CapTablePaginationComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
@@ -114,7 +112,6 @@ import { RouterModule } from "@angular/router";
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
-    CapTablePaginationComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
-import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pagination.component";
+import { CapTableComponent } from "./cap-table/cap-table.component";
 import toastr from "toastr";
 
 @Component({
@@ -294,7 +294,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ];
 
   //cap-select
-  exemplo = [{label: "num1", value: "0"},{label: "num2", value: "1"},{label: "num2", value: "2"},{label: "num3", value: "3"},{label: "num4", value: "4"},{label: "num5", value: "5"},{label: "num6", value: "6"}]
+  exemplo = [{ label: "num1", value: "0" }, { label: "num2", value: "1" }, { label: "num2", value: "2" }, { label: "num3", value: "3" }, { label: "num4", value: "4" }, { label: "num5", value: "5" }, { label: "num6", value: "6" }]
 
   table = [
     {
@@ -318,9 +318,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   itemId;
   url = "https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/";
 
-  // CAP-GRID-PAGINAION
-  @ViewChild(CapTablePaginationComponent)
-  gridPagination: CapTablePaginationComponent;
+
+  @ViewChild(CapTableComponent)
+  gridPagination: CapTableComponent;
+
   columns = ["ID", "NOME", "dfv", "ffgfvrg", "dfvfv", "ddvd", "ddd"];
   items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],
   [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],

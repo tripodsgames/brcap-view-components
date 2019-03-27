@@ -1,15 +1,62 @@
-<table [id]="id" #table class="table cap-table table-hover table-striped">
-  <thead>
-    <tr>
-      <th *ngFor="let c of colunas">{{c}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let v of value">
-      <td *ngFor="let c of colunas">
-        {{v[c]}}
-      </td>
-    </tr>
-  </tbody>
+<div class="col-lg-12 no-padding">
+  <div class="box">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="table-title" *ngIf="tableTitle?.length">{{tableTitle}}</div>
+        <div class="table-sub-title" *ngIf="tableSubTitle?.length">{{tableSubTitle}}</div>
+      </div>
+      <div class="col-md-6">
+        <cap-inputText class="float-right" styleClass="sm" label="Pesquisar" icon="busca" [(ngModel)]="nome"
+          (ngModelChange)="pesquisar($event)" *ngIf="hasSearch">
+        </cap-inputText>
+      </div>
+    </div>
 
-</table>
+    <div *ngIf="pagedItens.length > 0">
+      <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
+        <thead>
+          <tr class="table-header">
+            <th *ngFor="let c of columns">{{c}}</th>
+            <th *ngIf="rowOptions"></th>
+            <th *ngIf="nameColumn?.length">{{nameColumn}}</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="animacao-hover" *ngFor="let v of pagedItens;  let i = index">
+            <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
+
+            <ng-content></ng-content>
+
+            <td *ngIf="rowOptions" class="text-center">
+              <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes" (click)="clickItem(i)"></cap-button>
+              <div *ngIf="showItemOptions === i" class="row-options">
+                <ul>
+                  <li *ngFor="let opt of rowOptions" (click)="clickItemOption(opt, i)">
+                    {{opt}}
+                    <span class="divisor"></span>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-6">
+          <cap-pagination (goNext)="nextPage()" (goPrev)="prevPage()" (goFirst)="firstPage()" (goLast)="lastPage()"
+            [page]="currentPage" [contagemPaginasTotal]="totalPages" [primeiraLinha]="firstItem"
+            [ultimaLinha]="lastItem" [numeroItens]="numeroItens"></cap-pagination>
+        </div>
+        <div class="col-md-6 text-right">
+          <cap-button label="Baixar PDF" styleClass="sm" icon="arquivo" (click)="exportarPdf()" *ngIf="baixarPdf">
+          </cap-button>
+          <cap-button label="Baixar XLS" styleClass="sm" icon="arquivo" (click)="exportarXls()" *ngIf="baixarXls">
+          </cap-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
