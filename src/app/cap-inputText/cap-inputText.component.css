@@ -16,6 +16,7 @@ label.label-duas-linhas {
   height: 40px;
 }
 
+/* como era antes */
 /* .cap-inputText-icon.sm {
   font-size: 20px;
   top: -33px;
@@ -27,9 +28,9 @@ label.label-duas-linhas {
   right: 23px;
 }
 
-label.label-input.sm {
+/* label.label-input.sm {
   top: 23px;
-}
+} */
 
 .cap-inputText.outline {
   border: none !important;

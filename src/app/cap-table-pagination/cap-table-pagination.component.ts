@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-
 @Component({
   selector: 'cap-table-pagination',
   templateUrl: './cap-table-pagination.component.html',
@@ -11,18 +10,18 @@ export class CapTablePaginationComponent implements OnInit {
   @Input() columns: any
   @Input() itemsPerPage: number = 10;
   @Input() currentPage: number;
-  //@Input() totalPaged: number
-  //@Input() firstItem: number
-  //@Input() lastItem: number
   @Input() labelPaginas: string
   @Input() rowOptions: any
-  @Input() fullTable: boolean
-  @Input() styleClass: string
-  // @Input() primeiraInformacao: any
-  // @Input() segundaInformacao: any
-  // @Input() terceiraInformacao: any
+  @Input() tableTitle: string
+  @Input() tableSubTitle: string
+  @Input() hasSearch: boolean = true
+  @Input() baixarPdf: boolean
+  @Input() baixarXls: boolean
+  @Input() nameColumn: string;
 
   @Output() itemOptionClick = new EventEmitter<any>()
+  @Output() gerarPdf = new EventEmitter<any>()
+  @Output() gerarXls = new EventEmitter<any>()
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
@@ -71,7 +70,7 @@ export class CapTablePaginationComponent implements OnInit {
     this.setPage();
   }
 
-  firstPage(){
+  firstPage() {
     this.currentPage = 1;
     this.setPage();
   }
@@ -86,13 +85,24 @@ export class CapTablePaginationComponent implements OnInit {
       this.showItemOptions = null;
     } else {
       this.showItemOptions = index;
-      console.log("oi")
     }
   }
 
   clickItemOption(opt, idx) {
     this.itemOptionClick.emit({ "option": opt, "index": (idx + ((this.currentPage - 1) * 10)) })
     this.showItemOptions = null
+  }
+
+  exportarPdf() {
+    this.gerarPdf.emit(true);
+  }
+
+  exportarXls() {
+    this.gerarXls.emit(true);
+  }
+
+  pesquisar(string) {
+    
   }
 
 }
