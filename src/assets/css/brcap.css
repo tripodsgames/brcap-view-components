@@ -1173,6 +1173,7 @@ my-date-range-picker .mydrp {
   width: max-content;
   max-width: 400px;
   cursor: pointer;
+  line-height: 1;
 
   font-family: "brcap-ico" !important;
   speak: none;
@@ -1210,19 +1211,30 @@ my-date-range-picker .mydrp {
 .toast-message{
   font-family: Ubuntu;
   font-size: 14px;
-  line-height: 1;
 }
 
 .toast.toast-warning {
   border-color: #ffb72a;
 }
 
+.toast-warning:before{
+  content: "\e903";
+}
+
 .toast.toast-info {
   border-color: rgba(0, 0, 0, 0.54);
 }
 
+.toast-info:before {
+  content: "\e90c";
+}
+
 .toast.toast-error {
   border-color: #b00020;
+}
+
+.toast-error:before{
+  content: "\e914";
 }
 
 .toast.toast-success {
@@ -1231,18 +1243,6 @@ my-date-range-picker .mydrp {
 
 .toast-success:before {
   content: "\e917";
-}
-
-.toast-info:before {
-  content: "\e90c";
-}
-
-.toast-warning:before{
-  content: "\e903";
-}
-
-.toast-error:before{
-  content: "\e914";
 }
 
 button.cap-button.btn-ico .brcap-ico {
