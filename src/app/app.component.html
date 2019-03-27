@@ -1,7 +1,8 @@
 <div id="wrapper">
   <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
-  <cap-header username="Joaquim José Xavier" primerPage="/#/dashboard" rotaLogo="/#/dashboard" logoBrasilCap="../../../assets/img/logo-brasilcap.svg"
-    logoSistema="../../../assets/img/contabilidade.svg"></cap-header>
+  <cap-header username="Joaquim José Xavier" primerPage="/#/dashboard" rotaLogo="/#/dashboard"
+    logoBrasilCap="../../../assets/img/logo-brasilcap.svg" logoSistema="../../../assets/img/contabilidade.svg">
+  </cap-header>
 
   <div class="content-wrapper">
 
@@ -37,8 +38,8 @@
           </cap-inputText>
         </div>
         <div class="col-md-3 no-padding-right">
-          <cap-select placeholder="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
-            styleClass="sm" title="bla"></cap-select>
+          <cap-select placeholder="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa"
+            [(ngModel)]="tipoPessoa" styleClass="sm" title="bla"></cap-select>
         </div>
         <div class="col-md-1">
           <cap-button icon="busca" styleClass="btn-ico"></cap-button>
@@ -76,7 +77,8 @@
           <h1>Exemplo content-header-medium IV</h1>
         </div>
         <div class="col-md-3 no-padding-right">
-          <cap-monthpicker placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" styleClass="sm"></cap-monthpicker>
+          <cap-monthpicker placeholder="Informe o mês e ano" [(ngModel)]="data" name="data" styleClass="sm">
+          </cap-monthpicker>
         </div>
         <div class="col-md-1">
           <cap-button icon="busca" styleClass="btn-ico"></cap-button>
@@ -135,11 +137,13 @@
       </div>
       <div class="row">
         <div class="col-md-3 no-padding-right">
-          <cap-dateRangePicker id="dataInicial" label="Algo" placeholder="Informe algo" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999">
+          <cap-dateRangePicker id="dataInicial" label="Algo" placeholder="Informe algo" [(ngModel)]="data"
+            mask="99/99/9999 a 99/99/9999">
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3 no-padding-right">
-          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data">
+          </cap-monthpicker>
         </div>
         <div class="col-md-1">
           <cap-button icon="busca" styleClass="btn-ico lg"></cap-button>
@@ -211,19 +215,20 @@
 
       <div class="row">
         <div class="col-md-3">
-          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
-            [disabled]="true"></cap-select>
+          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa"
+            [(ngModel)]="tipoPessoa" [disabled]="true"></cap-select>
         </div>
         <div class="col-md-3">
-          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
-            styleClass="error"></cap-select>
+          <cap-select label="Tipo Pessoa" placeholder="Escolha" [items]="exemplo" name="tipoPessoa"
+            [(ngModel)]="tipoPessoa" styleClass="error"></cap-select>
         </div>
         <div class="col-md-3">
-          <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="sm"
-            [disabled]="true"></cap-select>
+          <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"
+            styleClass="sm" [disabled]="true"></cap-select>
         </div>
         <div class="col-md-3">
-          <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa" styleClass="sm error"></cap-select>
+          <cap-select placeholder="Tipo Pessoa" [items]="columns" name="tipoPessoa" [(ngModel)]="tipoPessoa"
+            styleClass="sm error"></cap-select>
         </div>
       </div>
 
@@ -237,12 +242,13 @@
           </cap-datepicker>
         </div>
         <div class="col-md-3">
-          <cap-datepicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999" styleClass="sm"
-            [disabled]="true">
+          <cap-datepicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999"
+            styleClass="sm" [disabled]="true">
           </cap-datepicker>
         </div>
         <div class="col-md-3">
-          <cap-datepicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999" styleClass="sm error">
+          <cap-datepicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999"
+            styleClass="sm error">
           </cap-datepicker>
         </div>
       </div>
@@ -259,13 +265,13 @@
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3">
-          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
-            styleClass="sm" [disabled]="true">
+          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data"
+            mask="99/99/9999 a 99/99/9999" styleClass="sm" [disabled]="true">
           </cap-dateRangePicker>
         </div>
         <div class="col-md-3">
-          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data" mask="99/99/9999 a 99/99/9999"
-            styleClass="sm error">
+          <cap-dateRangePicker placeholder="Tipo Pessoa" id="dataInicial" [(ngModel)]="data"
+            mask="99/99/9999 a 99/99/9999" styleClass="sm error">
           </cap-dateRangePicker>
         </div>
       </div>
@@ -295,34 +301,12 @@
     <div class="content">
       <div class="row">
         <div class="col-lg-4">
-          <div class="box" style="height: 1300px;">
+          <div class="box" style="height: 1600px;">
             CAP-BUTTON
             <div class="col-md-12">
-              <strong>Sm</strong>
+              <strong>sm</strong>
               <br /><br />
               <cap-button styleClass="sm" label="Atualizar"></cap-button>
-              <br /><br />
-            </div>
-            <div class="col-md-12">
-              <cap-button label="Atualizar"></cap-button>
-              <br /><br />
-            </div>
-            <div class="col-md-12">
-              <strong>Lg</strong>
-              <br /><br />
-              <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
-              <br /><br />
-            </div>
-            <div class="col-md-12">
-                <strong>Btn-ico</strong>
-                <br /><br />
-              <cap-button styleClass="btn-ico" icon="busca"></cap-button>
-              <br /><br />
-            </div>
-            <div class="col-md-12">
-                <strong>Btn-ico e Lg</strong>
-                <br /><br />
-              <cap-button styleClass="btn-ico lg" icon="busca"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
@@ -330,9 +314,43 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <strong>Outline</strong>
+                default
+                <br /><br />
+              <cap-button label="Atualizar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button label="Atualizar" icon="sucesso"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <strong>lg</strong>
+              <br /><br />
+              <cap-button styleClass="lg" icon="sucesso" label="Salvar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="lg" label="Salvar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <strong>btn-ico</strong>
+              <br /><br />
+              <cap-button styleClass="btn-ico" icon="busca"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="btn-ico lg" icon="busca"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <strong>outline</strong>
               <br /><br />
               <cap-button styleClass="outline sm" label="inserir" icon="adicionar"></cap-button>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
@@ -348,7 +366,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <strong>White</strong>
+              <strong>white</strong>
               <br /><br />
               <cap-button styleClass="white sm" label="inserir"></cap-button>
               <br /><br />
@@ -366,21 +384,23 @@
               <br /><br />
             </div>
             <div class="col-md-12">
+              disabled
+              <br /><br />
               <cap-button styleClass="btn-ico" icon="busca" [disabled]="true"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <strong>Nova Pesquisa</strong>
+              <strong>nova-pesquisa</strong>
               <cap-button styleClass="nova-pesquisa" label="Nova Pesquisa" icon="busca"></cap-button>
               <br /><br /><br />
             </div>
             <div class="col-md-12">
-              <strong>Baixar(sm com size=12)</strong>
-              <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo" size="12"></cap-button>
+              <strong>Baixar(sm)</strong>
+              <cap-button styleClass="sm" label="Baixar XLS" icon="arquivo"></cap-button>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <strong>Fechar</strong>
+              <strong>fechar</strong>
               <cap-button icon="x-circulo" styleClass="fechar"></cap-button>
               <br /><br />
             </div>
@@ -391,7 +411,7 @@
           <div class="box">
             CAP-DIVISOR
             <cap-divisor></cap-divisor>
-            <strong>Light</strong>
+            <strong>light</strong>
             <cap-divisor styleClass="light"></cap-divisor>
           </div>
 
@@ -399,13 +419,13 @@
             CAP-ICON
             <br /><br />
             <div class="col-md-12">
-              <strong>Ico-ver-senha</strong>
+              <strong>ico-ver-senha</strong>
               <br /><br /><br />
               <cap-icon icon="ver-senha" styleClass="ico-ver-senha"></cap-icon>
               <br />
             </div>
             <div class="col-md-12">
-              <strong>Icon-arrow</strong>
+              <strong>icon-arrow</strong>
               <div style="background: BLACK">
                 <cap-icon icon="expandir" styleClass="icon-arrow"></cap-icon>
                 <br /><br />
@@ -416,11 +436,12 @@
           <div class="box" style="height: 200px">
             CAP-HINT
             <div class="col-md-12">
-              <cap-hint texto="olarfdfbvffb grgrgrt hgrt rtgrgr g rg rgrgr hbhv kmjikmv kmikmm komolm,l omommoo."></cap-hint>
+              <cap-hint texto="olarfdfbvffb grgrgrt hgrt rtgrgr g rg rgrgr hbhv kmjikmv kmikmm komolm,l omommoo.">
+              </cap-hint>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <strong>Left</strong>
+              <strong>left</strong>
               <br /><br />
               <cap-hint styleClass="left" texto="clique nos cards"></cap-hint>
               <br /><br />
@@ -440,7 +461,8 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true"></cap-radio>
+              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true">
+              </cap-radio>
               <br /><br />
             </div>
           </div>
@@ -448,7 +470,7 @@
           <div class="box" style="height: 350px;">
             CAP-CHIPS
             <div class="col-md-12">
-              <strong>Sm</strong>
+              <strong>sm</strong>
               <cap-chips styleClass="sm" name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
               </cap-chips>
               <br /><br />
@@ -464,7 +486,7 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <strong>Lg</strong>
+              <strong>lg</strong>
               <cap-chips styleClass="lg" name="chip" itemLabel="Opção 4" [(ngModel)]="selecionadoChips4">
               </cap-chips>
               <br /><br />
@@ -519,8 +541,9 @@
       <div class="row">
         <div class="col-xs-12">
           CAP-TABLE-PAGINATION
-          <cap-table-pagination #CapTablePaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions" tableTitle="Título" tableSubTitle="Subtítulo"
-          (gerarPdf)="gerarPdf()" (gerarXls)="gerarXls()" [baixarPdf]="true" [baixarXls]="true">
+          <cap-table-pagination #CapTablePaginationComponent [columns]="columns" [items]="items"
+            [rowOptions]="rowOptions" tableTitle="Título" tableSubTitle="Subtítulo" (gerarPdf)="gerarPdf()"
+            (gerarXls)="gerarXls()" [baixarPdf]="true" [baixarXls]="true">
           </cap-table-pagination>
         </div>
       </div>
@@ -559,7 +582,7 @@
         </div>
 
         <div class="col-xs-4">
-          CAP-BTNCOLLAPSE - <strong>Collapsed</strong>
+          CAP-BTNCOLLAPSE - <strong>collapsed</strong>
           <div class="box">
             <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed"></cap-btnCollapse>
             <div class="collapse" [id]="'conteudoInterno' + i">
@@ -569,10 +592,11 @@
         </div>
 
         <div class="col-xs-4">
-          CAP-BTNCOLLAPSE Disabled
+          CAP-BTNCOLLAPSE (disabled)
           <div class="box">
             <div class="divColapse">
-              <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true"></cap-btnCollapse>
+              <cap-btnCollapse [targetId]="'conteudoInterno' + i" styleClass="collapsed" [disabled]="true">
+              </cap-btnCollapse>
             </div>
             <div class="conteudoInterno collapse" [id]="'conteudoInterno' + i">
               ddthhghfgh
@@ -586,7 +610,8 @@
           <div class="box">
             <p>CAP-MONTH-PICKER</p>
             <br />
-            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"></cap-monthpicker>
+            <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data">
+            </cap-monthpicker>
             <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
               textHelper="Informe uma data" styleClass="error"></cap-monthpicker>
             <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="data" name="data"
@@ -600,19 +625,20 @@
             <cap-datepicker id="dataInicial" [(ngModel)]="data" pp mask="99/99/9999">
             </cap-datepicker>
 
-            <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-              pp mask="99/99/9999">
+            <cap-datepicker id="dataInicial" label="Algo" placeholder="Informe uma data" [(ngModel)]="data"
+              textHelper="Informe uma data" pp mask="99/99/9999">
             </cap-datepicker>
 
-            <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999">
+            <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp
+              mask="99/99/9999">
             </cap-datepicker>
 
-            <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp mask="99/99/9999"
-              styleClass="error">
+            <cap-datepicker id="dataInicial" label="Algo" [(ngModel)]="data" textHelper="Informe uma data" pp
+              mask="99/99/9999" styleClass="error">
             </cap-datepicker>
 
-            <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
-              [disabled]="true" pp mask="99/99/9999">
+            <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data"
+              textHelper="Informe uma data" [disabled]="true" pp mask="99/99/9999">
             </cap-datepicker>
 
             <cap-datepicker id="dataInicial" label="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data"
@@ -630,8 +656,8 @@
               mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
             <cap-dateRangePicker label="Período" placeholder="Informe o período" name="periodo" [(ngModel)]="periodo"
               styleClass="error" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
-            <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo" [disabled]="true"
-              textHelper="Informe uma data" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
+            <cap-dateRangePicker label="Período" placeholder="Período" name="periodo" [(ngModel)]="periodo"
+              [disabled]="true" textHelper="Informe uma data" mask="99/99/9999 a 99/99/9999"></cap-dateRangePicker>
           </div>
         </div>
       </div>
@@ -643,42 +669,43 @@
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome">
             </cap-inputText>
 
-            <strong>Outline</strong>
+            <strong>outline</strong>
             <br />
             <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline">
             </cap-inputText>
 
-            <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline error" textHelper="Campo obrigatório">
+            <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" styleClass="outline error"
+              textHelper="Campo obrigatório">
             </cap-inputText>
 
             <em class="text-right">Sem erase-button(funcionalidade)</em>
             <br />
-            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-              [eraseButton]="false">
+            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
+              textHelper="Nome deve possuir no mínimo 3 caracateres" [eraseButton]="false">
             </cap-inputText>
 
-            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-              maxlength="20" styleClass="error">
+            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
+              textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" styleClass="error">
             </cap-inputText>
 
-            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-              maxlength="20" [disabled]="true">
+            <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
+              textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20" [disabled]="true">
             </cap-inputText>
 
-            <cap-inputText placeholder="Informe seu nome" label="Nome" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-              maxlength="20">
+            <cap-inputText placeholder="Informe seu nome" label="Nome" [(ngModel)]="nome"
+              textHelper="Nome deve possuir no mínimo 3 caracateres" maxlength="20">
             </cap-inputText>
 
             <cap-inputText placeholder="Informe seu nome" icon="busca" [(ngModel)]="nome" maxlength="20">
             </cap-inputText>
 
             <div class="col-md-6 no-padding-left">
-              <cap-inputText styleClass="label-duas-linhas" placeholder="Informe seu nome" label="Nome de alguem do fulano de tal"
-                icon="busca" [(ngModel)]="nome" maxlength="20">
+              <cap-inputText styleClass="label-duas-linhas" placeholder="Informe seu nome"
+                label="Nome de alguem do fulano de tal" icon="busca" [(ngModel)]="nome" maxlength="20">
               </cap-inputText>
             </div>
             <div class="col-md-6">
-              <strong>Label-duas-linhas</strong>
+              <strong>label-duas-linhas</strong>
             </div>
           </div>
         </div>
@@ -696,10 +723,12 @@
             </cap-inputTextArea>
 
             <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" styleClass="error"></cap-inputTextArea>
+              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" styleClass="error">
+            </cap-inputTextArea>
 
             <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
-              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true"></cap-inputTextArea>
+              textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true">
+            </cap-inputTextArea>
           </div>
         </div>
       </div>
@@ -709,10 +738,12 @@
           <div class="box">
             CAP-SELECT
             <br />
-            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa" title="blaaaaa"></cap-select>
-            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2" styleClass="error"
-              textHelper="Clique em alguma das opções" texthelper="Campo obrigatório"></cap-select>
-            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3" [disabled]="true"></cap-select>
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
+              title="blaaaaa"></cap-select>
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2"
+              styleClass="error" textHelper="Clique em alguma das opções" texthelper="Campo obrigatório"></cap-select>
+            <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3"
+              [disabled]="true"></cap-select>
           </div>
         </div>
 

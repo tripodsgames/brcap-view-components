@@ -23,11 +23,11 @@ export class CapTablePaginationComponent implements OnInit {
   @Output() gerarPdf = new EventEmitter<any>()
   @Output() gerarXls = new EventEmitter<any>()
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event) {
-    let nonAffectedClasses = ['row-options', 'cap-grid-options', 'cap-grid-item-option']
-    if (nonAffectedClasses.indexOf(event.target.className) < 0) this.showItemOptions = null
-  }
+  // @HostListener('document:click', ['$event'])
+  // onDocumentClick(event) {
+  //   let nonAffectedClasses = ['row-options', 'cap-grid-options', 'cap-grid-item-option']
+  //   if (nonAffectedClasses.indexOf(event.target.className) < 0) this.showItemOptions = null
+  // }
 
   //pagination
   totalPages: number;

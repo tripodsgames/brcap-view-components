@@ -29,11 +29,10 @@
             <ng-content></ng-content>
 
             <td *ngIf="rowOptions" class="text-center">
-              <button (click)="clickItem(i)" class="cap-grid-options"></button>
-              <!-- <cap-button styleClass="outline sm btn-ico" icon="mais-opcoes" (click)="clickItem(i)"></cap-button> -->
+              <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes" (click)="clickItem(i)"></cap-button>
               <div *ngIf="showItemOptions === i" class="row-options">
                 <ul>
-                  <li *ngFor="let opt of rowOptions" class="cap-grid-item-option" (click)="clickItemOption(opt, i)">
+                  <li *ngFor="let opt of rowOptions" (click)="clickItemOption(opt, i)">
                     {{opt}}
                     <span class="divisor"></span>
                   </li>
