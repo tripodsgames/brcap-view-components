@@ -302,6 +302,20 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Table title e sub-title */
+.table-title {
+  font-size: 16px;
+  font-weight: 500;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+.table-sub-title {
+  font-size: 14px;
+  height: 16px;
+  margin-bottom: 16px;
+}
+
 .icon-select {
   font-size: 26px;
   position: absolute;

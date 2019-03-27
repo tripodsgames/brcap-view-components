@@ -8,7 +8,7 @@
 />
 
 <cap-icon [icon]="icon" *ngIf="!escrevendo" class="cap-inputText-icon {{styleClass}}" [class.disabled]="disabled"></cap-icon>
-<cap-icon icon="x" *ngIf="escrevendo && eraseButton" (click)="erase()" class="cap-inputText-icon pointer"></cap-icon>
+<cap-icon icon="x" *ngIf="escrevendo && eraseButton" (click)="erase()" class="cap-inputText-icon pointer {{styleClass}}"></cap-icon>
 <cap-icon icon="alerta" *ngIf="hasError()" styleClass="ico-error" [class.disabled]="disabled"></cap-icon>
 
 <p class="helper-text error" [class.disabled]="disabled" *ngIf="hasError() && modelInput?.errors?.required">Campo Obrigatório</p>
