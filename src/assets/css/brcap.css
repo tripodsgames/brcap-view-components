@@ -147,11 +147,11 @@ body.minimizado .loader {
   padding-top: 10px;
 }
 
-.content-header .dp-input-container input{
+.content-header .dp-input-container input {
   padding-top: 20px;
 }
 
-.content-header-medium .dp-input-container input{
+.content-header-medium .dp-input-container input {
   padding-top: 10px;
   height: 40px;
 }
@@ -159,7 +159,7 @@ body.minimizado .loader {
 .content-header .error .dp-picker-input,
 .content-header ng-select.error .below,
 .content-header my-date-picker.error .mydp input,
-.content-header my-date-range-picker.error .mydrp input{
+.content-header my-date-range-picker.error .mydrp input {
   border-bottom: 2px solid #b00020 !important;
 }
 
@@ -213,13 +213,13 @@ body.minimizado .loader {
 .content-header-medium .below,
 .content-header-medium .cap-inputText,
 .content-header-medium .mydp,
-.content-header-medium  .mydrp,
+.content-header-medium .mydrp,
 .content-header-medium button,
-.content-header-medium dp-date-picker{
+.content-header-medium dp-date-picker {
   margin-top: -4px;
 }
 
-.content-header h1{
+.content-header h1 {
   margin-bottom: 15px;
 }
 
@@ -1151,7 +1151,7 @@ div.inline-checkbox label {
 }
 
 my-date-picker .mydp,
-my-date-range-picker .mydrp{
+my-date-range-picker .mydrp {
   display: block;
 }
 
@@ -1165,13 +1165,30 @@ my-date-range-picker .mydrp{
 
 .toast {
   border: 2px solid;
-  border-left: 10px solid;
+  border-left: 60px solid;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
   padding: 20px 20px 20px 15px;
   background: #fff;
   border-radius: 5px;
-  min-width: 300px;
+  width: max-content;
+  max-width: 400px;
   cursor: pointer;
+
+  font-family: "brcap-ico" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 24px;
+}
+
+.toast:before {
+  position: absolute;
+  left: 16px;
+  color: white;
 }
 
 .toast-close-button {
@@ -1181,7 +1198,19 @@ my-date-range-picker .mydrp{
   border: none;
   outline: none;
   font-size: 35px;
-  line-height: 20px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.toast-close-button,
+.toast-message {
+  display: inline;
+}
+
+.toast-message{
+  font-family: Ubuntu;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .toast.toast-warning {
@@ -1198,6 +1227,22 @@ my-date-range-picker .mydrp{
 
 .toast.toast-success {
   border-color: #086930;
+}
+
+.toast-success:before {
+  content: "\e917";
+}
+
+.toast-info:before {
+  content: "\e90c";
+}
+
+.toast-warning:before{
+  content: "\e903";
+}
+
+.toast-error:before{
+  content: "\e914";
 }
 
 button.cap-button.btn-ico .brcap-ico {

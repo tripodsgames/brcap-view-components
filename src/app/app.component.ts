@@ -353,14 +353,17 @@ export class AppComponent implements OnInit, AfterViewInit {
       onclick: null,
       showDuration: "0",
       hideDuration: "0",
-      timeOut: "500",
+      timeOut: "0",
       extendedTimeOut: "0",
       showEasing: "swing",
       hideEasing: "linear",
       showMethod: "fadeIn",
       hideMethod: "fadeOut"
     };
-    toastr["warning"]("Usuário ou senha inválidos");
+    toastr["error"]("Usuário ou senha inválidos");
+    toastr["warning"]("Usuário ou senha inválidos porque nao foi feito");
+    toastr["success"]("Usuário ou");
+    toastr["info"]("Usuário ou senha nao eas dkjmnke kmk skmkmkm skmkmo kmolmo solmomol");
 
     this.radios = [
       {
