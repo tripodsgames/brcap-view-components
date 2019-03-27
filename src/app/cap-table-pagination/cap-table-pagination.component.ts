@@ -95,10 +95,12 @@ export class CapTablePaginationComponent implements OnInit {
 
   exportarPdf() {
     this.gerarPdf.emit(true);
+    this.baixarPdf = true;
   }
 
   exportarXls() {
     this.gerarXls.emit(true);
+    this.baixarXls = true;
   }
 
   pesquisar(string) {

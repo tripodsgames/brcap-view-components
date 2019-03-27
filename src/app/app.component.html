@@ -519,7 +519,8 @@
       <div class="row">
         <div class="col-xs-12">
           CAP-TABLE-PAGINATION
-          <cap-table-pagination #CapTablePaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions" tableTitle="Título" tableSubTitle="Subtítulo">
+          <cap-table-pagination #CapTablePaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions" tableTitle="Título" tableSubTitle="Subtítulo"
+          (gerarPdf)="gerarPdf()" (gerarXls)="gerarXls()">
           </cap-table-pagination>
         </div>
       </div>
