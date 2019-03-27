@@ -18,7 +18,6 @@ import { CapChipsComponent } from "../cap-chips/cap-chips.component";
 import { CapTabPanelComponent } from "../cap-tabPanel/cap-tabPanel.component";
 import { CapTabComponent } from "../cap-tab/cap-tab.component";
 import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
-import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
 import { CapScrollUpComponent } from "../cap-scrollUp/cap-scrollUp.component";
@@ -72,7 +71,6 @@ import { RouterModule } from "@angular/router";
     CapTabPanelComponent,
     CapTabComponent,
     CapDivisorComponent,
-    CapCardComponent,
     CapTableComponent,
     CapScrollUpComponent,
     CapHintComponent,
@@ -107,7 +105,6 @@ import { RouterModule } from "@angular/router";
     CapTabPanelComponent,
     CapTabComponent,
     CapDivisorComponent,
-    CapCardComponent,
     CapTableComponent,
     CapPasswordComponent,
     CapBtnCollapseComponent,
