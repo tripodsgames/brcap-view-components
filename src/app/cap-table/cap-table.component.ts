@@ -31,6 +31,10 @@ export class CapTableComponent implements OnInit {
   showItemOptions: number;
   numeroItens: number;
 
+  itemsPesquisados;
+
+  emptyMessage = false;
+
   constructor() {
     this.totalPages = 1
     this.pagedItens = []
@@ -98,11 +102,26 @@ export class CapTableComponent implements OnInit {
 
   pesquisar(query) {
     if (query.length >= 3) {
-      this.pagedItens = this.items.filter(el => el.toString().toLowerCase().includes(query.toLowerCase()));
+      this.itemsPesquisados = this.items.filter(el => el.toString().toLowerCase().includes(query.toLowerCase()));
 
-      if (this.pagedItens.length > 10) {
-        this.setPage();
+      this.pagedItens = this.itemsPesquisados.slice((this.currentPage - 1) * this.itemsPerPage, ((this.currentPage - 1) * this.itemsPerPage) + this.itemsPerPage)
+
+      this.currentPage = 1;
+      this.numeroItens = this.itemsPesquisados.length;
+      this.totalPages = Math.ceil(this.itemsPesquisados.length / this.itemsPerPage)
+
+      if (this.numeroItens === 0) {
+        this.emptyMessage = true;
+        this.firstItem = 0;
+        this.lastItem = 0;
+      } else {
+        this.emptyMessage = false;
+        this.firstItem = (10 * (this.currentPage - 1)) + 1;
+        this.lastItem = this.firstItem + ((this.pagedItens.length) - 1);
       }
+    } else{
+      this.emptyMessage = false;
+      this.setPage();
     }
   }
 

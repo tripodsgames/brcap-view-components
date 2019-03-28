@@ -7,12 +7,12 @@
       </div>
       <div class="col-md-6">
         <cap-inputText class="float-right" styleClass="sm" label="Pesquisar" icon="busca" [(ngModel)]="nome"
-          (ngModelChange)="pesquisar($event)" *ngIf="hasSearch">
+          (ngModelChange)="pesquisar($event)" textHelper="Digite 3 caracteres para o resultado" *ngIf="hasSearch">
         </cap-inputText>
       </div>
     </div>
 
-    <div *ngIf="pagedItens.length > 0">
+    <div *ngIf="pagedItens.length > 0 || emptyMessage">
       <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
         <thead>
           <tr class="table-header">
@@ -38,9 +38,12 @@
                 </ul>
               </div>
             </td>
+
           </tr>
         </tbody>
       </table>
+
+      <div class="emptyMessage" *ngIf="emptyMessage">Nenhum resultado encontrado</div>
 
       <div class="row">
         <div class="col-md-6">

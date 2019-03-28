@@ -52,3 +52,12 @@
     background-size: 14px;
   }
 }
+
+.emptyMessage{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+cap-inputText::ng-deep .helper-text{
+  font-size: 11px;
+}
