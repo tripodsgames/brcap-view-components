@@ -17,7 +17,6 @@ export class CapTableComponent implements OnInit {
   @Input() hasSearch: boolean = true
   @Input() baixarPdf: boolean
   @Input() baixarXls: boolean
-  @Input() nameColumn: string;
 
   @Output() itemOptionClick = new EventEmitter<any>()
   @Output() gerarPdf = new EventEmitter<any>()
@@ -97,8 +96,14 @@ export class CapTableComponent implements OnInit {
     this.baixarXls = true;
   }
 
-  pesquisar(string) {
-    
+  pesquisar(query) {
+    if (query.length >= 3) {
+      this.pagedItens = this.items.filter(el => el.toString().toLowerCase().includes(query.toLowerCase()));
+
+      if (this.pagedItens.length > 10) {
+        this.setPage();
+      }
+    }
   }
 
 }
