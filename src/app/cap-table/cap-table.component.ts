@@ -104,11 +104,10 @@ export class CapTableComponent implements OnInit {
     if (query.length >= 3) {
       this.itemsPesquisados = this.items.filter(el => el.toString().toLowerCase().includes(query.toLowerCase()));
 
-      this.pagedItens = this.itemsPesquisados.slice((this.currentPage - 1) * this.itemsPerPage, ((this.currentPage - 1) * this.itemsPerPage) + this.itemsPerPage)
-
+      this.pagedItens = this.itemsPesquisados.slice((this.currentPage - 1) * this.itemsPerPage, ((this.currentPage - 1) * this.itemsPerPage) + this.itemsPerPage);
       this.currentPage = 1;
       this.numeroItens = this.itemsPesquisados.length;
-      this.totalPages = Math.ceil(this.itemsPesquisados.length / this.itemsPerPage)
+      this.totalPages = Math.ceil(this.itemsPesquisados.length / this.itemsPerPage);
 
       if (this.numeroItens === 0) {
         this.emptyMessage = true;
