@@ -443,7 +443,7 @@ label.label-input {
   font-size: 11px;
   position: absolute;
   padding: 0px 3px;
-  z-index: 3;
+  z-index: 2;
   height: 10px;
   margin: -7px 0 0 10px;
 }
@@ -1173,7 +1173,6 @@ my-date-range-picker .mydrp {
   width: max-content;
   max-width: 400px;
   cursor: pointer;
-  line-height: 1;
 
   font-family: "brcap-ico" !important;
   speak: none;
@@ -1188,7 +1187,7 @@ my-date-range-picker .mydrp {
 
 .toast:before {
   position: absolute;
-  left: 16px;
+  left: 18px;
   color: white;
 }
 
@@ -1199,13 +1198,13 @@ my-date-range-picker .mydrp {
   border: none;
   outline: none;
   font-size: 35px;
-  line-height: 15px;
+  line-height: 1px;
   color: rgba(0, 0, 0, 0.54);
 }
 
 .toast-close-button,
 .toast-message {
-  display: inline;
+  display: flex;
 }
 
 .toast-message{
