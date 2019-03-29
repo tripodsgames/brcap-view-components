@@ -120,6 +120,8 @@ export class CapTableComponent implements OnInit {
       }
     } else{
       this.emptyMessage = false;
+      this.currentPage = 1;
+      this.totalPages = Math.ceil(this.items.length / this.itemsPerPage);
       this.setPage();
     }
   }
