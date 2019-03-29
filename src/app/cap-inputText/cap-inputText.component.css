@@ -24,8 +24,6 @@ label.label-duas-linhas {
 
 .cap-inputText-icon.sm {
   font-size: 20px;
-  margin-top: -33px;
-  right: 23px;
 }
 
 /* label.label-input.sm {
@@ -42,4 +40,9 @@ label.label-duas-linhas {
 
 label.label-input.outline {
   margin-top: 5px;
+}
+
+.input-icon{
+  display: flex;
+  background: white;
 }

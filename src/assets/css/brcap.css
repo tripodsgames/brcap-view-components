@@ -107,6 +107,10 @@ body.minimizado .loader {
   font-size: 11px;
 }
 
+.content-header-medium label{
+  display: none;
+}
+
 .content-header .cap-inputText {
   border: none !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
@@ -115,10 +119,15 @@ body.minimizado .loader {
   background: #9DCAE4;
 }
 
+.content-header .input-icon{
+  border-radius: 4px 4px 0 0 !important;
+}
+
 .content-header .cap-inputText.sm {
   padding-top: 6px;
 }
 
+.content-header .cap-inputText-icon.disabled,
 .content-header input[ng-reflect-is-disabled="true"].cap-inputText {
   border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
   color: rgba(117, 117, 117, 0.38);
@@ -187,6 +196,7 @@ body.minimizado .loader {
   border-radius: 4px 4px 0 0 !important;
 }
 
+.content-header ng-select.sm>div>div.single>div.value,
 .content-header ng-select.sm>div>div.single>div.placeholder,
 .content-header ng-select.sm>div>div.single>div.toggle {
   line-height: 40px !important;
@@ -211,10 +221,10 @@ body.minimizado .loader {
 }
 
 .content-header-medium .below,
-.content-header-medium .cap-inputText,
+.content-header-medium .input-icon,
 .content-header-medium .mydp,
 .content-header-medium .mydrp,
-.content-header-medium button,
+.content-header-medium .cap-button,
 .content-header-medium dp-date-picker {
   margin-top: -4px;
 }
@@ -409,11 +419,10 @@ dp-date-picker {
 } */
 
 .cap-inputText-icon {
-  position: absolute;
-  margin-top: -40px;
-  right: 35px;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.54);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+  padding: 10px 10px 0 0;
 }
 
 cap-inputText[ng-reflect-style-class="outline"] label {

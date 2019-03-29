@@ -1,17 +1,25 @@
-<label [for]="id" class="label-input {{textError}} {{styleClass}}" [class.error]="hasError()" [class.disabled]="disabled" *ngIf="label?.length">
+<label [for]="id" class="label-input {{textError}} {{styleClass}}" [class.error]="hasError()"
+  [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 
-<input [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)" (blur)="onBlurJS($event)"
-  (mouseover)="onMouseOver($event)" (mousedown)="onMouseDown($event)" (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)"
-  class="form-control input-type-text cap-inputText {{styleClass}}" [class.error]="hasError()" (keyup)="typing()" [(ngModel)]="value" [disabled]="disabled"
-  type="text" #modelInput="ngModel" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''"
-/>
+<div class="input-icon">
+  <input [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)"
+    (blur)="onBlurJS($event)" (mouseover)="onMouseOver($event)" (mousedown)="onMouseDown($event)"
+    (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)"
+    class="form-control input-type-text cap-inputText {{styleClass}}" [class.error]="hasError()" (keyup)="typing()"
+    [(ngModel)]="value" [disabled]="disabled" type="text" #modelInput="ngModel"
+    [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''" />
 
-<cap-icon [icon]="icon" *ngIf="!escrevendo" class="cap-inputText-icon {{styleClass}}" [class.disabled]="disabled"></cap-icon>
-<cap-icon icon="x" *ngIf="escrevendo && eraseButton" (click)="erase()" class="cap-inputText-icon pointer {{styleClass}}"></cap-icon>
-<cap-icon icon="alerta" *ngIf="hasError()" styleClass="ico-error" [class.disabled]="disabled"></cap-icon>
+  <cap-icon [icon]="icon" *ngIf="!escrevendo" class="cap-inputText-icon {{styleClass}}" [class.disabled]="disabled">
+  </cap-icon>
+  <cap-icon icon="x" *ngIf="escrevendo && eraseButton" (click)="erase()"
+    class="cap-inputText-icon pointer {{styleClass}}"></cap-icon>
+  <cap-icon icon="alerta" *ngIf="hasError()" styleClass="ico-error" [class.disabled]="disabled"></cap-icon>
+</div>
 
-<p class="helper-text error" [class.disabled]="disabled" *ngIf="hasError() && modelInput?.errors?.required">Campo Obrigatório</p>
-<p class="helper-text error" [class.disabled]="disabled" *ngIf="hasError() && !modelInput?.errors?.required">{{erroMessage}}</p>
+<p class="helper-text error" [class.disabled]="disabled" *ngIf="hasError() && modelInput?.errors?.required">Campo
+  Obrigatório</p>
+<p class="helper-text error" [class.disabled]="disabled" *ngIf="hasError() && !modelInput?.errors?.required">
+  {{erroMessage}}</p>
 
 <p *ngIf="textHelper?.length" class="helper-text {{styleClass}}" [class.disabled]="disabled">{{textHelper}}</p>
