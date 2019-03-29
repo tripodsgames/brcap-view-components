@@ -232,31 +232,11 @@ body.minimizado .loader {
   margin-bottom: 15px;
 }
 
-/* box */
-.box {
-  position: relative;
-  border-radius: 5px;
-  background: #ffffff;
-  margin-bottom: 25px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  padding: 25px;
-}
-
-.specialBoxPadding {
-  padding: 15px;
-}
-
-.navbar {
-  background-color: #fff;
-  z-index: 1;
-  max-height: 70px;
-  height: 70px;
-}
-
 /* headlines */
 h1,
 h2,
 h3,
+h4,
 p {
   margin: 0;
 }
@@ -285,13 +265,6 @@ h4 {
   line-height: 1.48;
   letter-spacing: 0.2px;
 }
-
-/* .icon-select {
-  font-size: 26px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-} */
 
 /* cap-month-picker */
 .dp-calendar-wrapper {
@@ -421,7 +394,8 @@ input:disabled:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/* p.label-text {
+/* label-text */
+p.label-text {
   margin: 10px 0px;
 }
 
@@ -439,7 +413,21 @@ p.label-text span {
   display: inline;
   position: relative;
   top: 1px;
-} */
+}
+
+/* box */
+.box {
+  position: relative;
+  border-radius: 5px;
+  background: #ffffff;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  padding: 25px;
+}
+
+.specialBoxPadding {
+  padding: 15px;
+}
 
 /* !
 * BRCap Icones
@@ -1081,14 +1069,20 @@ my-date-range-picker .mydrp {
   z-index: 3;
 }
 
-/* div.inline-checkbox {
+/* cap-checkbox */
+div.inline-checkbox {
   display: inline-flex;
 }
 
 div.inline-checkbox label {
   padding-right: 1em !important;
   white-space: nowrap !important;
-} */
+}
+
+.item cap-checkbox {
+  position: relative;
+  top: 13px;
+}
 
 /* toast */
 #toast-container {
@@ -1181,10 +1175,6 @@ div.inline-checkbox label {
 
 button.cap-button.btn-ico .brcap-ico {
   left: 0px !important;
-}
-
-.buttons-form {
-  padding: 20px 0px 10px 0px;
 }
 
 /* quickview */
@@ -1296,11 +1286,6 @@ cap-icon.fecharQuickView {
 .table-filter>thead>tr:nth-child(2)>th ng-select>div>div.single>div.toggle:before {
   font-size: 20px;
   color: #888;
-}
-
-.item cap-checkbox {
-  position: relative;
-  top: 13px;
 }
 
 /** col-xl **/
@@ -1606,6 +1591,24 @@ label.label-input {
   position: relative;
   top: 0px;
   left: 0px;
+}
+
+.navbar {
+  background-color: #fff;
+  z-index: 1;
+  max-height: 70px;
+  height: 70px;
+}
+
+.icon-select {
+  font-size: 26px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.buttons-form {
+  padding: 20px 0px 10px 0px;
 }
 
 /* loader index.html */
