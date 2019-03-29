@@ -27,7 +27,7 @@
 
             <ng-content></ng-content>
 
-            <td *ngIf="rowOptions" class="text-center">
+            <td *ngIf="rowOptions" class="text-center" (mouseleave)="mouseLeaveRowOptions()">
               <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes" (click)="clickItem(i)"></cap-button>
               <div *ngIf="showItemOptions === i" class="row-options">
                 <ul>

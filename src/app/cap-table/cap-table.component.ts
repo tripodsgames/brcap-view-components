@@ -100,6 +100,10 @@ export class CapTableComponent implements OnInit {
     this.baixarXls = true;
   }
 
+  mouseLeaveRowOptions() {
+    this.showItemOptions = null;
+  }
+
   pesquisar(query) {
     if (query.length >= 3) {
       this.itemsPesquisados = this.items.filter(el => el.toString().toLowerCase().includes(query.toLowerCase()));
@@ -118,7 +122,7 @@ export class CapTableComponent implements OnInit {
         this.firstItem = (10 * (this.currentPage - 1)) + 1;
         this.lastItem = this.firstItem + ((this.pagedItens.length) - 1);
       }
-    } else{
+    } else {
       this.emptyMessage = false;
       this.currentPage = 1;
       this.totalPages = Math.ceil(this.items.length / this.itemsPerPage);

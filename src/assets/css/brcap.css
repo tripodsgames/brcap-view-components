@@ -1,6 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700";
 
-/** GERAL **/
 * {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -281,58 +280,20 @@ h3 {
   letter-spacing: 0.2px;
 }
 
-.subtitle-1-brcap {
+h4 {
   font-size: 16px;
   line-height: 1.48;
   letter-spacing: 0.2px;
 }
 
-.subtitle-2-brcap {
-  font-size: 16px;
-  line-height: 1.48;
-  letter-spacing: 0.2px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.caption-brcap {
-  font-size: 12px;
-  letter-spacing: 0.2px;
-}
-
-.sm-btn-caption-brcap {
-  font-size: 10px;
-  line-height: 1.6;
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-}
-
-.chips-caption-brcap {
-  font-size: 9px;
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-}
-
-/* Table title e sub-title */
-.table-title {
-  font-size: 16px;
-  font-weight: 500;
-  height: 25px;
-  margin-bottom: 5px;
-}
-
-.table-sub-title {
-  font-size: 14px;
-  height: 16px;
-  margin-bottom: 16px;
-}
-
-.icon-select {
+/* .icon-select {
   font-size: 26px;
   position: absolute;
   right: 10px;
   top: 10px;
-}
+} */
 
+/* cap-month-picker */
 .dp-calendar-wrapper {
   border: none;
 }
@@ -392,6 +353,7 @@ dp-date-picker {
   border-radius: 5px;
 }
 
+/* cap-inputText */
 .cap-inputText,
 .dp-input-container input {
   box-shadow: none;
@@ -425,49 +387,27 @@ dp-date-picker {
   padding: 10px 10px 0 0;
 }
 
-cap-inputText[ng-reflect-style-class="outline"] label {
-  background: transparent !important;
-}
-
 .cap-inputText.sm .cap-inputText-icon {
   top: -32px;
   font-size: 20px;
 }
 
-/* label.label-input {
-  background-color: #fff;
-  font-weight: 500;
-  font-size: 11px;
-  position: relative;
-  top: 10px;
-  left: 8px;
-  padding: 0px 3px;
-  z-index: 3;
-  height: 8px;
-} */
-
-label.label-input {
-  background-color: #fff;
-  font-weight: 500;
-  font-size: 11px;
-  position: absolute;
-  padding: 0px 3px;
-  z-index: 2;
-  height: 10px;
-  margin: -7px 0 0 10px;
+cap-inputText[ng-reflect-style-class="outline"] label {
+  background: transparent !important;
 }
 
-.helper-text {
-  font-size: 12px;
-  letter-spacing: 0.2px;
-  font-weight: 500;
-  padding-left: 12px;
-  padding-top: 3px;
-  position: relative;
-  top: 0px;
-  left: 0px;
+.form-control:focus {
+  outline: none !important;
+  border-color: unset !important;
+  box-shadow: none !important;
 }
 
+.cap-inputText:focus {
+  box-shadow: none;
+  border-color: none;
+}
+
+/* placeholder */
 ::placeholder,
 :-ms-input-placeholder,
 ::-ms-input-placeholder {
@@ -481,21 +421,7 @@ input:disabled:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.icon-calendar {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 10px;
-  cursor: pointer;
-  z-index: 3;
-}
-
-.cap-inputText:focus {
-  box-shadow: none;
-  border-color: none;
-}
-
-p.label-text {
+/* p.label-text {
   margin: 10px 0px;
 }
 
@@ -513,7 +439,7 @@ p.label-text span {
   display: inline;
   position: relative;
   top: 1px;
-}
+} */
 
 /* !
 * BRCap Icones
@@ -783,6 +709,7 @@ p.label-text span {
   transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 } */
 
+/* cap-select */
 ng-select>div {
   border-radius: 4px;
   border: 1px solid #757575 !important;
@@ -828,12 +755,33 @@ select-dropdown>div .options ul li {
   border-top: 1px solid #f1f1f1;
 }
 
-.form-control:focus {
-  outline: none !important;
-  border-color: unset !important;
-  box-shadow: none !important;
+ng-select>div>div.single>div.toggle {
+  font-family: "brcap-ico";
 }
 
+ng-select>div>div.single>div.toggle:before {
+  content: "\e90a";
+  font-size: 28px;
+}
+
+ng-select>div.open>div.single>div.toggle:before {
+  content: "\e918";
+  font-size: 28px;
+}
+
+select-dropdown>div.above {
+  z-index: 3;
+}
+
+.toogle i.expandir,
+.toogle i.retrair {
+  font-size: 24px;
+  position: relative;
+  top: 4px;
+  padding: 10px 5px 10px 0px;
+}
+
+/* cap-datepicker e cap-date-range-picker */
 .mydp .selection {
   height: 50px !important;
   border: 1px solid #757575;
@@ -843,6 +791,11 @@ select-dropdown>div .options ul li {
 .mydrp .selectiongroup,
 .mydp .selectiongroup {
   border: 1px solid #757575 !important;
+}
+
+my-date-picker .mydp,
+my-date-range-picker .mydrp {
+  display: block;
 }
 
 .mydp .selectiondisabled {
@@ -988,7 +941,6 @@ select-dropdown>div .options ul li {
   font-weight: 500;
 }
 
-/** INICIO **/
 .mydrp {
   width: 100% !important;
 }
@@ -1120,49 +1072,23 @@ select-dropdown>div .options ul li {
   font-weight: 500;
 }
 
-ng-select>div>div.single>div.toggle {
-  font-family: "brcap-ico";
-}
-
-ng-select>div.disabled>div.single>div.toggle {
-  color: rgba(117, 177, 177, 0.38) !important;
-}
-
-ng-select>div>div.single>div.toggle:before {
-  content: "\e90a";
-  font-size: 28px;
-}
-
-ng-select>div.open>div.single>div.toggle:before {
-  content: "\e918";
-  font-size: 28px;
-}
-
-select-dropdown>div.above {
+.icon-calendar {
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 10px;
+  cursor: pointer;
   z-index: 3;
 }
 
-div.inline-checkbox {
+/* div.inline-checkbox {
   display: inline-flex;
 }
 
 div.inline-checkbox label {
   padding-right: 1em !important;
   white-space: nowrap !important;
-}
-
-.toogle i.expandir,
-.toogle i.retrair {
-  font-size: 24px;
-  position: relative;
-  top: 4px;
-  padding: 10px 5px 10px 0px;
-}
-
-my-date-picker .mydp,
-my-date-range-picker .mydrp {
-  display: block;
-}
+} */
 
 /* toast */
 #toast-container {
@@ -1377,7 +1303,7 @@ cap-icon.fecharQuickView {
   top: 13px;
 }
 
-/** COL-XL **/
+/** col-xl **/
 @media screen and (min-width:1441px) {
   .col-xl-1 {
     width: 8.33333333%;
@@ -1451,18 +1377,9 @@ cap-icon.fecharQuickView {
   }
 }
 
-
+/* cap-modal */
 .modal {
   text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
 }
 
 .modal-dialog {
@@ -1477,6 +1394,15 @@ cap-modal.sm .modal-dialog {
 
 cap-modal.lg .modal-dialog {
   width: 750px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
 }
 
 /* disabled */
@@ -1504,6 +1430,7 @@ ng-select .disabled,
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
 }
 
+ng-select>div.disabled>div.single>div.toggle,
 .dp-input-container input[disabled],
 .cap-inputTextArea:disabled,
 ng-select .disabled,
@@ -1609,6 +1536,78 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   text-align: left;
 }
 
+.table-title {
+  font-size: 16px;
+  font-weight: 500;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+.table-sub-title {
+  font-size: 14px;
+  height: 16px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.48;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.caption-brcap {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+.sm-btn-caption-brcap {
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.chips-caption-brcap {
+  font-size: 9px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+/* label.label-input {
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 11px;
+  position: relative;
+  top: 10px;
+  left: 8px;
+  padding: 0px 3px;
+  z-index: 3;
+  height: 8px;
+} */
+
+label.label-input {
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 11px;
+  position: absolute;
+  padding: 0px 3px;
+  z-index: 2;
+  height: 10px;
+  margin: -7px 0 0 10px;
+}
+
+.helper-text {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  padding-left: 12px;
+  padding-top: 3px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
 /* loader index.html */
 .loader-initial {
   position: fixed;
@@ -1624,7 +1623,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   left: 50%;
 }
 
-/* TABELA */
+/* tabela */
 .table-responsive {
   background-color: white;
   border: 1px solid;

@@ -55,7 +55,7 @@
           <h1>Exemplo content-header-medium III</h1>
         </div>
         <div class="col-md-3 no-padding-right">
-          <cap-datepicker id="dataInicial" placeholder="Algo" [(ngModel)]="data" mask="99/99/9999" styleClass="sm">
+          <cap-datepicker id="dataInicial" placeholder="Algo" [(ngModel)]="data" styleClass="sm">
           </cap-datepicker>
         </div>
         <div class="col-md-3 no-padding-right">
@@ -301,7 +301,7 @@
     <div class="content">
       <div class="row">
         <div class="col-lg-4">
-          <div class="box" style="height: 1800px;">
+          <div class="box" style="height: 700px;">
             CAP-BUTTON
             <div class="col-md-12">
               <strong>sm</strong>
@@ -343,6 +343,11 @@
               <cap-button styleClass="btn-ico lg" icon="busca"></cap-button>
               <br /><br />
             </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="box" style="height: 700px;">
             <div class="col-md-12">
               <strong>outline</strong>
               <br /><br />
@@ -383,6 +388,11 @@
               <cap-button styleClass="btn-ico white" icon="busca"></cap-button>
               <br /><br />
             </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="box" style="height: 600px;">
             <div class="col-md-12">
               disabled
               <br /><br />
@@ -419,9 +429,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="row">
         <div class="col-lg-2">
-
           <div class="box">
             CAP-DIVISOR
             <cap-divisor></cap-divisor>
@@ -489,11 +500,6 @@
             </div>
           </div>
 
-          <div class="box" style="height: 100px;">
-            <h1>Isso é um h1</h1>
-            <h2>Isso é um h2</h2>
-            <h3>Isso é um h3</h3>
-          </div>
 
         </div>
 
@@ -522,6 +528,15 @@
               <cap-toggle name="options" itemLabel="Opção 2" [(ngModel)]="toggle2" [disabled]="true">
               </cap-toggle>
             </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+
+          <div class="box" style="height: 100px;">
+            <h1>Isso é um h1</h1>
+            <h2>Isso é um h2</h2>
+            <h3>Isso é um h3</h3>
           </div>
 
           <div class="box" style="height: 150px;">
@@ -737,7 +752,8 @@
             CAP-SELECT
             <br />
             <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa"
-              title="blaaaaa"></cap-select>
+              title="blaaaaa">
+            </cap-select>
             <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa2"
               styleClass="error" textHelper="Clique em alguma das opções" texthelper="Campo obrigatório"></cap-select>
             <cap-select label="Tipo Pessoa" [items]="exemplo" name="tipoPessoa" [(ngModel)]="tipoPessoa3"

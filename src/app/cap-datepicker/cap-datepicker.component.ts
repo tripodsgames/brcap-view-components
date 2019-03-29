@@ -88,7 +88,7 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     if (this.mask) {
-      $(".mydp .selection").mask(this.mask);
+      $(".mydp .selection").mask("99/99/9999");
     }
   }
 
