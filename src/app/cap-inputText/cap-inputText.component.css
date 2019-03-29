@@ -26,16 +26,16 @@ label.label-duas-linhas {
   font-size: 20px;
 }
 
+/* como era antes */
 /* label.label-input.sm {
   top: 23px;
 } */
 
-.cap-inputText.outline {
+.input-icon.outline {
   border: none !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
   background: transparent;
   border-radius: 0px;
-  padding: 20px 32px 10px 13px;
 }
 
 label.label-input.outline {

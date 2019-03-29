@@ -98,9 +98,9 @@ body.minimizado .loader {
   left: 9px;
 }
 
-.content-header .cap-inputText-icon {
+/* .content-header .cap-inputText-icon {
   right: 10px;
-}
+} */
 
 .content-header-medium .helper-text {
   font-size: 11px;
@@ -228,6 +228,10 @@ body.minimizado .loader {
   margin-top: -4px;
 }
 
+.content-header .cap-inputText-icon{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+}
+
 .content-header h1 {
   margin-bottom: 15px;
 }
@@ -326,11 +330,17 @@ dp-date-picker {
   border-radius: 5px;
 }
 
+.cap-password,
+.dp-input-container input {
+  border: 1px solid #757575 !important;
+}
+
 /* cap-inputText */
+.cap-password,
 .cap-inputText,
 .dp-input-container input {
   box-shadow: none;
-  border: 1px solid #757575 !important;
+  border: none;
   background-color: #fff !important;
   outline: none;
   display: block;
@@ -344,6 +354,7 @@ dp-date-picker {
   border-radius: 4px;
 }
 
+/* como era antes */
 /* .cap-inputText-icon {
   position: relative;
   top: -40px;
@@ -353,11 +364,15 @@ dp-date-picker {
   color: rgba(0, 0, 0, 0.54);
 } */
 
-.cap-inputText-icon {
+.content .cap-inputText-icon {
   font-size: 24px;
   color: rgba(0, 0, 0, 0.54);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
   padding: 10px 10px 0 0;
+}
+
+.content .input-icon{
+  border: 1px solid #757575 !important;
+  border-radius: 4px;
 }
 
 .cap-inputText.sm .cap-inputText-icon {

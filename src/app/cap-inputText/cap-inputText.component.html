@@ -2,7 +2,7 @@
   [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 
-<div class="input-icon">
+<div class="input-icon {{styleClass}}">
   <input [attr.id]="id" #input [required]="required" (focus)="onFocus($event)" (mouseout)="onMouseOut($event)"
     (blur)="onBlurJS($event)" (mouseover)="onMouseOver($event)" (mousedown)="onMouseDown($event)"
     (keydown)="onKeyDown($event)" (keyup)="onKeyup($event)"
