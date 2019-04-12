@@ -107,7 +107,7 @@ body.minimizado .loader {
   font-size: 11px;
 }
 
-.content-header-medium label{
+.content-header-medium label {
   display: none;
 }
 
@@ -119,7 +119,7 @@ body.minimizado .loader {
   background: #9DCAE4;
 }
 
-.content-header .input-icon{
+.content-header .input-icon {
   border-radius: 4px 4px 0 0 !important;
 }
 
@@ -229,7 +229,7 @@ body.minimizado .loader {
   margin-top: -4px;
 }
 
-.content-header .cap-inputText-icon{
+.content-header .cap-inputText-icon {
   border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
 }
 
@@ -371,7 +371,7 @@ dp-date-picker {
   padding: 10px 10px 0 0;
 }
 
-.content .input-icon{
+.content .input-icon {
   border: 1px solid #757575 !important;
   border-radius: 4px;
 }
@@ -1152,7 +1152,7 @@ div.inline-checkbox label {
   display: flex;
 }
 
-.toast-message{
+.toast-message {
   font-family: Ubuntu;
   font-size: 14px;
 }
@@ -1161,7 +1161,7 @@ div.inline-checkbox label {
   border-color: #ffb72a;
 }
 
-.toast-warning:before{
+.toast-warning:before {
   content: "\e903";
 }
 
@@ -1177,7 +1177,7 @@ div.inline-checkbox label {
   border-color: #b00020;
 }
 
-.toast-error:before{
+.toast-error:before {
   content: "\e914";
 }
 
@@ -1194,15 +1194,6 @@ button.cap-button.btn-ico .brcap-ico {
 }
 
 /* quickview */
-cap-icon.fecharQuickView {
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  display: block;
-  z-index: 3;
-}
-
 .quickview {
   position: absolute;
   width: 280px;
@@ -1213,21 +1204,7 @@ cap-icon.fecharQuickView {
   z-index: 2;
   top: 0;
   transition: all 2s;
-}
-
-.quickview .label-text-block {
-  margin: 0 !important;
-}
-
-.quickview label,
-.quickview span {
-  font-size: 12px !important;
-  line-height: 12px;
-  display: inline;
-}
-
-.view-block {
-  margin: 15px 0px;
+  border-radius: 0 5px 5px 0;
 }
 
 .over {
@@ -1238,8 +1215,33 @@ cap-icon.fecharQuickView {
   left: 0;
   z-index: 1;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
   transition: all 2s;
+  border-radius: 5px;
+}
+
+.content-quickview {
+  padding: 25px 20px 20px 20px;
+}
+
+.view-block {
+  margin: 15px 0px;
+}
+
+.quickview .label-text-block {
+  margin: 0 !important;
+}
+
+.quickview .title-quickview {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.quickview label,
+.quickview span {
+  font-size: 12px !important;
+  line-height: 12px;
+  display: inline;
 }
 
 cap-icon.fecharQuickView {
@@ -1249,10 +1251,12 @@ cap-icon.fecharQuickView {
   right: 15px;
   display: block;
   z-index: 3;
+  color: #9e9e9e !important;
 }
 
-.content-quickview {
-  padding: 25px 20px 20px 20px;
+cap-icon.fecharQuickView {
+  color: #757575 !important;
+  transition: 0.3s all ease-in-out;
 }
 
 .d-block {

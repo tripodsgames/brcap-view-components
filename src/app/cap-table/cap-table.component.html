@@ -18,14 +18,14 @@
           <tr class="table-header">
             <th *ngFor="let c of columns">{{c}}</th>
             <th *ngIf="rowOptions"></th>
+            <th *ngIf="hasQuickView" class="text-center">Mais info</th>
           </tr>
         </thead>
 
         <tbody>
           <tr class="animacao-hover" *ngFor="let v of pagedItens;  let i = index">
-            <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
 
-            <ng-content></ng-content>
+            <td *ngFor="let c of columns;  let j = index">{{v[j]}}</td>
 
             <td *ngIf="rowOptions" class="text-center" (mouseleave)="mouseLeaveRowOptions()">
               <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes" (click)="clickItem(i)"></cap-button>
@@ -38,6 +38,18 @@
                 </ul>
               </div>
             </td>
+
+            <td *ngIf="hasQuickView" class="text-center">
+              <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes" (click)="openQuickView()"></cap-button>
+            </td>
+
+            <div class="over" *ngIf="quickview"></div>
+            <div class="quickview" *ngIf="quickview">
+              <cap-icon icon="x-circulo" class="fecharQuickView" (click)="closeQuickView()"></cap-icon>
+              <div class="content-quickview">
+                <ng-content></ng-content>
+              </div>
+            </div>
 
           </tr>
         </tbody>

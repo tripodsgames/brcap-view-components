@@ -17,6 +17,7 @@ export class CapTableComponent implements OnInit {
   @Input() hasSearch: boolean = true
   @Input() baixarPdf: boolean
   @Input() baixarXls: boolean
+  @Input() hasQuickView: boolean
 
   @Output() itemOptionClick = new EventEmitter<any>()
   @Output() gerarPdf = new EventEmitter<any>()
@@ -34,6 +35,8 @@ export class CapTableComponent implements OnInit {
   itemsPesquisados;
 
   emptyMessage = false;
+
+  quickview;
 
   constructor() {
     this.totalPages = 1
@@ -75,6 +78,14 @@ export class CapTableComponent implements OnInit {
   lastPage() {
     this.currentPage = this.totalPages;
     this.setPage();
+  }
+
+  openQuickView(){
+    this.quickview = true;
+  }
+
+  closeQuickView(){
+    this.quickview = false;
   }
 
   clickItem(index) {

@@ -547,8 +547,74 @@
         <div class="col-xs-12">
           CAP-TABLE
           <cap-table #CapTableComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
-            tableTitle="Título" tableSubTitle="Subtítulo" (gerarPdf)="gerarPdf()" (gerarXls)="gerarXls()"
-            [baixarPdf]="true" [baixarXls]="true">
+            [hasQuickView]="true" tableTitle="Título" tableSubTitle="Subtítulo" (gerarPdf)="gerarPdf()"
+            (gerarXls)="gerarXls()" [baixarPdf]="true" [baixarXls]="true">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="label-text-block">
+                  <label>Produto</label>
+                  <p class="title-quickview">Ourocap MOB PU36</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="label-text-block">
+                  <label>Parceiro:</label>
+                  <span>Banco do Brasil</span>
+                </p>
+              </div>
+            </div>
+            <div class="view-block">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="label-text-block">
+                    <label>Número:</label>
+                    <span>{{tituloQuick?.numTitulo}}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="label-text-block">
+                    <label>Plano:</label>
+                    <span>{{tituloQuick?.plano?.nomePlano}}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="label-text-block">
+                    <label>Série:</label>
+                    <span>{{tituloQuick?.serie?.numSerie}}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="label-text-block">
+                    <label>Valor Ticket:</label>
+                    <span>{{tituloQuick?.valor}}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="view-block">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="label-text-block">
+                    <label>Início de carência:</label>
+                    <span>{{tituloQuick?.dataCarencia}}</span>
+                  </p>
+                  <p class="label-text-block">
+                      <label>Fim de carência:</label>
+                      <span>{{tituloQuick?.dataCarencia}}</span>
+                    </p>
+                </div>
+              </div>
+            </div>
+
           </cap-table>
         </div>
       </div>
