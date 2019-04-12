@@ -43,8 +43,8 @@
               <cap-button styleClass="outline xs btn-ico" icon="mais-opcoes" (click)="openQuickView()"></cap-button>
             </td>
 
-            <div class="over" *ngIf="quickview"></div>
-            <div class="quickview" *ngIf="quickview">
+            <div class="over" [class.visible]="quickview"></div>
+            <div class="quickview animated fadeInRight" *ngIf="quickview">
               <cap-icon icon="x-circulo" class="fecharQuickView" (click)="closeQuickView()"></cap-icon>
               <div class="content-quickview">
                 <ng-content></ng-content>
