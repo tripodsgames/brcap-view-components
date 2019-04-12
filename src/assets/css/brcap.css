@@ -231,6 +231,16 @@ body.minimizado .loader {
 
 .content-header .cap-inputText-icon {
   border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+  color: #757575;
+}
+
+.content-header .cap-inputText-icon.sm {
+  padding: 5px;
+}
+
+.content-header .cap-inputText-icon {
+  padding: 7px;
+  font-size: 24px;
 }
 
 .content-header h1 {
@@ -369,6 +379,10 @@ dp-date-picker {
   font-size: 24px;
   color: rgba(0, 0, 0, 0.54);
   padding: 10px 10px 0 0;
+}
+
+.content .cap-inputText-icon.sm{
+  padding: 6px;
 }
 
 .content .input-icon {
