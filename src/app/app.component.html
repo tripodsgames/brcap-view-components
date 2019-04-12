@@ -198,7 +198,7 @@
         </div>
         <div class="col-md-3 no-padding-right">
           <cap-inputText label="Nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir" maxlength="20"
-            placeholder="Informe seu nome" styleClass="error">
+            placeholder="Informe seu nome" [styleClass]="error ? 'error' : ''">
           </cap-inputText>
         </div>
         <div class="col-md-3 no-padding-right">
@@ -208,7 +208,7 @@
         </div>
         <div class="col-md-3">
           <cap-inputText placeholder="Informe seu nome" icon="busca" [(ngModel)]="nome" textHelper="Nome deve possuir"
-            maxlength="20" styleClass="sm error">
+            maxlength="20" [styleClass]="error ? 'error' : '' || 'sm'">
           </cap-inputText>
         </div>
       </div>
@@ -468,7 +468,11 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção 2" [disabled]="true">
+              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção com error" styleClass="error"></cap-radio>
+              <br /><br />
+            </div>
+            <div class="col-md-12">
+              <cap-radio itemValue="4" name="options" [(ngModel)]="radio4" itemLabel="Opção desabilitada" [disabled]="true">
               </cap-radio>
               <br /><br />
             </div>
@@ -626,7 +630,7 @@
           CAP-TABPANEL
           <div class="box">
             <cap-tabPanel>
-              <cap-tab title="INFORMAÇÕES GERAIS">
+              <cap-tab title="INFORMAÇÕES GERAIS DE PRODUTOS">
                 FDBGFDGDFG
               </cap-tab>
               <cap-tab title="SORTEIOS" [disabled]="true">
