@@ -342,6 +342,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.collapse = !this.collapse;
   }
 
+  gerarPdf(){
+    alert("baixando pdf");
+  }
+
+  gerarXls(){
+    alert("baixando xls");
+  }
+
   ngOnInit() {
     toastr.options = {
       closeButton: true,
