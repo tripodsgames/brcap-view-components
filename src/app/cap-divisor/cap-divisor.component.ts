@@ -4,7 +4,7 @@ import BRCapUtil from "../../brcap-util";
 @Component({
   selector: "cap-divisor",
   templateUrl: "./cap-divisor.component.html",
-  styleUrls: ["../../assets/css/cap-divisor.component.min.css"]
+  styleUrls: ["./cap-divisor.component.scss"]
 })
 export class CapDivisorComponent implements OnInit {
   @Input("id") id: string;

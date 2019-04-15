@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'cap-table',
   templateUrl: './cap-table.component.html',
-  styleUrls: ['../../assets/css/cap-table.component.min.css']
+  styleUrls: ['./cap-table.component.scss']
 })
 export class CapTableComponent implements OnInit {
 

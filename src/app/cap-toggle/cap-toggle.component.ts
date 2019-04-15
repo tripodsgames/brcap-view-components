@@ -18,7 +18,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   selector: "cap-toggle",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-toggle.component.html",
-  styleUrls: ["../../assets/css/cap-toggle.component.min.css"]
+  styleUrls: ["./cap-toggle.component.scss"]
 })
 export class CapToggleComponent implements ControlValueAccessor, OnInit {
   @Input("id")
