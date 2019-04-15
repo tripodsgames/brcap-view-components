@@ -323,10 +323,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(CapTableComponent)
   gridPagination: CapTableComponent;
 
-  columns = ["ID", "NOME", "dfv", "ffgfvrg", "dfvfv", "ddvd", "ddd"];
+  columns = ["ID", "Nome", "dfv"];
   items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],
-  [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],
-  [21, "JOÃO"], [22, "MARIA"], [23, "JOSÉ"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
+  [11, "DAVID"], [12, "MARCIO"], [13, "LEANDRO"], [14, "RAFAEL"], [15, "RAPHAEL"], [16, "HUMBERTO"], [17, "JONATHAN"], [18, "ALLAN"], [19, "DANIEL"], [20, "RICARDO"],
+  [21, "LEONARDO"], [22, "MARIO"], [23, "JULIO"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
   ];
   rowOptions = ["Visualizar", "Editar", "Excluir"];
 
