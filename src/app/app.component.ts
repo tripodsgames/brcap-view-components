@@ -328,9 +328,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   [11, "DAVID"], [12, "MARCIO"], [13, "LEANDRO"], [14, "RAFAEL"], [15, "RAPHAEL"], [16, "HUMBERTO"], [17, "JONATHAN"], [18, "ALLAN"], [19, "DANIEL"], [20, "RICARDO"],
   [21, "LEONARDO"], [22, "MARIO"], [23, "JULIO"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
   ];
+  items2 = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"], [11, "olar"]
+  ];
+
   rowOptions = ["Visualizar", "Editar", "Excluir"];
 
+  variavel = "dfvfdfghgfhfggfhhfg"
+
   listaTipoPessoa = "dd"
+  
   ngAfterViewInit() {
     if (this.gridPagination) {
       setTimeout(_ => {
