@@ -493,16 +493,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   async exemploExportarXLS() {
-    try{
-      await this.exportXlsService.gerarXls({
-        linhas: this.listaPilotos,
-        metadadosTabela: this.metadadosPilotos,
-        nomeArquivo: 'exemploPilotos',
-        titulo: 'Pilotos'
-      });
-    } catch(err) {
-      console.log(err);
-    }
+    return this.exportXlsService.gerarXls({
+      linhas: this.listaPilotos,
+      metadadosTabela: this.metadadosPilotos,
+      nomeArquivo: 'exemploPilotos',
+      titulo: 'Pilotos'
+    });
   }
 
   login(event) {
