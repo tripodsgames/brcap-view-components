@@ -23,13 +23,12 @@ export class ExportXLSService {
     private metadadosTabela: Array<{
         chave: string,
         nome: string,
-        unidade?: string,
         grupo?: string
     }>;
     private nomeArquivo: string;
     private titulo: string;
     private idLogoBrasilcap: number;
-    private idLogoFinanceiro: number;
+    // private idLogoFinanceiro: number;
     private celulasHeaderMesclarAoLado: Array<number> = [];
 
     constructor() { }
@@ -51,7 +50,7 @@ export class ExportXLSService {
             width: WIDTH_CELL_XSL,
         }));
         this.idLogoBrasilcap = await this.idImg('brasilcap');
-        this.idLogoFinanceiro = await this.idImg('financeiro');
+        // this.idLogoFinanceiro = await this.idImg('financeiro');
     }
 
     private async addImgsHeaderToSheet() {
@@ -65,10 +64,10 @@ export class ExportXLSService {
             tl: { col: 0.3, row: 0.6 },
             br: { col: 1.8, row: 2.8 },
         });
-        this.sheet.addImage(this.idLogoFinanceiro, {
-            tl: { col: 2.2, row: 0.8 },
-            br: { col: 3.8, row: 2.6 },
-        });
+        // this.sheet.addImage(this.idLogoFinanceiro, {
+        //     tl: { col: 2.2, row: 0.8 },
+        //     br: { col: 3.8, row: 2.6 },
+        // });
     }
 
     private async setSheetHeader() {
@@ -163,7 +162,6 @@ export class ExportXLSService {
         metadadosTabela: Array<{
             chave: string,
             nome: string,
-            unidade?: string,
             grupo?: string
         }>,
         nomeArquivo: string,
