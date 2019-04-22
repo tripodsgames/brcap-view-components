@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as ExcelJS from 'exceljs';
+import * as ExcelJS from "exceljs/dist/exceljs.min.js";
 import {
     imgToBase64,
     addAlignment,
@@ -12,6 +12,8 @@ import {
     saveAs,
     WIDTH_CELL_XSL,
 } from './export-xls-utils';
+
+const HEADER_ROW_NUM = 5;
 
 @Injectable()
 export class ExportXLSService {
@@ -107,17 +109,23 @@ export class ExportXLSService {
     private rotulo(col) {
         return this.metadadosTabela.map(elem => elem.grupo ? elem.nome : '')[col - 1];
     }
+    private existemGrupos() {
+        return this.metadadosTabela.map(({ grupo }) => grupo)
+            .filter(e => e).length > 0;
+    }
     private mesclasNoHeader(headerRow) {
-        headerRow.eachCell((cell) => this.headerPodeMesclarAbaixo(cell) ?
-            this.sheet.mergeCells(stringCelulaMesclarAbaixo(cell.col, cell.row))
-            //se não é pra mesclar, coloca o rótulo na linha abaixo (row + 1)
-            : this.sheet.getCell(cell.row + 1, cell.col).value = this.rotulo(cell.col));
-        this.celulasHeaderMesclarAoLado.forEach(i => this.sheet.mergeCells(
-            stringCelulaMesclarAoLado(i, 5)));
+        if (this.existemGrupos()) {
+            headerRow.eachCell((cell) => this.headerPodeMesclarAbaixo(cell) ?
+                this.sheet.mergeCells(stringCelulaMesclarAbaixo(cell.col, cell.row))
+                //se não é pra mesclar, coloca o rótulo na linha abaixo (row + 1)
+                : this.sheet.getCell(cell.row + 1, cell.col).value = this.rotulo(cell.col));
+            this.celulasHeaderMesclarAoLado.forEach(i => this.sheet.mergeCells(
+                stringCelulaMesclarAoLado(i, HEADER_ROW_NUM)));
+        }
     }
     private setSheetColumns() {
         //column names:
-        const headerRow = this.sheet.getRow(5);
+        const headerRow = this.sheet.getRow(HEADER_ROW_NUM);
         const columns = this.columns();
         changeBgColor('E6E6E6')(headerRow);
         headerRow.values = columns;
