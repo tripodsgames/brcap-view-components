@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pagination.component";
+import { ExportXLSService } from "./services/export-xls.service";
 
 @Component({
   selector: "app-root",
@@ -8,7 +9,7 @@ import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pa
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  constructor() {
+  constructor(private exportXlsService: ExportXLSService) {
 
   }
   private brcapUtil;
@@ -327,6 +328,48 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   rowOptions = ["Visualizar", "Editar", "Excluir"];
 
+  listaPilotos = [
+    {
+      nome: 'Rogerinho do Ingá',
+      veiculo: 'Sprinter Azul e Vermelha',
+      signo: 'Capricórnio'
+    },
+    {
+      nome: 'Maurílio dos Anjos',
+      veiculo: 'Kombi Branca 84',
+      signo: 'Câncer'
+    },
+    {
+      nome: 'Julinho da Van',
+      veiculo: 'Sprinter Branca',
+      signo: 'Touro'
+    },
+    {
+      nome: 'Renan',
+      veiculo: 'Towner Azul Bebê',
+      signo: 'Áries'
+    },
+  ];
+
+  metadadosPilotos: Array<{
+    chave: string,
+    nome: string,
+    grupo?: string
+  }> = [
+    {
+      chave: 'nome',
+      nome: 'Nome do Piloto'
+    },
+    {
+      chave: 'veiculo',
+      nome: 'Dirige:'
+    },
+    {
+      chave: 'signo',
+      nome: 'Signo do Zodíaco'
+    },
+  ];
+
   variavel = "dfvfdfghgfhfggfhhfg"
 
   listaTipoPessoa = "dd"
@@ -447,6 +490,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
     this.erroMsg = "Campo Obrigatório";
     return true;
+  }
+
+  async exemploExportarXLS() {
+    return this.exportXlsService.gerarXls({
+      linhas: this.listaPilotos,
+      metadadosTabela: this.metadadosPilotos,
+      nomeArquivo: 'exemploPilotos',
+      titulo: 'Pilotos'
+    });
   }
 
   login(event) {

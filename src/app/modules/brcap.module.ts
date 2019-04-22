@@ -42,6 +42,7 @@ import { UsuarioService } from "../services/usuario.service";
 import { PlataformaService } from "../services/plataforma.service";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { RouterModule } from "@angular/router";
+import { ExportXLSService } from "../services/export-xls.service";
 
 @NgModule({
   imports: [
@@ -121,6 +122,11 @@ import { RouterModule } from "@angular/router";
     PermissoesComponent,
     CapModalComponent
   ],
-  providers: [LoginService, UsuarioService, PlataformaService]
+  providers: [
+    LoginService,
+    UsuarioService,
+    PlataformaService,
+    ExportXLSService,
+  ]
 })
 export class BRCapModule {}
