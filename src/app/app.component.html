@@ -1,73 +1,91 @@
-<cap-menu [value]="menu" modulo="monitor"></cap-menu>
-<cap-header username="Joaquim José Xavier"></cap-header>
+<cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
 
-<div class="content-wrapper">
-  <!-- <div class="content-header mainHeader">
+<cap-header username="Joaquim José Xavier" logoBrasilCap="../../../assets/img/logo-brasilcap.svg"
+  logoSistema="../../../assets/img/produto.svg"></cap-header>
+
+<!-- <div class="content-wrapper"> -->
+
+<!-- <div class="content-header">
     <div class="row">
-      <div class="col-sm-6 mainTitle">
-        Processos de Cancelamento
+      <div class="col-lg-6">
+        <h1 style="font-weight: 500">frhj</h1>
       </div>
-      <div class="col-sm mainTitle title2">
-        <span *ngIf="dataBusca">{{dataBusca | date:'EEEE' | titlecase }}</span>
-        <span *ngIf="!dataBusca">{{today | date:'EEEE' | titlecase }}</span>,
-        <span *ngIf="dataBusca">{{dataBusca | date:'dd'}} de {{dataBusca | date:'MMMM' | titlecase }} de {{dataBusca |
-          date:'yyyy'}}</span>
-        <span *ngIf="!dataBusca">{{today | date:'dd'}} de {{today | date:'MMMM' | titlecase }} de {{today |
-          date:'yyyy'}}</span>
+      <div class="col-lg-6">
+        <cap-button label="Nova Pesquisa" icon="busca" class="nova-pesquisa"></cap-button>
       </div>
     </div>
   </div> -->
 
+<!-- <div class="content"> -->
 
-  <div class="content">
+<!-- <div class="row box">
+      <div class="col-lg-3">
+        <cap-inputText label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
+          maxlength="20" error="true" [disabled]="disabled">
+        </cap-inputText>
+      </div>
 
-      <!-- <cap-inputText-currency [(ngModel)]="value" options='{ "prefix": "R$", "thousands": ".", "decimal": ","}'></cap-inputText-currency> -->
+      <div class="col-lg-3">
+        <cap-button icon="busca" [disabled]="true"></cap-button>
+      </div>
+    </div>
 
-      <!-- <div class="box abas">
-          <cap-tabPanel class="fix">
-            <cap-tab title="INF.GERAIS" #listTab class="aba1">
+    <div class="col-lg-3">
+        <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data" mask="99/99/9999">
+        </cap-datepicker>
+      </div> -->
 
-            </cap-tab>
-            <cap-tab title="CONVÊNIO RECEBIMENTO" #listTab >
+<!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
 
-            </cap-tab>
-            <cap-tab title="VALORES COMERCIALIZAÇÃO" #listTab styleClass="aba3" >
+<!-- <input id="test">
+ -->
+<!-- <cap-scrollUp></cap-scrollUp> -->
 
-            </cap-tab>
-            <cap-tab title="LIBERAÇÃO PGTO" #listTab>
+<!-- <cap-button icon="calendario"></cap-button>  -->
 
-            </cap-tab>
-            <cap-tab title="RATEIO" #listTab>
+<!-- <div class="box abas">
+      <cap-tabPanel class="fix">
+        <cap-tab title="INF.GERAIS" #listTab class="aba1">
 
-            </cap-tab>
-            <cap-tab title="CLIENTE DÁ SORTE" #listTab>
-              
-            </cap-tab>
-          </cap-tabPanel>
-        </div> -->
+        </cap-tab>
+        <cap-tab title="CONVÊNIO RECEBIMENTO" #listTab>
 
-    <!-- <div class="row">
+        </cap-tab>
+        <cap-tab title="VALORES COMERCIALIZAÇÃO" #listTab styleClass="aba3">
+
+        </cap-tab>
+        <cap-tab title="LIBERAÇÃO PGTO" #listTab>
+
+        </cap-tab>
+        <cap-tab title="RATEIO" #listTab>
+
+        </cap-tab>
+        <cap-tab title="CLIENTE DÁ SORTE" #listTab>
+
+        </cap-tab>
+      </cap-tabPanel>
+    </div> -->
+
+<!-- <div class="row">
       <div class="col-md-3">
         <cap-inputText label="Nome" icon="busca"></cap-inputText>
       </div>
       <div class="col-md-3">
         <cap-datepicker label="Data"></cap-datepicker>
       </div>
-    </div>
-
-    <div class="col-md-10 button-container">
-      <cap-grid-pagination #gridPaginationComponent class="cap-card" [columns]="columns" [items]="items">
-      </cap-grid-pagination>
     </div> -->
 
+<!-- <div class="col-md-10 button-container"> -->
 
-    <!-- <br>
-    <br> -->
-
-    <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="monitor"></cap-permissoes> -->
-    
-    <cap-grid-pagination #gridPaginationComponent [columns]="columns" [items]="items" [rowOptions]="rowOptions"
-      (itemOptionClick)="itemOptionClick($event)">
-    </cap-grid-pagination>
+<div class="content-wrapper">
+  <div class="content">
+    <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2"
+      tableTitle="bla" tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
+    </cap-table-pagination>
   </div>
 </div>
+
+<!-- </div>
+</div> -->
+
+<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes> -->

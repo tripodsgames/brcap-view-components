@@ -1,0 +1,4 @@
+my-date-range-picker::ng-deep .mydrp .btnpickerdisabled,
+my-date-range-picker::ng-deep .mydrp .selectiondisabled {
+  opacity: 0.38;
+}

@@ -1,4 +1,3 @@
-import { CapDropdownListItemComponent } from "../cap-dropdownListItem/cap-dropdownListItem.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CapInputTextComponent } from "../cap-inputText/cap-inputText.component";
@@ -23,15 +22,16 @@ import { CapDivisorComponent } from "../cap-divisor/cap-divisor.component";
 import { CapCardComponent } from "../cap-card/cap-card.component";
 import { CapTableComponent } from "../cap-table/cap-table.component";
 import { CapPasswordComponent } from "../cap-password/cap-password.component";
+import { CapScrollUpComponent } from "../cap-scrollUp/cap-scrollUp.component";
+import { CapLoadingComponent } from "../cap-loading/cap-loading.component";
+import { CapHintComponent } from "../cap-hint/cap-hint.component";
 import { CpfPipe } from "../pipes/cpf.pipe";
-import { NewPaginationComponent } from "../cap-new-pagination/cap-new-pagination.component";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { SelectModule } from "ng-select";
 import { MyDatePickerModule } from "mydatepicker";
 import { MyDateRangePickerModule } from "mydaterangepicker";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
-import { CapGridPaginationComponent } from "../cap-grid-pagination/cap-grid-pagination.component";
-import { CapDropdownListComponent } from "../cap-dropdownList/cap-dropdownList.component";
+import { CapTablePaginationComponent } from "../cap-table-pagination/cap-table-pagination.component";
 import { CapModalComponent } from "../cap-modal/cap-modal.component";
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
 import { CapLoginComponent } from "../cap-login/cap-login.component";
@@ -76,16 +76,16 @@ import { RouterModule } from "@angular/router";
     CapDivisorComponent,
     CapCardComponent,
     CapTableComponent,
+    CapScrollUpComponent,
+    CapHintComponent,
+    CapLoadingComponent,
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
-    CapGridPaginationComponent,
-    CapDropdownListComponent,
-    CapDropdownListItemComponent,
+    CapTablePaginationComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
-    NewPaginationComponent,
     CapModalComponent
   ],
   exports: [
@@ -97,6 +97,9 @@ import { RouterModule } from "@angular/router";
     CapPaginationComponent,
     CapMenuItemComponent,
     CapMenuComponent,
+    CapScrollUpComponent,
+    CapHintComponent,
+    CapLoadingComponent,
     CapIconComponent,
     CapRadioComponent,
     CapHeaderComponent,
@@ -112,13 +115,10 @@ import { RouterModule } from "@angular/router";
     CapPasswordComponent,
     CapBtnCollapseComponent,
     CpfPipe,
-    CapGridPaginationComponent,
-    CapDropdownListComponent,
-    CapDropdownListItemComponent,
+    CapTablePaginationComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
     PermissoesComponent,
-    NewPaginationComponent,
     CapModalComponent
   ],
   providers: [LoginService, UsuarioService, PlataformaService]

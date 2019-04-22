@@ -1,12 +1,16 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { CapGridPaginationComponent } from "./cap-grid-pagination/cap-grid-pagination.component";
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pagination.component";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+
+  constructor() {
+
+  }
   private brcapUtil;
   funcionalidades = [];
   colors = {};
@@ -29,7 +33,10 @@ export class AppComponent implements OnInit {
   aaaa = "Teste texto";
   off = false;
   on = true;
-  
+  mascara;
+  loading = true;
+  disabled = true;
+
   menu = [
     {
       codigo: "posvenda#gravame",
@@ -307,29 +314,52 @@ export class AppComponent implements OnInit {
   itemId;
   url = "https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/";
 
-  // CAP-GRID-PAGINAION
-  @ViewChild(CapGridPaginationComponent)
-  gridPagination: CapGridPaginationComponent;
+  // CAP-TABLE-PAGINAION
+  @ViewChild(CapTablePaginationComponent)
+  tablePagination: CapTablePaginationComponent;
   columns = ["ID", "NOME"];
   items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],
-           [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],
-           [21, "JOÃO"], [22, "MARIA"], [23, "JOSÉ"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
-          ];
-  rowOptions = ["Visualizar","Editar","Excluir"];
+  [11, "JOÃO2"], [12, "MARIA2"], [13, "JOSÉ2"], [14, "Anna2"], [15, "Miguel2"], [16, "Gabriel2"], [17, "Raphael2"], [18, "Pedro2"], [19, "Paulo2"], [20, "Joaquim2"],
+  [21, "JOÃO"], [22, "MARIA"], [23, "JOSÉ"], [24, "Anna"], [25, "Miguel"], [26, "Gabriel"], [27, "Raphael"], [28, "Pedro"]
+  ];
+  items2 = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"], [11, "olar"]
+  ];
 
+  rowOptions = ["Visualizar", "Editar", "Excluir"];
+
+  variavel = "dfvfdfghgfhfggfhhfg"
+
+  listaTipoPessoa = "dd"
+  
   ngAfterViewInit() {
-    if (this.gridPagination) {
+    if (this.tablePagination) {
       setTimeout(_ => {
-        this.gridPagination.setPage(true);
-      });
+        this.tablePagination.setPage(true);
+      }, 0);
     }
+
   }
+
+  // cpf;
+  // changeMask(event) {
+  //   var digit = event.key.replace(/\D/g, '');
+  //   var value = this.cpf.replace(/\D/g, '');
+  //   var size = value.concat(digit).length;
+  //   if (size === 14) {
+  //     this.mascara = "00.000.000/0000-00"
+  //   } else if (size === 11) {
+  //     this.mascara = "000.000.000-00000"
+  //   } else{
+  //     this.mascara = "";
+  //   }
+  // }
 
   toogleCollapse() {
     this.collapse = !this.collapse;
   }
 
   ngOnInit() {
+
     this.radios = [
       {
         label: "Opção 1",
