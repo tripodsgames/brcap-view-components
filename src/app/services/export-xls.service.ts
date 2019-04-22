@@ -14,6 +14,7 @@ import {
 } from './export-xls-utils';
 
 const HEADER_ROW_NUM = 5;
+const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
 @Injectable()
 export class ExportXLSService {
@@ -26,15 +27,15 @@ export class ExportXLSService {
         grupo?: string
     }>;
     private nomeArquivo: string;
+    private pathLogoProjeto: string;
     private titulo: string;
     private idLogoBrasilcap: number;
-    // private idLogoFinanceiro: number;
+    private idLogoProjeto: number;
     private celulasHeaderMesclarAoLado: Array<number> = [];
 
     constructor() { }
 
-    private async idImg(type): Promise<number> {
-        const filename = `assets/img/logo-${type}.png`;
+    private async idImg(filename: string): Promise<number> {
         const base64 = await imgToBase64(filename, 'image/png');
         return this.book.addImage({
             base64,
@@ -49,8 +50,10 @@ export class ExportXLSService {
             key: chave,
             width: WIDTH_CELL_XSL,
         }));
-        this.idLogoBrasilcap = await this.idImg('brasilcap');
-        // this.idLogoFinanceiro = await this.idImg('financeiro');
+        this.idLogoBrasilcap = await this.idImg(PATH_LOGO_BRASILCAP);
+        if (this.pathLogoProjeto) {
+            this.idLogoProjeto = await this.idImg(this.pathLogoProjeto);
+        }
     }
 
     private async addImgsHeaderToSheet() {
@@ -64,10 +67,12 @@ export class ExportXLSService {
             tl: { col: 0.3, row: 0.6 },
             br: { col: 1.8, row: 2.8 },
         });
-        // this.sheet.addImage(this.idLogoFinanceiro, {
-        //     tl: { col: 2.2, row: 0.8 },
-        //     br: { col: 3.8, row: 2.6 },
-        // });
+        if (this.pathLogoProjeto) {
+            this.sheet.addImage(this.idLogoProjeto, {
+                tl: { col: 2.2, row: 0.8 },
+                br: { col: 3.8, row: 2.6 },
+            });
+        }
     }
 
     private async setSheetHeader() {
@@ -157,6 +162,7 @@ export class ExportXLSService {
         metadadosTabela,
         nomeArquivo,
         titulo,
+        logoProjeto,
     }: {
         linhas: Array<object>,
         metadadosTabela: Array<{
@@ -166,12 +172,14 @@ export class ExportXLSService {
         }>,
         nomeArquivo: string,
         titulo: string,
+        logoProjeto?: string,
     }) {
         this.metadadosTabela = metadadosTabela;
         this.linhas = linhas.map(linha => this.chavesPermitidas().reduce((acc, key) =>
             ({ ...acc, [key]: linha[key] }), {}));
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
+        this.pathLogoProjeto = logoProjeto;
 
         await this.createSheet();
         await this.setSheetHeader();
