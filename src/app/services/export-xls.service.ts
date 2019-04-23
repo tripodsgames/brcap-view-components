@@ -16,16 +16,23 @@ import {
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
+declare class MetadadosXLS {
+    chave: string;
+    nome?: string;
+    detalhe?: Array<{
+        grupo: Array<string>,
+        chave: string,
+        nome: string
+    }>;
+    grupo?: string;
+};
+
 @Injectable()
 export class ExportXLSService {
     private book = new ExcelJS.Workbook();
     private sheet;
     private linhas: Array<object>;
-    private metadadosTabela: Array<{
-        chave: string,
-        nome: string,
-        grupo?: string
-    }>;
+    private metadadosTabela: Array<MetadadosXLS>;
     private nomeArquivo: string;
     private pathLogoProjeto: string;
     private titulo: string;
@@ -165,11 +172,7 @@ export class ExportXLSService {
         logoProjeto,
     }: {
         linhas: Array<object>,
-        metadadosTabela: Array<{
-            chave: string,
-            nome: string,
-            grupo?: string
-        }>,
+        metadadosTabela: Array<MetadadosXLS>,
         nomeArquivo: string,
         titulo: string,
         logoProjeto?: string,
