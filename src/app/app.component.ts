@@ -416,7 +416,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   metadadosPendura = {
     chave: 'penduras',
-    detalhe: [
+    detalhes: [
       {
         grupo: ['nome', 'veiculo'],
         chave: 'desc',
@@ -563,10 +563,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   async exemplo2ExportarXLS() {
     return this.exportXlsService.gerarXls({
       linhas: this.listaPilotos2,
-      metadadosTabela: [
-        ...this.metadadosPilotos,
-        this.metadadosPendura
-      ],
+      metadadosTabela: this.metadadosPilotos,
+      metadadosDetalhe: this.metadadosPendura,
       nomeArquivo: 'exemplo2Pilotos',
       titulo: 'Pilotos'
     });

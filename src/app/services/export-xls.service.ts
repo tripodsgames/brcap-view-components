@@ -18,20 +18,25 @@ const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
 declare class MetadadosXLS {
     chave: string;
-    nome?: string;
-    detalhe?: Array<{
-        grupo: Array<string>,
-        chave: string,
-        nome: string
-    }>;
+    nome: string;
     grupo?: string;
+};
+
+declare class MetadadosDetalhe {
+    chave: string;
+    detalhes: Array<{
+        chave: string,
+        nome: string,
+        grupo: Array<string>,
+    }>;
 };
 
 @Injectable()
 export class ExportXLSService {
     private book = new ExcelJS.Workbook();
     private sheet;
-    private linhas: Array<object>;
+    private linhas: Array<any>;
+    private metadadosDetalhe: MetadadosDetalhe;
     private metadadosTabela: Array<MetadadosXLS>;
     private nomeArquivo: string;
     private pathLogoProjeto: string;
@@ -148,9 +153,29 @@ export class ExportXLSService {
     }
 
     private setSheetLines() {
-        this.sheet.addRows(this.linhas.map(r => this.chavesPermitidas()
-            .map(key => r[key])));
+        for (let linha of this.linhas) {
+            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key]));
+            if (linha.detalhes) {
+                this.setSubSheet(linha);
+            }
+        }
         this.sheet.eachRow(addDefaultBorder);
+    }
+
+    private setSubSheet(linha) {
+        // add subheader
+        this.sheet.addRow(this.metadadosDetalhe.detalhes.map(e => e.nome));
+        console.log(this.metadadosDetalhe.detalhes.map(e => e.nome));
+        // const subheaderRow = this.sheet.lastRow;
+        // add detail rows
+        linha.detalhes.map(detalhe => {
+            this.sheet.addRow(Object.values(detalhe));
+            const linha = this.sheet.lastRow;
+            console.log('mesclar:', linha);
+        });
+        // linha vazia no final
+        this.sheet.addRow([]);
+        console.log(linha.detalhes.map(detalhe => Object.values(detalhe)));
     }
 
     private async downloadFile() {
@@ -160,8 +185,19 @@ export class ExportXLSService {
         saveAs(blob, `${this.nomeArquivo}.xlsx`);
     }
 
-    chavesPermitidas() {
-        return this.metadadosTabela.map(e => e.chave);
+    chavesPermitidas(): Array<string> {
+        return this.metadadosTabela.filter(e => !e[this.metadadosDetalhe.chave])
+            .map(e => e.chave);
+    }
+
+    filtraLinhas(linhas: Array<object>): Array<object> {
+        return linhas.map(linha => ({
+            ...this.chavesPermitidas()
+                .reduce((acc, key) => ({ ...acc, [key]: linha[key] }), {}),
+            ...(this.metadadosDetalhe.chave
+                ? { detalhes: linha[this.metadadosDetalhe.chave] }
+                : {})
+            }));
     }
 
     async gerarXls({
@@ -170,16 +206,18 @@ export class ExportXLSService {
         nomeArquivo,
         titulo,
         logoProjeto,
+        metadadosDetalhe,
     }: {
         linhas: Array<object>,
         metadadosTabela: Array<MetadadosXLS>,
         nomeArquivo: string,
         titulo: string,
         logoProjeto?: string,
+        metadadosDetalhe?: MetadadosDetalhe,
     }) {
         this.metadadosTabela = metadadosTabela;
-        this.linhas = linhas.map(linha => this.chavesPermitidas().reduce((acc, key) =>
-            ({ ...acc, [key]: linha[key] }), {}));
+        this.metadadosDetalhe = metadadosDetalhe;
+        this.linhas = this.filtraLinhas(linhas);
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
         this.pathLogoProjeto = logoProjeto;
@@ -190,5 +228,4 @@ export class ExportXLSService {
         this.setSheetLines();
         await this.downloadFile();
     }
-
 }
