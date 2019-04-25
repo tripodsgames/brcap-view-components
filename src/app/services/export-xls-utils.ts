@@ -35,8 +35,10 @@ const changeBgColor = color => elem => Object.assign(elem, {
     }
 });
 const stringCelula = (numColuna, linha) => String.fromCharCode(64 + numColuna) + linha;
+const stringCelulasMesclarAoLado = (numColuna, linha, quantidade) =>
+    `${stringCelula(numColuna, linha)}:${stringCelula(numColuna + quantidade, linha)}`;
 const stringCelulaMesclarAoLado = (numColuna, linha) =>
-    `${stringCelula(numColuna, linha)}:${stringCelula(numColuna + 1, linha)}`;
+    stringCelulasMesclarAoLado(numColuna, linha, 1);
 const stringCelulaMesclarAbaixo = (numColuna, linha) =>
     `${stringCelula(numColuna, linha)}:${stringCelula(numColuna, linha + 1)}`;
 const mesmoGrupo = (a, b) => a && b && a.grupo && b.grupo && b.grupo === a.grupo;
@@ -59,6 +61,7 @@ export {
     changeBgColor,
     stringCelulaMesclarAoLado,
     stringCelulaMesclarAbaixo,
+    stringCelulasMesclarAoLado,
     mesmoGrupo,
     saveAs,
     WIDTH_CELL_XSL,

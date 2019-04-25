@@ -8,6 +8,7 @@ import {
     changeBgColor,
     stringCelulaMesclarAoLado,
     stringCelulaMesclarAbaixo,
+    stringCelulasMesclarAoLado,
     mesmoGrupo,
     saveAs,
     WIDTH_CELL_XSL,
@@ -162,15 +163,19 @@ export class ExportXLSService {
         this.sheet.eachRow(addDefaultBorder);
     }
 
-    private tamanhoDetalhe(chave: string): Number {
+    private tamanhoDetalhe(chave: string): number {
         return this.metadadosDetalhe.detalhes
             .find(detalhe => detalhe.chave === chave).tamanho;
+    }
+
+    private elemLinhaMesclada(tamanho: number, valor): any[] {
+        return [valor, ...Array(tamanho - 1).fill(' ')];
     }
 
     private arrayLinhaMesclada(linha: object): any[] {
         return Object.entries(linha).reduce((acc, [k, v]) =>  [
             ...acc,
-            ...Array(this.tamanhoDetalhe(k)).fill(v),
+            ...this.elemLinhaMesclada(this.tamanhoDetalhe(k), v),
         ], []);
     }
 
@@ -181,20 +186,27 @@ export class ExportXLSService {
                 nome,
             }) => [
                 ...acc,
-                ...Array<string>(tamanho).fill(nome),
+                ...this.elemLinhaMesclada(tamanho, nome),
             ], []);
+            this.mesclaLinhaSubSheet(row);
+        }
+    private mesclaLinhaSubSheet(row) {
         this.sheet.addRow(row);
         const linhaSheet = this.sheet.lastRow;
-        console.log('mesclar:', linhaSheet);
+        const mesclas = this.metadadosDetalhe.detalhes
+            .reduce((acc, { tamanho }, i) => tamanho <=1 ? acc
+                : [
+                    ...acc,
+                    stringCelulasMesclarAoLado(i + 1, linhaSheet.number, tamanho - 1),
+                ], []);
+        mesclas.map(str => this.sheet.mergeCells(str));
     }
 
     private setSubSheet(linha) {
         this.adicionarSubheader();
         // add detail rows
         linha.detalhes.forEach(detalhe => {
-            this.sheet.addRow(this.arrayLinhaMesclada(detalhe));
-            const linha = this.sheet.lastRow;
-            console.log('mesclar:', linha);
+            this.mesclaLinhaSubSheet(this.arrayLinhaMesclada(detalhe));
         });
         // linha vazia no final
         this.sheet.addRow([' ']);
