@@ -418,12 +418,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     chave: 'penduras',
     detalhes: [
       {
-        grupo: ['nome', 'veiculo'],
+        tamanho: 2,
         chave: 'desc',
         nome: 'Penduras'
       },
       {
-        grupo: ['signo'],
+        tamanho: 1,
         chave: 'valor',
         nome: 'Valor'
       },

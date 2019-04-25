@@ -27,7 +27,7 @@ declare class MetadadosDetalhe {
     detalhes: Array<{
         chave: string,
         nome: string,
-        grupo: Array<string>,
+        tamanho: number,
     }>;
 };
 
@@ -155,27 +155,49 @@ export class ExportXLSService {
     private setSheetLines() {
         for (let linha of this.linhas) {
             this.sheet.addRow(this.chavesPermitidas().map(key => linha[key]));
-            if (linha.detalhes) {
+            if (linha.detalhes && linha.detalhes.length > 0) {
                 this.setSubSheet(linha);
             }
         }
         this.sheet.eachRow(addDefaultBorder);
     }
 
+    private tamanhoDetalhe(chave: string): Number {
+        return this.metadadosDetalhe.detalhes
+            .find(detalhe => detalhe.chave === chave).tamanho;
+    }
+
+    private arrayLinhaMesclada(linha: object): any[] {
+        return Object.entries(linha).reduce((acc, [k, v]) =>  [
+            ...acc,
+            ...Array(this.tamanhoDetalhe(k)).fill(v),
+        ], []);
+    }
+
+    private adicionarSubheader() {
+        const row: Array<string> = this.metadadosDetalhe.detalhes
+            .reduce((acc: Array<string>, {
+                tamanho,
+                nome,
+            }) => [
+                ...acc,
+                ...Array<string>(tamanho).fill(nome),
+            ], []);
+        this.sheet.addRow(row);
+        const linhaSheet = this.sheet.lastRow;
+        console.log('mesclar:', linhaSheet);
+    }
+
     private setSubSheet(linha) {
-        // add subheader
-        this.sheet.addRow(this.metadadosDetalhe.detalhes.map(e => e.nome));
-        console.log(this.metadadosDetalhe.detalhes.map(e => e.nome));
-        // const subheaderRow = this.sheet.lastRow;
+        this.adicionarSubheader();
         // add detail rows
-        linha.detalhes.map(detalhe => {
-            this.sheet.addRow(Object.values(detalhe));
+        linha.detalhes.forEach(detalhe => {
+            this.sheet.addRow(this.arrayLinhaMesclada(detalhe));
             const linha = this.sheet.lastRow;
             console.log('mesclar:', linha);
         });
         // linha vazia no final
-        this.sheet.addRow([]);
-        console.log(linha.detalhes.map(detalhe => Object.values(detalhe)));
+        this.sheet.addRow([' ']);
     }
 
     private async downloadFile() {
