@@ -169,7 +169,7 @@ export class ExportXLSService {
     }
 
     private elemLinhaMesclada(tamanho: number, valor): any[] {
-        return [valor, ...Array(tamanho - 1).fill(' ')];
+        return [...Array(tamanho - 1).fill(valor)];
     }
 
     private arrayLinhaMesclada(linha: object): any[] {
@@ -181,15 +181,12 @@ export class ExportXLSService {
 
     private adicionarSubheader() {
         const row: Array<string> = this.metadadosDetalhe.detalhes
-            .reduce((acc: Array<string>, {
-                tamanho,
-                nome,
-            }) => [
+            .reduce((acc: Array<string>, { tamanho, nome }) => [
                 ...acc,
                 ...this.elemLinhaMesclada(tamanho, nome),
             ], []);
-            this.mesclaLinhaSubSheet(row);
-        }
+        this.mesclaLinhaSubSheet(row);
+    }
     private mesclaLinhaSubSheet(row) {
         this.sheet.addRow(row);
         const linhaSheet = this.sheet.lastRow;
@@ -202,12 +199,9 @@ export class ExportXLSService {
         mesclas.map(str => this.sheet.mergeCells(str));
     }
 
-    private setSubSheet(linha) {
+    private setSubSheet({ detalhes }) {
         this.adicionarSubheader();
-        // add detail rows
-        linha.detalhes.forEach(detalhe => {
-            this.mesclaLinhaSubSheet(this.arrayLinhaMesclada(detalhe));
-        });
+        detalhes.forEach(el => this.mesclaLinhaSubSheet(this.arrayLinhaMesclada(el)));
         // linha vazia no final
         this.sheet.addRow([' ']);
     }
