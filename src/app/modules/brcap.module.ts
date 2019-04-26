@@ -129,7 +129,6 @@ import { ExportXLSService } from "../services/export-xls.service";
     ExportXLSService,
   ]
 })
-
 class BRCapModule { }
 
 export {
