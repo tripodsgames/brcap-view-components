@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "@types/bootstrap": "3.3.33",
+    "@types/bootstrap": "^3.3.33",
     "@types/jquery-mask-plugin": "^1.14.3",
     "bootstrap": "3.3.7",
     "core-js": "^2.4.1",
@@ -48,7 +48,6 @@
   "devDependencies": {
     "@angular/cli": "1.0.4",
     "@angular/compiler-cli": "^4.0.0",
-    "@types/bootstrap": "3.3.33",
     "@types/bootstrap-datepicker": "^0.0.13",
     "@types/jasmine": "2.5.38",
     "@types/jquery": "2.0.49",
