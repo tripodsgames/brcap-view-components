@@ -222,7 +222,7 @@ export class ExportXLSService {
         return linhas.map(linha => ({
             ...this.chavesPermitidas()
                 .reduce((acc, key) => ({ ...acc, [key]: linha[key] }), {}),
-            ...(this.metadadosDetalhe.chave
+            ...(this.metadadosDetalhe
                 ? { detalhes: linha[this.metadadosDetalhe.chave] }
                 : {})
             }));
