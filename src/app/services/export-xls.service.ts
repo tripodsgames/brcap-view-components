@@ -214,8 +214,8 @@ export class ExportXLSService {
     }
 
     chavesPermitidas(): Array<string> {
-        return this.metadadosTabela.filter(metadado => this.metadadosDetalhe
-            && !metadado[this.metadadosDetalhe.chave])
+        return this.metadadosTabela.filter(metadado => !this.metadadosDetalhe
+            || !metadado[this.metadadosDetalhe.chave])
             .map(metadado => metadado.chave);
     }
 
