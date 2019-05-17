@@ -169,7 +169,7 @@ export class ExportXLSService {
     }
 
     private elemLinhaMesclada(tamanho: number, valor): any[] {
-        return [...Array(tamanho - 1).fill(valor)];
+        return [...Array(tamanho).fill(valor)];
     }
 
     private arrayLinhaMesclada(linha: object): any[] {
