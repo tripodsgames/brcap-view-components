@@ -214,8 +214,9 @@ export class ExportXLSService {
     }
 
     chavesPermitidas(): Array<string> {
-        return this.metadadosTabela.filter(e => this.metadadosDetalhe && !e[this.metadadosDetalhe.chave])
-            .map(e => e.chave);
+        return this.metadadosTabela.filter(metadado => this.metadadosDetalhe
+            && !metadado[this.metadadosDetalhe.chave])
+            .map(metadado => metadado.chave);
     }
 
     filtraLinhas(linhas: Array<object>): Array<object> {
