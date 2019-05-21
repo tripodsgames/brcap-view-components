@@ -351,10 +351,54 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
   ];
 
+  listaPilotos2 = [
+    {
+      nome: 'Rogerinho do Ingá',
+      veiculo: 'Sprinter Azul e Vermelha',
+      signo: 'Capricórnio',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+    {
+      nome: 'Maurílio dos Anjos',
+      veiculo: 'Kombi Branca 84',
+      signo: 'Câncer',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+    {
+      nome: 'Julinho da Van',
+      veiculo: 'Sprinter Branca',
+      signo: 'Touro',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+    {
+      nome: 'Renan',
+      veiculo: 'Towner Azul Bebê',
+      signo: 'Áries',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+  ];
+
   metadadosPilotos: Array<{
     chave: string,
     nome: string,
-    grupo?: string
+    grupo?: string,
+    detalhe?:  Array<{
+      grupo: Array<string>,
+      nome: string,
+      chave: string,
+    }>,
   }> = [
     {
       chave: 'nome',
@@ -369,6 +413,22 @@ export class AppComponent implements OnInit, AfterViewInit {
       nome: 'Signo do Zodíaco'
     },
   ];
+
+  metadadosPendura = {
+    chave: 'penduras',
+    detalhes: [
+      {
+        tamanho: 2,
+        chave: 'desc',
+        nome: 'Penduras'
+      },
+      {
+        tamanho: 1,
+        chave: 'valor',
+        nome: 'Valor'
+      },
+    ]
+  };
 
   variavel = "dfvfdfghgfhfggfhhfg"
 
@@ -497,6 +557,15 @@ export class AppComponent implements OnInit, AfterViewInit {
       linhas: this.listaPilotos,
       metadadosTabela: this.metadadosPilotos,
       nomeArquivo: 'exemploPilotos',
+      titulo: 'Pilotos'
+    });
+  }
+  async exemplo2ExportarXLS() {
+    return this.exportXlsService.gerarXls({
+      linhas: this.listaPilotos2,
+      metadadosTabela: this.metadadosPilotos,
+      metadadosDetalhe: this.metadadosPendura,
+      nomeArquivo: 'exemplo2Pilotos',
       titulo: 'Pilotos'
     });
   }

@@ -8,6 +8,7 @@ import {
     changeBgColor,
     stringCelulaMesclarAoLado,
     stringCelulaMesclarAbaixo,
+    stringCelulasMesclarAoLado,
     mesmoGrupo,
     saveAs,
     WIDTH_CELL_XSL,
@@ -16,16 +17,28 @@ import {
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
+declare class MetadadosXLS {
+    chave: string;
+    nome: string;
+    grupo?: string;
+};
+
+declare class MetadadosDetalhe {
+    chave: string;
+    detalhes: Array<{
+        chave: string,
+        nome: string,
+        tamanho: number,
+    }>;
+};
+
 @Injectable()
 export class ExportXLSService {
     private book = new ExcelJS.Workbook();
     private sheet;
-    private linhas: Array<object>;
-    private metadadosTabela: Array<{
-        chave: string,
-        nome: string,
-        grupo?: string
-    }>;
+    private linhas: Array<any>;
+    private metadadosDetalhe: MetadadosDetalhe;
+    private metadadosTabela: Array<MetadadosXLS>;
     private nomeArquivo: string;
     private pathLogoProjeto: string;
     private titulo: string;
@@ -141,9 +154,56 @@ export class ExportXLSService {
     }
 
     private setSheetLines() {
-        this.sheet.addRows(this.linhas.map(r => this.chavesPermitidas()
-            .map(key => r[key])));
+        for (let linha of this.linhas) {
+            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key]));
+            if (linha.detalhes && linha.detalhes.length > 0) {
+                this.setSubSheet(linha);
+            }
+        }
         this.sheet.eachRow(addDefaultBorder);
+    }
+
+    private tamanhoDetalhe(chave: string): number {
+        return this.metadadosDetalhe.detalhes
+            .find(detalhe => detalhe.chave === chave).tamanho;
+    }
+
+    private elemLinhaMesclada(tamanho: number, valor): any[] {
+        return [...Array(tamanho).fill(valor)];
+    }
+
+    private arrayLinhaMesclada(linha: object): any[] {
+        return Object.entries(linha).reduce((acc, [k, v]) =>  [
+            ...acc,
+            ...this.elemLinhaMesclada(this.tamanhoDetalhe(k), v),
+        ], []);
+    }
+
+    private adicionarSubheader() {
+        const row: Array<string> = this.metadadosDetalhe.detalhes
+            .reduce((acc: Array<string>, { tamanho, nome }) => [
+                ...acc,
+                ...this.elemLinhaMesclada(tamanho, nome),
+            ], []);
+        this.mesclaLinhaSubSheet(row);
+    }
+    private mesclaLinhaSubSheet(row) {
+        this.sheet.addRow(row);
+        const linhaSheet = this.sheet.lastRow;
+        const mesclas = this.metadadosDetalhe.detalhes
+            .reduce((acc, { tamanho }, i) => tamanho <=1 ? acc
+                : [
+                    ...acc,
+                    stringCelulasMesclarAoLado(i + 1, linhaSheet.number, tamanho - 1),
+                ], []);
+        mesclas.map(str => this.sheet.mergeCells(str));
+    }
+
+    private setSubSheet({ detalhes }) {
+        this.adicionarSubheader();
+        detalhes.forEach(el => this.mesclaLinhaSubSheet(this.arrayLinhaMesclada(el)));
+        // linha vazia no final
+        this.sheet.addRow([' ']);
     }
 
     private async downloadFile() {
@@ -153,8 +213,20 @@ export class ExportXLSService {
         saveAs(blob, `${this.nomeArquivo}.xlsx`);
     }
 
-    chavesPermitidas() {
-        return this.metadadosTabela.map(e => e.chave);
+    chavesPermitidas(): Array<string> {
+        return this.metadadosTabela.filter(metadado => !this.metadadosDetalhe
+            || !metadado[this.metadadosDetalhe.chave])
+            .map(metadado => metadado.chave);
+    }
+
+    filtraLinhas(linhas: Array<object>): Array<object> {
+        return linhas.map(linha => ({
+            ...this.chavesPermitidas()
+                .reduce((acc, key) => ({ ...acc, [key]: linha[key] }), {}),
+            ...(this.metadadosDetalhe
+                ? { detalhes: linha[this.metadadosDetalhe.chave] }
+                : {})
+            }));
     }
 
     async gerarXls({
@@ -163,20 +235,18 @@ export class ExportXLSService {
         nomeArquivo,
         titulo,
         logoProjeto,
+        metadadosDetalhe,
     }: {
         linhas: Array<object>,
-        metadadosTabela: Array<{
-            chave: string,
-            nome: string,
-            grupo?: string
-        }>,
+        metadadosTabela: Array<MetadadosXLS>,
         nomeArquivo: string,
         titulo: string,
         logoProjeto?: string,
+        metadadosDetalhe?: MetadadosDetalhe,
     }) {
         this.metadadosTabela = metadadosTabela;
-        this.linhas = linhas.map(linha => this.chavesPermitidas().reduce((acc, key) =>
-            ({ ...acc, [key]: linha[key] }), {}));
+        this.metadadosDetalhe = metadadosDetalhe;
+        this.linhas = this.filtraLinhas(linhas);
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
         this.pathLogoProjeto = logoProjeto;
@@ -187,5 +257,4 @@ export class ExportXLSService {
         this.setSheetLines();
         await this.downloadFile();
     }
-
 }
