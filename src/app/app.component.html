@@ -79,12 +79,24 @@
 
 <div class="content-wrapper">
   <div class="content">
-    <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2"
-      tableTitle="bla" tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
-    </cap-table-pagination>
+    <div class="row">
+      <div class="col-md-6">
+                  <cap-datepicker class="button_datepicker" [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}"
+                  mode="period" [(ngModel)]="periodo" required [(ngModel)]="dataBusca" (ngModelChange)="atualizarNumeroPagina($event)"></cap-datepicker>
+      </div>
+      <div class="col-md-6">
+                  <cap-dateRangePicker class="button_daterangepicker" [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}"
+                  name="periodo" [(ngModel)]="periodo" (ngModelChange)="atualizarNumeroPagina($event)"></cap-dateRangePicker>
+      </div>
+    </div>
+    <div class="row">
+      <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2"
+        tableTitle="bla" tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
+      </cap-table-pagination>
 
-    <cap-button (click)="exemploExportarXLS()">Exportar XLS</cap-button>
-    <cap-button (click)="exemplo2ExportarXLS()">Exportar XLS segundo exemplo</cap-button>
+      <cap-button (click)="exemploExportarXLS()">Exportar XLS</cap-button>
+      <cap-button (click)="exemplo2ExportarXLS()">Exportar XLS segundo exemplo</cap-button>
+    </div>
   </div>
 </div>
 
