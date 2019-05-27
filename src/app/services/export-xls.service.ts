@@ -17,13 +17,13 @@ import {
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
-declare class MetadadosXLS {
+export class MetadadosXLS {
     chave: string;
     nome: string;
     grupo?: string;
 };
 
-declare class MetadadosDetalhe {
+export class MetadadosDetalhe {
     chave: string;
     detalhes: Array<{
         chave: string,
