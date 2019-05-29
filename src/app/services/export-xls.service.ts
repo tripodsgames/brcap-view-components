@@ -34,7 +34,7 @@ export class MetadadosDetalhe {
 
 @Injectable()
 export class ExportXLSService {
-    private book = new ExcelJS.Workbook();
+    private book: ExcelJS.Workbook;
     private sheet;
     private linhas: Array<any>;
     private metadadosDetalhe: MetadadosDetalhe;
@@ -54,6 +54,10 @@ export class ExportXLSService {
             base64,
             extension: 'png',
         });
+    }
+
+    private init() {
+        this.book = new ExcelJS.Workbook();
     }
 
     private async createSheet() {
@@ -251,6 +255,7 @@ export class ExportXLSService {
         this.titulo = titulo;
         this.pathLogoProjeto = logoProjeto;
 
+        this.init();
         await this.createSheet();
         await this.setSheetHeader();
         this.setSheetColumns();
