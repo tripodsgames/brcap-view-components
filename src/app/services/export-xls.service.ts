@@ -21,6 +21,7 @@ export class MetadadosXLS {
     chave: string;
     nome: string;
     grupo?: string;
+    formato?: string;
 };
 
 export class MetadadosDetalhe {
@@ -104,6 +105,16 @@ export class ExportXLSService {
         alignCenter(this.sheet.getCell('J4'));
         addDefaultBorder(this.sheet.getCell('J4'));
         this.addImgsHeaderToSheet();
+    }
+
+    private formataColuna(formato: string, coluna: number) {
+        this.sheet.getColumn(coluna).numFmt = formato;
+    }
+    private formataColunas() {
+        this.metadadosTabela.filter(({ formato }) => formato)
+            .forEach(({
+                formato
+            }, index) => this.formataColuna(formato, index + 1));
     }
 
     private celulaMescladaMesmoGrupo(celula, i, arr) {
@@ -260,6 +271,7 @@ export class ExportXLSService {
         await this.setSheetHeader();
         this.setSheetColumns();
         this.setSheetLines();
+        this.formataColunas();
         await this.downloadFile();
     }
 }
