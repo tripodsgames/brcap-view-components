@@ -111,10 +111,16 @@ export class ExportXLSService {
         this.sheet.getColumn(coluna).numFmt = formato;
     }
     private formataColunas() {
-        this.metadadosTabela.filter(({ formato }) => formato)
+        this.metadadosTabela
+            .map(({ formato }, index) => ({
+                formato,
+                coluna: index + 1,
+            }))
+            .filter(({ formato }) => formato)
             .forEach(({
-                formato
-            }, index) => this.formataColuna(formato, index + 1));
+                formato,
+                coluna,
+            }) => this.formataColuna(formato, coluna));
     }
 
     private celulaMescladaMesmoGrupo(celula, i, arr) {

@@ -332,22 +332,26 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       nome: 'Rogerinho do Ingá',
       veiculo: 'Sprinter Azul e Vermelha',
-      signo: 'Capricórnio'
+      signo: 'Capricórnio',
+      altura: 1.7
     },
     {
       nome: 'Maurílio dos Anjos',
       veiculo: 'Kombi Branca 84',
-      signo: 'Câncer'
+      signo: 'Câncer',
+      altura: 1.72
     },
     {
       nome: 'Julinho da Van',
       veiculo: 'Sprinter Branca',
-      signo: 'Touro'
+      signo: 'Touro',
+      altura: 1.8
     },
     {
       nome: 'Renan',
       veiculo: 'Towner Azul Bebê',
-      signo: 'Áries'
+      signo: 'Áries',
+      altura: 1.7
     },
   ];
 
@@ -390,16 +394,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  metadadosPilotos: Array<{
-    chave: string,
-    nome: string,
-    grupo?: string,
-    detalhe?:  Array<{
-      grupo: Array<string>,
-      nome: string,
-      chave: string,
-    }>,
-  }> = [
+  metadadosPilotos = [
     {
       chave: 'nome',
       nome: 'Nome do Piloto'
@@ -411,6 +406,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       chave: 'signo',
       nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'altura',
+      nome: 'Altura',
+      formato: '#,##0.00"m"'
     },
   ];
 
