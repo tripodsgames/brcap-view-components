@@ -181,7 +181,10 @@ export class ExportXLSService {
                 this.setSubSheet(linha);
             }
         }
-        this.sheet.eachRow(addDefaultBorder);
+    }
+    
+    private addBorderToLines() {
+        this.sheet.eachRow(row => row.eachCell(addDefaultBorder));
     }
 
     private tamanhoDetalhe(chave: string): number {
@@ -277,6 +280,7 @@ export class ExportXLSService {
         await this.setSheetHeader();
         this.setSheetColumns();
         this.setSheetLines();
+        this.addBorderToLines();
         this.formataColunas();
         await this.downloadFile();
     }
