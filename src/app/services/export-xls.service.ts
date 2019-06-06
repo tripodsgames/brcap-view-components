@@ -165,13 +165,13 @@ export class ExportXLSService {
         //column names:
         const headerRow = this.sheet.getRow(HEADER_ROW_NUM);
         const columns = this.columns();
-        changeBgColor('E6E6E6')(headerRow);
         headerRow.values = columns;
         this.mesclasNoHeader(headerRow);
         headerRow.height = 45;
         addAlignment({ wrapText: true })(headerRow);
         alignCenter(headerRow);
         headerRow.eachCell(addDefaultBorder);
+        headerRow.eachCell(changeBgColor('E6E6E6'));
     }
 
     private setSheetLines() {
