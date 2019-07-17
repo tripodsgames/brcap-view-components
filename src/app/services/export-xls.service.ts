@@ -33,6 +33,13 @@ export class MetadadosDetalhe {
     }>;
 };
 
+export class DadosPlanilha {
+    linhas: Array<object>;
+    metadadosTabela: Array<MetadadosXLS>;
+    titulo: string;
+    metadadosDetalhe?: MetadadosDetalhe;
+};
+
 @Injectable()
 export class ExportXLSService {
     private book: ExcelJS.Workbook;
@@ -282,6 +289,40 @@ export class ExportXLSService {
         this.setSheetLines();
         this.addBorderToLines();
         this.formataColunas();
+        await this.downloadFile();
+    }
+
+
+    private async gerarPlanilha(planilha: DadosPlanilha, logoProjeto?: string) {
+        this.metadadosTabela = planilha.metadadosTabela;
+        this.metadadosDetalhe = planilha.metadadosDetalhe;
+        this.linhas = this.filtraLinhas(planilha.linhas);
+        this.titulo = planilha.titulo;
+        this.pathLogoProjeto = logoProjeto;
+
+        await this.createSheet();
+        await this.setSheetHeader();
+        this.setSheetColumns();
+        this.setSheetLines();
+        this.addBorderToLines();
+        this.formataColunas();
+        return this.sheet;
+    }
+
+    async gerarXlsMultiplasPlanilhas({
+        planilhas,
+        nomeArquivo,
+        logoProjeto,
+    } : {
+        planilhas: Array<DadosPlanilha>,
+        nomeArquivo: string,
+        logoProjeto?: string,
+    }) {
+        this.init();
+        this.nomeArquivo = nomeArquivo;
+        await Promise.all(
+            planilhas.map(planilha => this.gerarPlanilha(planilha, logoProjeto))
+        )
         await this.downloadFile();
     }
 }
