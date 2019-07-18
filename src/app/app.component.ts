@@ -465,11 +465,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.radios = [
       {
-        label: "Opção 1",
+        label: "Selecione opcao 1",
         value: 1
       },
       {
-        label: "Opção 2",
+        label: "Selecione opcao 2",
         value: 2
       },
       {
@@ -572,5 +572,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   login(event) {
     alert("LOGOU!");
+  }
+
+  selFormaOnChange(item: any){
+    console.log('item', item);
+
   }
 }
