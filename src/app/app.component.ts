@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   funcionalidades = [];
   colors = {};
   collapse = false;
-
+  radio:any;
   mes;
   item = false;
   radios = [];
@@ -433,7 +433,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   variavel = "dfvfdfghgfhfggfhhfg"
 
   listaTipoPessoa = "dd"
-  
+
   ngAfterViewInit() {
     if (this.tablePagination) {
       setTimeout(_ => {

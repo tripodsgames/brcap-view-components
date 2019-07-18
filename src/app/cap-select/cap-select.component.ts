@@ -40,6 +40,8 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   filter: boolean;
   @Input("title")
   title: boolean;
+  @Input("multiple")
+  multiple: boolean;
 
   @Output()
   focus = new EventEmitter();
