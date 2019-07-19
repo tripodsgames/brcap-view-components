@@ -66,7 +66,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
       this.id += "_input";
     }
 
-    //this.styleClass = this.multiple ? "styleMultiple" : this.styleClass;
+    this.styleClass = this.multiple ? "styleMultiple" : this.styleClass;
   }
 
   onFocus(event) {
