@@ -40,8 +40,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   filter: boolean;
   @Input("title")
   title: boolean;
-  @Input("multiple")
-  multiple: boolean;
 
   @Output()
   focus = new EventEmitter();
@@ -52,7 +50,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   private $el: any;
   private innerValue: any = "";
 
-  styleMultiple: string;
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
@@ -67,8 +64,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
     } else {
       this.id += "_input";
     }
-
-    this.styleMultiple = this.multiple ? "styleMultiple" : undefined;
   }
 
   onFocus(event) {
