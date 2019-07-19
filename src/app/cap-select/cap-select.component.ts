@@ -52,6 +52,8 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   private $el: any;
   private innerValue: any = "";
 
+  styleMultiple: string;
+
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
   }
@@ -66,7 +68,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
       this.id += "_input";
     }
 
-    this.styleClass = this.multiple ? "styleMultiple" : this.styleClass;
+    this.styleMultiple = this.multiple ? "styleMultiple" : undefined;
   }
 
   onFocus(event) {
