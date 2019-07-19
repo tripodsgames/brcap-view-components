@@ -17,6 +17,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   colors = {};
   collapse = false;
   radio:any;
+  radioSimple: any;
+  selectSimple = [];
   mes;
   item = false;
   radios = [];
@@ -477,6 +479,22 @@ export class AppComponent implements OnInit, AfterViewInit {
         value: 3
       }
     ];
+
+    this.selectSimple = [
+      {
+        label: "opcao 1",
+        value: 1
+      },
+      {
+        label: "opcao 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
+
     this.funcionalidades = [
       {
         modulo: "Usuarios",
@@ -526,7 +544,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         ]
       }
-    ];
+    ]
   }
 
   event(event) {

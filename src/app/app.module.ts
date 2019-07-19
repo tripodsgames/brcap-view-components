@@ -15,7 +15,6 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     FormsModule,
     BRCapModule,
     CurrencyMaskModule
-
   ],
   bootstrap: [AppComponent]
 })
