@@ -585,15 +585,12 @@ p.label-text span {
 /* .primeira-pagina{
   content: "\";
 }
-
 .ultima-pagina{
   content: "\";
 }
-
 .permissionar{
   content: "\";
 }
-
 .pesquisa-avancada{
   content: "\";
 } */
@@ -1182,7 +1179,6 @@ cap-icon.fecharQuickView {
   z-index: 2;
   top: 0;
   transition: all 2s;
-}
 
   .label-text-block {
     margin: 0 !important;
@@ -1194,6 +1190,7 @@ cap-icon.fecharQuickView {
     line-height: 12px;
     display: inline;
   }
+}
 
 .view-block {
   margin: 15px 0px;
@@ -1256,7 +1253,6 @@ cap-icon.fecharQuickView {
 .table-filter>thead>tr:nth-child(2)>th {
   background: #fff !important;
   padding: 0;
-}
 
   ng-select>div {
     border: none !important;
@@ -1271,24 +1267,11 @@ cap-icon.fecharQuickView {
     font-size: 20px;
     color: #888;
   }
+}
 
 .item cap-checkbox {
   position: relative;
   top: 13px;
-}
-
-/* Table title e sub-title */
-.table-title {
-  font-size: 16px;
-  font-weight: 500;
-  height: 25px;
-  margin-bottom: 5px;
-}
-
-.table-sub-title {
-  font-size: 14px;
-  height: 16px;
-  margin-bottom: 16px;
 }
 
 /** COL-XL **/
@@ -1511,6 +1494,7 @@ my-date-range-picker.error .mydrp .selectiongroup {
 /* style cap-select-multi */
 
 .multiSelect {
+  line-height: 40px;
   text-transform: none !important;
   box-shadow: 0px 2px 0px 0px #555;
   margin: 0px -5px 10px 9px;
