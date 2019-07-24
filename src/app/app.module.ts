@@ -4,8 +4,8 @@ import { AppComponent } from "./app.component";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { BRCapModule } from "./modules/brcap.module";
-
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +14,8 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     CommonModule,
     FormsModule,
     BRCapModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

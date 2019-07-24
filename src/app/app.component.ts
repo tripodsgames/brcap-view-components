@@ -39,6 +39,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   mascara;
   loading = true;
   disabled = true;
+  cidades: Array<any> = [];
+  selectedItems: Array<any> = [];
+  dropdownSettings = {};
 
   menu = [
     {
@@ -545,6 +548,25 @@ export class AppComponent implements OnInit, AfterViewInit {
         ]
       }
     ]
+
+    this.cidades = [
+      { value: 1, label: 'New Delhi' },
+      { value: 2, label: 'Mumbai' },
+      { value: 3, label: 'Bangalore' },
+      { value: 4, label: 'Pune' },
+      { value: 5, label: 'Chennai' },
+      { value: 6, label: 'Navsari' }
+    ];
+
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'value',
+      textField: 'label',
+      selectAllText: 'Selecionar todos',
+      unSelectAllText: 'limpar seleção',
+      allowSearchFilter: false,
+      itemsShowLimit: 3
+    };
   }
 
   event(event) {
@@ -596,4 +618,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log('item', item);
 
   }
+
+
 }

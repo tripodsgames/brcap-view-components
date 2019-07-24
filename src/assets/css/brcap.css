@@ -1182,6 +1182,7 @@ cap-icon.fecharQuickView {
   z-index: 2;
   top: 0;
   transition: all 2s;
+}
 
   .label-text-block {
     margin: 0 !important;
@@ -1193,7 +1194,6 @@ cap-icon.fecharQuickView {
     line-height: 12px;
     display: inline;
   }
-}
 
 .view-block {
   margin: 15px 0px;
@@ -1256,6 +1256,7 @@ cap-icon.fecharQuickView {
 .table-filter>thead>tr:nth-child(2)>th {
   background: #fff !important;
   padding: 0;
+}
 
   ng-select>div {
     border: none !important;
@@ -1270,7 +1271,6 @@ cap-icon.fecharQuickView {
     font-size: 20px;
     color: #888;
   }
-}
 
 .item cap-checkbox {
   position: relative;
@@ -1417,7 +1417,7 @@ input[disabled] {
 .below.error .toggle,
 .error,
 .ico-error,
-cap-icon.error .ver-senha-password, 
+cap-icon.error .ver-senha-password,
 my-date-range-picker.error .mydrp .selectiongroup .btnpicker,
 my-date-picker.error .mydp .selectiongroup .btnpicker{
   color: #b00020 !important;
@@ -1506,3 +1506,33 @@ my-date-range-picker.error .mydrp .selectiongroup {
 .nova-pesquisa .cap-button .busca {
   font-size: 20px !important;
 }
+
+
+/* style cap-select-multi */
+
+.multiSelect {
+  text-transform: none !important;
+  box-shadow: 0px 2px 0px 0px #555;
+  margin: 0px -5px 10px 9px;
+  padding: 0px 0px 0px 0px;
+  margin-top: 4px;
+}
+
+.multiSelect span {
+  text-transform: none !important;
+  margin: 0px 0px 0px -5px;
+}
+
+.multiSelect .btn:focus, .btn:active:focus,
+.btn.active:focus, .btn.focus, .btn:active.focus,
+.btn.active.focus {
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
+}
+
+
+
+
+
+
