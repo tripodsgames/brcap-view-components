@@ -65,7 +65,7 @@ export class CapSelectMultComponent implements ControlValueAccessor, OnInit {
       textField: 'label',
       selectAllText: 'Selecionar todos.',
       unSelectAllText: 'Remover seleção.',
-      itemsShowLimit: 2,
+      itemsShowLimit: 1,
       allowSearchFilter: true
     };
   }
