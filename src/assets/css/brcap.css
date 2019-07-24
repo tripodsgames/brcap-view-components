@@ -1508,6 +1508,7 @@ my-date-range-picker.error .mydrp .selectiongroup {
   text-transform: none !important;
   padding: 8px 0px 0px 11px !important;
   margin: 12px 0px 12px 0px!important;
+  border-color: transparent !important;
 }
 
 .multiSelect .btn:focus, .btn:active:focus,
@@ -1527,9 +1528,7 @@ my-date-range-picker.error .mydrp .selectiongroup {
   float: left;
 }
 
-.multiselect-dropdown[_ngcontent-c18] .btn[_ngcontent-c18] {
-  border-color: none !important;
-}
+
 
 
 
