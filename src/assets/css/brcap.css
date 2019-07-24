@@ -1519,7 +1519,7 @@ my-date-range-picker.error .mydrp .selectiongroup {
   box-shadow: none !important;
 }
 
-.multiselect-dropdown .btn[_ngcontent-c17] .selected-item[_ngcontent-c17] {
+.multiselect-dropdown[_ngcontent-c17] .btn[_ngcontent-c17] .selected-item[_ngcontent-c17] {
   margin-right: 4px;
   background: rgba(107,191,94,0.5);
   padding: 0 5px;
