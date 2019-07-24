@@ -1527,6 +1527,10 @@ my-date-range-picker.error .mydrp .selectiongroup {
   float: left;
 }
 
+.multiselect-dropdown[_ngcontent-c18] .btn[_ngcontent-c18] {
+  border-color:  none !important;
+}
+
 
 
 
