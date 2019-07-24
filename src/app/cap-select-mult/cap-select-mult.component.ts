@@ -42,7 +42,7 @@ export class CapSelectMultComponent implements ControlValueAccessor, OnInit {
   select;
 
   private $el: any;
-  private innerValue: any = "";
+  private innerValue: Array<any> = [];
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);
@@ -76,7 +76,7 @@ export class CapSelectMultComponent implements ControlValueAccessor, OnInit {
     return this.focus.emit(event);
   }
 
-  get value(): any {
+  get value(): any[] {
     return this.innerValue;
   }
 
@@ -84,14 +84,14 @@ export class CapSelectMultComponent implements ControlValueAccessor, OnInit {
     this.onTouchedCallback();
   }
 
-  set value(v: any) {
+  set value(v: any[] ) {
     if (v !== this.innerValue) {
       this.innerValue = v;
       this.onChangeCallback(v);
     }
   }
 
-  writeValue(value: any) {
+  writeValue(value: any[]) {
     if (value !== this.innerValue) {
       this.innerValue = value;
     }
@@ -105,11 +105,11 @@ export class CapSelectMultComponent implements ControlValueAccessor, OnInit {
     this.onTouchedCallback = fn;
   }
 
-  onItemSelect(item: any) {
+  onItemSelect(item: any[]) {
     return this.innerValue;
   }
 
-  onSelectAll(items: any) {
+  onSelectAll(items: any[]) {
     return this.innerValue;
   }
 }
