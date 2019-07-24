@@ -1494,17 +1494,20 @@ my-date-range-picker.error .mydrp .selectiongroup {
 /* style cap-select-multi */
 
 .multiSelect {
-  line-height: 40px;
   text-transform: none !important;
-  box-shadow: 0px 2px 0px 0px #555;
-  margin: 0px -5px 10px 9px;
-  padding: 0px 0px 0px 0px;
-  margin-top: 4px;
+  box-shadow: 0px 2px 0px 0px #555 !important;
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+  margin-top: 0px !important;
+  height: 49px !important;
+  background-color: rgba(107,191,94,0.5) !important;
+  border-radius: 5px 5px 0px 0px !important;
 }
 
-.multiSelect span {
+.multiSelect .btn {
   text-transform: none !important;
-  margin: 0px 0px 0px -5px;
+  padding: 8px 0px 0px 11px !important;
+  margin: 12px 0px 12px 0px!important;
 }
 
 .multiSelect .btn:focus, .btn:active:focus,
@@ -1514,6 +1517,17 @@ my-date-range-picker.error .mydrp .selectiongroup {
   outline-offset: none !important;
   box-shadow: none !important;
 }
+
+.multiselect-dropdown .btn[_ngcontent-c17] .selected-item[_ngcontent-c17] {
+  margin-right: 4px;
+  background: rgba(107,191,94,0.5);
+  padding: 0 5px;
+  color: #333;
+  border-radius: 2px;
+  float: left;
+}
+
+
 
 
 
