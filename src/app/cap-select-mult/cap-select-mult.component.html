@@ -1,7 +1,6 @@
 <label [for]="id" class="label-input {{styleClass}}" *ngIf="label?.length">
     {{label}}</label>
-<div class="multiSelect">
-<ng-multiselect-dropdown
+<ng-multiselect-dropdown class=multiSelect
   [placeholder]="placeholder"
   [data]="data"
   [(ngModel)]="value"
@@ -10,4 +9,3 @@
   (onSelectAll)="onSelectAll($event)"
 >
 </ng-multiselect-dropdown>
-</div>
