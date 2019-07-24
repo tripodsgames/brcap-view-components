@@ -578,7 +578,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   async exemploMultiplasAbasXLS() {
-    return this.exportXlsService.gerarXlsMultiplasPlanilhas({
+    return this.exportXlsService.gerarXlsMultiplasAbas({
       planilhas: this.gerarMultiplosPilotos(),
       nomeArquivo: 'exemploMultiplasAbasXLS'
     })

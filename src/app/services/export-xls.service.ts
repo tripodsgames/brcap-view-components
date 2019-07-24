@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as ExcelJS from "exceljs/dist/exceljs.min.js";
+import { MetadadosDetalhe, MetadadosXLS, DadosPlanilha} from "../types";
+import ExportXLSMultiplaAba from "./export-xls-multi-aba";
 import {
     imgToBase64,
     addAlignment,
@@ -17,33 +19,11 @@ import {
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
-export class MetadadosXLS {
-    chave: string;
-    nome: string;
-    grupo?: string;
-    formato?: string;
-};
-
-export class MetadadosDetalhe {
-    chave: string;
-    detalhes: Array<{
-        chave: string,
-        nome: string,
-        tamanho: number,
-    }>;
-};
-
-export class DadosPlanilha {
-    linhas: Array<object>;
-    metadadosTabela: Array<MetadadosXLS>;
-    titulo: string;
-    metadadosDetalhe?: MetadadosDetalhe;
-};
-
 @Injectable()
 export class ExportXLSService {
     private book: ExcelJS.Workbook;
     private sheet;
+    private abas;
     private linhas: Array<any>;
     private metadadosDetalhe: MetadadosDetalhe;
     private metadadosTabela: Array<MetadadosXLS>;
@@ -293,23 +273,8 @@ export class ExportXLSService {
     }
 
 
-    private async gerarPlanilha(planilha: DadosPlanilha, logoProjeto?: string) {
-        this.metadadosTabela = planilha.metadadosTabela;
-        this.metadadosDetalhe = planilha.metadadosDetalhe;
-        this.linhas = this.filtraLinhas(planilha.linhas);
-        this.titulo = planilha.titulo;
-        this.pathLogoProjeto = logoProjeto;
 
-        await this.createSheet();
-        await this.setSheetHeader();
-        this.setSheetColumns();
-        this.setSheetLines();
-        this.addBorderToLines();
-        this.formataColunas();
-        return this.sheet;
-    }
-
-    async gerarXlsMultiplasPlanilhas({
+    async gerarXlsMultiplasAbas({
         planilhas,
         nomeArquivo,
         logoProjeto,
@@ -318,11 +283,15 @@ export class ExportXLSService {
         nomeArquivo: string,
         logoProjeto?: string,
     }) {
-        this.init();
-        this.nomeArquivo = nomeArquivo;
-        await Promise.all(
-            planilhas.map(planilha => this.gerarPlanilha(planilha, logoProjeto))
-        )
-        await this.downloadFile();
+        // this.init();
+        // this.nomeArquivo = nomeArquivo;
+        const multiAba = new ExportXLSMultiplaAba(nomeArquivo, logoProjeto);
+        const promises = planilhas.map(planilha => multiAba.gerarAba(planilha, logoProjeto));
+        for(const gerarAba of promises)
+            await gerarAba     
+        
+        await multiAba.downloadFile();
     }
+
+   
 }
