@@ -69,178 +69,177 @@ body.minimizado .loader {
   padding: 25px;
   top: -20px;
   height: 75px;
-}
 
-.content-header-medium {
-  height: 80px;
-}
+  &-medium {
+    height: 80px;
 
-.content-header-large {
-  height: 150px;
-}
+    .helper-text {
+      font-size: 11px;
+    }
 
-.content-header-abas,
-.content-header-cards {
-  height: 130px;
-}
+    label {
+      display: none;
+    }
 
-.content-header label.label-input {
-  background: transparent;
-}
+    .dp-input-container input {
+      padding-top: 10px;
+      height: 40px;
+    }
 
-.content-header label.label-input {
-  background: transparent;
-  top: 12px;
-  left: 9px;
-}
+    .below,
+    .input-icon,
+    .mydp,
+    .mydrp,
+    .cap-button,
+    dp-date-picker {
+      margin-top: -4px;
+    }
+  }
 
-/* como era antes */
-/* .content-header .cap-inputText-icon {
-  right: 10px;
-} */
+  &-large {
+    height: 150px;
+  }
 
-.content-header-medium .helper-text {
-  font-size: 11px;
-}
+  &-abas,
+  &-cards {
+    height: 130px;
+  }
 
-.content-header-medium label {
-  display: none;
-}
+  label.label-input {
+    background: transparent;
+    top: 12px;
+    left: 9px;
+  }
 
-.content-header .cap-inputText {
-  border: none !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
-  border-radius: 4px 4px 0 0 !important;
-  padding-top: 20px;
-  background: #9DCAE4;
-}
+  .cap-inputText {
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+    border-radius: 4px 4px 0 0 !important;
+    padding-top: 20px;
+    background: #9DCAE4;
 
-.content-header .input-icon {
-  border-radius: 4px 4px 0 0 !important;
-}
+    &.sm {
+      padding-top: 6px;
+    }
+  }
 
-.content-header .cap-inputText.sm {
-  padding-top: 6px;
-}
+  .input-icon {
+    border-radius: 4px 4px 0 0 !important;
+  }
 
-.content-header .cap-inputText-icon.disabled,
-.content-header input[ng-reflect-is-disabled="true"].cap-inputText {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
-  color: rgba(117, 117, 117, 0.38);
-}
+  .cap-inputText-icon.disabled,
+  input[ng-reflect-is-disabled="true"].cap-inputText {
+    border-bottom: 1px solid rgba(117, 117, 117, 0.38) !important;
+    color: rgba(117, 117, 117, 0.38);
+  }
 
-.content-header .bootstrap-select.btn-group .dropdown-toggle .filter-option {
-  top: 7px;
-}
+  .bootstrap-select.btn-group .dropdown-toggle {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+    border-radius: 0px;
 
-.content-header .bootstrap-select>.dropdown-toggle {
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.87);
-  border-radius: 0px;
-}
+    .filter-option {
+      top: 7px;
+    }
+  }
 
-.content-header .icon-calendar {
-  top: -35px;
-}
+  .icon-calendar {
+    top: -35px;
+  }
 
-.content-header .mydrp .selection,
-.content-header .mydp .selection,
-.content-header .dp-input-container input {
-  border: none !important;
-  border-bottom: 1px solid #757575 !important;
-  border-radius: 4px 4px 0 0;
-  padding-top: 10px;
-}
+  .mydrp .selection,
+  .mydp .selection,
+  .dp-input-container input {
+    border: none !important;
+    border-bottom: 1px solid #757575 !important;
+    border-radius: 4px 4px 0 0;
+    padding-top: 10px;
+  }
 
-.content-header .dp-input-container input {
-  padding-top: 20px;
-}
+  .dp-input-container input {
+    padding-top: 20px;
+  }
 
-.content-header-medium .dp-input-container input {
-  padding-top: 10px;
-  height: 40px;
-}
+  .error .dp-picker-input,
+  ng-select.error .below,
+  my-date-picker.error .mydp input,
+  my-date-range-picker.error .mydrp input {
+    border-bottom: 2px solid #b00020 !important;
+  }
 
-.content-header .error .dp-picker-input,
-.content-header ng-select.error .below,
-.content-header my-date-picker.error .mydp input,
-.content-header my-date-range-picker.error .mydrp input {
-  border-bottom: 2px solid #b00020 !important;
-}
+  my-date-picker.disabled .mydp .selection,
+  my-date-range-picker.disabled .mydrp .selection {
+    border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
+  }
 
-.content-header my-date-picker.disabled .mydp .selection,
-.content-header my-date-range-picker.disabled .mydrp .selection {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
-}
+  .sm .mydrp .selection,
+  .sm .mydp .selection {
+    padding-top: 0px;
+  }
 
-.content-header .sm .mydrp .selection,
-.content-header .sm .mydp .selection {
-  padding-top: 0px;
-}
+  .mydp .selectiongroup,
+  .mydrp .selectiongroup {
+    border: none !important;
+    border-radius: 4px;
+  }
 
-.content-header .mydp .selectiongroup,
-.content-header .mydrp .selectiongroup {
-  border: none !important;
-  border-radius: 4px;
-}
+  ng-select>div {
+    border: none !important;
+    border-bottom: 1px solid #757575 !important;
+    border-radius: 0px;
+    background: white;
+    border-radius: 4px 4px 0 0 !important;
+  }
 
-.content-header ng-select>div {
-  border: none !important;
-  border-bottom: 1px solid #757575 !important;
-  border-radius: 0px;
-  background: white;
-  border-radius: 4px 4px 0 0 !important;
-}
+  ng-select.sm>div>div.single>div.value,
+  ng-select.sm>div>div.single>div.placeholder,
+  ng-select.sm>div>div.single>div.toggle {
+    line-height: 40px !important;
+    padding-top: 0 !important;
+    height: 40px;
+  }
 
-.content-header ng-select.sm>div>div.single>div.value,
-.content-header ng-select.sm>div>div.single>div.placeholder,
-.content-header ng-select.sm>div>div.single>div.toggle {
-  line-height: 40px !important;
-  padding-top: 0 !important;
-  height: 40px;
-}
+  ng-select.sm>div>div.single>div.value,
+  ng-select.sm>div>div.single>div.placeholder,
+  ng-select.sm>div>div.single>div.toggle {
+    line-height: 40px !important;
+    padding-top: 0 !important;
+    height: 40px;
+  }
 
-.content-header ng-select[ng-reflect-is-disabled="true"]>div {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
-}
+  ng-select[ng-reflect-is-disabled="true"]>div {
+    border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
+  }
 
-.content-header ng-select>div>div.single>div.value,
-.content-header ng-select>div>div.single>div.placeholder {
-  padding-top: 8px !important;
-}
+  ng-select>div>div.single>div.value,
+  ng-select>div>div.single>div.placeholder {
+    padding-top: 8px !important;
+  }
 
-.content-header my-date-picker.sm .mydp .selection,
-.content-header my-date-picker.sm .mydp .selbtngroup,
-.content-header my-date-range-picker.sm .mydrp .selection,
-.content-header my-date-range-picker.sm .mydrp .selbtngroup {
-  height: 40px !important;
-}
+  my-date-picker.sm .mydp .selection,
+  my-date-picker.sm .mydp .selbtngroup,
+  my-date-range-picker.sm .mydrp .selection,
+  my-date-range-picker.sm .mydrp .selbtngroup {
+    height: 40px !important;
+  }
 
-.content-header-medium .below,
-.content-header-medium .input-icon,
-.content-header-medium .mydp,
-.content-header-medium .mydrp,
-.content-header-medium .cap-button,
-.content-header-medium dp-date-picker {
-  margin-top: -4px;
-}
+  .cap-inputText-icon {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+    color: #757575;
+  }
 
-.content-header .cap-inputText-icon {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
-  color: #757575;
-}
+  .cap-inputText-icon.sm {
+    padding: 5px;
+  }
 
-.content-header .cap-inputText-icon.sm {
-  padding: 5px;
-}
+  .cap-inputText-icon {
+    padding: 7px;
+    font-size: 24px;
+  }
 
-.content-header .cap-inputText-icon {
-  padding: 7px;
-  font-size: 24px;
-}
-
-.content-header h1 {
-  margin-bottom: 15px;
+  h1 {
+    margin-bottom: 15px;
+  }
 }
 
 /* headlines */
@@ -278,10 +277,6 @@ h4 {
 }
 
 /* cap-month-picker */
-.dp-calendar-wrapper {
-  border: none;
-}
-
 .dp-calendar-nav-right {
   right: 5px;
   border: none;
@@ -377,7 +372,7 @@ dp-date-picker {
   padding: 10px 10px 0 0;
 }
 
-.content .cap-inputText-icon.sm{
+.content .cap-inputText-icon.sm {
   padding: 6px;
 }
 
@@ -454,195 +449,6 @@ p.label-text span {
 .specialBoxPadding {
   padding: 15px;
 }
-
-/* !
-* BRCap Icones
-* @author Felipe Sousa
-* @description Icones no padrao brasilcap
-*
-*/
-@font-face {
-  font-family: "brcap-ico";
-  src: url("../fonts/darwin-icons/darwin-icons.ttf?mmqvqv") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.brcap-ico {
-  font-family: "brcap-ico" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.ajuda:before {
-  content: "\e921";
-}
-
-.menu:before {
-  content: "\e900";
-}
-
-.adiantar10:before {
-  content: "\e919";
-}
-
-.voltar:before {
-  content: "\e901";
-}
-
-.adicionar:before {
-  content: "\e902";
-}
-
-.alerta:before {
-  content: "\e903";
-}
-
-.arquivo:before {
-  content: "\e904";
-}
-
-.busca:before {
-  content: "\e905";
-}
-
-.calendario:before {
-  content: "\e906";
-}
-
-.check-circulo:before {
-  content: "\e907";
-}
-
-.compartilhar:before {
-  content: "\e908";
-}
-
-.esconder-senha:before {
-  content: "\e909";
-}
-
-.seguir:before {
-  content: "\e910";
-}
-
-.anterior:before {
-  content: "\e911";
-}
-
-.seta-cimabaixo:before {
-  content: "\e912";
-}
-
-.usuario:before {
-  content: "\e913";
-}
-
-.x-circulo:before {
-  content: "\e914";
-}
-
-.ver-senha:before {
-  content: "\e916";
-}
-
-.retrair:before {
-  content: "\e90a";
-}
-
-.expandir:before {
-  content: "\e910";
-}
-
-.favorito:before {
-  content: "\e90b";
-}
-
-.fullscreen:before {
-  content: "\e922";
-}
-
-.info:before {
-  content: "\e90c";
-}
-
-.mais-opcoes:before {
-  content: "\e90d";
-}
-
-.menos:before {
-  content: "\e90e";
-}
-
-.sair:before {
-  content: "\e90f";
-}
-
-.adiantar10:before {
-  content: "\e919";
-}
-
-.pausar:before {
-  content: "\e91a";
-}
-
-.tocar:before {
-  content: "\e91b";
-}
-
-.voltar10:before {
-  content: "\e91c";
-}
-
-.volumeoff:before {
-  content: "\e91d";
-}
-
-.volumeon:before {
-  content: "\e91e";
-}
-
-.codigo:before {
-  content: "\e91f";
-}
-
-.editar:before {
-  content: "\e920";
-}
-
-.mover:before {
-  content: "\e915";
-}
-
-.x:before {
-  content: "\78";
-}
-
-.sucesso:before {
-  content: "\e917";
-}
-
-/* .primeira-pagina{
-  content: "\";
-}
-
-.ultima-pagina{
-  content: "\";
-}
-
-.permissionar{
-  content: "\";
-}
-
-.pesquisa-avancada{
-  content: "\";
-} */
 
 .cap-button .brcap-ico {
   position: relative;
@@ -1231,25 +1037,27 @@ button.cap-button.btn-ico .brcap-ico {
 
 @-webkit-keyframes fadeInRight {
   0% {
-     opacity: 0;
-     -webkit-transform: translateX(20px);
+    opacity: 0;
+    -webkit-transform: translateX(20px);
   }
+
   100% {
-     opacity: 1;
-     -webkit-transform: translateX(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
   }
 }
 
 @keyframes fadeInRight {
   0% {
-     opacity: 0;
-     transform: translateX(20px);
+    opacity: 0;
+    transform: translateX(20px);
   }
+
   100% {
-     opacity: 1;
-     transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
-} 
+}
 
 .over {
   position: absolute;
@@ -1266,7 +1074,7 @@ button.cap-button.btn-ico .brcap-ico {
   pointer-events: none;
 }
 
-.visible{
+.visible {
   opacity: 1;
   transition: all 0.5s;
 }
