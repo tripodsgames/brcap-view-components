@@ -11,7 +11,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   useExisting: forwardRef(() => CapSelectComponent),
   multi: true
 };
-
 @Component({
   selector: "cap-select",
   host: {
@@ -40,16 +39,13 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   filter: boolean;
   @Input("title")
   title: boolean;
-
   @Output()
   focus = new EventEmitter();
-
   @ViewChild("select")
   select;
 
   private $el: any;
   private innerValue: any = "";
-
 
   constructor(private el: ElementRef) {
     this.$el = $(el.nativeElement);

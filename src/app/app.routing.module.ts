@@ -1,9 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-
 import { AppComponent } from "./app.component";
 import { CapLoginComponent } from "./cap-login/cap-login.component";
-
 
 export const routes: Routes = [
   { path: "teste", component: AppComponent },

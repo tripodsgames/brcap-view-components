@@ -9,9 +9,8 @@ import { ExportXLSService } from "./services/export-xls.service";
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  constructor(private exportXlsService: ExportXLSService) {
+  constructor(private exportXlsService: ExportXLSService) {}
 
-  }
   private brcapUtil;
   funcionalidades = [];
   colors = {};
@@ -445,7 +444,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.tablePagination.setPage(true);
       }, 0);
     }
-
   }
 
   // cpf;
@@ -600,6 +598,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       titulo: 'Pilotos'
     });
   }
+
   async exemplo2ExportarXLS() {
     return this.exportXlsService.gerarXls({
       linhas: this.listaPilotos2,
@@ -616,8 +615,5 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   selFormaOnChange(item: any){
     console.log('item', item);
-
   }
-
-
 }

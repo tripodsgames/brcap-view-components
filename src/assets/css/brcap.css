@@ -1492,6 +1492,7 @@ my-date-range-picker.error .mydrp .selectiongroup {
 
 
 /* style cap-select-multi */
+/* TODO */
 
 .multiSelect {
   text-transform: none !important;
@@ -1527,13 +1528,3 @@ my-date-range-picker.error .mydrp .selectiongroup {
     float: left !important;
     border-color: transparent !important;
 }
-
-
-
-
-
-
-
-
-
-
