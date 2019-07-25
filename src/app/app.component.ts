@@ -9,14 +9,15 @@ import { ExportXLSService } from "./services/export-xls.service";
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  constructor(private exportXlsService: ExportXLSService) {
+  constructor(private exportXlsService: ExportXLSService) {}
 
-  }
   private brcapUtil;
   funcionalidades = [];
   colors = {};
   collapse = false;
-
+  radio:any;
+  radioSimple: any;
+  selectSimple = [];
   mes;
   item = false;
   radios = [];
@@ -37,6 +38,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   mascara;
   loading = true;
   disabled = true;
+  cidades: Array<any> = [];
+  selectedItems: Array<any> = [];
+  dropdownSettings = {};
 
   menu = [
     {
@@ -433,14 +437,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   variavel = "dfvfdfghgfhfggfhhfg"
 
   listaTipoPessoa = "dd"
-  
+
   ngAfterViewInit() {
     if (this.tablePagination) {
       setTimeout(_ => {
         this.tablePagination.setPage(true);
       }, 0);
     }
-
   }
 
   // cpf;
@@ -465,11 +468,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.radios = [
       {
-        label: "Opção 1",
+        label: "Selecione opcao 1",
         value: 1
       },
       {
-        label: "Opção 2",
+        label: "Selecione opcao 2",
         value: 2
       },
       {
@@ -477,6 +480,22 @@ export class AppComponent implements OnInit, AfterViewInit {
         value: 3
       }
     ];
+
+    this.selectSimple = [
+      {
+        label: "opcao 1",
+        value: 1
+      },
+      {
+        label: "opcao 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
+
     this.funcionalidades = [
       {
         modulo: "Usuarios",
@@ -526,7 +545,26 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         ]
       }
+    ]
+
+    this.cidades = [
+      { value: 1, label: 'New Delhi' },
+      { value: 2, label: 'Mumbai' },
+      { value: 3, label: 'Bangalore' },
+      { value: 4, label: 'Pune' },
+      { value: 5, label: 'Chennai' },
+      { value: 6, label: 'Navsari' }
     ];
+
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'value',
+      textField: 'label',
+      selectAllText: 'Selecionar todos',
+      unSelectAllText: 'limpar seleção',
+      allowSearchFilter: false,
+      itemsShowLimit: 3
+    };
   }
 
   event(event) {
@@ -560,6 +598,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       titulo: 'Pilotos'
     });
   }
+
   async exemplo2ExportarXLS() {
     return this.exportXlsService.gerarXls({
       linhas: this.listaPilotos2,
@@ -572,5 +611,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   login(event) {
     alert("LOGOU!");
+  }
+
+  selFormaOnChange(item: any){
+    console.log('item', item);
   }
 }

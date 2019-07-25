@@ -1,7 +1,7 @@
 <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
 
 <cap-header username="Joaquim José Xavier" logoBrasilCap="../../../assets/img/logo-brasilcap.svg"
-  logoSistema="../../../assets/img/produto.svg"></cap-header>
+  logoSistema="../../../assets/img/produto.svg"> </cap-header>
 
 <!-- <div class="content-wrapper"> -->
 
@@ -80,18 +80,34 @@
 <div class="content-wrapper">
   <div class="content">
     <div class="row">
-      <div class="col-md-6">
-                  <cap-datepicker class="button_datepicker" [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}"
-                  mode="period" [(ngModel)]="periodo" required [(ngModel)]="dataBusca" (ngModelChange)="atualizarNumeroPagina($event)"></cap-datepicker>
+      <div class="col-md-3">
+        <cap-datepicker class="button_datepicker"
+          [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}" mode="period"
+          [(ngModel)]="periodo" required [(ngModel)]="dataBusca" (ngModelChange)="atualizarNumeroPagina($event)">
+        </cap-datepicker>
       </div>
-      <div class="col-md-6">
-                  <cap-dateRangePicker class="button_daterangepicker" [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}"
-                  name="periodo" [(ngModel)]="periodo" (ngModelChange)="atualizarNumeroPagina($event)"></cap-dateRangePicker>
+      <div class="col-md-3">
+        <cap-dateRangePicker class="button_daterangepicker"
+          [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}" name="periodo"
+          [(ngModel)]="periodo" (ngModelChange)="atualizarNumeroPagina($event)"></cap-dateRangePicker>
       </div>
     </div>
     <div class="row">
-      <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2"
-        tableTitle="bla" tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
+      <div class="col-md-3">
+        <div class="col-12 col-sm-12 col-md-12">
+          <cap-select [items]="selectSimple" label="Combo Simples" title="teste" name="testeSimples" placeholder="teste de combo simples"
+            [(ngModel)]="radioSimple"></cap-select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-12 col-sm-12 col-md-12">
+          <cap-select-mult [data]="cidades" label="Cidades" placeholder="Cidades" name="cidade" [(ngModel)]= "value"></cap-select-mult>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2" tableTitle="bla"
+        tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
       </cap-table-pagination>
 
       <cap-button (click)="exemploExportarXLS()">Exportar XLS</cap-button>
@@ -102,5 +118,6 @@
 
 <!-- </div>
 </div> -->
+
 
 <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes> -->
