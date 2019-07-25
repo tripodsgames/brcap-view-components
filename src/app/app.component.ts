@@ -13,6 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private brcapUtil;
   funcionalidades = [];
+  canais = [];
   colors = {};
   collapse = false;
   radio:any;
@@ -465,6 +466,20 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.canais = [
+      {
+        label: "Opção 1",
+        value: 1
+      },
+      {
+        label: "Opção 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
 
     this.radios = [
       {
@@ -589,7 +604,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.erroMsg = "Campo Obrigatório";
     return true;
   }
-
+  onChange(value) {
+    console.log("Value change!! ",value);
+  }
   async exemploExportarXLS() {
     return this.exportXlsService.gerarXls({
       linhas: this.listaPilotos,
