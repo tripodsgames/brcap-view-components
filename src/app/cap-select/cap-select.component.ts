@@ -7,7 +7,6 @@ import {
   ViewChild,
   Output,
   EventEmitter,
-  OnChanges
 } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
@@ -30,7 +29,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   templateUrl: "./cap-select.component.html",
   styleUrls: ["./cap-select.component.css"]
 })
-export class CapSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
+export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("id")
   id: string;
   @Input("label")
@@ -51,8 +50,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit, OnChang
   title: boolean;
   @Output()
   focus = new EventEmitter();
-  @Output()
-  change = new EventEmitter();
   @ViewChild("select")
   select;
 
@@ -76,11 +73,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit, OnChang
 
   onFocus(event) {
     return this.focus.emit(event);
-  }
-
-  ngOnChanges(event) {
-    this.writeValue(event);
-    this.change.emit(this.innerValue);
   }
 
   get value(): any {
