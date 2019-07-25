@@ -1,4 +1,14 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Output,
+  EventEmitter,
+  OnChanges
+} from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 import * as jqueryProxy from "jquery";
@@ -20,7 +30,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   templateUrl: "./cap-select.component.html",
   styleUrls: ["./cap-select.component.css"]
 })
-export class CapSelectComponent implements ControlValueAccessor, OnInit {
+export class CapSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input("id")
   id: string;
   @Input("label")
@@ -68,7 +78,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
     return this.focus.emit(event);
   }
 
-  onChange(event) {
+  ngOnChanges(event) {
     this.writeValue(event);
     this.change.emit(this.innerValue);
   }
