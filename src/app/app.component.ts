@@ -13,6 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private brcapUtil;
   funcionalidades = [];
+  canais = [];
   colors = {};
   collapse = false;
   radio:any;
@@ -465,6 +466,20 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.canais = [
+      {
+        label: "Opção 1",
+        value: 1
+      },
+      {
+        label: "Opção 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
 
     this.radios = [
       {
@@ -590,23 +605,39 @@ export class AppComponent implements OnInit, AfterViewInit {
     return true;
   }
 
+  pilotos1XLS = {
+    linhas: this.listaPilotos,
+    metadadosTabela: this.metadadosPilotos,
+    titulo: 'Pilotos'
+  }
+
+  pilotos2XLS = {
+    linhas: this.listaPilotos2,
+    metadadosTabela: this.metadadosPilotos,
+    metadadosDetalhe: this.metadadosPendura,
+    titulo: 'Pilotos2'
+  }
+
+  onChange(value) {
+    console.log("Value change!! ",value);
+  }
   async exemploExportarXLS() {
-    return this.exportXlsService.gerarXls({
-      linhas: this.listaPilotos,
-      metadadosTabela: this.metadadosPilotos,
-      nomeArquivo: 'exemploPilotos',
-      titulo: 'Pilotos'
-    });
+    return this.exportXlsService.gerarXls({ ...this.pilotos1XLS,  nomeArquivo: 'exemploPilotos'});
   }
 
   async exemplo2ExportarXLS() {
-    return this.exportXlsService.gerarXls({
-      linhas: this.listaPilotos2,
-      metadadosTabela: this.metadadosPilotos,
-      metadadosDetalhe: this.metadadosPendura,
-      nomeArquivo: 'exemplo2Pilotos',
-      titulo: 'Pilotos'
-    });
+    return this.exportXlsService.gerarXls({ ...this.pilotos2XLS, nomeArquivo: 'exemplo2Pilotos'});
+  }
+
+  gerarMultiplosPilotos() {
+    return [this.pilotos1XLS, this.pilotos2XLS];
+  }
+
+  async exemploMultiplasAbasXLS() {
+    return this.exportXlsService.gerarXlsMultiplasAbas({
+      planilhas: this.gerarMultiplosPilotos(),
+      nomeArquivo: 'exemploMultiplasAbasXLS'
+    })
   }
 
   login(event) {
