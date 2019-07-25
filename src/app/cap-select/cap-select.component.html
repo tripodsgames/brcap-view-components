@@ -1,7 +1,6 @@
 <label [for]="id" class="label-input {{styleClass}}" [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
 <ng-select class="{{styleClass}}"
-           (ngModelChange)="onChange($event)"
            [options]="items"
            [noFilter]="!filter ? 100 : 0"
            [(ngModel)]="value"

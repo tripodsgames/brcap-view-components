@@ -1,4 +1,13 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 import * as jqueryProxy from "jquery";
@@ -41,8 +50,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   title: boolean;
   @Output()
   focus = new EventEmitter();
-  @Output()
-  change = new EventEmitter();
   @ViewChild("select")
   select;
 
@@ -66,11 +73,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
 
   onFocus(event) {
     return this.focus.emit(event);
-  }
-
-  onChange(event) {
-    this.writeValue(event);
-    this.change.emit(this.innerValue);
   }
 
   get value(): any {
