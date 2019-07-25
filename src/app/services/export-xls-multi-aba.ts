@@ -17,7 +17,7 @@ import {
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 
-export default class ExportXLSMultiplaAba { 
+export default class ExportXLSMultiplaAba {
 
     private book: ExcelJS.Workbook;
     private pathLogoProjeto: string;
@@ -30,7 +30,7 @@ export default class ExportXLSMultiplaAba {
     this.pathLogoProjeto = pathLogoProjeto;
     this.nomeArquivo = nomeArquivo;
    }
-    
+
 
     async gerarAba(planilha: DadosPlanilha, logoProjeto?: string) {
         planilha.linhas = this.filtraLinhasMA(planilha);
@@ -51,13 +51,13 @@ export default class ExportXLSMultiplaAba {
             extension: 'png',
         });
     }
-    
+
     private chavesPermitidasMA(planilha): Array<string> {
         return planilha.metadadosTabela.filter(metadado => !planilha.metadadosDetalhe
             || !metadado[planilha.metadadosDetalhe.chave])
             .map(metadado => metadado.chave);
     }
-    
+
    private filtraLinhasMA(planilha: DadosPlanilha): Array<object> {
         return planilha.linhas.map(linha => ({
             ...this.chavesPermitidasMA(planilha)
@@ -67,7 +67,7 @@ export default class ExportXLSMultiplaAba {
                 : {})
             }));
     }
-    
+
     private async  createSheetMA(planilha) {
         this.book.addWorksheet(planilha.titulo);
         this.sheetBy(planilha.titulo).columns = planilha.metadadosTabela.map(({ chave }) => ({
@@ -79,11 +79,11 @@ export default class ExportXLSMultiplaAba {
             this.idLogoProjeto = await this.idImg(this.pathLogoProjeto);
         }
     }
-    
+
     private sheetBy(titulo) {
         return this.book.getWorksheet(titulo);
     }
-    
+
     private async setSheetHeaderMA(titulo) {
         this.sheetBy(titulo).mergeCells('E1:F4');
         alignCenter(this.sheetBy(titulo).getCell('F4'));
@@ -97,7 +97,7 @@ export default class ExportXLSMultiplaAba {
         addDefaultBorder(this.sheetBy(titulo).getCell('J4'));
         this.addImgsHeaderToSheetMA(titulo);
     }
-    
+
     private async  addImgsHeaderToSheetMA(titulo) {
         this.sheetBy(titulo).mergeCells('A1:B4');
         addDefaultBorder(this.sheetBy(titulo).getCell('B4'));
@@ -116,7 +116,7 @@ export default class ExportXLSMultiplaAba {
             });
         }
     }
-    
+
     private setSheetColumnsMA(planilha) {
         const headerRow = this.sheetBy(planilha.titulo).getRow(HEADER_ROW_NUM);
         const columns = this.columnsMA(planilha);
@@ -128,14 +128,14 @@ export default class ExportXLSMultiplaAba {
         headerRow.eachCell(addDefaultBorder);
         headerRow.eachCell(changeBgColor('E6E6E6'));
     }
-    
+
     private columnsMA(planilha) {
         return planilha.metadadosTabela.map((elem, i, arr) =>
             this.celulaMescladaMesmoGrupoMA(elem, i, arr, planilha) ?
                 elem.grupo : elem.nome
         );
     }
-    
+
     private celulaMescladaMesmoGrupoMA(celula, i, arr, planilha) {
         const ultimo = i === (arr.length - 1);
         const mesclar = !ultimo && mesmoGrupo(celula, arr[i + 1]);
@@ -144,7 +144,7 @@ export default class ExportXLSMultiplaAba {
         }
         return mesclar;
     }
-    
+
     private mesclasNoHeaderMA(headerRow, planilha) {
         if (this.existemGruposMA(planilha)) {
             headerRow.eachCell((cell) => this.headerPodeMesclarAbaixoMA(cell, planilha) ?
@@ -155,21 +155,21 @@ export default class ExportXLSMultiplaAba {
                 stringCelulaMesclarAoLado(i, HEADER_ROW_NUM)));
         }
     }
-    
+
     private existemGruposMA(planilha) {
         return planilha.metadadosTabela.map(({ grupo }) => grupo)
             .filter(e => e).length > 0;
     }
-    
+
     private headerPodeMesclarAbaixoMA({ col }, planilha) {
         return !planilha.celulasHeaderMesclarAoLado.includes(col)
             && (col === 1 || !planilha.celulasHeaderMesclarAoLado.includes(col - 1));
     }
-    
+
     private rotuloMA(col,planilha) {
         return planilha.metadadosTabela.map(elem => elem.grupo ? elem.nome : '')[col - 1];
     }
-    
+
     private setSheetLinesMA(planilha) {
         for (let linha of planilha.linhas) {
             this.sheetBy(planilha.titulo).addRow(this.chavesPermitidasMA(planilha).map(key => linha[key]));
@@ -178,14 +178,14 @@ export default class ExportXLSMultiplaAba {
             }
         }
     }
-    
+
     private setSubSheetMA({ detalhes }, planilha) {
         this.adicionarSubheaderMA(planilha);
         detalhes.forEach(el => this.mesclaLinhaSubSheetMA(this.arrayLinhaMescladaMA(el, planilha), planilha));
         // linha vazia no final
         this.sheetBy(planilha.titulo).addRow([' ']);
     }
-    
+
     private adicionarSubheaderMA(planilha) {
         const row: Array<string> = planilha.metadadosDetalhe.detalhes
             .reduce((acc: Array<string>, { tamanho, nome }) => [
@@ -193,15 +193,15 @@ export default class ExportXLSMultiplaAba {
                 ...this.elemLinhaMescladaMA(tamanho, nome),
             ], []);
         this.mesclaLinhaSubSheetMA(row, planilha);
-    } 
-    
+    }
+
     private arrayLinhaMescladaMA(linha: object, planilha): any[] {
         return Object.entries(linha).reduce((acc, [k, v]) =>  [
             ...acc,
             ...this.elemLinhaMescladaMA(this.tamanhoDetalheMA(k, planilha), v),
         ], []);
     }
-    
+
     private mesclaLinhaSubSheetMA(row, planilha) {
         this.sheetBy(planilha.titulo).addRow(row);
         const linhaSheet = this.sheetBy(planilha.titulo).lastRow;
@@ -213,20 +213,20 @@ export default class ExportXLSMultiplaAba {
                 ], []);
         mesclas.map(str => this.sheetBy(planilha.titulo).mergeCells(str));
     }
-    
+
     private tamanhoDetalheMA(chave: string, planilha): number {
         return planilha.metadadosDetalhe.detalhes
             .find(detalhe => detalhe.chave === chave).tamanho;
     }
-    
+
     private elemLinhaMescladaMA(tamanho: number, valor): any[] {
         return [...Array(tamanho).fill(valor)];
     }
-    
+
     private addBorderToLinesMA(titulo) {
         this.sheetBy(titulo).eachRow(row => row.eachCell(addDefaultBorder));
     }
-    
+
     private formataColunasMA(planilha) {
         planilha.metadadosTabela
             .map(({ formato }, index) => ({
@@ -239,7 +239,7 @@ export default class ExportXLSMultiplaAba {
                 coluna,
             }) => this.formataColunaMA(formato, coluna, planilha));
     }
-    
+
     private formataColunaMA(formato: string, coluna: number, planilha) {
         this.sheetBy(planilha.titulo).getColumn(coluna).numFmt = formato;
     }
@@ -251,4 +251,3 @@ export default class ExportXLSMultiplaAba {
         saveAs(blob, `${this.nomeArquivo}.xlsx`);
     }
 }
-

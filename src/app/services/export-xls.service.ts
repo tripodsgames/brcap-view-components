@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as ExcelJS from "exceljs/dist/exceljs.min.js";
-import { MetadadosDetalhe, MetadadosXLS, DadosPlanilha} from "../types";
+import { MetadadosDetalhe, MetadadosXLS, DadosPlanilha } from "../types";
 import ExportXLSMultiplaAba from "./export-xls-multi-aba";
 import {
     imgToBase64,
@@ -169,7 +169,7 @@ export class ExportXLSService {
             }
         }
     }
-    
+
     private addBorderToLines() {
         this.sheet.eachRow(row => row.eachCell(addDefaultBorder));
     }
@@ -184,7 +184,7 @@ export class ExportXLSService {
     }
 
     private arrayLinhaMesclada(linha: object): any[] {
-        return Object.entries(linha).reduce((acc, [k, v]) =>  [
+        return Object.entries(linha).reduce((acc, [k, v]) => [
             ...acc,
             ...this.elemLinhaMesclada(this.tamanhoDetalhe(k), v),
         ], []);
@@ -202,7 +202,7 @@ export class ExportXLSService {
         this.sheet.addRow(row);
         const linhaSheet = this.sheet.lastRow;
         const mesclas = this.metadadosDetalhe.detalhes
-            .reduce((acc, { tamanho }, i) => tamanho <=1 ? acc
+            .reduce((acc, { tamanho }, i) => tamanho <= 1 ? acc
                 : [
                     ...acc,
                     stringCelulasMesclarAoLado(i + 1, linhaSheet.number, tamanho - 1),
@@ -237,7 +237,7 @@ export class ExportXLSService {
             ...(this.metadadosDetalhe
                 ? { detalhes: linha[this.metadadosDetalhe.chave] }
                 : {})
-            }));
+        }));
     }
 
     async gerarXls({
@@ -271,27 +271,20 @@ export class ExportXLSService {
         this.formataColunas();
         await this.downloadFile();
     }
-
-
-
+    // TODO: Refatorar implementacao de multi aba
     async gerarXlsMultiplasAbas({
         planilhas,
         nomeArquivo,
         logoProjeto,
-    } : {
+    }: {
         planilhas: Array<DadosPlanilha>,
         nomeArquivo: string,
         logoProjeto?: string,
     }) {
-        // this.init();
-        // this.nomeArquivo = nomeArquivo;
         const multiAba = new ExportXLSMultiplaAba(nomeArquivo, logoProjeto);
         const promises = planilhas.map(planilha => multiAba.gerarAba(planilha, logoProjeto));
-        for(const gerarAba of promises)
-            await gerarAba     
-        
+        for (const gerarAba of promises)
+            await gerarAba
         await multiAba.downloadFile();
     }
-
-   
 }
