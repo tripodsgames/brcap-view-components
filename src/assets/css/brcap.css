@@ -1556,6 +1556,10 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   font-size: 20px;
 }
 
+.inputTextArea .ico-error{
+  top: -40px;
+}
+
 /* classes gerais */
 .no-padding-right {
   padding-right: 0 !important;

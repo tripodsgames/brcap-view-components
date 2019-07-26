@@ -7,5 +7,5 @@
   [(ngModel)]="value" type="text" [attr.maxlength]="maxlength?.length ? maxlength : ''" [placeholder]="placeholder?.length ? placeholder : ''">
   </textarea>
 
-<cap-icon icon="alerta" styleClass="ico-error" [class.disabled]="disabled" *ngIf="textError"></cap-icon>
+<cap-icon class="inputTextArea" icon="alerta" styleClass="ico-error" [class.disabled]="disabled" *ngIf="textError"></cap-icon>
 <p *ngIf="textHelper?.length" class="helper-text {{styleClass}}" [class.disabled]="disabled">{{textHelper}}</p>
