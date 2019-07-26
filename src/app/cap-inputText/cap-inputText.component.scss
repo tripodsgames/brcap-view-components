@@ -1,0 +1,50 @@
+/* STYLECLASS(sm e outline) */
+label {
+  &.label-duas-linhas {
+    max-width: 69%;
+    top: -8px;
+    height: 20px;
+
+    @media screen and (min-width: 1900px) {
+      max-width: none;
+      top: -1px;
+    }
+  }
+
+  &.label-input.outline {
+    margin-top: 5px;
+  }
+}
+
+.cap-inputText {
+  &.sm {
+    height: 40px;
+  }
+
+  &-icon.sm {
+    font-size: 20px;
+  }
+}
+
+.input-icon.outline {
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54) !important;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.input-icon {
+  display: flex;
+  background: white;
+}
+
+/* como era antes */
+/* .cap-inputText-icon.sm {
+  font-size: 20px;
+  top: -33px;
+} */
+
+/* como era antes */
+/* label.label-input.sm {
+  top: 23px;
+} */

@@ -28,7 +28,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   selector: "cap-inputTextArea",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-inputTextArea.component.html",
-  styleUrls: ["./cap-inputTextArea.component.css"]
+  styleUrls: ["./cap-inputTextArea.component.scss"]
 })
 export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAccessor, OnInit {
   @Input("id")

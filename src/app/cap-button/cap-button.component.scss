@@ -1,8 +1,9 @@
+//STYLECLASS(xs, sm, lg, outline, white, nova-pesquisa, fechar, ico-ver-senha, icon-arrow e btn-ico)
 button {
   position: relative;
   overflow: hidden;
 
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
 
@@ -54,8 +55,7 @@ button {
       animation: ripple 1s ease-out;
     }
 
-    //styleClass(xs, sm, lg, outline, white, nova-pesquisa, fechar, ico-ver-senha, icon-arrow e btn-ico)
-    &.xs.btn-ico{
+    &.xs.btn-ico {
       width: 20px;
       height: 20px;
       padding: 0 3px;
@@ -148,7 +148,7 @@ button {
       box-shadow: none;
       color: #9e9e9e;
 
-      &:hover{
+      &:hover {
         color: #757575;
         transition: 0.5s all ease-in-out;
       }
@@ -172,7 +172,7 @@ button {
       z-index: 2;
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         color: #757575;
         transition: 0.5s all ease-in-out;
         opacity: 1;
@@ -183,7 +183,7 @@ button {
       }
     }
 
-    &.icon-arrow{
+    &.icon-arrow {
       height: inherit;
       padding: 0;
       background: none;
