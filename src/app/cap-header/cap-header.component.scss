@@ -48,6 +48,10 @@
     right: 0;
     top: 0;
   }
+
+  .specialTop {
+    top: 25px;
+  }
 }
 
 .icon-arrow-left2:before {
@@ -155,9 +159,12 @@
   left: -5px;
 }
 
-.dropdown-menu {
+.navbar-nav > li > .dropdown-menu {
   padding: 0;
   z-index: 1000;
+  margin-top: -5px;
+  right: 0;
+  left: auto !important;
 }
 
 .navbar {

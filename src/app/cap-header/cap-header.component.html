@@ -25,7 +25,7 @@
               <img [src]="n_avatar" class="img-avatar-header"> <span class="hidden-xs text-user">{{username_trat}}</span>
              <span class="positionRelative"><cap-icon icon="retrair" [size]="16"></cap-icon></span>
             </a>
-            <ul class="dropdown-menu dropdown-user" style="margin-top: -5px;right: 0;left: auto !important;">
+            <ul class="dropdown-menu dropdown-user">
               <a [href]="rotaPerfil">
                 <li class="user-body">
                   <span>Perfil</span>
@@ -44,7 +44,7 @@
         </ul>
     </div>
 
-    <div class="navbar-custom-menu" style="top:25px;" title="Tela cheia">
+    <div class="navbar-custom-menu specialTop" title="Tela cheia">
       <a (click)="toggleFullScreen()" class="icon-fullscreen">
         <cap-icon icon="fullscreen" [size]="16"></cap-icon>
       </a>

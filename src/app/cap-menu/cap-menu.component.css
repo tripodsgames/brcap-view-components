@@ -79,3 +79,7 @@ border-radius:10px;
   display: flex;
   visibility: visible;
 }
+
+.width-230{
+  width: 230px;
+}
