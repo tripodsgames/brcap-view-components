@@ -1,5 +1,5 @@
 // Cap-button-datepicker
-:host ::ng-deep .buttonDatepicker {
+my-date-picker.buttonDatepicker::ng-deep {
   .mydp {
     width: inherit !important;
     margin-left: -4px;

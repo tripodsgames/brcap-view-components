@@ -13,7 +13,7 @@
     </div>
 
     <div *ngIf="pagedItens.length > 0 || emptyMessage">
-      <table id="table" class="table table-responsive" role="tablist" aria-multiselectable="true">
+      <table id="table" class="table table-responsive table-drag-drop" role="tablist" aria-multiselectable="true">
         <thead>
           <tr class="table-header">
             <th *ngFor="let c of columns">{{c}}</th>

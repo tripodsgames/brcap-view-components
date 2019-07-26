@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
 @Component({
   selector: "cap-menu",
   templateUrl: "./cap-menu.component.html",
-  styleUrls: ["./cap-menu.component.css"]
+  styleUrls: ["./cap-menu.component.scss"]
 })
 export class CapMenuComponent implements OnInit {
   @Input("id")

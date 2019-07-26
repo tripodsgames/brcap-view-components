@@ -1,15 +1,3 @@
-.body {
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
-
-.wrapper {
-  height: 100%;
-  margin: 50px;
-}
-
 .content-header {
-  background-color: rgba(0,161,255,0.3);;
-  /* z-index: 1; */
+  background-color: rgba(0,161,255,0.3);
 }
