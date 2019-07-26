@@ -61,6 +61,10 @@
     margin-left: 1px;
     margin-top: -9px;
   }
+
+  &.showHint {
+    opacity: 1;
+  }
 }
 
 .cap-hint .hintText.left {
@@ -72,8 +76,4 @@
     left: 100%;
     transform: rotate(180deg);
   }
-}
-
-.showHint {
-  display: block !important;
 }
