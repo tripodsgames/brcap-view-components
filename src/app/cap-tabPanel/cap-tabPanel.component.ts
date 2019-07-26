@@ -5,7 +5,7 @@ import BRCapUtil from "../../brcap-util";
 @Component({
   selector: "cap-tabPanel",
   templateUrl: "./cap-tabPanel.component.html",
-  styleUrls: ["./cap-tabPanel.component.css"]
+  styleUrls: ["./cap-tabPanel.component.scss"]
 })
 export class CapTabPanelComponent implements OnInit, AfterContentInit {
   @Input("id") id: string;
