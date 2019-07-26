@@ -162,7 +162,7 @@ body.minimizado .loader {
 }
 
 .content-header .error .dp-picker-input,
-.content-header ng-select.error .below,
+.content-header ng-select.error>.below,
 .content-header my-date-picker.error .mydp input,
 .content-header my-date-range-picker.error .mydrp input {
   border-bottom: 2px solid #b00020 !important;
@@ -377,7 +377,7 @@ dp-date-picker {
   padding: 10px 10px 0 0;
 }
 
-.content .cap-inputText-icon.sm{
+.content .cap-inputText-icon.sm {
   padding: 6px;
 }
 
@@ -1231,25 +1231,27 @@ button.cap-button.btn-ico .brcap-ico {
 
 @-webkit-keyframes fadeInRight {
   0% {
-     opacity: 0;
-     -webkit-transform: translateX(20px);
+    opacity: 0;
+    -webkit-transform: translateX(20px);
   }
+
   100% {
-     opacity: 1;
-     -webkit-transform: translateX(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
   }
 }
 
 @keyframes fadeInRight {
   0% {
-     opacity: 0;
-     transform: translateX(20px);
+    opacity: 0;
+    transform: translateX(20px);
   }
+
   100% {
-     opacity: 1;
-     transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
-} 
+}
 
 .over {
   position: absolute;
@@ -1266,7 +1268,7 @@ button.cap-button.btn-ico .brcap-ico {
   pointer-events: none;
 }
 
-.visible{
+.visible {
   opacity: 1;
   transition: all 0.5s;
 }
@@ -1556,7 +1558,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   font-size: 20px;
 }
 
-.inputTextArea .ico-error{
+.inputTextArea .ico-error {
   top: -40px;
 }
 
@@ -1736,4 +1738,16 @@ label.label-input {
 
 .table-responsive tbody tr:hover {
   background-color: rgba(255, 232, 0, 0.12);
+}
+
+.content-header ng-select.sm .below {
+  height: 40px;
+}
+
+.content-header ng-select.sm select-dropdown .below {
+  height: inherit;
+}
+
+.content-header ng-select.sm select-dropdown .below .toggle {
+  line-height: 40px !important;
 }
