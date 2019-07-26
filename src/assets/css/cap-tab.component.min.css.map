@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,AAAA,CACD,UAAU,CAAE,IAAI,CACnB",
+    "sources": [
+        "../../app/cap-tab/cap-tab.component.scss"
+    ],
+    "names": [],
+    "file": "cap-tab.component.min.css"
+}

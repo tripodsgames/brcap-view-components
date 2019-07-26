@@ -1,0 +1,83 @@
+.cap-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  margin-left: 0;
+  padding-top: 15px;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#ex4::-webkit-scrollbar {
+  width: 0px;
+  border: 1px solid transparent;
+
+  &-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.315);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.514);
+    }
+  }
+
+  &-track {
+    border: 1px transparent;
+    border-radius: 10px;
+  }
+
+}
+
+.cap-menu.fechado {
+  margin-left: -230px;
+}
+
+.simplebar-scroll-content {
+  margin-top: 70px;
+  max-height: inherit;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.icon-menu {
+  width: 26px;
+}
+
+.simplebar-track.vertical {
+  top: 0;
+}
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  height: auto;
+  width: 11px;
+  visibility: visible;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  height: auto;
+  width: 7px;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: visible;
+}
+
+.width-230 {
+  width: 230px;
+}
