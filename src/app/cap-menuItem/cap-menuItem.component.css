@@ -14,7 +14,7 @@
 .link:active,
 .link:visited,
 .link:focus {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 ul.list {
@@ -23,7 +23,6 @@ ul.list {
   padding-left: 0px;
   background-color: rgba(0, 0, 0, 0.2);
 }
-
 
 ul.list li .menu-item {
   min-height: 40px;
