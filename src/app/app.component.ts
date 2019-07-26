@@ -39,6 +39,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   loading = true;
   error = true;
 
+  modal = false;
+
   menu = [
     {
       codigo: "posvenda#gravame",
@@ -471,5 +473,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   login(event) {
     alert("LOGOU!");
+  }
+
+  show(){
+    this.modal = true;
   }
 }

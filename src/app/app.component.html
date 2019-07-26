@@ -809,6 +809,30 @@
               textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200" [disabled]="true">
             </cap-inputTextArea>
           </div>
+
+          <div class="box">
+            CAP-MODAL
+            <br /> <br />
+            <cap-button label="open modal" (click)="show()"></cap-button>
+
+            <cap-modal>
+              <div class="app-modal-header">Header do modal</div>
+              <div class="app-modal-body">
+                <p class="text-center">Corpo do modal</p>
+              </div>
+              <div class="app-modal-footer text-center">
+                <div class="row">
+                  <div class="col-md-6">
+                    <cap-button label="cancelar"></cap-button>
+                  </div>
+                  <div class="col-md-6">
+                    <cap-button label="confirmar"></cap-button>
+                  </div>
+                </div>
+              </div>
+            </cap-modal>
+
+          </div>
         </div>
       </div>
 
