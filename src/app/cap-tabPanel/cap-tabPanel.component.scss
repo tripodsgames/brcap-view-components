@@ -1,0 +1,60 @@
+.cap-tabPanel {
+  li {
+    margin-right: -2px;
+
+    &:hover a {
+      background-color: rgba(208, 116, 0, 0.15);
+    }
+
+    &.disabled {
+      &:hover a {
+        background-color: #e5e5e5;
+        color: #ccc;
+        cursor: default;
+      }
+
+      a {
+        background-color: #e5e5e5;
+        color: #ccc;
+      }
+    }
+
+    a {
+      border-radius: 0px;
+      border: none;
+      background-color: #fafafa;
+      border-bottom: 1px solid #979797;
+      letter-spacing: 0.2px;
+      padding: 13px 20px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.6);
+      min-width: 200px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    &.active a {
+      background-color: rgba(208, 116, 0, 0.58);
+      border-bottom: 2px solid #d07400;
+    }
+  }
+}
+
+.nav-tabs {
+  border: none;
+
+  li.active a {
+    height: 55px;
+    position: relative;
+    top: -8px;
+    right: 2px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
+
+.tabPanel-content-header {
+  margin-top: -72px;
+  z-index: 100;
+}

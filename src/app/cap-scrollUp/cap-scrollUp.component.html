@@ -1,2 +1,4 @@
 <div #target class="anchor"></div>
-<cap-button class="scroll" icon="retrair" (click)="scroll(target)" [class.show]="!pageTop"></cap-button>
+<div class="scroll" [class.show]="!pageTop">
+  <cap-button styleClass="btn-ico" icon="retrair" (click)="scroll(target)"></cap-button>
+</div>
