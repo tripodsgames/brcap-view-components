@@ -10,7 +10,6 @@ export class CapModalComponent {
   public visibleAnimate = false;
 
   public show(): void {
-    console.log("oi")
     this.visible = true;
     setTimeout(() => (this.visibleAnimate = true), 100);
   }
