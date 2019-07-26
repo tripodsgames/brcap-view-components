@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 import { CapTableComponent } from "./cap-table/cap-table.component";
 import toastr from "toastr";
+import { CapModalComponent } from "./cap-modal/cap-modal.component";
 
 @Component({
   selector: "app-root",
@@ -8,6 +9,8 @@ import toastr from "toastr";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit, AfterViewInit {
+
+  @ViewChild(CapModalComponent) modal: CapModalComponent;
 
   constructor() {
 
@@ -38,8 +41,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   disabled = true;
   loading = true;
   error = true;
-
-  modal = false;
 
   menu = [
     {
@@ -338,7 +339,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   variavel = "dfvfdfghgfhfggfhhfg"
 
   listaTipoPessoa = "dd"
-  
+
   ngAfterViewInit() {
     if (this.gridPagination) {
       setTimeout(_ => {
@@ -346,16 +347,16 @@ export class AppComponent implements OnInit, AfterViewInit {
       }, 0);
     }
   }
-
+  
   toogleCollapse() {
     this.collapse = !this.collapse;
   }
 
-  gerarPdf(){
+  gerarPdf() {
     alert("baixando pdf");
   }
 
-  gerarXls(){
+  gerarXls() {
     alert("baixando xls");
   }
 
@@ -473,9 +474,5 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   login(event) {
     alert("LOGOU!");
-  }
-
-  show(){
-    this.modal = true;
   }
 }

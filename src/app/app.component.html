@@ -813,20 +813,23 @@
           <div class="box">
             CAP-MODAL
             <br /> <br />
-            <cap-button label="open modal" (click)="show()"></cap-button>
+            <cap-button label="open modal" (click)="modal.show()"></cap-button>
 
             <cap-modal>
-              <div class="app-modal-header">Header do modal</div>
-              <div class="app-modal-body">
-                <p class="text-center">Corpo do modal</p>
+              <div class="modal-header">
+                <div class="app-modal-header">
+                  Header do modal
+                </div>
               </div>
-              <div class="app-modal-footer text-center">
+              <div class="modal-body">
+                <div class="app-modal-body">
+                  <p class="text-center">Corpo do modal</p>
+                </div>
+              </div>
+              <div class="modal-footer text-center">
                 <div class="row">
-                  <div class="col-md-6">
-                    <cap-button label="cancelar"></cap-button>
-                  </div>
-                  <div class="col-md-6">
-                    <cap-button label="confirmar"></cap-button>
+                  <div class="col-md-12 text-center">
+                    <cap-button label="Ok"></cap-button>
                   </div>
                 </div>
               </div>
