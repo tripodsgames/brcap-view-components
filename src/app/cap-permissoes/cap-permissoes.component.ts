@@ -32,7 +32,6 @@ export class PermissoesComponent implements OnInit {
   modalActive = false;
   modalWarningActive = false;
   filtro;
-  checkboxAtivo = false;
   listaFiltrado;
   tabelaLinha;
   emptyMessage = false;
@@ -101,7 +100,7 @@ export class PermissoesComponent implements OnInit {
 
       this.usuariosPermissionados.forEach(element => {
         delete element.plataforma;
-        if(element !== undefined){
+        if (element !== undefined) {
           element.cpfMascarado = element.cpf.substring(0, 3).concat(".").concat(element.cpf.substring(3, 6)).concat(".").concat(element.cpf.substring(6, 9)).concat("-").concat(element.cpf.substring(9, 11));
         }
 
@@ -112,8 +111,8 @@ export class PermissoesComponent implements OnInit {
 
       this.usuariosNaoPermissionados.forEach(element => {
         delete element.plataforma;
-        if(element !== undefined){
-        element.cpfMascarado = element.cpf.substring(0, 3).concat(".").concat(element.cpf.substring(3, 6)).concat(".").concat(element.cpf.substring(6, 9)).concat("-").concat(element.cpf.substring(9, 11));
+        if (element !== undefined) {
+          element.cpfMascarado = element.cpf.substring(0, 3).concat(".").concat(element.cpf.substring(3, 6)).concat(".").concat(element.cpf.substring(6, 9)).concat("-").concat(element.cpf.substring(9, 11));
         }
         if ((<any>Object).values(element).find((item) => item.toString().toUpperCase().indexOf(this.filtro.toUpperCase()) >= 0)) {
           this.listaFiltrado.push(element);
@@ -127,7 +126,7 @@ export class PermissoesComponent implements OnInit {
         this.filtrando = false;
       }
     }
-    
+
     this.contagemPaginasTotal = Math.ceil(
       this.listaFiltrado.length / this.limit
     );
@@ -217,10 +216,10 @@ export class PermissoesComponent implements OnInit {
     this.modalActive = !this.modalActive;
   }
 
-  toggleModalWarning(){
-    if(this.hasAlteracao){
+  toggleModalWarning() {
+    if (this.hasAlteracao) {
       this.modalWarningActive = !this.modalWarningActive;
-    } else{
+    } else {
       this.usuarioPermissao = null;
       this.popularListaModulos();
     }
@@ -233,7 +232,7 @@ export class PermissoesComponent implements OnInit {
     }
   }
 
-  clickOutsideWarning(event){
+  clickOutsideWarning(event) {
     var target = event.target || event.srcElement || event.currentTarget;
     if (!document.getElementById("old-modal-warning-body").contains(target)) {
       this.toggleModalWarning();
@@ -262,7 +261,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   capitalize(string) {
-    if(string !== undefined){
+    if (string !== undefined) {
       var usuarioNome = string.toLowerCase();
       return usuarioNome;
     }
@@ -426,7 +425,6 @@ export class PermissoesComponent implements OnInit {
               modulo.todos = permissao.funcionalidades.length > 0;
               permissao.funcionalidades.forEach(funcPermissao => {
                 if (funcModulo.codigo === this.sistema + "#" + permissao.codigo + "#" + funcPermissao.codigo) {
-                  // modulo.checkboxAtivo = true;
                   funcModulo.acao = funcPermissao.acao;
                   funcModulo.acoes = funcPermissao.acoes;
                   funcModulo.incluir = funcPermissao.incluir;
@@ -546,7 +544,7 @@ export class PermissoesComponent implements OnInit {
               if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos) {
                 this.hasAlteracao = true;
               }
-              if (originalF.codigo === editadoF.codigo && editadoF.incluir !== originalF.incluir || 
+              if (originalF.codigo === editadoF.codigo && editadoF.incluir !== originalF.incluir ||
                 originalF.codigo === editadoF.codigo && editadoF.excluir !== originalF.excluir ||
                 originalF.codigo === editadoF.codigo && editadoF.alterar !== originalF.alterar ||
                 originalF.codigo === editadoF.codigo && editadoF.pesquisar !== originalF.pesquisar ||

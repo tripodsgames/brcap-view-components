@@ -17,10 +17,6 @@
   &:last-child {
     margin-bottom: 0;
   }
-
-  cap-btncollapse::ng-deep .btnCollapse {
-    margin: 0;
-  }
 }
 
 .box-closed {
@@ -57,24 +53,8 @@
   padding-left: 20px;
 }
 
-.col-md-1 cap-button::ng-deep .cap-button {
-  width: 40px;
-  height: 40px;
-  padding: 0px 20px;
-
-  cap-icon::ng-deep .brcap-ico {
-    font-size: 24px !important;
-    left: -11px;
-  }
-}
-
 cap-icon {
   color: #7b7b7b;
-}
-
-.col-lg-5 cap-button::ng-deep .cap-button {
-  height: 36px;
-  padding: 0px 23px;
 }
 
 // CARD - DASHBOARD
@@ -161,10 +141,6 @@ cap-icon {
     }
   }
 
-  .big-button {
-    width: 100px !important;
-  }
-
   &-buttons {
     text-align: center;
 
@@ -190,10 +166,6 @@ cap-icon {
   }
 }
 
-cap-checkbox[ng-reflect-model="true"].checkbox-cinza::ng-deep label:before {
-  background: rgb(117, 117, 117) !important;
-}
-
 .disabled {
   pointer-events: none;
 
@@ -205,11 +177,12 @@ cap-checkbox[ng-reflect-model="true"].checkbox-cinza::ng-deep label:before {
 }
 
 //cap-hint
-.firstHint cap-hint::ng-deep .cap-hint {
+.firstHint {
   margin-top: 43px;
 }
 
-.boxPermissao cap-hint::ng-deep .cap-hint {
+.hintPositionAbsolute {
   position: absolute;
   right: -35px;
+  top: 20px;
 }

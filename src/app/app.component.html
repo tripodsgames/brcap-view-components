@@ -1,4 +1,4 @@
-<div id="wrapper">
+<!-- <div id="wrapper">
   <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
   <cap-header username="Joaquim José Xavier" primerPage="/#/dashboard" rotaLogo="/#/dashboard"
     logoBrasilCap="../../../assets/img/logo-brasilcap.svg" logoSistema="../../../assets/img/contabilidade.svg">
@@ -468,11 +468,13 @@
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção com error" styleClass="error"></cap-radio>
+              <cap-radio itemValue="3" name="options" [(ngModel)]="radio3" itemLabel="Opção com error"
+                styleClass="error"></cap-radio>
               <br /><br />
             </div>
             <div class="col-md-12">
-              <cap-radio itemValue="4" name="options" [(ngModel)]="radio4" itemLabel="Opção desabilitada" [disabled]="true">
+              <cap-radio itemValue="4" name="options" [(ngModel)]="radio4" itemLabel="Opção desabilitada"
+                [disabled]="true">
               </cap-radio>
               <br /><br />
             </div>
@@ -848,8 +850,14 @@
     </div>
   </div>
 
-</div>
+</div> -->
 
-<!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="malthus"></cap-permissoes> -->
+<div id="wrapper">
+  <cap-menu [value]="menu" modulo="monitor" class="cap-menu"></cap-menu>
+  <cap-header username="Joaquim José Xavier" primerPage="/#/dashboard" rotaLogo="/#/dashboard"
+    logoBrasilCap="../../../assets/img/logo-brasilcap.svg" logoSistema="../../../assets/img/contabilidade.svg">
+  </cap-header>
+  <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="malthus"></cap-permissoes>
+</div>
 
 <!-- <cap-loading [loading]="loading" texto="cd" sistema="posvenda"></cap-loading> -->
