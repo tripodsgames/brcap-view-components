@@ -40,6 +40,9 @@ import { UsuarioService } from "../services/usuario.service";
 import { PlataformaService } from "../services/plataforma.service";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { RouterModule } from "@angular/router";
+import { ExportXLSService } from "../services/export-xls.service";
+import { CapSelectMultComponent } from "../cap-select-mult/cap-select-mult.component";
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   imports: [
@@ -51,7 +54,8 @@ import { RouterModule } from "@angular/router";
     MyDateRangePickerModule,
     DpDatePickerModule,
     Ng2SearchPipeModule,
-    RouterModule
+    RouterModule,
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   declarations: [
     CapInputTextComponent,
@@ -82,7 +86,8 @@ import { RouterModule } from "@angular/router";
     CapLoginComponent,
     PermissoesComponent,
     CapPaginationComponent,
-    CapModalComponent
+    CapModalComponent,
+    CapSelectMultComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -113,8 +118,19 @@ import { RouterModule } from "@angular/router";
     CapLoginComponent,
     PermissoesComponent,
     CapPaginationComponent,
-    CapModalComponent
+    CapModalComponent,
+    CapSelectMultComponent
   ],
-  providers: [LoginService, UsuarioService, PlataformaService]
+  providers: [
+    LoginService,
+    UsuarioService,
+    PlataformaService,
+    ExportXLSService,
+  ]
 })
-export class BRCapModule {}
+class BRCapModule { }
+
+export {
+  BRCapModule,
+  ExportXLSService
+}

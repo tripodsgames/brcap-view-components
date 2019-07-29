@@ -1,4 +1,13 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 import * as jqueryProxy from "jquery";
@@ -11,7 +20,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   useExisting: forwardRef(() => CapSelectComponent),
   multi: true
 };
-
 @Component({
   selector: "cap-select",
   host: {
@@ -42,7 +50,6 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
 
   @Output()
   focus = new EventEmitter();
-
   @ViewChild("select")
   select;
 

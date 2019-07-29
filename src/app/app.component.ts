@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angula
 import { CapTableComponent } from "./cap-table/cap-table.component";
 import toastr from "toastr";
 import { CapModalComponent } from "./cap-modal/cap-modal.component";
+import { ExportXLSService } from "./services/export-xls.service";
 
 @Component({
   selector: "app-root",
@@ -11,14 +12,16 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild(CapModalComponent) modal: CapModalComponent;
 
-  constructor() {
+  constructor(private exportXlsService: ExportXLSService) { }
 
-  }
   private brcapUtil;
   funcionalidades = [];
+  canais = [];
   colors = {};
   collapse = false;
-
+  radio: any;
+  radioSimple: any;
+  selectSimple = [];
   mes;
   item = false;
   radios = [];
@@ -40,6 +43,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   disabled = true;
   loading = true;
   error = true;
+  cidades: Array<any> = [];
+  selectedItems: Array<any> = [];
+  dropdownSettings = {};
 
   menu = [
     {
@@ -335,6 +341,108 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   rowOptions = ["Visualizar", "Editar", "Excluir"];
 
+  listaPilotos = [
+    {
+      nome: 'Rogerinho do Ingá',
+      veiculo: 'Sprinter Azul e Vermelha',
+      signo: 'Capricórnio',
+      altura: 1.7
+    },
+    {
+      nome: 'Maurílio dos Anjos',
+      veiculo: 'Kombi Branca 84',
+      signo: 'Câncer',
+      altura: 1.72
+    },
+    {
+      nome: 'Julinho da Van',
+      veiculo: 'Sprinter Branca',
+      signo: 'Touro',
+      altura: 1.8
+    },
+    {
+      nome: 'Renan',
+      veiculo: 'Towner Azul Bebê',
+      signo: 'Áries',
+      altura: 1.7
+    },
+  ];
+
+  listaPilotos2 = [
+    {
+      nome: 'Rogerinho do Ingá',
+      veiculo: 'Sprinter Azul e Vermelha',
+      signo: 'Capricórnio',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+    {
+      nome: 'Maurílio dos Anjos',
+      veiculo: 'Kombi Branca 84',
+      signo: 'Câncer',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+    {
+      nome: 'Julinho da Van',
+      veiculo: 'Sprinter Branca',
+      signo: 'Touro',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+    {
+      nome: 'Renan',
+      veiculo: 'Towner Azul Bebê',
+      signo: 'Áries',
+      penduras: [
+        { desc: 'cerveja fiado', valor: 23.50 },
+        { desc: 'cerveja fiado', valor: 50.23 },
+      ]
+    },
+  ];
+
+  metadadosPilotos = [
+    {
+      chave: 'nome',
+      nome: 'Nome do Piloto'
+    },
+    {
+      chave: 'veiculo',
+      nome: 'Dirige:'
+    },
+    {
+      chave: 'signo',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'altura',
+      nome: 'Altura',
+      formato: '#,##0.00"m"'
+    },
+  ];
+
+  metadadosPendura = {
+    chave: 'penduras',
+    detalhes: [
+      {
+        tamanho: 2,
+        chave: 'desc',
+        nome: 'Penduras'
+      },
+      {
+        tamanho: 1,
+        chave: 'valor',
+        nome: 'Valor'
+      },
+    ]
+  };
+
   variavel = "dfvfdfghgfhfggfhhfg"
 
   listaTipoPessoa = "dd"
@@ -346,7 +454,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       }, 0);
     }
   }
-  
+
   toogleCollapse() {
     this.collapse = !this.collapse;
   }
@@ -382,7 +490,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     // toastr["success"]("Usuário ou");
     // toastr["info"]("Usuário ou senha nao eas dkjmnke kmk skmkmkm skmkmo kmolmo solmomol");
 
-    this.radios = [
+    this.canais = [
       {
         label: "Opção 1",
         value: 1
@@ -396,6 +504,37 @@ export class AppComponent implements OnInit, AfterViewInit {
         value: 3
       }
     ];
+
+    this.radios = [
+      {
+        label: "Selecione opcao 1",
+        value: 1
+      },
+      {
+        label: "Selecione opcao 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
+
+    this.selectSimple = [
+      {
+        label: "opcao 1",
+        value: 1
+      },
+      {
+        label: "opcao 2",
+        value: 2
+      },
+      {
+        label: "Opção 3",
+        value: 3
+      }
+    ];
+
     this.funcionalidades = [
       {
         modulo: "Usuarios",
@@ -445,7 +584,26 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         ]
       }
+    ]
+
+    this.cidades = [
+      { value: 1, label: 'New Delhi' },
+      { value: 2, label: 'Mumbai' },
+      { value: 3, label: 'Bangalore' },
+      { value: 4, label: 'Pune' },
+      { value: 5, label: 'Chennai' },
+      { value: 6, label: 'Navsari' }
     ];
+
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'value',
+      textField: 'label',
+      selectAllText: 'Selecionar todos',
+      unSelectAllText: 'limpar seleção',
+      allowSearchFilter: false,
+      itemsShowLimit: 3
+    };
   }
 
   event(event) {
@@ -471,7 +629,46 @@ export class AppComponent implements OnInit, AfterViewInit {
     return true;
   }
 
+  pilotos1XLS = {
+    linhas: this.listaPilotos,
+    metadadosTabela: this.metadadosPilotos,
+    titulo: 'Pilotos'
+  }
+
+  pilotos2XLS = {
+    linhas: this.listaPilotos2,
+    metadadosTabela: this.metadadosPilotos,
+    metadadosDetalhe: this.metadadosPendura,
+    titulo: 'Pilotos2'
+  }
+
+  onChange(value) {
+    console.log("Value change!! ", value);
+  }
+  async exemploExportarXLS() {
+    return this.exportXlsService.gerarXls({ ...this.pilotos1XLS, nomeArquivo: 'exemploPilotos' });
+  }
+
+  async exemplo2ExportarXLS() {
+    return this.exportXlsService.gerarXls({ ...this.pilotos2XLS, nomeArquivo: 'exemplo2Pilotos' });
+  }
+
+  gerarMultiplosPilotos() {
+    return [this.pilotos1XLS, this.pilotos2XLS];
+  }
+
+  async exemploMultiplasAbasXLS() {
+    return this.exportXlsService.gerarXlsMultiplasAbas({
+      planilhas: this.gerarMultiplosPilotos(),
+      nomeArquivo: 'exemploMultiplasAbasXLS'
+    })
+  }
+
   login(event) {
     alert("LOGOU!");
+  }
+
+  selFormaOnChange(item: any) {
+    console.log('item', item);
   }
 }
