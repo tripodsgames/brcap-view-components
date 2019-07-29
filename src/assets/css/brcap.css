@@ -1537,12 +1537,22 @@ my-date-range-picker.error .mydrp .selectiongroup {
   overflow: hidden !important;
 }
 
+.multiselect-item-checkbox
+ input[type=checkbox]:checked + div:before {
+  background: rgba(107,191,94,0.5) !important;
+}
 
+.multiselect-item-checkbox input[type=checkbox] + div:before {
+  color: rgba(107,191,94,0.5) !important;
+  border: 2px solid rgba(107,191,94,0.5) !important;
+}
 
-
-
-
-
+cap-select-mult label.label-input{
+  overflow: hidden !important;
+  margin: -6px 0px !important;
+  height: 11px !important;
+  background: transparent !important;
+}
 
 
 
