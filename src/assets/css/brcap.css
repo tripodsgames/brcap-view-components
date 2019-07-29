@@ -1531,7 +1531,7 @@ my-date-range-picker.error .mydrp .selectiongroup {
     position: absolute;
 }
 
-.multiSelect .btn:first-child span {
+.multiSelect .btn>span {
   position: absolute !important;
   max-width: 66% !important;
   overflow: hidden !important;
