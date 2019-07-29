@@ -1527,4 +1527,13 @@ my-date-range-picker.error .mydrp .selectiongroup {
     border-radius: 2px !important;
     float: left !important;
     border-color: transparent !important;
+    padding: 0px 0px!important;
+    width: 113px!important;
+    overflow: hidden !important;
 }
+
+.multiselect-dropdown .span{
+  float: right !important;
+  padding-right: 1px !important;
+}
+
