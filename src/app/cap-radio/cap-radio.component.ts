@@ -18,7 +18,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   selector: "cap-radio",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-radio.component.html",
-  styleUrls: ["./cap-radio.component.css"]
+  styleUrls: ["./cap-radio.component.scss"]
 })
 export class CapRadioComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;

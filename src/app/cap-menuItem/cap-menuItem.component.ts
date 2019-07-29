@@ -4,7 +4,7 @@ import { ValueTransformer } from "@angular/compiler/src/util";
 @Component({
   selector: "cap-menuItem",
   templateUrl: "./cap-menuItem.component.html",
-  styleUrls: ["./cap-menuItem.component.css"]
+  styleUrls: ["./cap-menuItem.component.scss"]
 })
 export class CapMenuItemComponent implements OnChanges {
   @Input("id")

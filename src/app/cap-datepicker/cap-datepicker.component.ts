@@ -16,8 +16,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: "cap-datepicker",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  templateUrl: "./cap-datepicker.component.html",
-  styleUrls: ["./cap-datepicker.component.scss"]
+  templateUrl: "./cap-datepicker.component.html"
 })
 export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   @Input("id")
