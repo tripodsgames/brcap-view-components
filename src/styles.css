@@ -1,25 +1,17 @@
-@import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700";
+.main-header .logo {
+   background: #d2c004;
+}
 
-/* Personalização da cor de fundo da logo no header de cada app */
-.main-header .logo {   /* //Cor Secundária */
-   background: #ffe800;   /* //Monitor */
-  /* background: #ffb72a;   //Produtos */
+.cap-menu {
+  background: #c59609;
 }
-/* Personalização de cor de fundo do menu e do hover de cada item */
-.cap-menu {  /* //Cor Primária */
-  background: #c59609;  /* //Monitor */
-  /* background: #a5761b;  //Produtos */
+
+.menu-item:hover {
+  background-color: rgba(255, 204, 0, 0.2);
 }
-.menu-item:hover {   /* //Cor Secundária */
-  background-color: rgba(255, 204, 0, 0.2); /* #ffcc00;  //Monitor */
-  /* background: #b8841f;   //Produtos */
-}
+
 .cap-button {
-  background-color: #006bbb;  /* //Todos */
-}
-
-html {
-  scroll-behavior: smooth;
+  background-color: #006bbb;
 }
 
 .content-header{
