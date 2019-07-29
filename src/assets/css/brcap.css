@@ -198,6 +198,7 @@ h3 {
   border: none !important;
 }
 
+/* TODO */
 dp-date-picker {
   display: block !important;
 }
@@ -272,6 +273,7 @@ dp-date-picker {
   cursor: pointer;
 }
 
+/* TODO */
 cap-inputText[ng-reflect-style-class="outline"] label {
   background: transparent !important;
 }
@@ -389,6 +391,7 @@ input:disabled:-ms-input-placeholder {
   border-color: none;
 }
 
+/* TODO */
 p.label-text {
   margin: 10px 0px;
 }
@@ -600,6 +603,7 @@ p.label-text span {
   left: -10px;
 }
 
+/* TODO */
 cap-button .xs i.brcap-ico {
   left: -6px !important;
   top: 2px !important;
@@ -679,39 +683,39 @@ cap-button .xs i.brcap-ico {
   transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 } */
 
-ng-select>div {
+/* ng-select>div {
   border-radius: 4px;
   border: 1px solid #757575 !important;
   outline: none;
-}
+} */
 
-.content-header ng-select>div {
+/* .content-header ng-select>div {
   border: none !important;
   border-bottom: 1px solid #757575 !important;
   border-radius: 0px;
-}
+} */
 
-.content-header ng-select[ng-reflect-is-disabled="true"]>div {
+/* .content-header ng-select[ng-reflect-is-disabled="true"]>div {
   border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
-}
+} */
 
-.content-header ng-select>div>div.single>div.value,
+/* .content-header ng-select>div>div.single>div.value,
 .content-header ng-select>div>div.single>div.placeholder {
   padding-top: 8px !important;
-}
+} */
 
 select-dropdown>div.below {
   z-index: 4;
 }
 
-ng-select>div>div.single>div.value,
+/* ng-select>div>div.single>div.value,
 ng-select>div>div.single>div.placeholder {
   line-height: 50px !important;
-}
+} */
 
-ng-select>div>div.single {
+/* ng-select>div>div.single {
   height: 50px !important;
-}
+} */
 
 select-dropdown>div {
   font-family: Ubuntu;
@@ -724,16 +728,16 @@ select-dropdown>div .filter input {
   outline: none;
 }
 
-ng-select>div>div.single>div.clear,
+/* ng-select>div>div.single>div.clear,
 ng-select>div>div.single>div.toggle {
   line-height: 50px !important;
   color: #757575 !important;
   overflow: hidden;
-}
+} */
 
-ng-select>div>div.single>div.toggle:hover {
+/* ng-select>div>div.single>div.toggle:hover {
   background-color: transparent !important;
-}
+} */
 
 select-dropdown>div .options ul li {
   padding: 10px !important;
@@ -1065,23 +1069,23 @@ select-dropdown>div .options ul li {
   border-radius: 0px;
 }
 
-ng-select>div>div.single>div.toggle {
+/* ng-select>div>div.single>div.toggle {
   font-family: "brcap-ico";
-}
+} */
 
-ng-select>div.disabled>div.single>div.toggle {
+/* ng-select>div.disabled>div.single>div.toggle {
   color: rgba(117,117,117,0.38) !important;
-}
+} */
 
-ng-select>div>div.single>div.toggle:before {
+/* ng-select>div>div.single>div.toggle:before {
   content: "\e90a";
   font-size: 28px;
-}
+} */
 
-ng-select>div.open>div.single>div.toggle:before {
+/* ng-select>div.open>div.single>div.toggle:before {
   content: "\e918";
   font-size: 28px;
-}
+} */
 
 select-dropdown>div.above {
   z-index: 3;
@@ -1160,6 +1164,7 @@ button.cap-button.sm.btn-ico .brcap-ico {
   padding: 20px 0px 10px 0px;
 }
 
+/* TODO */
 cap-icon.fecharQuickView {
   cursor: pointer;
   position: absolute;
@@ -1180,6 +1185,7 @@ cap-icon.fecharQuickView {
   top: 0;
   transition: all 2s;
 
+  /* TODO */
   .label-text-block {
     margin: 0 !important;
   }
@@ -1240,33 +1246,34 @@ cap-icon.fecharQuickView {
   padding: 0px;
 }
 
-.table-filter td.select cap-select>ng-select>div {
+/* .table-filter td.select cap-select>ng-select>div {
   border: none !important;
   height: 40px;
-}
+} */
 
-.table-filter ng-select>div>div.single>div.toggle:before,
+/* .table-filter ng-select>div>div.single>div.toggle:before,
 .table-filter ng-select>div.open>div.single>div.toggle:before {
   font-size: 18px;
-}
+} */
 
 .table-filter>thead>tr:nth-child(2)>th {
   background: #fff !important;
   padding: 0;
 
+  /* TODO */
   ng-select>div {
     border: none !important;
     height: 40px;
   }
 
-  ng-select>div>div.single>div.toggle {
+  /* ng-select>div>div.single>div.toggle {
     line-height: 40px !important;
-  }
+  } */
 
-  ng-select>div>div.single>div.toggle:before {
+  /* ng-select>div>div.single>div.toggle:before {
     font-size: 20px;
     color: #888;
-  }
+  } */
 }
 
 .item cap-checkbox {
