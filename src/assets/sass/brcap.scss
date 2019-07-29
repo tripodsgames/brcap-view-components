@@ -10,7 +10,7 @@ html {
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.90);
 }
 
 body,
@@ -94,8 +94,8 @@ body.minimizado .loader {
 
 /* como era antes */
 /* .content-header .cap-inputText-icon {
-  right: 10px;
-} */
+    right: 10px;
+  } */
 
 .content-header-medium .helper-text {
   font-size: 11px;
@@ -114,7 +114,7 @@ body.minimizado .loader {
 }
 
 .content-header .input-icon {
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0 !important;
 }
 
 .content-header .cap-inputText.sm {
@@ -361,13 +361,13 @@ dp-date-picker {
 
 /* como era antes */
 /* .cap-inputText-icon {
-  position: relative;
-  top: -40px;
-  right: 10px;
-  float: right;
-  font-size: 24px;
-  color: rgba(0, 0, 0, 0.54);
-} */
+    position: relative;
+    top: -40px;
+    right: 10px;
+    float: right;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.54);
+  } */
 
 .content .cap-inputText-icon {
   font-size: 24px;
@@ -453,195 +453,6 @@ p.label-text span {
   padding: 15px;
 }
 
-/* !
-* BRCap Icones
-* @author Felipe Sousa
-* @description Icones no padrao brasilcap
-*
-*/
-@font-face {
-  font-family: "brcap-ico";
-  src: url("../fonts/darwin-icons/darwin-icons.ttf?mmqvqv") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.brcap-ico {
-  font-family: "brcap-ico" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.ajuda:before {
-  content: "\e921";
-}
-
-.menu:before {
-  content: "\e900";
-}
-
-.adiantar10:before {
-  content: "\e919";
-}
-
-.voltar:before {
-  content: "\e901";
-}
-
-.adicionar:before {
-  content: "\e902";
-}
-
-.alerta:before {
-  content: "\e903";
-}
-
-.arquivo:before {
-  content: "\e904";
-}
-
-.busca:before {
-  content: "\e905";
-}
-
-.calendario:before {
-  content: "\e906";
-}
-
-.check-circulo:before {
-  content: "\e907";
-}
-
-.compartilhar:before {
-  content: "\e908";
-}
-
-.esconder-senha:before {
-  content: "\e909";
-}
-
-.seguir:before {
-  content: "\e910";
-}
-
-.anterior:before {
-  content: "\e911";
-}
-
-.seta-cimabaixo:before {
-  content: "\e912";
-}
-
-.usuario:before {
-  content: "\e913";
-}
-
-.x-circulo:before {
-  content: "\e914";
-}
-
-.ver-senha:before {
-  content: "\e916";
-}
-
-.retrair:before {
-  content: "\e90a";
-}
-
-.expandir:before {
-  content: "\e910";
-}
-
-.favorito:before {
-  content: "\e90b";
-}
-
-.fullscreen:before {
-  content: "\e922";
-}
-
-.info:before {
-  content: "\e90c";
-}
-
-.mais-opcoes:before {
-  content: "\e90d";
-}
-
-.menos:before {
-  content: "\e90e";
-}
-
-.sair:before {
-  content: "\e90f";
-}
-
-.adiantar10:before {
-  content: "\e919";
-}
-
-.pausar:before {
-  content: "\e91a";
-}
-
-.tocar:before {
-  content: "\e91b";
-}
-
-.voltar10:before {
-  content: "\e91c";
-}
-
-.volumeoff:before {
-  content: "\e91d";
-}
-
-.volumeon:before {
-  content: "\e91e";
-}
-
-.codigo:before {
-  content: "\e91f";
-}
-
-.editar:before {
-  content: "\e920";
-}
-
-.mover:before {
-  content: "\e915";
-}
-
-.x:before {
-  content: "\78";
-}
-
-.sucesso:before {
-  content: "\e917";
-}
-
-/* .primeira-pagina{
-  content: "\";
-}
-
-.ultima-pagina{
-  content: "\";
-}
-
-.permissionar{
-  content: "\";
-}
-
-.pesquisa-avancada{
-  content: "\";
-} */
-
 .scroll .brcap-ico {
   transform: rotate(180deg);
 }
@@ -724,17 +535,17 @@ p.label-text span {
 }
 
 /*
- * Arrow Turn
- */
+   * Arrow Turn
+   */
 /* .hamburger--arrowturn.is-active .hamburger-inner {
-  transform: rotate(-180deg);
-}
-.hamburger--arrowturn.is-active .hamburger-inner::before {
-  transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}
-.hamburger--arrowturn.is-active .hamburger-inner::after {
-  transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-} */
+    transform: rotate(-180deg);
+  }
+  .hamburger--arrowturn.is-active .hamburger-inner::before {
+    transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
+  }
+  .hamburger--arrowturn.is-active .hamburger-inner::after {
+    transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+  } */
 
 /* cap-select */
 ng-select>div {
@@ -1213,8 +1024,8 @@ div.inline-checkbox label {
 }
 
 /* button.cap-button.btn-ico .brcap-ico {
-  left: 0px !important;
-} */
+    left: 0px !important;
+  } */
 
 /* quickview */
 .quickview {
@@ -1652,16 +1463,16 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
 }
 
 /* label.label-input {
-  background-color: #fff;
-  font-weight: 500;
-  font-size: 11px;
-  position: relative;
-  top: 10px;
-  left: 8px;
-  padding: 0px 3px;
-  z-index: 3;
-  height: 8px;
-} */
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 11px;
+    position: relative;
+    top: 10px;
+    left: 8px;
+    padding: 0px 3px;
+    z-index: 3;
+    height: 8px;
+  } */
 
 label.label-input {
   background-color: #fff;
