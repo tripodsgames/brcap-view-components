@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700";
-
 * {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -644,9 +642,24 @@ p.label-text span {
   content: "\";
 } */
 
+.scroll .brcap-ico {
+  transform: rotate(180deg);
+}
+
 .cap-button .brcap-ico {
   position: relative;
   left: -10px;
+}
+
+.cap-button.icon-arrow .brcap-ico,
+.cap-button.ico-ver-senha .brcap-ico,
+.cap-button.fechar .brcap-ico,
+.cap-button.btn-ico .brcap-ico {
+  left: 0;
+}
+
+.cap-button.sm .brcap-ico {
+  left: -5px;
 }
 
 /** Hambuger **/
@@ -1199,9 +1212,9 @@ div.inline-checkbox label {
   content: "\e917";
 }
 
-button.cap-button.btn-ico .brcap-ico {
+/* button.cap-button.btn-ico .brcap-ico {
   left: 0px !important;
-}
+} */
 
 /* quickview */
 .quickview {
@@ -1774,16 +1787,16 @@ my-date-picker.buttonDatepicker .mydp .selectiongroup {
   border-radius: 5px;
 }
 
-my-date-picker.buttonDatepicker .mydp .selectiongroup .btnpicker{
+my-date-picker.buttonDatepicker .mydp .selectiongroup .btnpicker {
   width: 40px;
 }
 
-my-date-picker.buttonDatepicker .mydp .selectiongroup .mydpicon{
+my-date-picker.buttonDatepicker .mydp .selectiongroup .mydpicon {
   color: white;
   font-size: 24px !important;
 }
 
-my-date-picker.buttonDatepicker .mydp .selbtngroup{
+my-date-picker.buttonDatepicker .mydp .selbtngroup {
   height: 40px !important;
 }
 
@@ -1815,4 +1828,8 @@ my-date-picker.buttonDatepicker .mydp .selector {
   top: -28px;
   border-radius: 5px 0 0 5px !important;
   border-right: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.cap-table .helper-text {
+  font-size: 11px;
 }

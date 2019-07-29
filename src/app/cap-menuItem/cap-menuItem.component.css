@@ -137,29 +137,3 @@ ul.list li:hover {
 .h7{
   font-size: 9px;
 }
-
-/* .rotate::ng-deep .brcap-ico{
-  padding-top: 3px;
-  transition-delay: 0.3s;
-  transition: 0.3s;
-}
-
-.rotate::ng-deep .brcap-ico:before{
-  display: inline-block;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  transition: 0.3s;
-}
-
-.rotate-2::ng-deep .brcap-ico:before{
-  display: inline-block;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  transition: 0.3s;
-} */

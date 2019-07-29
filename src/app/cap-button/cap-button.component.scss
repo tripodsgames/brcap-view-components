@@ -68,10 +68,6 @@ button {
       font-size: 10px;
       letter-spacing: 0px;
 
-      cap-icon::ng-deep .brcap-ico {
-        left: -5px !important;
-      }
-
       &.btn-ico {
         padding: 0px 12px;
         width: 30px;
@@ -143,10 +139,6 @@ button {
         color: #757575;
         transition: 0.5s all ease-in-out;
       }
-
-      cap-icon::ng-deep .brcap-ico {
-        left: 0;
-      }
     }
 
     &.ico-ver-senha {
@@ -168,10 +160,6 @@ button {
         transition: 0.5s all ease-in-out;
         opacity: 1;
       }
-
-      cap-icon::ng-deep .brcap-ico {
-        left: 0;
-      }
     }
 
     &.icon-arrow {
@@ -182,10 +170,6 @@ button {
       color: #fff;
       float: right;
       padding-right: 5px;
-
-      cap-icon::ng-deep .brcap-ico {
-        left: 0;
-      }
     }
 
     &.btn-ico {
