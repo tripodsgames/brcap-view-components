@@ -1526,6 +1526,15 @@ my-date-range-picker.error .mydrp .selectiongroup {
     border-radius: 2px !important;
     float: left !important;
     border-color: transparent !important;
+    overflow: hidden;
+    width: 66%;
+    position: absolute;
+}
+
+.span .btn ng-multiselect-dropdown .multiSelect {
+  position: absolute;
+  max-width: 66%;
+  overflow: hidden;
 }
 
 
