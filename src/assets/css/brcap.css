@@ -642,8 +642,10 @@ p.label-text span {
   content: "\";
 } */
 
-.scroll .brcap-ico {
+.scroll .cap-button.btn-ico .brcap-ico {
   transform: rotate(180deg);
+  left: -3px;
+  font-size: 24px !important;
 }
 
 .cap-button .brcap-ico {

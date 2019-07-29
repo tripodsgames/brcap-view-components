@@ -296,7 +296,17 @@
       </div>
     </div>
 
-    <cap-modal></cap-modal>
+    <cap-modal>
+      <div class="app-modal-header text-center">
+        <h2>Título do modal</h2>
+      </div>
+      <div class="app-modal-body text-center">
+        <p>Corpo do modal</p>
+      </div>
+      <div class="app-modal-footer text-center">
+        <cap-button label="Fechar" (click)="modal.hide()"></cap-button>
+      </div>
+    </cap-modal>
 
     <div class="content">
       <div class="row">
