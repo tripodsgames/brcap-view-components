@@ -683,12 +683,9 @@ cap-button .xs i.brcap-ico {
   transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 } */
 
-
-
 select-dropdown>div.below {
   z-index: 4;
 }
-
 
 select-dropdown>div {
   font-family: Ubuntu;
@@ -1128,6 +1125,7 @@ cap-icon.fecharQuickView {
   z-index: 2;
   top: 0;
   transition: all 2s;
+}
 
   /* TODO */
   .label-text-block {
@@ -1140,11 +1138,10 @@ cap-icon.fecharQuickView {
     line-height: 12px;
     display: inline;
   }
-}
 
-.view-block {
+  .view-block {
   margin: 15px 0px;
-}
+  }
 
 .over {
   position: absolute;
@@ -1193,13 +1190,7 @@ cap-icon.fecharQuickView {
 .table-filter>thead>tr:nth-child(2)>th {
   background: #fff !important;
   padding: 0;
-
-  /* TODO */
-  ng-select>div {
-    border: none !important;
-    height: 40px;
-  }
-
+}
 
 .item cap-checkbox {
   position: relative;
@@ -1512,7 +1503,6 @@ ng-select>div>div.single>div.toggle:hover {
   background-color: transparent !important;
 }
 
-
 ng-select>div>div.single>div.toggle {
   font-family: "brcap-ico";
 }
@@ -1548,5 +1538,10 @@ ng-select>div>div.single>div.toggle {
   ng-select>div>div.single>div.toggle:before {
     font-size: 20px;
     color: #888;
+  }
+
+  ng-select>div {
+    border: none !important;
+    height: 40px;
   }
 
