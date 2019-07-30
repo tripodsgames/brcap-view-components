@@ -1,4 +1,13 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 import * as jqueryProxy from "jquery";
