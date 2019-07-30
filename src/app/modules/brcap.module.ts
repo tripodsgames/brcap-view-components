@@ -43,7 +43,7 @@ import { PlataformaService } from "../services/plataforma.service";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { RouterModule } from "@angular/router";
 import { ExportXLSService } from "../services/export-xls.service";
-import { CapSelectMultComponent } from "../cap-select-mult/cap-select-mult.component";
+import { CapMultiSelectComponent } from "../cap-multi-select/cap-multi-select.component";
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
@@ -91,7 +91,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     CapLoginComponent,
     PermissoesComponent,
     CapModalComponent,
-    CapSelectMultComponent
+    CapMultiSelectComponent
   ],
   exports: [
     CapInputTextComponent,
@@ -125,7 +125,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     CapLoginComponent,
     PermissoesComponent,
     CapModalComponent,
-    CapSelectMultComponent
+    CapMultiSelectComponent
   ],
   providers: [
     LoginService,

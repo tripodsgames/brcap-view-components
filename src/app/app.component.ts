@@ -468,21 +468,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.canais = [
       {
-        label: "Opção 1",
-        value: 1
-      },
-      {
-        label: "Opção 2",
-        value: 2
-      },
-      {
-        label: "Opção 3",
-        value: 3
-      }
-    ];
-
-    this.radios = [
-      {
         label: "Selecione opcao 1",
         value: 1
       },
