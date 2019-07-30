@@ -1,8 +1,5 @@
-import { Component, OnInit, forwardRef, Input, ElementRef, ViewChild, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit, forwardRef, Input, ViewChild, Output, EventEmitter  } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms'
-import BRCapUtil from "../../brcap-util";
-
-const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -39,25 +36,11 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   @ViewChild("select")
   select;
 
-  private $el: any;
   private innerValue: Array<any> = [];
-
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
-  }
-
-  private onTouchedCallback: () => void = noop;
-  private onChangeCallback: (_: any) => void = noop;
 
   dropdownSettings = {};
 
   ngOnInit(){
-
-    if (!this.id) {
-      this.id = BRCapUtil.guid();
-    } else {
-      this.id += "_input";
-    }
 
     this.dropdownSettings = {
       singleSelection: false,
@@ -70,22 +53,16 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
     };
   }
 
-  onFocus(event) {
-    return this.focus.emit(event);
-  }
-
   get value(): any[] {
     return this.innerValue;
   }
 
   onBlur() {
-    this.onTouchedCallback();
   }
 
   set value(v: any[] ) {
     if (v !== this.innerValue) {
       this.innerValue = v;
-      this.onChangeCallback(v);
     }
   }
 
@@ -95,12 +72,11 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  registerOnChange(fn: any) {
-    this.onChangeCallback = fn;
+  registerOnChange() {
+
   }
 
-  registerOnTouched(fn: any) {
-    this.onTouchedCallback = fn;
+  registerOnTouched() {
   }
 
   onItemSelect(item: any[]) {
