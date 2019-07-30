@@ -8,21 +8,21 @@ const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => CapSelectMultComponent),
+  useExisting: forwardRef(() => CapMultiSelectComponent),
   multi: true
 };
 
 @Component({
-  selector: 'cap-select-mult',
+  selector: 'cap-multi-select',
   host: {
-    class: "cap-select-mult"
+    class: "cap-multi-select"
   },
-  templateUrl: './cap-select-mult.component.html',
+  templateUrl: './cap-multi-select.component.html',
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  styleUrls: ['./cap-select-mult.component.css']
+  styleUrls: ['./cap-multi-select.component.css']
 })
 
-export class CapSelectMultComponent implements ControlValueAccessor, OnInit {
+export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
 
   @Input("placeholder")
   placeholder: string;
