@@ -1,8 +1,6 @@
 import { Component, OnInit, forwardRef, Input, ElementRef, ViewChild, Output, EventEmitter  } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms'
 import BRCapUtil from "../../brcap-util";
-import * as jqueryProxy from "jquery";
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 const noop = () => {};
 
