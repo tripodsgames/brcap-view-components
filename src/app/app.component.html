@@ -95,13 +95,16 @@
     <div class="row">
 
         <div class="col-md-3 no-padding-right">
-          <cap-select [items]="selectSimple" label="Combo Simples" title="teste" name="testeSimples" placeholder="teste de combo simples"
+          <cap-select [items]="selectSimple" label="Combo Simples" title="teste"
+            (ngModelChange)="selFormaOnChange($event)"
+            name="testeSimples" placeholder="teste de combo simples"
             [(ngModel)]="radioSimple"></cap-select>
         </div>
 
 
         <div class="col-md-3 no-padding-right">
-          <cap-multi-select [data]="cidades" label="Selecionar cidades" placeholder="Cidades Selecionadas" name="cidade" [(ngModel)]= "value"></cap-multi-select>
+          <cap-multi-select [data]="cidades" label="Selecionar cidades"
+          placeholder="Cidades Selecionadas" (ngModelChange)="selFormaOnChange($event)" name="cidade" [(ngModel)]= "valueCidade"></cap-multi-select>
         </div>
       </div>
 

@@ -42,6 +42,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   cidades: Array<any> = [];
   selectedItems: Array<any> = [];
   dropdownSettings = {};
+  valueCidade: any;
 
   menu = [
     {
@@ -555,16 +556,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       { value: 5, label: 'Chennai' },
       { value: 6, label: 'Navsari' }
     ];
-
-    this.dropdownSettings = {
-      singleSelection: false,
-      idField: 'value',
-      textField: 'label',
-      selectAllText: 'Selecionar todos',
-      unSelectAllText: 'limpar seleção',
-      allowSearchFilter: false,
-      itemsShowLimit: 3
-    };
   }
 
   event(event) {
@@ -630,6 +621,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   selFormaOnChange(item: any){
-    console.log('item', item);
+    console.log('selecionado', item);
   }
 }
