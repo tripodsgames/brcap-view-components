@@ -1492,7 +1492,6 @@ my-date-range-picker.error .mydrp .selectiongroup {
 
 
 /* style cap-select-multi */
-/* TODO */
 
 .multiSelect {
   text-transform: none !important;
@@ -1527,4 +1526,33 @@ my-date-range-picker.error .mydrp .selectiongroup {
     border-radius: 2px !important;
     float: left !important;
     border-color: transparent !important;
+    overflow: hidden;
+    width: 66%;
+    position: absolute;
 }
+
+.multiSelect .btn>span:first-child {
+  position: absolute !important;
+  max-width: 66% !important;
+  overflow: hidden !important;
+}
+
+.multiselect-item-checkbox
+ input[type=checkbox]:checked + div:before {
+  background: rgba(107,191,94,0.5) !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox] + div:before {
+  color: rgba(107,191,94,0.5) !important;
+  border: 2px solid rgba(107,191,94,0.5) !important;
+}
+
+cap-multi-select label.label-input{
+  overflow: hidden !important;
+  margin: -1px 0px !important;
+  height: 11px !important;
+  background: transparent !important;
+}
+
+
+
