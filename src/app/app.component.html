@@ -93,18 +93,18 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
-        <div class="col-12 col-sm-12 col-md-12">
+
+        <div class="col-md-3 no-padding-right">
           <cap-select [items]="selectSimple" label="Combo Simples" title="teste" name="testeSimples" placeholder="teste de combo simples"
             [(ngModel)]="radioSimple"></cap-select>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="col-6 col-sm-6 col-md-6">
+
+
+        <div class="col-md-3 no-padding-right">
           <cap-select-mult [data]="cidades" label="Selecionar cidades" placeholder="Cidades Selecionadas" name="cidade" [(ngModel)]= "value"></cap-select-mult>
         </div>
       </div>
-    </div>
+
     <div class="row">
       <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2" tableTitle="bla"
         tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
