@@ -1,7 +1,5 @@
-import { Component, OnInit, forwardRef, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, forwardRef, Input, ViewChild} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms'
-
-const noop = () => {};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -33,15 +31,13 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   textField: string;
   @Input("label")
   label: string;
-  @Output()
-  focus = new EventEmitter();
   @ViewChild("select")
   select;
 
   private innerValue: Array<any> = [];
 
-  private onTouchedCallback: () => void = noop;
-  private onChangeCallback: (_: any) => void = noop;
+  private onTouchedCallback: () => {};
+  private onChangeCallback: (_: any) => {};
 
   dropdownSettings = {};
 
@@ -56,10 +52,6 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
       itemsShowLimit: 1,
       allowSearchFilter: true
     };
-  }
-
-  onFocus(event) {
-    return this.focus.emit(event);
   }
 
   get value(): any[] {
@@ -92,10 +84,10 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   onItemSelect(item: any[]) {
-    return  this.innerValue;
+    return this.innerValue;
   }
 
   onSelectAll(items: any[]) {
-    return  this.innerValue;
+    return this.innerValue;
   }
 }
