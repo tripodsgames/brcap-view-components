@@ -1,4 +1,4 @@
-import { Component, OnInit, forwardRef, Input, ViewChild, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit, forwardRef, Input, ViewChild} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms'
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
@@ -31,12 +31,13 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   textField: string;
   @Input("label")
   label: string;
-  @Output()
-  focus = new EventEmitter();
   @ViewChild("select")
   select;
 
   private innerValue: Array<any> = [];
+
+  private onTouchedCallback: () => {};
+  private onChangeCallback: (_: any) => {};
 
   dropdownSettings = {};
 
@@ -58,11 +59,13 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   onBlur() {
+    this.onTouchedCallback();
   }
 
   set value(v: any[] ) {
     if (v !== this.innerValue) {
       this.innerValue = v;
+      this.onChangeCallback(v ? v.reduce((acc, current) => acc.concat(current.value), []) : v);
     }
   }
 
@@ -72,11 +75,12 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  registerOnChange() {
-
+  registerOnChange(fn: any) {
+    this.onChangeCallback = fn;
   }
 
-  registerOnTouched() {
+  registerOnTouched(fn: any) {
+    this.onTouchedCallback = fn;
   }
 
   onItemSelect(item: any[]) {
