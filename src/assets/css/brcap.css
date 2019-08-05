@@ -1525,11 +1525,13 @@ label.disabled,
   pointer-events: none;
 }
 
+.mydrp .btnpickerdisabled,
+.mydrp .selectiondisabled,
 .ver-senha-password.disabled i,
 .cap-button[disabled],
 .cap-button[disabled]:hover,
 .brcap-ico.disabled {
-  opacity: 0.38;
+  opacity: 0.38 !important;
 }
 
 /* error */
