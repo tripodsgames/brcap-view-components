@@ -45,7 +45,7 @@
 
             <div class="over" [class.visible]="quickview"></div>
             <div class="quickview animated fadeInRight" *ngIf="quickview">
-              <cap-icon icon="x-circulo" class="fecharQuickView" (click)="closeQuickView()"></cap-icon>
+              <cap-button icon="x-circulo" styleClass="fechar" class="fecharQuickView" (click)="closeQuickView()"></cap-button>
               <div class="content-quickview">
                 <ng-content></ng-content>
               </div>

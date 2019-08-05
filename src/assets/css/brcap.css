@@ -1309,19 +1309,11 @@ div.inline-checkbox label {
   display: inline;
 }
 
-cap-icon.fecharQuickView {
+cap-button.fecharQuickView {
   cursor: pointer;
   position: absolute;
   top: 15px;
   right: 15px;
-  display: block;
-  z-index: 3;
-  color: #9e9e9e;
-}
-
-cap-icon.fecharQuickView:hover {
-  color: #757575 !important;
-  transition: 0.3s all ease-in-out;
 }
 
 .d-block {
@@ -1553,6 +1545,7 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
 
 .content .error .dp-picker-input,
 .content ng-select.error .below,
+.content ng-select.error .above,
 .content dp-date-picker.error .dp-input-container .dp-picker-input,
 .cap-inputText.error,
 .cap-inputTextArea.error,

@@ -1,4 +1,4 @@
-//STYLECLASS(xs, sm, lg, outline, white, nova-pesquisa, fechar, ico-ver-senha, icon-arrow e btn-ico)
+//STYLECLASS(xs, sm, lg, outline, white, fechar, ico-ver-senha, icon-arrow e btn-ico)
 button {
   position: relative;
   overflow: hidden;
@@ -120,11 +120,6 @@ button {
       &:active {
         background-color: #f2f2f2;
       }
-    }
-
-    &.nova-pesquisa {
-      margin-top: -4px;
-      float: right;
     }
 
     &.fechar {
