@@ -542,13 +542,13 @@ p.label-text span {
   content: "\e916";
 }
 
-.retrair:before {
+.expandir:before {
   content: "\e90a";
 }
 
-.expandir:before {
+/* .retrair:before {
   content: "\e910";
-}
+} */
 
 .favorito:before {
   content: "\e90b";
@@ -632,13 +632,18 @@ p.label-text span {
   content: "\e932";
 }
 
+.excluir{
+  content: "\e933";
+} 
+
+.seta-baixo:before {
+  content: "\e934";
+}
+
 .pesquisa-avancada{
   content: "\";
 }
-
-.excluir{
-  content: "\e933";
-} */
+*/
 
 .scroll .cap-button.btn-ico .brcap-ico {
   transform: rotate(180deg);
