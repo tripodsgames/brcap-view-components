@@ -296,19 +296,54 @@
       </div>
     </div>
 
-    <cap-modal>
-      <div class="app-modal-header text-center">
-        <h2>Título do modal</h2>
-      </div>
-      <div class="app-modal-body text-center">
-        <p>Corpo do modal</p>
-      </div>
-      <div class="app-modal-footer text-center">
-        <cap-button label="Fechar" (click)="modal.hide()"></cap-button>
-      </div>
-    </cap-modal>
-
     <div class="content">
+
+      <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+              <cap-icon icon="adiantar10" [size]="24"></cap-icon>
+              <cap-icon icon="menu" [size]="24"></cap-icon>
+              <cap-icon icon="adiantar10" [size]="24"></cap-icon>
+              <cap-icon icon="voltar" [size]="24"></cap-icon>
+              <cap-icon icon="adicionar" [size]="24"></cap-icon>
+              <cap-icon icon="alerta" [size]="24"></cap-icon>
+              <cap-icon icon="arquivo" [size]="24"></cap-icon>
+              <cap-icon icon="busca" [size]="24"></cap-icon>
+              <cap-icon icon="calendario" [size]="24"></cap-icon>
+              <cap-icon icon="check-circulo" [size]="24"></cap-icon>
+              <cap-icon icon="compartilhar" [size]="24"></cap-icon>
+              <cap-icon icon="esconder-senha" [size]="24"></cap-icon>
+              <cap-icon icon="seguir" [size]="24"></cap-icon>
+              <cap-icon icon="anterior" [size]="24"></cap-icon>
+              <cap-icon icon="seta-cimabaixo" [size]="24"></cap-icon>
+              <cap-icon icon="usuario" [size]="24"></cap-icon>
+              <cap-icon icon="x-circulo" [size]="24"></cap-icon>
+              <cap-icon icon="ver-senha" [size]="24"></cap-icon>
+              <cap-icon icon="retrair" [size]="24"></cap-icon>
+              <cap-icon icon="expandir" [size]="24"></cap-icon>
+              <cap-icon icon="favorito" [size]="24"></cap-icon>
+              <cap-icon icon="fullscreen" [size]="24"></cap-icon>
+              <cap-icon icon="info" [size]="24"></cap-icon>
+              <cap-icon icon="mais-opcoes" [size]="24"></cap-icon>
+              <cap-icon icon="menos" [size]="24"></cap-icon>
+              <cap-icon icon="sair" [size]="24"></cap-icon>
+              <cap-icon icon="pausar" [size]="24"></cap-icon>
+              <cap-icon icon="tocar" [size]="24"></cap-icon>
+              <cap-icon icon="voltar10" [size]="24"></cap-icon>
+              <cap-icon icon="volumeoff" [size]="24"></cap-icon>
+              <cap-icon icon="volumeon" [size]="24"></cap-icon>
+              <cap-icon icon="codigo" [size]="24"></cap-icon>
+              <cap-icon icon="editar" [size]="24"></cap-icon>
+              <cap-icon icon="mover" [size]="24"></cap-icon>
+              <cap-icon icon="x" [size]="24"></cap-icon>
+              <cap-icon icon="sucesso" [size]="24"></cap-icon>
+            </div>
+        </div>
+      </div>
+
+
+
+
       <div class="row">
         <div class="col-lg-4">
           <div class="box" style="height: 700px;">
@@ -836,22 +871,14 @@
             <cap-button label="open modal" (click)="modal.show()"></cap-button>
 
             <cap-modal>
-              <div class="modal-header">
-                <div class="app-modal-header">
-                  Header do modal
-                </div>
+              <div class="app-modal-header text-center">
+                <h2>Título do modal</h2>
               </div>
-              <div class="modal-body">
-                <div class="app-modal-body">
-                  <p class="text-center">Corpo do modal</p>
-                </div>
+              <div class="app-modal-body text-center">
+                <p>Corpo do modal</p>
               </div>
-              <div class="modal-footer text-center">
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <cap-button label="Ok"></cap-button>
-                  </div>
-                </div>
+              <div class="app-modal-footer text-center">
+                <cap-button label="Fechar" (click)="modal.hide()"></cap-button>
               </div>
             </cap-modal>
 

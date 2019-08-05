@@ -478,16 +478,8 @@ p.label-text span {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ajuda:before {
-  content: "\e921";
-}
-
 .menu:before {
   content: "\e900";
-}
-
-.adiantar10:before {
-  content: "\e919";
 }
 
 .voltar:before {
@@ -582,10 +574,6 @@ p.label-text span {
   content: "\e90f";
 }
 
-.adiantar10:before {
-  content: "\e919";
-}
-
 .pausar:before {
   content: "\e91a";
 }
@@ -610,8 +598,16 @@ p.label-text span {
   content: "\e91f";
 }
 
+.adiantar10:before {
+  content: "\e919";
+}
+
 .editar:before {
   content: "\e920";
+}
+
+.ajuda:before {
+  content: "\e921";
 }
 
 .mover:before {
@@ -627,16 +623,21 @@ p.label-text span {
 }
 
 /* .primeira-pagina{
-  content: "\";
+  content: "\e930";
 }
 .ultima-pagina{
-  content: "\";
+  content: "\e931";
 }
 .permissionar{
-  content: "\";
+  content: "\e932";
 }
+
 .pesquisa-avancada{
   content: "\";
+}
+
+.excluir{
+  content: "\e933";
 } */
 
 .scroll .cap-button.btn-ico .brcap-ico {
