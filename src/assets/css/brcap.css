@@ -168,8 +168,8 @@ body.minimizado .loader {
   border-bottom: 2px solid #b00020 !important;
 }
 
-.content-header my-date-picker.disabled .mydp .selection,
-.content-header my-date-range-picker.disabled .mydrp .selection {
+.content- my-date-picker.disabled .mydp .selection,
+.content-hheadereader my-date-range-picker.disabled .mydrp .selection {
   border-bottom: 1px solid rgba(117, 117, 117, 0.65) !important;
 }
 
