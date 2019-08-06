@@ -587,6 +587,10 @@ p.label-text span {
   content: "\e91c";
 }
 
+.adiantar10:before {
+  content: "\e919";
+}
+
 .volumeoff:before {
   content: "\e91d";
 }
@@ -597,10 +601,6 @@ p.label-text span {
 
 .codigo:before {
   content: "\e91f";
-}
-
-.adiantar10:before {
-  content: "\e919";
 }
 
 .editar:before {
