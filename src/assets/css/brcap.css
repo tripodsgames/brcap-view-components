@@ -159,6 +159,8 @@ body.minimizado .loader {
   height: 40px;
 }
 
+.content .input-icon.outline.error,
+.content-header .input-icon.error,
 .content-header .error .dp-picker-input,
 .content-header ng-select.error>.below,
 .content-header my-date-picker.error .mydp input,
@@ -1552,6 +1554,8 @@ my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
+.content .input-icon:not(.outline).error,
+.content .cap-password.error,
 .content .error .dp-picker-input,
 .content ng-select.error .below,
 .content ng-select.error .above,
