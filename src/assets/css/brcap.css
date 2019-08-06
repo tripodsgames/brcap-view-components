@@ -526,6 +526,15 @@ p.label-text span {
   content: "\e911";
 }
 
+.expandir:before {
+  content: "\e90a";
+}
+
+/* retrair está com erro */
+.retrair:before {
+  content: "\e910";
+}
+
 .seta-cimabaixo:before {
   content: "\e912";
 }
@@ -541,14 +550,6 @@ p.label-text span {
 .ver-senha:before {
   content: "\e916";
 }
-
-.expandir:before {
-  content: "\e90a";
-}
-
-/* .retrair:before {
-  content: "\e910";
-} */
 
 .favorito:before {
   content: "\e90b";
