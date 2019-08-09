@@ -10,51 +10,20 @@ export class CapLoadingComponent implements OnInit {
   @Input("texto") texto: string;
   @Input("sistema") sistema: string;
 
-  produtos;
-  posvenda;
-  malthus;
-  monitor;
-  financeiro;
-  contabilidade;
-  atendimento;
-
   contentLarge;
-  large;
+  menuMinimizado;
 
   constructor() { }
 
   ngOnInit() {
-    if (this.sistema === "posvenda") {
-      this.posvenda = true;
-    }
-    if (this.sistema === "malthus") {
-      this.malthus = true;
-    }
-    if (this.sistema === "monitor") {
-      this.monitor = true;
-    }
-    if (this.sistema === "financeiro") {
-      this.financeiro = true;
-    }
-    if (this.sistema === "produtos") {
-      this.produtos = true;
-    }
-    if (this.sistema === "contabilidade") {
-      this.contabilidade = true;
-    }
-    if (this.sistema === "atendimento") {
-      this.atendimento = true;
-    }
-
-    this.checkContentHeaderLarge();
+    this.checkIfContentHeaderIsLarge();
   }
 
-  checkContentHeaderLarge() {
+  checkIfContentHeaderIsLarge() {
     this.contentLarge = document.querySelector(".content-header-large");
+  }
 
-    if(this.contentLarge !== null){
-      this.large = true;
-    }
-
+  checkIfMenuMinimizado() {
+    this.menuMinimizado = document.querySelector(".minimizado");
   }
 }
