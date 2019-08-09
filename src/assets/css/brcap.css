@@ -36,6 +36,16 @@ html {
   margin-left: 230px;
 }
 
+body.minimizado .loader,
+body .loader {
+  transition: all 0.3s ease-in-out;
+}
+
+body.minimizado .loader {
+  left: 0;
+  width: 100%;
+}
+
 body.minimizado .content-wrapper {
   margin-left: 0px !important;
   z-index: 840;
@@ -1070,7 +1080,7 @@ ng-select>div>div.single>div.toggle {
 }
 
 ng-select>div.disabled>div.single>div.toggle {
-  color: rgba(117,117,117,0.38) !important;
+  color: rgba(117, 117, 117, 0.38) !important;
 }
 
 ng-select>div>div.single>div.toggle:before {
@@ -1402,7 +1412,7 @@ input[disabled] {
 .ico-error,
 cap-icon.error .ver-senha-password,
 my-date-range-picker.error .mydrp .selectiongroup .btnpicker,
-my-date-picker.error .mydp .selectiongroup .btnpicker{
+my-date-picker.error .mydp .selectiongroup .btnpicker {
   color: #b00020 !important;
 }
 
@@ -1500,19 +1510,22 @@ my-date-range-picker.error .mydrp .selectiongroup {
   padding: 0px 0px 0px 0px !important;
   margin-top: 0px !important;
   height: 49px !important;
-  background-color: rgba(107,191,94,0.5) !important;
+  background-color: rgba(107, 191, 94, 0.5) !important;
   border-radius: 5px 5px 0px 0px !important;
 }
 
 .multiSelect .btn {
   text-transform: none !important;
   padding: 8px 0px 0px 11px !important;
-  margin: 12px 0px 12px 0px!important;
+  margin: 12px 0px 12px 0px !important;
   border-color: transparent !important;
 }
 
-.multiSelect .btn:focus, .btn:active:focus,
-.btn.active:focus, .btn.focus, .btn:active.focus,
+.multiSelect .btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
 .btn.active.focus {
   outline: none !important;
   outline-offset: none !important;
@@ -1521,14 +1534,14 @@ my-date-range-picker.error .mydrp .selectiongroup {
 
 .multiselect-dropdown .btn .selected-item {
   margin-right: 4px !important;
-    background: rgba(107,191,94,0.5) !important;
-    color: #333 !important;
-    border-radius: 2px !important;
-    float: left !important;
-    border-color: transparent !important;
-    overflow: hidden;
-    width: 66%;
-    position: absolute;
+  background: rgba(107, 191, 94, 0.5) !important;
+  color: #333 !important;
+  border-radius: 2px !important;
+  float: left !important;
+  border-color: transparent !important;
+  overflow: hidden;
+  width: 66%;
+  position: absolute;
 }
 
 .multiSelect .btn>span:first-child {
@@ -1537,22 +1550,18 @@ my-date-range-picker.error .mydrp .selectiongroup {
   overflow: hidden !important;
 }
 
-.multiselect-item-checkbox
- input[type=checkbox]:checked + div:before {
-  background: rgba(107,191,94,0.5) !important;
+.multiselect-item-checkbox input[type=checkbox]:checked+div:before {
+  background: rgba(107, 191, 94, 0.5) !important;
 }
 
-.multiselect-item-checkbox input[type=checkbox] + div:before {
-  color: rgba(107,191,94,0.5) !important;
-  border: 2px solid rgba(107,191,94,0.5) !important;
+.multiselect-item-checkbox input[type=checkbox]+div:before {
+  color: rgba(107, 191, 94, 0.5) !important;
+  border: 2px solid rgba(107, 191, 94, 0.5) !important;
 }
 
-cap-multi-select label.label-input{
+cap-multi-select label.label-input {
   overflow: hidden !important;
   margin: -1px 0px !important;
   height: 11px !important;
   background: transparent !important;
 }
-
-
-
