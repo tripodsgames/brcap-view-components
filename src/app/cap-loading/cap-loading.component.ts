@@ -11,19 +11,10 @@ export class CapLoadingComponent implements OnInit {
   @Input("sistema") sistema: string;
 
   contentLarge;
-  menuMinimizado;
 
   constructor() { }
 
   ngOnInit() {
-    this.checkIfContentHeaderIsLarge();
-  }
-
-  checkIfContentHeaderIsLarge() {
     this.contentLarge = document.querySelector(".content-header-large");
-  }
-
-  checkIfMenuMinimizado() {
-    this.menuMinimizado = document.querySelector(".minimizado");
   }
 }

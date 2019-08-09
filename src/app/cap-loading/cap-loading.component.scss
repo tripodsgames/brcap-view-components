@@ -11,9 +11,14 @@
   width: calc(100% - 230px);
   height: calc(100% - 150px);
 
-  &-large {
+  &.large {
     top: 220px;
     height: calc(100% - 220px);
+  }
+
+  &.full-width {
+    left: 0;
+    width: 100%;
   }
 
   .loader-body {
@@ -36,11 +41,6 @@
     top: 50%;
     left: 50%;
   }
-}
-
-.large {
-  top: 220px;
-  height: calc(100% - 220px);
 }
 
 
