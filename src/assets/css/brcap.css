@@ -625,7 +625,7 @@ p.label-text span {
   content: "\e917";
 }
 
-/* .primeira-pagina{
+.primeira-pagina{
   content: "\e930";
 }
 .ultima-pagina{
@@ -643,10 +643,9 @@ p.label-text span {
   content: "\e934";
 }
 
-.pesquisa-avancada{
+/* .pesquisa-avancada{
   content: "\";
-}
-*/
+} */
 
 .scroll .cap-button.btn-ico .brcap-ico {
   transform: rotate(180deg);
@@ -1839,10 +1838,7 @@ my-date-picker.buttonDatepicker .mydp .selector {
   font-size: 11px;
 }
 
-
-/* style cap-select-multi */
-/* TODO */
-
+/* cap-select-multi */
 .multiSelect {
   text-transform: none !important;
   box-shadow: 0px 2px 0px 0px #555 !important;
@@ -1879,4 +1875,37 @@ my-date-picker.buttonDatepicker .mydp .selector {
   border-radius: 2px !important;
   float: left !important;
   border-color: transparent !important;
+}
+
+/* button_daterangepicker */
+.button_daterangepicker .mydp .selectorarrowleft:before {
+  right: 15px;
+}
+
+.button_daterangepicker .mydp .selectiongroup {
+  width: 45px;
+  height: 45px;
+  background-color: rgb(197, 150, 9);
+  color: white;
+  cursor: pointer;
+  border: none !important;
+  box-shadow: 0 0.5px 2.5px 0 rgba(0, 0, 0, 0.2), 0 1.5px 0.5px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+}
+
+.button_daterangepicker .mydp .selectiongroup .mydpicon {
+  color: white;
+  padding-left: 18px;
+  font-size: 24px !important;
+}
+
+.button_daterangepicker .mydp .selection {
+  background-color: rgb(197, 150, 9);
+}
+
+.button_daterangepicker .mydp input {
+  display: none;
+}
+
+.button_daterangepicker .mydp .selector{
+  margin-left: -252px !important;
 }
