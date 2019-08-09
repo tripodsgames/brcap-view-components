@@ -11,15 +11,10 @@ export class CapLoadingComponent implements OnInit {
   @Input("sistema") sistema: string;
 
   contentLarge;
-  large: boolean;
 
   constructor() { }
 
   ngOnInit() {
     this.contentLarge = document.querySelector(".content-header-large");
-
-    if(this.contentLarge !== null){
-      this.large = true;
-    }
   }
 }

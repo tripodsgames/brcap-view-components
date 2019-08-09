@@ -47,8 +47,13 @@ body.minimizado .content-wrapper {
   z-index: 840;
 }
 
+body.minimizado .loader,
+body .loader {
+  transition: all 0.3s ease-in-out;
+}
+
 body.minimizado .loader {
-  margin-left: -230px !important;
+  left: 0;
   width: 100%;
 }
 
