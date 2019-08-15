@@ -1562,6 +1562,6 @@ my-date-range-picker.error .mydrp .selectiongroup {
 cap-multi-select label.label-input {
   overflow: hidden !important;
   margin: -1px 0px !important;
-  height: 11px !important;
+  height: 14px !important;
   background: transparent !important;
 }
