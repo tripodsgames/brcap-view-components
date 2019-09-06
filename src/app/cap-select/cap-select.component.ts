@@ -50,6 +50,8 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   title: boolean;
   @Output()
   focus = new EventEmitter();
+  @Output()
+  change = new EventEmitter();
   @ViewChild("select")
   select;
 
@@ -80,6 +82,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   set value(v: any) {
+    this.change.emit(v);
     if (v !== this.innerValue) {
       this.innerValue = v;
       this.onChangeCallback(v);
