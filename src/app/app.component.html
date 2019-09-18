@@ -226,8 +226,44 @@
       </div>
     </div>
 
+    <div class="box">
+      <div class="row">
+        <cap-tabPanel>
+          <cap-tab title="INFORMAÇÕES GERAIS DE PRODUTOS">
+            Primeira tab
+          </cap-tab>
+          <cap-tab title="SORTEIOS" [disabled]="true">
+            Segunda tab
+          </cap-tab>
+          <cap-tab title="QUOTAS">
+            Terceira tab
+          </cap-tab>
+          <cap-tab title="RESGATE">
+            Quarta tab
+          </cap-tab>
+        </cap-tabPanel>
+      </div>
+    </div>
+
+    <div class="row">
+      <cap-button label="open modal" (click)="modal.show()"></cap-button>
+    </div>
+
+    <cap-modal>
+      <div class="app-modal-header text-center">
+        <h2>Título do modal</h2>
+      </div>
+      <div class="app-modal-body text-center">
+        <p>Corpo do modal</p>
+      </div>
+      <div class="app-modal-footer text-center">
+        <cap-button label="Fechar" (click)="modal.hide()"></cap-button>
+      </div>
+    </cap-modal>
+
   </div>
 </div>
 
 <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes> -->
 <!-- <cap-loading [loading]="true" sistema="monitor"></cap-loading> -->
+<cap-scrollUp></cap-scrollUp>
