@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pagination.component";
 import { ExportXLSService } from "./services/export-xls.service";
+import { CapModalComponent } from "./cap-modal/cap-modal.component";
 
 @Component({
   selector: "app-root",
@@ -43,6 +44,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   selectedItems: Array<any> = [];
   dropdownSettings = {};
   valueCidade: any;
+
+  @ViewChild(CapModalComponent) modal: CapModalComponent;
 
   menu = [
     {

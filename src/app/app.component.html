@@ -246,7 +246,34 @@
     </div>
 
     <div class="row">
-      <cap-button label="open modal" (click)="modal.show()"></cap-button>
+      <div class="col-md-3">
+        <p>cap-modal</p>
+        <cap-button label="abrir modal" (click)="modal.show()"></cap-button>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box">
+          <p>cap-btnCollapse</p>
+          <cap-btnCollapse [targetId]="'conteudoInterno' + i"></cap-btnCollapse>
+          <div class="collapse in" [id]="'conteudoInterno' + i">
+            ddthhghfgh
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <p>cap-toggle</p>
+        <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
+        </cap-toggle>
+      </div>
+
+      <div class="col-md-4">
+        <p>cap-inputTextArea</p>
+        <cap-inputTextArea placeholder="Informe a descrição do produto" [(ngModel)]="nome" label="Descrição"
+          textHelper="Nome deve possuir no máximo 200 caracateres" maxlength="200">
+        </cap-inputTextArea>
+      </div>
+
     </div>
 
     <cap-modal>
