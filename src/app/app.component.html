@@ -3,129 +3,231 @@
 <cap-header username="Joaquim José Xavier" logoBrasilCap="../../../assets/img/logo-brasilcap.svg"
   logoSistema="../../../assets/img/produto.svg"> </cap-header>
 
-<!-- <div class="content-wrapper"> -->
+<div class="content-wrapper">
+  <div class="content">
 
-<!-- <div class="content-header">
     <div class="row">
-      <div class="col-lg-6">
-        <h1 style="font-weight: 500">frhj</h1>
+      <div class="col-md-3">
+        <p>cap-datepicker</p>
+        <cap-datepicker id="dataInicial" label="Período" placeholder="Informe uma data" [(ngModel)]="data"
+          textHelper="Informe uma data" mask="99/99/9999"></cap-datepicker>
       </div>
-      <div class="col-lg-6">
-        <cap-button label="Nova Pesquisa" icon="busca" class="nova-pesquisa"></cap-button>
+      <div class="col-md-3">
+        <p>cap-dateRangePicker</p>
+        <!-- <cap-dateRangePicker [(ngModel)]="data1" label="Período" textHelper"Informe um período" name="periodo" placeholder="Informe um período">
+        </cap-dateRangePicker> -->
       </div>
-    </div>
-  </div> -->
-
-<!-- <div class="content"> -->
-
-<!-- <div class="row box">
-      <div class="col-lg-3">
-        <cap-inputText label="Nome" mask="99.999-999" [(ngModel)]="nome" textHelper="Nome deve possuir no mínimo 3 caracateres"
-          maxlength="20" error="true" [disabled]="disabled">
+      <div class="col-md-3">
+        <p>cap-inputText</p>
+        <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
+          textHelper="Nome deve possuir 3 caracateres" maxlength="20">
         </cap-inputText>
       </div>
-
-      <div class="col-lg-3">
-        <cap-button icon="busca" [disabled]="true"></cap-button>
+      <div class="col-md-3">
+        <p>cap-button</p>
+        <cap-button label="Botão 1" icon="arquivo">
+        </cap-button>
       </div>
     </div>
 
-    <div class="col-lg-3">
-        <cap-datepicker id="dataInicial" placeholder="Informe uma data" [(ngModel)]="data" textHelper="Informe uma data" mask="99/99/9999">
-        </cap-datepicker>
-      </div> -->
-
-<!-- <cap-inputText [(ngModel)]="cpf" (keydown)="changeMask($event)" [mask]="mascara"></cap-inputText> -->
-
-<!-- <input id="test">
- -->
-<!-- <cap-scrollUp></cap-scrollUp> -->
-
-<!-- <cap-button icon="calendario"></cap-button>  -->
-
-<!-- <div class="box abas">
-      <cap-tabPanel class="fix">
-        <cap-tab title="INF.GERAIS" #listTab class="aba1">
-
-        </cap-tab>
-        <cap-tab title="CONVÊNIO RECEBIMENTO" #listTab>
-
-        </cap-tab>
-        <cap-tab title="VALORES COMERCIALIZAÇÃO" #listTab styleClass="aba3">
-
-        </cap-tab>
-        <cap-tab title="LIBERAÇÃO PGTO" #listTab>
-
-        </cap-tab>
-        <cap-tab title="RATEIO" #listTab>
-
-        </cap-tab>
-        <cap-tab title="CLIENTE DÁ SORTE" #listTab>
-
-        </cap-tab>
-      </cap-tabPanel>
-    </div> -->
-
-<!-- <div class="row">
-      <div class="col-md-3">
-        <cap-inputText label="Nome" icon="busca"></cap-inputText>
+    <div class="row" style="margin-top: 25px">
+      <div class="col-md-3 no-padding-right">
+        <p>cap-select</p>
+        <cap-select [items]="selectSimple" label="Combo Simples" title="teste"
+          (ngModelChange)="selFormaOnChange($event)" name="testeSimples" placeholder="teste de combo simples"
+          [(ngModel)]="radioSimple"></cap-select>
       </div>
-      <div class="col-md-3">
-        <cap-datepicker label="Data"></cap-datepicker>
-      </div>
-    </div> -->
 
-<!-- <div class="col-md-10 button-container"> -->
-
-<div class="content-wrapper">
-  <!-- <div class="content-header-large"></div> -->
-  <div class="content">
-    <div class="row">
-      <div class="col-md-3">
-        <cap-datepicker class="button_datepicker"
-          [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}" mode="period"
-          [(ngModel)]="periodo" required [(ngModel)]="dataBusca" (ngModelChange)="atualizarNumeroPagina($event)">
-        </cap-datepicker>
+      <div class="col-md-3 no-padding-right">
+        <p>cap-multi-select</p>
+        <cap-multi-select [data]="cidades" label="Selecionar cidades" placeholder="Cidades Selecionadas"
+          (ngModelChange)="selFormaOnChange($event)" name="cidade" [(ngModel)]="valueCidade"></cap-multi-select>
       </div>
+
       <div class="col-md-3">
-        <cap-dateRangePicker class="button_daterangepicker"
-          [ngClass]="{'semBorderRadius': dataBusca !== undefined && hoje !== diaBuscado}" name="periodo"
-          [(ngModel)]="periodo" (ngModelChange)="atualizarNumeroPagina($event)"></cap-dateRangePicker>
+        <p>cap-checkbox</p>
+        <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
+        </cap-checkbox>
+        <cap-checkbox name="options" [(ngModel)]="value1" itemLabel="Opção 2">
+        </cap-checkbox>
+      </div>
+
+      <div class="col-md-3">
+        <p>cap-radio</p>
+        <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
+        <cap-radio itemValue="2" name="options" [(ngModel)]="radio" itemLabel="Opção 2"></cap-radio>
       </div>
     </div>
-    <div class="row">
 
-        <div class="col-md-3 no-padding-right">
-          <cap-select [items]="selectSimple" label="Combo Simples" title="teste"
-            (ngModelChange)="selFormaOnChange($event)"
-            name="testeSimples" placeholder="teste de combo simples"
-            [(ngModel)]="radioSimple"></cap-select>
-        </div>
-
-
-        <div class="col-md-3 no-padding-right">
-          <cap-multi-select [data]="cidades" label="Selecionar cidades"
-          placeholder="Cidades Selecionadas" (ngModelChange)="selFormaOnChange($event)" name="cidade" [(ngModel)]= "valueCidade"></cap-multi-select>
-        </div>
-      </div>
-
-    <div class="row">
-      <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2" tableTitle="bla"
-        tableSubTitle="{{variavel}} - {{variavel}}" [rowOptions]="rowOptions">
+    <div class="row" style="margin-top: 25px">
+      <p>cap-table-pagination</p>
+      <cap-table-pagination #TablePaginationComponent [columns]="columns" [items]="items2" tableTitle="Título"
+        tableSubTitle="{{subtitulo}}" [rowOptions]="rowOptions">
       </cap-table-pagination>
     </div>
-    <div class="row">
-      <cap-button (click)="exemploExportarXLS()">Exportar XLS</cap-button>
-      <cap-button (click)="exemplo2ExportarXLS()">Exportar XLS segundo exemplo</cap-button>
-      <cap-button (click)="exemploMultiplasAbasXLS()">Exportar XLS Com Multiplas Abas</cap-button>
+
+    <div class="row text-right">
+      <cap-button styleClass="xs" icon="arquivo" (click)="exemploExportarXLS()">Exportar XLS</cap-button>
+      <cap-button styleClass="xs" icon="arquivo" (click)="exemplo2ExportarXLS()">Exportar XLS segundo exemplo
+      </cap-button>
+      <cap-button styleClass="xs" icon="arquivo" (click)="exemploMultiplasAbasXLS()">Exportar XLS Com Multiplas Abas
+      </cap-button>
     </div>
+
+    <div class="row box" style="margin-top: 25px">
+      <p>cap-icon</p>
+      <div class="col-md-1">
+        <div>ajuda</div>
+        <cap-icon icon="ajuda" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>menu</div>
+        <cap-icon icon="menu" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>adiantar10</div>
+        <cap-icon icon="adiantar10" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>voltar</div>
+        <cap-icon icon="voltar" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>adicionar</div>
+        <cap-icon icon="adicionar" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>alerta</div>
+        <cap-icon icon="alerta" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>arquivo</div>
+        <cap-icon icon="arquivo" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>busca</div>
+        <cap-icon icon="busca" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>calendario</div>
+        <cap-icon icon="calendario" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>check-circulo</div>
+        <cap-icon icon="check-circulo" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>compartilhar</div>
+        <cap-icon icon="compartilhar" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>esconder-senha</div>
+        <cap-icon icon="esconder-senha" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>seguir</div>
+        <cap-icon icon="seguir" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>anterior</div>
+        <cap-icon icon="anterior" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>seta-cimabaixo</div>
+        <cap-icon icon="seta-cimabaixo" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>usuario</div>
+        <cap-icon icon="usuario" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>x-circulo</div>
+        <cap-icon icon="x-circulo" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>ver-senha</div>
+        <cap-icon icon="ver-senha" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>retrair</div>
+        <cap-icon icon="retrair" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>expandir</div>
+        <cap-icon icon="expandir" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>favorito</div>
+        <cap-icon icon="favorito" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>fullscreen</div>
+        <cap-icon icon="fullscreen" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>info</div>
+        <cap-icon icon="info" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>mais-opcoes</div>
+        <cap-icon icon="mais-opcoes" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>menos</div>
+        <cap-icon icon="menos" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>sair</div>
+        <cap-icon icon="sair" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>adiantar10</div>
+        <cap-icon icon="adiantar10" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>pausar</div>
+        <cap-icon icon="pausar" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>tocar</div>
+        <cap-icon icon="tocar" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>voltar10</div>
+        <cap-icon icon="voltar10" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>volumeoff</div>
+        <cap-icon icon="volumeoff" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>volumeon</div>
+        <cap-icon icon="volumeon" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>codigo</div>
+        <cap-icon icon="codigo" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>editar</div>
+        <cap-icon icon="editar" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>mover</div>
+        <cap-icon icon="mover" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>x</div>
+        <cap-icon icon="x" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>sucesso</div>
+        <cap-icon icon="sucesso" [size]="24"></cap-icon>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- </div>
-</div> -->
-
-
 <!-- <cap-permissoes [urlSistemas]="url" [urlUsuarios]="url" sistema="posvenda"></cap-permissoes> -->
-
-<cap-loading [loading]="true" sistema="monitor"></cap-loading>
+<!-- <cap-loading [loading]="true" sistema="monitor"></cap-loading> -->

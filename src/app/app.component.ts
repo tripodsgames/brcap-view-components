@@ -436,7 +436,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     ]
   };
 
-  variavel = "dfvfdfghgfhfggfhhfg"
+  subtitulo = "Subtítulo"
 
   listaTipoPessoa = "dd"
 
@@ -597,6 +597,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   onChange(value) {
     console.log("Value change!! ",value);
   }
+  
   async exemploExportarXLS() {
     return this.exportXlsService.gerarXls({ ...this.pilotos1XLS,  nomeArquivo: 'exemploPilotos'});
   }
