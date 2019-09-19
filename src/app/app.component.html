@@ -6,56 +6,83 @@
 <div class="content-wrapper">
   <div class="content">
 
-    <div class="row">
-      <div class="col-md-3">
-        <p>cap-datepicker</p>
-        <cap-datepicker id="dataInicial" label="Período" placeholder="Informe uma data" [(ngModel)]="data"
-          textHelper="Informe uma data" mask="99/99/9999"></cap-datepicker>
-      </div>
-      <div class="col-md-3">
-        <p>cap-dateRangePicker</p>
-        <!-- <cap-dateRangePicker [(ngModel)]="data1" label="Período" textHelper"Informe um período" name="periodo" placeholder="Informe um período">
-        </cap-dateRangePicker> -->
-      </div>
-      <div class="col-md-3">
-        <p>cap-inputText</p>
-        <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
-          textHelper="Nome deve possuir 3 caracateres" maxlength="20">
-        </cap-inputText>
-      </div>
-      <div class="col-md-3">
-        <p>cap-button</p>
-        <cap-button label="Botão 1" icon="arquivo">
-        </cap-button>
+    <div class="box">
+      <div class="row">
+        <div class="col-md-3">
+          <p>cap-datepicker</p>
+          <cap-datepicker id="dataInicial" label="Período" placeholder="Informe uma data" [(ngModel)]="data"
+            textHelper="Informe uma data" mask="99/99/9999"></cap-datepicker>
+        </div>
+        <div class="col-md-3">
+          <p>cap-dateRangePicker</p>
+          <cap-dateRangePicker id="datas" [(ngModel)]="data1" label="Período" textHelper="Informe um período" placeholder="Informe um período"></cap-dateRangePicker>
+        </div>
+        <div class="col-md-3">
+          <p>cap-monthpicker</p>
+          <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="mesAno">
+          </cap-monthpicker>
+        </div>
+        <div class="col-md-3">
+          <p>cap-inputText</p>
+          <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
+            textHelper="Nome deve possuir 3 caracateres" maxlength="20">
+          </cap-inputText>
+        </div>
       </div>
     </div>
 
-    <div class="row" style="margin-top: 25px">
-      <div class="col-md-3 no-padding-right">
-        <p>cap-select</p>
-        <cap-select [items]="selectSimple" label="Combo Simples" title="teste"
-          (ngModelChange)="selFormaOnChange($event)" name="testeSimples" placeholder="teste de combo simples"
-          [(ngModel)]="radioSimple"></cap-select>
-      </div>
+    <div class="box">
+      <div class="row">
+        <div class="col-md-3 no-padding-right">
+          <p>cap-select</p>
+          <cap-select [items]="selectSimple" label="Combo Simples" title="teste"
+            (ngModelChange)="selFormaOnChange($event)" name="testeSimples" placeholder="teste de combo simples"
+            [(ngModel)]="radioSimple"></cap-select>
+        </div>
 
-      <div class="col-md-3 no-padding-right">
-        <p>cap-multi-select</p>
-        <cap-multi-select [data]="cidades" label="Selecionar cidades" placeholder="Cidades Selecionadas"
-          (ngModelChange)="selFormaOnChange($event)" name="cidade" [(ngModel)]="valueCidade"></cap-multi-select>
-      </div>
+        <div class="col-md-3 no-padding-right">
+          <p>cap-multi-select</p>
+          <cap-multi-select [data]="cidades" label="Selecionar cidades" placeholder="Cidades Selecionadas"
+            (ngModelChange)="selFormaOnChange($event)" name="cidade" [(ngModel)]="valueCidade"></cap-multi-select>
+        </div>
 
-      <div class="col-md-3">
-        <p>cap-checkbox</p>
-        <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
-        </cap-checkbox>
-        <cap-checkbox name="options" [(ngModel)]="value1" itemLabel="Opção 2">
-        </cap-checkbox>
-      </div>
+        <div class="col-md-3">
+          <p>cap-checkbox</p>
+          <cap-checkbox name="options" [(ngModel)]="value" itemLabel="Opção 1">
+          </cap-checkbox>
+          <cap-checkbox name="options" [(ngModel)]="value1" itemLabel="Opção 2">
+          </cap-checkbox>
+        </div>
 
-      <div class="col-md-3">
-        <p>cap-radio</p>
-        <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
-        <cap-radio itemValue="2" name="options" [(ngModel)]="radio" itemLabel="Opção 2"></cap-radio>
+        <div class="col-md-3">
+          <p>cap-radio</p>
+          <cap-radio itemValue="1" name="options" [(ngModel)]="radio" itemLabel="Opção 1"></cap-radio>
+          <cap-radio itemValue="2" name="options" [(ngModel)]="radio" itemLabel="Opção 2"></cap-radio>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="row">
+        <div class="col-md-3">
+          <p>cap-chips</p>
+          <cap-chips name="chip" itemLabel="Opção 1" [(ngModel)]="selecionadoChips">
+          </cap-chips>
+        </div>
+        <div class="col-md-3">
+          <p>cap-hint</p>
+          <cap-hint texto="olarfdfbvffb grgrgrt hgrt rtgrgr g rg rgrgr hbhv kmjikmv kmikmm komolm,l omommoo.">
+          </cap-hint>
+        </div>
+        <div class="col-md-3">
+          <p>cap-divisor</p>
+          <cap-divisor></cap-divisor>
+        </div>
+        <div class="col-md-3">
+          <p>cap-button</p>
+          <cap-button label="Botão 1" icon="busca">
+          </cap-button>
+        </div>
       </div>
     </div>
 
@@ -125,12 +152,20 @@
         <cap-icon icon="esconder-senha" [size]="24"></cap-icon>
       </div>
       <div class="col-md-1">
+        <div>anterior</div>
+        <cap-icon icon="anterior" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
         <div>seguir</div>
         <cap-icon icon="seguir" [size]="24"></cap-icon>
       </div>
       <div class="col-md-1">
-        <div>anterior</div>
-        <cap-icon icon="anterior" [size]="24"></cap-icon>
+        <div>retrair</div>
+        <cap-icon icon="retrair" [size]="24"></cap-icon>
+      </div>
+      <div class="col-md-1">
+        <div>expandir</div>
+        <cap-icon icon="expandir" [size]="24"></cap-icon>
       </div>
       <div class="col-md-1">
         <div>seta-cimabaixo</div>
@@ -147,14 +182,6 @@
       <div class="col-md-1">
         <div>ver-senha</div>
         <cap-icon icon="ver-senha" [size]="24"></cap-icon>
-      </div>
-      <div class="col-md-1">
-        <div>retrair</div>
-        <cap-icon icon="retrair" [size]="24"></cap-icon>
-      </div>
-      <div class="col-md-1">
-        <div>expandir</div>
-        <cap-icon icon="expandir" [size]="24"></cap-icon>
       </div>
       <div class="col-md-1">
         <div>favorito</div>
@@ -226,13 +253,14 @@
       </div>
     </div>
 
+    <p>cap-tabPanel</p>
     <div class="box">
       <div class="row">
         <cap-tabPanel>
           <cap-tab title="INFORMAÇÕES GERAIS DE PRODUTOS">
             Primeira tab
           </cap-tab>
-          <cap-tab title="SORTEIOS" [disabled]="true">
+          <cap-tab title="SORTEIOS" disabled="true">
             Segunda tab
           </cap-tab>
           <cap-tab title="QUOTAS">
@@ -262,9 +290,11 @@
       </div>
 
       <div class="col-md-2">
-        <p>cap-toggle</p>
-        <cap-toggle name="options" itemLabel="Opção 1" [(ngModel)]="toggle">
-        </cap-toggle>
+        <div class="box">
+          <p>cap-toggle</p>
+          <cap-toggle name="options" itemLabel="{{toggle}}" [(ngModel)]="toggle">
+          </cap-toggle>
+        </div>
       </div>
 
       <div class="col-md-4">
