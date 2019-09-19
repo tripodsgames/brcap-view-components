@@ -4,8 +4,39 @@
   logoSistema="../../../assets/img/produto.svg"> </cap-header>
 
 <div class="content-wrapper">
-  <div class="content">
+  <div class="content-header">
+    <div class="row">
+      <div class="col-md-3">
+        <cap-datepicker id="dataInicial" label="Período" placeholder="Informe uma data" [(ngModel)]="dataHeader"
+          textHelper="Informe uma data" mask="99/99/9999"></cap-datepicker>
+      </div>
+      <div class="col-md-3">
+        <cap-dateRangePicker id="datas" [(ngModel)]="data1" label="Período" textHelper="Informe um período"
+          placeholder="Informe um período"></cap-dateRangePicker>
+      </div>
+      <div class="col-md-3">
+        <cap-monthpicker label="Mês e Ano" placeholder="Informe o mês e ano" [(ngModel)]="mesAno">
+        </cap-monthpicker>
+      </div>
+      <div class="col-md-3">
+        <cap-inputText placeholder="Informe seu nome" label="Nome" icon="busca" [(ngModel)]="nome"
+          textHelper="Nome deve possuir 3 caracateres" maxlength="20">
+        </cap-inputText>
+      </div>
+      <div class="col-md-3">
+        <cap-select [items]="selectSimple" label="Combo Simples" title="teste"
+          (ngModelChange)="selFormaOnChange($event)" name="testeSimples" placeholder="teste de combo simples"
+          [(ngModel)]="radioSimple"></cap-select>
+      </div>
+      <div class="col-md-3">
+        <cap-multi-select [data]="cidades" label="Selecionar cidades" placeholder="Cidades Selecionadas"
+          (ngModelChange)="selFormaOnChange($event)" name="cidade" [(ngModel)]="valueCidade"></cap-multi-select>
+      </div>
 
+    </div>
+  </div>
+
+  <div class="content">
     <div class="box">
       <div class="row">
         <div class="col-md-3">
@@ -15,7 +46,8 @@
         </div>
         <div class="col-md-3">
           <p>cap-dateRangePicker</p>
-          <cap-dateRangePicker id="datas" [(ngModel)]="data1" label="Período" textHelper="Informe um período" placeholder="Informe um período"></cap-dateRangePicker>
+          <cap-dateRangePicker id="datas" [(ngModel)]="data1" label="Período" textHelper="Informe um período"
+            placeholder="Informe um período"></cap-dateRangePicker>
         </div>
         <div class="col-md-3">
           <p>cap-monthpicker</p>
