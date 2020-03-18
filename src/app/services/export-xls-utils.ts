@@ -12,7 +12,7 @@ const imgToBase64 = (path, format) =>
         img.src = path;
     });
 const WIDTH_CELL_XSL = 18;
-const STYLE_THIN = { style: 'thin' };
+const STYLE_THIN = { style: 'medium', color: {argb:'C2C2C2'} };
 const DEFAULT_BORDER = {
     top: STYLE_THIN,
     left: STYLE_THIN,

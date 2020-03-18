@@ -18,6 +18,7 @@ import {
 
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
+const PATH_SEPARATOR = `assets/img/separator.png`;
 
 @Injectable()
 export class ExportXLSService {
@@ -32,6 +33,7 @@ export class ExportXLSService {
     private titulo: string;
     private idLogoBrasilcap: number;
     private idLogoProjeto: number;
+    private idSeparator: number;
     private celulasHeaderMesclarAoLado: Array<number> = [];
 
     constructor() { }
@@ -55,29 +57,44 @@ export class ExportXLSService {
             key: chave,
             width: WIDTH_CELL_XSL,
         }));
+        console.log(PATH_LOGO_BRASILCAP);
+        
         this.idLogoBrasilcap = await this.idImg(PATH_LOGO_BRASILCAP);
+
+        this.idSeparator = await this.idImg(PATH_SEPARATOR);
+        
         if (this.pathLogoProjeto) {
+           
             this.idLogoProjeto = await this.idImg(this.pathLogoProjeto);
         }
     }
 
     private async addImgsHeaderToSheet() {
-        this.sheet.mergeCells('A1:B4');
-        addDefaultBorder(this.sheet.getCell('B4'));
-        alignCenter(this.sheet.getCell('B4'));
-        this.sheet.mergeCells('C1:D4');
+        this.sheet.mergeCells('A1:D4');
         addDefaultBorder(this.sheet.getCell('D4'));
         alignCenter(this.sheet.getCell('D4'));
+        // this.sheet.mergeCells('C1:D4');
+        // addDefaultBorder(this.sheet.getCell('D4'));
+        // alignCenter(this.sheet.getCell('D4'));
         this.sheet.addImage(this.idLogoBrasilcap, {
             tl: { col: 0.3, row: 0.6 },
             br: { col: 1.8, row: 2.8 },
         });
-        if (this.pathLogoProjeto) {
-            this.sheet.addImage(this.idLogoProjeto, {
-                tl: { col: 2.2, row: 0.8 },
-                br: { col: 3.8, row: 2.6 },
+        // if (this.pathLogoProjeto) {
+
+            this.sheet.addImage(this.idSeparator, {
+                tl: { col: 1.9, row: 0.2 },
+                br: { col: 1.95, row: 3.2 },
             });
-        }
+
+            
+
+
+            this.sheet.addImage(this.idLogoBrasilcap, {
+                tl: { col: 1.99, row: 0.8 },
+                br: { col: 2.8, row: 2.6 },
+            });
+        // }
     }
 
     private async setSheetHeader() {
@@ -260,6 +277,7 @@ export class ExportXLSService {
         this.linhas = this.filtraLinhas(linhas);
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
+        console.log(logoProjeto);
         this.pathLogoProjeto = logoProjeto;
 
         this.init();
