@@ -15,6 +15,7 @@ import {
     saveAs,
     WIDTH_CELL_XSL,
 } from './export-xls-utils';
+import * as moment from "moment";
 
 const HEADER_ROW_NUM = 5;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
@@ -124,7 +125,7 @@ export class ExportXLSService {
         }
         
         if(index > 4 && (size - (!(size % 2)? 2: 1)) === index){
-            this.sheet.getCell(lastLetter).value = new Date();
+            this.sheet.getCell(lastLetter).value = `Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('h:mm:ss')}`;
         }
     }
 
