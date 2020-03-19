@@ -36,6 +36,8 @@ export class ExportXLSService {
     private idSeparator: number;
     private celulasHeaderMesclarAoLado: Array<number> = [];
 
+    private alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V", "W", "X", "Y", "Z"]
+
     constructor() { }
 
     private async idImg(filename: string): Promise<number> {
@@ -57,14 +59,13 @@ export class ExportXLSService {
             key: chave,
             width: WIDTH_CELL_XSL,
         }));
-        console.log(PATH_LOGO_BRASILCAP);
-        
+
         this.idLogoBrasilcap = await this.idImg(PATH_LOGO_BRASILCAP);
 
-        this.idSeparator = await this.idImg(PATH_SEPARATOR);
-        
+
+
         if (this.pathLogoProjeto) {
-           
+            this.idSeparator = await this.idImg(PATH_SEPARATOR);
             this.idLogoProjeto = await this.idImg(this.pathLogoProjeto);
         }
     }
@@ -73,42 +74,58 @@ export class ExportXLSService {
         this.sheet.mergeCells('A1:D4');
         addDefaultBorder(this.sheet.getCell('D4'));
         alignCenter(this.sheet.getCell('D4'));
-        // this.sheet.mergeCells('C1:D4');
-        // addDefaultBorder(this.sheet.getCell('D4'));
-        // alignCenter(this.sheet.getCell('D4'));
         this.sheet.addImage(this.idLogoBrasilcap, {
-            tl: { col: 0.3, row: 0.6 },
-            br: { col: 1.8, row: 2.8 },
+            tl: { col: 0.5, row: 0.9 },
+            br: { col: 1.43, row: 2.58 },
+            editAs: 'absolute'
         });
-        // if (this.pathLogoProjeto) {
+
+        if (this.pathLogoProjeto) {
 
             this.sheet.addImage(this.idSeparator, {
-                tl: { col: 1.9, row: 0.2 },
-                br: { col: 1.95, row: 3.2 },
+                tl: { col: 1.6, row: 0.5 },
+                br: { col: 1.65, row: 3.2 },
+                editAs: 'absolute'
             });
 
-            
-
-
-            this.sheet.addImage(this.idLogoBrasilcap, {
-                tl: { col: 1.99, row: 0.8 },
-                br: { col: 2.8, row: 2.6 },
+            this.sheet.addImage(this.idLogoProjeto, {
+                tl: { col: 1.8, row: 0.9 },
+                br: { col: 2.999, row: 2.55 },
+                editAs: 'absolute'
+                
             });
-        // }
+        }
     }
 
     private async setSheetHeader() {
-        this.sheet.mergeCells('E1:F4');
-        alignCenter(this.sheet.getCell('F4'));
-        addDefaultBorder(this.sheet.getCell('F4'));
-        this.sheet.getCell('F4').value = this.titulo;
-        this.sheet.mergeCells('G1:H4');
-        alignCenter(this.sheet.getCell('H4'));
-        addDefaultBorder(this.sheet.getCell('H4'));
-        this.sheet.mergeCells('I1:J4');
-        alignCenter(this.sheet.getCell('J4'));
-        addDefaultBorder(this.sheet.getCell('J4'));
+        const elementos = new Array((this.metadadosTabela.length < 6) ? 6 : this.metadadosTabela.length).fill(null).map((x, i) => i);
+       
+        
+        elementos.forEach((element, index, arr) => {
+            const isPar = !(index % 2);
+
+            if (index > 3 && isPar)
+                this.setSheetMergeHeader(index, arr.length);
+        });
         this.addImgsHeaderToSheet();
+    }
+
+    private setSheetMergeHeader(index, size) {
+        const more = ((size - 1) === index) ? 0 : 1;
+        const firstLetter = this.alfabeto[index] + 1;
+        const lastLetter = this.alfabeto[index + more] + 4;
+
+        this.sheet.mergeCells(`${firstLetter}:${lastLetter}`);
+        alignCenter(this.sheet.getCell(lastLetter));
+        addDefaultBorder(this.sheet.getCell(lastLetter));
+
+        if (index === 4) {
+            this.sheet.getCell(lastLetter).value = this.titulo;
+        }
+        
+        if(index > 4 && (size - (!(size % 2)? 2: 1)) === index){
+            this.sheet.getCell(lastLetter).value = new Date();
+        }
     }
 
     private formataColuna(formato: string, coluna: number) {
@@ -171,7 +188,7 @@ export class ExportXLSService {
         const columns = this.columns();
         headerRow.values = columns;
         this.mesclasNoHeader(headerRow);
-        headerRow.height = 45;
+        headerRow.height = 20;
         addAlignment({ wrapText: true })(headerRow);
         alignCenter(headerRow);
         headerRow.eachCell(addDefaultBorder);
@@ -180,7 +197,7 @@ export class ExportXLSService {
 
     private setSheetLines() {
         for (let linha of this.linhas) {
-            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key]));
+            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key] || ''));
             if (linha.detalhes && linha.detalhes.length > 0) {
                 this.setSubSheet(linha);
             }
@@ -277,7 +294,6 @@ export class ExportXLSService {
         this.linhas = this.filtraLinhas(linhas);
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
-        console.log(logoProjeto);
         this.pathLogoProjeto = logoProjeto;
 
         this.init();

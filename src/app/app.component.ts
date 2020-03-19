@@ -342,25 +342,43 @@ export class AppComponent implements OnInit, AfterViewInit {
       nome: 'Rogerinho do Ingá',
       veiculo: 'Sprinter Azul e Vermelha',
       signo: 'Capricórnio',
-      altura: 1.7
+      altura: 1.7,
+      teste1: 'teste1',
+      teste2: 'teste2',
+      teste3: 'teste3',
+      teste5: 'teste5'
     },
     {
       nome: 'Maurílio dos Anjos',
       veiculo: 'Kombi Branca 84',
       signo: 'Câncer',
-      altura: 1.72
+      altura: 1.72,
+      teste1: 'teste1',
+      teste2: 'teste2',
+      teste3: 'teste3',
+      teste5: 'teste5'
     },
     {
       nome: 'Julinho da Van',
       veiculo: 'Sprinter Branca',
       signo: 'Touro',
-      altura: 1.8
+      altura: 1.8,
+      teste1: 'teste1',
+      teste2: 'teste2',
+      teste3: 'teste3',
+      teste4: 'teste4',
+      teste5: 'teste5'
     },
     {
       nome: 'Renan',
       veiculo: 'Towner Azul Bebê',
       signo: 'Áries',
-      altura: 1.7
+      altura: 1.7,
+      teste1: 'teste1',
+      teste2: 'teste2',
+      teste3: 'teste3',
+      teste4: 'teste4',
+      teste5: 'teste5'
     },
   ];
 
@@ -420,7 +438,27 @@ export class AppComponent implements OnInit, AfterViewInit {
       chave: 'altura',
       nome: 'Altura',
       formato: '#,##0.00"m"'
+    },  {
+      chave: 'teste1',
+      nome: 'Signo do Zodíaco'
     },
+    {
+      chave: 'teste2',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste3',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste4',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste5',
+      nome: 'Signo do Zodíaco'
+    },
+
   ];
 
   metadadosPendura = {
@@ -587,7 +625,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   pilotos1XLS = {
     linhas: this.listaPilotos,
     metadadosTabela: this.metadadosPilotos,
-    titulo: 'Pilotos'
+    titulo: 'Pilotos',
+    logoProjeto : 'assets/img/logo-financeiro.png'
   }
 
   pilotos2XLS = {
