@@ -17,9 +17,10 @@ import {
 } from './export-xls-utils';
 import * as moment from "moment";
 
-const HEADER_ROW_NUM = 5;
+const HEADER_ROW_NUM = 6;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
-const PATH_SEPARATOR = `assets/img/separator.png`;
+const PATH_SEPARATOR = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAA+CAIAAAByeXZvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACLSURBVEhL7ZVLCgMhEERz/6O4ULyKF/C3FJeCgp+UiSTD0DeYfoumKZ7tsl7rwpzztoBjIOq9l1JSSpjYvzn43xhjhBC01jFG4gZA6pyTUsKDfdKb4b1XSrHxgY0NG2xs2Niw8RDDWiuEQGNiP+nVQAvnnI0xmMQNPIJRa0Vht9bozga/4/QvNGu9AZsQlzV8fRCaAAAAAElFTkSuQmCC'
+
 
 @Injectable()
 export class ExportXLSService {
@@ -32,6 +33,7 @@ export class ExportXLSService {
     private nomeArquivo: string;
     private pathLogoProjeto: string;
     private titulo: string;
+    private periodo: string;
     private idLogoBrasilcap: number;
     private idLogoProjeto: number;
     private idSeparator: number;
@@ -72,26 +74,26 @@ export class ExportXLSService {
     }
 
     private async addImgsHeaderToSheet() {
-        this.sheet.mergeCells('A1:D4');
-        addDefaultBorder(this.sheet.getCell('D4'));
-        alignCenter(this.sheet.getCell('D4'));
+        this.sheet.mergeCells('A1:D5');
+        addDefaultBorder(this.sheet.getCell('D5'));
+        alignCenter(this.sheet.getCell('D5'));
         this.sheet.addImage(this.idLogoBrasilcap, {
-            tl: { col: 0.5, row: 0.9 },
-            br: { col: 1.43, row: 2.58 },
+            tl: { col: 0.5, row: 1.4 },
+            br: { col: 1.43, row: 3.18 },
             editAs: 'absolute'
         });
 
         if (this.pathLogoProjeto) {
 
             this.sheet.addImage(this.idSeparator, {
-                tl: { col: 1.6, row: 0.5 },
-                br: { col: 1.65, row: 3.2 },
+                tl: { col: 1.6, row: 0.7 },
+                br: { col: 1.65, row: 4.3 },
                 editAs: 'absolute'
             });
 
             this.sheet.addImage(this.idLogoProjeto, {
-                tl: { col: 1.8, row: 0.9 },
-                br: { col: 2.999, row: 2.55 },
+                tl: { col: 1.8, row: 1.4 },
+                br: { col: 2.999, row: 3.05 },
                 editAs: 'absolute'
                 
             });
@@ -114,7 +116,7 @@ export class ExportXLSService {
     private setSheetMergeHeader(index, size) {
         const more = ((size - 1) === index) ? 0 : 1;
         const firstLetter = this.alfabeto[index] + 1;
-        const lastLetter = this.alfabeto[index + more] + 4;
+        const lastLetter = this.alfabeto[index + more] + 5;
 
         this.sheet.mergeCells(`${firstLetter}:${lastLetter}`);
         alignCenter(this.sheet.getCell(lastLetter));
@@ -123,9 +125,10 @@ export class ExportXLSService {
         if (index === 4) {
             this.sheet.getCell(lastLetter).value = this.titulo;
         }
-        
+
         if(index > 4 && (size - (!(size % 2)? 2: 1)) === index){
-            this.sheet.getCell(lastLetter).value = `Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('h:mm:ss')}`;
+            const periodo = this.periodo ? `Período: \n ${this.periodo} \n\n` : '';
+            this.sheet.getCell(lastLetter).value = `${periodo}  Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('h:mm:ss')}`;
         }
     }
 
@@ -189,7 +192,7 @@ export class ExportXLSService {
         const columns = this.columns();
         headerRow.values = columns;
         this.mesclasNoHeader(headerRow);
-        headerRow.height = 20;
+        headerRow.height = 45;
         addAlignment({ wrapText: true })(headerRow);
         alignCenter(headerRow);
         headerRow.eachCell(addDefaultBorder);
@@ -280,6 +283,7 @@ export class ExportXLSService {
         metadadosTabela,
         nomeArquivo,
         titulo,
+        periodo,
         logoProjeto,
         metadadosDetalhe,
     }: {
@@ -287,6 +291,7 @@ export class ExportXLSService {
         metadadosTabela: Array<MetadadosXLS>,
         nomeArquivo: string,
         titulo: string,
+        periodo?: string,
         logoProjeto?: string,
         metadadosDetalhe?: MetadadosDetalhe,
     }) {
@@ -295,6 +300,7 @@ export class ExportXLSService {
         this.linhas = this.filtraLinhas(linhas);
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
+        this.periodo = periodo || null;
         this.pathLogoProjeto = logoProjeto;
 
         this.init();

@@ -346,7 +346,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste1: 'teste1',
       teste2: 'teste2',
       teste3: 'teste3',
-      teste5: 'teste5'
+      teste5: 'teste5',
+      teste6: 'teste6'
     },
     {
       nome: 'Maurílio dos Anjos',
@@ -356,7 +357,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste1: 'teste1',
       teste2: 'teste2',
       teste3: 'teste3',
-      teste5: 'teste5'
+      teste5: 'teste5',
+      teste6: 'teste6'
     },
     {
       nome: 'Julinho da Van',
@@ -367,7 +369,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste2: 'teste2',
       teste3: 'teste3',
       teste4: 'teste4',
-      teste5: 'teste5'
+      teste5: 'teste5',
+      teste6: 'teste6'
     },
     {
       nome: 'Renan',
@@ -378,7 +381,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste2: 'teste2',
       teste3: 'teste3',
       teste4: 'teste4',
-      teste5: 'teste5'
+      teste5: 'teste5',
+      teste6: 'teste6'
     },
   ];
 
@@ -456,6 +460,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
     {
       chave: 'teste5',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste6',
       nome: 'Signo do Zodíaco'
     },
 
@@ -626,6 +634,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     linhas: this.listaPilotos,
     metadadosTabela: this.metadadosPilotos,
     titulo: 'Pilotos',
+    periodo: '02/03/2020 - 02/03/2020',
     logoProjeto : 'assets/img/logo-financeiro.png'
   }
 
@@ -633,7 +642,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     linhas: this.listaPilotos2,
     metadadosTabela: this.metadadosPilotos,
     metadadosDetalhe: this.metadadosPendura,
-    titulo: 'Pilotos2'
+    titulo: 'Pilotos2',
   }
 
   onChange(value) {
