@@ -14,6 +14,7 @@ import {
     mesmoGrupo,
     saveAs,
     WIDTH_CELL_XSL,
+    colums
 } from './export-xls-utils';
 import * as moment from "moment";
 
@@ -38,8 +39,6 @@ export class ExportXLSService {
     private idLogoProjeto: number;
     private idSeparator: number;
     private celulasHeaderMesclarAoLado: Array<number> = [];
-
-    private alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V", "W", "X", "Y", "Z"]
 
     constructor() { }
 
@@ -102,7 +101,6 @@ export class ExportXLSService {
 
     private async setSheetHeader() {
         const elementos = new Array((this.metadadosTabela.length < 6) ? 6 : this.metadadosTabela.length).fill(null).map((x, i) => i);
-       
         
         elementos.forEach((element, index, arr) => {
             const isPar = !(index % 2);
@@ -115,8 +113,8 @@ export class ExportXLSService {
 
     private setSheetMergeHeader(index, size) {
         const more = ((size - 1) === index) ? 0 : 1;
-        const firstLetter = this.alfabeto[index] + 1;
-        const lastLetter = this.alfabeto[index + more] + 5;
+        const firstLetter = colums[index] + 1;
+        const lastLetter = colums[index + more] + 5;
 
         this.sheet.mergeCells(`${firstLetter}:${lastLetter}`);
         alignCenter(this.sheet.getCell(lastLetter));
@@ -201,7 +199,7 @@ export class ExportXLSService {
 
     private setSheetLines() {
         for (let linha of this.linhas) {
-            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key] || ''));
+            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key] || ((typeof linha[key] == 'number')? linha[key]: '' )));
             if (linha.detalhes && linha.detalhes.length > 0) {
                 this.setSubSheet(linha);
             }

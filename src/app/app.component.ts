@@ -346,8 +346,12 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste1: 'teste1',
       teste2: 'teste2',
       teste3: 'teste3',
+      teste4: 'teste4',
       teste5: 'teste5',
-      teste6: 'teste6'
+      teste6: 'teste6',
+      teste7: 'teste7',
+      teste8: 'teste8',
+      teste9: 'teste9'
     },
     {
       nome: 'Maurílio dos Anjos',
@@ -357,8 +361,12 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste1: 'teste1',
       teste2: 'teste2',
       teste3: 'teste3',
+      teste4: 'teste4',
       teste5: 'teste5',
-      teste6: 'teste6'
+      teste6: 'teste6',
+      teste7: 'teste7',
+      teste8: 'teste8',
+      teste9: 'teste9'
     },
     {
       nome: 'Julinho da Van',
@@ -370,7 +378,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste3: 'teste3',
       teste4: 'teste4',
       teste5: 'teste5',
-      teste6: 'teste6'
+      teste6: 'teste6',
+      teste7: 'teste7',
+      teste8: 'teste8',
+      teste9: 'teste9'
     },
     {
       nome: 'Renan',
@@ -382,7 +393,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       teste3: 'teste3',
       teste4: 'teste4',
       teste5: 'teste5',
-      teste6: 'teste6'
+      teste6: 'teste6',
+      teste7: 'teste7',
+      teste8: 'teste8',
+      teste9: 'teste9'
     },
   ];
 
@@ -466,7 +480,62 @@ export class AppComponent implements OnInit, AfterViewInit {
       chave: 'teste6',
       nome: 'Signo do Zodíaco'
     },
-
+    
+    {
+      chave: 'teste7',
+      nome: 'Signo do Zodíaco'
+    },
+    
+    {
+      chave: 'teste8',
+      nome: 'Signo do Zodíaco'
+    }, {
+      chave: 'teste9',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste10',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste11',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste12',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste13',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste14',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste15',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste16',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste17',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste18',
+      nome: 'Signo do Zodíaco'
+    },
+    {
+      chave: 'teste19',
+      nome: 'Signo do Zodíaco'
+    },
+    
+    
+   
   ];
 
   metadadosPendura = {
@@ -635,7 +704,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     metadadosTabela: this.metadadosPilotos,
     titulo: 'Pilotos',
     periodo: '02/03/2020 - 02/03/2020',
-    logoProjeto : 'assets/img/logo-financeiro.png'
+    logoProjeto : 'assets/img/produto.svg'
   }
 
   pilotos2XLS = {
