@@ -126,7 +126,7 @@ export class ExportXLSService {
 
         if(index > 4 && (size - (!(size % 2)? 2: 1)) === index){
             const periodo = this.periodo ? `Período: \n ${this.periodo} \n\n` : '';
-            this.sheet.getCell(lastLetter).value = `${periodo}  Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('h:mm:ss')}`;
+            this.sheet.getCell(lastLetter).value = `${periodo}  Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('HH:mm:ss')}`;
         }
     }
 
