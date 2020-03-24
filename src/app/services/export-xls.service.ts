@@ -14,10 +14,14 @@ import {
     mesmoGrupo,
     saveAs,
     WIDTH_CELL_XSL,
+    colums
 } from './export-xls-utils';
+import * as moment from "moment";
 
-const HEADER_ROW_NUM = 5;
+const HEADER_ROW_NUM = 6;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
+const PATH_SEPARATOR = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAA+CAIAAAByeXZvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACLSURBVEhL7ZVLCgMhEERz/6O4ULyKF/C3FJeCgp+UiSTD0DeYfoumKZ7tsl7rwpzztoBjIOq9l1JSSpjYvzn43xhjhBC01jFG4gZA6pyTUsKDfdKb4b1XSrHxgY0NG2xs2Niw8RDDWiuEQGNiP+nVQAvnnI0xmMQNPIJRa0Vht9bozga/4/QvNGu9AZsQlzV8fRCaAAAAAElFTkSuQmCC'
+
 
 @Injectable()
 export class ExportXLSService {
@@ -30,8 +34,10 @@ export class ExportXLSService {
     private nomeArquivo: string;
     private pathLogoProjeto: string;
     private titulo: string;
+    private periodo: string;
     private idLogoBrasilcap: number;
     private idLogoProjeto: number;
+    private idSeparator: number;
     private celulasHeaderMesclarAoLado: Array<number> = [];
 
     constructor() { }
@@ -55,43 +61,73 @@ export class ExportXLSService {
             key: chave,
             width: WIDTH_CELL_XSL,
         }));
+
         this.idLogoBrasilcap = await this.idImg(PATH_LOGO_BRASILCAP);
+
+
+
         if (this.pathLogoProjeto) {
+            this.idSeparator = await this.idImg(PATH_SEPARATOR);
             this.idLogoProjeto = await this.idImg(this.pathLogoProjeto);
         }
     }
 
     private async addImgsHeaderToSheet() {
-        this.sheet.mergeCells('A1:B4');
-        addDefaultBorder(this.sheet.getCell('B4'));
-        alignCenter(this.sheet.getCell('B4'));
-        this.sheet.mergeCells('C1:D4');
-        addDefaultBorder(this.sheet.getCell('D4'));
-        alignCenter(this.sheet.getCell('D4'));
+        this.sheet.mergeCells('A1:D5');
+        addDefaultBorder(this.sheet.getCell('D5'));
+        alignCenter(this.sheet.getCell('D5'));
         this.sheet.addImage(this.idLogoBrasilcap, {
-            tl: { col: 0.3, row: 0.6 },
-            br: { col: 1.8, row: 2.8 },
+            tl: { col: 0.5, row: 1.4 },
+            br: { col: 1.43, row: 3.18 },
+            editAs: 'absolute'
         });
+
         if (this.pathLogoProjeto) {
+
+            this.sheet.addImage(this.idSeparator, {
+                tl: { col: 1.6, row: 0.7 },
+                br: { col: 1.65, row: 4.3 },
+                editAs: 'absolute'
+            });
+
             this.sheet.addImage(this.idLogoProjeto, {
-                tl: { col: 2.2, row: 0.8 },
-                br: { col: 3.8, row: 2.6 },
+                tl: { col: 1.8, row: 1.4 },
+                br: { col: 2.999, row: 3.05 },
+                editAs: 'absolute'
+                
             });
         }
     }
 
     private async setSheetHeader() {
-        this.sheet.mergeCells('E1:F4');
-        alignCenter(this.sheet.getCell('F4'));
-        addDefaultBorder(this.sheet.getCell('F4'));
-        this.sheet.getCell('F4').value = this.titulo;
-        this.sheet.mergeCells('G1:H4');
-        alignCenter(this.sheet.getCell('H4'));
-        addDefaultBorder(this.sheet.getCell('H4'));
-        this.sheet.mergeCells('I1:J4');
-        alignCenter(this.sheet.getCell('J4'));
-        addDefaultBorder(this.sheet.getCell('J4'));
+        const elementos = new Array((this.metadadosTabela.length < 6) ? 6 : this.metadadosTabela.length).fill(null).map((x, i) => i);
+        
+        elementos.forEach((element, index, arr) => {
+            const isPar = !(index % 2);
+
+            if (index > 3 && isPar)
+                this.setSheetMergeHeader(index, arr.length);
+        });
         this.addImgsHeaderToSheet();
+    }
+
+    private setSheetMergeHeader(index, size) {
+        const more = ((size - 1) === index) ? 0 : 1;
+        const firstLetter = colums[index] + 1;
+        const lastLetter = colums[index + more] + 5;
+
+        this.sheet.mergeCells(`${firstLetter}:${lastLetter}`);
+        alignCenter(this.sheet.getCell(lastLetter));
+        addDefaultBorder(this.sheet.getCell(lastLetter));
+
+        if (index === 4) {
+            this.sheet.getCell(lastLetter).value = this.titulo;
+        }
+
+        if(index > 4 && (size - (!(size % 2)? 2: 1)) === index){
+            const periodo = this.periodo ? `Período: \n ${this.periodo} \n\n` : '';
+            this.sheet.getCell(lastLetter).value = `${periodo}  Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('HH:mm:ss')}`;
+        }
     }
 
     private formataColuna(formato: string, coluna: number) {
@@ -163,7 +199,7 @@ export class ExportXLSService {
 
     private setSheetLines() {
         for (let linha of this.linhas) {
-            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key]));
+            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key] || ((typeof linha[key] == 'number')? linha[key]: '' )));
             if (linha.detalhes && linha.detalhes.length > 0) {
                 this.setSubSheet(linha);
             }
@@ -245,6 +281,7 @@ export class ExportXLSService {
         metadadosTabela,
         nomeArquivo,
         titulo,
+        periodo,
         logoProjeto,
         metadadosDetalhe,
     }: {
@@ -252,6 +289,7 @@ export class ExportXLSService {
         metadadosTabela: Array<MetadadosXLS>,
         nomeArquivo: string,
         titulo: string,
+        periodo?: string,
         logoProjeto?: string,
         metadadosDetalhe?: MetadadosDetalhe,
     }) {
@@ -260,6 +298,7 @@ export class ExportXLSService {
         this.linhas = this.filtraLinhas(linhas);
         this.nomeArquivo = nomeArquivo;
         this.titulo = titulo;
+        this.periodo = periodo || null;
         this.pathLogoProjeto = logoProjeto;
 
         this.init();

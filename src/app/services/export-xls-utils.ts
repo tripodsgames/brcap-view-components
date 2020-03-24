@@ -12,7 +12,7 @@ const imgToBase64 = (path, format) =>
         img.src = path;
     });
 const WIDTH_CELL_XSL = 18;
-const STYLE_THIN = { style: 'thin' };
+const STYLE_THIN = { style: 'medium', color: {argb:'C2C2C2'} };
 const DEFAULT_BORDER = {
     top: STYLE_THIN,
     left: STYLE_THIN,
@@ -53,6 +53,8 @@ const saveAs = (blob, name) => {
     setTimeout(() => a.dispatchEvent(new MouseEvent('click')), 0);
 }
 
+const colums = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD","AE", "AF"];
+
 export {
     imgToBase64,
     addAlignment,
@@ -65,4 +67,5 @@ export {
     mesmoGrupo,
     saveAs,
     WIDTH_CELL_XSL,
+    colums
 }
