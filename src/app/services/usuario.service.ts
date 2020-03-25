@@ -49,13 +49,15 @@ export class UsuarioService {
     return this._http.get(url, { headers: this.headers }).map(res => res.json());
   }
 
-  buscarEstadoPermissionamento(urlUsuarios, sistema, estadoPermissionamento): Observable<any[]> {
+  buscarEstadoPermissionamento(urlUsuarios, sistema, estadoPermissionamento, exportacaoPDF): Observable<any[]> {
     let url = urlUsuarios + this.endpointUsuarios;
     url += "/plataformas/darwin/sistemas";
     url += "/" + sistema;
     url += "/permissoes";
     url += "?filtro=";
     url += estadoPermissionamento;
+    if(exportacaoPDF)
+      url += "&permissoes=true";
 
     return this._http.get(url, { headers: this.headers }).map(res => res.json());
   }
