@@ -7,6 +7,10 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import "rxjs/Rx";
 import swal from "sweetalert2";
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 
 @Component({
   selector: "cap-permissoes",
@@ -21,6 +25,8 @@ export class PermissoesComponent implements OnInit {
   urlUsuarios;
   @Input("sistema")
   sistema;
+  @Input("exportacaoPDF")
+  exportacaoPDF;
 
   listaUsuarios;
   listaModulos;
@@ -127,7 +133,7 @@ export class PermissoesComponent implements OnInit {
         this.filtrando = false;
       }
     }
-    
+
     this.contagemPaginasTotal = Math.ceil(
       this.listaFiltrado.length / this.limit
     );
@@ -321,7 +327,71 @@ export class PermissoesComponent implements OnInit {
   checkFuncionalidadeSelecionada(f) {
     return f.incluir || f.excluir || f.alterar || f.pesquisar || f.bloquear || f.aprovar;
   }
+  exportarPDF() {
+    let content = [];
+    let firstPage = true;
 
+    content.push({
+      text: 'Usuários Permissionados',
+      style: 'header'
+    },
+    {
+      image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAABKCAMAAABjGHrqAAAAM1BMVEX/8gAAWqG/yyh/pVA/f3kPYpcvdoNfkmXv6AqfuDzf3hQfbI2vwjLP1R6Pr0ZPiW9vnFrTrF97AAADZUlEQVR42u2Y3ZqjIAxAg/yDqO//tLvbhkTArdP5PutFc65mFCUcQpCCIAiCIAiCIAiCIAiCIAiCIIyoHucjfBPqADvD96AO+aIkUMcU+BZq1pt/OBLg4VrSFLWOU4LbUU8MPJhcFQIwNWXBrEug6AdNIXpjrEIMPTxRDxqY5KlpjkBEhWAJaiLIxmjUdaUASDU07n6sjQtdwQubYs4FaLXHkVfTeR0j2LDthQLAjwKYCR7wSpkx8ncEaNXiqns2zQLGN18tQL8SkDFSwlPqngvoxum0zs2WsyhiPhBAbS8W4HCozRhS1VK6SO3uETcD8UKAx2wGgPBcbyv3jPjhJdPK6XKhAJ5Nzd3vEyNSpJnnCl0E+JEAu8ulFS1yZmS+0kWQa2bCJQLc9MBTZeq6LzgMitRnmitSeCqAX+T3WncrYGav/RRcJ2DEhaZ7brdQJPNGc6WepHMBfGMZBuWer3Po504Baxy7T/gP5WLgucporfxEQKQbDHew4jjtGIH/nACzpNE/rfNSixHlsqbalc4F6P8IWLDGFPTaR1DUJ5eAjV33C49iq39xBXPsLv5WQK7LyFavvFymadosZudVAuymtd74azbyGHS7O+W6H0aaq2AUkfWvBBTaGzyvgenyQ9q4DeoqJNAYcLe2HlOxxpd2VmLeKSi/ELDhxwF7PRQQgbj6UzjyGPR+n984Ex25aBXY8r6ATKMO5HUQYPCpCwVwp5rHECxe4Ugju+Czm6EcCG8J4BIXWq8TutAP5gTIRwQYHgOlAN925i+O56o7TMd3BWxqYG7SiLlDQODK7NWABSKgge3lhxCnTTEPCmQ1sN4kQFP/1D1epE1qnCtiJnsnAtq9oqgDwi0CZjXUAF75Hm93+EGA/7+AgH73zSevDoifEsCHoUUb3nCb7iOmgOfom3qFBEP2RgGIo2yiBYV5FTtHHxRwsgI5BWqkyNKUab3lI3uYYhpZ0HiiHtYZnXSOwn0CxuNwVDtS/+vO+S9CTMhUPVWzAhx0XuN9Avx4HM47O0C4M3tjD1BsX0IsnpA7r+tNAtyWhsNokwLLy/3bRYCXAiAZtUMDrYDe6/wJAVNH4Yr2vBCGhgF2bXrGhw8aFG0eGZUfJ++EN5jyvJLqSwRBEARBEARBEARBEARBEAThJX8AUjIawp1LgckAAAAASUVORK5CYII=+PzrMbdqXzfH8AAAAAElFTkSuQmCC",
+      style: 'logoBBCap',
+      width: 150
+    });
+    this.usuariosPermissionados.forEach(user => {
+      if(!firstPage) content.push({ text: user.nome + "\n \n", style: 'title', pageBreak: 'before' });
+      else content.push({ text: user.nome + "\n \n", style: 'title' });
+      firstPage = false;
+      if(user.permissoes && user.permissoes.length > 0) {
+        user.permissoes.forEach(p => {
+          let ul = [];
+          let columns = [];
+          let ol = [];
+          ul.push(p.codigo.replace("-", " ").toUpperCase() + "\n");
+          if(p.funcionalidades && p.funcionalidades.length > 0) {
+            p.funcionalidades.forEach(f => {
+              columns.push({
+                stack: [f.codigo.replace("-", " ").replace("-", " ").toUpperCase() + "\n", {ul: f.acao}]
+              });
+            });
+          }
+          ol.push({ columns });
+          ul.push({ ol });
+          content.push({ ul });
+        })
+      }
+      else content.push({ text: "\n \n Sem nenhuma permissão", style: ['header' , 'noContentStyle'] });
+    })
+
+    pdfMake.createPdf({ content, footer: function (currentPage, pageCount, pageSize) {
+      return [
+        { text: "Página " + currentPage.toString() + ' de ' + pageCount, alignment: 'right', style: 'normalText', margin: [0, 20, 50, 0] }
+      ]
+    },
+   	styles: {
+      header: {
+        bold: true,
+        fontSize: 14
+      },
+      title: {
+        bold: true,
+        fontSize: 12
+      },
+      noContentStyle: {
+        italics: true,
+        alignment: 'center'
+      },
+      logoBBCap:
+      {
+          alignment: 'right',
+      },
+    },
+    defaultStyle: {
+      fontSize: 9.5
+    }}).download(`UsuariosPermissionados-${new Date().getTime()}`);
+  }
   preencherAcoesFuncionalidade(f) {
     const lista = [];
     if (f.incluir) {
@@ -387,7 +457,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   verEstadoPermissionamento(estadoPermissionamento): Observable<any[]> {
-    return this.usuarioService.buscarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento);
+    return this.usuarioService.buscarEstadoPermissionamento(this.urlSistemas, this.sistema, estadoPermissionamento, this.exportacaoPDF);
   }
 
   toggleModulo(modulo) {
@@ -545,7 +615,7 @@ export class PermissoesComponent implements OnInit {
               if (originalF.codigo === editadoF.codigo && editadoF.todos !== originalF.todos) {
                 this.hasAlteracao = true;
               }
-              if (originalF.codigo === editadoF.codigo && editadoF.incluir !== originalF.incluir || 
+              if (originalF.codigo === editadoF.codigo && editadoF.incluir !== originalF.incluir ||
                 originalF.codigo === editadoF.codigo && editadoF.excluir !== originalF.excluir ||
                 originalF.codigo === editadoF.codigo && editadoF.alterar !== originalF.alterar ||
                 originalF.codigo === editadoF.codigo && editadoF.pesquisar !== originalF.pesquisar ||

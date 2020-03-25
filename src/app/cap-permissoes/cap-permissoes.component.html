@@ -73,9 +73,16 @@
                 </tbody>
               </table>
               <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
-              <cap-pagination (goNext)="onNext()" (goPrev)="onPrev()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="page"
+              <div style="display: flex;  flex-direction: row; justify-content: space-between;" *ngIf="exportacaoPDF && cardPermissionados">
+                <cap-pagination (goNext)="onNext()" (goPrev)="onPrev()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="page"
                 [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="primeiraLinha"
                 [ultimaLinha]="ultimaLinha" [numeroItens]="numeroItens"></cap-pagination>
+                <cap-button styleClass="xs" icon="arquivo" (click)="exportarPDF()" style="margin-top: 25px;">BAIXAR PDF</cap-button>
+              </div>
+              <cap-pagination  *ngIf="!exportacaoPDF || !cardPermissionados" (goNext)="onNext()" (goPrev)="onPrev()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="page"
+              [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="primeiraLinha"
+              [ultimaLinha]="ultimaLinha" [numeroItens]="numeroItens"></cap-pagination>
+
             </div>
 
             <div class="row" *ngIf="usuarioPermissao">
