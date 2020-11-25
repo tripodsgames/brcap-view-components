@@ -20,7 +20,8 @@
       <cap-scrollUp></cap-scrollUp>
       <div class="row" *ngIf="!usuarioPermissao">
         <div class="col-lg-3 col-xl-2" *ngIf="usuariosPermissionados.length > 0">
-          <div class="card pointer" (click)="abrirCardPermissionados()" [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
+          <div class="card pointer" (click)="abrirCardPermissionados()"
+            [ngClass]="{ 'cardAtivo': cardPermissionados && !filtrando, 'disabled': filtrando }">
             <div class="card-body">
               <h3 class="card-titulo">Usuários<br />Permissionados</h3>
               <p class="card-valor-total">{{usuariosPermissionados.length}}</p>
@@ -29,7 +30,8 @@
         </div>
 
         <div class="col-lg-3 col-xl-2" *ngIf="usuariosNaoPermissionados.length > 0">
-          <div class="card pointer" (click)="abrirCardNaoPermissionados()" [ngClass]="{ 'cardAtivo': cardNaoPermissionados && !filtrando, 'disabled': filtrando }">
+          <div class="card pointer" (click)="abrirCardNaoPermissionados()"
+            [ngClass]="{ 'cardAtivo': cardNaoPermissionados && !filtrando, 'disabled': filtrando }">
             <div class="card-body">
               <h3 class="card-titulo">Usuários não<br />Permissionados</h3>
               <p class="card-valor-total">{{usuariosNaoPermissionados.length}}</p>
@@ -43,7 +45,8 @@
       </div>
 
       <div class="row">
-        <div [ngClass]="{'col-lg-8': !usuarioPermissao,'col-xl-5': !usuarioPermissao, 'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
+        <div
+          [ngClass]="{'col-lg-8': !usuarioPermissao,'col-xl-5': !usuarioPermissao, 'col-lg-6': usuarioPermissao, 'col-xl-4': usuarioPermissao}">
           <cap-card *ngIf="cardPermissionados || cardNaoPermissionados || filtrando">
             <div *ngIf="!usuarioPermissao">
               <div class="row">
@@ -60,28 +63,31 @@
                 <thead>
                   <tr class="table-header">
                     <th class="name">Nome</th>
-                    <th class="cpf">CPF</th>
                     <th class="email">E-mail</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)" *ngFor="let usuario of usuariosTabela">
+                  <tr class="animacao-hover pointer" (click)="selecionarUsuario(usuario)"
+                    *ngFor="let usuario of usuariosTabela">
                     <td class="nome">{{ capitalize(usuario.nome) }}</td>
-                    <td>{{ usuario.cpf | cpfMask }}</td>
                     <td>{{ usuario.login }}</td>
                   </tr>
                 </tbody>
               </table>
               <div *ngIf="emptyMessage" class="empty-message">Nenhum resultado encontrado</div>
-              <div style="display: flex;  flex-direction: row; justify-content: space-between;" *ngIf="exportacaoPDF && cardPermissionados">
-                <cap-pagination (goNext)="onNext()" (goPrev)="onPrev()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="page"
-                [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="primeiraLinha"
-                [ultimaLinha]="ultimaLinha" [numeroItens]="numeroItens"></cap-pagination>
-                <cap-button styleClass="xs" icon="arquivo" (click)="exportarPDF()" style="margin-top: 25px;">BAIXAR PDF</cap-button>
+              <div style="display: flex;  flex-direction: row; justify-content: space-between;"
+                *ngIf="exportacaoPDF && cardPermissionados">
+                <cap-pagination (goNext)="onNext()" (goPrev)="onPrev()" (goFirst)="firstPage()" (goLast)="lastPage()"
+                  [page]="page" [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal"
+                  [primeiraLinha]="primeiraLinha" [ultimaLinha]="ultimaLinha" [numeroItens]="numeroItens">
+                </cap-pagination>
+                <cap-button styleClass="xs" icon="arquivo" (click)="exportarPDF()" style="margin-top: 25px;">BAIXAR PDF
+                </cap-button>
               </div>
-              <cap-pagination  *ngIf="!exportacaoPDF || !cardPermissionados" (goNext)="onNext()" (goPrev)="onPrev()" (goFirst)="firstPage()" (goLast)="lastPage()" [page]="page"
-              [perPage]="limit" [count]="total" [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="primeiraLinha"
-              [ultimaLinha]="ultimaLinha" [numeroItens]="numeroItens"></cap-pagination>
+              <cap-pagination *ngIf="!exportacaoPDF || !cardPermissionados" (goNext)="onNext()" (goPrev)="onPrev()"
+                (goFirst)="firstPage()" (goLast)="lastPage()" [page]="page" [perPage]="limit" [count]="total"
+                [contagemPaginasTotal]="contagemPaginasTotal" [primeiraLinha]="primeiraLinha"
+                [ultimaLinha]="ultimaLinha" [numeroItens]="numeroItens"></cap-pagination>
 
             </div>
 
@@ -98,7 +104,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <p class="usuario-info">{{ usuarioPermissao.cpf | cpfMask }} | {{ usuarioPermissao.login }}</p>
+                      <p class="usuario-info"> {{ usuarioPermissao.login }}</p>
                     </div>
                   </div>
                   <div class="row">
@@ -110,8 +116,9 @@
                         <div [ngClass]="{'box-opened': modulo.open, 'box-closed': !modulo.open}">
                           <div class="row">
                             <div class="col-md-1">
-                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" [(ngModel)]="modulo.todos"
-                                class="selectAll-modulos" name="selecionarTodos-{{indexM}}" (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
+                              <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                [(ngModel)]="modulo.todos" class="selectAll-modulos" name="selecionarTodos-{{indexM}}"
+                                (ngModelChange)="selectAllFuncionalidades(modulo)"></cap-checkbox>
                             </div>
                             <div class="col-md-8">
                               <h3 (click)="selectAllFuncionalidades(modulo)" class="pointer subtitle-1-brcap">
@@ -122,45 +129,60 @@
                                 {{modulo.quantidadeFuncionalidades}}</p>
                             </div>
                             <div class="col-md-3">
-                              <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)" [collapsed]="!modulo.open"></cap-btnCollapse>
+                              <cap-btnCollapse class="pull-right" (click)="toggleModulo(modulo)"
+                                [collapsed]="!modulo.open"></cap-btnCollapse>
                             </div>
                           </div>
                           <div class="row" *ngFor="let func of modulo?.funcionalidades; let indexF = index">
                             <div class="func-label">
 
                               <div class="item">
-                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
-                                  [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} " [itemLabel]="func.nome"></cap-checkbox>
-                                <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir " (click)="toggleAcoes(func)"
-                                  *ngIf="!func.exibirAcoes"></cap-icon>
-                                <cap-icon class="icone-toggle-funcionalidade pointer " icon="retrair " (click)="toggleAcoes(func)"
-                                  *ngIf="func.exibirAcoes"></cap-icon>
+                                <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                  (ngModelChange)="selecionarTodasFuncionalidade(func, modulo, true)"
+                                  [(ngModel)]="func.todos" name="nomeFuncionalidade-{{indexM}}-{{indexF}} "
+                                  [itemLabel]="func.nome"></cap-checkbox>
+                                <cap-icon class="icone-toggle-funcionalidade pointer " icon="expandir "
+                                  (click)="toggleAcoes(func)" *ngIf="!func.exibirAcoes"></cap-icon>
+                                <cap-icon class="icone-toggle-funcionalidade pointer " icon="retrair "
+                                  (click)="toggleAcoes(func)" *ngIf="func.exibirAcoes"></cap-icon>
                               </div>
 
                               <div class="acoes " [hidden]="!func.exibirAcoes">
                                 <div class="item ">
-                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouIncluir(modulo, func, $event)"
-                                    [(ngModel)]="func.incluir" name="incluir-{{indexM}}-{{indexF}} " itemLabel="Incluir"></cap-checkbox>
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                    (ngModelChange)="verificaSelecionouIncluir(modulo, func, $event)"
+                                    [(ngModel)]="func.incluir" name="incluir-{{indexM}}-{{indexF}} "
+                                    itemLabel="Incluir"></cap-checkbox>
                                 </div>
                                 <div class="item ">
-                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouExcluir(modulo, func, $event)"
-                                    [(ngModel)]="func.excluir" name="excluir-{{indexM}}-{{indexF}} " itemLabel="Excluir"></cap-checkbox>
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                    (ngModelChange)="verificaSelecionouExcluir(modulo, func, $event)"
+                                    [(ngModel)]="func.excluir" name="excluir-{{indexM}}-{{indexF}} "
+                                    itemLabel="Excluir"></cap-checkbox>
                                 </div>
                                 <div class="item ">
-                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouPesquisar(modulo, func, $event)"
-                                    [(ngModel)]="func.pesquisar" name="pesquisar-{{indexM}}-{{indexF}} " itemLabel="Pesquisar"></cap-checkbox>
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                    (ngModelChange)="verificaSelecionouPesquisar(modulo, func, $event)"
+                                    [(ngModel)]="func.pesquisar" name="pesquisar-{{indexM}}-{{indexF}} "
+                                    itemLabel="Pesquisar"></cap-checkbox>
                                 </div>
                                 <div class="item ">
-                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAlterar(modulo, func, $event)"
-                                    [(ngModel)]="func.alterar" name="alterar-{{indexM}}-{{indexF}} " itemLabel="Alterar"></cap-checkbox>
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                    (ngModelChange)="verificaSelecionouAlterar(modulo, func, $event)"
+                                    [(ngModel)]="func.alterar" name="alterar-{{indexM}}-{{indexF}} "
+                                    itemLabel="Alterar"></cap-checkbox>
                                 </div>
                                 <div class="item ">
-                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouBloquear(modulo, func, $event)"
-                                    [(ngModel)]="func.bloquear" name="bloquear-{{indexM}}-{{indexF}} " itemLabel="Bloquear"></cap-checkbox>
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                    (ngModelChange)="verificaSelecionouBloquear(modulo, func, $event)"
+                                    [(ngModel)]="func.bloquear" name="bloquear-{{indexM}}-{{indexF}} "
+                                    itemLabel="Bloquear"></cap-checkbox>
                                 </div>
                                 <div class="item ">
-                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}" (ngModelChange)="verificaSelecionouAprovar(modulo, func, $event)"
-                                    [(ngModel)]="func.aprovar" name="aprovar-{{indexM}}-{{indexF}} " itemLabel="Aprovar"></cap-checkbox>
+                                  <cap-checkbox [ngClass]="{'checkbox-cinza': modulo.checkboxAtivo}"
+                                    (ngModelChange)="verificaSelecionouAprovar(modulo, func, $event)"
+                                    [(ngModel)]="func.aprovar" name="aprovar-{{indexM}}-{{indexF}} "
+                                    itemLabel="Aprovar"></cap-checkbox>
                                 </div>
                               </div>
                             </div>
