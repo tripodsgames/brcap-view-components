@@ -36,6 +36,8 @@ import { CapModalComponent } from "../cap-modal/cap-modal.component";
 import { CapMonthPickerComponent } from "../cap-monthpicker/cap-monthpicker.component";
 import { CapLoginComponent } from "../cap-login/cap-login.component";
 import { LoginService } from "../services/login.service";
+import { CapLoginAdComponent } from "../cap-login-ad/cap-login-ad.component";
+import { LoginAdService } from "../services/login-ad.service";
 import { HttpModule } from "@angular/http";
 import { PermissoesComponent } from "../cap-permissoes/cap-permissoes.component";
 import { UsuarioService } from "../services/usuario.service";
@@ -89,6 +91,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     CapTablePaginationComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
+    CapLoginAdComponent,
     PermissoesComponent,
     CapModalComponent,
     CapMultiSelectComponent
@@ -123,12 +126,14 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     CapTablePaginationComponent,
     CapMonthPickerComponent,
     CapLoginComponent,
+    CapLoginAdComponent,
     PermissoesComponent,
     CapModalComponent,
     CapMultiSelectComponent
   ],
   providers: [
     LoginService,
+    LoginAdService,
     UsuarioService,
     PlataformaService,
     ExportXLSService,
