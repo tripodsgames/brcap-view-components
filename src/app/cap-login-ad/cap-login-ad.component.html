@@ -1,0 +1,57 @@
+<div id="wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="header">
+        <img class="logo-brasilcap" src="../../assets/img/brasilcap.svg">
+        <span class="divider"></span>
+        <img class="logo-darwin" src="../../assets/img/logo-darwin.svg">
+      </div>
+    </div>
+  </div>
+  <div class="content-login bg-project-{{sistema}}">
+    <div class="row row-center">
+      <div class="col-lg-12 col-form">
+        <div class="box-login center-block">
+          <div class="logotipo">
+            <img src="../../assets/img/{{ sistema }}.svg">
+          </div>
+          <form>
+            <fieldset>
+              <label class="{{loginRequired ? 'invalido' : ''}}">login</label>
+              <input id="email-login" type="email" autocomplete="off" required class="form-control input-type-text {{loginRequired ? 'invalido' : ''}}"
+                name="login" [(ngModel)]="usuario.login" (ngModelChange)="checkLoginValido()">
+              <small class="erro" *ngIf="loginRequired">Campo obrigatório</small>
+              <small class="erro" *ngIf="loginInvalido">Login inválido.</small>
+              <cap-icon [icon]="iconEmail()" class="show-password {{loginRequired ? 'invalido' : ''}}" #iconeEmail></cap-icon>
+
+              <label class="{{senhaInvalida || senhaRequired ? 'invalido' : ''}}">Senha</label>
+              <input id="senha-login" type="password" required class="form-control input-type-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}"
+                name="senha" #senha [(ngModel)]="usuario.senha" (ngModelChange)="checkSenhaValida()">
+              <small class="erro" *ngIf="senhaRequired">Campo obrigatório</small>
+              <cap-icon class="show-password {{senhaInvalida || senhaRequired ? 'invalido' : ''}}" #icone (click)="toggle()"></cap-icon>
+
+              <div class="form-group ">
+                <div class="text-center alert alert-danger" role="alert" *ngIf="msg?.title">
+                  <i class="pull-left fa fa-info-circle" aria-hidden="true"></i> {{ msg?.title }}
+                </div>
+              </div>
+              <div class="form-buttons">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button class="btn-acessar" (click)="login()" type="submit">Acessar
+                      <i class=" fa fa-spinner  fa-spin" *ngIf="loading"></i>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn-cadastrase" [href]="urlCadastro">Cadastre-se</a>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
