@@ -113,8 +113,8 @@ export class ExportXLSService {
 
     private setSheetMergeHeader(index, size) {
         const more = ((size - 1) === index) ? 0 : 1;
-        const firstLetter = colums[index] + 1;
-        const lastLetter = colums[index + more] + 5;
+        const firstLetter = colums(index) + 1;
+        const lastLetter = colums(index + more) + 5;
 
         this.sheet.mergeCells(`${firstLetter}:${lastLetter}`);
         alignCenter(this.sheet.getCell(lastLetter));
