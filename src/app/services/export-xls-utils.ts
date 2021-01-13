@@ -53,7 +53,19 @@ const saveAs = (blob, name) => {
     setTimeout(() => a.dispatchEvent(new MouseEvent('click')), 0);
 }
 
-const colums = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD","AE", "AF"];
+const colums = (index) => {
+    var dividend = index + 1;
+    var name = '';
+    var modulo;
+
+    while (dividend > 0) {
+        modulo = (dividend - 1) % 26;
+        name = String.fromCharCode(65 + modulo) + name;
+        dividend = Math.round((dividend - modulo) / 26);
+    }
+
+    return name;
+}
 
 export {
     imgToBase64,
