@@ -22,7 +22,7 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   @Input("placeholder")
   placeholder: string;
   @Input("disabled")
-  disable: boolean = false;
+  disabled: boolean = false;
   @Input("data")
   data: any[];
   @Input("id")
