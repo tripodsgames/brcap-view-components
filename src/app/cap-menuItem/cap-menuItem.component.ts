@@ -16,9 +16,9 @@ export class CapMenuItemComponent implements OnChanges {
   styleClass: string;
   @Input("principal")
   principal: boolean;
-  @ViewChild("items", { static: false })
+  @ViewChild("items")
   items: ElementRef;
-  @ViewChild("menuItem", { static: false })
+  @ViewChild("menuItem")
   menuItem: ElementRef;
 
 

@@ -1,11 +1,10 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { AppComponent } from "./app.component";
 import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { BRCapModule } from "./modules/brcap.module";
-import { CurrencyMaskModule } from "ng2-currency-mask";
+import { BrowserModule } from "@angular/platform-browser";
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { AppComponent } from "./app.component";
+import { BRCapModule } from "./modules/brcap.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +13,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     CommonModule,
     FormsModule,
     BRCapModule,
-    CurrencyMaskModule,
     NgMultiSelectDropDownModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

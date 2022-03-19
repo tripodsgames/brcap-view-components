@@ -47,7 +47,7 @@ export class CapSelectComponent implements ControlValueAccessor, OnInit {
   focus = new EventEmitter();
   @Output()
   change = new EventEmitter();
-  @ViewChild("select", { static: false })
+  @ViewChild("select")
   select;
 
   private $el: any;

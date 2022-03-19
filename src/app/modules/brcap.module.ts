@@ -3,8 +3,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { MyDatePickerModule } from "mydatepicker";
-import { MyDateRangePickerModule } from "mydaterangepicker";
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { SelectModule } from "ng-select";
 import { DpDatePickerModule } from "ng2-date-picker";
@@ -54,8 +52,6 @@ import { UsuarioService } from "../services/usuario.service";
     HttpClientModule,
     FormsModule,
     SelectModule,
-    MyDatePickerModule,
-    MyDateRangePickerModule,
     DpDatePickerModule,
     Ng2SearchPipeModule,
     RouterModule,

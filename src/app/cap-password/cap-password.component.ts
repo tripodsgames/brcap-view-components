@@ -32,7 +32,7 @@ export class CapPasswordComponent implements AfterViewInit, ControlValueAccessor
   @Input("showPassword") showPassword: boolean;
 
   @ViewChild("input", { static: true }) input;
-  @ViewChild("icone", { static: false }) icone;
+  @ViewChild("icone") icone;
 
   textError;
 

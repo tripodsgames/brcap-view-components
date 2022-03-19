@@ -1,12 +1,11 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
-import { DateRangeDTO } from "../model/date-range.model";
+import { Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import flatpickr from 'flatpickr';
 import * as jqueryProxy from "jquery";
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 import "jquery-mask-plugin";
-import { IMyDrpOptions } from "mydaterangepicker";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
-const noop = () => {};
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -23,32 +22,45 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit {
   @Input("id")
   id: string;
+
   @Input("styleClass")
   styleClass: string;
+
   @Input("label")
   label: string;
+
   @Input("placeholder")
   placeholder: string;
+
   @Input("name")
   name: string;
+
   @Input("mask")
   mask: string;
+
   @Input("textHelper")
   textHelper: string;
+
   @Input("clearBtn")
   clearBtn: boolean;
+
   @Input("disabled")
   disabled: boolean;
 
-  @ViewChild("divRange", { static: false })
-  divRange;
+  @ViewChild("datePicker", { static: true })
+  datePicker: ElementRef<HTMLInputElement>;
 
-  private $el: any;
+  @ViewChild("divRange")
+  divRange: ElementRef<HTMLDivElement>;
+
   private innerValue: any = new Date(Date.now());
 
-  private dates: DateRangeDTO;
+  public datePickerOptions: flatpickr.Options.Options = {
+    locale: 'pt',
+    dateFormat: 'dd/MM/yyyy'
+  };
 
-  public myDatePickerOptions: IMyDrpOptions = {
+  public myDatePickerOptions: any = {
     dateFormat: "dd/mm/yyyy",
     showApplyBtn: false,
     dayLabels: {
@@ -86,20 +98,8 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
     showClearBtn: false
   };
 
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
-  }
-
   ngOnInit() {
-    if (this.mask) {
-      $(".mydrp .selection").mask(this.mask, {
-        translation: {
-          S: {
-            pattern: /[a-zA-Z ]/
-          }
-        }
-      });
-    }
+    flatpickr(this.datePicker.nativeElement, this.datePickerOptions);
   }
 
   private onTouchedCallback: () => void = noop;

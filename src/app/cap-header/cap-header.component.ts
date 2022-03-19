@@ -39,7 +39,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   exibeMenu: boolean = true;
   @ViewChild("logoHeader", { static: true })
   logoHeader: ElementRef;
-  @ViewChild("elementIcon", { static: false })
+  @ViewChild("elementIcon")
   elementIcon: CapIconComponent;
   @Output()
   logout = new EventEmitter();

@@ -16,7 +16,7 @@ export class CapButtonComponent implements OnInit {
   @Input("styleClass") styleClass: string;
   @Input("type") type: string;
 
-  @ViewChild("button", { static: false }) button: ElementRef;
+  @ViewChild("button") button: ElementRef;
 
   constructor() {}
 
