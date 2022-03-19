@@ -39,7 +39,6 @@
 
 /** Evergreen browsers require these. **/
 import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
 /**
  * Required to support Web Animations `@angular/platform-browser/animations`.
  * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
