@@ -40,7 +40,7 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   @Input("disabled")
   disabled: boolean;
 
-  @ViewChild("divRange")
+  @ViewChild("divRange", { static: false })
   divRange;
 
   private $el: any;

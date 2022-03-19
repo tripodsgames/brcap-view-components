@@ -15,7 +15,7 @@ export class CapTableComponent implements OnInit, AfterViewInit {
   @Input("draggable") draggable: boolean;
   @Input("disabled") disabled: boolean;
 
-  @ViewChild("table") table: ElementRef;
+  @ViewChild("table", { static: true }) table: ElementRef;
   colunas = [];
 
   constructor() { }

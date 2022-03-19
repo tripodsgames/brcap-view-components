@@ -34,7 +34,7 @@ export class CapMonthPickerComponent implements ControlValueAccessor, OnInit {
   @Input("format")
   format: string;
 
-  @ViewChild("input")
+  @ViewChild("input", { static: false })
   input;
 
   private $el: any;

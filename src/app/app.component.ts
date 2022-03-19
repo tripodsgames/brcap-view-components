@@ -54,7 +54,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   toggle;
   idx;
 
-  @ViewChild(CapModalComponent) modal: CapModalComponent;
+  @ViewChild(CapModalComponent, { static: true }) modal: CapModalComponent;
 
   menu = [
     {
@@ -334,7 +334,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   url = "https://dhfnhabwnl.execute-api.sa-east-1.amazonaws.com/dev/";
 
   // CAP-TABLE-PAGINAION
-  @ViewChild(CapTablePaginationComponent)
+  @ViewChild(CapTablePaginationComponent, { static: true })
   tablePagination: CapTablePaginationComponent;
   columns = ["ID", "NOME"];
   items = [[1, "JOÃO"], [2, "MARIA"], [3, "JOSÉ"], [4, "Anna"], [5, "Miguel"], [6, "Gabriel"], [7, "Raphael"], [8, "Pedro"], [9, "Paulo"], [10, "Joaquim"],

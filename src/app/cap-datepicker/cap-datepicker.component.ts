@@ -37,7 +37,7 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   @Input("textHelper")
   textHelper: string;
 
-  @ViewChild("input")
+  @ViewChild("input", { static: false })
   input: ElementRef;
 
   private $el: any;

@@ -64,7 +64,7 @@ export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAcc
   @Output()
   blur = new EventEmitter();
 
-  @ViewChild("input")
+  @ViewChild("input", { static: true })
   input;
 
   textError;

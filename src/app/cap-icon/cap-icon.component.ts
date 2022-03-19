@@ -12,7 +12,7 @@ export class CapIconComponent implements OnInit {
   @Input("size") size: number;
   @Input("disabled") disabled: boolean;
   @Input("position") position: string;
-  @ViewChild("element") element: ElementRef;
+  @ViewChild("element", { static: true }) element: ElementRef;
 
   constructor() { }
 

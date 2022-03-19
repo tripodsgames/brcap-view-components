@@ -14,7 +14,7 @@ export class CapMenuComponent implements OnInit {
   width: number;
   @Input("modulo")
   modulo: string;
-  @ViewChild("divMenu")
+  @ViewChild("divMenu", { static: true })
   divMenu: ElementRef;
 
   blocSelecionado;

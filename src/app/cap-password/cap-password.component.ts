@@ -31,8 +31,8 @@ export class CapPasswordComponent implements AfterViewInit, ControlValueAccessor
   @Input("disabled") disabled: boolean;
   @Input("showPassword") showPassword: boolean;
 
-  @ViewChild("input") input;
-  @ViewChild("icone") icone;
+  @ViewChild("input", { static: true }) input;
+  @ViewChild("icone", { static: false }) icone;
 
   textError;
 

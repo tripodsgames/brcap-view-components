@@ -69,10 +69,10 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   @Output()
   blur = new EventEmitter();
 
-  @ViewChild("input")
+  @ViewChild("input", { static: true })
   input;
 
-  @ViewChild(NgModel)
+  @ViewChild(NgModel, { static: true })
   inputModel;
 
   textError;

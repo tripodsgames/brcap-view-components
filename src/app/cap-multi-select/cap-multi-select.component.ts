@@ -31,7 +31,7 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
   textField: string;
   @Input("label")
   label: string;
-  @ViewChild("select")
+  @ViewChild("select", { static: false })
   select;
 
   private innerValue: Array<any> = [];

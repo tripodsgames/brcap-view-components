@@ -26,11 +26,11 @@ export class CapLoginComponent implements OnInit, OnDestroy {
   @Input("environment")
   environment;
 
-  @ViewChild("senha")
+  @ViewChild("senha", { static: true })
   senha;
-  @ViewChild("iconeEmail")
+  @ViewChild("iconeEmail", { static: true })
   iconeEmail;
-  @ViewChild("icone")
+  @ViewChild("icone", { static: true })
   icone;
 
   userKeySession = "userSession_key_";

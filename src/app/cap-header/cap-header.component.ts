@@ -37,9 +37,9 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   @Input("rotaLogo")
   rotaLogo: string;
   exibeMenu: boolean = true;
-  @ViewChild("logoHeader")
+  @ViewChild("logoHeader", { static: true })
   logoHeader: ElementRef;
-  @ViewChild("elementIcon")
+  @ViewChild("elementIcon", { static: false })
   elementIcon: CapIconComponent;
   @Output()
   logout = new EventEmitter();
