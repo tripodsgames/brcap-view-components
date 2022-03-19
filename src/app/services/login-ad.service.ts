@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import "rxjs/add/operator/map";
-import { Observable } from "rxjs/Observable";
-import "rxjs/Rx";
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class LoginAdService {
@@ -19,7 +18,7 @@ export class LoginAdService {
     headers.append("Content-Type", "application/json");
     let urlMalthus = url + this.endpointLoginAd;
 
-    return this.http.put(urlMalthus, body, { headers: headers }).map(res => res);
+    return this.http.put(urlMalthus, body, { headers: headers });
   }
 
   getAuth(token, url): Observable<any> {
@@ -28,7 +27,7 @@ export class LoginAdService {
     headers.append("Authorization", token);
     let urlAuth = url + this.endpointAuth;
 
-    return this.http.get(urlAuth, { headers: headers }).map(res => res);
+    return this.http.get(urlAuth, { headers: headers });
   }
 
   getUser(login, url): Observable<any[]> {
@@ -41,7 +40,7 @@ export class LoginAdService {
 
     return this.http
       .get(url, { headers: headers })
-      .catch(this.handleError);
+      .pipe(catchError(this.handleError));
   }
 
   esqueciSenha(usuario: any, url): Observable<any> {
@@ -50,7 +49,7 @@ export class LoginAdService {
     url += this.endpointUsuarios + this.endpointEsqueciSenha;
     return this.http
       .patch(url, JSON.stringify(usuario), { headers: headers })
-      .catch(this.handleError);
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(res: Response, error: any): Promise<any> {

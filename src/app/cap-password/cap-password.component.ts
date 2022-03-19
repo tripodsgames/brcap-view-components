@@ -1,9 +1,9 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
-import { Subject } from "rxjs/Subject";
+import { AfterViewInit, Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import * as jqueryProxy from "jquery";
 import BRCapUtil from "../../brcap-util";
 
-const noop = () => {};
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -11,7 +11,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
@@ -94,21 +93,21 @@ export class CapPasswordComponent implements AfterViewInit, ControlValueAccessor
   }
 
   toggle() {
-    switch(this.input.nativeElement.type) {
+    switch (this.input.nativeElement.type) {
       case 'password':
-      this.input.nativeElement.type = 'text';
-      this.icone.icon = "esconder-senha";
-      break;
+        this.input.nativeElement.type = 'text';
+        this.icone.icon = "esconder-senha";
+        break;
 
       case 'text':
-      this.input.nativeElement.type = 'password';
-      this.icone.icon = "ver-senha";
-      break;
+        this.input.nativeElement.type = 'password';
+        this.icone.icon = "ver-senha";
+        break;
     }
   }
-  
+
   hide() {
-     this.input.nativeElement.type = 'password';
-     this.icone.icon = "ver-senha";
+    this.input.nativeElement.type = 'password';
+    this.icone.icon = "ver-senha";
   }
 }

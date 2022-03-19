@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import "rxjs/add/operator/map";
-import { Observable } from "rxjs/Observable";
-import "rxjs/Rx";
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class LoginService {
@@ -22,7 +21,7 @@ export class LoginService {
     headers.append("authorization", "testet");
     url += this.endpointLogin;
 
-    return this.http.put(url, usuario, { headers: headers }).map(res => res);
+    return this.http.put(url, usuario, { headers: headers });
   }
 
   getAuth(token, url): Observable<any> {
@@ -31,7 +30,7 @@ export class LoginService {
     headers.append("Authorization", token);
     url += this.endpointAuth;
 
-    return this.http.get(url, { headers: headers }).map(res => res);
+    return this.http.get(url, { headers: headers });
   }
 
   getUser(login, url): Observable<any[]> {
@@ -44,7 +43,7 @@ export class LoginService {
 
     return this.http
       .get(url, { headers: headers })
-      .catch(this.handleError);
+      .pipe(catchError(this.handleError));
   }
 
   esqueciSenha(usuario: any, url): Observable<any> {
@@ -53,7 +52,7 @@ export class LoginService {
     url += this.endpointUsuarios + this.endpointEsqueciSenha;
     return this.http
       .patch(url, JSON.stringify(usuario), { headers: headers })
-      .catch(this.handleError);
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(res: Response, error: any): Promise<any> {

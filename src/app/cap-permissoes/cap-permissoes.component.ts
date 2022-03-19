@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
-import "rxjs/add/operator/map";
-import { Observable } from "rxjs/Observable";
-import "rxjs/Rx";
+import { Observable } from 'rxjs';
 import swal from "sweetalert2";
 import { PlataformaService } from "../services/plataforma.service";
 import { UsuarioService } from "./../services/usuario.service";
@@ -323,6 +321,7 @@ export class PermissoesComponent implements OnInit {
   checkFuncionalidadeSelecionada(f) {
     return f.incluir || f.excluir || f.alterar || f.pesquisar || f.bloquear || f.aprovar;
   }
+
   exportarPDF() {
     let content = [];
     let firstPage = true;
@@ -390,6 +389,7 @@ export class PermissoesComponent implements OnInit {
       }
     }).download(`UsuariosPermissionados-${new Date().getTime()}`);
   }
+
   preencherAcoesFuncionalidade(f) {
     const lista = [];
     if (f.incluir) {
@@ -633,29 +633,35 @@ export class PermissoesComponent implements OnInit {
     modulo.todos = value || func.alterar || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     this.compareOriginalEditado();
   }
+
   verificaSelecionouAlterar(modulo, func, value) {
     func.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || value || func.pesquisar || func.excluir || func.bloquear || func.aprovar;
     this.compareOriginalEditado();
   }
+
   verificaSelecionouPesquisar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || value || func.excluir || func.bloquear || func.aprovar;
     this.compareOriginalEditado();
   }
+
   verificaSelecionouExcluir(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || value || func.bloquear || func.aprovar;
     this.compareOriginalEditado();
   }
+
   verificaSelecionouBloquear(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || value || func.aprovar;
     this.compareOriginalEditado();
   }
+
   verificaSelecionouAprovar(modulo, func, value) {
     func.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     modulo.todos = func.incluir || func.alterar || func.pesquisar || func.excluir || func.bloquear || value;
     this.compareOriginalEditado();
   }
+
 }
