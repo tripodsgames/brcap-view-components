@@ -1,27 +1,33 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Personalização da cor de fundo da logo no header de cada app */
-.main-header .logo {   /* //Cor Secundária */
-   background: #ffe800;   /* //Monitor */
+.main-header .logo {
+  /* //Cor Secundária */
+  background: #ffe800; /* //Monitor */
   /* background: #ffb72a;   //Produtos */
 }
 /* Personalização de cor de fundo do menu e do hover de cada item */
-.cap-menu {  /* //Cor Primária */
-  background: #c59609;  /* //Monitor */
+.cap-menu {
+  /* //Cor Primária */
+  background: #c59609; /* //Monitor */
   /* background: #a5761b;  //Produtos */
 }
-.menu-item:hover {   /* //Cor Secundária */
+.menu-item:hover {
+  /* //Cor Secundária */
   background-color: rgba(255, 204, 0, 0.2); /* #ffcc00;  //Monitor */
   /* background: #b8841f;   //Produtos */
 }
 .cap-button {
-  background-color: #006bbb;  /* //Todos */
+  background-color: #006bbb; /* //Todos */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.content-header{
-  background-color: rgba(0,161,255,0.3); 
+.content-header {
+  background-color: rgba(0, 161, 255, 0.3);
 }

@@ -22,7 +22,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/sweetalert2/dist/sweetalert2.min.css",
               "src/assets/css/brcap.css",
@@ -85,7 +85,7 @@
               "node_modules/bootstrap/dist/js/bootstrap.js"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/sweetalert2/dist/sweetalert2.min.css",
               "src/assets/css/brcap.css",

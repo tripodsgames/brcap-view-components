@@ -1,11 +1,6 @@
 .btnCollapse {
-  width: 31px;
-  height: 31px;
-  background-color: #ffffff;
-  border-radius: 15px;
+  @apply w-8 h-8 bg-white rounded-full border-0 text-2xl;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
-  border: 0px;
-  font-size: 23px !important;
   margin: 15px 0px;
 }
 
@@ -24,6 +19,6 @@
   position: relative;
 }
 
-.btnCollapse:disabled:after{
+.btnCollapse:disabled:after {
   color: #ddd;
 }
