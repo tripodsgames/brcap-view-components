@@ -50,7 +50,6 @@ export class LoginAdService {
     url += this.endpointUsuarios + this.endpointEsqueciSenha;
     return this.http
       .patch(url, JSON.stringify(usuario), { headers: headers })
-      .map(res => res)
       .catch(this.handleError);
   }
 

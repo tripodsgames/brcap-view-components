@@ -1,24 +1,28 @@
- import { Injectable } from "@angular/core"; 
-import { Observable } from "rxjs/Observable";
-import { Http, Headers } from "@angular/http";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
 import "rxjs/add/operator/map";
+import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 
 @Injectable()
 export class PlataformaService {
   endPointSistemas = "sistemas";
 
-  headers = new Headers();
+  headers = new HttpHeaders({
+    "Content-Type": "application/json",
+    "authorization": "testet"
+  });
 
-  constructor(private _http: Http) {
-    this.headers.append("Content-Type", "application/json");
-    this.headers.append("authorization", "testet");
+  constructor(
+    private http: HttpClient
+  ) {
   }
 
-  listarModulos(sistema, urlSistemas): Observable<any[]>   {
+  listarModulos(sistema, urlSistemas): Observable<any[]> {
     let url = urlSistemas + this.endPointSistemas;
     url += "?plataforma=darwin";
     url += "&codigo=" + sistema;
-    return this._http.get(url, { headers: this.headers }).map(res => res.json());
+    return this.http.get<any[]>(url, { headers: this.headers });
   }
+
 }

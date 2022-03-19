@@ -314,8 +314,8 @@
       <div class="col-md-3">
         <div class="box">
           <p>cap-btnCollapse</p>
-          <cap-btnCollapse [targetId]="'conteudoInterno' + i"></cap-btnCollapse>
-          <div class="collapse in" [id]="'conteudoInterno' + i">
+          <cap-btnCollapse [targetId]="'conteudoInterno' + idx"></cap-btnCollapse>
+          <div class="collapse in" [id]="'conteudoInterno' + idx">
             ddthhghfgh
           </div>
         </div>
@@ -324,7 +324,7 @@
       <div class="col-md-2">
         <div class="box">
           <p>cap-toggle</p>
-          <cap-toggle name="options" itemLabel="{{toggle}}" [(ngModel)]="toggle">
+          <cap-toggle name="options" [itemLabel]="toggle" [(ngModel)]="toggle">
           </cap-toggle>
         </div>
       </div>

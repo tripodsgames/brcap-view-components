@@ -1,22 +1,12 @@
 import { Injectable } from '@angular/core';
+import { format } from 'date-fns';
 import * as ExcelJS from "exceljs/dist/exceljs.min.js";
-import { MetadadosDetalhe, MetadadosXLS, DadosPlanilha } from "../types";
+import { DadosPlanilha, MetadadosDetalhe, MetadadosXLS } from "../types";
 import ExportXLSMultiplaAba from "./export-xls-multi-aba";
 import {
-    imgToBase64,
-    addAlignment,
-    alignCenter,
-    addDefaultBorder,
-    changeBgColor,
-    stringCelulaMesclarAoLado,
-    stringCelulaMesclarAbaixo,
-    stringCelulasMesclarAoLado,
-    mesmoGrupo,
-    saveAs,
-    WIDTH_CELL_XSL,
-    colums
+    addAlignment, addDefaultBorder, alignCenter, changeBgColor, colums, imgToBase64, mesmoGrupo,
+    saveAs, stringCelulaMesclarAbaixo, stringCelulaMesclarAoLado, stringCelulasMesclarAoLado, WIDTH_CELL_XSL
 } from './export-xls-utils';
-import * as moment from "moment";
 
 const HEADER_ROW_NUM = 6;
 const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
@@ -94,14 +84,14 @@ export class ExportXLSService {
                 tl: { col: 1.8, row: 1.4 },
                 br: { col: 2.999, row: 3.05 },
                 editAs: 'absolute'
-                
+
             });
         }
     }
 
     private async setSheetHeader() {
         const elementos = new Array((this.metadadosTabela.length < 6) ? 6 : this.metadadosTabela.length).fill(null).map((x, i) => i);
-        
+
         elementos.forEach((element, index, arr) => {
             const isPar = !(index % 2);
 
@@ -124,9 +114,9 @@ export class ExportXLSService {
             this.sheet.getCell(lastLetter).value = this.titulo;
         }
 
-        if(index > 4 && (size - (!(size % 2)? 2: 1)) === index){
+        if (index > 4 && (size - (!(size % 2) ? 2 : 1)) === index) {
             const periodo = this.periodo ? `Período: \n ${this.periodo} \n\n` : '';
-            this.sheet.getCell(lastLetter).value = `${periodo}  Data: ${moment(new Date()).format('DD/MM/YYYY')} \n Hora: ${moment(new Date()).format('HH:mm:ss')}`;
+            this.sheet.getCell(lastLetter).value = `${periodo}  Data: ${format(Date.now(), "dd/MM/yyyy")} \n Hora: ${format(Date.now(), "HH:mm:ss")}`;
         }
     }
 
@@ -199,7 +189,7 @@ export class ExportXLSService {
 
     private setSheetLines() {
         for (let linha of this.linhas) {
-            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key] || ((typeof linha[key] == 'number')? linha[key]: '' )));
+            this.sheet.addRow(this.chavesPermitidas().map(key => linha[key] || ((typeof linha[key] == 'number') ? linha[key] : '')));
             if (linha.detalhes && linha.detalhes.length > 0) {
                 this.setSubSheet(linha);
             }

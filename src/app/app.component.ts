@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { CapModalComponent } from "./cap-modal/cap-modal.component";
 import { CapTablePaginationComponent } from "./cap-table-pagination/cap-table-pagination.component";
 import { ExportXLSService } from "./services/export-xls.service";
-import { CapModalComponent } from "./cap-modal/cap-modal.component";
 
 @Component({
   selector: "app-root",
@@ -10,14 +10,14 @@ import { CapModalComponent } from "./cap-modal/cap-modal.component";
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  constructor(private exportXlsService: ExportXLSService) {}
+  constructor(private exportXlsService: ExportXLSService) { }
 
   private brcapUtil;
   funcionalidades = [];
   canais = [];
   colors = {};
   collapse = false;
-  radio:any;
+  radio: any;
   radioSimple: any;
   selectSimple = [];
   mes;
@@ -29,6 +29,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   checkSelecionado2;
   checkSelecionado3;
   data;
+  mesAno;
   select;
   naoAtivo = true;
   texto;
@@ -44,6 +45,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   selectedItems: Array<any> = [];
   dropdownSettings = {};
   valueCidade: any;
+  nome;
+  dataHeader;
+  data1;
+  value;
+  value1;
+  selecionadoChips;
+  toggle;
+  idx;
 
   @ViewChild(CapModalComponent) modal: CapModalComponent;
 
@@ -456,7 +465,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       chave: 'altura',
       nome: 'Altura',
       formato: '#,##0.00"m"'
-    },  {
+    }, {
       chave: 'teste1',
       nome: 'Signo do Zodíaco'
     },
@@ -480,12 +489,12 @@ export class AppComponent implements OnInit, AfterViewInit {
       chave: 'teste6',
       nome: 'Signo do Zodíaco'
     },
-    
+
     {
       chave: 'teste7',
       nome: 'Signo do Zodíaco'
     },
-    
+
     {
       chave: 'teste8',
       nome: 'Signo do Zodíaco'
@@ -533,9 +542,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       chave: 'teste19',
       nome: 'Signo do Zodíaco'
     },
-    
-    
-   
+
+
+
   ];
 
   metadadosPendura = {
@@ -704,7 +713,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     metadadosTabela: this.metadadosPilotos,
     titulo: 'Pilotos',
     periodo: '02/03/2020 - 02/03/2020',
-    logoProjeto : 'assets/img/produto.svg'
+    logoProjeto: 'assets/img/produto.svg'
   }
 
   pilotos2XLS = {
@@ -715,15 +724,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onChange(value) {
-    console.log("Value change!! ",value);
+    console.log("Value change!! ", value);
   }
-  
+
   async exemploExportarXLS() {
-    return this.exportXlsService.gerarXls({ ...this.pilotos1XLS,  nomeArquivo: 'exemploPilotos'});
+    return this.exportXlsService.gerarXls({ ...this.pilotos1XLS, nomeArquivo: 'exemploPilotos' });
   }
 
   async exemplo2ExportarXLS() {
-    return this.exportXlsService.gerarXls({ ...this.pilotos2XLS, nomeArquivo: 'exemplo2Pilotos'});
+    return this.exportXlsService.gerarXls({ ...this.pilotos2XLS, nomeArquivo: 'exemplo2Pilotos' });
   }
 
   gerarMultiplosPilotos() {
@@ -741,7 +750,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     alert("LOGOU!");
   }
 
-  selFormaOnChange(item: any){
+  selFormaOnChange(item: any) {
     console.log('selecionado', item);
   }
 }

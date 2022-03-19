@@ -1,7 +1,7 @@
-import moment from "moment";
+import { format, parseISO } from 'date-fns';
 
-const DATE_PATTERN_DDMMYY = "DD/MM/YY";
-const DATE_PATTERN_DDMMYYY_HHMMSSS = "DD/MM/YYYY HH:mm:ss";
+const DATE_PATTERN_DDMMYY = "dd/MM/yy";
+const DATE_PATTERN_DDMMYYY_HHMMSSS = "dd/MM/yyyy HH:mm:ss";
 const LOCALE_PT_BR = "pt-BR";
 const LOCALE_CURRENCY_CODE_PT_BR = "BRL";
 
@@ -42,22 +42,25 @@ export default class BRCapUtil {
     return (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8;
   };
 
-  static formatDatePattern = (data: moment.MomentInput, pattern: string) => {
-    return moment(data)
-      .utc()
-      .format(pattern);
+  static formatDatePattern = (data: Date | string | number, pattern: string) => {
+    if (typeof data === "string")
+      return format(parseISO(data), pattern);
+
+    return format(data, pattern);
   };
 
-  static formatDate = (data: moment.MomentInput) => {
-    return moment(data)
-      .utc()
-      .format(DATE_PATTERN_DDMMYY);
+  static formatDate = (data: Date | string | number) => {
+    if (typeof data === "string")
+      return format(parseISO(data), DATE_PATTERN_DDMMYY);
+
+    return format(data, DATE_PATTERN_DDMMYY);
   };
 
-  static formatDateTime = (data: moment.MomentInput) => {
-    return moment(data)
-      .utc()
-      .format(DATE_PATTERN_DDMMYYY_HHMMSSS);
+  static formatDateTime = (data: Date | string | number) => {
+    if (typeof data === "string")
+      return format(parseISO(data), DATE_PATTERN_DDMMYYY_HHMMSSS);
+
+    return format(data, DATE_PATTERN_DDMMYYY_HHMMSSS);
   };
 
   static isValidCPF = (cpf: string | number) => {

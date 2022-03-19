@@ -1,12 +1,15 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { Http, Headers } from "@angular/http";
 import "rxjs/add/operator/map";
+import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 
 @Injectable()
 export class LoginService {
-  constructor(private http: Http) { }
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   endpointLogin = "authentication";
   endpointAuth = "authorization";
@@ -14,7 +17,7 @@ export class LoginService {
   endpointEsqueciSenha = "?acao=esqueci_senha";
 
   login(usuario: any, url): Observable<any> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     headers.append("authorization", "testet");
     url += this.endpointLogin;
@@ -23,7 +26,7 @@ export class LoginService {
   }
 
   getAuth(token, url): Observable<any> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     headers.append("Authorization", token);
     url += this.endpointAuth;
@@ -32,7 +35,7 @@ export class LoginService {
   }
 
   getUser(login, url): Observable<any[]> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
 
     url += this.endpointUsuarios;
@@ -41,17 +44,15 @@ export class LoginService {
 
     return this.http
       .get(url, { headers: headers })
-      .map(res => res.json())
       .catch(this.handleError);
   }
 
   esqueciSenha(usuario: any, url): Observable<any> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     url += this.endpointUsuarios + this.endpointEsqueciSenha;
     return this.http
       .patch(url, JSON.stringify(usuario), { headers: headers })
-      .map(res => res)
       .catch(this.handleError);
   }
 
