@@ -3,14 +3,28 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "declaration": true,
     "declarationDir": "dist",
-    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "target": "es5",
-    "types": ["node"],
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"]
-  }
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "include": [
+    "*.ts",
+    "*.js",
+    "src/**/*.ts",
+    "src/**/*.js"
+  ]
 }

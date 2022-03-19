@@ -1,18 +1,25 @@
-import * as moment_ from "moment/moment";
+import moment from "moment";
 
-const moment = moment_;
-
-import { Component, Injectable } from "@angular/core";
-
-const DATE_PATTERN_DDMMYYYY = "DD/MM/YYYY";
 const DATE_PATTERN_DDMMYY = "DD/MM/YY";
-const DATE_PATTERN_YYYY_MM_DD = "YYYY-MM-DD";
 const DATE_PATTERN_DDMMYYY_HHMMSSS = "DD/MM/YYYY HH:mm:ss";
 const LOCALE_PT_BR = "pt-BR";
 const LOCALE_CURRENCY_CODE_PT_BR = "BRL";
 
+const cpfBlacklist = Object.freeze([
+  '00000000000',
+  '11111111111',
+  '22222222222',
+  '33333333333',
+  '44444444444',
+  '55555555555',
+  '66666666666',
+  '77777777777',
+  '88888888888',
+  '99999999999',
+]);
+
 export default class BRCapUtil {
-  static formatCurrency = function(value, moneySymbol) {
+  static formatCurrency = function (value, moneySymbol) {
     if (moneySymbol) {
       return new Intl.NumberFormat(LOCALE_PT_BR, { style: "currency", currency: LOCALE_CURRENCY_CODE_PT_BR }).format(value);
     } else {
@@ -20,60 +27,50 @@ export default class BRCapUtil {
     }
   };
 
-  static removeSpecialCharacters = function(value) {
-    return value.replace(/[\(\)_\.\s-]+/g, "");
-  };
+  static removeSpecialCharacters = (value: string) => value.replace(/[\(\)_\.\s-]+/g, "");
 
-  static isNull = function(value) {
-    return value === null;
-  };
+  static isNull = (value: any) => value === null;
 
-  static isNullOrEmpty = function(value) {
-    return value === null || value === "";
-  };
+  static isNullOrEmpty = (value: string) => value === null || value === ""
 
-  static isUndefined = function(value) {
-    return value === undefined;
-  };
+  static isUndefined = (value: any) => value === undefined;
 
-  static nullToEmpty = function(value) {
-    return value == null ? "" : value;
-  };
+  static nullToEmpty = (value: string) => value == null ? "" : value;
 
-  static lettersOnly = function(event: any) {
+  static lettersOnly = (event: KeyboardEvent) => {
     const charCode = event.keyCode;
-
     return (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8;
   };
 
-  static formatDatePattern = function(data, pattern) {
+  static formatDatePattern = (data: moment.MomentInput, pattern: string) => {
     return moment(data)
       .utc()
       .format(pattern);
   };
 
-  static formatDate = function(data) {
+  static formatDate = (data: moment.MomentInput) => {
     return moment(data)
       .utc()
       .format(DATE_PATTERN_DDMMYY);
   };
 
-  static formatDateTime = function(data) {
+  static formatDateTime = (data: moment.MomentInput) => {
     return moment(data)
       .utc()
       .format(DATE_PATTERN_DDMMYYY_HHMMSSS);
   };
 
-  static isValidCPF = function(cpf) {
+  static isValidCPF = (cpf: string | number) => {
     if (cpf == null) {
       return false;
     }
-    if (cpf.length != 11) {
+
+    cpf = `${cpf}`;
+
+    if (cpf.length !== 11 || cpfBlacklist.includes(cpf)) {
       return false;
     }
-    if (cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999") {
-      return false;
-    }
+
     let numero = 0;
     let caracter = "";
     let numeros = "0123456789";
@@ -115,19 +112,19 @@ export default class BRCapUtil {
     cpfAux = cpfAux + digito2;
     if (cpf !== cpfAux) {
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   };
 
-  static isValidDate = function(date) {
+  static isValidDate = (date: string) => {
     let bissexto = 0;
     const data = date;
     const tam = data.length;
     if (tam === 10) {
-      const dia = data.substr(0, 2);
+      const dia = parseInt(data.substr(0, 2));
       const mes = data.substr(3, 2);
-      const ano = data.substr(6, 4);
+      const ano = parseInt(data.substr(6, 4));
       if (ano > 1900 || ano < 2100) {
         switch (mes) {
           case "01":
@@ -169,9 +166,11 @@ export default class BRCapUtil {
   static guid() {
     return this.s4() + this.s4() + "-" + this.s4() + "-" + this.s4() + "-" + this.s4() + "-" + this.s4() + this.s4() + this.s4();
   }
+
   static s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
       .toString(16)
       .substring(1);
   }
+
 }

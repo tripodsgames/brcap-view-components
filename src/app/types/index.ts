@@ -3,7 +3,8 @@ export class MetadadosXLS {
     nome: string;
     grupo?: string;
     formato?: string;
-};
+}
+
 export class MetadadosDetalhe {
     chave: string;
     detalhes: Array<{
@@ -11,10 +12,11 @@ export class MetadadosDetalhe {
         nome: string,
         tamanho: number,
     }>;
-};
+}
+
 export class DadosPlanilha {
     linhas: Array<object>;
     metadadosTabela: Array<MetadadosXLS>;
     titulo: string;
     metadadosDetalhe?: MetadadosDetalhe;
-};
+}

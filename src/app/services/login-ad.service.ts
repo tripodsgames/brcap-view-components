@@ -1,12 +1,12 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { Http, Headers } from "@angular/http";
 import "rxjs/add/operator/map";
+import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 
 @Injectable()
 export class LoginAdService {
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   endpointLoginAd = "authentication/active-directory";
   endpointLogin = "authentication";
@@ -15,7 +15,7 @@ export class LoginAdService {
   endpointEsqueciSenha = "?acao=esqueci_senha";
 
   login(body: any, url): Observable<any> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     let urlMalthus = url + this.endpointLoginAd;
 
@@ -23,7 +23,7 @@ export class LoginAdService {
   }
 
   getAuth(token, url): Observable<any> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     headers.append("Authorization", token);
     let urlAuth = url + this.endpointAuth;
@@ -32,7 +32,7 @@ export class LoginAdService {
   }
 
   getUser(login, url): Observable<any[]> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
 
     url += this.endpointUsuarios;
@@ -41,12 +41,11 @@ export class LoginAdService {
 
     return this.http
       .get(url, { headers: headers })
-      .map(res => res.json())
       .catch(this.handleError);
   }
 
   esqueciSenha(usuario: any, url): Observable<any> {
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     url += this.endpointUsuarios + this.endpointEsqueciSenha;
     return this.http
