@@ -3,8 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { NgSelectModule } from "@ng-select/ng-select";
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { SelectModule } from "ng-select";
 import { DpDatePickerModule } from "ng2-date-picker";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { CapBtnCollapseComponent } from "../cap-btnCollapse/cap-btnCollapse.component";
@@ -51,7 +51,7 @@ import { UsuarioService } from "../services/usuario.service";
     CommonModule,
     HttpClientModule,
     FormsModule,
-    SelectModule,
+    NgSelectModule,
     DpDatePickerModule,
     Ng2SearchPipeModule,
     RouterModule,
