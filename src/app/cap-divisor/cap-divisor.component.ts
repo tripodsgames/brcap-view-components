@@ -4,7 +4,7 @@ import BRCapUtil from "../../brcap-util";
 @Component({
   selector: "cap-divisor",
   templateUrl: "./cap-divisor.component.html",
-  styleUrls: ["./cap-divisor.component.css"]
+  styleUrls: ["./cap-divisor.component.scss"]
 })
 export class CapDivisorComponent implements OnInit {
   @Input("id") id: string;
@@ -12,7 +12,7 @@ export class CapDivisorComponent implements OnInit {
   @Input("name") name: string;
   @Input("width") width: string;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (!this.id) {

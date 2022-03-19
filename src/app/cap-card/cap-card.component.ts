@@ -4,7 +4,7 @@ import BRCapUtil from "../../brcap-util";
 @Component({
   selector: "cap-card",
   templateUrl: "./cap-card.component.html",
-  styleUrls: ["./cap-card.component.css"]
+  styleUrls: ["./cap-card.component.scss"]
 })
 export class CapCardComponent implements OnInit {
   @Input("id") id: string;
@@ -13,7 +13,7 @@ export class CapCardComponent implements OnInit {
   @Input("severity") severity: string;
   @Input("content") content: string;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (!this.id) {

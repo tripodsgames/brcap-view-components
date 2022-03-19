@@ -17,7 +17,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: "cap-checkbox",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-checkbox.component.html",
-  styleUrls: ["./cap-checkbox.component.css"]
+  styleUrls: ["./cap-checkbox.component.scss"]
 })
 export class CapCheckBoxComponent implements ControlValueAccessor, OnInit {
   @Input("id") id: string;

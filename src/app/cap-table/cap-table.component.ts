@@ -1,12 +1,12 @@
-import { Component, Input, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
-import BRCapUtil from "../../brcap-util";
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import * as jQuery from "jquery";
+import BRCapUtil from "../../brcap-util";
 const $: JQueryStatic = (<any>jQuery).default || jQuery;
 
 @Component({
   selector: "cap-table",
   templateUrl: "./cap-table.component.html",
-  styleUrls: ["./cap-table.component.css"]
+  styleUrls: ["./cap-table.component.scss"]
 })
 export class CapTableComponent implements OnInit, AfterViewInit {
   @Input("id") id: string;
@@ -18,7 +18,7 @@ export class CapTableComponent implements OnInit, AfterViewInit {
   @ViewChild("table") table: ElementRef;
   colunas = [];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (!this.id) {

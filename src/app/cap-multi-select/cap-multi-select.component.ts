@@ -1,5 +1,5 @@
-import { Component, OnInit, forwardRef, Input, ViewChild} from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms'
+import { Component, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -14,7 +14,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   },
   templateUrl: './cap-multi-select.component.html',
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-  styleUrls: ['./cap-multi-select.component.css']
+  styleUrls: ['./cap-multi-select.component.scss']
 })
 
 export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
@@ -41,7 +41,7 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
 
   dropdownSettings = {};
 
-  ngOnInit(){
+  ngOnInit() {
 
     this.dropdownSettings = {
       singleSelection: false,
@@ -62,7 +62,7 @@ export class CapMultiSelectComponent implements ControlValueAccessor, OnInit {
     this.onTouchedCallback();
   }
 
-  set value(v: any[] ) {
+  set value(v: any[]) {
     if (v !== this.innerValue) {
       this.innerValue = v;
       this.onChangeCallback(v ? v.reduce((acc, current) => acc.concat(current.value), []) : v);

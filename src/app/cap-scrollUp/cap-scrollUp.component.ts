@@ -1,9 +1,9 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "cap-scrollUp",
     templateUrl: "./cap-scrollUp.component.html",
-    styleUrls: ["./cap-scrollUp.component.css"]
+    styleUrls: ["./cap-scrollUp.component.scss"]
 })
 export class CapScrollUpComponent implements OnInit {
 

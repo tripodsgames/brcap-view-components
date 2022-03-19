@@ -1,14 +1,15 @@
-import { Component, OnInit, Input, ViewChild } from "@angular/core";
-import { LoginAdService } from "../services/login-ad.service";
+import { Component, Input, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 import toastr from "toastr";
+import { LoginAdService } from "../services/login-ad.service";
 
 @Component({
   selector: 'cap-login-ad',
   templateUrl: './cap-login-ad.component.html',
-  styleUrls: [ './cap-login-ad.component.scss' ]
+  styleUrls: ['./cap-login-ad.component.scss']
 })
-export class CapLoginAdComponent implements OnInit {
-  constructor(private loginService: LoginAdService) {}
+export class CapLoginAdComponent implements OnInit, OnDestroy {
 
   @Input("linkCadastro")
   linkCadastro;
@@ -44,6 +45,12 @@ export class CapLoginAdComponent implements OnInit {
   loginRequired;
   senhaRequired;
 
+  private subscription$: Subscription = new Subscription();
+
+  constructor(
+    private loginService: LoginAdService
+  ) { }
+
   ngOnInit() {
     toastr.options = {
       closeButton: true,
@@ -62,6 +69,10 @@ export class CapLoginAdComponent implements OnInit {
       showMethod: "fadeIn",
       hideMethod: "fadeOut"
     };
+  }
+
+  ngOnDestroy(): void {
+    this.subscription$.unsubscribe();
   }
 
   checkLoginValido() {
@@ -107,40 +118,48 @@ export class CapLoginAdComponent implements OnInit {
       this.senhaRequired = !this.usuario.senha;
       this.icone.icon = "alerta";
       return;
-    } 
+    }
 
     this.usuario.plataforma = "darwin";
     this.usuario.sistema = this.sistema;
     this.usuario.login = this.usuario.login;
 
-    this.loginService.login(this.usuario, this.urlEnv).subscribe(
-      res => {
-        if (res && res["_body"]) {
-          const body = JSON.parse(res["_body"]);
+    const loginSub = this.loginService.login(this.usuario, this.urlEnv)
+      .pipe(first())
+      .subscribe(
+        res => {
+          if (res && res["_body"]) {
+            const body = JSON.parse(res["_body"]);
 
-          this.loginService.getAuth(body.token, this.urlEnv).subscribe(
-            modulosPermitidos => this.authHandler(modulosPermitidos, body),
-            err => {
-              if (err) {
-                if (err.status === 401) {
-                  toastr["warning"]("Usuário sem permissão de acesso.");
-                } else if (err["_body"]) {  
-                  toastr["warning"](JSON.parse(err["_body"]).mensagem);
+            const authSub = this.loginService.getAuth(body.token, this.urlEnv)
+              .pipe(first())
+              .subscribe(
+                modulosPermitidos => this.authHandler(modulosPermitidos, body),
+                err => {
+                  if (err) {
+                    if (err.status === 401) {
+                      toastr["warning"]("Usuário sem permissão de acesso.");
+                    } else if (err["_body"]) {
+                      toastr["warning"](JSON.parse(err["_body"]).mensagem);
+                    }
+                  }
                 }
-              }
-            }
-          );
-        } else {
+              );
+
+            this.subscription$.add(authSub);
+          } else {
+            toastr["warning"]("Usuário ou senha inválidos");
+          }
+        },
+        err => {
+          if (err && err["_body"]) {
+            console.log("Error: ", JSON.parse(err["_body"]).mensagem);
+          }
           toastr["warning"]("Usuário ou senha inválidos");
         }
-      },
-      err => {
-        if (err && err["_body"]) {
-          console.log("Error: ", JSON.parse(err["_body"]).mensagem);
-        }
-        toastr["warning"]("Usuário ou senha inválidos");
-      }
-    );
+      );
+
+    this.subscription$.add(loginSub);
   }
 
   authHandler(modulosPermitidos, body) {
@@ -174,33 +193,37 @@ export class CapLoginAdComponent implements OnInit {
     usuario.senha = undefined;
     usuario.plataforma = "darwin";
 
-    this.loginService.esqueciSenha(usuario, this.urlEnv).subscribe(
-      resp1 => {
-        if (resp1.status === 200) {
-          toastr["warning"]("Em alguns minutos você receberá um email com instruções para redefinição de senha.");
-        } else if (resp1.status === 204) {
-          toastr["warning"]("Usuário e/ou senha inválido(s)");
-        } else if (resp1.status === 400) {
-          toastr["warning"]("Não possivél realizar a operação, por favor tente mais tarde!");
-        }
-      },
-      err => {
-        try {
-          if (err.status === 401) {
-            toastr["warning"](
-              "Usuário não possui permissão de acesso, favor entrar em contato com o administrador de sistema!"
-            );
-          } else {
-            toastr["warning"](
-              "Não possivél realizar a operação, por favor entre em contato com o administrador de sistema."
-            );
+    const esqueciSenhaSub = this.loginService.esqueciSenha(usuario, this.urlEnv)
+      .pipe(first())
+      .subscribe(
+        resp1 => {
+          if (resp1.status === 200) {
+            toastr["warning"]("Em alguns minutos você receberá um email com instruções para redefinição de senha.");
+          } else if (resp1.status === 204) {
+            toastr["warning"]("Usuário e/ou senha inválido(s)");
+          } else if (resp1.status === 400) {
+            toastr["warning"]("Não possivél realizar a operação, por favor tente mais tarde!");
           }
-        } catch (error) {
-          console.log("error: ", error);
-          console.log("err sv: ", err);
+        },
+        err => {
+          try {
+            if (err.status === 401) {
+              toastr["warning"](
+                "Usuário não possui permissão de acesso, favor entrar em contato com o administrador de sistema!"
+              );
+            } else {
+              toastr["warning"](
+                "Não possivél realizar a operação, por favor entre em contato com o administrador de sistema."
+              );
+            }
+          } catch (error) {
+            console.log("error: ", error);
+            console.log("err sv: ", err);
+          }
         }
-      }
-    );
+      );
+
+    this.subscription$.add(esqueciSenhaSub);
   }
 
 }

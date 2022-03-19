@@ -39,8 +39,7 @@
   height: 20px;
   background-color: #fafafa;
   border-radius: 50%;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14),
-    0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
 }
 .switch-label .toggle--on {
   display: none;
@@ -48,8 +47,7 @@
 .switch-label .toggle--off {
   display: inline-block;
 }
-.switch-input:checked + .switch-label:before {
-}
+
 .switch-input:checked + .switch-label:after {
   -ms-transform: translate(80%, -50%);
   -webkit-transform: translate(80%, -50%);
@@ -64,13 +62,14 @@
 
 /* disabled */
 .switch-label.disabled:before {
-  background: rgba(117,117,117,0.14) !important;
+  background: rgba(117, 117, 117, 0.14) !important;
 }
 
-cap-toggle[ng-reflect-model="false"] .switch-label:after, cap-toggle[ng-reflect-model="ativo"] .switch-label:after{
+cap-toggle[ng-reflect-model="false"] .switch-label:after,
+cap-toggle[ng-reflect-model="ativo"] .switch-label:after {
   background: white;
 }
 
-cap-toggle[ng-reflect-model="true"] label.disabled.switch-label:after{
-  background: rgba(117,117,117,0.6) !important;
+cap-toggle[ng-reflect-model="true"] label.disabled.switch-label:after {
+  background: rgba(117, 117, 117, 0.6) !important;
 }

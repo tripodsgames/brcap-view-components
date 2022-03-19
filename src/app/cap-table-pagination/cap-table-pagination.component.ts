@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'cap-table-pagination',
   templateUrl: './cap-table-pagination.component.html',
-  styleUrls: ['./cap-table-pagination.component.css']
+  styleUrls: ['./cap-table-pagination.component.scss']
 })
 export class CapTablePaginationComponent implements OnInit {
 
@@ -103,7 +103,7 @@ export class CapTablePaginationComponent implements OnInit {
   }
 
   pesquisar(string) {
-    
+
   }
 
 }

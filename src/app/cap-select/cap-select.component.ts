@@ -1,19 +1,14 @@
 import {
-  Component,
-  forwardRef,
+  Component, ElementRef, EventEmitter, forwardRef,
   Input,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  Output,
-  EventEmitter,
+  OnInit, Output, ViewChild
 } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
-import BRCapUtil from "../../brcap-util";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import * as jqueryProxy from "jquery";
+import BRCapUtil from "../../brcap-util";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
-const noop = () => {};
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -27,7 +22,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   },
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-select.component.html",
-  styleUrls: ["./cap-select.component.css"]
+  styleUrls: ["./cap-select.component.scss"]
 })
 export class CapSelectComponent implements ControlValueAccessor, OnInit {
   @Input("id")

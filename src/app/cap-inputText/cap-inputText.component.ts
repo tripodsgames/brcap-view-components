@@ -1,19 +1,14 @@
 import {
-  Component,
-  forwardRef,
+  AfterViewInit, Component, ElementRef, EventEmitter, forwardRef,
   Input,
-  OnInit,
-  ElementRef,
-  AfterViewInit,
-  ViewChild,
-  Output,
-  EventEmitter
+  OnInit, Output, ViewChild
 } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel } from "@angular/forms";
-
+import { ControlValueAccessor, NgModel, NG_VALUE_ACCESSOR } from "@angular/forms";
+import * as jqueryProxy from "jquery";
 import BRCapUtil from "../../brcap-util";
 
-const noop = () => {};
+
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -21,14 +16,13 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-inputText",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-inputText.component.html",
-  styleUrls: ["./cap-inputText.component.css"]
+  styleUrls: ["./cap-inputText.component.scss"]
 })
 export class CapInputTextComponent implements AfterViewInit, ControlValueAccessor, OnInit {
   @Input("id")
@@ -119,14 +113,14 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
     }
   }
 
-  typing(){
+  typing() {
     this.escrevendo = true;
-    if(this.value == ""){
+    if (this.value == "") {
       this.escrevendo = false;
     }
   }
 
-  erase(){
+  erase() {
     this.value = "";
     this.escrevendo = false;
     this.emptyMessage = false;
@@ -178,8 +172,8 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   }
 
   public ngAfterViewInit() {
-    if(this.reverseMask){
-      $(this.input.nativeElement).mask(this.reverseMask, {reverse: true});
+    if (this.reverseMask) {
+      $(this.input.nativeElement).mask(this.reverseMask, { reverse: true });
     }
     else if (this.mask) {
       $(this.input.nativeElement).mask(this.mask);
@@ -187,7 +181,7 @@ export class CapInputTextComponent implements AfterViewInit, ControlValueAccesso
   }
 
   public ngOnChanges() {
-    if(this.mask){
+    if (this.mask) {
       $(this.input.nativeElement).unmask();
       $(this.input.nativeElement).mask(this.mask);
     }

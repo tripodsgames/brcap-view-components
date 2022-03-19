@@ -1,10 +1,9 @@
-import { style } from '@angular/animations';
-import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "cap-icon",
   templateUrl: "./cap-icon.component.html",
-  styleUrls: ["./cap-icon.component.css"]
+  styleUrls: ["./cap-icon.component.scss"]
 })
 export class CapIconComponent implements OnInit {
   @Input("id") id: string;
@@ -15,7 +14,7 @@ export class CapIconComponent implements OnInit {
   @Input("position") position: string;
   @ViewChild("element") element: ElementRef;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (this.size) {

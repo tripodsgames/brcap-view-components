@@ -17,7 +17,7 @@ const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
   selector: "cap-password",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-password.component.html",
-  styleUrls: ["./cap-password.component.css"]
+  styleUrls: ["./cap-password.component.scss"]
 })
 export class CapPasswordComponent implements AfterViewInit, ControlValueAccessor, OnInit {
   @Input("id") id: string;

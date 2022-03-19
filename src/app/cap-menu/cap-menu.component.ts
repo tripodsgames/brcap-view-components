@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "cap-menu",
   templateUrl: "./cap-menu.component.html",
-  styleUrls: ["./cap-menu.component.css"]
+  styleUrls: ["./cap-menu.component.scss"]
 })
 export class CapMenuComponent implements OnInit {
   @Input("id")
@@ -21,7 +21,7 @@ export class CapMenuComponent implements OnInit {
   exibir;
   itemSelecionado;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
 
@@ -34,7 +34,7 @@ export class CapMenuComponent implements OnInit {
   }
 
   public selecionarItem(item) {
-    let blocDividido = item.split('#',2);
+    let blocDividido = item.split('#', 2);
     this.blocSelecionado = blocDividido[1];
     this.itemSelecionado = item;
 

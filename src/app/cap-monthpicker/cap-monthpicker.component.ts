@@ -14,7 +14,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: "cap-monthpicker",
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   templateUrl: "./cap-monthpicker.component.html",
-  styleUrls: ["./cap-monthpicker.component.css"]
+  styleUrls: ["./cap-monthpicker.component.scss"]
 })
 export class CapMonthPickerComponent implements ControlValueAccessor, OnInit {
   @Input("id")

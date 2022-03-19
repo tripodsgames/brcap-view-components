@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 import swal from "sweetalert2";
 import { PlataformaService } from "../services/plataforma.service";
 import { UsuarioService } from "./../services/usuario.service";
@@ -14,7 +15,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ["./cap-permissoes.component.scss"]
 })
 
-export class PermissoesComponent implements OnInit {
+export class PermissoesComponent implements OnInit, OnDestroy {
   @Input("urlSistemas")
   urlSistemas;
   @Input("urlUsuarios")
@@ -58,6 +59,8 @@ export class PermissoesComponent implements OnInit {
   usuariosTabela: any[];
   numeroItens: number;
 
+  private subscription$: Subscription = new Subscription();
+
   constructor(
     private plataformaService: PlataformaService,
     private usuarioService: UsuarioService
@@ -66,28 +69,52 @@ export class PermissoesComponent implements OnInit {
   ngOnInit() {
     this.popularListaUsuarios();
     this.popularListaModulos();
-    this.verEstadoPermissionamento("usuarios-permissionados").subscribe(res => {
-      this.usuariosPermissionados = res;
-    });
-    this.verEstadoPermissionamento("usuarios-nao-permissionados").subscribe(res => {
-      this.usuariosNaoPermissionados = res;
-      this.loading = false;
-    });
+    const verEstadoSub = this.verEstadoPermissionamento("usuarios-permissionados")
+      .pipe(first())
+      .subscribe(
+        res => {
+          this.usuariosPermissionados = res;
+        }
+      );
+    const verEstadoSub2 = this.verEstadoPermissionamento("usuarios-nao-permissionados")
+      .pipe(first())
+      .subscribe(
+        res => {
+          this.usuariosNaoPermissionados = res;
+          this.loading = false;
+        }
+      );
+
+    this.subscription$
+      .add(verEstadoSub)
+      .add(verEstadoSub2);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription$.unsubscribe();
   }
 
   popularListaModulos() {
-    this.plataformaService.listarModulos(this.sistema, this.urlSistemas).subscribe(res => {
-      if (res) {
-        this.listaModulos = res[0].modulos;
-        this.listaModulos.forEach(m => {
-          m.quantidadePermissionados = 0;
-          m.quantidadeFuncionalidades = m.funcionalidades.length;
-          m.funcionalidades.forEach(f => {
-            f.exibirAcoes = false;
-          });
-        });
-      }
-    });
+    const listarModulosSub = this.plataformaService
+      .listarModulos(this.sistema, this.urlSistemas)
+      .pipe(first())
+      .subscribe(
+        res => {
+          if (res) {
+            this.listaModulos = res[0].modulos;
+            this.listaModulos.forEach(m => {
+              m.quantidadePermissionados = 0;
+              m.quantidadeFuncionalidades = m.funcionalidades.length;
+              m.funcionalidades.forEach(f => {
+                f.exibirAcoes = false;
+              });
+            });
+          }
+        }
+      );
+
+    this.subscription$
+      .add(listarModulosSub);
   }
 
   // pagination
@@ -174,8 +201,9 @@ export class PermissoesComponent implements OnInit {
   salvar() {
     this.modalActive = false;
     this.montarRequest();
-    this.usuarioService
+    const permissionarSub = this.usuarioService
       .permissionar(this.permissao, this.usuarioPermissao.login, this.sistema, this.urlUsuarios)
+      .pipe(first())
       .subscribe(
         res => {
           if (res) {
@@ -192,6 +220,9 @@ export class PermissoesComponent implements OnInit {
           }
         }
       );
+
+    this.subscription$
+      .add(permissionarSub);
   }
 
   reload() {
@@ -268,30 +299,38 @@ export class PermissoesComponent implements OnInit {
   }
 
   selecionarUsuarioVisualizar(usuario) {
-    this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios).subscribe(res => {
-      if (res && res[0] && res[0].permissoes) {
-        res[0].permissoes.forEach(p => {
-          p.funcionalidades.forEach(f => {
-            const modulo = p.codigo;
-            const funcionalidade = f.codigo;
-            if (modulo) {
-              p.modulo = modulo;
-            }
-            if (funcionalidade) {
-              if (!p.funcionalidades) {
-                p.funcionalidades = [];
-              }
-              f.nome = funcionalidade.replace(/^\w/, c => c.toUpperCase());
-              f.acoes = f.acao;
-            }
-          });
-        });
-        this.usuarioVisualizar = usuario;
-        this.usuarioVisualizar.permissoes = res[0].permissoes;
-      } else {
-        swal("Aviso!", "Usuário não possui permissão!", "warning");
-      }
-    });
+    const buscaPermissoesSub = this.usuarioService
+      .buscaPermissoes(usuario.login, this.sistema, this.urlUsuarios)
+      .pipe(first())
+      .subscribe(
+        res => {
+          if (res && res[0] && res[0].permissoes) {
+            res[0].permissoes.forEach(p => {
+              p.funcionalidades.forEach(f => {
+                const modulo = p.codigo;
+                const funcionalidade = f.codigo;
+                if (modulo) {
+                  p.modulo = modulo;
+                }
+                if (funcionalidade) {
+                  if (!p.funcionalidades) {
+                    p.funcionalidades = [];
+                  }
+                  f.nome = funcionalidade.replace(/^\w/, c => c.toUpperCase());
+                  f.acoes = f.acao;
+                }
+              });
+            });
+            this.usuarioVisualizar = usuario;
+            this.usuarioVisualizar.permissoes = res[0].permissoes;
+          } else {
+            swal("Aviso!", "Usuário não possui permissão!", "warning");
+          }
+        }
+      );
+
+    this.subscription$
+      .add(buscaPermissoesSub);
   }
 
   montarRequest() {
@@ -447,11 +486,19 @@ export class PermissoesComponent implements OnInit {
   }
 
   popularListaUsuarios() {
-    this.usuarioService.listarUsuarios(this.urlUsuarios).subscribe(res => {
-      if (res) {
-        this.listaUsuarios = res;
-      }
-    });
+    const listarUsuariosSub = this.usuarioService
+      .listarUsuarios(this.urlUsuarios)
+      .pipe(first())
+      .subscribe(
+        res => {
+          if (res) {
+            this.listaUsuarios = res;
+          }
+        }
+      );
+
+    this.subscription$
+      .add(listarUsuariosSub);
   }
 
   verEstadoPermissionamento(estadoPermissionamento): Observable<any[]> {
@@ -464,23 +511,31 @@ export class PermissoesComponent implements OnInit {
 
   selecionarUsuario(usuario) {
     this.usuarioPermissao = usuario;
-    this.usuarioService.buscaPermissoes(usuario.login, this.sistema, this.urlSistemas).subscribe(res => {
-      if (res && res[0] && res[0].permissoes) {
-        this.usuarioPermissao.permissoes = res[0].permissoes;
-        this.usuarioPermissao.permissoes.forEach(p => {
-          p.funcionalidades.forEach(f => {
-            f.acoes = [];
-            f.incluir = f.acao.indexOf("incluir") !== -1;
-            f.pesquisar = f.acao.indexOf("pesquisar") !== -1;
-            f.alterar = f.acao.indexOf("alterar") !== -1;
-            f.excluir = f.acao.indexOf("excluir") !== -1;
-            f.bloquear = f.acao.indexOf("bloquear") !== -1;
-            f.aprovar = f.acao.indexOf("aprovar") !== -1;
-          });
-        });
-        this.unirUsuarioModulos();
-      }
-    });
+    const buscaPermissoesSub = this.usuarioService
+      .buscaPermissoes(usuario.login, this.sistema, this.urlSistemas)
+      .pipe(first())
+      .subscribe(
+        res => {
+          if (res && res[0] && res[0].permissoes) {
+            this.usuarioPermissao.permissoes = res[0].permissoes;
+            this.usuarioPermissao.permissoes.forEach(p => {
+              p.funcionalidades.forEach(f => {
+                f.acoes = [];
+                f.incluir = f.acao.indexOf("incluir") !== -1;
+                f.pesquisar = f.acao.indexOf("pesquisar") !== -1;
+                f.alterar = f.acao.indexOf("alterar") !== -1;
+                f.excluir = f.acao.indexOf("excluir") !== -1;
+                f.bloquear = f.acao.indexOf("bloquear") !== -1;
+                f.aprovar = f.acao.indexOf("aprovar") !== -1;
+              });
+            });
+            this.unirUsuarioModulos();
+          }
+        }
+      );
+
+    this.subscription$
+      .add(buscaPermissoesSub);
   }
 
   unirUsuarioModulos() {

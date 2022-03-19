@@ -1,24 +1,17 @@
-import {
-  Component,
-  Inject,
-  Input,
-  Output,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  DoCheck,
-  EventEmitter
-} from "@angular/core";
-import { CapIconComponent } from "../cap-icon/cap-icon.component";
 import { DOCUMENT } from '@angular/common';
-
+import {
+  Component, DoCheck, ElementRef, EventEmitter, Inject,
+  Input, OnInit, Output, ViewChild
+} from "@angular/core";
 import * as jqueryProxy from "jquery";
+import { CapIconComponent } from "../cap-icon/cap-icon.component";
+
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-header",
   templateUrl: "./cap-header.component.html",
-  styleUrls: ["./cap-header.component.css"]
+  styleUrls: ["./cap-header.component.scss"]
 })
 export class CapHeaderComponent implements OnInit, DoCheck {
   @Input("modulo")
@@ -122,7 +115,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     let elem = document.body;
     if (!this.tela) {
 
-      let methodToBeInvoked = elem.requestFullscreen || elem.webkitRequestFullScreen ||
+      let methodToBeInvoked = elem.requestFullscreen || elem['webkitRequestFullScreen'] ||
         elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
       if (methodToBeInvoked) methodToBeInvoked.call(elem);
 
@@ -151,7 +144,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   handlerMenuEvent = (res) => {
     if (res.detail !== null) {
       const exibe = res.detail.exibeMenu;
-      if(exibe !== undefined){
+      if (exibe !== undefined) {
         this.setExibeMenu(exibe);
         this.renderMenu();
       }
