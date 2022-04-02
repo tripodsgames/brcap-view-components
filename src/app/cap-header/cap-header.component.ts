@@ -3,10 +3,7 @@ import {
   Component, DoCheck, ElementRef, EventEmitter, Inject,
   Input, OnInit, Output, ViewChild
 } from "@angular/core";
-import * as jqueryProxy from "jquery";
 import { CapIconComponent } from "../cap-icon/cap-icon.component";
-
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-header",
@@ -21,7 +18,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   @Input("username_trat")
   username_trat: string;
   @Input("n_avatar")
-  n_avatar = "../../assets/img/avatar_provisorio.png";
+  n_avatar: string = "../../assets/img/avatar_provisorio.png";
   @Input("rotaPerfil")
   rotaPerfil: string;
   @Input("primerPage")
@@ -42,27 +39,25 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   @ViewChild("elementIcon")
   elementIcon: CapIconComponent;
   @Output()
-  logout = new EventEmitter();
+  logoutChange: EventEmitter<string> = new EventEmitter();
   @Output()
-  atualizaEstadoMenu = new EventEmitter<boolean>();
+  atualizaEstadoMenu: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(@Inject(DOCUMENT) private document: any) { }
-  elem;
+  constructor(
+    @Inject(DOCUMENT) private document: any
+  ) { }
 
   ngOnInit() {
     if (window.screen.width < 767) {
       this.toggleMenu();
     }
+
     if (!this.rotaLogo) {
       this.rotaLogo = "javscript:void(0)";
     }
 
     this.username_trat = this.nome(this.username);
     this.resgistrarMenuListerner();
-  }
-
-  logoff() {
-    this.logout.emit(this.username);
   }
 
   toggleMenu() {
@@ -74,6 +69,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     this.exibeMenu = exibe;
     this.atualizaEstadoMenu.emit(exibe);
   }
+
   renderMenu() {
     if (this.exibeMenu) {
       $(".cap-menu").removeClass("fechado");
@@ -111,15 +107,16 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   }
 
   toggleFullScreen() {
-
-    let elem = document.body;
+    const elem = document.body;
     if (!this.tela) {
 
-      let methodToBeInvoked = elem.requestFullscreen || elem['webkitRequestFullScreen'] ||
-        elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
-      if (methodToBeInvoked) methodToBeInvoked.call(elem);
+      const methodToBeInvoked = elem.requestFullscreen || elem['webkitRequestFullScreen'] || elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
+      if (methodToBeInvoked) {
+        methodToBeInvoked.call(elem);
+      }
 
     } else {
+
       if (this.document.exitFullscreen) {
         this.document.exitFullscreen();
       } else if (this.document.mozCancelFullScreen) {
@@ -133,11 +130,8 @@ export class CapHeaderComponent implements OnInit, DoCheck {
         this.document.msExitFullscreen();
       }
 
-      // let methodToBeInvoked = elem.exitFullscreen || elem.webkitExitFullscreen ||
-      // elem['mozCancelFullScreen'] || elem['msExitFullscreen'];
-      // if(methodToBeInvoked) methodToBeInvoked.call(elem);
-
     }
+
     this.tela = !this.tela;
   }
 

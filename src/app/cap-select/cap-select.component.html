@@ -1,15 +1,10 @@
 <label [for]="id" class="label-input {{styleClass}}" [class.disabled]="disabled" *ngIf="label?.length">
   {{label}}</label>
-<ng-select class="{{styleClass}}"
-           [options]="items"
-           [noFilter]="!filter ? 100 : 0"
-           [(ngModel)]="value"
-           [title]="title"
-           [placeholder]="placeholder"
-           filterPlaceholder="Informe a busca"
-           notFoundMsg="Nenhum resultado encontrado"
-           [disabled]="disabled"
-           highlightColor="#dfdfdf"
-           highlightTextColor="#000">
+
+<!-- [options]="items"
+  [noFilter]="!filter ? 100 : 0" -->
+<ng-select class="{{styleClass}}" [(ngModel)]="value" [title]="title" [placeholder]="placeholder"
+  filterPlaceholder="Informe a busca" notFoundMsg="Nenhum resultado encontrado" [disabled]="disabled"
+  highlightColor="#dfdfdf" highlightTextColor="#000">
 </ng-select>
 <p *ngIf="textHelper?.length" class="helper-text {{styleClass}}" [class.disabled]="disabled">{{textHelper}}</p>

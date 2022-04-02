@@ -1,48 +1,33 @@
-.main-header {
-  position: relative;
-  max-height: 100px;
-  /* z-index: 1030; */
+:host {
+  @apply z-50 relative max-h-24 w-full text-base;
   box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
-.main-header .logo {
-  margin-left: 0;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-  -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-  -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+header {
+  @apply relative w-full flex items-center h-16;
+}
+
+.logo {
+  @apply flex justify-center items-center relative p-0 border-b-0;
+  min-width: 15rem;
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-  display: block;
-  float: left;
-  height: 70px;
-  font-size: 20px;
-  line-height: 70px;
-  text-align: center;
-  width: 230px;
-  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
-  padding: 0 15px;
-  font-weight: 300;
-  overflow: hidden;
+
+  &.fechado {
+    @apply -ml-60;
+  }
 }
 
-.main-header .logo.fechado{
-  margin-left: -230px;
+.navbar {
+  @apply w-full h-full flex items-center space-x-2;
 }
 
-.main-header .logo {
-  color: #fff;
-  border-bottom: 0 solid transparent;
-    /* z-index: 3; */
-  z-index: 2;
-  position: relative;
+.label-projeto {
+  @apply flex items-center space-x-2 ml-2;
 }
 
-.main-header .sidebar-toggle {
+.menu-btn {
+  @apply cursor-pointer;
   transform: scale(0.6);
-}
-
-.main-header .sidebar-toggle:hover,
-.main-header .sidebar-toggle:active,
-.main-header .sidebar-toggle:focus {
   text-decoration: none;
 }
 
@@ -50,19 +35,15 @@
   content: "\ea40";
 }
 
-.main-header .navbar-custom-menu,
-.main-header .navbar-right {
+.navbar-custom-menu,
+.navbar-right {
   float: right;
-  padding-top:0px !important;
+  padding-top: 0px !important;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.navbar .navbar-static-top {
-  background: #fff;
-  margin-left: 225px;
-}
 .text-user {
   font-family: Ubuntu;
   font-weight: 500;
@@ -76,7 +57,7 @@
 }
 
 .icon-fullscreen {
-  top:25px;
+  top: 25px;
   text-decoration: none !important;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.87);
@@ -113,14 +94,8 @@
 }
 
 .img-avatar-header {
-  height:40px;
+  height: 40px;
   margin-right: 10px;
-}
-
-.label-projeto {
-  position: relative;
-  top: 12px;
-  vertical-align: middle;
 }
 
 .divisor {
@@ -189,7 +164,7 @@
   }
 }
 
-.navbar-custom-menu cap-icon::ng-deep .retrair{
+.navbar-custom-menu cap-icon::ng-deep .retrair {
   position: relative;
   top: 3px;
 }

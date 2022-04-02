@@ -22,9 +22,8 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/sweetalert2/dist/sweetalert2.min.css",
+              "src/styles.scss",
               "src/assets/css/brcap.css",
               "src/assets/css/main.min.css"
             ],
@@ -85,9 +84,8 @@
               "node_modules/bootstrap/dist/js/bootstrap.js"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/sweetalert2/dist/sweetalert2.min.css",
+              "src/styles.scss",
               "src/assets/css/brcap.css",
               "src/assets/css/main.min.css"
             ],
