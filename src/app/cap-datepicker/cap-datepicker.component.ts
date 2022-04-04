@@ -1,11 +1,11 @@
-import { Component, forwardRef, Input, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+import { Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import * as jqueryProxy from "jquery";
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 import "jquery-mask-plugin";
 import { IMyDpOptions } from "mydatepicker";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
-const noop = () => {};
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -40,7 +40,6 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
   @ViewChild("input")
   input: ElementRef;
 
-  private $el: any;
   private innerValue: any = new Date(Date.now());
 
   public myDatePickerOptions: IMyDpOptions = {
@@ -81,8 +80,6 @@ export class CapDatepickerComponent implements ControlValueAccessor, OnInit {
 
   // Initialized to specific date (09.10.2018).
   public model: any = { date: { year: 2018, month: 10, day: 9 } };
-
-  constructor() {}
 
   ngOnInit() {
     if (this.mask) {

@@ -1,7 +1,5 @@
-import { Component, Input, OnInit, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import BRCapUtil from "../../brcap-util";
-import * as jQuery from "jquery";
-const $: JQueryStatic = (<any>jQuery).default || jQuery;
 
 @Component({
   selector: "cap-table",
@@ -17,8 +15,6 @@ export class CapTableComponent implements OnInit, AfterViewInit {
 
   @ViewChild("table") table: ElementRef;
   colunas = [];
-
-  constructor() {}
 
   ngOnInit() {
     if (!this.id) {

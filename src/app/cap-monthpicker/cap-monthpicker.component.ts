@@ -1,8 +1,8 @@
 import { Component, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
-
-const noop = () => {};
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import * as momentImported from "moment";
+
+const noop = () => { };
 const moment = momentImported;
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
@@ -38,12 +38,9 @@ export class CapMonthPickerComponent implements ControlValueAccessor, OnInit {
   @ViewChild("input")
   input;
 
-  private $el: any;
   private innerValue: any;
 
   config;
-
-  constructor() {}
 
   ngOnInit() {
     if (!this.format) {

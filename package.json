@@ -38,13 +38,14 @@
     "ng2-currency-mask": "^5.3.1",
     "ng2-date-picker": "2.0.0",
     "ng2-search-filter": "^0.4.7",
+    "ngx-mask": "^2.9.6",
+    "pdfmake": "^0.1.65",
     "rxjs": "^5.1.0",
     "sweetalert2": "^6.9.0",
     "toastr": "^2.1.2",
     "tsickle": "^0.28.0",
     "uglify-js": "3.3.18",
-    "zone.js": "^0.8.4",
-    "pdfmake": "^0.1.65"
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@angular/cli": "1.0.4",

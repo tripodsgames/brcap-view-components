@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "cap-scrollUp",
@@ -6,10 +6,7 @@ import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewCh
     styleUrls: ["./cap-scrollUp.component.css"]
 })
 export class CapScrollUpComponent implements OnInit {
-
-    pageTop = true;
-
-    constructor() { }
+    pageTop: boolean = true;
 
     ngOnInit() {
         window.addEventListener('scroll', this.scrollEvent, true);

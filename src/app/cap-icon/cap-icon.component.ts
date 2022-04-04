@@ -1,5 +1,4 @@
-import { style } from '@angular/animations';
-import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "cap-icon",
@@ -14,8 +13,6 @@ export class CapIconComponent implements OnInit {
   @Input("disabled") disabled: boolean;
   @Input("position") position: string;
   @ViewChild("element") element: ElementRef;
-
-  constructor() {}
 
   ngOnInit() {
     if (this.size) {

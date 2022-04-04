@@ -1,15 +1,13 @@
-import { Component, OnInit, Input, ViewChild } from "@angular/core";
-import { LoginAdService } from "../services/login-ad.service";
+import { Component, Input, OnInit, ViewChild } from "@angular/core";
 import toastr from "toastr";
+import { LoginAdService } from "../services/login-ad.service";
 
 @Component({
   selector: 'cap-login-ad',
   templateUrl: './cap-login-ad.component.html',
-  styleUrls: [ './cap-login-ad.component.scss' ]
+  styleUrls: ['./cap-login-ad.component.scss']
 })
 export class CapLoginAdComponent implements OnInit {
-  constructor(private loginService: LoginAdService) {}
-
   @Input("linkCadastro")
   linkCadastro;
   @Input("srcLogo")
@@ -43,6 +41,10 @@ export class CapLoginAdComponent implements OnInit {
 
   loginRequired;
   senhaRequired;
+
+  constructor(
+    private loginService: LoginAdService
+  ) { }
 
   ngOnInit() {
     toastr.options = {
@@ -107,7 +109,7 @@ export class CapLoginAdComponent implements OnInit {
       this.senhaRequired = !this.usuario.senha;
       this.icone.icon = "alerta";
       return;
-    } 
+    }
 
     this.usuario.plataforma = "darwin";
     this.usuario.sistema = this.sistema;
@@ -124,7 +126,7 @@ export class CapLoginAdComponent implements OnInit {
               if (err) {
                 if (err.status === 401) {
                   toastr["warning"]("Usuário sem permissão de acesso.");
-                } else if (err["_body"]) {  
+                } else if (err["_body"]) {
                   toastr["warning"](JSON.parse(err["_body"]).mensagem);
                 }
               }

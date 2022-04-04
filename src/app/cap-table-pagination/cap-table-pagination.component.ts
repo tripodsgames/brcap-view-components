@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'cap-table-pagination',
@@ -39,13 +39,12 @@ export class CapTablePaginationComponent implements OnInit {
   showItemOptions: number;
   numeroItens: number;
 
-  constructor() {
+  ngOnInit() {
     this.totalPages = 1
     this.pagedItens = []
-    if (!this.itemsPerPage) this.itemsPerPage = 10
-  }
+    if (!this.itemsPerPage)
+      this.itemsPerPage = 10;
 
-  ngOnInit() {
     this.currentPage = 1
     this.setPage();
   }
@@ -103,7 +102,7 @@ export class CapTablePaginationComponent implements OnInit {
   }
 
   pesquisar(string) {
-    
+
   }
 
 }

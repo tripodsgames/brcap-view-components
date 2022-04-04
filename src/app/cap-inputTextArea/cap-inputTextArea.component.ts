@@ -1,19 +1,14 @@
 import {
-  Component,
-  forwardRef,
+  AfterViewInit, Component, EventEmitter, forwardRef,
   Input,
-  OnInit,
-  ElementRef,
-  AfterViewInit,
-  ViewChild,
-  Output,
-  EventEmitter
+  OnInit, Output, ViewChild
 } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
-
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import * as jqueryProxy from "jquery";
 import BRCapUtil from "../../brcap-util";
 
-const noop = () => {};
+
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -21,7 +16,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-import * as jqueryProxy from "jquery";
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
@@ -75,12 +69,7 @@ export class CapInputTextAreaComponent implements AfterViewInit, ControlValueAcc
 
   textError;
 
-  private $el: any;
   private innerValue: any = "";
-
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
-  }
 
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;

@@ -1,18 +1,14 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl, NgModel } from "@angular/forms";
-import { Subject } from "rxjs/Subject";
+import { Component, forwardRef, Input, OnInit } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import BRCapUtil from "../../brcap-util";
 
-const noop = () => {};
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CapRadioComponent),
   multi: true
 };
-
-import * as jqueryProxy from "jquery";
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
   selector: "cap-radio",
@@ -28,12 +24,7 @@ export class CapRadioComponent implements ControlValueAccessor, OnInit {
   @Input("disabled") disabled: boolean;
   @Input("styleClass") styleClass: string;
 
-  private $el: any;
   private innerValue: any = "";
-
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
-  }
 
   ngOnInit() {
     if (null == this.name) throw new Error("Attribute 'name' is required");

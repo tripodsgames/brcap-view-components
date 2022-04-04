@@ -1,18 +1,20 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { Http, Headers } from "@angular/http";
+import { Headers, Http } from "@angular/http";
 import "rxjs/add/operator/map";
+import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 
 @Injectable()
 export class LoginAdService {
-  constructor(private http: Http) { }
-
   endpointLoginAd = "authentication/active-directory";
   endpointLogin = "authentication";
   endpointAuth = "authorization";
   endpointUsuarios = "usuarios";
   endpointEsqueciSenha = "?acao=esqueci_senha";
+
+  constructor(
+    private http: Http
+  ) { }
 
   login(body: any, url): Observable<any> {
     const headers = new Headers();

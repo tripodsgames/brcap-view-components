@@ -12,8 +12,6 @@ export class CapDivisorComponent implements OnInit {
   @Input("name") name: string;
   @Input("width") width: string;
 
-  constructor() {}
-
   ngOnInit() {
     if (!this.id) {
       this.id = BRCapUtil.guid();

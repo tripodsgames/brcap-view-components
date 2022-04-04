@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, AfterViewInit, ViewChild } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import BRCapUtil from "../../brcap-util";
 
 @Component({
@@ -13,8 +13,6 @@ export class CapTabComponent implements OnInit {
   @Input("title") title: string;
   @Input("disabled") disabled: boolean;
   @Input() active = false;
-
-  constructor() {}
 
   ngOnInit() {
     if (!this.id) {

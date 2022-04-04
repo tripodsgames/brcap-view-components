@@ -1,17 +1,19 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { Http, Headers } from "@angular/http";
+import { Headers, Http } from "@angular/http";
 import "rxjs/add/operator/map";
+import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 
 @Injectable()
 export class LoginService {
-  constructor(private http: Http) { }
-
   endpointLogin = "authentication";
   endpointAuth = "authorization";
   endpointUsuarios = "usuarios";
   endpointEsqueciSenha = "?acao=esqueci_senha";
+
+  constructor(
+    private http: Http
+  ) { }
 
   login(usuario: any, url): Observable<any> {
     const headers = new Headers();

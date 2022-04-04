@@ -1,16 +1,14 @@
-import { environment } from "./../../environments/environment";
-import { Component, OnInit, Input, ViewChild } from "@angular/core";
-import { LoginService } from "../services/login.service";
+import { Component, Input, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { Subscription } from 'rxjs';
 import toastr from "toastr";
+import { LoginService } from "../services/login.service";
 
 @Component({
   selector: "cap-login",
   templateUrl: "./cap-login.component.html",
   styleUrls: ["./cap-login.component.scss"]
 })
-export class CapLoginComponent implements OnInit {
-  constructor(private loginService: LoginService) {}
-
+export class CapLoginComponent implements OnInit, OnDestroy {
   @Input("linkCadastro")
   linkCadastro;
   @Input("srcLogo")
@@ -45,6 +43,12 @@ export class CapLoginComponent implements OnInit {
   loginRequired;
   senhaRequired;
 
+  subs$: Subscription = new Subscription();
+
+  constructor(
+    private loginService: LoginService
+  ) { }
+
   ngOnInit() {
     toastr.options = {
       closeButton: true,
@@ -63,6 +67,10 @@ export class CapLoginComponent implements OnInit {
       showMethod: "fadeIn",
       hideMethod: "fadeOut"
     };
+  }
+
+  ngOnDestroy() {
+    this.subs$.unsubscribe();
   }
 
   checkLoginValido() {
@@ -115,42 +123,42 @@ export class CapLoginComponent implements OnInit {
 
     this.usuario.plataforma = "darwin";
     this.usuario.sistema = this.sistema;
-    this.loginService.login(this.usuario, this.urlEnv).subscribe(
-      res => {
+
+    const loginSub = this.loginService.login(this.usuario, this.urlEnv).subscribe(
+      async res => {
         if (res && res["_body"]) {
           const body = JSON.parse(res["_body"]);
-          this.loginService.getAuth(body.token, this.urlEnv).subscribe(
-            modulosPermitidos => {
-              if (modulosPermitidos && modulosPermitidos["_body"]) {
-                const usuarioLogado: any = new Object();
-                usuarioLogado.nome = body.nome;
-                usuarioLogado.login = this.usuario.login;
-                usuarioLogado.email = this.usuario.login;
-                usuarioLogado.token = body.token;
-                usuarioLogado.modulos = JSON.parse(modulosPermitidos["_body"]);
-                sessionStorage.setItem(
-                  this.userKeySession + this.sistema + "_" + this.environment,
-                  JSON.stringify(usuarioLogado)
-                );
-                localStorage.setItem(
-                  this.userKeySession + this.sistema + "_" + this.environment,
-                  JSON.stringify(usuarioLogado)
-                );
-                window.location.href = this.urlRedirect;
-              } else {
-                toastr["warning"]("Usuário ou senha inválidos");
-              }
-            },
-            err => {
-              if (err) {
-                if (err.status === 401) {
-                  toastr["warning"]("Usuário sem permissão de acesso.");
-                } else if (err["_body"]) {
-                  toastr["warning"](JSON.parse(err["_body"]).mensagem);
-                }
+          try {
+            const modulosPermitidos = await this.loginService.getAuth(body.token, this.urlEnv).toPromise();
+            if (modulosPermitidos && modulosPermitidos["_body"]) {
+              const usuarioLogado: any = new Object();
+              usuarioLogado.nome = body.nome;
+              usuarioLogado.login = this.usuario.login;
+              usuarioLogado.email = this.usuario.login;
+              usuarioLogado.token = body.token;
+              usuarioLogado.modulos = JSON.parse(modulosPermitidos["_body"]);
+              sessionStorage.setItem(
+                this.userKeySession + this.sistema + "_" + this.environment,
+                JSON.stringify(usuarioLogado)
+              );
+              localStorage.setItem(
+                this.userKeySession + this.sistema + "_" + this.environment,
+                JSON.stringify(usuarioLogado)
+              );
+              window.location.href = this.urlRedirect;
+            } else {
+              toastr["warning"]("Usuário ou senha inválidos");
+            }
+
+          } catch (err) {
+            if (err) {
+              if (err.status === 401) {
+                toastr["warning"]("Usuário sem permissão de acesso.");
+              } else if (err["_body"]) {
+                toastr["warning"](JSON.parse(err["_body"]).mensagem);
               }
             }
-          );
+          }
         } else {
           toastr["warning"]("Usuário ou senha inválidos");
         }
@@ -161,6 +169,8 @@ export class CapLoginComponent implements OnInit {
         }
       }
     );
+
+    this.subs$.add(loginSub);
   }
 
   esqueciSenha(usuario) {

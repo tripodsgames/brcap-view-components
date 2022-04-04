@@ -2,7 +2,6 @@ import * as moment_ from "moment/moment";
 
 const moment = moment_;
 
-import { Component, Injectable } from "@angular/core";
 
 const DATE_PATTERN_DDMMYYYY = "DD/MM/YYYY";
 const DATE_PATTERN_DDMMYY = "DD/MM/YY";
@@ -12,7 +11,7 @@ const LOCALE_PT_BR = "pt-BR";
 const LOCALE_CURRENCY_CODE_PT_BR = "BRL";
 
 export default class BRCapUtil {
-  static formatCurrency = function(value, moneySymbol) {
+  static formatCurrency = function (value, moneySymbol) {
     if (moneySymbol) {
       return new Intl.NumberFormat(LOCALE_PT_BR, { style: "currency", currency: LOCALE_CURRENCY_CODE_PT_BR }).format(value);
     } else {
@@ -20,51 +19,51 @@ export default class BRCapUtil {
     }
   };
 
-  static removeSpecialCharacters = function(value) {
+  static removeSpecialCharacters = function (value) {
     return value.replace(/[\(\)_\.\s-]+/g, "");
   };
 
-  static isNull = function(value) {
+  static isNull = function (value) {
     return value === null;
   };
 
-  static isNullOrEmpty = function(value) {
+  static isNullOrEmpty = function (value) {
     return value === null || value === "";
   };
 
-  static isUndefined = function(value) {
+  static isUndefined = function (value) {
     return value === undefined;
   };
 
-  static nullToEmpty = function(value) {
+  static nullToEmpty = function (value) {
     return value == null ? "" : value;
   };
 
-  static lettersOnly = function(event: any) {
+  static lettersOnly = function (event: any) {
     const charCode = event.keyCode;
 
     return (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8;
   };
 
-  static formatDatePattern = function(data, pattern) {
+  static formatDatePattern = function (data, pattern) {
     return moment(data)
       .utc()
       .format(pattern);
   };
 
-  static formatDate = function(data) {
+  static formatDate = function (data) {
     return moment(data)
       .utc()
       .format(DATE_PATTERN_DDMMYY);
   };
 
-  static formatDateTime = function(data) {
+  static formatDateTime = function (data) {
     return moment(data)
       .utc()
       .format(DATE_PATTERN_DDMMYYY_HHMMSSS);
   };
 
-  static isValidCPF = function(cpf) {
+  static isValidCPF = function (cpf) {
     if (cpf == null) {
       return false;
     }
@@ -120,7 +119,7 @@ export default class BRCapUtil {
     }
   };
 
-  static isValidDate = function(date) {
+  static isValidDate = function (date) {
     let bissexto = 0;
     const data = date;
     const tam = data.length;
@@ -169,9 +168,11 @@ export default class BRCapUtil {
   static guid() {
     return this.s4() + this.s4() + "-" + this.s4() + "-" + this.s4() + "-" + this.s4() + "-" + this.s4() + this.s4() + this.s4();
   }
+
   static s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
       .toString(16)
       .substring(1);
   }
+
 }

@@ -1,14 +1,13 @@
-import { Http } from "@angular/http";
-import { UsuarioService } from "./../services/usuario.service";
-import { Component, OnInit, Input } from "@angular/core";
-import { PlataformaService } from "../services/plataforma.service";
-
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/operator/map";
-import "rxjs/Rx";
-import swal from "sweetalert2";
+import { Component, Input, OnInit } from "@angular/core";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import "rxjs/add/operator/map";
+import { Observable } from "rxjs/Observable";
+import "rxjs/Rx";
+import swal from "sweetalert2";
+import { PlataformaService } from "../services/plataforma.service";
+import { UsuarioService } from "./../services/usuario.service";
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
@@ -62,7 +61,10 @@ export class PermissoesComponent implements OnInit {
   usuariosTabela: any[];
   numeroItens: number;
 
-  constructor(private http: Http, private plataformaService: PlataformaService, private usuarioService: UsuarioService) { }
+  constructor(
+    private plataformaService: PlataformaService,
+    private usuarioService: UsuarioService
+  ) { }
 
   ngOnInit() {
     this.popularListaUsuarios();
@@ -162,7 +164,7 @@ export class PermissoesComponent implements OnInit {
     this.montarPaginacao();
   }
 
-  firstPage(){
+  firstPage() {
     this.page = 1;
     this.montarPaginacao();
   }
@@ -217,10 +219,10 @@ export class PermissoesComponent implements OnInit {
     this.modalActive = !this.modalActive;
   }
 
-  toggleModalWarning(){
-    if(this.hasAlteracao){
+  toggleModalWarning() {
+    if (this.hasAlteracao) {
       this.modalWarningActive = !this.modalWarningActive;
-    } else{
+    } else {
       this.usuarioPermissao = null;
       this.popularListaModulos();
     }
@@ -233,7 +235,7 @@ export class PermissoesComponent implements OnInit {
     }
   }
 
-  clickOutsideWarning(event){
+  clickOutsideWarning(event) {
     var target = event.target || event.srcElement || event.currentTarget;
     if (!document.getElementById("old-modal-warning-body").contains(target)) {
       this.toggleModalWarning();
@@ -262,7 +264,7 @@ export class PermissoesComponent implements OnInit {
   }
 
   capitalize(string) {
-    if(string !== undefined){
+    if (string !== undefined) {
       var usuarioNome = string.toLowerCase();
       return usuarioNome;
     }
@@ -330,25 +332,25 @@ export class PermissoesComponent implements OnInit {
       text: 'Usuários Permissionados',
       style: 'header'
     },
-    {
-      image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAABKCAMAAABjGHrqAAAAM1BMVEX/8gAAWqG/yyh/pVA/f3kPYpcvdoNfkmXv6AqfuDzf3hQfbI2vwjLP1R6Pr0ZPiW9vnFrTrF97AAADZUlEQVR42u2Y3ZqjIAxAg/yDqO//tLvbhkTArdP5PutFc65mFCUcQpCCIAiCIAiCIAiCIAiCIAiCIIyoHucjfBPqADvD96AO+aIkUMcU+BZq1pt/OBLg4VrSFLWOU4LbUU8MPJhcFQIwNWXBrEug6AdNIXpjrEIMPTxRDxqY5KlpjkBEhWAJaiLIxmjUdaUASDU07n6sjQtdwQubYs4FaLXHkVfTeR0j2LDthQLAjwKYCR7wSpkx8ncEaNXiqns2zQLGN18tQL8SkDFSwlPqngvoxum0zs2WsyhiPhBAbS8W4HCozRhS1VK6SO3uETcD8UKAx2wGgPBcbyv3jPjhJdPK6XKhAJ5Nzd3vEyNSpJnnCl0E+JEAu8ulFS1yZmS+0kWQa2bCJQLc9MBTZeq6LzgMitRnmitSeCqAX+T3WncrYGav/RRcJ2DEhaZ7brdQJPNGc6WepHMBfGMZBuWer3Po504Baxy7T/gP5WLgucporfxEQKQbDHew4jjtGIH/nACzpNE/rfNSixHlsqbalc4F6P8IWLDGFPTaR1DUJ5eAjV33C49iq39xBXPsLv5WQK7LyFavvFymadosZudVAuymtd74azbyGHS7O+W6H0aaq2AUkfWvBBTaGzyvgenyQ9q4DeoqJNAYcLe2HlOxxpd2VmLeKSi/ELDhxwF7PRQQgbj6UzjyGPR+n984Ex25aBXY8r6ATKMO5HUQYPCpCwVwp5rHECxe4Ugju+Czm6EcCG8J4BIXWq8TutAP5gTIRwQYHgOlAN925i+O56o7TMd3BWxqYG7SiLlDQODK7NWABSKgge3lhxCnTTEPCmQ1sN4kQFP/1D1epE1qnCtiJnsnAtq9oqgDwi0CZjXUAF75Hm93+EGA/7+AgH73zSevDoifEsCHoUUb3nCb7iOmgOfom3qFBEP2RgGIo2yiBYV5FTtHHxRwsgI5BWqkyNKUab3lI3uYYhpZ0HiiHtYZnXSOwn0CxuNwVDtS/+vO+S9CTMhUPVWzAhx0XuN9Avx4HM47O0C4M3tjD1BsX0IsnpA7r+tNAtyWhsNokwLLy/3bRYCXAiAZtUMDrYDe6/wJAVNH4Yr2vBCGhgF2bXrGhw8aFG0eGZUfJ++EN5jyvJLqSwRBEARBEARBEARBEARBEAThJX8AUjIawp1LgckAAAAASUVORK5CYII=+PzrMbdqXzfH8AAAAAElFTkSuQmCC",
-      style: 'logoBBCap',
-      width: 150
-    });
+      {
+        image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAABKCAMAAABjGHrqAAAAM1BMVEX/8gAAWqG/yyh/pVA/f3kPYpcvdoNfkmXv6AqfuDzf3hQfbI2vwjLP1R6Pr0ZPiW9vnFrTrF97AAADZUlEQVR42u2Y3ZqjIAxAg/yDqO//tLvbhkTArdP5PutFc65mFCUcQpCCIAiCIAiCIAiCIAiCIAiCIIyoHucjfBPqADvD96AO+aIkUMcU+BZq1pt/OBLg4VrSFLWOU4LbUU8MPJhcFQIwNWXBrEug6AdNIXpjrEIMPTxRDxqY5KlpjkBEhWAJaiLIxmjUdaUASDU07n6sjQtdwQubYs4FaLXHkVfTeR0j2LDthQLAjwKYCR7wSpkx8ncEaNXiqns2zQLGN18tQL8SkDFSwlPqngvoxum0zs2WsyhiPhBAbS8W4HCozRhS1VK6SO3uETcD8UKAx2wGgPBcbyv3jPjhJdPK6XKhAJ5Nzd3vEyNSpJnnCl0E+JEAu8ulFS1yZmS+0kWQa2bCJQLc9MBTZeq6LzgMitRnmitSeCqAX+T3WncrYGav/RRcJ2DEhaZ7brdQJPNGc6WepHMBfGMZBuWer3Po504Baxy7T/gP5WLgucporfxEQKQbDHew4jjtGIH/nACzpNE/rfNSixHlsqbalc4F6P8IWLDGFPTaR1DUJ5eAjV33C49iq39xBXPsLv5WQK7LyFavvFymadosZudVAuymtd74azbyGHS7O+W6H0aaq2AUkfWvBBTaGzyvgenyQ9q4DeoqJNAYcLe2HlOxxpd2VmLeKSi/ELDhxwF7PRQQgbj6UzjyGPR+n984Ex25aBXY8r6ATKMO5HUQYPCpCwVwp5rHECxe4Ugju+Czm6EcCG8J4BIXWq8TutAP5gTIRwQYHgOlAN925i+O56o7TMd3BWxqYG7SiLlDQODK7NWABSKgge3lhxCnTTEPCmQ1sN4kQFP/1D1epE1qnCtiJnsnAtq9oqgDwi0CZjXUAF75Hm93+EGA/7+AgH73zSevDoifEsCHoUUb3nCb7iOmgOfom3qFBEP2RgGIo2yiBYV5FTtHHxRwsgI5BWqkyNKUab3lI3uYYhpZ0HiiHtYZnXSOwn0CxuNwVDtS/+vO+S9CTMhUPVWzAhx0XuN9Avx4HM47O0C4M3tjD1BsX0IsnpA7r+tNAtyWhsNokwLLy/3bRYCXAiAZtUMDrYDe6/wJAVNH4Yr2vBCGhgF2bXrGhw8aFG0eGZUfJ++EN5jyvJLqSwRBEARBEARBEARBEARBEAThJX8AUjIawp1LgckAAAAASUVORK5CYII=+PzrMbdqXzfH8AAAAAElFTkSuQmCC",
+        style: 'logoBBCap',
+        width: 150
+      });
     this.usuariosPermissionados.forEach(user => {
-      if(!firstPage) content.push({ text: user.nome + "\n \n", style: 'title', pageBreak: 'before' });
+      if (!firstPage) content.push({ text: user.nome + "\n \n", style: 'title', pageBreak: 'before' });
       else content.push({ text: user.nome + "\n \n", style: 'title' });
       firstPage = false;
-      if(user.permissoes && user.permissoes.length > 0) {
+      if (user.permissoes && user.permissoes.length > 0) {
         user.permissoes.forEach(p => {
           let ul = [];
           let columns = [];
           let ol = [];
           ul.push(p.codigo.replace("-", " ").toUpperCase() + "\n");
-          if(p.funcionalidades && p.funcionalidades.length > 0) {
+          if (p.funcionalidades && p.funcionalidades.length > 0) {
             p.funcionalidades.forEach(f => {
               columns.push({
-                stack: [f.codigo.replace("-", " ").replace("-", " ").toUpperCase() + "\n", {ul: f.acao}]
+                stack: [f.codigo.replace("-", " ").replace("-", " ").toUpperCase() + "\n", { ul: f.acao }]
               });
             });
           }
@@ -357,35 +359,37 @@ export class PermissoesComponent implements OnInit {
           content.push({ ul });
         })
       }
-      else content.push({ text: "\n \n Sem nenhuma permissão", style: ['header' , 'noContentStyle'] });
+      else content.push({ text: "\n \n Sem nenhuma permissão", style: ['header', 'noContentStyle'] });
     })
 
-    pdfMake.createPdf({ content, footer: function (currentPage, pageCount, pageSize) {
-      return [
-        { text: "Página " + currentPage.toString() + ' de ' + pageCount, alignment: 'right', style: 'normalText', margin: [0, 20, 50, 0] }
-      ]
-    },
-   	styles: {
-      header: {
-        bold: true,
-        fontSize: 14
+    pdfMake.createPdf({
+      content, footer: function (currentPage, pageCount, pageSize) {
+        return [
+          { text: "Página " + currentPage.toString() + ' de ' + pageCount, alignment: 'right', style: 'normalText', margin: [0, 20, 50, 0] }
+        ]
       },
-      title: {
-        bold: true,
-        fontSize: 12
-      },
-      noContentStyle: {
-        italics: true,
-        alignment: 'center'
-      },
-      logoBBCap:
-      {
+      styles: {
+        header: {
+          bold: true,
+          fontSize: 14
+        },
+        title: {
+          bold: true,
+          fontSize: 12
+        },
+        noContentStyle: {
+          italics: true,
+          alignment: 'center'
+        },
+        logoBBCap:
+        {
           alignment: 'right',
+        },
       },
-    },
-    defaultStyle: {
-      fontSize: 9.5
-    }}).download(`UsuariosPermissionados-${new Date().getTime()}`);
+      defaultStyle: {
+        fontSize: 9.5
+      }
+    }).download(`UsuariosPermissionados-${new Date().getTime()}`);
   }
   preencherAcoesFuncionalidade(f) {
     const lista = [];

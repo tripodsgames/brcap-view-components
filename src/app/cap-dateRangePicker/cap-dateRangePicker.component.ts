@@ -1,12 +1,12 @@
-import { Component, forwardRef, Input, OnInit, ElementRef, ViewChild } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
-import { DateRangeDTO } from "../model/date-range.model";
+import { Component, forwardRef, Input, OnInit, ViewChild } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import * as jqueryProxy from "jquery";
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 import "jquery-mask-plugin";
 import { IMyDrpOptions } from "mydaterangepicker";
+import { DateRangeDTO } from "../model/date-range.model";
+const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
-const noop = () => {};
+const noop = () => { };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -43,7 +43,6 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
   @ViewChild("divRange")
   divRange;
 
-  private $el: any;
   private innerValue: any = new Date(Date.now());
 
   private dates: DateRangeDTO;
@@ -85,10 +84,6 @@ export class CapDateRangePickerComponent implements ControlValueAccessor, OnInit
     openSelectorOnInputClick: true,
     showClearBtn: false
   };
-
-  constructor(private el: ElementRef) {
-    this.$el = $(el.nativeElement);
-  }
 
   ngOnInit() {
     if (this.mask) {

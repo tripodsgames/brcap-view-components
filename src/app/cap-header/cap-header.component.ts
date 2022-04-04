@@ -1,18 +1,11 @@
-import {
-  Component,
-  Inject,
-  Input,
-  Output,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  DoCheck,
-  EventEmitter
-} from "@angular/core";
-import { CapIconComponent } from "../cap-icon/cap-icon.component";
 import { DOCUMENT } from '@angular/common';
-
+import {
+  Component, DoCheck, ElementRef, EventEmitter, Inject,
+  Input, OnInit, Output, ViewChild
+} from "@angular/core";
 import * as jqueryProxy from "jquery";
+import { CapIconComponent } from "../cap-icon/cap-icon.component";
+
 const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 @Component({
@@ -53,8 +46,11 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   @Output()
   atualizaEstadoMenu = new EventEmitter<boolean>();
 
-  constructor(@Inject(DOCUMENT) private document: any) { }
-  elem;
+  private $C: { [key: string]: JQuery } = {};
+
+  constructor(
+    @Inject(DOCUMENT) private document: any
+  ) { }
 
   ngOnInit() {
     if (window.screen.width < 767) {
@@ -66,6 +62,13 @@ export class CapHeaderComponent implements OnInit, DoCheck {
 
     this.username_trat = this.nome(this.username);
     this.resgistrarMenuListerner();
+
+    this.$C[".cap-menu"] = $(".cap-menu");
+    this.$C[".logo"] = $(".logo");
+    this.$C["body"] = $("body");
+    this.$C[".label-projeto"] = $(".label-projeto");
+    this.$C["#menu-toggle"] = $("#menu-toggle");
+    this.$C["#logo-img"] = $("#logo-img");
   }
 
   logoff() {
@@ -81,24 +84,25 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     this.exibeMenu = exibe;
     this.atualizaEstadoMenu.emit(exibe);
   }
+
   renderMenu() {
     if (this.exibeMenu) {
-      $(".cap-menu").removeClass("fechado");
-      $(".logo").removeClass("fechado");
-      $("body").removeClass("minimizado");
-      $(".label-projeto").removeClass("fechado");
-      $("#menu-toggle").addClass("is-active");
+      this.$C[".cap-menu"].removeClass("fechado");
+      this.$C[".logo"].removeClass("fechado");
+      this.$C["body"].removeClass("minimizado");
+      this.$C[".label-projeto"].removeClass("fechado");
+      this.$C["#menu-toggle"].addClass("is-active");
     } else {
-      $(".cap-menu").addClass("fechado");
-      $(".logo").addClass("fechado");
-      $("body").addClass("minimizado");
-      $(".label-projeto").addClass("fechado");
-      $("#menu-toggle").removeClass("is-active");
+      this.$C[".cap-menu"].addClass("fechado");
+      this.$C[".logo"].addClass("fechado");
+      this.$C["body"].addClass("minimizado");
+      this.$C[".label-projeto"].addClass("fechado");
+      this.$C["#menu-toggle"].removeClass("is-active");
     }
-    if ($("#menu-toggle").hasClass("is-active") && window.screen.width < 480) {
-      $("#logo-img").hide();
+    if (this.$C["#menu-toggle"].hasClass("is-active") && window.screen.width < 480) {
+      this.$C["#logo-img"].hide();
     } else {
-      $("#logo-img").show();
+      this.$C["#logo-img"].show();
     }
   }
 
@@ -122,7 +126,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
     let elem = document.body;
     if (!this.tela) {
 
-      let methodToBeInvoked = elem.requestFullscreen || elem.webkitRequestFullScreen ||
+      let methodToBeInvoked = elem.requestFullscreen || elem['webkitRequestFullScreen'] ||
         elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
       if (methodToBeInvoked) methodToBeInvoked.call(elem);
 
@@ -151,7 +155,7 @@ export class CapHeaderComponent implements OnInit, DoCheck {
   handlerMenuEvent = (res) => {
     if (res.detail !== null) {
       const exibe = res.detail.exibeMenu;
-      if(exibe !== undefined){
+      if (exibe !== undefined) {
         this.setExibeMenu(exibe);
         this.renderMenu();
       }

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, ContentChild, QueryList, ContentChildren, AfterContentInit } from "@angular/core";
-import { CapTabComponent } from "../cap-tab/cap-tab.component";
+import { AfterContentInit, Component, ContentChildren, Input, OnInit, QueryList } from "@angular/core";
 import BRCapUtil from "../../brcap-util";
+import { CapTabComponent } from "../cap-tab/cap-tab.component";
 
 @Component({
   selector: "cap-tabPanel",
@@ -13,8 +13,6 @@ export class CapTabPanelComponent implements OnInit, AfterContentInit {
   @Input("name") name: string;
 
   @ContentChildren(CapTabComponent) tabs: QueryList<CapTabComponent>;
-
-  constructor() {}
 
   ngAfterContentInit() {
     const activeTabs = this.tabs.filter(tab => tab.active);

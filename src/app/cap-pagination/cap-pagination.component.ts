@@ -1,8 +1,5 @@
 import {
-  Component,
-  Input,
-  EventEmitter,
-  Output
+  Component, EventEmitter, Input, Output
 } from '@angular/core';
 
 @Component({
@@ -22,15 +19,13 @@ export class CapPaginationComponent {
   @Input() pagesToShow: number;
   @Input() numeroItens: number;
 
-  @Output() goPrev = new EventEmitter < boolean > ();
-  @Output() goNext = new EventEmitter < boolean > ();
-  @Output() goPage = new EventEmitter < number > ();
-  @Output() goFirst = new EventEmitter < boolean > ();
-  @Output() goLast = new EventEmitter < boolean > ();
+  @Output() goPrev = new EventEmitter<boolean>();
+  @Output() goNext = new EventEmitter<boolean>();
+  @Output() goPage = new EventEmitter<number>();
+  @Output() goFirst = new EventEmitter<boolean>();
+  @Output() goLast = new EventEmitter<boolean>();
 
   needPagination = true;
-
-  constructor() {}
 
   getMin(): number {
     return ((this.perPage * this.page) - this.perPage) + 1;

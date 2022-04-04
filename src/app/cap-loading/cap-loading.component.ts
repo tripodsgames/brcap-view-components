@@ -12,8 +12,6 @@ export class CapLoadingComponent implements OnInit {
 
   contentLarge;
 
-  constructor() { }
-
   ngOnInit() {
     this.contentLarge = document.querySelector(".content-header-large");
   }

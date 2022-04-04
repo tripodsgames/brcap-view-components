@@ -1,17 +1,8 @@
 import * as ExcelJS from "exceljs/dist/exceljs.min.js";
 import { DadosPlanilha } from "../types";
 import {
-    imgToBase64,
-    addAlignment,
-    alignCenter,
-    addDefaultBorder,
-    changeBgColor,
-    stringCelulaMesclarAoLado,
-    stringCelulaMesclarAbaixo,
-    stringCelulasMesclarAoLado,
-    mesmoGrupo,
-    saveAs,
-    WIDTH_CELL_XSL,
+    addAlignment, addDefaultBorder, alignCenter, changeBgColor, imgToBase64, mesmoGrupo,
+    saveAs, stringCelulaMesclarAbaixo, stringCelulaMesclarAoLado, stringCelulasMesclarAoLado, WIDTH_CELL_XSL
 } from './export-xls-utils';
 
 const HEADER_ROW_NUM = 5;
@@ -20,16 +11,15 @@ const PATH_LOGO_BRASILCAP = `assets/img/logo-brasilcap.png`;
 export default class ExportXLSMultiplaAba {
 
     private book: ExcelJS.Workbook;
-    private pathLogoProjeto: string;
     private idLogoBrasilcap: number;
     private idLogoProjeto: number;
-    private nomeArquivo: string;
 
-   constructor(nomeArquivo, pathLogoProjeto,) {
-    this.book = new ExcelJS.Workbook();
-    this.pathLogoProjeto = pathLogoProjeto;
-    this.nomeArquivo = nomeArquivo;
-   }
+    constructor(
+        private nomeArquivo: string,
+        private pathLogoProjeto: string
+    ) {
+        this.book = new ExcelJS.Workbook();
+    }
 
 
     async gerarAba(planilha: DadosPlanilha, logoProjeto?: string) {
@@ -58,17 +48,17 @@ export default class ExportXLSMultiplaAba {
             .map(metadado => metadado.chave);
     }
 
-   private filtraLinhasMA(planilha: DadosPlanilha): Array<object> {
+    private filtraLinhasMA(planilha: DadosPlanilha): Array<object> {
         return planilha.linhas.map(linha => ({
             ...this.chavesPermitidasMA(planilha)
                 .reduce((acc, key) => ({ ...acc, [key]: linha[key] }), {}),
             ...(planilha.metadadosDetalhe
                 ? { detalhes: linha[planilha.metadadosDetalhe.chave] }
                 : {})
-            }));
+        }));
     }
 
-    private async  createSheetMA(planilha) {
+    private async createSheetMA(planilha) {
         this.book.addWorksheet(planilha.titulo);
         this.sheetBy(planilha.titulo).columns = planilha.metadadosTabela.map(({ chave }) => ({
             key: chave,
@@ -98,7 +88,7 @@ export default class ExportXLSMultiplaAba {
         this.addImgsHeaderToSheetMA(titulo);
     }
 
-    private async  addImgsHeaderToSheetMA(titulo) {
+    private async addImgsHeaderToSheetMA(titulo) {
         this.sheetBy(titulo).mergeCells('A1:B4');
         addDefaultBorder(this.sheetBy(titulo).getCell('B4'));
         alignCenter(this.sheetBy(titulo).getCell('B4'));
@@ -166,7 +156,7 @@ export default class ExportXLSMultiplaAba {
             && (col === 1 || !planilha.celulasHeaderMesclarAoLado.includes(col - 1));
     }
 
-    private rotuloMA(col,planilha) {
+    private rotuloMA(col, planilha) {
         return planilha.metadadosTabela.map(elem => elem.grupo ? elem.nome : '')[col - 1];
     }
 
@@ -196,7 +186,7 @@ export default class ExportXLSMultiplaAba {
     }
 
     private arrayLinhaMescladaMA(linha: object, planilha): any[] {
-        return Object.entries(linha).reduce((acc, [k, v]) =>  [
+        return Object.entries(linha).reduce((acc, [k, v]) => [
             ...acc,
             ...this.elemLinhaMescladaMA(this.tamanhoDetalheMA(k, planilha), v),
         ], []);
@@ -206,7 +196,7 @@ export default class ExportXLSMultiplaAba {
         this.sheetBy(planilha.titulo).addRow(row);
         const linhaSheet = this.sheetBy(planilha.titulo).lastRow;
         const mesclas = planilha.metadadosDetalhe.detalhes
-            .reduce((acc, { tamanho }, i) => tamanho <=1 ? acc
+            .reduce((acc, { tamanho }, i) => tamanho <= 1 ? acc
                 : [
                     ...acc,
                     stringCelulasMesclarAoLado(i + 1, linhaSheet.number, tamanho - 1),

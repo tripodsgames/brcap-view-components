@@ -1,6 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ElementRef } from "@angular/core";
-import * as jqueryProxy from "jquery";
-const $: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "cap-button",
@@ -17,8 +15,6 @@ export class CapButtonComponent implements OnInit {
   @Input("type") type: string;
 
   @ViewChild("button") button: ElementRef;
-
-  constructor() {}
 
   iconFontSize = 20;
 

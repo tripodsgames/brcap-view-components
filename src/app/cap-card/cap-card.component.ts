@@ -13,8 +13,6 @@ export class CapCardComponent implements OnInit {
   @Input("severity") severity: string;
   @Input("content") content: string;
 
-  constructor() {}
-
   ngOnInit() {
     if (!this.id) {
       this.id = BRCapUtil.guid();

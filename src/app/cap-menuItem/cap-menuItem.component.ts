@@ -1,5 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, OnInit, Output, EventEmitter, OnChanges } from "@angular/core";
-import { ValueTransformer } from "@angular/compiler/src/util";
+import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, ViewChild } from "@angular/core";
 
 @Component({
   selector: "cap-menuItem",
@@ -42,10 +41,8 @@ export class CapMenuItemComponent implements OnChanges {
   subClass = "";
   exibido = false;
 
-  constructor() {}
-
-  ngOnInit(){
-    let codigoDividido = this.value.codigo.split('#',2);
+  ngOnInit() {
+    let codigoDividido = this.value.codigo.split('#', 2);
     this.codigoTrat = codigoDividido[1];
   }
 
@@ -54,39 +51,38 @@ export class CapMenuItemComponent implements OnChanges {
   }
 
   toggleClass(hasChild) {
- 
+
     //this.ngOnChanges();
 
-    let codigoDividido = this.value.codigo.split('#',2);
+    let codigoDividido = this.value.codigo.split('#', 2);
     this.codigoTrat = codigoDividido[1];
     if (hasChild) {
       this.selecionar.emit(hasChild[0].codigo);
     }
-    
+
     this.exibir = !this.exibir;
-  
+
     // console.log("codigoTrat = "+ this.codigoTrat);
     // console.log("blocSelecionado = "+ this.blocSelecionado);
     // console.log("hasChild0.codigo = "+hasChild[0].codigo);
   }
- 
-  ngOnChanges(changes): void{
-     
-      if(changes.blocSelecionado){
-        if(this.codigoTrat !== changes.blocSelecionado.currentValue){
-          this.exibir = false
-        }
+
+  ngOnChanges(changes): void {
+
+    if (changes.blocSelecionado) {
+      if (this.codigoTrat !== changes.blocSelecionado.currentValue) {
+        this.exibir = false
       }
-     
+    }
+
   }
-  
-  select(item)
-   { 
+
+  select(item) {
     this.subClass = "ativado"
     this.selecionar.emit(item.codigo);
-  
+
     // console.log("codigoTrat2 = "+ this.codigoTrat);
     // console.log("blocSelecionado2 = "+ this.blocSelecionado);
   }
-   
+
 }
